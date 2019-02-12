@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+[
+  ["Cálculo 1", 13],
+  ["Geometría y Álgebra Lineal 1", 9],
+  ["Física 1", 10]
+].each do |course_data|
+  Course.create!(name: course_data[0], credits: course_data[1])
+end
