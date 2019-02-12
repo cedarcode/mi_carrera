@@ -16,3 +16,12 @@
 
 @import "@material/checkbox/mdc-checkbox";
 @import "@material/list/mdc-list";
+
+body {
+  display: flex;
+  justify-content: center;
+  .content {
+    max-width: 600px;
+    flex-grow: 1;
+  }
+}
