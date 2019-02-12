@@ -1,7 +1,11 @@
 <h3>Primer semestre</h3>
 
-<div>
+<div class="mdc-list">
   <% @courses.each do |course| %>
-    <div><%= course.name %></div>
+    <div class="mdc-list-item">
+      <div class="mdc-list-item__text">
+        <%= course.name %>
+      </div>
+    </div>
   <% end %>
 </div>
