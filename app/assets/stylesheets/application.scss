@@ -16,6 +16,7 @@
 
 @import "@material/checkbox/mdc-checkbox";
 @import "@material/list/mdc-list";
+@import "@material/typography/mdc-typography";
 
 body {
   display: flex;
@@ -23,5 +24,8 @@ body {
   .content {
     max-width: 600px;
     flex-grow: 1;
+  }
+  h3 {
+    margin-bottom: 0;
   }
 }
