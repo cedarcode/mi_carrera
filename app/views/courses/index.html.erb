@@ -1,10 +1,10 @@
 <div class="mdc-list">
   <h3 class="mdc-list-group__subheader">Primer semestre</h3>
   <% @courses.each do |course| %>
-    <div class="mdc-list-item">
-      <label class="mdc-list-item__text" for="checkbox_<%= course.id %>">
+    <label class="mdc-list-item" for="checkbox_<%= course.id %>">
+      <span class="mdc-list-item__text">
         <%= course.name %>
-      </label>
+      </span>
 
       <span class="mdc-list-item__meta">
         <div class="mdc-checkbox">
@@ -19,6 +19,6 @@
           </div>
         </div>
       </span>
-    </div>
+    </label>
   <% end %>
 </div>
