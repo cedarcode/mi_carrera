@@ -1,24 +1,27 @@
 <div class="mdc-list">
   <h3 class="mdc-list-group__subheader">Primer semestre</h3>
   <% @courses.each do |course| %>
-    <label class="mdc-list-item" for="checkbox_<%= course.id %>">
-      <span class="mdc-list-item__text">
-        <%= course.name %>
-      </span>
+    <%= form_with(url: approve_course_path(course), remote: true) do |form| %>
+      <label class="mdc-list-item" for="checkbox_<%= course.id %>">
+        <span class="mdc-list-item__text">
+          <%= course.name %>
+        </span>
 
-      <span class="mdc-list-item__meta">
-        <div class="mdc-checkbox">
-          <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox_<%= course.id %>"  />
+        <span class="mdc-list-item__meta">
+          <div class="mdc-checkbox">
+            <%= check_box_tag :course_id, course.id, define_initial_state(course), id: "checkbox_#{course.id}", class: "mdc-checkbox__native-control", :onchange => 'this.form.submit();' %>
+            <%= hidden_field_tag("course_id", course.id) %>
 
-          <div class="mdc-checkbox__background">
-            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-              <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-            </svg>
+            <div class="mdc-checkbox__background">
+              <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+              </svg>
 
-            <div class="mdc-checkbox__mixedmark"></div>
+              <div class="mdc-checkbox__mixedmark"></div>
+            </div>
           </div>
-        </div>
-      </span>
-    </label>
+        </span>
+      </label>
+    <% end %>
   <% end %>
 </div>
