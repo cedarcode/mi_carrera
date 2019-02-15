@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: "courses#index"
 
-  resources :courses, only: :update do
+  resources :courses do
     member do
       post :approve
     end
