@@ -14,7 +14,14 @@
   </head>
 
   <body>
-    <section class="content">
+    <header class="mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <span class="mdc-top-app-bar__title">Student</span>
+        </section>
+      </div>
+    </header>
+    <section class="content mdc-top-app-bar--fixed-adjust">
       <%= yield %>
     </section>
   </body>
