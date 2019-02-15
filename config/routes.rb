@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :courses do
     member do
-      post :approve
+      patch :approve
     end
   end
 end

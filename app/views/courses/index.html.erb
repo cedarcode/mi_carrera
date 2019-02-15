@@ -1,7 +1,7 @@
 <div class="mdc-list">
   <h3 class="mdc-list-group__subheader">Primer semestre</h3>
   <% @courses.each do |course| %>
-    <%= form_with(url: approve_course_path(course), remote: true) do |form| %>
+    <%= form_with(model: course, url: approve_course_path(course), remote: true) do |form| %>
       <label class="mdc-list-item" for="checkbox_<%= course.id %>">
         <span class="mdc-list-item__text">
           <%= course.name %>
@@ -9,8 +9,7 @@
 
         <span class="mdc-list-item__meta">
           <div class="mdc-checkbox">
-            <%= check_box_tag :course_id, course.id, course_approved?(course), id: "checkbox_#{course.id}", class: "mdc-checkbox__native-control", :onchange => 'this.form.submit();' %>
-            <%= hidden_field_tag("course_id", course.id) %>
+            <%= form.check_box :approved, { id: "checkbox_#{course.id}", class: "mdc-checkbox__native-control", checked: course_approved?(course), :onchange => 'this.form.submit();' }, "yes", "no" %>
 
             <div class="mdc-checkbox__background">
               <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
