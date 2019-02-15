@@ -2,9 +2,11 @@ class CoursesController < ApplicationController
   def index
     @courses = Course.all
     @credits = 0
-    session[:approved_courses].each do |course_id|
-      course = Course.find(course_id)
-      @credits += course.credits
+    if session[:approved_courses]
+      session[:approved_courses].each do |course_id|
+        course = Course.find(course_id)
+        @credits += course.credits
+      end
     end
   end
 
