@@ -15,9 +15,4 @@ class CoursesController < ApplicationController
       format.html { redirect_to root_path }
     end
   end
-
-  private
-   def courses_params
-     params.require(:course).permit(:course_id)
-   end
 end
