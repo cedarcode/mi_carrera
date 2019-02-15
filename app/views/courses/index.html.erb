@@ -9,7 +9,7 @@
 
         <span class="mdc-list-item__meta">
           <div class="mdc-checkbox">
-            <%= check_box_tag :course_id, course.id, define_initial_state(course), id: "checkbox_#{course.id}", class: "mdc-checkbox__native-control", :onchange => 'this.form.submit();' %>
+            <%= check_box_tag :course_id, course.id, course_approved?(course), id: "checkbox_#{course.id}", class: "mdc-checkbox__native-control", :onchange => 'this.form.submit();' %>
             <%= hidden_field_tag("course_id", course.id) %>
 
             <div class="mdc-checkbox__background">
