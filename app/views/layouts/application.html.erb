@@ -21,15 +21,13 @@
           <span class="mdc-top-app-bar__title">Student</span>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          <% if @credits && @credits > 0 %>
-            <span class="credits-counter">
-              <span class="js-credits-count">
-                <%= @credits %>
-              </span>
-
-              créditos
+          <span class="credits-counter">
+            <span class="js-credits-count">
+              <%= @credits %>
             </span>
-          <% end %>
+
+            créditos
+          </span>
         </section>
       </div>
     </header>
