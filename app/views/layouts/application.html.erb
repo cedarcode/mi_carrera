@@ -21,7 +21,7 @@
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
           <% if @credits && @credits > 0 %>
-            <span>Tienes un total de <%= @credits %> créditos</span>
+            <span class="credits-counter"><%= @credits %> créditos</span>
           <% end %>
         </section>
       </div>
