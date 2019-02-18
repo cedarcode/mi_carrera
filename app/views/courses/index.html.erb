@@ -1,25 +1,32 @@
-<div class="mdc-list">
-  <% @courses.each do |course| %>
-    <%= form_with(model: course, url: approve_course_path(course), data: { controller: "autosave-check" }) do |form| %>
-      <label class="mdc-list-item" for="checkbox_<%= course.id %>">
-        <span class="mdc-list-item__text">
-          <%= course.short_name || course.name %>
-        </span>
+<div class="mdc-list-group">
+  <% @courses.group_by { |c| c.semester }.each do |semester, courses| %>
+    <h3 class="mdc-list-group__subheader mdc-typography--subtitle2"><%= semester_to_text(semester) %> semestre</h3>
 
-        <span class="mdc-list-item__meta">
-          <div class="mdc-checkbox">
-            <%= form.check_box :approved, { id: "checkbox_#{course.id}", class: "mdc-checkbox__native-control", checked: course_approved?(course), data: { action: "autosave-check#update" } }, "yes", "no" %>
+    <% courses.each do |course| %>
+      <div class="mdc-list">
+        <%= form_with(model: course, url: approve_course_path(course), data: { controller: "autosave-check" }) do |form| %>
+          <label class="mdc-list-item" for="checkbox_<%= course.id %>">
+            <span class="mdc-list-item__text">
+              <%= course.short_name || course.name %>
+            </span>
 
-            <div class="mdc-checkbox__background">
-              <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-              </svg>
+            <span class="mdc-list-item__meta">
+              <div class="mdc-checkbox">
+                <%= form.check_box :approved, { id: "checkbox_#{course.id}", class: "mdc-checkbox__native-control", checked: course_approved?(course), data: { action: "autosave-check#update" } }, "yes", "no" %>
 
-              <div class="mdc-checkbox__mixedmark"></div>
-            </div>
-          </div>
-        </span>
-      </label>
-    <% end %>
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                  </svg>
+
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+              </div>
+            </span>
+          </label>
+        <% end %>
+      <% end %>
+    </div>
+    <hr class="mdc-list-divider">
   <% end %>
 </div>

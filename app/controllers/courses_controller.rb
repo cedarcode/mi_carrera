@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   def index
-    @courses = Course.order(:id)
+    @courses = Course.order(:semester)
     @credits = 0
     if session[:approved_courses]
       session[:approved_courses].each do |course_id|
