@@ -22,7 +22,13 @@
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
           <% if @credits && @credits > 0 %>
-            <span class="credits-counter"><%= @credits %> créditos</span>
+            <span class="credits-counter">
+              <span class="js-credits-count">
+                <%= @credits %>
+              </span>
+
+              créditos
+            </span>
           <% end %>
         </section>
       </div>
