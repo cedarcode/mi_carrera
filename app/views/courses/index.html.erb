@@ -4,13 +4,13 @@
 
     <% courses.each do |course| %>
       <div class="mdc-list">
-        <%= form_with(model: course, url: approve_course_path(course), data: { controller: "autosave-check" }) do |form| %>
-          <label class="mdc-list-item" for="checkbox_<%= course.id %>">
-            <span class="mdc-list-item__text">
-              <%= course.short_name || course.name %>
-            </span>
+        <label class="mdc-list-item" for="checkbox_<%= course.id %>">
+          <span class="mdc-list-item__text">
+            <%= course.short_name || course.name %>
+          </span>
 
-            <span class="mdc-list-item__meta">
+          <span class="mdc-list-item__meta">
+            <%= form_with(model: course, url: approve_course_path(course), data: { controller: "autosave-check" }) do |form| %>
               <div class="mdc-checkbox">
                 <%= form.check_box :approved, { id: "checkbox_#{course.id}", class: "mdc-checkbox__native-control", checked: course_approved?(course), data: { action: "autosave-check#update" } }, "yes", "no" %>
 
@@ -22,9 +22,9 @@
                   <div class="mdc-checkbox__mixedmark"></div>
                 </div>
               </div>
-            </span>
-          </label>
-        <% end %>
+            <% end %>
+          </span>
+        </label>
       <% end %>
     </div>
     <hr class="mdc-list-divider">
