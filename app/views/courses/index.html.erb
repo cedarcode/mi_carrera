@@ -3,7 +3,7 @@
     <%= form_with(model: course, url: approve_course_path(course), remote: true) do |form| %>
       <label class="mdc-list-item" for="checkbox_<%= course.id %>">
         <span class="mdc-list-item__text">
-          <%= truncate(course.name, length: 32) %>
+          <%= course.short_name || course.name %>
         </span>
 
         <span class="mdc-list-item__meta">
