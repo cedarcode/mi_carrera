@@ -1,6 +1,6 @@
 <div class="mdc-list">
   <% @courses.each do |course| %>
-    <%= form_with(model: course, url: approve_course_path(course), remote: true) do |form| %>
+    <%= form_with(model: course, url: approve_course_path(course), data: { controller: "autosave-check" }) do |form| %>
       <label class="mdc-list-item" for="checkbox_<%= course.id %>">
         <span class="mdc-list-item__text">
           <%= course.short_name || course.name %>
@@ -8,7 +8,7 @@
 
         <span class="mdc-list-item__meta">
           <div class="mdc-checkbox">
-            <%= form.check_box :approved, { id: "checkbox_#{course.id}", class: "mdc-checkbox__native-control", checked: course_approved?(course), :onchange => 'this.form.submit();' }, "yes", "no" %>
+            <%= form.check_box :approved, { id: "checkbox_#{course.id}", class: "mdc-checkbox__native-control", checked: course_approved?(course), data: { action: "autosave-check#update" } }, "yes", "no" %>
 
             <div class="mdc-checkbox__background">
               <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
