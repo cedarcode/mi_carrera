@@ -1,13 +1,7 @@
 class CoursesController < ApplicationController
   def index
     @courses = Course.order(:semester)
-    @credits = 0
-    if session[:approved_courses]
-      session[:approved_courses].each do |course_id|
-        course = Course.find(course_id)
-        @credits += course.credits
-      end
-    end
+    @credits = credits
   end
 
   def approve
@@ -19,7 +13,7 @@ class CoursesController < ApplicationController
       session[:approved_courses] -= [course.id]
     end
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.json { render json: { credits: credits } }
     end
   end
 
@@ -27,5 +21,18 @@ class CoursesController < ApplicationController
 
   def course
     @course ||= Course.find(params[:id])
+  end
+
+  def credits
+    credits = 0
+
+    if session[:approved_courses]
+      session[:approved_courses].each do |course_id|
+        course = Course.find(course_id)
+        credits += course.credits
+      end
+    end
+
+    credits
   end
 end
