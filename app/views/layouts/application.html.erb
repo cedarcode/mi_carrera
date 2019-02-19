@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', "https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" %>
+    <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
@@ -18,16 +19,12 @@
     <header class="mdc-top-app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <span class="mdc-top-app-bar__title">Student</span>
+          <%= yield :navigation_icon %>
+          <%= yield :title %>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
           <span class="credits-counter">
-            <span class="js-credits-count">
-              <%= @credits %>
-            </span>
-
-            créditos
-          </span>
+            <%= yield :credits %>
         </section>
       </div>
     </header>

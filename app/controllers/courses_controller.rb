@@ -17,6 +17,12 @@ class CoursesController < ApplicationController
     end
   end
 
+  def show
+    respond_to do |format|
+      format.html { course }
+    end
+  end
+
   private
 
   def course

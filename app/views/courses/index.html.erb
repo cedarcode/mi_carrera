@@ -1,3 +1,16 @@
+<% content_for :title do %>
+  <span class="mdc-top-app-bar__title">Student</span>
+<% end %>
+
+<% content_for :credits do %>
+  <span class="js-credits-count">
+    <%= @credits %>
+  </span>
+
+  créditos
+  </span>
+<% end %>
+
 <div class="mdc-list-group">
   <% @courses.group_by { |c| c.semester }.each do |semester, courses| %>
     <h3 class="mdc-list-group__subheader mdc-typography--subtitle2"><%= semester_to_text(semester) %> semestre</h3>

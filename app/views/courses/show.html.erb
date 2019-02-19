@@ -1,0 +1,48 @@
+<% content_for :navigation_icon do %>
+  <%= link_to "arrow_back", root_path, :class => "material-icons mdc-top-app-bar__navigation-icon" %>
+<% end %>
+
+<div class="mdc-list-group">
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5"><%= @course.name %></h3>
+  <hr class="mdc-list-divider">
+
+  <div class="mdc-list">
+    <label class="mdc-list-item" for="checkbox_curso_aprovado">
+      <span class="mdc-list-item__text">
+        <%= "Curso aprovado?" %>
+      </span>
+
+      <span class="mdc-list-item__meta">
+          <div class="mdc-checkbox">
+            <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox_curso_aprovado"  />
+            <div class="mdc-checkbox__background">
+              <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+              </svg>
+
+              <div class="mdc-checkbox__mixedmark"></div>
+            </div>
+          </div>
+      </span>
+    </label>
+
+    <label class="mdc-list-item" for="checkbox_examen_aprovado">
+      <span class="mdc-list-item__text">
+        <%= "Examen aprovado?" %>
+      </span>
+
+      <span class="mdc-list-item__meta">
+          <div class="mdc-checkbox">
+            <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox_examen_aprovado"  />
+            <div class="mdc-checkbox__background">
+              <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+              </svg>
+
+              <div class="mdc-checkbox__mixedmark"></div>
+            </div>
+          </div>
+      </span>
+    </label>
+  </div>
+</div>
