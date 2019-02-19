@@ -1,6 +1,6 @@
-module CoursesHelper
-  def course_approved?(course)
-    return !session[:approved_courses].nil? && session[:approved_courses].include?(course.id)
+module SubjectsHelper
+  def subject_approved?(subject)
+    return !session[:approved_subjects].nil? && session[:approved_subjects].include?(subject.id)
   end
 
   def semester_to_text(n)
