@@ -17,7 +17,7 @@
 
     <div class="mdc-list">
       <% courses.each do |course| %>
-        <label class="mdc-list-item" for="checkbox_<%= course.id %>">
+        <%= link_to course_path(course), :class => "mdc-list-item" do %>
           <span class="mdc-list-item__text">
             <%= course.short_name || course.name %>
           </span>
@@ -37,7 +37,7 @@
               </div>
             <% end %>
           </span>
-        </label>
+        <% end %>
       <% end %>
     </div>
     <hr class="mdc-list-divider">
