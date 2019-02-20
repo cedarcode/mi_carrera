@@ -6,11 +6,11 @@ class SubjectsController < ApplicationController
 
   def approve
     if session[:approved_subjects].nil?
-      session[:approved_subjects] = [course.id]
-    elsif params[:course][:approved] == "yes"
-      session[:approved_subjects] += [course.id]
-    elsif params[:course][:approved] == "no"
-      session[:approved_subjects] -= [course.id]
+      session[:approved_subjects] = [subject.id]
+    elsif params[:subject][:approved] == "yes"
+      session[:approved_subjects] += [subject.id]
+    elsif params[:subject][:approved] == "no"
+      session[:approved_subjects] -= [subject.id]
     end
     respond_to do |format|
       format.json { render json: { credits: credits } }
@@ -33,8 +33,8 @@ class SubjectsController < ApplicationController
     credits = 0
 
     if session[:approved_subjects]
-      session[:approved_subjects].each do |course_id|
-        subject = Subject.find(course_id)
+      session[:approved_subjects].each do |subject_id|
+        subject = Subject.find(subject_id)
         credits += subject.credits
       end
     end
