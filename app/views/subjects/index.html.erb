@@ -23,7 +23,7 @@
           </span>
 
           <span class="mdc-list-item__meta">
-            <%= form_with(model: subject, url: approve_subject_path(subject), data: { controller: "autosave-check", action: "ajax:success->autosave-check#updateCredits" }) do |form| %>
+            <%= form_with(model: subject, url: approve_subject_path(subject), data: { controller: "autosave-check", action: "ajax:success->autosave-check#notifyCreditsChange" }) do |form| %>
               <div class="mdc-checkbox">
                 <%= form.check_box :exam_approved, { id: "checkbox_#{subject.id}", class: "mdc-checkbox__native-control", checked: exam_approved?(subject), data: { action: "autosave-check#update" } }, "yes", "no" %>
 
