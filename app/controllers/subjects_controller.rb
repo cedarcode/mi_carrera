@@ -5,12 +5,22 @@ class SubjectsController < ApplicationController
   end
 
   def approve
-    if session[:approved_subjects].nil?
-      session[:approved_subjects] = [subject.id]
-    elsif params[:subject][:approved] == "yes"
-      session[:approved_subjects] += [subject.id]
-    elsif params[:subject][:approved] == "no"
-      session[:approved_subjects] -= [subject.id]
+    if params[:subject][:course_approved]
+      if session[:approved_courses].nil? && params[:subject][:course_approved] == "yes"
+        session[:approved_courses] = [subject.id]
+      elsif params[:subject][:course_approved] == "yes"
+        session[:approved_courses] += [subject.id]
+      elsif params[:subject][:course_approved] == "no"
+        session[:approved_courses] -= [subject.id]
+      end
+    elsif params[:subject][:exam_approved]
+      if session[:approved_exams].nil? && params[:subject][:exam_approved] == "yes"
+        session[:approved_exams] = [subject.id]
+      elsif params[:subject][:exam_approved] == "yes"
+        session[:approved_exams] += [subject.id]
+      elsif params[:subject][:exam_approved] == "no"
+        session[:approved_exams] -= [subject.id]
+      end
     end
     respond_to do |format|
       format.json { render json: { credits: credits } }
@@ -32,8 +42,8 @@ class SubjectsController < ApplicationController
   def credits
     credits = 0
 
-    if session[:approved_subjects]
-      session[:approved_subjects].each do |subject_id|
+    if session[:approved_exams]
+      session[:approved_exams].each do |subject_id|
         subject = Subject.find(subject_id)
         credits += subject.credits
       end

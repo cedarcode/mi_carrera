@@ -7,14 +7,15 @@
   <hr class="mdc-list-divider">
 
   <div class="mdc-list">
-    <label class="mdc-list-item" for="checkbox_curso_aprobado">
+    <label class="mdc-list-item" for="checkbox_course_approved">
       <span class="mdc-list-item__text">
         <%= "Curso aprobado?" %>
       </span>
 
       <span class="mdc-list-item__meta">
+        <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check", action: "ajax:success->autosave-check#updateCredits" }) do |form| %>
           <div class="mdc-checkbox">
-            <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox_curso_aprobado"  />
+            <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: course_approved?(@subject), data: { action: "autosave-check#update" } }, "yes", "no" %>
             <div class="mdc-checkbox__background">
               <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                 <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -23,17 +24,19 @@
               <div class="mdc-checkbox__mixedmark"></div>
             </div>
           </div>
+        <% end %>
       </span>
     </label>
 
-    <label class="mdc-list-item" for="checkbox_examen_aprobado">
+    <label class="mdc-list-item" for="checkbox_exam_approved">
       <span class="mdc-list-item__text">
         <%= "Examen aprobado?" %>
       </span>
 
       <span class="mdc-list-item__meta">
+        <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check", action: "ajax:success->autosave-check#updateCredits" }) do |form| %>
           <div class="mdc-checkbox">
-            <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox_examen_aprobado"  />
+            <%= form.check_box :exam_approved, { id: "checkbox_exam_approved", class: "mdc-checkbox__native-control", checked: exam_approved?(@subject), data: { action: "autosave-check#update" } }, "yes", "no" %>
             <div class="mdc-checkbox__background">
               <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                 <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -42,6 +45,7 @@
               <div class="mdc-checkbox__mixedmark"></div>
             </div>
           </div>
+        <% end %>
       </span>
     </label>
   </div>
