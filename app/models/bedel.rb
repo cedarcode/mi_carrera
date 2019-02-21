@@ -9,7 +9,7 @@ class Bedel
     @session[:approved_courses] += [subject.id]
   end
 
-  def remove_approve_course(subject)
+  def remove_approved_course(subject)
     @session[:approved_courses] -= [subject.id]
   end
 
@@ -17,7 +17,7 @@ class Bedel
     @session[:approved_exams] += [subject.id]
   end
 
-  def remove_approve_exam(subject)
+  def remove_approved_exam(subject)
     @session[:approved_exams] -= [subject.id]
   end
 
