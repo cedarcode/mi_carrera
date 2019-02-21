@@ -3,7 +3,7 @@ class SubjectsController < ApplicationController
 
   def index
     @subjects = Subject.order(:semester)
-    @credits = @bedel.calculate_credits
+    @credits = @bedel.credits
   end
 
   def approve
@@ -21,7 +21,7 @@ class SubjectsController < ApplicationController
       end
     end
     respond_to do |format|
-      format.json { render json: { credits: @bedel.calculate_credits } }
+      format.json { render json: { credits: @bedel.credits } }
     end
   end
 

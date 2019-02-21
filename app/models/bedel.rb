@@ -21,7 +21,7 @@ class Bedel
     @session[:approved_exams] -= [subject.id]
   end
 
-  def calculate_credits
+  def credits
     credits = 0
 
     @session[:approved_exams].each do |subject_id|
