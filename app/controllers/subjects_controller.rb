@@ -3,7 +3,6 @@ class SubjectsController < ApplicationController
 
   def index
     @subjects = Subject.order(:semester)
-    @credits = @bedel.credits
   end
 
   def approve
