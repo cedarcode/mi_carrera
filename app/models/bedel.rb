@@ -23,14 +23,7 @@ class Bedel
   end
 
   def credits
-    credits = 0
-
-    store[:approved_exams].each do |subject_id|
-      subject = Subject.find(subject_id)
-      credits += subject.credits
-    end
-
-    credits
+    Subject.where(id: store[:approved_exams]).sum(:credits)
   end
 
   def approved_course?(subject)
