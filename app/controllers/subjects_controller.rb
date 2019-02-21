@@ -1,5 +1,5 @@
 class SubjectsController < ApplicationController
-  before_action :set_bedel
+  helper_method :bedel
 
   def index
     @subjects = Subject.order(:semester)
@@ -8,19 +8,19 @@ class SubjectsController < ApplicationController
   def approve
     if params[:subject][:course_approved]
       if params[:subject][:course_approved] == "yes"
-        @bedel.add_approved_course(subject)
+        bedel.add_approved_course(subject)
       elsif params[:subject][:course_approved] == "no"
-        @bedel.remove_approved_course(subject)
+        bedel.remove_approved_course(subject)
       end
     elsif params[:subject][:exam_approved]
       if params[:subject][:exam_approved] == "yes"
-        @bedel.add_approved_exam(subject)
+        bedel.add_approved_exam(subject)
       elsif params[:subject][:exam_approved] == "no"
-        @bedel.remove_approved_exam(subject)
+        bedel.remove_approved_exam(subject)
       end
     end
     respond_to do |format|
-      format.json { render json: { credits: @bedel.credits } }
+      format.json { render json: { credits: bedel.credits } }
     end
   end
 
@@ -32,7 +32,7 @@ class SubjectsController < ApplicationController
 
   private
 
-  def set_bedel
+  def bedel
     @bedel ||= Bedel.new(session)
   end
 
