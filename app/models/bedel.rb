@@ -1,31 +1,31 @@
 class Bedel
-  def initialize(session)
-    @session = session
+  def initialize(store)
+    @store = store
 
-    @session[:approved_courses] ||= []
-    @session[:approved_exams] ||= []
+    @store[:approved_courses] ||= []
+    @store[:approved_exams] ||= []
   end
 
   def add_approved_course(subject)
-    session[:approved_courses] += [subject.id]
+    store[:approved_courses] += [subject.id]
   end
 
   def remove_approved_course(subject)
-    session[:approved_courses] -= [subject.id]
+    store[:approved_courses] -= [subject.id]
   end
 
   def add_approved_exam(subject)
-    session[:approved_exams] += [subject.id]
+    store[:approved_exams] += [subject.id]
   end
 
   def remove_approved_exam(subject)
-    session[:approved_exams] -= [subject.id]
+    store[:approved_exams] -= [subject.id]
   end
 
   def credits
     credits = 0
 
-    session[:approved_exams].each do |subject_id|
+    store[:approved_exams].each do |subject_id|
       subject = Subject.find(subject_id)
       credits += subject.credits
     end
@@ -34,14 +34,14 @@ class Bedel
   end
 
   def approved_course?(subject)
-    session[:approved_courses].include?(subject.id)
+    store[:approved_courses].include?(subject.id)
   end
 
   def approved_exam?(subject)
-    session[:approved_exams].include?(subject.id)
+    store[:approved_exams].include?(subject.id)
   end
 
   private
 
-  attr_reader :session
+  attr_reader :store
 end
