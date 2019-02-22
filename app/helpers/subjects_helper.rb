@@ -1,6 +1,6 @@
 module SubjectsHelper
-  def semester_to_text(n)
-    case n
+  def semester_to_text(semester)
+    case semester
     when 1
       "Primer"
     when 2

@@ -38,5 +38,7 @@
   ["Introducción a la Ingeniería de Software", 10, 7, "IIS"],
   ["Proyecto de Ingeniería de Software", 15, 8, "PIS"]
 ].each do |subject_data|
-  Subject.where(name: subject_data[0]).first_or_create.update!(credits: subject_data[1], semester: subject_data[2], short_name: subject_data[3])
+  Subject
+    .where(name: subject_data[0])
+    .first_or_create.update!(credits: subject_data[1], semester: subject_data[2], short_name: subject_data[3])
 end
