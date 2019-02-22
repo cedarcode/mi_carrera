@@ -1,0 +1,39 @@
+inherit_mode:
+  merge:
+    - Exclude
+
+AllCops:
+  TargetRubyVersion: 2.6
+  DisabledByDefault: true
+  Exclude:
+    - "bin/*"
+    - "db/schema.rb"
+    - "tmp/**/*"
+    - "config/environments/*"
+
+Bundler:
+  Enabled: true
+
+Gemspec:
+  Enabled: true
+
+Layout:
+  Enabled: true
+
+Lint:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 120
+
+Naming:
+  Enabled: true
+
+Performance:
+  Enabled: true
+
+Rails:
+  Enabled: true
+
+Security:
+  Enabled: true
