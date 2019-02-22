@@ -5,7 +5,7 @@ class ApprovalTest < ApplicationSystemTestCase
     @subject = Subject.create!(name: "GAL 1", credits: 9)
   end
 
-  test "student approves course" do
+  test "student adds approved course" do
     visit subject_path(@subject)
 
     check "Curso aprobado?", visible: false
@@ -19,7 +19,7 @@ class ApprovalTest < ApplicationSystemTestCase
     assert page.has_checked_field?("Curso aprobado?", visible: false)
   end
 
-  test "student approves exam" do
+  test "student adds approved exam" do
     visit subject_path(@subject)
 
     check "Examen aprobado?", visible: false
@@ -33,7 +33,7 @@ class ApprovalTest < ApplicationSystemTestCase
     assert page.has_checked_field?("Examen aprobado?", visible: false)
   end
 
-  test "student approves subject" do
+  test "student adds approved subject" do
     visit root_path
 
     find(".mdc-checkbox").click
