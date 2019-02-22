@@ -54,8 +54,6 @@ class ApprovalTest < ApplicationSystemTestCase
 
     click_on "GAL 1"
 
-    assert page.has_checked_field?("Curso aprobado?", visible: false)
-
     uncheck "Curso aprobado?", visible: false
     click_on "arrow_back"
 
@@ -72,8 +70,6 @@ class ApprovalTest < ApplicationSystemTestCase
 
     click_on "GAL 1"
 
-    assert page.has_checked_field?("Examen aprobado?", visible: false)
-
     uncheck "Examen aprobado?", visible: false
     click_on "arrow_back"
 
@@ -88,8 +84,6 @@ class ApprovalTest < ApplicationSystemTestCase
     find(".mdc-checkbox").click
 
     visit root_path
-
-    assert page.has_checked_field?("checkbox_#{@subject.id}", visible: false)
 
     find(".mdc-checkbox").click
 
