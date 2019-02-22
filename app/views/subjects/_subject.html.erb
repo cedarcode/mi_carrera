@@ -1,0 +1,21 @@
+<%= link_to subject_path(subject), :class => "mdc-list-item" do %>
+  <span class="mdc-list-item__text">
+    <%= subject.short_name || subject.name %>
+  </span>
+
+  <span class="mdc-list-item__meta">
+    <%= form_with(model: subject, url: approve_subject_path(subject), data: { controller: "autosave-check", action: "ajax:success->autosave-check#notifyCreditsChange" }) do |form| %>
+      <div class="mdc-checkbox">
+        <%= form.check_box :exam_approved, { id: "checkbox_#{subject.id}", class: "mdc-checkbox__native-control", checked: bedel.approved_exam?(subject), data: { action: "autosave-check#update" } }, "yes", "no" %>
+
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+          </svg>
+
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+    <% end %>
+  </span>
+<% end %>
