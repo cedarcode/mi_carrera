@@ -4,7 +4,7 @@
 
 <% content_for :credits do %>
   <span class="js-credits-count" data-controller="credits-counter" data-action="credits-change->credits-counter#update">
-    <%= @credits %>
+    <%= bedel.credits %>
   </span>
 
   créditos
@@ -25,7 +25,7 @@
           <span class="mdc-list-item__meta">
             <%= form_with(model: subject, url: approve_subject_path(subject), data: { controller: "autosave-check", action: "ajax:success->autosave-check#notifyCreditsChange" }) do |form| %>
               <div class="mdc-checkbox">
-                <%= form.check_box :exam_approved, { id: "checkbox_#{subject.id}", class: "mdc-checkbox__native-control", checked: exam_approved?(subject), data: { action: "autosave-check#update" } }, "yes", "no" %>
+                <%= form.check_box :exam_approved, { id: "checkbox_#{subject.id}", class: "mdc-checkbox__native-control", checked: bedel.approved_exam?(subject), data: { action: "autosave-check#update" } }, "yes", "no" %>
 
                 <div class="mdc-checkbox__background">
                   <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">

@@ -1,29 +1,26 @@
 class SubjectsController < ApplicationController
+  helper_method :bedel
+
   def index
     @subjects = Subject.order(:semester)
-    @credits = credits
   end
 
   def approve
     if params[:subject][:course_approved]
-      if session[:approved_courses].nil? && params[:subject][:course_approved] == "yes"
-        session[:approved_courses] = [subject.id]
-      elsif params[:subject][:course_approved] == "yes"
-        session[:approved_courses] += [subject.id]
+      if params[:subject][:course_approved] == "yes"
+        bedel.add_approved_course(subject)
       elsif params[:subject][:course_approved] == "no"
-        session[:approved_courses] -= [subject.id]
+        bedel.remove_approved_course(subject)
       end
     elsif params[:subject][:exam_approved]
-      if session[:approved_exams].nil? && params[:subject][:exam_approved] == "yes"
-        session[:approved_exams] = [subject.id]
-      elsif params[:subject][:exam_approved] == "yes"
-        session[:approved_exams] += [subject.id]
+      if params[:subject][:exam_approved] == "yes"
+        bedel.add_approved_exam(subject)
       elsif params[:subject][:exam_approved] == "no"
-        session[:approved_exams] -= [subject.id]
+        bedel.remove_approved_exam(subject)
       end
     end
     respond_to do |format|
-      format.json { render json: { credits: credits } }
+      format.json { render json: { credits: bedel.credits } }
     end
   end
 
@@ -35,20 +32,11 @@ class SubjectsController < ApplicationController
 
   private
 
-  def subject
-    @subject ||= Subject.find(params[:id])
+  def bedel
+    @bedel ||= Bedel.new(session)
   end
 
-  def credits
-    credits = 0
-
-    if session[:approved_exams]
-      session[:approved_exams].each do |subject_id|
-        subject = Subject.find(subject_id)
-        credits += subject.credits
-      end
-    end
-
-    credits
+  def subject
+    @subject ||= Subject.find(params[:id])
   end
 end
