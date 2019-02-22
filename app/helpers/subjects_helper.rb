@@ -1,12 +1,4 @@
 module SubjectsHelper
-  def course_approved?(subject)
-    return session[:approved_courses] && session[:approved_courses].include?(subject.id)
-  end
-
-  def exam_approved?(subject)
-    return session[:approved_exams] && session[:approved_exams].include?(subject.id)
-  end
-
   def semester_to_text(n)
     case n
     when 1
