@@ -6,8 +6,7 @@ export default class extends Controller {
   }
 
   notifyCreditsChange(event) {
-    var update_credits_event = new Event('credits-change');
-    update_credits_event.detail = event.detail;
-    document.querySelector(".js-credits-count").dispatchEvent(update_credits_event)
+    let updateCreditsEvent = new CustomEvent('credits-change', { detail: event.detail[0]["credits"] });
+    document.querySelector(".js-credits-count").dispatchEvent(updateCreditsEvent)
   }
 }
