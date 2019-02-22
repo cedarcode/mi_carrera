@@ -5,9 +5,8 @@ export default class extends Controller {
     Rails.fire(this.element, 'submit');
   }
 
-  updateCredits(event) {
-    let credits = event.detail[0]["credits"];
-
-    document.querySelector(".js-credits-count").innerHTML = credits;
+  notifyCreditsChange(event) {
+    let updateCreditsEvent = new CustomEvent('credits-change', { detail: event.detail[0]["credits"] });
+    document.querySelector(".js-credits-count").dispatchEvent(updateCreditsEvent)
   }
 }
