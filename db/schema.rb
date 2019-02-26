@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_19_194534) do
+ActiveRecord::Schema.define(version: 2019_02_22_180344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dependencies", force: :cascade do |t|
+    t.integer "dependency_item_id", null: false
+    t.integer "prerequisite_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dependency_items", force: :cascade do |t|
+    t.integer "subject_id", null: false
+    t.boolean "is_exam", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "subjects", force: :cascade do |t|
     t.string "name"

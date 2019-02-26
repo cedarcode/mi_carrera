@@ -34,6 +34,22 @@ class Bedel
     store[:approved_exams].include?(subject.id)
   end
 
+  def able_to_do?(subject, is_exam)
+    dependency_item =
+      if is_exam
+        subject.exam
+      else
+        subject.course
+      end
+    dependency_item.prerequisites.all? do |prerequisite|
+      if prerequisite.is_exam
+        store[:approved_exams].include?(prerequisite.subject_id)
+      else
+        store[:approved_courses].include?(prerequisite.subject_id)
+      end
+    end
+  end
+
   private
 
   attr_reader :store
