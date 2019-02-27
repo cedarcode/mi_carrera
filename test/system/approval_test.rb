@@ -3,6 +3,8 @@ require "application_system_test_case"
 class ApprovalTest < ApplicationSystemTestCase
   setup do
     @subject = Subject.create!(name: "GAL 1", credits: 9)
+    @subject.create_course!
+    @subject.create_exam!
   end
 
   test "student adds approved course" do

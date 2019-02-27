@@ -2,7 +2,7 @@ class SubjectsController < ApplicationController
   helper_method :bedel
 
   def index
-    @subjects = Subject.order(:semester)
+    @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject, false) }
   end
 
   def approve
