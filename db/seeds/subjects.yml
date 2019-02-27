@@ -35,6 +35,8 @@ calc2:
     - subject: calc1
       type: course
   exam-needs:
+    - subject: calc2
+      type: course
     - subject: calc1
       type: exam
 
@@ -48,6 +50,8 @@ gal2:
     - subject: gal1
       type: course
   exam-needs:
+    - subject: gal2
+      type: course
     - subject: gal1
       type: exam
 
@@ -343,6 +347,8 @@ pai:
     - subject: agpi
       type: course
   exam-needs:
+    - subject: pai
+      type: course
     - subject: agpi
       type: exam
 
