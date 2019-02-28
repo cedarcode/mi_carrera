@@ -6,30 +6,30 @@
   <h3 class="mdc-list-group__subheader mdc-typography--headline5"><%= @subject.name %></h3>
   <hr class="mdc-list-divider">
 
-  <div class="mdc-list">
-    <label class="mdc-list-item" for="checkbox_course_approved">
-      <span class="mdc-list-item__text">
-        Curso aprobado?
-      </span>
+  <div data-controller="exam-visibility" >
+    <div class="mdc-list">
+      <label class="mdc-list-item" for="checkbox_course_approved">
+        <span class="mdc-list-item__text">
+          Curso aprobado?
+        </span>
 
-      <span class="mdc-list-item__meta">
-        <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check" }) do |form| %>
-          <div class="mdc-checkbox">
-            <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved_course?(@subject), data: { action: "autosave-check#update" } }, "yes", "no" %>
-            <div class="mdc-checkbox__background">
-              <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-              </svg>
+        <span class="mdc-list-item__meta">
+          <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check", action: "ajax:success->exam-visibility#approvalChange" }) do |form| %>
+            <div class="mdc-checkbox">
+              <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved_course?(@subject), data: { action: "autosave-check#update" } }, "yes", "no" %>
+              <div class="mdc-checkbox__background">
+                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                  <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                </svg>
 
-              <div class="mdc-checkbox__mixedmark"></div>
+                <div class="mdc-checkbox__mixedmark"></div>
+              </div>
             </div>
-          </div>
-        <% end %>
-      </span>
-    </label>
+          <% end %>
+        </span>
+      </label>
 
-    <% if bedel.able_to_do?(@subject, true) %>
-      <label class="mdc-list-item" for="checkbox_exam_approved">
+      <label class="mdc-list-item <%= "exam-hidden" if !bedel.able_to_do?(@subject, true) %>" for="checkbox_exam_approved" data-target="exam-visibility.exam">
         <span class="mdc-list-item__text">
           Examen aprobado?
         </span>
@@ -49,6 +49,6 @@
           <% end %>
         </span>
       </label>
-    <% end %>
+    </div>
   </div>
 </div>

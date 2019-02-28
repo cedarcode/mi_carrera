@@ -20,7 +20,7 @@ class SubjectsController < ApplicationController
       end
     end
     respond_to do |format|
-      format.json { render json: { credits: bedel.credits } }
+      format.json { render json: { credits: bedel.credits, able_to_enroll_exam: bedel.able_to_do?(@subject, true) } }
     end
   end
 
