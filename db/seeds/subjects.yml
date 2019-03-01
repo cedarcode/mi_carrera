@@ -172,7 +172,7 @@ arqui:
 
 pol-cientf:
   name: "Politicas Científicas en Información y Computación"
-  short_name: "Politicas Científicas en Inf. y Comp."
+  short_name: "Politicas Científicas"
   credits: 3
   semester: 4
   has_exam: true

@@ -15,7 +15,7 @@ class ApprovalTest < ApplicationSystemTestCase
     click_on "arrow_back"
 
     assert_text "0 créditos"
-    assert page.has_unchecked_field?("checkbox_#{@subject.id}", visible: false)
+    assert page.has_unchecked_field?("checkbox_#{@subject.id}_exam_approved", visible: false)
     click_on "GAL 1"
     assert page.has_checked_field?("Curso aprobado?", visible: false)
   end
@@ -28,7 +28,7 @@ class ApprovalTest < ApplicationSystemTestCase
     click_on "arrow_back"
 
     assert_text "9 créditos"
-    assert page.has_checked_field?("checkbox_#{@subject.id}", visible: false)
+    assert page.has_checked_field?("checkbox_#{@subject.id}_exam_approved", visible: false)
     click_on "GAL 1"
     assert page.has_checked_field?("Examen aprobado?", visible: false)
   end
@@ -36,12 +36,13 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student adds approved subject" do
     visit root_path
 
-    find(".mdc-checkbox").click
+    find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    find("#checkbox_#{@subject.id}_exam_approved", visible: false).click
 
     assert_text "9 créditos"
     visit root_path
     assert_text "9 créditos"
-    assert page.has_checked_field?("checkbox_#{@subject.id}", visible: false)
+    assert page.has_checked_field?("checkbox_#{@subject.id}_exam_approved", visible: false)
   end
 
   test "student remove approved course" do
@@ -72,14 +73,15 @@ class ApprovalTest < ApplicationSystemTestCase
 
   test "student remove approved subject" do
     visit root_path
-    find(".mdc-checkbox").click
+    find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    find("#checkbox_#{@subject.id}_exam_approved", visible: false).click
     wait_for_async_request
 
     visit root_path
-    find(".mdc-checkbox").click
+    find("#checkbox_#{@subject.id}_exam_approved", visible: false).click
     wait_for_async_request
     visit root_path
 
-    assert page.has_unchecked_field?("checkbox_#{@subject.id}", visible: false)
+    assert page.has_unchecked_field?("checkbox_#{@subject.id}_exam_approved", visible: false)
   end
 end
