@@ -16,27 +16,27 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student cant see disabled exams" do
     visit subject_path(@gal1)
 
-    assert_unchecked_field("checkbox_exam_approved", { disabled: true, visible: false })
+    assert_unchecked_field("Examen aprobado?", { disabled: true, visible: false })
   end
 
   test "student can see enabled exams" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: false
 
-    assert_unchecked_field("checkbox_exam_approved", { disabled: false, visible: false })
+    assert_unchecked_field("Examen aprobado?", { disabled: false, visible: false })
     visit subject_path(@gal1)
-    assert_unchecked_field("checkbox_exam_approved", { disabled: false, visible: false })
+    assert_unchecked_field("Examen aprobado?", { disabled: false, visible: false })
   end
 
   test "student can hide exams" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: false
 
-    assert_unchecked_field("checkbox_exam_approved", { disabled: false, visible: false })
+    assert_unchecked_field("Examen aprobado?", { disabled: false, visible: false })
     uncheck "Curso aprobado?", visible: false
-    assert_unchecked_field("checkbox_exam_approved", { disabled: true, visible: false })
+    assert_unchecked_field("Examen aprobado?", { disabled: true, visible: false })
     visit subject_path(@gal1)
-    assert_unchecked_field("checkbox_exam_approved", { disabled: true, visible: false })
+    assert_unchecked_field("Examen aprobado?", { disabled: true, visible: false })
   end
 
   test "student cant see hidden subjects" do
