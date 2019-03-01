@@ -19,8 +19,12 @@ class SubjectsController < ApplicationController
         bedel.remove_approved_exam(subject)
       end
     end
+    data = { credits: bedel.credits }
+    if params[:subject][:course_approved]
+      data[:able_to_enroll_exam] = bedel.able_to_do?(@subject, true)
+    end
     respond_to do |format|
-      format.json { render json: { credits: bedel.credits } }
+      format.json { render json: data }
     end
   end
 
