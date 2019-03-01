@@ -63,7 +63,6 @@ class ApprovalTest < ApplicationSystemTestCase
     wait_for_async_request
 
     visit subject_path(@subject)
-
     uncheck "Examen aprobado?", visible: false
     wait_for_async_request
     visit subject_path(@subject)
