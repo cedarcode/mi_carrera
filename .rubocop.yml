@@ -37,3 +37,6 @@ Rails:
 
 Security:
   Enabled: true
+
+Style/BracesAroundHashParameters:
+  Enabled: true
