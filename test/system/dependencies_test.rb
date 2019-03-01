@@ -22,6 +22,7 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can see enabled exams" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: false
+    wait_for_async_request
 
     visit subject_path(@gal1)
     assert_text "Examen aprobado?"
@@ -30,10 +31,12 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can hide exams" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: false
+    wait_for_async_request
 
     visit subject_path(@gal1)
     assert_text "Examen aprobado?"
     uncheck "Curso aprobado?", visible: false
+    wait_for_async_request
     visit subject_path(@gal1)
     assert_no_text "Examen aprobado?"
   end
@@ -47,6 +50,7 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can reaveal hidden subjects" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: false
+    wait_for_async_request
 
     visit root_path
     assert_text "GAL 2"
@@ -55,9 +59,11 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can hide subjects" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: false
+    wait_for_async_request
 
     visit subject_path(@gal1)
     uncheck "Curso aprobado?", visible: false
+    wait_for_async_request
 
     visit root_path
     assert_no_text "GAL 2"

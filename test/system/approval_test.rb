@@ -11,6 +11,7 @@ class ApprovalTest < ApplicationSystemTestCase
     visit subject_path(@subject)
 
     check "Curso aprobado?", visible: false
+    wait_for_async_request
     click_on "arrow_back"
 
     assert_text "0 créditos"
@@ -23,6 +24,7 @@ class ApprovalTest < ApplicationSystemTestCase
     visit subject_path(@subject)
 
     check "Examen aprobado?", visible: false
+    wait_for_async_request
     click_on "arrow_back"
 
     assert_text "9 créditos"
@@ -45,9 +47,11 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student remove approved course" do
     visit subject_path(@subject)
     check "Curso aprobado?", visible: false
+    wait_for_async_request
 
     visit subject_path(@subject)
     uncheck "Curso aprobado?", visible: false
+    wait_for_async_request
     visit subject_path(@subject)
 
     assert page.has_unchecked_field?("Curso aprobado?", visible: false)
@@ -56,9 +60,11 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student remove approved exam" do
     visit subject_path(@subject)
     check "Examen aprobado?", visible: false
+    wait_for_async_request
 
     visit subject_path(@subject)
     uncheck "Examen aprobado?", visible: false
+    wait_for_async_request
     visit subject_path(@subject)
 
     assert page.has_unchecked_field?("Examen aprobado?", visible: false)
@@ -67,9 +73,11 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student remove approved subject" do
     visit root_path
     find(".mdc-checkbox").click
+    wait_for_async_request
 
     visit root_path
     find(".mdc-checkbox").click
+    wait_for_async_request
     visit root_path
 
     assert page.has_unchecked_field?("checkbox_#{@subject.id}", visible: false)
