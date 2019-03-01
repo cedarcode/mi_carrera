@@ -20,7 +20,7 @@ class SubjectsController < ApplicationController
       end
     end
     data = { credits: bedel.credits }
-    if params[:subject][:course_approved]
+    if params[:subject][:course_approved] && @subject.exam
       data[:able_to_enroll_exam] = bedel.able_to_do?(@subject, true)
     end
     respond_to do |format|
