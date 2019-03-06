@@ -3,7 +3,7 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = [ "exam", "checkbox" ]
 
-  approvalChange(event) {
+  approvalChange() {
     let ableToEnrollExam
     let url = '/subjects/' + this.examTarget.dataset.info + '/able_to_enroll';
     let exam = this.examTargets[0];
