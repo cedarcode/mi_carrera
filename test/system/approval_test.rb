@@ -7,45 +7,60 @@ class ApprovalTest < ApplicationSystemTestCase
     @subject.create_exam!
   end
 
-  test "student adds approved course" do
+  test "student adds approved course from show" do
     visit subject_path(@subject)
 
     check "Curso aprobado?", visible: false
     wait_for_async_request
-    click_on "arrow_back"
+    visit root_path
 
     assert_text "0 créditos"
-    assert page.has_unchecked_field?("checkbox_#{@subject.id}_exam_approved", visible: false)
-    click_on "GAL 1"
+    assert page.has_checked_field?("checkbox_#{@subject.id}_course_approved", visible: false)
+    visit subject_path(@subject)
     assert page.has_checked_field?("Curso aprobado?", visible: false)
   end
 
-  test "student adds approved exam" do
+  test "student adds approved course from index" do
+    visit root_path
+
+    find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    wait_for_async_request
+    visit root_path
+
+    assert_text "0 créditos"
+    assert page.has_checked_field?("checkbox_#{@subject.id}_course_approved", visible: false)
+    visit subject_path(@subject)
+    assert page.has_checked_field?("Curso aprobado?", visible: false)
+  end
+
+  test "student adds approved exam from show" do
     visit subject_path(@subject)
 
     check "Examen aprobado?", visible: false
     wait_for_async_request
-    click_on "arrow_back"
+    visit root_path
 
     assert_text "9 créditos"
     assert page.has_checked_field?("checkbox_#{@subject.id}_exam_approved", visible: false)
-    click_on "GAL 1"
+    visit subject_path(@subject)
     assert page.has_checked_field?("Examen aprobado?", visible: false)
   end
 
-  test "student adds approved subject" do
+  test "student adds approved exam from index" do
     visit root_path
-
     find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+
     find("#checkbox_#{@subject.id}_exam_approved", visible: false).click
 
     assert_text "9 créditos"
     visit root_path
     assert_text "9 créditos"
     assert page.has_checked_field?("checkbox_#{@subject.id}_exam_approved", visible: false)
+    visit subject_path(@subject)
+    assert page.has_checked_field?("Examen aprobado?", visible: false)
   end
 
-  test "student remove approved course" do
+  test "student remove approved course from show" do
     visit subject_path(@subject)
     check "Curso aprobado?", visible: false
     wait_for_async_request
@@ -56,10 +71,28 @@ class ApprovalTest < ApplicationSystemTestCase
     visit subject_path(@subject)
 
     assert page.has_unchecked_field?("Curso aprobado?", visible: false)
+    visit root_path
+    assert page.has_unchecked_field?("checkbox_#{@subject.id}_course_approved", visible: false)
   end
 
-  test "student remove approved exam" do
+  test "student remove approved course from index" do
+    visit root_path
+    find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    wait_for_async_request
+
+    visit root_path
+    find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    wait_for_async_request
+    visit root_path
+
+    assert page.has_unchecked_field?("checkbox_#{@subject.id}_course_approved", visible: false)
     visit subject_path(@subject)
+    assert page.has_unchecked_field?("Curso aprobado?", visible: false)
+  end
+
+  test "student remove approved exam from show" do
+    visit subject_path(@subject)
+    check "Curso aprobado?", visible: false
     check "Examen aprobado?", visible: false
     wait_for_async_request
 
@@ -69,9 +102,11 @@ class ApprovalTest < ApplicationSystemTestCase
     visit subject_path(@subject)
 
     assert page.has_unchecked_field?("Examen aprobado?", visible: false)
+    visit root_path
+    assert page.has_unchecked_field?("checkbox_#{@subject.id}_exam_approved", visible: false)
   end
 
-  test "student remove approved subject" do
+  test "student remove approved exam from index" do
     visit root_path
     find("#checkbox_#{@subject.id}_course_approved", visible: false).click
     find("#checkbox_#{@subject.id}_exam_approved", visible: false).click
@@ -83,5 +118,7 @@ class ApprovalTest < ApplicationSystemTestCase
     visit root_path
 
     assert page.has_unchecked_field?("checkbox_#{@subject.id}_exam_approved", visible: false)
+    visit subject_path(@subject)
+    assert page.has_unchecked_field?("Examen aprobado?", visible: false)
   end
 end

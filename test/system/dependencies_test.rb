@@ -17,24 +17,50 @@ class DependenciesTest < ApplicationSystemTestCase
     visit subject_path(@gal1)
 
     assert_unchecked_field("Examen aprobado?", disabled: true, visible: false)
+    visit root_path
+    assert page.has_unchecked_field?("checkbox_#{@gal1.id}_exam_approved", disabled: true, visible: false)
   end
 
-  test "student see exam enabled" do
+  test "student can enable exams from show" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: false
 
     assert_unchecked_field("Examen aprobado?", disabled: false, visible: false)
+    visit root_path
+    assert page.has_unchecked_field?("checkbox_#{@gal1.id}_exam_approved", disabled: false, visible: false)
+  end
+
+  test "student can enable exams from index" do
+    visit root_path
+    find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+    wait_for_async_request
+
+    visit root_path
+    assert page.has_unchecked_field?("checkbox_#{@gal1.id}_exam_approved", disabled: false, visible: false)
     visit subject_path(@gal1)
     assert_unchecked_field("Examen aprobado?", disabled: false, visible: false)
   end
 
-  test "student can disable exams" do
+  test "student can disable exams from show" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: false
 
-    assert_unchecked_field("Examen aprobado?", disabled: false, visible: false)
     uncheck "Curso aprobado?", visible: false
+
     assert_unchecked_field("Examen aprobado?", disabled: true, visible: false)
+    visit root_path
+    assert page.has_unchecked_field?("checkbox_#{@gal1.id}_exam_approved", disabled: true, visible: false)
+  end
+
+  test "student can disable exams from index" do
+    visit root_path
+    find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+
+    find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+    wait_for_async_request
+
+    visit root_path
+    assert page.has_unchecked_field?("checkbox_#{@gal1.id}_exam_approved", disabled: true, visible: false)
     visit subject_path(@gal1)
     assert_unchecked_field("Examen aprobado?", disabled: true, visible: false)
   end
