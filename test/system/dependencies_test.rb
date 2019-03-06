@@ -13,7 +13,7 @@ class DependenciesTest < ApplicationSystemTestCase
     Dependency.create!(prerequisite_id: @gal1.course.id, dependency_item_id: gal2.course.id)
   end
 
-  test "student see exam disabled" do
+  test "student sees exam disabled" do
     visit subject_path(@gal1)
 
     assert_unchecked_field("Examen aprobado?", disabled: true, visible: false)
