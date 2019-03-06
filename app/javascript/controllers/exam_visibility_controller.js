@@ -4,18 +4,25 @@ export default class extends Controller {
   static targets = [ "exam", "checkbox" ]
 
   approvalChange(event) {
-    let ableToEnrollExam = event.detail[0]["able_to_enroll_exam"];
+    let ableToEnrollExam
+    let url = '/subjects/' + this.examTarget.dataset.info + '/able_to_enroll';
+    let exam = this.examTargets[0];
+    let checkbox = this.checkboxTargets[0];
 
-    this.examTargets.forEach((element) => {
-      element.classList.toggle("mdc-list-item--disabled", !ableToEnrollExam);
-    })
+    fetch(url)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(myJson) {
+        ableToEnrollExam = myJson.exam
 
-    this.checkboxTargets.forEach((element) => {
-      if (ableToEnrollExam) {
-        element.removeAttribute("disabled");
-      } else {
-        element.setAttribute("disabled", "disabled");
-      }
-    })
+        exam.classList.toggle("mdc-list-item--disabled", !ableToEnrollExam);
+
+        if (ableToEnrollExam) {
+          checkbox.removeAttribute("disabled");
+        } else {
+          checkbox.setAttribute("disabled", "disabled");
+        }
+      });
   }
 }

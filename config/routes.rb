@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :subjects do
     member do
+      get :able_to_enroll, format: 'json'
       patch :approve
     end
   end

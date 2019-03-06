@@ -29,7 +29,7 @@
     </label>
 
     <% if @subject.exam %>
-      <label class="mdc-list-item <%= "mdc-list-item--disabled" if !bedel.able_to_do?(@subject, true) %>" for="checkbox_exam_approved" data-target="exam-visibility.exam">
+      <label class="mdc-list-item <%= "mdc-list-item--disabled" if !bedel.able_to_do?(@subject, true) %>" for="checkbox_exam_approved" data-target="exam-visibility.exam" data-info="<%= @subject.id %>">
         <span class="mdc-list-item__text">
           Examen aprobado?
         </span>
