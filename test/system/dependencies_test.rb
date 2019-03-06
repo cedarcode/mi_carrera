@@ -44,6 +44,7 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can disable exams from show" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: false
+    wait_for_async_request
 
     uncheck "Curso aprobado?", visible: false
 
@@ -55,6 +56,7 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can disable exams from index" do
     visit root_path
     find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+    wait_for_async_request
 
     find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
     wait_for_async_request

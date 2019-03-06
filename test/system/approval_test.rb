@@ -49,6 +49,7 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student adds approved exam from index" do
     visit root_path
     find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    wait_for_async_request
 
     find("#checkbox_#{@subject.id}_exam_approved", visible: false).click
 
@@ -93,6 +94,7 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student remove approved exam from show" do
     visit subject_path(@subject)
     check "Curso aprobado?", visible: false
+    wait_for_async_request
     check "Examen aprobado?", visible: false
     wait_for_async_request
 
@@ -109,6 +111,7 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student remove approved exam from index" do
     visit root_path
     find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    wait_for_async_request
     find("#checkbox_#{@subject.id}_exam_approved", visible: false).click
     wait_for_async_request
 
