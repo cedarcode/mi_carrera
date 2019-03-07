@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     member do
       patch :approve
     end
+    collection do
+      get 'list' => 'subjects#list_subjects', as: :list
+    end
   end
 end
