@@ -6,8 +6,8 @@ export default class extends Controller {
   approvalChange() {
     let ableToEnrollExam
     let url = '/subjects/' + this.examTarget.dataset.info + '/able_to_enroll';
-    let exam = this.examTargets[0];
-    let checkbox = this.checkboxTargets[0];
+    let exam = this.examTarget;
+    let checkbox = this.checkboxTarget;
 
     fetch(url)
       .then(function(response) {
