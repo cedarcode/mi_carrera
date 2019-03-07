@@ -41,13 +41,14 @@ class Bedel
       else
         subject.course
       end
-    dependency_item.prerequisites.all? do |prerequisite|
-      if prerequisite.is_exam
-        store[:approved_exams].include?(prerequisite.subject_id)
-      else
-        store[:approved_courses].include?(prerequisite.subject_id)
+    credits >= dependency_item.credits_needed &&
+      dependency_item.prerequisites.all? do |prerequisite|
+        if prerequisite.is_exam
+          store[:approved_exams].include?(prerequisite.subject_id)
+        else
+          store[:approved_courses].include?(prerequisite.subject_id)
+        end
       end
-    end
   end
 
   private

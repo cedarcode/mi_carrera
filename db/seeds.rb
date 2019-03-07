@@ -40,11 +40,15 @@ class StudentAppSeeder
 
   def populate_prerequisites!(doc, dependable, prerequisites)
     prerequisites.each do |prerequisite|
-      dependency = populate_subject!(doc, doc[prerequisite["subject"]])
-      if prerequisite["type"] == "course"
-        Dependency.where(dependency_item_id: dependable.id, prerequisite_id: dependency.course.id).first_or_create
-      elsif prerequisite["type"] == "exam"
-        Dependency.where(dependency_item_id: dependable.id, prerequisite_id: dependency.exam.id).first_or_create
+      if prerequisite["subject"]
+        dependency = populate_subject!(doc, doc[prerequisite["subject"]])
+        if prerequisite["type"] == "course"
+          Dependency.where(dependency_item_id: dependable.id, prerequisite_id: dependency.course.id).first_or_create
+        elsif prerequisite["type"] == "exam"
+          Dependency.where(dependency_item_id: dependable.id, prerequisite_id: dependency.exam.id).first_or_create
+        end
+      else
+        dependable.update!(credits_needed: prerequisite["credits"])
       end
     end
   end
