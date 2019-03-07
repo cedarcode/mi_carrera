@@ -5,9 +5,9 @@ export default class extends Controller {
 
   approvalChange() {
     let ableToEnrollExam
-    let url = '/subjects/' + this.examTarget.dataset.info + '/able_to_enroll';
+    let url = '/subjects/' + this.examTarget.dataset.subjectId + '/able_to_enroll';
     let exam = this.examTarget;
-    let checkbox = this.checkboxTarget;
+    let examCheckbox = this.checkboxTarget;
 
     fetch(url)
       .then(function(response) {
@@ -19,9 +19,9 @@ export default class extends Controller {
         exam.classList.toggle("mdc-list-item--disabled", !ableToEnrollExam);
 
         if (ableToEnrollExam) {
-          checkbox.removeAttribute("disabled");
+          examCheckbox.removeAttribute("disabled");
         } else {
-          checkbox.setAttribute("disabled", "disabled");
+          examCheckbox.setAttribute("disabled", "disabled");
         }
       });
   }
