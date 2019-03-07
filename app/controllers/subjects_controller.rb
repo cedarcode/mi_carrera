@@ -26,7 +26,7 @@ class SubjectsController < ApplicationController
   end
 
   def able_to_enroll
-    able_to_enroll = { course: bedel.able_to_do?(subject, false), exam: bedel.able_to_do?(subject, true) }
+    able_to_enroll = { exam: bedel.able_to_do?(subject, true) }
     respond_to do |format|
       format.json { render json: able_to_enroll }
     end
