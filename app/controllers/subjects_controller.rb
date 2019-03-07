@@ -20,11 +20,15 @@ class SubjectsController < ApplicationController
       end
     end
     data = { credits: bedel.credits }
-    if params[:subject][:course_approved] && @subject.exam
-      data[:able_to_enroll_exam] = bedel.able_to_do?(@subject, true)
-    end
     respond_to do |format|
       format.json { render json: data }
+    end
+  end
+
+  def able_to_enroll
+    able_to_enroll = { exam: bedel.able_to_do?(subject, true) }
+    respond_to do |format|
+      format.json { render json: able_to_enroll }
     end
   end
 
