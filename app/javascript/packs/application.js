@@ -17,9 +17,13 @@ const context = require.context("controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
 
 document.addEventListener("turbolinks:load", function() {
+  window.initializeCheckboxes();
+});
+
+window.initializeCheckboxes = function() {
   document.querySelectorAll(".mdc-checkbox").forEach(function(element) {
     element.addEventListener("click", function(event) {
       event.stopPropagation();
     });
   });
-});
+};

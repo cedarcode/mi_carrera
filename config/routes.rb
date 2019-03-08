@@ -8,5 +8,8 @@ Rails.application.routes.draw do
       get :able_to_enroll, format: 'json'
       patch :approve
     end
+    collection do
+      get 'list' => 'subjects#list_subjects', as: :list
+    end
   end
 end
