@@ -22,11 +22,8 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
     visit root_path
     check "checkbox_#{@gal1.id}_course_approved", visible: false
     wait_for_async_request
-    visit root_path
     check "checkbox_#{@gal1.id}_exam_approved", visible: false
-    wait_for_async_request
 
-    visit root_path
     assert_text "GAL 2"
   end
 
@@ -34,15 +31,10 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
     visit root_path
     check "checkbox_#{@gal1.id}_course_approved", visible: false
     wait_for_async_request
-    visit root_path
     check "checkbox_#{@gal1.id}_exam_approved", visible: false
 
-    wait_for_async_request
-    visit root_path
     assert_text "GAL 2"
     uncheck "checkbox_#{@gal1.id}_exam_approved", visible: false
-    wait_for_async_request
-    visit root_path
     assert_no_text "GAL 2"
   end
 end
