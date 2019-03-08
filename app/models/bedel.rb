@@ -56,11 +56,12 @@ class Bedel
   attr_reader :store
 
   def exam_credits
-    Subject.joins(:exam).where(subjects: { id: store[:approved_exams] }).sum(:credits)
+    @exam_credits ||= Subject.joins(:exam).where(subjects: { id: store[:approved_exams] }).sum(:credits)
   end
 
   def course_credits
-    Subject
+    @course_credits ||=
+      Subject
       .includes(:exam)
       .where(dependency_items: { subject_id: nil }, subjects: { id: store[:approved_courses] })
       .sum(:credits)
