@@ -1,11 +1,11 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  approvalChange(){
+  approvalChange() {
     this.loadList();
   }
 
-  loadList(){
+  loadList() {
     fetch('/subjects/list')
       .then(response => response.text())
       .then(text => {
