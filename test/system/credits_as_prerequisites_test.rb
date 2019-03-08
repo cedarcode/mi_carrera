@@ -20,10 +20,10 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
 
   test "student can see subjects with enough credits" do
     visit root_path
-    find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+    check "checkbox_#{@gal1.id}_course_approved", visible: false
     wait_for_async_request
     visit root_path
-    find("#checkbox_#{@gal1.id}_exam_approved", visible: false).click
+    check "checkbox_#{@gal1.id}_exam_approved", visible: false
     wait_for_async_request
 
     visit root_path
@@ -32,15 +32,15 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
 
   test "student can hide subjects" do
     visit root_path
-    find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+    check "checkbox_#{@gal1.id}_course_approved", visible: false
     wait_for_async_request
     visit root_path
-    find("#checkbox_#{@gal1.id}_exam_approved", visible: false).click
+    check "checkbox_#{@gal1.id}_exam_approved", visible: false
 
     wait_for_async_request
     visit root_path
     assert_text "GAL 2"
-    find("#checkbox_#{@gal1.id}_exam_approved", visible: false).click
+    uncheck "checkbox_#{@gal1.id}_exam_approved", visible: false
     wait_for_async_request
     visit root_path
     assert_no_text "GAL 2"
