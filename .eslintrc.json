@@ -5,12 +5,11 @@
     },
     "globals": {
         "Atomics": "readonly",
+        "Rails": "readonly",
         "SharedArrayBuffer": "readonly"
     },
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
+    "parser": "babel-eslint",
+    "extends": "eslint:recommended",
     "rules": {
     }
 }
