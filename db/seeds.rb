@@ -13,26 +13,41 @@ class StudentAppSeeder
       doc = YAML.load_file(file)
       doc.keys.sort.each do |subject|
         subject_data = doc[subject]
-        populate_subject!(doc, subject_data)
+        populate_subject_with_dependencies!(doc, subject_data)
       end
     end
   end
 
-  def populate_subject!(doc, data)
+  def populate_subject!(data)
     subject = Subject.where(name: data["name"]).first_or_create
     subject.update!(credits: data["credits"], semester: data["semester"], short_name: data["short_name"])
     if subject.course.nil?
       subject.create_course
-      if data["course-needs"]
-        populate_prerequisites!(doc, subject.course, data["course-needs"])
-      end
     end
     if data["has_exam"]
       if subject.exam.nil?
         subject.create_exam
-        if data["exam-needs"]
-          populate_prerequisites!(doc, subject.exam, data["exam-needs"])
+      end
+    end
+    subject
+  end
+
+  def populate_subject_with_dependencies!(doc, data)
+    subject = populate_subject!(data)
+    if data["course-needs"]
+      credits = data["course-needs"].find() { |prerequisite| prerequisite.has_key? "credits" }
+      if credits
+        subject.course.update!(credits_needed: credits["credits"])
+      end
+      populate_prerequisites!(doc, subject.course, data["course-needs"])
+    end
+    if data["has_exam"]
+      if data["exam-needs"]
+        credits = data["exam-needs"].find() { |prerequisite| prerequisite.has_key? "credits" }
+        if credits
+          subject.exam.update!(credits_needed: credits["credits"])
         end
+        populate_prerequisites!(doc, subject.exam, data["exam-needs"])
       end
     end
     subject
@@ -41,14 +56,12 @@ class StudentAppSeeder
   def populate_prerequisites!(doc, dependable, prerequisites)
     prerequisites.each do |prerequisite|
       if prerequisite["subject"]
-        dependency = populate_subject!(doc, doc[prerequisite["subject"]])
+        dependency = populate_subject!(doc[prerequisite["subject"]])
         if prerequisite["type"] == "course"
           Dependency.where(dependency_item_id: dependable.id, prerequisite_id: dependency.course.id).first_or_create
         elsif prerequisite["type"] == "exam"
           Dependency.where(dependency_item_id: dependable.id, prerequisite_id: dependency.exam.id).first_or_create
         end
-      else
-        dependable.update!(credits_needed: prerequisite["credits"])
       end
     end
   end
