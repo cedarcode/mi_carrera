@@ -33,9 +33,7 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can enable exams from index" do
     visit root_path
     find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
-    wait_for_async_request
 
-    visit root_path
     assert page.has_unchecked_field?("checkbox_#{@gal1.id}_exam_approved", disabled: false, visible: false)
     visit subject_path(@gal1)
     assert_unchecked_field("Examen aprobado?", disabled: false, visible: false)
@@ -59,9 +57,7 @@ class DependenciesTest < ApplicationSystemTestCase
     wait_for_async_request
 
     find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
-    wait_for_async_request
 
-    visit root_path
     assert page.has_unchecked_field?("checkbox_#{@gal1.id}_exam_approved", disabled: true, visible: false)
     visit subject_path(@gal1)
     assert_unchecked_field("Examen aprobado?", disabled: true, visible: false)
@@ -85,9 +81,7 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can reaveal hidden subjects from index" do
     visit root_path
     find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
-    wait_for_async_request
 
-    visit root_path
     assert_text "GAL 2"
   end
 
@@ -109,11 +103,8 @@ class DependenciesTest < ApplicationSystemTestCase
     find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
     wait_for_async_request
 
-    visit root_path
     find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
-    wait_for_async_request
 
-    visit root_path
     assert_no_text "GAL 2"
   end
 end
