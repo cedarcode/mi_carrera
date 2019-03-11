@@ -6,41 +6,35 @@ class Bedel
     @store[:approved_exams] ||= []
   end
 
-  def add_approved_course(subject)
-    store[:approved_courses] += [subject.id]
+  def add_approval(dependency_item)
+    if dependency_item.is_exam?
+      store[:approved_exams] += [dependency_item.subject_id]
+    else
+      store[:approved_courses] += [dependency_item.subject_id]
+    end
   end
 
-  def remove_approved_course(subject)
-    store[:approved_courses] -= [subject.id]
-  end
-
-  def add_approved_exam(subject)
-    store[:approved_exams] += [subject.id]
-  end
-
-  def remove_approved_exam(subject)
-    store[:approved_exams] -= [subject.id]
+  def remove_approval(dependency_item)
+    if dependency_item.is_exam?
+      store[:approved_exams] -= [dependency_item.subject_id]
+    else
+      store[:approved_courses] -= [dependency_item.subject_id]
+    end
   end
 
   def credits
     exam_credits + course_credits
   end
 
-  def approved_course?(subject)
-    store[:approved_courses].include?(subject.id)
+  def approved?(dependency_item)
+    if dependency_item.is_exam?
+      store[:approved_exams].include?(dependency_item.subject_id)
+    else
+      store[:approved_courses].include?(dependency_item.subject_id)
+    end
   end
 
-  def approved_exam?(subject)
-    store[:approved_exams].include?(subject.id)
-  end
-
-  def able_to_do?(subject, is_exam)
-    dependency_item =
-      if is_exam
-        subject.exam
-      else
-        subject.course
-      end
+  def able_to_do?(dependency_item)
     credits >= dependency_item.credits_needed &&
       dependency_item.prerequisites.all? do |prerequisite|
         if prerequisite.is_exam

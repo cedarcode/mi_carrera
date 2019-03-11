@@ -2,21 +2,21 @@ class SubjectsController < ApplicationController
   helper_method :bedel
 
   def index
-    @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject, false) }
+    @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject.course) }
   end
 
   def approve
     if params[:subject][:course_approved]
       if params[:subject][:course_approved] == "yes"
-        bedel.add_approved_course(subject)
+        bedel.add_approval(subject.course)
       elsif params[:subject][:course_approved] == "no"
-        bedel.remove_approved_course(subject)
+        bedel.remove_approval(subject.course)
       end
     elsif params[:subject][:exam_approved]
       if params[:subject][:exam_approved] == "yes"
-        bedel.add_approved_exam(subject)
+        bedel.add_approval(subject.exam)
       elsif params[:subject][:exam_approved] == "no"
-        bedel.remove_approved_exam(subject)
+        bedel.remove_approval(subject.exam)
       end
     end
     data = { credits: bedel.credits }
@@ -26,7 +26,7 @@ class SubjectsController < ApplicationController
   end
 
   def able_to_enroll
-    able_to_enroll = { exam: bedel.able_to_do?(subject, true) }
+    able_to_enroll = { exam: bedel.able_to_do?(subject.exam) }
     respond_to do |format|
       format.json { render json: able_to_enroll }
     end
@@ -39,7 +39,7 @@ class SubjectsController < ApplicationController
   end
 
   def list_subjects
-    @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject, false) }
+    @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject.course) }
     respond_to do |format|
       format.html { render '_subjects_list', layout: false }
     end
