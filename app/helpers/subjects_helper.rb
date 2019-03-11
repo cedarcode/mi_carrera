@@ -17,6 +17,8 @@ module SubjectsHelper
       "Séptimo semestre"
     when 8
       "Octavo semestre"
+    when 9
+      "Noveno semestre"
     when nil
       "Materias optativas"
     end
