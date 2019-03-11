@@ -851,7 +851,7 @@ tarqui:
       type: course
 
 ass:
-  name: "Adminración y Seguridad de Sistemas"
+  name: "Administración y Seguridad de Sistemas"
   short_name: "Admin. y Seguridad de Sist."
   credits: 10
   course-needs:
