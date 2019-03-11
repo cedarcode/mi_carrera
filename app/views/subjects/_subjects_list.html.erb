@@ -1,6 +1,6 @@
 <div class="mdc-list-group" data-controller="bedel">
   <% @subjects.group_by { |subject| subject.semester }.each do |semester, subjects| %>
-    <h3 class="mdc-list-group__subheader mdc-typography--subtitle2"><%= semester_to_text(semester) %> semestre</h3>
+    <h3 class="mdc-list-group__subheader mdc-typography--subtitle2"><%= semester.present? ? semester_to_text(semester) + " semestre" : "Materias optativas" %></h3>
 
     <div class="mdc-list">
       <%= render subjects %>

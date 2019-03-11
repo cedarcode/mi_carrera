@@ -17,6 +17,8 @@ module SubjectsHelper
       "Séptimo"
     when 8
       "Octavo"
+    when 9
+      "Noveno"
     end
   end
 end
