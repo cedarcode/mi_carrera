@@ -298,6 +298,8 @@ agpi:
   credits: 5
   semester: 5
   has_exam: true
+  course-needs:
+    - credits: 150
   exam-needs:
     - subject: agpi
       type: course
@@ -375,6 +377,8 @@ cc:
   credits: 8
   semester: 6
   has_exam: true
+  course-needs:
+    - credits: 80
   exam-needs:
     - subject: cc
       type: course
