@@ -6,6 +6,7 @@
     "globals": {
         "Atomics": "readonly",
         "Rails": "readonly",
+        "require": "readonly",
         "SharedArrayBuffer": "readonly"
     },
     "parser": "babel-eslint",
