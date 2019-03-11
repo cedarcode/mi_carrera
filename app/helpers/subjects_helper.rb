@@ -2,21 +2,23 @@ module SubjectsHelper
   def semester_to_text(semester)
     case semester
     when 1
-      "Primer"
+      "Primer semestre"
     when 2
-      "Segundo"
+      "Segundo semestre"
     when 3
-      "Tercer"
+      "Tercer semestre"
     when 4
-      "Cuarto"
+      "Cuarto semestre"
     when 5
-      "Quinto"
+      "Quinto semestre"
     when 6
-      "Sexto"
+      "Sexto semestre"
     when 7
-      "Séptimo"
+      "Séptimo semestre"
     when 8
-      "Octavo"
+      "Octavo semestre"
+    when nil
+      "Materias optativas"
     end
   end
 end

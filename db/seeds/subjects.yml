@@ -410,3 +410,744 @@ pis:
       type: exam
     - subject: iis
       type: course
+
+proy:
+  name: "Proyecto de Grado"
+  credits: 30
+  semester: 9
+  course-needs:
+    - credits: 380
+
+aln:
+  name: "Álgebra Lineal Numérica"
+  credits: 9
+  course-needs:
+    - subject: p3
+      type: exam
+    - subject: metnum
+      type: exam
+
+ae:
+  name: "Algoritmos Evolutivos"
+  credits: 9
+  course-needs:
+    - subject: pye
+      type: exam
+    - subject: p4
+      type: exam
+    - subject: iio
+      type: exam
+
+aaac:
+  name: "Aspectos Avanz. de Arq. de Computadoras"
+  credits: 8
+  course-needs:
+    - subject: arqui
+      type: exam
+    - subject: sisoper
+      type: course
+
+educbutia:
+  name: "Butia:Robótica Educativa"
+  credits: 8
+  course-needs:
+    - credits: 100
+    - subject: p1
+      type: exam
+
+compiladores:
+  name: "Diseño de Compiladores"
+  credits: 12
+  course-needs:
+    - subject: p4
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: teoleng
+      type: exam
+    - subject: tprog
+      type: course
+
+disdw:
+  name: "Diseño y Construcción de Data Warehouse"
+  credits: 10
+  course-needs:
+    - subject: p4
+      type: exam
+    - subject: fbd
+      type: exam
+    - subject: tprog
+      type: course
+
+cripto:
+  name: "Criptografía"
+  credits: 10
+  course-needs:
+    - subject: discreta1
+      type: exam
+    - subject: discreta2
+      type: exam
+    - subject: p3
+      type: exam
+
+fsi:
+  name: "Fundamentos de la Seguridad Informática"
+  credits: 12
+  course-needs:
+    - subject: logica
+      type: exam
+    - subject: redes
+      type: exam
+    - subject: fbd
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: sisoper
+      type: exam
+
+inpercom:
+  name: "Interacción Persona Computadora"
+  credits: 12
+  course-needs:
+    - subject: p4
+      type: exam
+    - subject: iis
+      type: course
+
+compgraf:
+  name: "Introducción a la Computación Gráfica"
+  credits: 10
+  course-needs:
+    - subject: p4
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: gal1
+      type: exam
+    - subject: gal2
+      type: course
+
+progfunc:
+  name: "Programación Funcional"
+  credits: 10
+  course-needs:
+    - subject: discreta1
+      type: exam
+    - subject: teoleng
+      type: exam
+    - subject: logica
+      type: exam
+    - subject: p2
+      type: exam
+
+plogica:
+  name: "Programación Lógica"
+  credits: 10
+  course-needs:
+    - subject: discreta2
+      type: exam
+    - subject: logica
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: teoleng
+      type: exam
+
+proggen:
+  name: "Introducción a la Programación Genérica"
+  credits: 10
+  course-needs:
+    - subject: progfunc
+      type: course
+
+iti:
+  name: "Introducción a la Teoría de la Información"
+  credits: 8
+  course-needs:
+    - subject: pye
+      type: exam
+
+mmc:
+  name: "Métodos de Monte Carlo"
+  credits: 8
+  course-needs:
+    - subject: iio
+      type: exam
+    - subject: pye
+      type: exam
+    - subject: metnum
+      type: exam
+
+optincert:
+  name: "Optimización Bajo Incertidumbre"
+  credits: 8
+  course-needs:
+    - subject: iio
+      type: exam
+
+calc3:
+  name: "Cálculo 3"
+  credits: 10
+  has_exam: true
+  course-needs:
+    - subject: calc1
+      type: exam
+    - subject: gal1
+      type: exam
+    - subject: calc2
+      type: course
+  exam-needs:
+    - subject: calc3
+      type: course
+
+f2:
+  name: "Física 2"
+  credits: 10
+  has_exam: true
+  course-needs:
+    - subject: calc1
+      type: course
+    - subject: f1
+      type: course
+  exam-needs:
+    - subject: calc1
+      type: exam
+    - subject: f1
+      type: exam
+    - subject: f2
+      type: course
+
+f3:
+  name: "Física 3"
+  credits: 10
+  has_exam: true
+  course-needs:
+    - subject: f1
+      type: exam
+    - subject: calc1
+      type: course
+  exam-needs:
+    - subject: f1
+      type: exam
+    - subject: calc1
+      type: exam
+    - subject: f3
+      type: course
+
+tsi1:
+  name: "Taller de Sistemas de Información 1"
+  credits: 10
+  course-needs:
+    - subject: p4
+      type: exam
+    - subject: fbd
+      type: exam
+    - subject: tprog
+      type: course
+    - subject: sisoper
+      type: course
+
+fpe:
+  name: "Fundamentos de Programación Entera"
+  credits: 8
+  course-needs:
+    - subject: iio
+      type: exam
+
+cd:
+  name: "Calidad de Datos"
+  credits: 8
+  course-needs:
+    - subject: p4
+      type: exam
+    - subject: fbd
+      type: exam
+    - subject: tprog
+      type: course
+    - subject: pye
+      type: course
+
+hpc:
+  name: "Computación de Alta Performance"
+  credits: 10
+  course-needs:
+    - subject: p4
+      type: course
+    - subject: redes
+      type: course
+    - subject: sisoper
+      type: course
+    - subject: arqui
+      type: course
+
+gpgpu:
+  name: "Computación de Propósito General en Unidades de Procesamiento Gráfico"
+  short_name: "GPGPU"
+  credits: 7
+  course-needs:
+    - subject: arqui
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: p4
+      type: course
+
+dtr:
+  name: "Diseño Topológico de Redes"
+  credits: 10
+  course-needs:
+    - subject: iio
+      type: course
+
+sig:
+  name: "Introducción a los Sistemas de Información Geográfica"
+  short_name: "Intr. a los Sist. de Info. Geográfica"
+  credits: 10
+  course-needs:
+    - subject: p4
+      type: exam
+    - subject: fbd
+      type: exam
+    - subject: tprog
+      type: course
+
+intmidd:
+  name: "Introducción al Middleware"
+  credits: 8
+  course-needs:
+    - subject: sisoper
+      type: exam
+    - subject: fbd
+      type: exam
+    - subject: tprog
+      type: course
+    - subject: redes
+      type: course
+    - subject: iis
+      type: course
+
+intropln:
+  name: "Introducción al Procesamiento de Lenguaje Natural"
+  short_name: "IPLN"
+  credits: 12
+  course-needs:
+    - subject: p4
+      type: exam
+    - subject: pye
+      type: exam
+    - subject: teoleng
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: logica
+      type: exam
+    - subject: tprog
+      type: course
+
+iogr:
+  name: "Investigación Operativa y Gestión de Riesgos"
+  short_name: "Investigación Oper. y Gest. de Riesgos"
+  credits: 6
+  course-needs:
+    - subject: iio
+      type: exam
+
+mor:
+  name: "Metaheurísticas y Optimización sobre Redes"
+  short_name: "MOR"
+  credits: 10
+  course-needs:
+    - subject: discreta1
+      type: exam
+    - subject: discreta2
+      type: exam
+    - subject: calc2
+      type: exam
+    - subject: calc1
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: pye
+      type: exam
+    - subject: iio
+      type: course
+    - subject: gal1
+      type: course
+    - subject: gal2
+      type: course
+
+negsoftware:
+  name: "Introducción al Negocio del Software"
+  short_name: "Int. al Negocio del SW"
+  credits: 8
+  course-needs:
+    - subject: iis
+      type: course
+
+aprendaut:
+  name: "Aprendizaje Automático"
+  credits: 12
+  course-needs:
+    - subject: discreta2
+      type: exam
+    - subject: p4
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: fbd
+      type: exam
+    - subject: logica
+      type: exam
+    - subject: pye
+      type: exam
+
+webir:
+  name: "Recuperación de Información y Recomendaciones en la Web"
+  short_name: "Webir"
+  credits: 10
+  course-needs:
+    - subject: p3
+      type: exam
+    - subject: fbd
+      type: exam
+
+rbc:
+  name: "Robótica Basada en Comportamientos"
+  short_name: "Robótica Basada en Comp."
+  credits: 15
+  course-needs:
+    - subject: f1
+      type: exam
+    - subject: logica
+      type: exam
+    - subject: tprog
+      type: course
+
+ecdif:
+  name: "Ecuaciones Diferenciales"
+  credits: 12
+  has_exam: true
+  course-needs:
+    - subject: gal1
+      type: exam
+    - subject: calc1
+      type: exam
+    - subject: gal2
+      type: exam
+    - subject: calc2
+      type: course
+  exam-needs:
+    - subject: ecdif
+      type: course
+
+tarqui:
+  name: "Taller de Arquitectura de Computadoras"
+  short_name: "Taller de Arqui. de Comp."
+  credits: 10
+  course-needs:
+    - subject: arqui
+      type: exam
+    - subject: sisoper
+      type: course
+
+ass:
+  name: "Adminración y Seguridad de Sistemas"
+  short_name: "Admin. y Seguridad de Sist."
+  credits: 10
+  course-needs:
+    - subject: arqui
+      type: exam
+    - subject: redes
+      type: course
+    - subject: sisoper
+      type: course
+    - subject: fbd
+      type: course
+    - subject: iis
+      type: course
+
+adadr:
+  name: "Análisis y Diseños de Algoritmos Distibuidos en Redes"
+  short_name: "ADADR"
+  credits: 8
+  course-needs:
+    - subject: p3
+      type: exam
+    - subject: redes
+      type: exam
+
+aarc:
+  name: "Aspectos Avanzados de Redes de Computadoras"
+  short_name: "AARC"
+  credits: 8
+  course-needs:
+    - subject: redes
+      type: course
+
+rrppis:
+  name: "Relaciones Personales en Ingeniería de Software"
+  short_name: "Relac. Pers. en IS"
+  credits: 10
+  course-needs:
+    - subject: iis
+      type: course
+
+robemb:
+  name: "Robótica Embebida"
+  credits: 10
+  course-needs:
+    - subject: arqui
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: redes
+      type: course
+    - subject: sisoper
+      type: course
+
+talgpgpu:
+  name: "Taller de GPGPU"
+  credits: 7
+  course-needs:
+    - subject: gpgpu
+      type: course
+
+tbpm:
+  name: "Taller de Gestión y Tecnologías de Procesos de Negocio"
+  short_name: "TBPM"
+  credits: 10
+  course-needs:
+    - subject: tprog
+      type: course
+
+tsi2:
+  name: "Taller de Sistemas de Información 2"
+  credits: 15
+  course-needs:
+    - subject: p4
+      type: exam
+    - subject: fbd
+      type: exam
+    - subject: sisoper
+      type: course
+    - subject: tprog
+      type: course
+
+tsi3:
+  name: "Taller de Sistemas de Información 3"
+  credits: 8
+  course-needs:
+    - subject: fbd
+      type: exam
+    - subject: sisoper
+      type: exam
+    - subject: tprog
+      type: course
+    - subject: pis
+      type: course
+    - subject: tsi1
+      type: course
+
+tsi4:
+  name: "Taller de Sistemas de Información 4"
+  credits: 15
+  course-needs:
+    - subject: fbd
+      type: exam
+    - subject: sisoper
+      type: exam
+    - subject: pis
+      type: course
+    - subject: tsi1
+      type: course
+
+tsig:
+  name: "Taller de Sistemas de Información Geográficos Empresariales"
+  short_name: "Taller de SIG"
+  credits: 8
+  course-needs:
+    - subject: fbd
+      type: exam
+    - subject: tprog
+      type: course
+
+tagsi:
+  name: "Técnicas Avanzadas de Gestión de Sistemas de Información"
+  short_name: "TAGSI"
+  credits: 15
+  course-needs:
+    - subject: fbd
+      type: exam
+    - subject: redes
+      type: course
+
+tcace:
+  name: "Teoría de Códigos Algebráicos para la Correción de Errores"
+  short_name: "Teoría de Cód. Algebr. para Correc. de Err."
+  credits: 7
+  course-needs:
+    - subject: pye
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: discreta1
+      type: exam
+    - subject: discreta2
+      type: exam
+    - subject: calc1
+      type: exam
+    - subject: calc2
+      type: exam
+    - subject: gal1
+      type: exam
+
+teocomp:
+  name: "Teoría de la Computación"
+  credits: 4
+  course-needs:
+    - subject: teoleng
+      type: exam
+
+biomeds:
+  name: "Seminario de Ingeniería Biomédica"
+  credits: 4
+  course-needs:
+    - subject: pis
+      type: course
+
+im:
+  name: "Imágenes Médicas: Adquisición, Instrumentación y Gestión"
+  short_name: "Imágenes Médicas"
+  credits: 8
+  course-needs:
+    - subject: pis
+      type: course
+    - subject: redes
+      type: course
+
+idatos:
+  name: "Integración de Datos"
+  credits: 8
+  course-needs:
+    - credits: 250
+    - subject: fbd
+      type: exam
+
+atipi:
+  name: "Aplicaciones de la Teoría de la Información al Procesamiento de Imágenes"
+  short_name: "ATIPI"
+  credits: 6
+  course-needs:
+    - subject: pye
+      type: exam
+
+procpersw:
+  name: "Principios y Fundamentos del Proceso Personal de Software"
+  short_name: "Princ. y Fund. del Proc. Pers. de SW"
+  credits: 7
+  course-needs:
+    - subject: p4
+      type: course
+
+modopt:
+  name: "Modelado y Optimización"
+  credits: 6
+  course-needs:
+    - subject: iio
+      type: exam
+
+pfa:
+  name: "Programación Funcional Avanzada"
+  credits: 12
+  course-needs:
+    - subject: progfunc
+      type: course
+
+eventosdisc:
+  name: "Simulación a Eventos Discretos"
+  credits: 10
+  course-needs:
+    - subject: p3
+      type: exam
+    - subject: pye
+      type: exam
+    - subject: iio
+      type: exam
+    - subject: p4
+      type: course
+
+sisdistr:
+  name: "Sistemas Distribuidos"
+  credits: 15
+  course-needs:
+    - subject: p4
+      type: exam
+    - subject: logica
+      type: exam
+    - subject: sisoper
+      type: exam
+    - subject: arqui
+      type: exam
+    - subject: p2
+      type: exam
+    - subject: fbd
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: p1
+      type: exam
+    - subject: teoleng
+      type: exam
+    - subject: tprog
+      type: course
+    - subject: redes
+      type: course
+
+tallersi:
+  name: "Taller de Seguridad Informática"
+  credits: 7
+  course-needs:
+    - subject: fbd
+      type: exam
+    - subject: p3
+      type: exam
+    - subject: redes
+      type: course
+
+tvs:
+  name: "Taller de Verificación de Software"
+  credits: 8
+  course-needs:
+    - subject: fbd
+      type: exam
+    - subject: iis
+      type: course
+
+tinpercom:
+  name: "Taller de Interacción Persona Computadora"
+  credits: 8
+  course-needs:
+    - subject: iis
+      type: exam
+    - subject: inpercom
+      type: course
+
+tso:
+  name: "Taller de Sistemas Operativos"
+  credits: 8
+  course-needs:
+    - subject: p4
+      type: exam
+    - subject: sisoper
+      type: exam
+
+fismod:
+  name: "Introducción a la Física Moderna"
+  credits: 10
+  has_exam: true
+  course-needs:
+    - subject: f3
+      type: exam
+  exam-needs:
+    - subject: fismod
+      type: course
