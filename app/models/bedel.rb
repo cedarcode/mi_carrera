@@ -15,6 +15,7 @@ class Bedel
   end
 
   def remove_approval(dependency_item)
+    remove_dependants_approvals(dependency_item)
     if dependency_item.is_exam?
       store[:approved_exams] -= [dependency_item.subject_id]
     else
@@ -59,5 +60,13 @@ class Bedel
       .includes(:exam)
       .where(dependency_items: { subject_id: nil }, subjects: { id: store[:approved_courses] })
       .sum(:credits)
+  end
+
+  def remove_dependants_approvals(dependency_item)
+    dependency_item.dependants.each do |dependant|
+      if approved?(dependant)
+        remove_approval(dependant)
+      end
+    end
   end
 end
