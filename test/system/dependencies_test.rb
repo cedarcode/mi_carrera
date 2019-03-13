@@ -2,8 +2,9 @@ require "application_system_test_case"
 
 class DependenciesTest < ApplicationSystemTestCase
   setup do
-    @gal1 = Subject.create!(name: "GAL 1", credits: 9)
-    gal2 = Subject.create!(name: "GAL 2", credits: 9)
+    maths = SubjectsGroup.create!(name: "Matemáticas")
+    @gal1 = Subject.create!(name: "GAL 1", credits: 9, group_id: maths.id)
+    gal2 = Subject.create!(name: "GAL 2", credits: 9, group_id: maths.id)
     @gal1.create_course!
     @gal1.create_exam!
     gal2.create_course!

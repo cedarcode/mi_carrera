@@ -2,7 +2,8 @@ require "application_system_test_case"
 
 class SubjectWihoutExamTest < ApplicationSystemTestCase
   setup do
-    @subject = create_subject("Taller", credits: 5, exam: false)
+    maths = SubjectsGroup.create!(name: "Matemáticas")
+    @subject = create_subject("Taller", credits: 5, exam: false, group_id: maths.id)
   end
 
   test "approved course earns credits" do

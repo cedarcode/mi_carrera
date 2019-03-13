@@ -36,7 +36,7 @@ class Bedel
   end
 
   def able_to_do?(dependency_item)
-    credits >= dependency_item.credits_needed &&
+    enough_credits?(dependency_item) &&
       dependency_item.prerequisites.all? do |prerequisite|
         if prerequisite.is_exam
           store[:approved_exams].include?(prerequisite.subject_id)
@@ -68,5 +68,26 @@ class Bedel
         remove_approval(dependant)
       end
     end
+  end
+
+  def enough_credits?(dependency_item)
+    dependency_item.credits_prerequisites.all? do |credit_prerequisite|
+      group = credit_prerequisite.subjects_group
+      if group.name == "Carrera de Ingeniería en Computación"
+        credits >= credit_prerequisite.credits_needed
+      else
+        group_credits(group) >= credit_prerequisite.credits_needed
+      end
+    end
+  end
+
+  def group_credits(group)
+    group_subjects = Subject.joins(:group).where(subjects_groups: { name: group.name })
+    group_exam_credits = group_subjects.joins(:exam).where(subjects: { id: store[:approved_exams] }).sum(:credits)
+    group_course_credits = group_subjects
+                           .includes(:exam)
+                           .where(dependency_items: { subject_id: nil }, subjects: { id: store[:approved_courses] })
+                           .sum(:credits)
+    group_exam_credits + group_course_credits
   end
 end

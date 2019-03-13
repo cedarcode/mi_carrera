@@ -1,6 +1,7 @@
 calc1:
   name: "Cálculo 1"
   credits: 13
+  group: maths
   semester: 1
   has_exam: true
   exam-needs:
@@ -11,6 +12,7 @@ gal1:
   name: "Geometría y Álgebra Lineal 1"
   short_name: "GAL 1"
   credits: 9
+  group: maths
   semester: 1
   has_exam: true
   exam-needs:
@@ -20,6 +22,7 @@ gal1:
 f1:
   name: "Física 1"
   credits: 10
+  group: experimental_sciences
   semester: 1
   has_exam: true
   exam-needs:
@@ -29,6 +32,7 @@ f1:
 calc2:
   name: "Cálculo 2"
   credits: 16
+  group: maths
   semester: 2
   has_exam: true
   course-needs:
@@ -44,6 +48,7 @@ gal2:
   name: "Geometría y Álgebra Lineal 2"
   short_name: "GAL 2"
   credits: 9
+  group: maths
   semester: 2
   has_exam: true
   course-needs:
@@ -58,6 +63,7 @@ gal2:
 discreta1:
   name: "Matemática Discreta 1"
   credits: 9
+  group: maths
   semester: 2
   has_exam: true
   exam-needs:
@@ -67,6 +73,7 @@ discreta1:
 p1:
   name: "Programación 1"
   credits: 10
+  group: programming
   semester: 2
   has_exam: true
   exam-needs:
@@ -76,6 +83,7 @@ p1:
 pye:
   name: "Probabilidad y Estádistica"
   credits: 10
+  group: maths
   semester: 3
   has_exam: true
   course-needs:
@@ -90,6 +98,7 @@ pye:
 discreta2:
   name: "Matemática Discreta 2"
   credits: 9
+  group: maths
   semester: 3
   has_exam: true
   course-needs:
@@ -104,6 +113,7 @@ discreta2:
 logica:
   name: "Lógica"
   credits: 12
+  group: maths
   semester: 3
   has_exam: true
   course-needs:
@@ -116,6 +126,7 @@ logica:
 p2:
   name: "Programación 2"
   credits: 12
+  group: programming
   semester: 3
   has_exam: true
   course-needs:
@@ -128,6 +139,7 @@ p2:
 economia:
   name: "Economía"
   credits: 7
+  group: human_sciences
   semester: 4
   has_exam: true
   exam-needs:
@@ -137,6 +149,7 @@ economia:
 p3:
   name: "Programación 3"
   credits: 15
+  group: programming
   semester: 4
   has_exam: true
   course-needs:
@@ -153,6 +166,7 @@ p3:
 arqui:
   name: "Arquitectura de Computadoras"
   credits: 12
+  group: arqui_op_network
   semester: 4
   has_exam: true
   course-needs:
@@ -174,6 +188,7 @@ pol-cientf:
   name: "Politicas Científicas en Información y Computación"
   short_name: "Politicas Científicas"
   credits: 3
+  group: human_sciences
   semester: 4
   has_exam: true
   exam-needs:
@@ -183,6 +198,7 @@ pol-cientf:
 metnum:
   name: "Métodos Numéricos"
   credits: 8
+  group: numeric_calculus
   semester: 4
   has_exam: true
   course-needs:
@@ -204,6 +220,7 @@ iio:
   name: "Introducción a la Investigación de Operaciones"
   short_name: "IIO"
   credits: 10
+  group: investigation
   semester: 5
   has_exam: true
   course-needs:
@@ -224,6 +241,7 @@ iio:
 teoleng:
   name: "Teoría de Lenguajes"
   credits: 12
+  group: programming
   semester: 5
   has_exam: true
   course-needs:
@@ -244,6 +262,7 @@ teoleng:
 sisoper:
   name: "Sistemas Operativos"
   credits: 12
+  group: arqui_op_network
   semester: 5
   has_exam: true
   course-needs:
@@ -266,6 +285,7 @@ sisoper:
 p4:
   name: "Programación 4"
   credits: 15
+  group: programming
   semester: 5
   has_exam: true
   course-needs:
@@ -286,6 +306,7 @@ p4:
 cts:
   name: "Ciencia Tecnología y Sociedad"
   credits: 8
+  group: human_sciences
   semester: 5
   has_exam: true
   exam-needs:
@@ -296,10 +317,12 @@ agpi:
   name: "Administración General para Ingenieros"
   short_name: "AGPI"
   credits: 5
+  group: organization_management
   semester: 5
   has_exam: true
   course-needs:
-    - credits: 150
+    - credits: total
+      amount: 150
   exam-needs:
     - subject: agpi
       type: course
@@ -307,6 +330,7 @@ agpi:
 gescalid:
   name: "Gestión de Calidad"
   credits: 6
+  group: organization_management
   semester: 5
   has_exam: true
   exam-needs:
@@ -316,6 +340,7 @@ gescalid:
 fbd:
   name: "Fundamentos de Base de Datos"
   credits: 15
+  group: databases
   semester: 6
   has_exam: true
   course-needs:
@@ -332,6 +357,7 @@ fbd:
 tprog:
   name: "Taller de Programación"
   credits: 15
+  group: projects
   semester: 6
   course-needs:
     - subject: p4
@@ -343,6 +369,7 @@ pai:
   name: "Práctica de Administración para Ingenieros"
   short_name: "PAI"
   credits: 5
+  group: organization_management
   semester: 6
   has_exam: true
   course-needs:
@@ -357,6 +384,7 @@ pai:
 redes:
   name: "Redes de Computadoras"
   credits: 12
+  group: arqui_op_network
   semester: 6
   has_exam: true
   course-needs:
@@ -375,10 +403,12 @@ redes:
 cc:
   name: "Control de Calidad"
   credits: 8
+  group: organization_management
   semester: 6
   has_exam: true
   course-needs:
-    - credits: 80
+    - credits: total
+      amount: 80
   exam-needs:
     - subject: cc
       type: course
@@ -387,6 +417,7 @@ iis:
   name: "Introducción a la Ingeniería de Software"
   short_name: "IIS"
   credits: 10
+  group: software_engeneering
   semester: 7
   has_exam: true
   course-needs:
@@ -404,6 +435,7 @@ pis:
   name: "Proyecto de Ingeniería de Software"
   short_name: "PIS"
   credits: 15
+  group: projects
   semester: 8
   course-needs:
     - subject: p4
@@ -414,13 +446,16 @@ pis:
 proy:
   name: "Proyecto de Grado"
   credits: 30
+  group: projects
   semester: 9
   course-needs:
-    - credits: 380
+    - credits: total
+      amount: 380
 
 aln:
   name: "Álgebra Lineal Numérica"
   credits: 9
+  group: numeric_calculus
   course-needs:
     - subject: p3
       type: exam
@@ -430,6 +465,7 @@ aln:
 ae:
   name: "Algoritmos Evolutivos"
   credits: 9
+  group: investigation
   course-needs:
     - subject: pye
       type: exam
@@ -441,6 +477,7 @@ ae:
 aaac:
   name: "Aspectos Avanz. de Arq. de Computadoras"
   credits: 8
+  group: arqui_op_network
   course-needs:
     - subject: arqui
       type: exam
@@ -450,14 +487,17 @@ aaac:
 educbutia:
   name: "Butia:Robótica Educativa"
   credits: 8
+  group: artificial_intelligence
   course-needs:
-    - credits: 100
+    - credits: total
+      amount: 100
     - subject: p1
       type: exam
 
 compiladores:
   name: "Diseño de Compiladores"
   credits: 12
+  group: programming
   course-needs:
     - subject: p4
       type: exam
@@ -471,6 +511,7 @@ compiladores:
 disdw:
   name: "Diseño y Construcción de Data Warehouse"
   credits: 10
+  group: databases
   course-needs:
     - subject: p4
       type: exam
@@ -482,6 +523,7 @@ disdw:
 cripto:
   name: "Criptografía"
   credits: 10
+  group: arqui_op_network
   course-needs:
     - subject: discreta1
       type: exam
@@ -493,6 +535,7 @@ cripto:
 fsi:
   name: "Fundamentos de la Seguridad Informática"
   credits: 12
+  group: arqui_op_network
   course-needs:
     - subject: logica
       type: exam
@@ -508,6 +551,7 @@ fsi:
 inpercom:
   name: "Interacción Persona Computadora"
   credits: 12
+  group: software_engeneering
   course-needs:
     - subject: p4
       type: exam
@@ -517,6 +561,7 @@ inpercom:
 compgraf:
   name: "Introducción a la Computación Gráfica"
   credits: 10
+  group: programming
   course-needs:
     - subject: p4
       type: exam
@@ -530,6 +575,7 @@ compgraf:
 progfunc:
   name: "Programación Funcional"
   credits: 10
+  group: programming
   course-needs:
     - subject: discreta1
       type: exam
@@ -543,6 +589,7 @@ progfunc:
 plogica:
   name: "Programación Lógica"
   credits: 10
+  group: programming
   course-needs:
     - subject: discreta2
       type: exam
@@ -556,6 +603,7 @@ plogica:
 proggen:
   name: "Introducción a la Programación Genérica"
   credits: 10
+  group: programming
   course-needs:
     - subject: progfunc
       type: course
@@ -563,6 +611,7 @@ proggen:
 iti:
   name: "Introducción a la Teoría de la Información"
   credits: 8
+  group: maths
   course-needs:
     - subject: pye
       type: exam
@@ -570,6 +619,7 @@ iti:
 mmc:
   name: "Métodos de Monte Carlo"
   credits: 8
+  group: numeric_calculus
   course-needs:
     - subject: iio
       type: exam
@@ -581,6 +631,7 @@ mmc:
 optincert:
   name: "Optimización Bajo Incertidumbre"
   credits: 8
+  group: investigation
   course-needs:
     - subject: iio
       type: exam
@@ -588,6 +639,7 @@ optincert:
 calc3:
   name: "Cálculo 3"
   credits: 10
+  group: maths
   has_exam: true
   course-needs:
     - subject: calc1
@@ -603,6 +655,7 @@ calc3:
 f2:
   name: "Física 2"
   credits: 10
+  group: experimental_sciences
   has_exam: true
   course-needs:
     - subject: calc1
@@ -620,6 +673,7 @@ f2:
 f3:
   name: "Física 3"
   credits: 10
+  group: experimental_sciences
   has_exam: true
   course-needs:
     - subject: f1
@@ -637,6 +691,7 @@ f3:
 tsi1:
   name: "Taller de Sistemas de Información 1"
   credits: 10
+  group: projects
   course-needs:
     - subject: p4
       type: exam
@@ -650,6 +705,7 @@ tsi1:
 fpe:
   name: "Fundamentos de Programación Entera"
   credits: 8
+  group: investigation
   course-needs:
     - subject: iio
       type: exam
@@ -657,6 +713,7 @@ fpe:
 cd:
   name: "Calidad de Datos"
   credits: 8
+  group: organization_management
   course-needs:
     - subject: p4
       type: exam
@@ -670,6 +727,7 @@ cd:
 hpc:
   name: "Computación de Alta Performance"
   credits: 10
+  group: arqui_op_network
   course-needs:
     - subject: p4
       type: course
@@ -684,6 +742,7 @@ gpgpu:
   name: "Computación de Propósito General en Unidades de Procesamiento Gráfico"
   short_name: "GPGPU"
   credits: 7
+  group: arqui_op_network
   course-needs:
     - subject: arqui
       type: exam
@@ -695,6 +754,7 @@ gpgpu:
 dtr:
   name: "Diseño Topológico de Redes"
   credits: 10
+  group: arqui_op_network
   course-needs:
     - subject: iio
       type: course
@@ -703,6 +763,7 @@ sig:
   name: "Introducción a los Sistemas de Información Geográfica"
   short_name: "Intr. a los Sist. de Info. Geográfica"
   credits: 10
+  group: databases
   course-needs:
     - subject: p4
       type: exam
@@ -714,6 +775,7 @@ sig:
 intmidd:
   name: "Introducción al Middleware"
   credits: 8
+  group: databases
   course-needs:
     - subject: sisoper
       type: exam
@@ -730,6 +792,7 @@ intropln:
   name: "Introducción al Procesamiento de Lenguaje Natural"
   short_name: "IPLN"
   credits: 12
+  group: artificial_intelligence
   course-needs:
     - subject: p4
       type: exam
@@ -748,6 +811,7 @@ iogr:
   name: "Investigación Operativa y Gestión de Riesgos"
   short_name: "Investigación Oper. y Gest. de Riesgos"
   credits: 6
+  group: investigation
   course-needs:
     - subject: iio
       type: exam
@@ -756,6 +820,7 @@ mor:
   name: "Metaheurísticas y Optimización sobre Redes"
   short_name: "MOR"
   credits: 10
+  group: investigation
   course-needs:
     - subject: discreta1
       type: exam
@@ -780,6 +845,7 @@ negsoftware:
   name: "Introducción al Negocio del Software"
   short_name: "Int. al Negocio del SW"
   credits: 8
+  group: organization_management
   course-needs:
     - subject: iis
       type: course
@@ -787,6 +853,7 @@ negsoftware:
 aprendaut:
   name: "Aprendizaje Automático"
   credits: 12
+  group: artificial_intelligence
   course-needs:
     - subject: discreta2
       type: exam
@@ -804,6 +871,7 @@ aprendaut:
 webir:
   name: "Recuperación de Información y Recomendaciones en la Web"
   short_name: "Webir"
+  group: databases
   credits: 10
   course-needs:
     - subject: p3
@@ -815,6 +883,7 @@ rbc:
   name: "Robótica Basada en Comportamientos"
   short_name: "Robótica Basada en Comp."
   credits: 15
+  group: artificial_intelligence
   course-needs:
     - subject: f1
       type: exam
@@ -826,6 +895,7 @@ rbc:
 ecdif:
   name: "Ecuaciones Diferenciales"
   credits: 12
+  group: maths
   has_exam: true
   course-needs:
     - subject: gal1
@@ -844,6 +914,7 @@ tarqui:
   name: "Taller de Arquitectura de Computadoras"
   short_name: "Taller de Arqui. de Comp."
   credits: 10
+  group: arqui_op_network
   course-needs:
     - subject: arqui
       type: exam
@@ -854,7 +925,10 @@ ass:
   name: "Administración y Seguridad de Sistemas"
   short_name: "Admin. y Seguridad de Sist."
   credits: 10
+  group: databases
   course-needs:
+    - credits: organization_management
+      amount: 10
     - subject: arqui
       type: exam
     - subject: redes
@@ -870,6 +944,7 @@ adadr:
   name: "Análisis y Diseños de Algoritmos Distibuidos en Redes"
   short_name: "ADADR"
   credits: 8
+  group: arqui_op_network
   course-needs:
     - subject: p3
       type: exam
@@ -880,6 +955,7 @@ aarc:
   name: "Aspectos Avanzados de Redes de Computadoras"
   short_name: "AARC"
   credits: 8
+  group: arqui_op_network
   course-needs:
     - subject: redes
       type: course
@@ -888,6 +964,7 @@ rrppis:
   name: "Relaciones Personales en Ingeniería de Software"
   short_name: "Relac. Pers. en IS"
   credits: 10
+  group: software_engeneering
   course-needs:
     - subject: iis
       type: course
@@ -895,7 +972,10 @@ rrppis:
 robemb:
   name: "Robótica Embebida"
   credits: 10
+  group: artificial_intelligence
   course-needs:
+    - credits: experimental_sciences
+      amount: 10
     - subject: arqui
       type: exam
     - subject: p3
@@ -908,6 +988,7 @@ robemb:
 talgpgpu:
   name: "Taller de GPGPU"
   credits: 7
+  group: arqui_op_network
   course-needs:
     - subject: gpgpu
       type: course
@@ -916,6 +997,7 @@ tbpm:
   name: "Taller de Gestión y Tecnologías de Procesos de Negocio"
   short_name: "TBPM"
   credits: 10
+  group: databases
   course-needs:
     - subject: tprog
       type: course
@@ -923,6 +1005,7 @@ tbpm:
 tsi2:
   name: "Taller de Sistemas de Información 2"
   credits: 15
+  group: projects
   course-needs:
     - subject: p4
       type: exam
@@ -936,6 +1019,7 @@ tsi2:
 tsi3:
   name: "Taller de Sistemas de Información 3"
   credits: 8
+  group: projects
   course-needs:
     - subject: fbd
       type: exam
@@ -951,6 +1035,7 @@ tsi3:
 tsi4:
   name: "Taller de Sistemas de Información 4"
   credits: 15
+  group: projects
   course-needs:
     - subject: fbd
       type: exam
@@ -965,6 +1050,7 @@ tsig:
   name: "Taller de Sistemas de Información Geográficos Empresariales"
   short_name: "Taller de SIG"
   credits: 8
+  group: projects
   course-needs:
     - subject: fbd
       type: exam
@@ -975,6 +1061,7 @@ tagsi:
   name: "Técnicas Avanzadas de Gestión de Sistemas de Información"
   short_name: "TAGSI"
   credits: 15
+  group: databases
   course-needs:
     - subject: fbd
       type: exam
@@ -985,6 +1072,7 @@ tcace:
   name: "Teoría de Códigos Algebráicos para la Correción de Errores"
   short_name: "Teoría de Cód. Algebr. para Correc. de Err."
   credits: 7
+  group: maths
   course-needs:
     - subject: pye
       type: exam
@@ -1004,6 +1092,7 @@ tcace:
 teocomp:
   name: "Teoría de la Computación"
   credits: 4
+  group: programming
   course-needs:
     - subject: teoleng
       type: exam
@@ -1011,6 +1100,7 @@ teocomp:
 biomeds:
   name: "Seminario de Ingeniería Biomédica"
   credits: 4
+  group: projects
   course-needs:
     - subject: pis
       type: course
@@ -1019,7 +1109,10 @@ im:
   name: "Imágenes Médicas: Adquisición, Instrumentación y Gestión"
   short_name: "Imágenes Médicas"
   credits: 8
+  group: optionals
   course-needs:
+    - credits: experimental_sciences
+      amount: 10
     - subject: pis
       type: course
     - subject: redes
@@ -1028,8 +1121,10 @@ im:
 idatos:
   name: "Integración de Datos"
   credits: 8
+  group: databases
   course-needs:
-    - credits: 250
+    - credits: total
+      amount: 250
     - subject: fbd
       type: exam
 
@@ -1037,6 +1132,7 @@ atipi:
   name: "Aplicaciones de la Teoría de la Información al Procesamiento de Imágenes"
   short_name: "ATIPI"
   credits: 6
+  group: optionals
   course-needs:
     - subject: pye
       type: exam
@@ -1045,6 +1141,7 @@ procpersw:
   name: "Principios y Fundamentos del Proceso Personal de Software"
   short_name: "Princ. y Fund. del Proc. Pers. de SW"
   credits: 7
+  group: software_engeneering
   course-needs:
     - subject: p4
       type: course
@@ -1052,6 +1149,7 @@ procpersw:
 modopt:
   name: "Modelado y Optimización"
   credits: 6
+  group: investigation
   course-needs:
     - subject: iio
       type: exam
@@ -1059,6 +1157,7 @@ modopt:
 pfa:
   name: "Programación Funcional Avanzada"
   credits: 12
+  group: programming
   course-needs:
     - subject: progfunc
       type: course
@@ -1066,6 +1165,7 @@ pfa:
 eventosdisc:
   name: "Simulación a Eventos Discretos"
   credits: 10
+  group: investigation
   course-needs:
     - subject: p3
       type: exam
@@ -1079,6 +1179,7 @@ eventosdisc:
 sisdistr:
   name: "Sistemas Distribuidos"
   credits: 15
+  group: arqui_op_network
   course-needs:
     - subject: p4
       type: exam
@@ -1106,6 +1207,7 @@ sisdistr:
 tallersi:
   name: "Taller de Seguridad Informática"
   credits: 7
+  group: arqui_op_network
   course-needs:
     - subject: fbd
       type: exam
@@ -1117,6 +1219,7 @@ tallersi:
 tvs:
   name: "Taller de Verificación de Software"
   credits: 8
+  group: software_engeneering
   course-needs:
     - subject: fbd
       type: exam
@@ -1126,6 +1229,7 @@ tvs:
 tinpercom:
   name: "Taller de Interacción Persona Computadora"
   credits: 8
+  group: software_engeneering
   course-needs:
     - subject: iis
       type: exam
@@ -1135,6 +1239,7 @@ tinpercom:
 tso:
   name: "Taller de Sistemas Operativos"
   credits: 8
+  group: arqui_op_network
   course-needs:
     - subject: p4
       type: exam
@@ -1144,6 +1249,7 @@ tso:
 fismod:
   name: "Introducción a la Física Moderna"
   credits: 10
+  group: experimental_sciences
   has_exam: true
   course-needs:
     - subject: f3

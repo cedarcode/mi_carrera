@@ -2,7 +2,8 @@ require "application_system_test_case"
 
 class ApprovalTest < ApplicationSystemTestCase
   setup do
-    @subject = Subject.create!(name: "GAL 1", credits: 9)
+    maths = SubjectsGroup.create!(name: "Matemáticas")
+    @subject = Subject.create!(name: "GAL 1", credits: 9, group_id: maths.id)
     @subject.create_course!
     @subject.create_exam!
   end
