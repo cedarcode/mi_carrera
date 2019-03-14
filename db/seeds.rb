@@ -104,10 +104,18 @@ class StudentAppSeeder
   end
 
   def add_credits_prerequisites(dependency_item, group_key, credits, subjects_groups)
-    group = SubjectsGroup.where(name: subjects_groups[group_key]["name"]).first
+    if group_key == "total"
+      create_credits_prerequisite(dependency_item, credits)
+    else
+      group = SubjectsGroup.where(name: subjects_groups[group_key]["name"]).first
+      create_credits_prerequisite(dependency_item, group.id, credits)
+    end
+  end
+
+  def create_credits_prerequisite(dependency_item, group_id = nil, credits)
     CreditsPrerequisite.where(
       dependency_item_id: dependency_item.id,
-      subjects_group_id: group.id
+      subjects_group_id: group_id
     ).first_or_create(credits_needed: credits)
   end
 end

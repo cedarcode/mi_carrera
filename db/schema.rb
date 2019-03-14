@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_163512) do
 
   create_table "credits_prerequisites", force: :cascade do |t|
     t.integer "dependency_item_id", null: false
-    t.integer "subjects_group_id", null: false
+    t.integer "subjects_group_id"
     t.integer "credits_needed", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

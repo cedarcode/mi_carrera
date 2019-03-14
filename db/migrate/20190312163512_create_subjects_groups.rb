@@ -12,7 +12,7 @@ class CreateSubjectsGroups < ActiveRecord::Migration[5.2]
 
     create_table :credits_prerequisites do |t|
       t.integer :dependency_item_id, null: false
-      t.integer :subjects_group_id, null: false
+      t.integer :subjects_group_id
       t.integer :credits_needed, null: false
 
       t.timestamps
