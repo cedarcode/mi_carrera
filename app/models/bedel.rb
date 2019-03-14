@@ -50,13 +50,13 @@ class Bedel
 
   attr_reader :store
 
-  def exam_credits
-    @exam_credits ||= Subject.joins(:exam).where(subjects: { id: store[:approved_exams] }).sum(:credits)
+  def exam_credits(subjects_collection = Subject)
+    @exam_credits ||= subjects_collection.joins(:exam).where(subjects: { id: store[:approved_exams] }).sum(:credits)
   end
 
-  def course_credits
+  def course_credits(subjects_collection = Subject)
     @course_credits ||=
-      Subject
+      subjects_collection
       .includes(:exam)
       .where(dependency_items: { subject_id: nil }, subjects: { id: store[:approved_courses] })
       .sum(:credits)
@@ -73,21 +73,16 @@ class Bedel
   def enough_credits?(dependency_item)
     dependency_item.credits_prerequisites.all? do |credit_prerequisite|
       group = credit_prerequisite.subjects_group
-      if group.name == "Carrera de Ingeniería en Computación"
-        credits >= credit_prerequisite.credits_needed
-      else
+      if group
         group_credits(group) >= credit_prerequisite.credits_needed
+      else
+        credits >= credit_prerequisite.credits_needed
       end
     end
   end
 
   def group_credits(group)
     group_subjects = Subject.joins(:group).where(subjects_groups: { name: group.name })
-    group_exam_credits = group_subjects.joins(:exam).where(subjects: { id: store[:approved_exams] }).sum(:credits)
-    group_course_credits = group_subjects
-                           .includes(:exam)
-                           .where(dependency_items: { subject_id: nil }, subjects: { id: store[:approved_courses] })
-                           .sum(:credits)
-    group_exam_credits + group_course_credits
+    exam_credits(group_subjects) + course_credits(group_subjects)
   end
 end
