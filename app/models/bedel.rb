@@ -84,7 +84,7 @@ class Bedel
 
   def subject_scope(group)
     if group
-      Subject.joins(:group).where(subject_groups: { name: group.name })
+      group.subjects
     else
       Subject
     end
