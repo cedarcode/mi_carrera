@@ -50,7 +50,7 @@ class Bedel
 
   attr_reader :store
 
-  def exam_credits(group = nil)
+  def exam_credits(group)
     @exam_credits ||= {}
     @exam_credits[group&.id] ||=
       subject_scope(group)
@@ -59,7 +59,7 @@ class Bedel
       .sum(:credits)
   end
 
-  def course_credits(group = nil)
+  def course_credits(group)
     @course_credits ||= {}
     @course_credits[group&.id] ||=
       subject_scope(group)
