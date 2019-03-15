@@ -1,4 +1,4 @@
 class CreditsPrerequisite < ApplicationRecord
   belongs_to :dependency_item
-  belongs_to :subjects_group, optional: true
+  belongs_to :subject_group, optional: true
 end

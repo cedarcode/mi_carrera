@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
   setup do
-    maths = SubjectsGroup.create!(name: "Matemáticas")
+    maths = SubjectGroup.create!(name: "Matemáticas")
     @gal1 = Subject.create!(name: "GAL 1", credits: 9, group_id: maths.id)
     @gal2 = Subject.create!(name: "GAL 2", credits: 9, group_id: maths.id)
     gal3 = Subject.create!(name: "GAL 3", credits: 9, group_id: maths.id)
@@ -12,8 +12,8 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
     @gal2.create_exam!
     gal3.create_course!
     gal3.create_exam!
-    CreditsPrerequisite.create!(dependency_item_id: @gal2.course.id, subjects_group_id: nil, credits_needed: 5)
-    CreditsPrerequisite.create!(dependency_item_id: gal3.course.id, subjects_group_id: maths.id, credits_needed: 10)
+    CreditsPrerequisite.create!(dependency_item_id: @gal2.course.id, subject_group_id: nil, credits_needed: 5)
+    CreditsPrerequisite.create!(dependency_item_id: gal3.course.id, subject_group_id: maths.id, credits_needed: 10)
     Dependency.create!(prerequisite_id: @gal1.course.id, dependency_item_id: @gal1.exam.id)
     Dependency.create!(prerequisite_id: @gal2.course.id, dependency_item_id: @gal2.exam.id)
   end

@@ -72,7 +72,7 @@ class Bedel
 
   def enough_credits?(dependency_item)
     dependency_item.credits_prerequisites.all? do |credit_prerequisite|
-      group = credit_prerequisite.subjects_group
+      group = credit_prerequisite.subject_group
       if group
         group_credits(group) >= credit_prerequisite.credits_needed
       else
@@ -82,7 +82,7 @@ class Bedel
   end
 
   def group_credits(group)
-    group_subjects = Subject.joins(:group).where(subjects_groups: { name: group.name })
+    group_subjects = Subject.joins(:group).where(subject_groups: { name: group.name })
     exam_credits(group_subjects) + course_credits(group_subjects)
   end
 end

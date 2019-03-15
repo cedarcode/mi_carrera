@@ -8,41 +8,41 @@
 
 class StudentAppSeeder
   def seed
-    subjects_groups = populate_subjects_groups!
-    populate_subjects!(subjects_groups)
+    subject_groups = populate_subject_groups!
+    populate_subjects!(subject_groups)
   end
 
-  def populate_subjects_groups!
-    seed_filepath = Rails.root.join('db', 'seeds', 'subjects_groups.yml')
+  def populate_subject_groups!
+    seed_filepath = Rails.root.join('db', 'seeds', 'subject_groups.yml')
     File.open(seed_filepath) do |file|
-      subjects_groups = YAML.load_file(file)
-      subjects_groups.keys.sort.each do |key|
-        group_data = subjects_groups[key]
-        populate_subjects_group!(group_data)
+      subject_groups = YAML.load_file(file)
+      subject_groups.keys.sort.each do |key|
+        group_data = subject_groups[key]
+        populate_subject_group!(group_data)
       end
-      subjects_groups
+      subject_groups
     end
   end
 
-  def populate_subjects_group!(group_data)
-    SubjectsGroup.where(name: group_data["name"]).first_or_create
+  def populate_subject_group!(group_data)
+    SubjectGroup.where(name: group_data["name"]).first_or_create
   end
 
-  def populate_subjects!(subjects_groups)
+  def populate_subjects!(subject_groups)
     seed_filepath = Rails.root.join('db', 'seeds', 'subjects.yml')
     File.open(seed_filepath) do |file|
       subjects = YAML.load_file(file)
       subjects.keys.sort.each do |key|
         subject_data = subjects[key]
-        populate_subject_with_dependencies!(subject_data, subjects, subjects_groups)
+        populate_subject_with_dependencies!(subject_data, subjects, subject_groups)
       end
     end
   end
 
-  def populate_subject!(data, subjects_groups)
+  def populate_subject!(data, subject_groups)
     subject = Subject.where(name: data["name"]).first_or_create
     group_key = data["group"]
-    group = SubjectsGroup.where(name: subjects_groups[group_key]["name"]).first
+    group = SubjectGroup.where(name: subject_groups[group_key]["name"]).first
     subject.update!(
       credits: data["credits"],
       semester: data["semester"],
@@ -60,20 +60,20 @@ class StudentAppSeeder
     subject
   end
 
-  def populate_subject_with_dependencies!(data, subjects, subjects_groups)
-    subject = populate_subject!(data, subjects_groups)
+  def populate_subject_with_dependencies!(data, subjects, subject_groups)
+    subject = populate_subject!(data, subject_groups)
     if data["course-needs"]
-      populate_prerequisites!(subject.course, data["course-needs"], subjects, subjects_groups)
+      populate_prerequisites!(subject.course, data["course-needs"], subjects, subject_groups)
     end
     if data["has_exam"]
       if data["exam-needs"]
-        populate_prerequisites!(subject.exam, data["exam-needs"], subjects, subjects_groups)
+        populate_prerequisites!(subject.exam, data["exam-needs"], subjects, subject_groups)
       end
     end
     subject
   end
 
-  def populate_prerequisites!(dependency_item, prerequisites, subjects, subjects_groups)
+  def populate_prerequisites!(dependency_item, prerequisites, subjects, subject_groups)
     prerequisites.each do |prerequisite|
       if prerequisite["subject"]
         add_subject_prerequisites(
@@ -81,21 +81,21 @@ class StudentAppSeeder
           prerequisite["subject"],
           prerequisite["type"],
           subjects,
-          subjects_groups
+          subject_groups
         )
       elsif prerequisite["credits"]
         add_credits_prerequisites(
           dependency_item,
           prerequisite["credits"],
           prerequisite["amount"],
-          subjects_groups
+          subject_groups
         )
       end
     end
   end
 
-  def add_subject_prerequisites(dependency_item, subject_key, type, subjects, subjects_groups)
-    dependency = populate_subject!(subjects[subject_key], subjects_groups)
+  def add_subject_prerequisites(dependency_item, subject_key, type, subjects, subject_groups)
+    dependency = populate_subject!(subjects[subject_key], subject_groups)
     if type == "course"
       Dependency.where(dependency_item_id: dependency_item.id, prerequisite_id: dependency.course.id).first_or_create
     elsif type == "exam"
@@ -103,11 +103,11 @@ class StudentAppSeeder
     end
   end
 
-  def add_credits_prerequisites(dependency_item, group_key, credits, subjects_groups)
+  def add_credits_prerequisites(dependency_item, group_key, credits, subject_groups)
     if group_key == "total"
       create_credits_prerequisite(dependency_item, credits)
     else
-      group = SubjectsGroup.where(name: subjects_groups[group_key]["name"]).first
+      group = SubjectGroup.where(name: subject_groups[group_key]["name"]).first
       create_credits_prerequisite(dependency_item, group.id, credits)
     end
   end
@@ -115,7 +115,7 @@ class StudentAppSeeder
   def create_credits_prerequisite(dependency_item, group_id = nil, credits)
     CreditsPrerequisite.where(
       dependency_item_id: dependency_item.id,
-      subjects_group_id: group_id
+      subject_group_id: group_id
     ).first_or_create(credits_needed: credits)
   end
 end

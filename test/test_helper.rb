@@ -7,7 +7,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   def create_group(name)
-    SubjectsGroup.where(name: name).first_or_create
+    SubjectGroup.where(name: name).first_or_create
   end
 
   def create_subject(name = "A subject", credits: 5, exam: true)
