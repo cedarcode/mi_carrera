@@ -23,8 +23,8 @@ class Bedel
     end
   end
 
-  def credits
-    exam_credits + course_credits
+  def credits(group = nil)
+    exam_credits(group) + course_credits(group)
   end
 
   def approved?(dependency_item)
@@ -50,12 +50,19 @@ class Bedel
 
   attr_reader :store
 
-  def exam_credits(subjects_collection = Subject)
-    subjects_collection.joins(:exam).where(subjects: { id: store[:approved_exams] }).sum(:credits)
+  def exam_credits(group = nil)
+    @exam_credits ||= {}
+    @exam_credits[group&.id] ||=
+      subject_scope(group)
+      .joins(:exam)
+      .where(subjects: { id: store[:approved_exams] })
+      .sum(:credits)
   end
 
-  def course_credits(subjects_collection = Subject)
-    subjects_collection
+  def course_credits(group = nil)
+    @course_credits ||= {}
+    @course_credits[group&.id] ||=
+      subject_scope(group)
       .includes(:exam)
       .where(dependency_items: { subject_id: nil }, subjects: { id: store[:approved_courses] })
       .sum(:credits)
@@ -73,15 +80,18 @@ class Bedel
     dependency_item.credits_prerequisites.all? do |credit_prerequisite|
       group = credit_prerequisite.subject_group
       if group
-        group_credits(group) >= credit_prerequisite.credits_needed
+        credits(group) >= credit_prerequisite.credits_needed
       else
         credits >= credit_prerequisite.credits_needed
       end
     end
   end
 
-  def group_credits(group)
-    group_subjects = Subject.joins(:group).where(subject_groups: { name: group.name })
-    exam_credits(group_subjects) + course_credits(group_subjects)
+  def subject_scope(group)
+    if group
+      Subject.joins(:group).where(subject_groups: { name: group.name })
+    else
+      Subject
+    end
   end
 end
