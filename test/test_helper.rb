@@ -6,8 +6,13 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
+  def create_group(name)
+    SubjectGroup.where(name: name).first_or_create
+  end
+
   def create_subject(name = "A subject", credits: 5, exam: true)
-    subject = Subject.create!(name: name, credits: credits)
+    group = create_group("Matemática")
+    subject = Subject.create!(name: name, credits: credits, group_id: group.id)
     subject.create_course!
 
     if exam

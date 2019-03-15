@@ -12,4 +12,5 @@ class DependencyItem < ApplicationRecord
     join_table: "dependencies",
     foreign_key: "prerequisite_id"
   )
+  has_many :credits_prerequisites
 end

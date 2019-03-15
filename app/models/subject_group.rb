@@ -1,0 +1,2 @@
+class SubjectGroup < ApplicationRecord
+end

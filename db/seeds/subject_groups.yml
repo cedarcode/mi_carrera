@@ -1,0 +1,38 @@
+maths:
+  name: "Matemáticas"
+
+programming:
+  name: "Programación"
+
+experimental_sciences:
+  name: "Ciencias Experimentales"
+
+arqui_op_network:
+  name: "Arquitectura, sistemas operativos y redes de computadoras"
+
+projects:
+  name: "Actividades integrales, talleres, pasantías y proyectos"
+
+numeric_calculus:
+  name: "Cálculo numérico y simbólico"
+
+investigation:
+  name: "Investigación operativa"
+
+databases:
+  name: "Base de datos y sistemas de información"
+
+software_engeneering:
+  name: "Ingeniería de software"
+
+organization_management:
+  name: "Gestión de organizaciones"
+
+artificial_intelligence:
+  name: "Inteligencia artificial y robótica"
+
+human_sciences:
+  name: "Ciencias humanas y sociales"
+
+optionals:
+  name: "Opcionales"

@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_181822) do
+ActiveRecord::Schema.define(version: 2019_03_12_163512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "credits_prerequisites", force: :cascade do |t|
+    t.integer "dependency_item_id", null: false
+    t.integer "subject_group_id"
+    t.integer "credits_needed", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "dependencies", force: :cascade do |t|
     t.integer "dependency_item_id", null: false
@@ -27,7 +35,12 @@ ActiveRecord::Schema.define(version: 2019_03_07_181822) do
     t.boolean "is_exam", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "credits_needed", default: 0
+  end
+
+  create_table "subject_groups", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -37,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_181822) do
     t.datetime "updated_at", null: false
     t.string "short_name"
     t.integer "semester"
+    t.integer "group_id"
   end
 
 end
