@@ -78,12 +78,7 @@ class Bedel
 
   def enough_credits?(dependency_item)
     dependency_item.credits_prerequisites.all? do |credit_prerequisite|
-      group = credit_prerequisite.subject_group
-      if group
-        credits(group) >= credit_prerequisite.credits_needed
-      else
-        credits >= credit_prerequisite.credits_needed
-      end
+      credits(credit_prerequisite.subject_group) >= credit_prerequisite.credits_needed
     end
   end
 
