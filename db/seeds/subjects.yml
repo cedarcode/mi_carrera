@@ -476,6 +476,7 @@ ae:
 
 aaac:
   name: "Aspectos Avanz. de Arq. de Computadoras"
+  short_name: "AA de Arqui. de Computadoras"
   credits: 8
   group: arqui_op_network
   course-needs:
@@ -510,6 +511,7 @@ compiladores:
 
 disdw:
   name: "Diseño y Construcción de Data Warehouse"
+  short_name: "Data Warehouse"
   credits: 10
   group: databases
   course-needs:
@@ -534,6 +536,7 @@ cripto:
 
 fsi:
   name: "Fundamentos de la Seguridad Informática"
+  short_name: "Seguridad Informática"
   credits: 12
   group: arqui_op_network
   course-needs:
@@ -550,6 +553,7 @@ fsi:
 
 inpercom:
   name: "Interacción Persona Computadora"
+  short_name: "Inter. Persona Computadora"
   credits: 12
   group: software_engeneering
   course-needs:
@@ -560,6 +564,7 @@ inpercom:
 
 compgraf:
   name: "Introducción a la Computación Gráfica"
+  short_name: "Intro. a la Computación Gráfica"
   credits: 10
   group: programming
   course-needs:
@@ -602,6 +607,7 @@ plogica:
 
 proggen:
   name: "Introducción a la Programación Genérica"
+  short_name: "Programación Genérica"
   credits: 10
   group: programming
   course-needs:
@@ -610,6 +616,7 @@ proggen:
 
 iti:
   name: "Introducción a la Teoría de la Información"
+  short_name: "Intro. a la Teo. de la Info."
   credits: 8
   group: maths
   course-needs:
@@ -630,6 +637,7 @@ mmc:
 
 optincert:
   name: "Optimización Bajo Incertidumbre"
+  short_name: "Opt. Bajo Incertidumbre"
   credits: 8
   group: investigation
   course-needs:
@@ -690,6 +698,7 @@ f3:
 
 tsi1:
   name: "Taller de Sistemas de Información 1"
+  short_name: "TSI 1"
   credits: 10
   group: projects
   course-needs:
@@ -704,6 +713,7 @@ tsi1:
 
 fpe:
   name: "Fundamentos de Programación Entera"
+  short_name: "Fund. de Prog. Entera"
   credits: 8
   group: investigation
   course-needs:
@@ -726,6 +736,7 @@ cd:
 
 hpc:
   name: "Computación de Alta Performance"
+  short_name: "Comp. de Alta Performance"
   credits: 10
   group: arqui_op_network
   course-needs:
@@ -761,7 +772,7 @@ dtr:
 
 sig:
   name: "Introducción a los Sistemas de Información Geográfica"
-  short_name: "Intr. a los Sist. de Info. Geográfica"
+  short_name: "Sist. de Info. Geográfica"
   credits: 10
   group: databases
   course-needs:
@@ -809,7 +820,7 @@ intropln:
 
 iogr:
   name: "Investigación Operativa y Gestión de Riesgos"
-  short_name: "Investigación Oper. y Gest. de Riesgos"
+  short_name: "Invest. Oper. y Gest. de Riesgos"
   credits: 6
   group: investigation
   course-needs:
@@ -1004,6 +1015,7 @@ tbpm:
 
 tsi2:
   name: "Taller de Sistemas de Información 2"
+  short_name: "TSI 2"
   credits: 15
   group: projects
   course-needs:
@@ -1018,6 +1030,7 @@ tsi2:
 
 tsi3:
   name: "Taller de Sistemas de Información 3"
+  short_name: "TSI 3"
   credits: 8
   group: projects
   course-needs:
@@ -1034,6 +1047,7 @@ tsi3:
 
 tsi4:
   name: "Taller de Sistemas de Información 4"
+  short_name: "TSI 4"
   credits: 15
   group: projects
   course-needs:
@@ -1070,7 +1084,7 @@ tagsi:
 
 tcace:
   name: "Teoría de Códigos Algebráicos para la Correción de Errores"
-  short_name: "Teoría de Cód. Algebr. para Correc. de Err."
+  short_name: "Cód. Algebr. para Correc. de Err."
   credits: 7
   group: maths
   course-needs:
@@ -1099,6 +1113,7 @@ teocomp:
 
 biomeds:
   name: "Seminario de Ingeniería Biomédica"
+  short_name: "Semin. de Ing. Biomédica"
   credits: 4
   group: projects
   course-needs:
@@ -1139,7 +1154,7 @@ atipi:
 
 procpersw:
   name: "Principios y Fundamentos del Proceso Personal de Software"
-  short_name: "Princ. y Fund. del Proc. Pers. de SW"
+  short_name: "Proc. Pers. de Software"
   credits: 7
   group: software_engeneering
   course-needs:
@@ -1156,6 +1171,7 @@ modopt:
 
 pfa:
   name: "Programación Funcional Avanzada"
+  short_name: "Prog. Funcional Avanzada"
   credits: 12
   group: programming
   course-needs:
@@ -1218,6 +1234,7 @@ tallersi:
 
 tvs:
   name: "Taller de Verificación de Software"
+  short_name: "Taller de Verificación de Sw"
   credits: 8
   group: software_engeneering
   course-needs:
@@ -1228,6 +1245,7 @@ tvs:
 
 tinpercom:
   name: "Taller de Interacción Persona Computadora"
+  short_name: "Taller de Inter. Pers. Comp."
   credits: 8
   group: software_engeneering
   course-needs:
@@ -1248,6 +1266,7 @@ tso:
 
 fismod:
   name: "Introducción a la Física Moderna"
+  short_name: "Intro. a la Física Moderna"
   credits: 10
   group: experimental_sciences
   has_exam: true
