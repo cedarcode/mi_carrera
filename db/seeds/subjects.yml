@@ -475,7 +475,7 @@ ae:
       type: exam
 
 aaac:
-  name: "Aspectos Avanzados de Arquitectura de Computadoras"
+  name: "Aspectos Avanz. de Arq. de Computadoras"
   short_name: "AA de Arqui. de Computadoras"
   credits: 8
   group: arqui_op_network
