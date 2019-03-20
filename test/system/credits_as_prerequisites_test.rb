@@ -6,16 +6,21 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
     @gal1 = Subject.create!(name: "GAL 1", credits: 9, group_id: maths.id)
     @gal2 = Subject.create!(name: "GAL 2", credits: 9, group_id: maths.id)
     gal3 = Subject.create!(name: "GAL 3", credits: 9, group_id: maths.id)
+
     @gal1.create_course!
     @gal1.create_exam!
+
     @gal2.create_course!
     @gal2.create_exam!
+
     gal3.create_course!
     gal3.create_exam!
+
+    SubjectPrerequisite.create!(dependency_item_id: @gal1.exam.id, dependency_item_needed_id: @gal1.course.id)
     CreditsPrerequisite.create!(dependency_item_id: @gal2.course.id, subject_group_id: nil, credits_needed: 5)
+    SubjectPrerequisite.create!(dependency_item_id: @gal2.exam.id, dependency_item_needed_id: @gal2.course.id)
     CreditsPrerequisite.create!(dependency_item_id: gal3.course.id, subject_group_id: maths.id, credits_needed: 10)
-    Dependency.create!(prerequisite_id: @gal1.course.id, dependency_item_id: @gal1.exam.id)
-    Dependency.create!(prerequisite_id: @gal2.course.id, dependency_item_id: @gal2.exam.id)
+    SubjectPrerequisite.create!(dependency_item_id: gal3.exam.id, dependency_item_needed_id: gal3.course.id)
   end
 
   test "student cant see subjects without enough credits" do

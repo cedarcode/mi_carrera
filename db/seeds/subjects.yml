@@ -39,10 +39,11 @@ calc2:
     - subject: calc1
       type: course
   exam-needs:
-    - subject: calc2
-      type: course
-    - subject: calc1
-      type: exam
+    - and:
+      - subject: calc2
+        type: course
+      - subject: calc1
+        type: exam
 
 gal2:
   name: "Geometría y Álgebra Lineal 2"
@@ -55,10 +56,11 @@ gal2:
     - subject: gal1
       type: course
   exam-needs:
-    - subject: gal2
-      type: course
-    - subject: gal1
-      type: exam
+    - and:
+      - subject: gal2
+        type: course
+      - subject: gal1
+        type: exam
 
 discreta1:
   name: "Matemática Discreta 1"
@@ -87,10 +89,11 @@ pye:
   semester: 3
   has_exam: true
   course-needs:
-    - subject: calc1
-      type: exam
-    - subject: calc2
-      type: course
+    - and:
+      - subject: calc1
+        type: exam
+      - subject: calc2
+        type: course
   exam-needs:
     - subject: pye
       type: course
@@ -102,10 +105,11 @@ discreta2:
   semester: 3
   has_exam: true
   course-needs:
-    - subject: discreta1
-      type: course
-    - subject: gal1
-      type: exam
+    - and:
+      - subject: discreta1
+        type: course
+      - subject: gal1
+        type: exam
   exam-needs:
     - subject: discreta2
       type: course
@@ -153,12 +157,13 @@ p3:
   semester: 4
   has_exam: true
   course-needs:
-    - subject: p1
-      type: exam
-    - subject: p2
-      type: course
-    - subject: discreta1
-      type: exam
+    - and:
+      - subject: p1
+        type: exam
+      - subject: p2
+        type: course
+      - subject: discreta1
+        type: exam
   exam-needs:
     - subject: p3
       type: course
@@ -170,16 +175,17 @@ arqui:
   semester: 4
   has_exam: true
   course-needs:
-    - subject: calc1
-      type: exam
-    - subject: p1
-      type: exam
-    - subject: logica
-      type: course
-    - subject: p2
-      type: course
-    - subject: discreta1
-      type: course
+    - and:
+      - subject: calc1
+        type: exam
+      - subject: p1
+        type: exam
+      - subject: logica
+        type: course
+      - subject: p2
+        type: course
+      - subject: discreta1
+        type: course
   exam-needs:
     - subject: arqui
       type: course
@@ -202,16 +208,17 @@ metnum:
   semester: 4
   has_exam: true
   course-needs:
-    - subject: calc2
-      type: exam
-    - subject: gal1
-      type: exam
-    - subject: p1
-      type: exam
-    - subject: gal2
-      type: exam
-    - subject: calc1
-      type: exam
+    - and:
+      - subject: calc2
+        type: exam
+      - subject: gal1
+        type: exam
+      - subject: p1
+        type: exam
+      - subject: gal2
+        type: exam
+      - subject: calc1
+        type: exam
   exam-needs:
     - subject: metnum
       type: course
@@ -224,16 +231,17 @@ iio:
   semester: 5
   has_exam: true
   course-needs:
-    - subject: gal1
-      type: exam
-    - subject: calc2
-      type: exam
-    - subject: calc1
-      type: exam
-    - subject: gal2
-      type: exam
-    - subject: pye
-      type: exam
+    - and:
+      - subject: gal1
+        type: exam
+      - subject: calc2
+        type: exam
+      - subject: calc1
+        type: exam
+      - subject: gal2
+        type: exam
+      - subject: pye
+        type: exam
   exam-needs:
     - subject: iio
       type: course
@@ -245,16 +253,17 @@ teoleng:
   semester: 5
   has_exam: true
   course-needs:
-    - subject: logica
-      type: exam
-    - subject: discreta1
-      type: exam
-    - subject: gal1
-      type: exam
-    - subject: calc1
-      type: exam
-    - subject: p3
-      type: course
+    - and:
+      - subject: logica
+        type: exam
+      - subject: discreta1
+        type: exam
+      - subject: gal1
+        type: exam
+      - subject: calc1
+        type: exam
+      - subject: p3
+        type: course
   exam-needs:
     - subject: teoleng
       type: course
@@ -266,18 +275,19 @@ sisoper:
   semester: 5
   has_exam: true
   course-needs:
-    - subject: discreta1
-      type: exam
-    - subject: calc1
-      type: exam
-    - subject: gal1
-      type: exam
-    - subject: arqui
-      type: course
-    - subject: p2
-      type: exam
-    - subject: p3
-      type: course
+    - and:
+      - subject: discreta1
+        type: exam
+      - subject: calc1
+        type: exam
+      - subject: gal1
+        type: exam
+      - subject: arqui
+        type: course
+      - subject: p2
+        type: exam
+      - subject: p3
+        type: course
   exam-needs:
     - subject: sisoper
       type: course
@@ -289,16 +299,17 @@ p4:
   semester: 5
   has_exam: true
   course-needs:
-    - subject: discreta1
-      type: exam
-    - subject: p2
-      type: exam
-    - subject: p3
-      type: course
-    - subject: gal1
-      type: exam
-    - subject: calc1
-      type: exam
+    - and:
+      - subject: discreta1
+        type: exam
+      - subject: p2
+        type: exam
+      - subject: p3
+        type: course
+      - subject: gal1
+        type: exam
+      - subject: calc1
+        type: exam
   exam-needs:
     - subject: p4
       type: course
@@ -344,12 +355,13 @@ fbd:
   semester: 6
   has_exam: true
   course-needs:
-    - subject: discreta2
-      type: exam
-    - subject: logica
-      type: exam
-    - subject: p3
-      type: exam
+    - and:
+      - subject: discreta2
+        type: exam
+      - subject: logica
+        type: exam
+      - subject: p3
+        type: exam
   exam-needs:
     - subject: fbd
       type: course
@@ -360,10 +372,11 @@ tprog:
   group: projects
   semester: 6
   course-needs:
-    - subject: p4
-      type: course
-    - subject: p3
-      type: exam
+    - and:
+      - subject: p4
+        type: course
+      - subject: p3
+        type: exam
 
 pai:
   name: "Práctica de Administración para Ingenieros"
@@ -376,10 +389,11 @@ pai:
     - subject: agpi
       type: course
   exam-needs:
-    - subject: pai
-      type: course
-    - subject: agpi
-      type: exam
+    - and:
+      - subject: pai
+        type: course
+      - subject: agpi
+        type: exam
 
 redes:
   name: "Redes de Computadoras"
@@ -388,14 +402,15 @@ redes:
   semester: 6
   has_exam: true
   course-needs:
-    - subject: arqui
-      type: course
-    - subject: sisoper
-      type: course
-    - subject: p3
-      type: exam
-    - subject: calc1
-      type: exam
+    - and:
+      - subject: arqui
+        type: course
+      - subject: sisoper
+        type: course
+      - subject: p3
+        type: exam
+      - subject: calc1
+        type: exam
   exam-needs:
     - subject: redes
       type: course
@@ -421,12 +436,13 @@ iis:
   semester: 7
   has_exam: true
   course-needs:
-    - subject: p4
-      type: course
-    - subject: tprog
-      type: course
-    - subject: fbd
-      type: course
+    - and:
+      - subject: p4
+        type: course
+      - subject: tprog
+        type: course
+      - subject: fbd
+        type: course
   exam-needs:
     - subject: iis
       type: course
@@ -438,10 +454,11 @@ pis:
   group: projects
   semester: 8
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: iis
-      type: course
+    - and:
+      - subject: p4
+        type: exam
+      - subject: iis
+        type: course
 
 proy:
   name: "Proyecto de Grado"
@@ -449,30 +466,81 @@ proy:
   group: projects
   semester: 9
   course-needs:
-    - credits: total
-      amount: 380
+    - or:
+      - credits: total
+        amount: 380
+      - and:
+        - credits: total
+          amount: 330
+        - credits: projects
+          amount: 15
+        - credits: maths
+          amount: 70
+        - credits: numeric_calculus
+          amount: 8
+        - credits: programming
+          amount: 60
+        - credits: arqui_op_network
+          amount: 30
+        - credits: human_sciences
+          amount: 10
+        - credits: organization_management
+          amount: 10
+        - credits: investigation
+          amount: 10
+        - credits: databases
+          amount: 10
+        - credits: software_engeneering
+          amount: 10
+      - and:
+        - credits: total
+          amount: 365
+        - subject: tprog
+          type: course
+        - subject: iio
+          type: course
+        - subject: fbd
+          type: course
+        - subject: iis
+          type: course
+        - subject: p3
+          type: course
+        - subject: metnum
+          type: course
+        - subject: pis
+          type: course
+        - subject: teoleng
+          type: course
+        - subject: p4
+          type: course
+        - subject: sisoper
+          type: course
+        - subject: arqui
+          type: course
 
 aln:
   name: "Álgebra Lineal Numérica"
   credits: 9
   group: numeric_calculus
   course-needs:
-    - subject: p3
-      type: exam
-    - subject: metnum
-      type: exam
+    - and:
+      - subject: p3
+        type: exam
+      - subject: metnum
+        type: exam
 
 ae:
   name: "Algoritmos Evolutivos"
   credits: 9
   group: investigation
   course-needs:
-    - subject: pye
-      type: exam
-    - subject: p4
-      type: exam
-    - subject: iio
-      type: exam
+    - and:
+      - subject: pye
+        type: exam
+      - subject: p4
+        type: exam
+      - subject: iio
+        type: exam
 
 aaac:
   name: "Aspectos Avanz. de Arq. de Computadoras"
@@ -480,34 +548,37 @@ aaac:
   credits: 8
   group: arqui_op_network
   course-needs:
-    - subject: arqui
-      type: exam
-    - subject: sisoper
-      type: course
+    - and:
+      - subject: arqui
+        type: exam
+      - subject: sisoper
+        type: course
 
 educbutia:
   name: "Butia:Robótica Educativa"
   credits: 8
   group: artificial_intelligence
   course-needs:
-    - credits: total
-      amount: 100
-    - subject: p1
-      type: exam
+    - and:
+      - credits: total
+        amount: 100
+      - subject: p1
+        type: exam
 
 compiladores:
   name: "Diseño de Compiladores"
   credits: 12
   group: programming
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: teoleng
-      type: exam
-    - subject: tprog
-      type: course
+    - and:
+      - subject: p4
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: teoleng
+        type: exam
+      - subject: tprog
+        type: course
 
 disdw:
   name: "Diseño y Construcción de Data Warehouse"
@@ -515,24 +586,26 @@ disdw:
   credits: 10
   group: databases
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: fbd
-      type: exam
-    - subject: tprog
-      type: course
+    - and:
+      - subject: p4
+        type: exam
+      - subject: fbd
+        type: exam
+      - subject: tprog
+        type: course
 
 cripto:
   name: "Criptografía"
   credits: 10
   group: arqui_op_network
   course-needs:
-    - subject: discreta1
-      type: exam
-    - subject: discreta2
-      type: exam
-    - subject: p3
-      type: exam
+    - and:
+      - subject: discreta1
+        type: exam
+      - subject: discreta2
+        type: exam
+      - subject: p3
+        type: exam
 
 fsi:
   name: "Fundamentos de la Seguridad Informática"
@@ -540,16 +613,17 @@ fsi:
   credits: 12
   group: arqui_op_network
   course-needs:
-    - subject: logica
-      type: exam
-    - subject: redes
-      type: exam
-    - subject: fbd
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: sisoper
-      type: exam
+    - and:
+      - subject: logica
+        type: exam
+      - subject: redes
+        type: exam
+      - subject: fbd
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: sisoper
+        type: exam
 
 inpercom:
   name: "Interacción Persona Computadora"
@@ -557,10 +631,11 @@ inpercom:
   credits: 12
   group: software_engeneering
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: iis
-      type: course
+    - and:
+      - subject: p4
+        type: exam
+      - subject: iis
+        type: course
 
 compgraf:
   name: "Introducción a la Computación Gráfica"
@@ -568,42 +643,45 @@ compgraf:
   credits: 10
   group: programming
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: gal1
-      type: exam
-    - subject: gal2
-      type: course
+    - and:
+      - subject: p4
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: gal1
+        type: exam
+      - subject: gal2
+        type: course
 
 progfunc:
   name: "Programación Funcional"
   credits: 10
   group: programming
   course-needs:
-    - subject: discreta1
-      type: exam
-    - subject: teoleng
-      type: exam
-    - subject: logica
-      type: exam
-    - subject: p2
-      type: exam
+    - and:
+      - subject: discreta1
+        type: exam
+      - subject: teoleng
+        type: exam
+      - subject: logica
+        type: exam
+      - subject: p2
+        type: exam
 
 plogica:
   name: "Programación Lógica"
   credits: 10
   group: programming
   course-needs:
-    - subject: discreta2
-      type: exam
-    - subject: logica
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: teoleng
-      type: exam
+    - and:
+      - subject: discreta2
+        type: exam
+      - subject: logica
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: teoleng
+        type: exam
 
 proggen:
   name: "Introducción a la Programación Genérica"
@@ -628,12 +706,13 @@ mmc:
   credits: 8
   group: numeric_calculus
   course-needs:
-    - subject: iio
-      type: exam
-    - subject: pye
-      type: exam
-    - subject: metnum
-      type: exam
+    - and:
+      - subject: iio
+        type: exam
+      - subject: pye
+        type: exam
+      - subject: metnum
+        type: exam
 
 optincert:
   name: "Optimización Bajo Incertidumbre"
@@ -650,12 +729,13 @@ calc3:
   group: maths
   has_exam: true
   course-needs:
-    - subject: calc1
-      type: exam
-    - subject: gal1
-      type: exam
-    - subject: calc2
-      type: course
+    - and:
+      - subject: calc1
+        type: exam
+      - subject: gal1
+        type: exam
+      - subject: calc2
+        type: course
   exam-needs:
     - subject: calc3
       type: course
@@ -666,17 +746,19 @@ f2:
   group: experimental_sciences
   has_exam: true
   course-needs:
-    - subject: calc1
-      type: course
-    - subject: f1
-      type: course
+    - and:
+      - subject: calc1
+        type: course
+      - subject: f1
+        type: course
   exam-needs:
-    - subject: calc1
-      type: exam
-    - subject: f1
-      type: exam
-    - subject: f2
-      type: course
+    - and:
+      - subject: calc1
+        type: exam
+      - subject: f1
+        type: exam
+      - subject: f2
+        type: course
 
 f3:
   name: "Física 3"
@@ -684,17 +766,25 @@ f3:
   group: experimental_sciences
   has_exam: true
   course-needs:
-    - subject: f1
-      type: exam
-    - subject: calc1
-      type: course
+    - and:
+      - subject: calc1
+        type: course
+      - or:
+          - subject: f1
+            type: exam
+          - and:
+            - subject: f1
+              type: course
+            - subject: f2
+              type: course
   exam-needs:
-    - subject: f1
-      type: exam
-    - subject: calc1
-      type: exam
-    - subject: f3
-      type: course
+    - and:
+      - subject: f1
+        type: exam
+      - subject: calc1
+        type: exam
+      - subject: f3
+        type: course
 
 tsi1:
   name: "Taller de Sistemas de Información 1"
@@ -702,14 +792,15 @@ tsi1:
   credits: 10
   group: projects
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: fbd
-      type: exam
-    - subject: tprog
-      type: course
-    - subject: sisoper
-      type: course
+    - and:
+      - subject: p4
+        type: exam
+      - subject: fbd
+        type: exam
+      - subject: tprog
+        type: course
+      - subject: sisoper
+        type: course
 
 fpe:
   name: "Fundamentos de Programación Entera"
@@ -725,14 +816,15 @@ cd:
   credits: 8
   group: organization_management
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: fbd
-      type: exam
-    - subject: tprog
-      type: course
-    - subject: pye
-      type: course
+    - and:
+      - subject: p4
+        type: exam
+      - subject: fbd
+        type: exam
+      - subject: tprog
+        type: course
+      - subject: pye
+        type: course
 
 hpc:
   name: "Computación de Alta Performance"
@@ -740,14 +832,15 @@ hpc:
   credits: 10
   group: arqui_op_network
   course-needs:
-    - subject: p4
-      type: course
-    - subject: redes
-      type: course
-    - subject: sisoper
-      type: course
-    - subject: arqui
-      type: course
+    - and:
+      - subject: p4
+        type: course
+      - subject: redes
+        type: course
+      - subject: sisoper
+        type: course
+      - subject: arqui
+        type: course
 
 gpgpu:
   name: "Computación de Propósito General en Unidades de Procesamiento Gráfico"
@@ -755,12 +848,13 @@ gpgpu:
   credits: 7
   group: arqui_op_network
   course-needs:
-    - subject: arqui
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: p4
-      type: course
+    - and:
+      - subject: arqui
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: p4
+        type: course
 
 dtr:
   name: "Diseño Topológico de Redes"
@@ -776,28 +870,30 @@ sig:
   credits: 10
   group: databases
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: fbd
-      type: exam
-    - subject: tprog
-      type: course
+    - and:
+      - subject: p4
+        type: exam
+      - subject: fbd
+        type: exam
+      - subject: tprog
+        type: course
 
 intmidd:
   name: "Introducción al Middleware"
   credits: 8
   group: databases
   course-needs:
-    - subject: sisoper
-      type: exam
-    - subject: fbd
-      type: exam
-    - subject: tprog
-      type: course
-    - subject: redes
-      type: course
-    - subject: iis
-      type: course
+    - and:
+      - subject: sisoper
+        type: exam
+      - subject: fbd
+        type: exam
+      - subject: tprog
+        type: course
+      - subject: redes
+        type: course
+      - subject: iis
+        type: course
 
 intropln:
   name: "Introducción al Procesamiento de Lenguaje Natural"
@@ -805,18 +901,19 @@ intropln:
   credits: 12
   group: artificial_intelligence
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: pye
-      type: exam
-    - subject: teoleng
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: logica
-      type: exam
-    - subject: tprog
-      type: course
+    - and:
+      - subject: p4
+        type: exam
+      - subject: pye
+        type: exam
+      - subject: teoleng
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: logica
+        type: exam
+      - subject: tprog
+        type: course
 
 iogr:
   name: "Investigación Operativa y Gestión de Riesgos"
@@ -833,24 +930,25 @@ mor:
   credits: 10
   group: investigation
   course-needs:
-    - subject: discreta1
-      type: exam
-    - subject: discreta2
-      type: exam
-    - subject: calc2
-      type: exam
-    - subject: calc1
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: pye
-      type: exam
-    - subject: iio
-      type: course
-    - subject: gal1
-      type: course
-    - subject: gal2
-      type: course
+    - and:
+      - subject: discreta1
+        type: exam
+      - subject: discreta2
+        type: exam
+      - subject: calc2
+        type: exam
+      - subject: calc1
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: pye
+        type: exam
+      - subject: iio
+        type: course
+      - subject: gal1
+        type: course
+      - subject: gal2
+        type: course
 
 negsoftware:
   name: "Introducción al Negocio del Software"
@@ -866,18 +964,19 @@ aprendaut:
   credits: 12
   group: artificial_intelligence
   course-needs:
-    - subject: discreta2
-      type: exam
-    - subject: p4
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: fbd
-      type: exam
-    - subject: logica
-      type: exam
-    - subject: pye
-      type: exam
+    - and:
+      - subject: discreta2
+        type: exam
+      - subject: p4
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: fbd
+        type: exam
+      - subject: logica
+        type: exam
+      - subject: pye
+        type: exam
 
 webir:
   name: "Recuperación de Información y Recomendaciones en la Web"
@@ -885,10 +984,11 @@ webir:
   group: databases
   credits: 10
   course-needs:
-    - subject: p3
-      type: exam
-    - subject: fbd
-      type: exam
+    - and:
+      - subject: p3
+        type: exam
+      - subject: fbd
+        type: exam
 
 rbc:
   name: "Robótica Basada en Comportamientos"
@@ -896,12 +996,13 @@ rbc:
   credits: 15
   group: artificial_intelligence
   course-needs:
-    - subject: f1
-      type: exam
-    - subject: logica
-      type: exam
-    - subject: tprog
-      type: course
+    - and:
+      - subject: f1
+        type: exam
+      - subject: logica
+        type: exam
+      - subject: tprog
+        type: course
 
 ecdif:
   name: "Ecuaciones Diferenciales"
@@ -909,14 +1010,15 @@ ecdif:
   group: maths
   has_exam: true
   course-needs:
-    - subject: gal1
-      type: exam
-    - subject: calc1
-      type: exam
-    - subject: gal2
-      type: exam
-    - subject: calc2
-      type: course
+    - and:
+      - subject: gal1
+        type: exam
+      - subject: calc1
+        type: exam
+      - subject: gal2
+        type: exam
+      - subject: calc2
+        type: course
   exam-needs:
     - subject: ecdif
       type: course
@@ -927,10 +1029,11 @@ tarqui:
   credits: 10
   group: arqui_op_network
   course-needs:
-    - subject: arqui
-      type: exam
-    - subject: sisoper
-      type: course
+    - and:
+      - subject: arqui
+        type: exam
+      - subject: sisoper
+        type: course
 
 ass:
   name: "Administración y Seguridad de Sistemas"
@@ -938,18 +1041,19 @@ ass:
   credits: 10
   group: databases
   course-needs:
-    - credits: organization_management
-      amount: 10
-    - subject: arqui
-      type: exam
-    - subject: redes
-      type: course
-    - subject: sisoper
-      type: course
-    - subject: fbd
-      type: course
-    - subject: iis
-      type: course
+    - and:
+      - credits: organization_management
+        amount: 10
+      - subject: arqui
+        type: exam
+      - subject: redes
+        type: course
+      - subject: sisoper
+        type: course
+      - subject: fbd
+        type: course
+      - subject: iis
+        type: course
 
 adadr:
   name: "Análisis y Diseños de Algoritmos Distibuidos en Redes"
@@ -957,10 +1061,11 @@ adadr:
   credits: 8
   group: arqui_op_network
   course-needs:
-    - subject: p3
-      type: exam
-    - subject: redes
-      type: exam
+    - and:
+      - subject: p3
+        type: exam
+      - subject: redes
+        type: exam
 
 aarc:
   name: "Aspectos Avanzados de Redes de Computadoras"
@@ -985,16 +1090,17 @@ robemb:
   credits: 10
   group: artificial_intelligence
   course-needs:
-    - credits: experimental_sciences
-      amount: 10
-    - subject: arqui
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: redes
-      type: course
-    - subject: sisoper
-      type: course
+    - and:
+      - credits: experimental_sciences
+        amount: 10
+      - subject: arqui
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: redes
+        type: course
+      - subject: sisoper
+        type: course
 
 talgpgpu:
   name: "Taller de GPGPU"
@@ -1019,14 +1125,15 @@ tsi2:
   credits: 15
   group: projects
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: fbd
-      type: exam
-    - subject: sisoper
-      type: course
-    - subject: tprog
-      type: course
+    - and:
+      - subject: p4
+        type: exam
+      - subject: fbd
+        type: exam
+      - subject: sisoper
+        type: course
+      - subject: tprog
+        type: course
 
 tsi3:
   name: "Taller de Sistemas de Información 3"
@@ -1034,16 +1141,17 @@ tsi3:
   credits: 8
   group: projects
   course-needs:
-    - subject: fbd
-      type: exam
-    - subject: sisoper
-      type: exam
-    - subject: tprog
-      type: course
-    - subject: pis
-      type: course
-    - subject: tsi1
-      type: course
+    - and:
+      - subject: fbd
+        type: exam
+      - subject: sisoper
+        type: exam
+      - subject: tprog
+        type: course
+      - subject: pis
+        type: course
+      - subject: tsi1
+        type: course
 
 tsi4:
   name: "Taller de Sistemas de Información 4"
@@ -1051,14 +1159,18 @@ tsi4:
   credits: 15
   group: projects
   course-needs:
-    - subject: fbd
-      type: exam
-    - subject: sisoper
-      type: exam
-    - subject: pis
-      type: course
-    - subject: tsi1
-      type: course
+    - and:
+      - subject: fbd
+        type: exam
+      - subject: sisoper
+        type: exam
+      - subject: pis
+        type: course
+      - or:
+        - subject: tsi1
+          type: course
+        - subject: tsi2
+          type: course
 
 tsig:
   name: "Taller de Sistemas de Información Geográficos Empresariales"
@@ -1066,10 +1178,11 @@ tsig:
   credits: 8
   group: projects
   course-needs:
-    - subject: fbd
-      type: exam
-    - subject: tprog
-      type: course
+    - and:
+      - subject: fbd
+        type: exam
+      - subject: tprog
+        type: course
 
 tagsi:
   name: "Técnicas Avanzadas de Gestión de Sistemas de Información"
@@ -1077,10 +1190,11 @@ tagsi:
   credits: 15
   group: databases
   course-needs:
-    - subject: fbd
-      type: exam
-    - subject: redes
-      type: course
+    - and:
+      - subject: fbd
+        type: exam
+      - subject: redes
+        type: course
 
 tcace:
   name: "Teoría de Códigos Algebráicos para la Correción de Errores"
@@ -1088,20 +1202,21 @@ tcace:
   credits: 7
   group: maths
   course-needs:
-    - subject: pye
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: discreta1
-      type: exam
-    - subject: discreta2
-      type: exam
-    - subject: calc1
-      type: exam
-    - subject: calc2
-      type: exam
-    - subject: gal1
-      type: exam
+    - and:
+      - subject: pye
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: discreta1
+        type: exam
+      - subject: discreta2
+        type: exam
+      - subject: calc1
+        type: exam
+      - subject: calc2
+        type: exam
+      - subject: gal1
+        type: exam
 
 teocomp:
   name: "Teoría de la Computación"
@@ -1126,22 +1241,24 @@ im:
   credits: 8
   group: optionals
   course-needs:
-    - credits: experimental_sciences
-      amount: 10
-    - subject: pis
-      type: course
-    - subject: redes
-      type: course
+    - and:
+      - credits: experimental_sciences
+        amount: 10
+      - subject: pis
+        type: course
+      - subject: redes
+        type: course
 
 idatos:
   name: "Integración de Datos"
   credits: 8
   group: databases
   course-needs:
-    - credits: total
-      amount: 250
-    - subject: fbd
-      type: exam
+    - and:
+      - credits: total
+        amount: 250
+      - subject: fbd
+        type: exam
 
 atipi:
   name: "Aplicaciones de la Teoría de la Información al Procesamiento de Imágenes"
@@ -1183,54 +1300,57 @@ eventosdisc:
   credits: 10
   group: investigation
   course-needs:
-    - subject: p3
-      type: exam
-    - subject: pye
-      type: exam
-    - subject: iio
-      type: exam
-    - subject: p4
-      type: course
+    - and:
+      - subject: p3
+        type: exam
+      - subject: pye
+        type: exam
+      - subject: iio
+        type: exam
+      - subject: p4
+        type: course
 
 sisdistr:
   name: "Sistemas Distribuidos"
   credits: 15
   group: arqui_op_network
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: logica
-      type: exam
-    - subject: sisoper
-      type: exam
-    - subject: arqui
-      type: exam
-    - subject: p2
-      type: exam
-    - subject: fbd
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: p1
-      type: exam
-    - subject: teoleng
-      type: exam
-    - subject: tprog
-      type: course
-    - subject: redes
-      type: course
+    - and:
+      - subject: p4
+        type: exam
+      - subject: logica
+        type: exam
+      - subject: sisoper
+        type: exam
+      - subject: arqui
+        type: exam
+      - subject: p2
+        type: exam
+      - subject: fbd
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: p1
+        type: exam
+      - subject: teoleng
+        type: exam
+      - subject: tprog
+        type: course
+      - subject: redes
+        type: course
 
 tallersi:
   name: "Taller de Seguridad Informática"
   credits: 7
   group: arqui_op_network
   course-needs:
-    - subject: fbd
-      type: exam
-    - subject: p3
-      type: exam
-    - subject: redes
-      type: course
+    - and:
+      - subject: fbd
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: redes
+        type: course
 
 tvs:
   name: "Taller de Verificación de Software"
@@ -1238,10 +1358,11 @@ tvs:
   credits: 8
   group: software_engeneering
   course-needs:
-    - subject: fbd
-      type: exam
-    - subject: iis
-      type: course
+    - and:
+      - subject: fbd
+        type: exam
+      - subject: iis
+        type: course
 
 tinpercom:
   name: "Taller de Interacción Persona Computadora"
@@ -1249,20 +1370,22 @@ tinpercom:
   credits: 8
   group: software_engeneering
   course-needs:
-    - subject: iis
-      type: exam
-    - subject: inpercom
-      type: course
+    - and:
+      - subject: iis
+        type: exam
+      - subject: inpercom
+        type: course
 
 tso:
   name: "Taller de Sistemas Operativos"
   credits: 8
   group: arqui_op_network
   course-needs:
-    - subject: p4
-      type: exam
-    - subject: sisoper
-      type: exam
+    - and:
+      - subject: p4
+        type: exam
+      - subject: sisoper
+        type: exam
 
 fismod:
   name: "Introducción a la Física Moderna"
