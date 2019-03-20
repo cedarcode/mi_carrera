@@ -9,6 +9,20 @@
   <div class="mdc-list" data-controller="exam-visibility" >
     <label class="mdc-list-item" for="checkbox_course_approved">
       <span class="mdc-list-item__text">
+        Créditos: <%= @subject.credits %>
+      </span>
+    </label>
+
+    <label class="mdc-list-item" for="checkbox_course_approved">
+      <span class="mdc-list-item__text">
+        Grupo: <%= @subject.group.name %>
+      </span>
+    </label>
+
+    <hr class="mdc-list-divider">
+
+    <label class="mdc-list-item" for="checkbox_course_approved">
+      <span class="mdc-list-item__text">
         Curso aprobado?
       </span>
 
