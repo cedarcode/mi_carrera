@@ -22,6 +22,11 @@ document.addEventListener("turbolinks:load", function() {
 
 window.initializeCheckboxes = function() {
   document.querySelectorAll(".mdc-checkbox").forEach(function(element) {
+    if (element.querySelectorAll("[disabled='disabled']").length > 0) {
+      element.addEventListener("click", function(event) {
+        event.preventDefault();
+      });
+    }
     element.addEventListener("click", function(event) {
       event.stopPropagation();
     });
