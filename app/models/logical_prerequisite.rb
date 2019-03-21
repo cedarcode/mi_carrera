@@ -3,7 +3,7 @@ class LogicalPrerequisite < Prerequisite
   has_many(
     :operands_prerequisites,
     class_name: 'Prerequisite',
-    inverse_of: 'prerequisite',
-    foreign_key: "prerequisite_id"
+    inverse_of: 'parent_prerequisite',
+    foreign_key: "parent_prerequisite_id"
   )
 end

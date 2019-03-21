@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_140119) do
 
   create_table "prerequisites", force: :cascade do |t|
     t.string "type", null: false
-    t.integer "prerequisite_id"
+    t.integer "parent_prerequisite_id"
     t.integer "dependency_item_id"
     t.string "logical_operator"
     t.integer "credits_needed"

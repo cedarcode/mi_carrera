@@ -2,7 +2,7 @@ class CreatePrerequisiteTree < ActiveRecord::Migration[5.2]
   def change
     create_table :prerequisites do |t|
       t.string  :type, null: false
-      t.integer :prerequisite_id
+      t.integer :parent_prerequisite_id
       t.integer :dependency_item_id
 
       t.string  :logical_operator
