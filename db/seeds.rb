@@ -104,65 +104,65 @@ class StudentAppSeeder
     end
   end
 
-  def add_subject_prerequisite(ancester, subject_key, type, subjects, subject_groups)
+  def add_subject_prerequisite(ancestor, subject_key, type, subjects, subject_groups)
     dependency = populate_subject!(subjects[subject_key], subject_groups)
-    if ancester.is_a? DependencyItem
+    if ancestor.is_a? DependencyItem
       if type == "course"
         SubjectPrerequisite
-          .where(dependency_item_id: ancester.id, dependency_item_needed_id: dependency.course.id)
+          .where(dependency_item_id: ancestor.id, dependency_item_needed_id: dependency.course.id)
           .first_or_create!
       elsif type == "exam"
         SubjectPrerequisite
-          .where(dependency_item_id: ancester.id, dependency_item_needed_id: dependency.exam.id)
+          .where(dependency_item_id: ancestor.id, dependency_item_needed_id: dependency.exam.id)
           .first_or_create!
       end
-    elsif ancester.is_a? Prerequisite
+    elsif ancestor.is_a? Prerequisite
       if type == "course"
         SubjectPrerequisite
-          .where(prerequisite_id: ancester.id, dependency_item_needed_id: dependency.course.id)
+          .where(prerequisite_id: ancestor.id, dependency_item_needed_id: dependency.course.id)
           .first_or_create!
       elsif type == "exam"
         SubjectPrerequisite
-          .where(prerequisite_id: ancester.id, dependency_item_needed_id: dependency.exam.id)
+          .where(prerequisite_id: ancestor.id, dependency_item_needed_id: dependency.exam.id)
           .first_or_create!
       end
     end
   end
 
-  def add_credits_prerequisite(ancester, group_key, credits, subject_groups)
-    if ancester.is_a? DependencyItem
+  def add_credits_prerequisite(ancestor, group_key, credits, subject_groups)
+    if ancestor.is_a? DependencyItem
       if group_key == "total"
         CreditsPrerequisite
-          .where(dependency_item_id: ancester.id, subject_group_id: nil, credits_needed: credits)
+          .where(dependency_item_id: ancestor.id, subject_group_id: nil, credits_needed: credits)
           .first_or_create!
       else
         group = SubjectGroup.where(name: subject_groups[group_key]["name"]).first
         CreditsPrerequisite
-          .where(dependency_item_id: ancester.id, subject_group_id: group.id, credits_needed: credits)
+          .where(dependency_item_id: ancestor.id, subject_group_id: group.id, credits_needed: credits)
           .first_or_create!
       end
-    elsif ancester.is_a? Prerequisite
+    elsif ancestor.is_a? Prerequisite
       if group_key == "total"
         CreditsPrerequisite
-          .where(prerequisite_id: ancester.id, subject_group_id: nil, credits_needed: credits)
+          .where(prerequisite_id: ancestor.id, subject_group_id: nil, credits_needed: credits)
           .first_or_create!
       else
         group = SubjectGroup.where(name: subject_groups[group_key]["name"]).first
         CreditsPrerequisite
-          .where(prerequisite_id: ancester.id, subject_group_id: group.id, credits_needed: credits)
+          .where(prerequisite_id: ancestor.id, subject_group_id: group.id, credits_needed: credits)
           .first_or_create!
       end
     end
   end
 
-  def add_logical_prerequisite(ancester, logical_operator, prerequisites, subjects, subject_groups)
-    if ancester.is_a? DependencyItem
+  def add_logical_prerequisite(ancestor, logical_operator, prerequisites, subjects, subject_groups)
+    if ancestor.is_a? DependencyItem
       prerequisite = LogicalPrerequisite
-                     .where(dependency_item_id: ancester.id, logical_operator: logical_operator)
+                     .where(dependency_item_id: ancestor.id, logical_operator: logical_operator)
                      .first_or_create!
-    elsif ancester.is_a? Prerequisite
+    elsif ancestor.is_a? Prerequisite
       prerequisite = LogicalPrerequisite
-                     .where(prerequisite_id: ancester.id, logical_operator: logical_operator)
+                     .where(prerequisite_id: ancestor.id, logical_operator: logical_operator)
                      .first_or_create!
     end
     populate_prerequisites_tree!(prerequisite, prerequisites, subjects, subject_groups)
