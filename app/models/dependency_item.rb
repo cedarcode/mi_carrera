@@ -13,4 +13,6 @@ class DependencyItem < ApplicationRecord
     foreign_key: "prerequisite_id"
   )
   has_many :credits_prerequisites
+
+  validates :is_exam, inclusion: { in: [true, false] }
 end
