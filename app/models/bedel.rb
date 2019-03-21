@@ -83,12 +83,12 @@ class Bedel
       end
     when CreditsPrerequisite
       credits(prerequisite_item.subject_group) >= prerequisite_item.credits_needed
-    when LogicPrerequisite
-      if prerequisite_item.logic_operator == "and"
+    when LogicalPrerequisite
+      if prerequisite_item.logical_operator == "and"
         prerequisite_item.operands_prerequisites.all? do |prerequisite|
           meets_prerequisites?(prerequisite)
         end
-      elsif prerequisite_item.logic_operator == "or"
+      elsif prerequisite_item.logical_operator == "or"
         prerequisite_item.operands_prerequisites.any? do |prerequisite|
           meets_prerequisites?(prerequisite)
         end

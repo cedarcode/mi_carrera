@@ -1,5 +1,5 @@
-class LogicPrerequisite < Prerequisite
-  validates :logic_operator, presence: true
+class LogicalPrerequisite < Prerequisite
+  validates :logical_operator, presence: true
   has_many(
     :operands_prerequisites,
     class_name: 'Prerequisite',

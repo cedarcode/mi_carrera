@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_140119) do
     t.string "type", null: false
     t.integer "prerequisite_id"
     t.integer "dependency_item_id"
-    t.string "logic_operator"
+    t.string "logical_operator"
     t.integer "credits_needed"
     t.integer "subject_group_id"
     t.integer "dependency_item_needed_id"

@@ -93,7 +93,7 @@ class StudentAppSeeder
           subject_groups
         )
       elsif prerequisite.keys & LOGIC_OPERATORS != []
-        add_logic_prerequisite(
+        add_logical_prerequisite(
           root,
           prerequisite.keys.first,
           prerequisite[prerequisite.keys.first],
@@ -155,14 +155,14 @@ class StudentAppSeeder
     end
   end
 
-  def add_logic_prerequisite(ancester, logic_operator, prerequisites, subjects, subject_groups)
+  def add_logical_prerequisite(ancester, logical_operator, prerequisites, subjects, subject_groups)
     if ancester.is_a? DependencyItem
-      prerequisite = LogicPrerequisite
-                     .where(dependency_item_id: ancester.id, logic_operator: logic_operator)
+      prerequisite = LogicalPrerequisite
+                     .where(dependency_item_id: ancester.id, logical_operator: logical_operator)
                      .first_or_create!
     elsif ancester.is_a? Prerequisite
-      prerequisite = LogicPrerequisite
-                     .where(prerequisite_id: ancester.id, logic_operator: logic_operator)
+      prerequisite = LogicalPrerequisite
+                     .where(prerequisite_id: ancester.id, logical_operator: logical_operator)
                      .first_or_create!
     end
     populate_prerequisites_tree!(prerequisite, prerequisites, subjects, subject_groups)

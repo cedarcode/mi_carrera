@@ -5,7 +5,7 @@ class CreatePrerequisiteTree < ActiveRecord::Migration[5.2]
       t.integer :prerequisite_id
       t.integer :dependency_item_id
 
-      t.string  :logic_operator
+      t.string  :logical_operator
 
       t.integer :credits_needed
       t.integer :subject_group_id
