@@ -7,8 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 class StudentAppSeeder
-  LOGIC_OPERATORS = ["and", "or"]
-
   def seed
     subject_groups = populate_subject_groups!
     populate_subjects!(subject_groups)
@@ -92,7 +90,7 @@ class StudentAppSeeder
           prerequisite["amount"],
           subject_groups
         )
-      elsif prerequisite.keys & LOGIC_OPERATORS != []
+      elsif prerequisite.keys & LogicalPrerequisite::LOGICAL_OPERATORS != []
         add_logical_prerequisite(
           root,
           prerequisite.keys.first,
