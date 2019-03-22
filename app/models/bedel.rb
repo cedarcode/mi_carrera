@@ -35,8 +35,8 @@ class Bedel
   end
 
   def able_to_do?(dependency_item)
-    if dependency_item.prerequisites
-      meets_prerequisites?(dependency_item.prerequisites)
+    if dependency_item.prerequisite_tree
+      meets_prerequisites?(dependency_item.prerequisite_tree)
     else
       true
     end
