@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_163512) do
+ActiveRecord::Schema.define(version: 2019_03_21_140119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,19 +38,19 @@ ActiveRecord::Schema.define(version: 2019_03_12_163512) do
   end
 
   create_table "subject_groups", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.string "name"
-    t.integer "credits"
+    t.string "name", null: false
+    t.integer "credits", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "short_name"
     t.integer "semester"
-    t.integer "group_id"
+    t.integer "group_id", null: false
   end
 
 end
