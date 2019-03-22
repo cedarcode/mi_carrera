@@ -15,7 +15,6 @@ class Bedel
   end
 
   def remove_approval(dependency_item)
-    remove_dependants_approvals(dependency_item)
     if dependency_item.is_exam?
       store[:approved_exams] -= [dependency_item.subject_id]
     else
@@ -36,14 +35,11 @@ class Bedel
   end
 
   def able_to_do?(dependency_item)
-    enough_credits?(dependency_item) &&
-      dependency_item.prerequisites.all? do |prerequisite|
-        if prerequisite.is_exam
-          store[:approved_exams].include?(prerequisite.subject_id)
-        else
-          store[:approved_courses].include?(prerequisite.subject_id)
-        end
-      end
+    if dependency_item.prerequisite_tree
+      meets_prerequisites?(dependency_item.prerequisite_tree)
+    else
+      true
+    end
   end
 
   private
@@ -68,25 +64,35 @@ class Bedel
       .sum(:credits)
   end
 
-  def remove_dependants_approvals(dependency_item)
-    dependency_item.dependants.each do |dependant|
-      if approved?(dependant)
-        remove_approval(dependant)
-      end
-    end
-  end
-
-  def enough_credits?(dependency_item)
-    dependency_item.credits_prerequisites.all? do |credit_prerequisite|
-      credits(credit_prerequisite.subject_group) >= credit_prerequisite.credits_needed
-    end
-  end
-
   def subject_scope(group)
     if group
       group.subjects
     else
       Subject
+    end
+  end
+
+  def meets_prerequisites?(prerequisite_item)
+    case prerequisite_item
+    when SubjectPrerequisite
+      dependency_item_needed = prerequisite_item.dependency_item_needed
+      if dependency_item_needed.is_exam
+        store[:approved_exams].include?(dependency_item_needed.subject_id)
+      else
+        store[:approved_courses].include?(dependency_item_needed.subject_id)
+      end
+    when CreditsPrerequisite
+      credits(prerequisite_item.subject_group) >= prerequisite_item.credits_needed
+    when LogicalPrerequisite
+      if prerequisite_item.logical_operator == "and"
+        prerequisite_item.operands_prerequisites.all? do |prerequisite|
+          meets_prerequisites?(prerequisite)
+        end
+      elsif prerequisite_item.logical_operator == "or"
+        prerequisite_item.operands_prerequisites.any? do |prerequisite|
+          meets_prerequisites?(prerequisite)
+        end
+      end
     end
   end
 end

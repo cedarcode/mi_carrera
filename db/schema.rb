@@ -15,26 +15,21 @@ ActiveRecord::Schema.define(version: 2019_03_21_140119) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "credits_prerequisites", force: :cascade do |t|
-    t.integer "dependency_item_id", null: false
-    t.integer "subject_group_id"
-    t.integer "credits_needed", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "dependencies", force: :cascade do |t|
-    t.integer "dependency_item_id", null: false
-    t.integer "prerequisite_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "dependency_items", force: :cascade do |t|
     t.integer "subject_id", null: false
     t.boolean "is_exam", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "prerequisites", force: :cascade do |t|
+    t.string "type", null: false
+    t.integer "parent_prerequisite_id"
+    t.integer "dependency_item_id"
+    t.string "logical_operator"
+    t.integer "credits_needed"
+    t.integer "subject_group_id"
+    t.integer "dependency_item_needed_id"
   end
 
   create_table "subject_groups", force: :cascade do |t|
