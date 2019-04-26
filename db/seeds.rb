@@ -104,7 +104,9 @@ class StudentAppSeeder
 
   def add_subject_prerequisite(parent, subject_key, type, subjects, subject_groups)
     dependency = populate_subject!(subjects[subject_key], subject_groups)
-    if parent.is_a? DependencyItem
+
+    case parent
+    when DependencyItem
       if type == "course"
         SubjectPrerequisite
           .where(dependency_item_id: parent.id, dependency_item_needed_id: dependency.course.id)
@@ -114,7 +116,7 @@ class StudentAppSeeder
           .where(dependency_item_id: parent.id, dependency_item_needed_id: dependency.exam.id)
           .first_or_create!
       end
-    elsif parent.is_a? Prerequisite
+    when Prerequisite
       if type == "course"
         SubjectPrerequisite
           .where(parent_prerequisite_id: parent.id, dependency_item_needed_id: dependency.course.id)
@@ -128,7 +130,8 @@ class StudentAppSeeder
   end
 
   def add_credits_prerequisite(parent, group_key, credits, subject_groups)
-    if parent.is_a? DependencyItem
+    case parent
+    when DependencyItem
       if group_key == "total"
         CreditsPrerequisite
           .where(dependency_item_id: parent.id, subject_group_id: nil, credits_needed: credits)
@@ -139,7 +142,7 @@ class StudentAppSeeder
           .where(dependency_item_id: parent.id, subject_group_id: group.id, credits_needed: credits)
           .first_or_create!
       end
-    elsif parent.is_a? Prerequisite
+    when Prerequisite
       if group_key == "total"
         CreditsPrerequisite
           .where(parent_prerequisite_id: parent.id, subject_group_id: nil, credits_needed: credits)
@@ -154,15 +157,17 @@ class StudentAppSeeder
   end
 
   def add_logical_prerequisite(parent, logical_operator, prerequisites, subjects, subject_groups)
-    if parent.is_a? DependencyItem
+    case parent
+    when DependencyItem
       prerequisite = LogicalPrerequisite
                      .where(dependency_item_id: parent.id, logical_operator: logical_operator)
                      .first_or_create!
-    elsif parent.is_a? Prerequisite
+    when Prerequisite
       prerequisite = LogicalPrerequisite
                      .where(parent_prerequisite_id: parent.id, logical_operator: logical_operator)
                      .first_or_create!
     end
+
     populate_prerequisites_tree!(prerequisite, prerequisites, subjects, subject_groups)
   end
 end
