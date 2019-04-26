@@ -1,3 +1,3 @@
 class SubjectPrerequisite < Prerequisite
-  belongs_to :dependency_item_needed, class_name: "DependencyItem"
+  belongs_to :approvable_needed, class_name: "Approvable"
 end

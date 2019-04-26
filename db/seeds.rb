@@ -106,24 +106,24 @@ class StudentAppSeeder
     dependency = populate_subject!(subjects[subject_key], subject_groups)
 
     case parent
-    when DependencyItem
+    when Approvable
       if type == "course"
         SubjectPrerequisite
-          .where(dependency_item_id: parent.id, dependency_item_needed_id: dependency.course.id)
+          .where(approvable_id: parent.id, approvable_needed_id: dependency.course.id)
           .first_or_create!
       elsif type == "exam"
         SubjectPrerequisite
-          .where(dependency_item_id: parent.id, dependency_item_needed_id: dependency.exam.id)
+          .where(approvable_id: parent.id, approvable_needed_id: dependency.exam.id)
           .first_or_create!
       end
     when Prerequisite
       if type == "course"
         SubjectPrerequisite
-          .where(parent_prerequisite_id: parent.id, dependency_item_needed_id: dependency.course.id)
+          .where(parent_prerequisite_id: parent.id, approvable_needed_id: dependency.course.id)
           .first_or_create!
       elsif type == "exam"
         SubjectPrerequisite
-          .where(parent_prerequisite_id: parent.id, dependency_item_needed_id: dependency.exam.id)
+          .where(parent_prerequisite_id: parent.id, approvable_needed_id: dependency.exam.id)
           .first_or_create!
       end
     end
@@ -131,15 +131,15 @@ class StudentAppSeeder
 
   def add_credits_prerequisite(parent, group_key, credits, subject_groups)
     case parent
-    when DependencyItem
+    when Approvable
       if group_key == "total"
         CreditsPrerequisite
-          .where(dependency_item_id: parent.id, subject_group_id: nil, credits_needed: credits)
+          .where(approvable_id: parent.id, subject_group_id: nil, credits_needed: credits)
           .first_or_create!
       else
         group = SubjectGroup.where(name: subject_groups[group_key]["name"]).first
         CreditsPrerequisite
-          .where(dependency_item_id: parent.id, subject_group_id: group.id, credits_needed: credits)
+          .where(approvable_id: parent.id, subject_group_id: group.id, credits_needed: credits)
           .first_or_create!
       end
     when Prerequisite
@@ -158,9 +158,9 @@ class StudentAppSeeder
 
   def add_logical_prerequisite(parent, logical_operator, prerequisites, subjects, subject_groups)
     case parent
-    when DependencyItem
+    when Approvable
       prerequisite = LogicalPrerequisite
-                     .where(dependency_item_id: parent.id, logical_operator: logical_operator)
+                     .where(approvable_id: parent.id, logical_operator: logical_operator)
                      .first_or_create!
     when Prerequisite
       prerequisite = LogicalPrerequisite
