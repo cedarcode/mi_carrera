@@ -1,2 +1,0 @@
-class Dependency < ApplicationRecord
-end
