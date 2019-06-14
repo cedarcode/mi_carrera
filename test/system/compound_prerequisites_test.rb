@@ -21,15 +21,15 @@ class CompoundPrerequisitesTest < ApplicationSystemTestCase
     p2.create_course!
     p2.create_exam!
 
-    SubjectPrerequisite.create!(dependency_item_id: @gal1.exam.id, dependency_item_needed_id: @gal1.course.id)
-    SubjectPrerequisite.create!(dependency_item_id: @gal2.exam.id, dependency_item_needed_id: @gal2.course.id)
-    SubjectPrerequisite.create!(dependency_item_id: @p1.exam.id, dependency_item_needed_id: @p1.course.id)
-    or_prerequisite = LogicalPrerequisite.create!(dependency_item_id: p2.course.id, logical_operator: "or")
+    SubjectPrerequisite.create!(approvable_id: @gal1.exam.id, approvable_needed_id: @gal1.course.id)
+    SubjectPrerequisite.create!(approvable_id: @gal2.exam.id, approvable_needed_id: @gal2.course.id)
+    SubjectPrerequisite.create!(approvable_id: @p1.exam.id, approvable_needed_id: @p1.course.id)
+    or_prerequisite = LogicalPrerequisite.create!(approvable_id: p2.course.id, logical_operator: "or")
     CreditsPrerequisite.create!(parent_prerequisite_id: or_prerequisite.id, subject_group_id: nil, credits_needed: 15)
     and_prerequisite = LogicalPrerequisite.create!(parent_prerequisite_id: or_prerequisite.id, logical_operator: "and")
-    SubjectPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id, dependency_item_needed_id: @gal1.course.id)
-    SubjectPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id, dependency_item_needed_id: @gal2.course.id)
-    SubjectPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id, dependency_item_needed_id: @p1.course.id)
+    SubjectPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id, approvable_needed_id: @gal1.course.id)
+    SubjectPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id, approvable_needed_id: @gal2.course.id)
+    SubjectPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id, approvable_needed_id: @p1.course.id)
     and_prerequisite = LogicalPrerequisite.create!(parent_prerequisite_id: or_prerequisite.id, logical_operator: "and")
     CreditsPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id,
                                 subject_group_id: maths.id,

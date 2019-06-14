@@ -5,9 +5,9 @@ class DependenciesTest < ApplicationSystemTestCase
     @gal1 = create_subject("GAL 1", credits: 9, exam: true)
     gal2 = create_subject("GAL 2", credits: 9, exam: true)
 
-    SubjectPrerequisite.create!(dependency_item_id: gal2.course.id, dependency_item_needed_id: @gal1.course.id)
-    SubjectPrerequisite.create!(dependency_item_id: @gal1.exam.id, dependency_item_needed_id: @gal1.course.id)
-    SubjectPrerequisite.create!(dependency_item_id: gal2.exam.id, dependency_item_needed_id: gal2.course.id)
+    SubjectPrerequisite.create!(approvable_id: gal2.course.id, approvable_needed_id: @gal1.course.id)
+    SubjectPrerequisite.create!(approvable_id: @gal1.exam.id, approvable_needed_id: @gal1.course.id)
+    SubjectPrerequisite.create!(approvable_id: gal2.exam.id, approvable_needed_id: gal2.course.id)
   end
 
   test "student sees exam disabled" do

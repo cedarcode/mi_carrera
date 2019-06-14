@@ -1,4 +1,4 @@
-class DependencyItem < ApplicationRecord
+class Approvable < ApplicationRecord
   belongs_to :subject
   has_one :prerequisite_tree, class_name: "Prerequisite"
 
