@@ -47,6 +47,9 @@ Security:
 Rails/LexicallyScopedActionFilter:
   Enabled: false
 
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+
 Style/RedundantBegin:
   Enabled: true
 
