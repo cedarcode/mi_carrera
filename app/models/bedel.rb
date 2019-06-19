@@ -20,6 +20,38 @@ class Bedel
     else
       store[:approved_courses] -= [approvable.subject_id]
     end
+
+    refresh_approvals
+  end
+
+  def refresh_approvals
+    original_count = store[:approved_exams].size + store[:approved_courses].size
+
+    to_remove = []
+    store[:approved_exams].each do |subject_id|
+      approvable = Approvable.find_by(subject_id: subject_id, is_exam: true)
+
+      if !able_to_do?(approvable)
+        to_remove += [subject_id]
+      end
+    end
+    store[:approved_exams] -= to_remove
+
+    to_remove = []
+    store[:approved_courses].each do |subject_id|
+      approvable = Approvable.find_by(subject_id: subject_id, is_exam: false)
+
+      if !able_to_do?(approvable)
+        to_remove += [subject_id]
+      end
+    end
+    store[:approved_courses] -= to_remove
+
+    new_count = store[:approved_exams].size + store[:approved_courses].size
+
+    if new_count != original_count
+      refresh_approvals
+    end
   end
 
   def credits(group = nil)

@@ -118,6 +118,7 @@ class ApprovalTest < ApplicationSystemTestCase
     wait_for_async_request
     visit root_path
 
+    assert_text "0 créditos"
     assert page.has_unchecked_field?("checkbox_#{@subject.id}_exam_approved", visible: false)
     visit subject_path(@subject)
     assert page.has_unchecked_field?("Examen aprobado?", visible: false)
