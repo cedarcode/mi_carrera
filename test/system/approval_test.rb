@@ -21,7 +21,7 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student adds approved course from index" do
     visit root_path
 
-    find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    find("#checkbox_#{@subject.id}_course_approved", visible: :all).click
     wait_for_async_request
     visit root_path
 
@@ -46,10 +46,10 @@ class ApprovalTest < ApplicationSystemTestCase
 
   test "student adds approved exam from index" do
     visit root_path
-    find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    find("#checkbox_#{@subject.id}_course_approved", visible: :all).click
     wait_for_async_request
 
-    find("#checkbox_#{@subject.id}_exam_approved", visible: false).click
+    find("#checkbox_#{@subject.id}_exam_approved", visible: :all).click
 
     assert_text "9 créditos"
     visit root_path
@@ -76,11 +76,11 @@ class ApprovalTest < ApplicationSystemTestCase
 
   test "student remove approved course from index" do
     visit root_path
-    find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    find("#checkbox_#{@subject.id}_course_approved", visible: :all).click
     wait_for_async_request
 
     visit root_path
-    find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    find("#checkbox_#{@subject.id}_course_approved", visible: :all).click
     wait_for_async_request
     visit root_path
 
@@ -108,13 +108,13 @@ class ApprovalTest < ApplicationSystemTestCase
 
   test "student remove approved exam from index" do
     visit root_path
-    find("#checkbox_#{@subject.id}_course_approved", visible: false).click
+    find("#checkbox_#{@subject.id}_course_approved", visible: :all).click
     wait_for_async_request
-    find("#checkbox_#{@subject.id}_exam_approved", visible: false).click
+    find("#checkbox_#{@subject.id}_exam_approved", visible: :all).click
     wait_for_async_request
 
     visit root_path
-    find("#checkbox_#{@subject.id}_exam_approved", visible: false).click
+    find("#checkbox_#{@subject.id}_exam_approved", visible: :all).click
     wait_for_async_request
     visit root_path
 

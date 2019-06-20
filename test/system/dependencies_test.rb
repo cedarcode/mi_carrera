@@ -29,7 +29,7 @@ class DependenciesTest < ApplicationSystemTestCase
 
   test "student can enable exams from index" do
     visit root_path
-    find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+    find("#checkbox_#{@gal1.id}_course_approved", visible: :all).click
 
     assert page.has_unchecked_field?("checkbox_#{@gal1.id}_exam_approved", disabled: false, visible: false)
     visit subject_path(@gal1)
@@ -50,10 +50,10 @@ class DependenciesTest < ApplicationSystemTestCase
 
   test "student can disable exams from index" do
     visit root_path
-    find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+    find("#checkbox_#{@gal1.id}_course_approved", visible: :all).click
     wait_for_async_request
 
-    find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+    find("#checkbox_#{@gal1.id}_course_approved", visible: :all).click
 
     assert page.has_unchecked_field?("checkbox_#{@gal1.id}_exam_approved", disabled: true, visible: false)
     visit subject_path(@gal1)
@@ -77,7 +77,7 @@ class DependenciesTest < ApplicationSystemTestCase
 
   test "student can reaveal hidden subjects from index" do
     visit root_path
-    find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+    find("#checkbox_#{@gal1.id}_course_approved", visible: :all).click
 
     assert_text "GAL 2"
   end
@@ -97,10 +97,10 @@ class DependenciesTest < ApplicationSystemTestCase
 
   test "student can hide subjects from index" do
     visit root_path
-    find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+    find("#checkbox_#{@gal1.id}_course_approved", visible: :all).click
     wait_for_async_request
 
-    find("#checkbox_#{@gal1.id}_course_approved", visible: false).click
+    find("#checkbox_#{@gal1.id}_course_approved", visible: :all).click
 
     assert_no_text "GAL 2"
   end
