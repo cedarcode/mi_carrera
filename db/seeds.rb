@@ -74,6 +74,7 @@ class StudentAppSeeder
   end
 
   def populate_prerequisites_tree!(root, prerequisites, subjects, subject_groups)
+    Prerequisite.all.delete_all
     prerequisites.each do |prerequisite|
       if prerequisite.key?("subject")
         add_subject_prerequisite(
@@ -160,12 +161,10 @@ class StudentAppSeeder
     case parent
     when Approvable
       prerequisite = LogicalPrerequisite
-                     .where(approvable_id: parent.id, logical_operator: logical_operator)
-                     .first_or_create!
+                     .create!(approvable_id: parent.id, logical_operator: logical_operator)
     when Prerequisite
       prerequisite = LogicalPrerequisite
-                     .where(parent_prerequisite_id: parent.id, logical_operator: logical_operator)
-                     .first_or_create!
+                     .create!(parent_prerequisite_id: parent.id, logical_operator: logical_operator)
     end
 
     populate_prerequisites_tree!(prerequisite, prerequisites, subjects, subject_groups)
