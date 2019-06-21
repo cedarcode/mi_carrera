@@ -8,6 +8,7 @@
 
 class StudentAppSeeder
   def seed
+    Prerequisite.all.delete_all
     subject_groups = populate_subject_groups!
     populate_subjects!(subject_groups)
   end
@@ -74,7 +75,6 @@ class StudentAppSeeder
   end
 
   def populate_prerequisites_tree!(root, prerequisites, subjects, subject_groups)
-    Prerequisite.all.delete_all
     prerequisites.each do |prerequisite|
       if prerequisite.key?("subject")
         add_subject_prerequisite(
