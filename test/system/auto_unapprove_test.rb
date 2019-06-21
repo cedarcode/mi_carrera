@@ -27,6 +27,6 @@ class AutoUnapprovalTest < ApplicationSystemTestCase
     assert_text "0 créditos"
     assert_no_text "Subject 2"
     assert_no_text "Subject 3"
-    assert page.has_unchecked_field?("checkbox_#{@subject1.id}_course_approved", visible: false)
+    assert page.has_unchecked_field?("checkbox_#{@subject1.id}_course_approved", visible: :all)
   end
 end
