@@ -33,6 +33,11 @@ class SubjectsController < ApplicationController
   end
 
   def show
+    approvables = Approvable.where(subject_id: subject.id)
+    @prerequisites_course = approvables.first.prerequisite_tree
+    if (approvables.count == 2)
+      @prerequisites_exam = approvables[1].prerequisite_tree
+    end
     respond_to do |format|
       format.html { subject }
     end

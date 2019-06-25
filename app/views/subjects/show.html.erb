@@ -64,5 +64,9 @@
         </span>
       </label>
     <% end %>
+
+  <hr class="mdc-list-divider">
+  <%= render partial: 'prerequisites/prerequisites_list', locals: { prerequisites_course: @prerequisites_course, prerequisites_exam: @prerequisites_exam  } %>
+
   </div>
 </div>
