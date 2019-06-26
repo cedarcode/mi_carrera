@@ -39,6 +39,19 @@ body {
   width: 80px;
 }
 
+.subjects-list {
+  position: relative;
+}
+
+.foreground-layer {
+  background-color: grey;
+  opacity: 0.4;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
 // Fix black hover over list item with checkbox (on Chrome 74+)
 :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::before {
     filter: opacity(100%);
