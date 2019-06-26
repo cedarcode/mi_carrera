@@ -66,7 +66,7 @@
     <% end %>
 
   <hr class="mdc-list-divider">
-  <%= render partial: 'prerequisites/prerequisites_list', locals: { prerequisites_course: @prerequisites_course, prerequisites_exam: @prerequisites_exam  } %>
+  <%= render partial: 'prerequisites/prerequisites_list', locals: { prerequisites_course: @subject.course.prerequisite_tree, prerequisites_exam: @subject.exam&.prerequisite_tree } %>
 
   </div>
 </div>
