@@ -1,5 +1,5 @@
 <label class="mdc-list-item">
   <span class="mdc-list-item__text">
-    <%= subject_prerequisite %>
+    <%= (subject_prerequisite.approvable_needed.subject.short_name ||  subject_prerequisite.approvable_needed.subject.name) + " (" + (subject_prerequisite.approvable_needed.is_exam ? "examen" : "curso") + ")" %>
   </span>
 </label>
