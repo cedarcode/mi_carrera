@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root to: "subjects#index"
 
+  get 'profile', action: :show, controller: 'profiles'
+
   resources :subjects do
     member do
       get :able_to_enroll, format: 'json'
