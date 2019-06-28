@@ -39,6 +39,19 @@ body {
   width: 80px;
 }
 
+.toggle-collapse {
+  cursor: pointer;
+}
+
+.logical-prerequisite-operands {
+  margin-left: 20px;
+  display: none;
+}
+
+.prerequisite-type {
+  font-weight: bold;
+}
+
 // Fix black hover over list item with checkbox (on Chrome 74+)
 :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::before {
     filter: opacity(100%);

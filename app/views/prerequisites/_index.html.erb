@@ -1,0 +1,20 @@
+<h6 class="mdc-list-group__subheader mdc-typography--headline6">Previas</h6>
+
+<% if prerequisites_course %>
+  <label class="mdc-list-item">
+    <span class="mdc-typography--subtitle1 prerequisite-type">
+      Del curso:
+    </span>
+  </label>
+  <%= render prerequisites_course %>
+<% end %>
+
+
+<% if prerequisites_exam %>
+  <label class="mdc-list-item">
+    <span class="mdc-typography--subtitle1 prerequisite-type">
+      Del examen:
+    </span>
+  </label>
+  <%= render prerequisites_exam %>
+<% end %>

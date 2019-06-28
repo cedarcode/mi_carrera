@@ -21,4 +21,8 @@ module SubjectsHelper
       "Noveno"
     end
   end
+
+  def display_name(subject)
+    subject.short_name || subject.name
+  end
 end
