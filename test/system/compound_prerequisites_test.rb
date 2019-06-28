@@ -50,46 +50,46 @@ class CompoundPrerequisitesTest < ApplicationSystemTestCase
     visit root_path
 
     assert_no_text "P2"
-    check "checkbox_#{@gal1.id}_course_approved", visible: false
+    check "checkbox_#{@gal1.id}_course_approved", visible: :all
     wait_for_async_request
-    check "checkbox_#{@gal1.id}_exam_approved", visible: false
+    check "checkbox_#{@gal1.id}_exam_approved", visible: :all
     wait_for_async_request
     assert_no_text "P2"
   end
 
   test "student can see subjects if they meet the requirements of the first operand" do
     visit root_path
-    check "checkbox_#{@gal1.id}_course_approved", visible: false
+    check "checkbox_#{@gal1.id}_course_approved", visible: :all
     wait_for_async_request
-    check "checkbox_#{@gal1.id}_exam_approved", visible: false
+    check "checkbox_#{@gal1.id}_exam_approved", visible: :all
     wait_for_async_request
-    check "checkbox_#{@gal2.id}_course_approved", visible: false
+    check "checkbox_#{@gal2.id}_course_approved", visible: :all
     wait_for_async_request
-    check "checkbox_#{@gal2.id}_exam_approved", visible: false
+    check "checkbox_#{@gal2.id}_exam_approved", visible: :all
 
     assert_text "P2"
   end
 
   test "student can see subjects if they meet the requirements of the second operand" do
     visit root_path
-    check "checkbox_#{@gal1.id}_course_approved", visible: false
+    check "checkbox_#{@gal1.id}_course_approved", visible: :all
     wait_for_async_request
-    check "checkbox_#{@gal2.id}_course_approved", visible: false
+    check "checkbox_#{@gal2.id}_course_approved", visible: :all
     wait_for_async_request
-    check "checkbox_#{@p1.id}_course_approved", visible: false
+    check "checkbox_#{@p1.id}_course_approved", visible: :all
 
     assert_text "P2"
   end
 
   test "student can see subjects if they meet the requirements of the third operand" do
     visit root_path
-    check "checkbox_#{@gal1.id}_course_approved", visible: false
+    check "checkbox_#{@gal1.id}_course_approved", visible: :all
     wait_for_async_request
-    check "checkbox_#{@gal1.id}_exam_approved", visible: false
+    check "checkbox_#{@gal1.id}_exam_approved", visible: :all
     wait_for_async_request
-    check "checkbox_#{@p1.id}_course_approved", visible: false
+    check "checkbox_#{@p1.id}_course_approved", visible: :all
     wait_for_async_request
-    check "checkbox_#{@p1.id}_exam_approved", visible: false
+    check "checkbox_#{@p1.id}_exam_approved", visible: :all
 
     assert_text "P2"
   end

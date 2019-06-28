@@ -8,6 +8,7 @@
 
 class StudentAppSeeder
   def seed
+    Prerequisite.all.delete_all
     subject_groups = populate_subject_groups!
     populate_subjects!(subject_groups)
   end
@@ -160,12 +161,10 @@ class StudentAppSeeder
     case parent
     when Approvable
       prerequisite = LogicalPrerequisite
-                     .where(approvable_id: parent.id, logical_operator: logical_operator)
-                     .first_or_create!
+                     .create!(approvable_id: parent.id, logical_operator: logical_operator)
     when Prerequisite
       prerequisite = LogicalPrerequisite
-                     .where(parent_prerequisite_id: parent.id, logical_operator: logical_operator)
-                     .first_or_create!
+                     .create!(parent_prerequisite_id: parent.id, logical_operator: logical_operator)
     end
 
     populate_prerequisites_tree!(prerequisite, prerequisites, subjects, subject_groups)

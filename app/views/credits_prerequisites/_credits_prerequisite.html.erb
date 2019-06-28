@@ -1,0 +1,9 @@
+<label class="mdc-list-item">
+  <span class="mdc-list-item__text">
+  <% if credits_prerequisite.subject_group %>
+      <%= credits_prerequisite.credits_needed %> créditos en <%= credits_prerequisite.subject_group.name %>
+  <% else %>
+    <%= credits_prerequisite.credits_needed %> créditos totales
+  <% end %>
+  </span>
+</label>

@@ -12,21 +12,21 @@ class AutoUnapprovalTest < ApplicationSystemTestCase
 
   test "unapproving Subject 1 unapproves the rest" do
     visit root_path
-    find("#checkbox_#{@subject1.id}_course_approved", visible: false).click
+    find("#checkbox_#{@subject1.id}_course_approved", visible: :all).click
     wait_for_async_request
-    find("#checkbox_#{@subject2.id}_course_approved", visible: false).click
+    find("#checkbox_#{@subject2.id}_course_approved", visible: :all).click
     wait_for_async_request
-    find("#checkbox_#{@subject3.id}_course_approved", visible: false).click
+    find("#checkbox_#{@subject3.id}_course_approved", visible: :all).click
     wait_for_async_request
 
     visit root_path
-    find("#checkbox_#{@subject1.id}_course_approved", visible: false).click
+    find("#checkbox_#{@subject1.id}_course_approved", visible: :all).click
     wait_for_async_request
     visit root_path
 
     assert_text "0 créditos"
     assert_no_text "Subject 2"
     assert_no_text "Subject 3"
-    assert page.has_unchecked_field?("checkbox_#{@subject1.id}_course_approved", visible: false)
+    assert page.has_unchecked_field?("checkbox_#{@subject1.id}_course_approved", visible: :all)
   end
 end

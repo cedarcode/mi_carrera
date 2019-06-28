@@ -8,7 +8,7 @@ class SubjectWihoutExamTest < ApplicationSystemTestCase
   test "approved course earns credits" do
     visit subject_path(@subject)
 
-    check "Curso aprobado?", visible: false
+    check "Curso aprobado?", visible: :all
 
     click_on "arrow_back"
 
