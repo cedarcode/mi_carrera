@@ -58,7 +58,7 @@ class Bedel
     exam_credits(group) + course_credits(group)
   end
 
-  def credits_by_group()
+  def credits_by_group
     credits_by_group = []
     SubjectGroup.all.each do |subject_group|
       credits_by_group += [{ subject_group: subject_group,
