@@ -1,0 +1,62 @@
+[
+  {
+    "code": "4083",
+    "name": "MATEMATICA",
+    "min_credits": 70
+  },
+  {
+    "code": "4442",
+    "name": "CIENCIAS EXPERIMENTALES",
+    "min_credits": 10
+  },
+  {
+    "code": "4580",
+    "name": "PROGRAMACION",
+    "min_credits": 60
+  },
+  {
+    "code": "4428",
+    "name": "ARQUIT, S.OP. Y REDES DE COMP.",
+    "min_credits": 30
+  },
+  {
+    "code": "4882",
+    "name": "INT.ARTIFICIAL Y ROBOTICA",
+    "min_credits": 0
+  },
+  {
+    "code": "4647",
+    "name": "B.DATOS Y SIST. DE INFORMACION",
+    "min_credits": 10
+  },
+  {
+    "code": "5020",
+    "name": "CALCULO NUMERICO Y SIMBOLICO",
+    "min_credits": 8
+  },
+  {
+    "code": "4815",
+    "name": "INVESTIGACION OPERATIVA",
+    "min_credits": 10
+  },
+  {
+    "code": "5082",
+    "name": "INGENIERIA DE SOFTWARE",
+    "min_credits": 10
+  },
+  {
+    "code": "4066",
+    "name": "GESTION EN ORGANIZACIONES",
+    "min_credits": 10
+  },
+  {
+    "code": "4756",
+    "name": "A.INTEG,TALLERES,PASANT.Y PROY",
+    "min_credits": 45
+  },
+  {
+    "code": "5265",
+    "name": "CIENCIAS HUMANAS Y SOCIALES",
+    "min_credits": 10
+  }
+]
