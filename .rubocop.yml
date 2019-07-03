@@ -61,3 +61,6 @@ Style/RedundantReturn:
 
 Style/RedundantSelf:
   Enabled: true
+
+Style/DefWithParentheses:
+  Enabled: true
