@@ -62,7 +62,7 @@ class Bedel
     credits_by_group = []
     SubjectGroup.find_each do |subject_group|
       credits_by_group += [{ subject_group: subject_group,
-                             credits: exam_credits(subject_group) + course_credits(subject_group) }]
+                             credits: credits(subject_group) }]
     end
     credits_by_group
   end
