@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: "subjects#index"
 
-  get 'profile', action: :show, controller: 'profiles'
+  resource :profile, only: :show
 
   resources :subjects do
     member do
