@@ -59,12 +59,9 @@ class Bedel
   end
 
   def credits_by_group
-    credits_by_group = []
-    SubjectGroup.find_each do |subject_group|
-      credits_by_group += [{ subject_group: subject_group,
-                             credits: credits(subject_group) }]
+    SubjectGroup.find_each.map do |subject_group|
+      { subject_group: subject_group, credits: credits(subject_group) }
     end
-    credits_by_group
   end
 
   def approved?(approvable)
