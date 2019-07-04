@@ -10,16 +10,13 @@ class BedeliasSpider < Kimurai::Base
   def parse_subjects(_response, url:, data: {})
     browser.click_button 'Menu'
     browser.find(:xpath, "//a[span[text() = 'Planes de estudio / Previas']]").click
-    response = browser.current_response
 
     browser.find(:xpath, "//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']").click
     browser.find(:xpath, "//tr//span[text()='FING - FACULTAD DE INGENIERÍA']").click
-    response = browser.current_response
 
     sleep 2
     browser.find(:xpath, "//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div").click
     browser.find(:xpath, "//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']").click
-    response = browser.current_response
 
     subjects = {}
 
@@ -78,16 +75,13 @@ class BedeliasSpider < Kimurai::Base
   def parse_prerequisite(_response, url:, data: {})
     browser.click_button 'Menu'
     browser.find(:xpath, "//a[span[text() = 'Planes de estudio / Previas']]").click
-    response = browser.current_response
 
     browser.find(:xpath, "//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']").click
     browser.find(:xpath, "//tr//span[text()='FING - FACULTAD DE INGENIERÍA']").click
-    response = browser.current_response
 
     sleep 2
     browser.find(:xpath, "//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div").click
     browser.find(:xpath, "//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']").click
-    response = browser.current_response
 
     browser.find(:xpath, "//button[span[text()='Sistema de previaturas']]").click
 
@@ -102,16 +96,13 @@ class BedeliasSpider < Kimurai::Base
   def parse_prerequisites(_response, url:, data: {})
     browser.click_button 'Menu'
     browser.find(:xpath, "//a[span[text() = 'Planes de estudio / Previas']]").click
-    response = browser.current_response
 
     browser.find(:xpath, "//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']").click
     browser.find(:xpath, "//tr//span[text()='FING - FACULTAD DE INGENIERÍA']").click
-    response = browser.current_response
 
     sleep 2
     browser.find(:xpath, "//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div").click
     browser.find(:xpath, "//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']").click
-    response = browser.current_response
 
     browser.find(:xpath, "//button[span[text()='Sistema de previaturas']]").click
 
