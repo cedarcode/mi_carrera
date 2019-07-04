@@ -78,7 +78,7 @@ class BedeliasSpider < Kimurai::Base
     code = data[:subject_code]
     find("//input[@id='j_idt63:j_idt64:filter']").set(code)
     sleep 1
-    find("//tr[@data-ri=0]//a").click
+    click("//tr[@data-ri=0]//a")
     tree = find("//td[@data-rowkey='root']")
     pp create_prerequisite(tree, code)
   end
@@ -102,21 +102,19 @@ class BedeliasSpider < Kimurai::Base
 
         puts "#{row_index} - Generating prerequisite for #{subject_code}, #{is_exam ? "exam" : "course"}"
 
-        find("td[3]/a", row).click # 'Ver más'
+        click("td[3]/a", row) # 'Ver más'
 
         tree = find("//td[@data-rowkey='root']")
         prerequisite = create_prerequisite(tree, subject_code, is_exam)
         path = File.join(Rails.root, "db", "seeds", "scraped_prerequisites.json")
         save_to path, prerequisite, format: :pretty_json, position: false
 
-        back = find("//button/span[text()='Volver']")
-        back.click
+        click("//button/span[text()='Volver']")
         selected_page = 1 # table paginator goes back to first page
 
         # move forward to last selected page on table
         while current_page != selected_page do
-          next_page = find("//span[contains(@class, 'ui-icon-seek-next')]")
-          next_page.click
+          click("//span[contains(@class, 'ui-icon-seek-next')]")
           selected_page += 1
           sleep 0.5
         end
@@ -126,8 +124,7 @@ class BedeliasSpider < Kimurai::Base
 
       if !reached_end
         # move forward one page
-        next_page = find("//span[contains(@class, 'ui-icon-seek-next')]")
-        next_page.click
+        click("//span[contains(@class, 'ui-icon-seek-next')]")
         sleep 0.5
         current_page += 1
       end
@@ -262,18 +259,23 @@ class BedeliasSpider < Kimurai::Base
 
   def visit_curriculum
     browser.click_button 'Menu'
-    find("//a[span[text() = 'Planes de estudio / Previas']]").click
 
-    find("//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']").click
-    find("//tr//span[text()='FING - FACULTAD DE INGENIERÍA']").click
+    click("//a[span[text() = 'Planes de estudio / Previas']]")
+
+    click("//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']")
+    click("//tr//span[text()='FING - FACULTAD DE INGENIERÍA']")
 
     sleep 2
-    find("//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div").click
-    find("//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']").click
+    click("//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div")
+    click("//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']")
   end
 
   def visit_prerequisites
     find("//button[span[text()='Sistema de previaturas']]").click
+  end
+
+  def click(xpath_selector, scope = browser)
+    find(xpath_selector, scope).click
   end
 
   def find(xpath_selector, scope = browser)
