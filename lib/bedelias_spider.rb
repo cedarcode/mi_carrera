@@ -4,10 +4,10 @@ require 'pp'
 class BedeliasSpider < Kimurai::Base
   @name = "bedelias_spider"
   @engine = :selenium_chrome
-  @start_urls = ['https://bedelias.udelar.edu.uy']
+  # @start_urls = ['https://bedelias.udelar.edu.uy']
   @config = {}
 
-  def parse_subjects(_response, url:, data: {})
+  def parse_subjects(*_args)
     browser.click_button 'Menu'
     browser.find(:xpath, "//a[span[text() = 'Planes de estudio / Previas']]").click
 
@@ -35,7 +35,6 @@ class BedeliasSpider < Kimurai::Base
         subject_code = info[0]
         subject_name = info[1]
         subject_credits = info[2][9..-1]
-        group = code
 
         subjects[subject_code] = {
           code: subject_code,
@@ -80,7 +79,7 @@ class BedeliasSpider < Kimurai::Base
     end
   end
 
-  def parse_prerequisite(_response, url:, data: {})
+  def parse_prerequisite(_response, data: {}, **_keyword_arguments)
     browser.click_button 'Menu'
     browser.find(:xpath, "//a[span[text() = 'Planes de estudio / Previas']]").click
 
@@ -101,7 +100,7 @@ class BedeliasSpider < Kimurai::Base
     pp create_prerequisite(tree, code)
   end
 
-  def parse_prerequisites(_response, url:, data: {})
+  def parse_prerequisites(*_args)
     browser.click_button 'Menu'
     browser.find(:xpath, "//a[span[text() = 'Planes de estudio / Previas']]").click
 
@@ -209,9 +208,10 @@ class BedeliasSpider < Kimurai::Base
         end
         prerequisite[:operands] = []
         subjects = extract_subjects_from_box(node_content)
-        subjects.each do |subject|
+
+        subjects.each do |s|
           prerequisite[:operands] += [
-            { type: 'subject', subject_needed: subject[:subject_needed], needs: subject[:needs] }
+            { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
           ]
         end
       elsif node_content.include?('Curso aprobado')
