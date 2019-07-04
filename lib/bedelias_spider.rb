@@ -97,8 +97,8 @@ class BedeliasSpider < Kimurai::Base
       0.upto(row_count - 1).each do |i|
         row_index = (current_page - 1) * ROWS_PER_PAGE + i
         row = browser.find(:xpath, "//tr[@data-ri=#{row_index}]")
-        subject_code = row.first(:xpath, "td[1]").text().split(' - ')[0] # retrieve code from column 'Nombre'
-        is_exam = row.first(:xpath, "td[2]").text() == "Examen" # from column 'Tipo'
+        subject_code = row.first(:xpath, "td[1]").text.split(' - ')[0] # retrieve code from column 'Nombre'
+        is_exam = row.first(:xpath, "td[2]").text == "Examen" # from column 'Tipo'
 
         puts "#{row_index} - Generating prerequisite for #{subject_code}, #{is_exam ? "exam" : "course"}"
 
@@ -170,7 +170,7 @@ class BedeliasSpider < Kimurai::Base
       prerequisite[:exam] = exam
     end
     node_type = original_prerequisite['data-nodetype']
-    node_content = original_prerequisite.first(:xpath, 'div').text()
+    node_content = original_prerequisite.first(:xpath, 'div').text
 
     if node_type == 'default'
       if node_content.include?('créditos en el Plan:')
@@ -178,7 +178,7 @@ class BedeliasSpider < Kimurai::Base
         prerequisite[:credits] = node_content.split(' créditos')[0].to_i
       elsif node_content.include?('aprobación')
         prerequisite[:type] = 'logical'
-        if original_prerequisite.first(:xpath, "div/span[@class='negrita']").text().split(' ')[0] == '1'
+        if original_prerequisite.first(:xpath, "div/span[@class='negrita']").text.split(' ')[0] == '1'
           prerequisite[:logical_operator] = "OR"
         else # change: 'n' approvals needed out of a list of 'm' subjects when 'n'<'m' is not considered
           prerequisite[:logical_operator] = "AND"
