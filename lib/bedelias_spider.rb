@@ -71,7 +71,7 @@ class BedeliasSpider < Kimurai::Base
           save_to path, subjects[subject_code], format: :pretty_json, position: false
         end
       end
-      reached_end = next_page.find(:xpath, '..')[:class].include?('disabled') ? true : false
+      reached_end = next_page.find(:xpath, '..')[:class].include?('disabled')
       next_page.click
       sleep 1
     end
