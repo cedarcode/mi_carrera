@@ -7,6 +7,7 @@ gem 'rails', '~> 6.0.0.a'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jbuilder', '~> 2.9'
+gem 'kimurai', "~> 1.4"
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rollbar', '~> 2.19'
@@ -14,7 +15,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
-gem 'kimurai'
 
 # This is needed because of https://github.com/rails/sprockets/issues/567
 gem "sprockets", "~> 4.0.a"
