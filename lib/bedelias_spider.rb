@@ -40,7 +40,7 @@ class BedeliasSpider < Kimurai::Base
 
     visit_prerequisites
 
-    next_page = browser.find(:xpath, "//span[contains(@class, 'ui-icon-seek-next')]")
+    next_page = find("//span[contains(@class, 'ui-icon-seek-next')]")
     reached_end = false
     while !reached_end do
       browser.all(:xpath, "//tbody[@id='j_idt63_data']/tr").each do |row|
@@ -65,7 +65,7 @@ class BedeliasSpider < Kimurai::Base
           save_to path, subjects[subject_code], format: :pretty_json, position: false
         end
       end
-      reached_end = next_page.find(:xpath, '..')[:class].include?('disabled')
+      reached_end = find('..', next_page)[:class].include?('disabled')
       next_page.click
       sleep 1
     end
@@ -76,10 +76,10 @@ class BedeliasSpider < Kimurai::Base
     visit_prerequisites
 
     code = data[:subject_code]
-    browser.find(:xpath, "//input[@id='j_idt63:j_idt64:filter']").set(code)
+    find("//input[@id='j_idt63:j_idt64:filter']").set(code)
     sleep 1
-    browser.find(:xpath, "//tr[@data-ri=0]//a").click
-    tree = browser.find(:xpath, "//td[@data-rowkey='root']")
+    find("//tr[@data-ri=0]//a").click
+    tree = find("//td[@data-rowkey='root']")
     pp create_prerequisite(tree, code)
   end
 
@@ -96,37 +96,37 @@ class BedeliasSpider < Kimurai::Base
 
       0.upto(row_count - 1).each do |i|
         row_index = (current_page - 1) * ROWS_PER_PAGE + i
-        row = browser.find(:xpath, "//tr[@data-ri=#{row_index}]")
+        row = find("//tr[@data-ri=#{row_index}]")
         subject_code = row.first(:xpath, "td[1]").text.split(' - ')[0] # retrieve code from column 'Nombre'
         is_exam = row.first(:xpath, "td[2]").text == "Examen" # from column 'Tipo'
 
         puts "#{row_index} - Generating prerequisite for #{subject_code}, #{is_exam ? "exam" : "course"}"
 
-        row.find(:xpath, "td[3]/a").click # 'Ver más'
+        find("td[3]/a", row).click # 'Ver más'
 
-        tree = browser.find(:xpath, "//td[@data-rowkey='root']")
+        tree = find("//td[@data-rowkey='root']")
         prerequisite = create_prerequisite(tree, subject_code, is_exam)
         path = File.join(Rails.root, "db", "seeds", "scraped_prerequisites.json")
         save_to path, prerequisite, format: :pretty_json, position: false
 
-        back = browser.find(:xpath, "//button/span[text()='Volver']")
+        back = find("//button/span[text()='Volver']")
         back.click
         selected_page = 1 # table paginator goes back to first page
 
         # move forward to last selected page on table
         while current_page != selected_page do
-          next_page = browser.find(:xpath, "//span[contains(@class, 'ui-icon-seek-next')]")
+          next_page = find("//span[contains(@class, 'ui-icon-seek-next')]")
           next_page.click
           selected_page += 1
           sleep 0.5
         end
       end
 
-      reached_end = browser.find(:xpath, "//span[contains(@class, 'ui-paginator-next')]")[:class].include?('disabled')
+      reached_end = find("//span[contains(@class, 'ui-paginator-next')]")[:class].include?('disabled')
 
       if !reached_end
         # move forward one page
-        next_page = browser.find(:xpath, "//span[contains(@class, 'ui-icon-seek-next')]")
+        next_page = find("//span[contains(@class, 'ui-icon-seek-next')]")
         next_page.click
         sleep 0.5
         current_page += 1
@@ -212,7 +212,7 @@ class BedeliasSpider < Kimurai::Base
       prerequisite[:type] = 'logical'
       prerequisite[:logical_operator] = 'AND'
 
-      toggler = original_prerequisite.first(:xpath, "div/span[contains(@class, 'ui-tree-toggler')]")
+      toggler = find("div/span[contains(@class, 'ui-tree-toggler')]", original_prerequisite)
       if toggler[:class].include?('plus')
         toggler.click
       end
@@ -228,7 +228,7 @@ class BedeliasSpider < Kimurai::Base
       prerequisite[:type] = 'logical'
       prerequisite[:logical_operator] = 'NOT'
 
-      toggler = original_prerequisite.first(:xpath, "div/span[contains(@class, 'ui-tree-toggler')]")
+      toggler = find("div/span[contains(@class, 'ui-tree-toggler')]", original_prerequisite)
       if toggler[:class].include?('plus')
         toggler.click
       end
@@ -244,7 +244,7 @@ class BedeliasSpider < Kimurai::Base
       prerequisite[:type] = 'logical'
       prerequisite[:logical_operator] = 'OR'
 
-      toggler = original_prerequisite.first(:xpath, "div/span[contains(@class, 'ui-tree-toggler')]")
+      toggler = find("div/span[contains(@class, 'ui-tree-toggler')]", original_prerequisite)
       if toggler[:class].include?('plus')
         toggler.click
       end
@@ -262,17 +262,21 @@ class BedeliasSpider < Kimurai::Base
 
   def visit_curriculum
     browser.click_button 'Menu'
-    browser.find(:xpath, "//a[span[text() = 'Planes de estudio / Previas']]").click
+    find("//a[span[text() = 'Planes de estudio / Previas']]").click
 
-    browser.find(:xpath, "//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']").click
-    browser.find(:xpath, "//tr//span[text()='FING - FACULTAD DE INGENIERÍA']").click
+    find("//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']").click
+    find("//tr//span[text()='FING - FACULTAD DE INGENIERÍA']").click
 
     sleep 2
-    browser.find(:xpath, "//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div").click
-    browser.find(:xpath, "//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']").click
+    find("//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div").click
+    find("//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']").click
   end
 
   def visit_prerequisites
-    browser.find(:xpath, "//button[span[text()='Sistema de previaturas']]").click
+    find("//button[span[text()='Sistema de previaturas']]").click
+  end
+
+  def find(xpath_selector, scope = browser)
+    scope.find(:xpath, xpath_selector)
   end
 end
