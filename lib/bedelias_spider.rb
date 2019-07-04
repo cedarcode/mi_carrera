@@ -4,8 +4,6 @@ require 'pp'
 class BedeliasSpider < Kimurai::Base
   @name = "bedelias_spider"
   @engine = :selenium_chrome
-  # @start_urls = ['https://bedelias.udelar.edu.uy']
-  @config = {}
 
   def parse_subjects(*_args)
     browser.click_button 'Menu'
