@@ -54,7 +54,7 @@ class BedeliasSpider < Kimurai::Base
         subject_code = column.text.split(' - ')[0]
         type = column.first(:xpath, "following-sibling::td").text
 
-        puts "Generating " + column.text + ", " + type
+        puts "Generating #{column.text}, #{type}"
 
         if subjects[subject_code] # tmp: avoid conflict with unscraped subjects from "MATERIAS OPCIONALES"
           if type == "Examen"
