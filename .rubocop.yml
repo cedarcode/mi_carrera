@@ -64,3 +64,6 @@ Style/RedundantSelf:
 
 Style/DefWithParentheses:
   Enabled: true
+
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: true
