@@ -89,8 +89,10 @@ class BedeliasSpider < Kimurai::Base
     already_scraped = 0
     current_page = 1
     selected_page = 1
+
     while !reached_end do
       row_count = browser.all(:xpath, "//tr[@data-ri]").count
+
       (1..row_count).each do
         row = browser.find(:xpath, "//tr[@data-ri=" + already_scraped.to_s + "]")
         subject_code = row.first(:xpath, "td[1]").text().split(' - ')[0] # retrieve code from column 'Nombre'
@@ -118,7 +120,9 @@ class BedeliasSpider < Kimurai::Base
           sleep 0.5
         end
       end
+
       reached_end = browser.find(:xpath, "//span[contains(@class, 'ui-paginator-next')]")[:class].include?('disabled')
+
       if !reached_end
         # move forward one page
         next_page = browser.find(:xpath, "//span[contains(@class, 'ui-icon-seek-next')]")
