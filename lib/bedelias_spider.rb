@@ -6,15 +6,7 @@ class BedeliasSpider < Kimurai::Base
   @engine = :selenium_chrome
 
   def parse_subjects(*_args)
-    browser.click_button 'Menu'
-    browser.find(:xpath, "//a[span[text() = 'Planes de estudio / Previas']]").click
-
-    browser.find(:xpath, "//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']").click
-    browser.find(:xpath, "//tr//span[text()='FING - FACULTAD DE INGENIERÍA']").click
-
-    sleep 2
-    browser.find(:xpath, "//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div").click
-    browser.find(:xpath, "//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']").click
+    visit_curriculum
 
     subjects = {}
 
@@ -44,7 +36,7 @@ class BedeliasSpider < Kimurai::Base
       end
     end
 
-    browser.find(:xpath, "//button[span[text()='Sistema de previaturas']]").click
+    visit_prerequisites
 
     next_page = browser.find(:xpath, "//span[contains(@class, 'ui-icon-seek-next')]")
     reached_end = false
@@ -78,17 +70,8 @@ class BedeliasSpider < Kimurai::Base
   end
 
   def parse_prerequisite(_response, data: {}, **_keyword_arguments)
-    browser.click_button 'Menu'
-    browser.find(:xpath, "//a[span[text() = 'Planes de estudio / Previas']]").click
-
-    browser.find(:xpath, "//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']").click
-    browser.find(:xpath, "//tr//span[text()='FING - FACULTAD DE INGENIERÍA']").click
-
-    sleep 2
-    browser.find(:xpath, "//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div").click
-    browser.find(:xpath, "//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']").click
-
-    browser.find(:xpath, "//button[span[text()='Sistema de previaturas']]").click
+    visit_curriculum
+    visit_prerequisites
 
     code = data[:subject_code]
     browser.find(:xpath, "//input[@id='j_idt63:j_idt64:filter']").set(code)
@@ -99,17 +82,8 @@ class BedeliasSpider < Kimurai::Base
   end
 
   def parse_prerequisites(*_args)
-    browser.click_button 'Menu'
-    browser.find(:xpath, "//a[span[text() = 'Planes de estudio / Previas']]").click
-
-    browser.find(:xpath, "//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']").click
-    browser.find(:xpath, "//tr//span[text()='FING - FACULTAD DE INGENIERÍA']").click
-
-    sleep 2
-    browser.find(:xpath, "//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div").click
-    browser.find(:xpath, "//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']").click
-
-    browser.find(:xpath, "//button[span[text()='Sistema de previaturas']]").click
+    visit_curriculum
+    visit_prerequisites
 
     reached_end = false
     already_scraped = 0
@@ -279,5 +253,21 @@ class BedeliasSpider < Kimurai::Base
       end
     end
     prerequisite
+  end
+
+  def visit_curriculum
+    browser.click_button 'Menu'
+    browser.find(:xpath, "//a[span[text() = 'Planes de estudio / Previas']]").click
+
+    browser.find(:xpath, "//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']").click
+    browser.find(:xpath, "//tr//span[text()='FING - FACULTAD DE INGENIERÍA']").click
+
+    sleep 2
+    browser.find(:xpath, "//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div").click
+    browser.find(:xpath, "//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']").click
+  end
+
+  def visit_prerequisites
+    browser.find(:xpath, "//button[span[text()='Sistema de previaturas']]").click
   end
 end
