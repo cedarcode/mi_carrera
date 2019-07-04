@@ -12,8 +12,7 @@ class BedeliasSpider < Kimurai::Base
 
     subjects = {}
 
-    # change: subjects from "MATERIAS OPCIONALES" aren't scraped because there isn't a group inside the group
-    browser.all('//li[@data-nodetype="Grupo"]//li[@data-nodetype="Grupo"]/span').each do |node|
+    browser.all("//li[@data-nodetype='Grupo'][not(*//li[@data-nodetype='Grupo'])]/span").each do |node|
       info = node.text.split(' - ')
       code = info[0]
       name = info[1]
@@ -48,14 +47,10 @@ class BedeliasSpider < Kimurai::Base
 
         puts "Generating #{column.text}, #{type}"
 
-        if subjects[subject_code] # tmp: avoid conflict with unscraped subjects from "MATERIAS OPCIONALES"
-          if type == "Examen"
-            subjects[subject_code][:has_exam] = true
-          end
-        else
-          subjects[subject_code] = { code: subject_code, name: column.text.split(' - ')[1], missing_info: true }
+        if type == "Examen"
+          subjects[subject_code][:has_exam] = true
         end
-        # save only one entry of each subject to avoid duplicates
+
         # change: the condition slows things down a lot,
         # find another way to check for another entry for the same subject
         if row.all(:xpath, "following-sibling::tr/td[1][contains(text()," + subject_code + ")]").count == 0

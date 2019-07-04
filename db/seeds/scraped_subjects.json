@@ -58,7 +58,9 @@
   {
     "code": "1438",
     "name": "APL.DE TEORIA DE LA INF.AL PROC.DE IMAG.",
-    "missing_info": true
+    "credits": " 6",
+    "subject_group": "3582",
+    "has_exam": false
   },
   {
     "code": "1866",
@@ -455,7 +457,9 @@
   {
     "code": "5707",
     "name": "IMAGENES MEDICAS:ADQ. INSTRUM. Y GESTION",
-    "missing_info": true
+    "credits": " 8",
+    "subject_group": "3582",
+    "has_exam": false
   },
   {
     "code": "1772",
@@ -747,7 +751,9 @@
   {
     "code": "1213",
     "name": "PLANIF.DE CLASES:DISEÑO DE UNID.DIDACT.",
-    "missing_info": true
+    "credits": " 2",
+    "subject_group": "3582",
+    "has_exam": false
   },
   {
     "code": "1225",
@@ -1109,17 +1115,23 @@
   {
     "code": "1216",
     "name": "TALLER ENCARARE: CREAR",
-    "missing_info": true
+    "credits": " 8",
+    "subject_group": "3582",
+    "has_exam": false
   },
   {
     "code": "2034",
     "name": "TALLER ENCARARE 1:CREATIVIDAD E INNOVAC.",
-    "missing_info": true
+    "credits": " 5",
+    "subject_group": "3582",
+    "has_exam": false
   },
   {
     "code": "2036",
     "name": "TALLER ENCARARE 2:PLANIF.DE LA FUT.EMPR.",
-    "missing_info": true
+    "credits": " 5",
+    "subject_group": "3582",
+    "has_exam": false
   },
   {
     "code": "1735",
@@ -1194,12 +1206,16 @@
   {
     "code": "2216",
     "name": "TUTORIAS ENTRE PARES 1",
-    "missing_info": true
+    "credits": " 4",
+    "subject_group": "3582",
+    "has_exam": false
   },
   {
     "code": "2217",
     "name": "TUTORIAS ENTRE PARES 2",
-    "missing_info": true
+    "credits": " 4",
+    "subject_group": "3582",
+    "has_exam": false
   },
   {
     "code": "1346",

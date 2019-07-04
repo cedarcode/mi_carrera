@@ -58,5 +58,10 @@
     "code": "5265",
     "name": "CIENCIAS HUMANAS Y SOCIALES",
     "min_credits": 10
+  },
+  {
+    "code": "3582",
+    "name": "MATERIAS OPCIONALES",
+    "min_credits": 0
   }
 ]
