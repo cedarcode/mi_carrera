@@ -2,10 +2,10 @@ require 'kimurai'
 require 'pp'
 
 class BedeliasSpider < Kimurai::Base
-  ROWS_PER_PAGE = 20
-
   @name = "bedelias_spider"
   @engine = :selenium_chrome
+
+  ROWS_PER_PAGE = 20
 
   def parse_subjects(*_args)
     visit_curriculum
@@ -40,10 +40,8 @@ class BedeliasSpider < Kimurai::Base
 
     visit_prerequisites
 
-    next_page = find("//span[contains(@class, 'ui-icon-seek-next')]")
-    reached_end = false
-    while !reached_end do
-      browser.all(:xpath, "//tbody[@id='j_idt63_data']/tr").each do |row|
+    prerequisites_pages do |page_number|
+      prerequisites_rows(page_number) do |row, index|
         column = row.first(:xpath, "td")
         subject_code = column.text.split(' - ')[0]
         type = column.first(:xpath, "following-sibling::td").text
@@ -65,9 +63,6 @@ class BedeliasSpider < Kimurai::Base
           save_to path, subjects[subject_code], format: :pretty_json, position: false
         end
       end
-      reached_end = find('..', next_page)[:class].include?('disabled')
-      next_page.click
-      sleep 1
     end
   end
 
@@ -87,19 +82,14 @@ class BedeliasSpider < Kimurai::Base
     visit_curriculum
     visit_prerequisites
 
-    reached_end = false
-    current_page = 1
-
-    while !reached_end do
-      row_count = browser.all(:xpath, "//tr[@data-ri]").count
-
-      0.upto(row_count - 1).each do |i|
-        row_index = (current_page - 1) * ROWS_PER_PAGE + i
-        row = find("//tr[@data-ri=#{row_index}]")
+    prerequisites_pages do |current_page|
+      prerequisites_rows(current_page) do |row, row_index|
         subject_code = row.first(:xpath, "td[1]").text.split(' - ')[0] # retrieve code from column 'Nombre'
         is_exam = row.first(:xpath, "td[2]").text == "Examen" # from column 'Tipo'
 
-        puts "#{row_index} - Generating prerequisite for #{subject_code}, #{is_exam ? "exam" : "course"}"
+        puts(
+          "#{current_page}/#{row_index} - Generating prerequisite for #{subject_code}, #{is_exam ? "exam" : "course"}"
+        )
 
         click("td[3]/a", row) # 'Ver más'
 
@@ -115,15 +105,6 @@ class BedeliasSpider < Kimurai::Base
           click("//span[contains(@class, 'ui-icon-seek-next')]")
           sleep 0.5
         end
-      end
-
-      reached_end = find("//span[contains(@class, 'ui-paginator-next')]")[:class].include?('disabled')
-
-      if !reached_end
-        # move forward one page
-        click("//span[contains(@class, 'ui-icon-seek-next')]")
-        sleep 0.5
-        current_page += 1
       end
     end
   end
@@ -277,5 +258,34 @@ class BedeliasSpider < Kimurai::Base
 
   def find(xpath_selector, scope = browser)
     scope.find(:xpath, xpath_selector)
+  end
+
+  def prerequisites_pages
+    reached_end = false
+    current_page = 1
+
+    while !reached_end do
+      yield(current_page)
+
+      reached_end = find("//span[contains(@class, 'ui-paginator-next')]")[:class].include?('disabled')
+
+      if !reached_end
+        # move forward one page
+        click("//span[contains(@class, 'ui-icon-seek-next')]")
+        sleep 0.5
+        current_page += 1
+      end
+    end
+  end
+
+  def prerequisites_rows(page_index)
+    row_count = browser.all(:xpath, "//tr[@data-ri]").count
+
+    row_count.times do |i|
+      row_index = (page_index - 1) * ROWS_PER_PAGE + i
+      row = find("//tr[@data-ri=#{row_index}]")
+
+      yield(row, i)
+    end
   end
 end
