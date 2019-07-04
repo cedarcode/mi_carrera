@@ -89,7 +89,6 @@ class BedeliasSpider < Kimurai::Base
 
     reached_end = false
     current_page = 1
-    selected_page = 1
 
     while !reached_end do
       row_count = browser.all(:xpath, "//tr[@data-ri]").count
@@ -110,12 +109,10 @@ class BedeliasSpider < Kimurai::Base
         save_to path, prerequisite, format: :pretty_json, position: false
 
         click("//button/span[text()='Volver']")
-        selected_page = 1 # table paginator goes back to first page
 
         # move forward to last selected page on table
-        while current_page != selected_page do
+        (current_page - 1).times do
           click("//span[contains(@class, 'ui-icon-seek-next')]")
-          selected_page += 1
           sleep 0.5
         end
       end
