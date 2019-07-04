@@ -13,6 +13,10 @@ namespace :scrape do
 
   desc "scrape prerequisite of particular subject from bedelias.udelar.edu.uy to stdout"
   task :prerequisite, [:subject_code] => [:environment] do |_task, args|
-    BedeliasSpider.parse!(:parse_prerequisite, url: "https://bedelias.udelar.edu.uy", data: { subject_code: args[:subject_code] })
+    BedeliasSpider.parse!(
+      :parse_prerequisite,
+      url: "https://bedelias.udelar.edu.uy",
+      data: { subject_code: args[:subject_code] }
+    )
   end
 end

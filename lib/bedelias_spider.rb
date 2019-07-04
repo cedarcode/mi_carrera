@@ -36,7 +36,14 @@ class BedeliasSpider < Kimurai::Base
         subject_name = info[1]
         subject_credits = info[2][9..-1]
         group = code
-        subjects[subject_code] = { code: subject_code, name: subject_name, credits: subject_credits, subject_group: code, has_exam: false }
+
+        subjects[subject_code] = {
+          code: subject_code,
+          name: subject_name,
+          credits: subject_credits,
+          subject_group: code,
+          has_exam: false
+        }
       end
     end
 
@@ -60,7 +67,8 @@ class BedeliasSpider < Kimurai::Base
           subjects[subject_code] = { code: subject_code, name: column.text.split(' - ')[1], missing_info: true }
         end
         # save only one entry of each subject to avoid duplicates
-        # change: the condition slows things down a lot, find another way to check for another entry for the same subject
+        # change: the condition slows things down a lot,
+        # find another way to check for another entry for the same subject
         if row.all(:xpath, "following-sibling::tr/td[1][contains(text()," + subject_code + ")]").count == 0
           path = File.join(Rails.root, "db", "seeds", "scraped_subjects.json")
           save_to path, subjects[subject_code], format: :pretty_json, position: false
@@ -117,7 +125,7 @@ class BedeliasSpider < Kimurai::Base
         subject_code = row.first(:xpath, "td[1]").text().split(' - ')[0] # retrieve code from column 'Nombre'
         is_exam = row.first(:xpath, "td[2]").text() == "Examen" # from column 'Tipo'
 
-        puts (already_scraped + 1).to_s + " - Generating prerequisite for " + subject_code + ", " + (is_exam ? "exam" : "course")
+        puts "#{already_scraped + 1} - Generating prerequisite for #{subject_code}, #{is_exam ? "exam" : "course"}"
 
         row.find(:xpath, "td[3]/a").click # 'Ver más'
 
@@ -139,7 +147,7 @@ class BedeliasSpider < Kimurai::Base
           sleep 0.5
         end
       end
-      reached_end = browser.find(:xpath, "//span[contains(@class, 'ui-paginator-next')]")[:class].include?('disabled') ? true : false
+      reached_end = browser.find(:xpath, "//span[contains(@class, 'ui-paginator-next')]")[:class].include?('disabled')
       if !reached_end
         # move forward one page
         next_page = browser.find(:xpath, "//span[contains(@class, 'ui-icon-seek-next')]")
@@ -155,7 +163,12 @@ class BedeliasSpider < Kimurai::Base
   def extract_subjects_from_box(box)
     subjects = []
     text = box.split('entre: ')[1]
-    indices = text.enum_for(:scan, /(?=((Examen)|(Curso)|(U\.C\.B aprobada)))/).map { Regexp.last_match.offset(0).first } # all indices of 'Exam', 'Curso' and 'U.C.B aprobada'
+
+    indices =
+      text
+      .enum_for(:scan, /(?=((Examen)|(Curso)|(U\.C\.B aprobada)))/)
+      .map { Regexp.last_match.offset(0).first } # all indices of 'Exam', 'Curso' and 'U.C.B aprobada'
+
     (0..(indices.count - 1)).each do |i|
       last = (i == indices.count - 1 ? text.length : indices[i + 1])
       last -= 1
@@ -174,7 +187,7 @@ class BedeliasSpider < Kimurai::Base
     subjects
   end
 
-  def create_prerequisite(original_prerequisite, subject = nil, exam = false) # prerequisite must be <td> with attribute @data-rowkey and @data-nodetype
+  def create_prerequisite(original_prerequisite, subject = nil, exam = false)
     prerequisite = {}
     if subject
       prerequisite[:subject] = subject
@@ -197,7 +210,9 @@ class BedeliasSpider < Kimurai::Base
         prerequisite[:operands] = []
         subjects = extract_subjects_from_box(node_content)
         subjects.each do |subject|
-          prerequisite[:operands] += [{ type: 'subject', subject_needed: subject[:subject_needed], needs: subject[:needs] }]
+          prerequisite[:operands] += [
+            { type: 'subject', subject_needed: subject[:subject_needed], needs: subject[:needs] }
+          ]
         end
       elsif node_content.include?('Curso aprobado')
         prerequisite[:type] = 'subject'
@@ -225,7 +240,10 @@ class BedeliasSpider < Kimurai::Base
         toggler.click
       end
       prerequisite[:operands] = []
-      operands = original_prerequisite.all(:xpath, "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]")
+      operands = original_prerequisite.all(
+        :xpath,
+        "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]"
+      )
       operands.each do |operand|
         prerequisite[:operands] += [create_prerequisite(operand)]
       end
@@ -238,7 +256,10 @@ class BedeliasSpider < Kimurai::Base
         toggler.click
       end
       prerequisite[:operands] = []
-      operands = original_prerequisite.all(:xpath, "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]")
+      operands = original_prerequisite.all(
+        :xpath,
+        "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]"
+      )
       operands.each do |operand|
         prerequisite[:operands] += [create_prerequisite(operand)]
       end
@@ -251,7 +272,10 @@ class BedeliasSpider < Kimurai::Base
         toggler.click
       end
       prerequisite[:operands] = []
-      operands = original_prerequisite.all(:xpath, "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]")
+      operands = original_prerequisite.all(
+        :xpath,
+        "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]"
+      )
       operands.each do |operand|
         prerequisite[:operands] += [create_prerequisite(operand)]
       end
