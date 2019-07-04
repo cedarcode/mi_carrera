@@ -17,6 +17,9 @@ class BedeliasSpider < Kimurai::Base
       code = info[0]
       name = info[1]
       min_credits = info[2].split(' ')[1].to_i
+
+      puts "Generating subject group #{code} - #{name}"
+
       subject_group = { code: code, name: name, min_credits: min_credits }
       path = File.join(Rails.root, "db", "seeds", "scraped_subject_groups.json")
       save_to path, subject_group, format: :pretty_json, position: false
@@ -45,7 +48,7 @@ class BedeliasSpider < Kimurai::Base
         subject_code = column.text.split(' - ')[0]
         type = column.first(:xpath, "following-sibling::td").text
 
-        puts "Generating #{column.text}, #{type}"
+        puts "#{page_number}/#{index} Generating #{column.text}, #{type}"
 
         if type == "Examen"
           subjects[subject_code][:has_exam] = true
