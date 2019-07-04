@@ -2,6 +2,8 @@ require 'kimurai'
 require 'pp'
 
 class BedeliasSpider < Kimurai::Base
+  ROWS_PER_PAGE = 20
+
   @name = "bedelias_spider"
   @engine = :selenium_chrome
 
@@ -86,19 +88,19 @@ class BedeliasSpider < Kimurai::Base
     visit_prerequisites
 
     reached_end = false
-    already_scraped = 0
     current_page = 1
     selected_page = 1
 
     while !reached_end do
       row_count = browser.all(:xpath, "//tr[@data-ri]").count
 
-      (1..row_count).each do
-        row = browser.find(:xpath, "//tr[@data-ri=" + already_scraped.to_s + "]")
+      0.upto(row_count - 1).each do |i|
+        row_index = (current_page - 1) * ROWS_PER_PAGE + i
+        row = browser.find(:xpath, "//tr[@data-ri=#{row_index}]")
         subject_code = row.first(:xpath, "td[1]").text().split(' - ')[0] # retrieve code from column 'Nombre'
         is_exam = row.first(:xpath, "td[2]").text() == "Examen" # from column 'Tipo'
 
-        puts "#{already_scraped + 1} - Generating prerequisite for #{subject_code}, #{is_exam ? "exam" : "course"}"
+        puts "#{row_index} - Generating prerequisite for #{subject_code}, #{is_exam ? "exam" : "course"}"
 
         row.find(:xpath, "td[3]/a").click # 'Ver más'
 
@@ -106,7 +108,6 @@ class BedeliasSpider < Kimurai::Base
         prerequisite = create_prerequisite(tree, subject_code, is_exam)
         path = File.join(Rails.root, "db", "seeds", "scraped_prerequisites.json")
         save_to path, prerequisite, format: :pretty_json, position: false
-        already_scraped += 1
 
         back = browser.find(:xpath, "//button/span[text()='Volver']")
         back.click
