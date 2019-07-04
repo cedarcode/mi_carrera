@@ -6,7 +6,7 @@ ruby '2.6.3'
 gem 'rails', '~> 6.0.0.a'
 
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.9'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rollbar', '~> 2.19'

@@ -58,6 +58,12 @@ class Bedel
     exam_credits(group) + course_credits(group)
   end
 
+  def credits_by_group
+    SubjectGroup.find_each.map do |subject_group|
+      { subject_group: subject_group, credits: credits(subject_group) }
+    end
+  end
+
   def approved?(approvable)
     if approvable.is_exam?
       store[:approved_exams].include?(approvable.subject_id)
