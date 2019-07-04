@@ -54,11 +54,11 @@ class BedeliasSpider < Kimurai::Base
           subjects[subject_code][:has_exam] = true
         end
 
-        # change: the condition slows things down a lot,
-        # find another way to check for another entry for the same subject
-        if row.all(:xpath, "following-sibling::tr/td[1][contains(text()," + subject_code + ")]").count == 0
-          path = File.join(Rails.root, "db", "seeds", "scraped_subjects.json")
-          save_to path, subjects[subject_code], format: :pretty_json, position: false
+        browser.using_wait_time(0.5) do
+          if row.all(:xpath, "following-sibling::tr/td[1][contains(text()," + subject_code + ")]").count == 0
+            path = File.join(Rails.root, "db", "seeds", "scraped_subjects.json")
+            save_to path, subjects[subject_code], format: :pretty_json, position: false
+          end
         end
       end
     end
