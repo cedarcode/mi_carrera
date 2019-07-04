@@ -1,0 +1,28 @@
+<% content_for :navigation_icon do %>
+  <%= link_to "arrow_back", root_path, :class => "material-icons mdc-top-app-bar__navigation-icon" %>
+<% end %>
+<div class="mdc-list-group">
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5">Avance de carrera</h3>
+  <ul class="mdc-list">
+    <li role="separator" class="mdc-list-divider"></li>
+    <% @groups_and_credits.each do |group| %>
+      <li class="mdc-list-item">
+        <span class="mdc-list-item__text">
+          <%= truncate(group[:subject_group].name, :length => 35) %>
+        </span>
+        <span class="mdc-list-item__meta">
+          <%= group[:credits] %>
+        </span>
+      </li>
+      <li role="separator" class="mdc-list-divider"></li>
+    <% end %>
+    <li class="mdc-list-item total-credits">
+      <span class="mdc-list-item__text">
+        Total
+      </span>
+      <span class="mdc-list-item__meta">
+        <%= @groups_and_credits.pluck(:credits).reduce :+ %>
+      </span>
+    </li>
+  </ul>
+</div>

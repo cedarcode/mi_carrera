@@ -74,3 +74,8 @@ body {
 :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item:active::after {
      filter: opacity(100%);
  }
+
+ .total-credits {
+   font-weight: bold;
+   font-size: larger;
+ }
