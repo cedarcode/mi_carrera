@@ -53,14 +53,12 @@ class BedeliasSpider < Kimurai::Base
         if type == "Examen"
           subjects[subject_code][:has_exam] = true
         end
-
-        browser.using_wait_time(0.5) do
-          if row.all(:xpath, "following-sibling::tr/td[1][contains(text()," + subject_code + ")]").count == 0
-            path = File.join(Rails.root, "db", "seeds", "scraped_subjects.json")
-            save_to path, subjects[subject_code], format: :pretty_json, position: false
-          end
-        end
       end
+    end
+
+    path = File.join(Rails.root, "db", "seeds", "scraped_subjects.json")
+    subjects.values.each do |subject|
+      save_to path, subject, format: :pretty_json, position: false
     end
   end
 
