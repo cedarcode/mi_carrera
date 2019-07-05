@@ -35,7 +35,7 @@ class BedeliasSpider < Kimurai::Base
           name: subject_name,
           credits: subject_credits,
           subject_group: code,
-          has_exam: false
+          has_exam: nil
         }
       end
     end
@@ -50,7 +50,9 @@ class BedeliasSpider < Kimurai::Base
 
         puts "#{page_number}/#{index} Generating #{column.text}, #{type}"
 
-        if type == "Examen"
+        if type == "Curso"
+          subjects[subject_code][:has_exam] = false
+        elsif type == "Examen"
           subjects[subject_code][:has_exam] = true
         end
       end
