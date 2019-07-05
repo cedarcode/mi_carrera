@@ -28,7 +28,7 @@ class BedeliasSpider < Kimurai::Base
         info = subnode.text.split(' - ')
         subject_code = info[0]
         subject_name = info[1]
-        subject_credits = info[2][9..-1]
+        subject_credits = info[2][9..-1].split(' ')[0].to_i
 
         subjects[subject_code] = {
           code: subject_code,
