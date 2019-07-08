@@ -149,7 +149,7 @@ class BedeliasSpider < Kimurai::Base
       if node_content.include?('créditos en el Plan:')
         prerequisite[:type] = 'credits'
         prerequisite[:credits] = node_content.split(' créditos')[0].to_i
-      elsif node_content.include?('aprobación')
+      elsif node_content.include?('aprobación') || node_content.include?('actividad')
         prerequisite[:type] = 'logical'
         if original_prerequisite.first(:xpath, "div/span[@class='negrita']").text.split(' ')[0] == '1'
           prerequisite[:logical_operator] = "OR"
