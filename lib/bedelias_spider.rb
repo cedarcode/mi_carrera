@@ -152,9 +152,9 @@ class BedeliasSpider < Kimurai::Base
       elsif node_content.include?('aprobación') || node_content.include?('actividad')
         prerequisite[:type] = 'logical'
         if original_prerequisite.first(:xpath, "div/span[@class='negrita']").text.split(' ')[0] == '1'
-          prerequisite[:logical_operator] = "OR"
+          prerequisite[:logical_operator] = "or"
         else # change: 'n' approvals needed out of a list of 'm' subjects when 'n'<'m' is not considered
-          prerequisite[:logical_operator] = "AND"
+          prerequisite[:logical_operator] = "and"
         end
         prerequisite[:operands] = []
         subjects = extract_subjects_from_box(node_content)
@@ -183,7 +183,7 @@ class BedeliasSpider < Kimurai::Base
       prerequisite[:group] = node_content.split('Grupo: ')[1].to_i
     elsif node_type == 'y'
       prerequisite[:type] = 'logical'
-      prerequisite[:logical_operator] = 'AND'
+      prerequisite[:logical_operator] = 'and'
 
       toggler = find("div/span[contains(@class, 'ui-tree-toggler')]", original_prerequisite)
       if toggler[:class].include?('plus')
@@ -199,7 +199,7 @@ class BedeliasSpider < Kimurai::Base
       end
     elsif node_type == 'no'
       prerequisite[:type] = 'logical'
-      prerequisite[:logical_operator] = 'NOT'
+      prerequisite[:logical_operator] = 'not'
 
       toggler = find("div/span[contains(@class, 'ui-tree-toggler')]", original_prerequisite)
       if toggler[:class].include?('plus')
@@ -215,7 +215,7 @@ class BedeliasSpider < Kimurai::Base
       end
     elsif node_type == 'o'
       prerequisite[:type] = 'logical'
-      prerequisite[:logical_operator] = 'OR'
+      prerequisite[:logical_operator] = 'or'
 
       toggler = find("div/span[contains(@class, 'ui-tree-toggler')]", original_prerequisite)
       if toggler[:class].include?('plus')
