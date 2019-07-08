@@ -176,6 +176,10 @@ class BedeliasSpider < Kimurai::Base
         prerequisite[:type] = 'subject'
         prerequisite[:subject_needed] = node_content.match(/\ [\d[A-Z]]* -/)[0].tr(' -', '')
         prerequisite[:needs] = 'all'
+      elsif node_content.include?('Inscripción a Curso')
+        prerequisite[:type] = 'subject'
+        prerequisite[:subjedt_needed] =  node_content.match(/\ [\d[A-Z]]* -/)[0].tr(' -', '')
+        prerequisite[:needs] = 'enrollment'
       end
     elsif node_type == 'cag' # 'créditos en el Grupo:'
       prerequisite[:type] = 'credits'
