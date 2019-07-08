@@ -1,6 +1,6 @@
 calc1:
   name: "Cálculo 1"
-  credits: 13
+  credits: 16
   group: maths
   semester: 1
   has_exam: true
