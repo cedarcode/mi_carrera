@@ -130,6 +130,8 @@ class Bedel
         prerequisite_item.operands_prerequisites.any? do |prerequisite|
           meets_prerequisites?(prerequisite)
         end
+      elsif prerequisite_item.logical_operator == "not"
+        !meets_prerequisites?(prerequisite_item.operands_prerequisites[0])
       end
     end
   end
