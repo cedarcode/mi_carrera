@@ -45,6 +45,10 @@ class SubjectsController < ApplicationController
     end
   end
 
+  def all
+    @subjects = Subject.order(:semester)
+  end
+
   private
 
   def bedel

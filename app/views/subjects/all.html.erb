@@ -1,0 +1,38 @@
+<% content_for :title do %>
+  <span class="mdc-top-app-bar__title">Student</span>
+<% end %>
+
+<% content_for :credits do %>
+  <span class="credits-counter">
+    <span class="js-credits-count" data-controller="credits-counter" data-action="credits-change->credits-counter#update">
+      <%= bedel.credits %>
+    </span>
+    créditos
+  </span>
+<% end %>
+
+<% content_for :profile_link do %>
+  <a href="/profile" class="material-icons mdc-top-app-bar__action-item">person</a>
+<% end %>
+
+<div class="mdc-list-group subjects-list">
+  <% @subjects.group_by { |subject| subject.semester }.each do |semester, subjects| %>
+    <h3 class="mdc-list-group__subheader mdc-typography--subtitle2"><%= semester.present? ? semester_to_text(semester) + " semestre" : "Materias optativas" %></h3>
+
+    <div class="mdc-list">
+      <% subjects.each do |subject| %>
+        <%= link_to subject_path(subject), :class => "mdc-list-item" do %>
+          <span class="mdc-list-item__text">
+            <%= subject.short_name || subject.name %>
+          </span>
+          <% if bedel.approved?(subject.exam ||= subject.course) %>
+            <span class="mdc-list-item__meta material-icons">done</span>
+          <% elsif !bedel.able_to_do?(subject.course) %>
+            <span class="mdc-list-item__meta material-icons">lock</span>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <hr class="mdc-list-divider">
+  <% end %>
+</div>

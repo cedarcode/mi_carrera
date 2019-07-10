@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resource :profile, only: :show
 
+  get '/all', to: 'subjects#all'
   resources :subjects do
     member do
       get :able_to_enroll, format: 'json'
