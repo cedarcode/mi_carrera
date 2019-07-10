@@ -65,7 +65,7 @@ body {
   top: 0;
 }
 
-.growing-text-list{
+.growing-text-list {
   a {
     color: inherit;
     text-decoration-line: inherit;
@@ -78,7 +78,6 @@ body {
     margin-left: 0px;
   }
 }
-
 
 // Fix black hover over list item with checkbox (on Chrome 74+)
 :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::before {
