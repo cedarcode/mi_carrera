@@ -74,16 +74,16 @@
   </div>
   <hr class="mdc-list-divider">
 
-  <h3 class="mdc-list-group__subheader mdc-typography--subtitle2">Links de interés</h3>
-  <div class="mdc-list">
-    <% if @subject.openfing %>
-      <a href="<%= @subject.openfing %>" class="mdc-list-item">
-        <span class="mdc-list-item__graphic material-icons">videocam</span>
-        <span class="mdc-list-item__text">OpenFING</span>
-      </a>
-    <% end %>
-  </div>
-  <hr class="mdc-list-divider">
+  <% if @subject.openfing %>
+    <h3 class="mdc-list-group__subheader mdc-typography--subtitle2">Links de interés</h3>
+    <div class="mdc-list">
+        <a href="<%= @subject.openfing %>" class="mdc-list-item">
+          <span class="mdc-list-item__graphic material-icons">videocam</span>
+          <span class="mdc-list-item__text">OpenFING</span>
+        </a>
+    </div>
+    <hr class="mdc-list-divider">
+  <% end %>
 
   <%= render partial: 'prerequisites/index', locals: { prerequisites_course: @subject.course.prerequisite_tree, prerequisites_exam: @subject.exam&.prerequisite_tree } %>
 </div>
