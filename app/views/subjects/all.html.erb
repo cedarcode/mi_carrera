@@ -31,7 +31,7 @@
           <span class="mdc-list-item__text">
             <%= subject.short_name || subject.name %>
           </span>
-          <% if bedel.approved?(subject.exam ||= subject.course) %>
+          <% if bedel.approved?(subject) %>
             <span class="mdc-list-item__meta material-icons">done</span>
           <% elsif !bedel.able_to_do?(subject.course) %>
             <span class="mdc-list-item__meta material-icons">lock</span>
