@@ -25,7 +25,7 @@
 
     <hr class="mdc-list-divider">
 
-    <label class="mdc-list-item" for="checkbox_course_approved">
+    <label class="mdc-list-item <%= "mdc-list-item--disabled" if !bedel.able_to_do?(@subject.course) %>" for="checkbox_course_approved">
       <span class="mdc-list-item__text">
         Curso aprobado?
       </span>
@@ -33,7 +33,7 @@
       <span class="mdc-list-item__meta">
         <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check", action: "ajax:success->exam-visibility#approvalChange" }) do |form| %>
           <div class="mdc-checkbox">
-            <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.course), data: { action: "autosave-check#update" } }, "yes", "no" %>
+            <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.course), disabled: !bedel.able_to_do?(@subject.course), data: { action: "autosave-check#update" } }, "yes", "no" %>
             <div class="mdc-checkbox__background">
               <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                 <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>

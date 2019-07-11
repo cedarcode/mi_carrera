@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       patch :approve
     end
     collection do
+      get :all
       get 'list' => 'subjects#list_subjects', as: :list
     end
   end
