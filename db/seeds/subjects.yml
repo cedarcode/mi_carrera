@@ -1,11 +1,29 @@
 calc1:
   name: "Cálculo 1"
+  credits: 16
+  group: maths
+  semester: 1
+  has_exam: true
+  course-needs:
+    - not:
+      - subject: calc-dif-int-1
+        type: course
+  exam-needs:
+    - subject: calc1
+      type: course
+
+calc-dif-int-1:
+  name: "Cálculo diferencial e integral en una variable"
   credits: 13
   group: maths
   semester: 1
   has_exam: true
+  course-needs:
+    - not:
+      - subject: calc1
+        type: course
   exam-needs:
-    - subject: calc1
+    - subject: calc-dif-int-1
       type: course
 
 gal1:
@@ -43,6 +61,22 @@ calc2:
       - subject: calc2
         type: course
       - subject: calc1
+        type: exam
+
+calc-dif-int-2:
+  name: "Cálculo diferencial e integral en varias variables"
+  credits: 13
+  group: maths
+  semester: 2
+  has_exam: true
+  course-needs:
+    - subject: calc-dif-int-1
+      type: course
+  exam-needs:
+    - and:
+      - subject: calc-dif-int-2
+        type: course
+      - subject: calc-dif-int-1
         type: exam
 
 gal2:
@@ -90,10 +124,16 @@ pye:
   has_exam: true
   course-needs:
     - and:
-      - subject: calc1
-        type: exam
-      - subject: calc2
-        type: course
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
+      - or:
+        - subject: calc-dif-int-2
+          type: course
+        - subject: calc2
+          type: course
   exam-needs:
     - subject: pye
       type: course
@@ -176,8 +216,11 @@ arqui:
   has_exam: true
   course-needs:
     - and:
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
       - subject: p1
         type: exam
       - subject: logica
@@ -209,16 +252,22 @@ metnum:
   has_exam: true
   course-needs:
     - and:
-      - subject: calc2
-        type: exam
+      - or:
+        - subject: calc-dif-int-2
+          type: exam
+        - subject: calc2
+          type: exam
       - subject: gal1
         type: exam
       - subject: p1
         type: exam
       - subject: gal2
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
   exam-needs:
     - subject: metnum
       type: course
@@ -234,10 +283,16 @@ iio:
     - and:
       - subject: gal1
         type: exam
-      - subject: calc2
-        type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-2
+          type: exam
+        - subject: calc2
+          type: exam
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
       - subject: gal2
         type: exam
       - subject: pye
@@ -260,8 +315,11 @@ teoleng:
         type: exam
       - subject: gal1
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
       - subject: p3
         type: course
   exam-needs:
@@ -278,8 +336,11 @@ sisoper:
     - and:
       - subject: discreta1
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
       - subject: gal1
         type: exam
       - subject: arqui
@@ -308,8 +369,11 @@ p4:
         type: course
       - subject: gal1
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
   exam-needs:
     - subject: p4
       type: course
@@ -409,8 +473,11 @@ redes:
         type: course
       - subject: p3
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
   exam-needs:
     - subject: redes
       type: course
@@ -740,6 +807,23 @@ calc3:
     - subject: calc3
       type: course
 
+calc-vec:
+  name: "Cálculo vectorial"
+  credits: 10
+  group: maths
+  has_exam: true
+  course-needs:
+    - and:
+      - subject: calc-dif-int-1
+        type: exam
+      - subject: gal1
+        type: exam
+      - subject: calc-dif-int-2
+        type: course
+  exam-needs:
+    - subject: calc-vec
+      type: course
+
 f2:
   name: "Física 2"
   credits: 10
@@ -747,14 +831,20 @@ f2:
   has_exam: true
   course-needs:
     - and:
-      - subject: calc1
-        type: course
+      - or:
+        - subject: calc-dif-int-1
+          type: course
+        - subject: calc1
+          type: course
       - subject: f1
         type: course
   exam-needs:
     - and:
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
       - subject: f1
         type: exam
       - subject: f2
@@ -767,8 +857,11 @@ f3:
   has_exam: true
   course-needs:
     - and:
-      - subject: calc1
-        type: course
+      - or:
+        - subject: calc-dif-int-1
+          type: course
+        - subject: calc1
+          type: course
       - or:
           - subject: f1
             type: exam
@@ -781,8 +874,11 @@ f3:
     - and:
       - subject: f1
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
       - subject: f3
         type: course
 
@@ -935,10 +1031,16 @@ mor:
         type: exam
       - subject: discreta2
         type: exam
-      - subject: calc2
-        type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-2
+          type: exam
+        - subject: calc2
+          type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
       - subject: p3
         type: exam
       - subject: pye
@@ -1013,12 +1115,18 @@ ecdif:
     - and:
       - subject: gal1
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
       - subject: gal2
         type: exam
-      - subject: calc2
-        type: course
+      - or:
+        - subject: calc-dif-int-2
+          type: course
+        - subject: calc2
+          type: course
   exam-needs:
     - subject: ecdif
       type: course
@@ -1211,10 +1319,16 @@ tcace:
         type: exam
       - subject: discreta2
         type: exam
-      - subject: calc1
-        type: exam
-      - subject: calc2
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
+      - or:
+        - subject: calc-dif-int-2
+          type: exam
+        - subject: calc2
+          type: exam
       - subject: gal1
         type: exam
 

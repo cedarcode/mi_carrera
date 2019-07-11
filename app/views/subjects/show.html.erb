@@ -1,9 +1,9 @@
 <% content_for :navigation_icon do %>
-  <%= link_to "arrow_back", url_for(request.referer || root_path), :class => "material-icons mdc-top-app-bar__navigation-icon" %>
+  <%= nav_icon("arrow_back", root_path) %>
 <% end %>
 
 <% content_for :profile_link do %>
-  <a href="/profile" class="material-icons mdc-top-app-bar__action-item">person</a>
+  <%= action_icon("person", profile_path) %>
 <% end %>
 
 <div class="mdc-list-group">

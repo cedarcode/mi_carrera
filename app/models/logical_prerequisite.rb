@@ -1,5 +1,5 @@
 class LogicalPrerequisite < Prerequisite
-  LOGICAL_OPERATORS = ["and", "or"]
+  LOGICAL_OPERATORS = ["and", "or", "not"]
 
   has_many(
     :operands_prerequisites,
