@@ -84,11 +84,7 @@ class Bedel
   def able_to_do?(item)
     case item
     when Subject
-      if item.exam
-        able_to_do?(item.exam)
-      else
-        able_to_do?(item.course)
-      end
+      able_to_do?(item.course)
     when Approvable
       if item.prerequisite_tree
         meets_prerequisites?(item.prerequisite_tree)

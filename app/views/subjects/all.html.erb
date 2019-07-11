@@ -28,7 +28,7 @@
           </span>
           <% if bedel.approved?(subject) %>
             <span class="mdc-list-item__meta material-icons">done</span>
-          <% elsif !bedel.able_to_do?(subject.course) %>
+          <% elsif !bedel.able_to_do?(subject) %>
             <span class="mdc-list-item__meta material-icons">lock</span>
           <% end %>
         <% end %>
