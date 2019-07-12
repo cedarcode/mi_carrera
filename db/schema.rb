@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_07_11_132127) do
     t.string "short_name"
     t.integer "semester"
     t.integer "group_id", null: false
-    t.string "openfing"
+    t.string "openfing_id"
   end
 
 end

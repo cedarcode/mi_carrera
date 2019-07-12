@@ -74,10 +74,10 @@
   </div>
   <hr class="mdc-list-divider">
 
-  <% if @subject.openfing %>
+  <% if @subject.openfing_id %>
     <h3 class="mdc-list-group__subheader mdc-typography--subtitle2">Links de interés</h3>
     <div class="mdc-list">
-        <a href="<%= @subject.openfing %>" class="mdc-list-item">
+        <a href="https://open.fing.edu.uy/courses/<%= @subject.openfing_id %>" class="mdc-list-item">
           <span class="mdc-list-item__graphic material-icons">videocam</span>
           <span class="mdc-list-item__text">OpenFING</span>
         </a>

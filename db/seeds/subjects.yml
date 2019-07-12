@@ -2,7 +2,7 @@ calc1:
   name: "Cálculo 1"
   credits: 16
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/c1"
+  openfing_id: "c1"
   semester: 1
   has_exam: true
   course-needs:
@@ -17,7 +17,7 @@ calc-dif-int-1:
   name: "Cálculo diferencial e integral en una variable"
   credits: 13
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/civ"
+  openfing_id: "civ"
   semester: 1
   has_exam: true
   course-needs:
@@ -33,7 +33,7 @@ gal1:
   short_name: "GAL 1"
   credits: 9
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/gal1"
+  openfing_id: "gal1"
   semester: 1
   has_exam: true
   exam-needs:
@@ -44,7 +44,7 @@ f1:
   name: "Física 1"
   credits: 10
   group: experimental_sciences
-  openfing: "https://open.fing.edu.uy/courses/f1-2018"
+  openfing_id: "f1-2018"
   semester: 1
   has_exam: true
   exam-needs:
@@ -55,7 +55,7 @@ calc2:
   name: "Cálculo 2"
   credits: 16
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/c2"
+  openfing_id: "c2"
   semester: 2
   has_exam: true
   course-needs:
@@ -72,7 +72,7 @@ calc-dif-int-2:
   name: "Cálculo diferencial e integral en varias variables"
   credits: 13
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/cdivv"
+  openfing_id: "cdivv"
   semester: 2
   has_exam: true
   course-needs:
@@ -90,7 +90,7 @@ gal2:
   short_name: "GAL 2"
   credits: 9
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/gal2"
+  openfing_id: "gal2"
   semester: 2
   has_exam: true
   course-needs:
@@ -107,7 +107,7 @@ discreta1:
   name: "Matemática Discreta 1"
   credits: 9
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/md1"
+  openfing_id: "md1"
   semester: 2
   has_exam: true
   exam-needs:
@@ -118,7 +118,7 @@ p1:
   name: "Programación 1"
   credits: 10
   group: programming
-  openfing: "https://open.fing.edu.uy/courses/p1"
+  openfing_id: "p1"
   semester: 2
   has_exam: true
   exam-needs:
@@ -129,7 +129,7 @@ pye:
   name: "Probabilidad y Estádistica"
   credits: 10
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/pye18"
+  openfing_id: "pye18"
   semester: 3
   has_exam: true
   course-needs:
@@ -152,7 +152,7 @@ discreta2:
   name: "Matemática Discreta 2"
   credits: 9
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/md2"
+  openfing_id: "md2"
   semester: 3
   has_exam: true
   course-needs:
@@ -169,7 +169,7 @@ logica:
   name: "Lógica"
   credits: 12
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/logica19"
+  openfing_id: "logica19"
   semester: 3
   has_exam: true
   course-needs:
@@ -183,7 +183,7 @@ p2:
   name: "Programación 2"
   credits: 12
   group: programming
-  openfing: "https://open.fing.edu.uy/courses/p2"
+  openfing_id: "p2"
   semester: 3
   has_exam: true
   course-needs:
@@ -197,7 +197,7 @@ economia:
   name: "Economía"
   credits: 7
   group: human_sciences
-  openfing: "https://open.fing.edu.uy/courses/eco"
+  openfing_id: "eco"
   semester: 4
   has_exam: true
   exam-needs:
@@ -208,7 +208,7 @@ p3:
   name: "Programación 3"
   credits: 15
   group: programming
-  openfing: "https://open.fing.edu.uy/courses/prog3-2018"
+  openfing_id: "prog3-2018"
   semester: 4
   has_exam: true
   course-needs:
@@ -227,7 +227,7 @@ arqui:
   name: "Arquitectura de Computadoras"
   credits: 12
   group: arqui_op_network
-  openfing: "https://open.fing.edu.uy/courses/ac"
+  openfing_id: "ac"
   semester: 4
   has_exam: true
   course-needs:
@@ -264,7 +264,7 @@ metnum:
   name: "Métodos Numéricos"
   credits: 8
   group: numeric_calculus
-  openfing: "https://open.fing.edu.uy/courses/metn"
+  openfing_id: "metn"
   semester: 4
   has_exam: true
   course-needs:
@@ -294,7 +294,7 @@ iio:
   short_name: "IIO"
   credits: 10
   group: investigation
-  openfing: "https://open.fing.edu.uy/courses/iio"
+  openfing_id: "iio"
   semester: 5
   has_exam: true
   course-needs:
@@ -323,7 +323,7 @@ teoleng:
   name: "Teoría de Lenguajes"
   credits: 12
   group: programming
-  openfing: "https://open.fing.edu.uy/courses/tl"
+  openfing_id: "tl"
   semester: 5
   has_exam: true
   course-needs:
@@ -377,7 +377,7 @@ p4:
   name: "Programación 4"
   credits: 15
   group: programming
-  openfing: "https://open.fing.edu.uy/courses/p4"
+  openfing_id: "p4"
   semester: 5
   has_exam: true
   course-needs:
@@ -414,7 +414,7 @@ agpi:
   short_name: "AGPI"
   credits: 5
   group: organization_management
-  openfing: "https://open.fing.edu.uy/courses/agpi"
+  openfing_id: "agpi"
   semester: 5
   has_exam: true
   course-needs:
@@ -438,7 +438,7 @@ fbd:
   name: "Fundamentos de Base de Datos"
   credits: 15
   group: databases
-  openfing: "https://open.fing.edu.uy/courses/fbd"
+  openfing_id: "fbd"
   semester: 6
   has_exam: true
   course-needs:
@@ -457,7 +457,7 @@ tprog:
   name: "Taller de Programación"
   credits: 15
   group: projects
-  openfing: "https://open.fing.edu.uy/courses/tp"
+  openfing_id: "tp"
   semester: 6
   course-needs:
     - and:
@@ -487,7 +487,7 @@ redes:
   name: "Redes de Computadoras"
   credits: 12
   group: arqui_op_network
-  openfing: "https://open.fing.edu.uy/courses/redes"
+  openfing_id: "redes"
   semester: 6
   has_exam: true
   course-needs:
@@ -525,7 +525,7 @@ iis:
   short_name: "IIS"
   credits: 10
   group: software_engeneering
-  openfing: "https://open.fing.edu.uy/courses/iis19"
+  openfing_id: "iis19"
   semester: 7
   has_exam: true
   course-needs:
@@ -626,7 +626,7 @@ ae:
   name: "Algoritmos Evolutivos"
   credits: 9
   group: investigation
-  openfing: "https://open.fing.edu.uy/courses/ae"
+  openfing_id: "ae"
   course-needs:
     - and:
       - subject: pye
@@ -766,7 +766,7 @@ plogica:
   name: "Programación Lógica"
   credits: 10
   group: programming
-  openfing: "https://open.fing.edu.uy/courses/pl"
+  openfing_id: "pl"
   course-needs:
     - and:
       - subject: discreta2
@@ -822,7 +822,7 @@ calc3:
   name: "Cálculo 3"
   credits: 10
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/c3"
+  openfing_id: "c3"
   has_exam: true
   course-needs:
     - and:
@@ -840,7 +840,7 @@ calc-vec:
   name: "Cálculo vectorial"
   credits: 10
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/calcvec"
+  openfing_id: "calcvec"
   has_exam: true
   course-needs:
     - and:
@@ -858,7 +858,7 @@ f2:
   name: "Física 2"
   credits: 10
   group: experimental_sciences
-  openfing: "https://open.fing.edu.uy/courses/f2"
+  openfing_id: "f2"
   has_exam: true
   course-needs:
     - and:
@@ -885,7 +885,7 @@ f3:
   name: "Física 3"
   credits: 10
   group: experimental_sciences
-  openfing: "https://open.fing.edu.uy/courses/f3"
+  openfing_id: "f3"
   has_exam: true
   course-needs:
     - and:
@@ -959,7 +959,7 @@ hpc:
   short_name: "Comp. de Alta Performance"
   credits: 10
   group: arqui_op_network
-  openfing: "https://open.fing.edu.uy/courses/hpc"
+  openfing_id: "hpc"
   course-needs:
     - and:
       - subject: p4
@@ -1029,7 +1029,7 @@ intropln:
   short_name: "IPLN"
   credits: 12
   group: artificial_intelligence
-  openfing: "https://open.fing.edu.uy/courses/pln"
+  openfing_id: "pln"
   course-needs:
     - and:
       - subject: p4
@@ -1144,7 +1144,7 @@ ecdif:
   name: "Ecuaciones Diferenciales"
   credits: 12
   group: maths
-  openfing: "https://open.fing.edu.uy/courses/ed"
+  openfing_id: "ed"
   has_exam: true
   course-needs:
     - and:
@@ -1529,7 +1529,7 @@ tso:
   name: "Taller de Sistemas Operativos"
   credits: 8
   group: arqui_op_network
-  openfing: "https://open.fing.edu.uy/courses/so"
+  openfing_id: "so"
   course-needs:
     - and:
       - subject: p4
