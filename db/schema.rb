@@ -48,8 +48,6 @@ ActiveRecord::Schema.define(version: 2019_07_12_145744) do
     t.string "short_name"
     t.integer "semester"
     t.integer "group_id", null: false
-    t.string "openfing"
-    t.string "eva"
     t.string "code"
     t.index ["code"], name: "index_subjects_on_code", unique: true
   end
