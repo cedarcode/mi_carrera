@@ -2,8 +2,8 @@ require 'test_helper'
 
 class BedelTest < ActiveSupport::TestCase
   setup do
-    @subject1 = create_subject("Subject 1", credits: 16, exam: false)
-    @subject2 = create_subject("Subject 2", credits: 13, exam: false)
+    @subject1 = create_subject(code: "s1", name: "Subject 1", credits: 16, exam: false)
+    @subject2 = create_subject(code: "s2", name: "Subject 2", credits: 13, exam: false)
 
     prerequisite1 = LogicalPrerequisite.create!(approvable_id: @subject2.course.id, logical_operator: "not")
     SubjectPrerequisite.create!(parent_prerequisite: prerequisite1, approvable_needed: @subject1.course)

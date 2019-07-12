@@ -2,8 +2,8 @@ require "application_system_test_case"
 
 class DependenciesTest < ApplicationSystemTestCase
   setup do
-    @gal1 = create_subject("GAL 1", credits: 9, exam: true)
-    gal2 = create_subject("GAL 2", credits: 9, exam: true)
+    @gal1 = create_subject(code: "gal1", name: "GAL 1", credits: 9, exam: true)
+    gal2 = create_subject(code: "gal2", name: "GAL 2", credits: 9, exam: true)
 
     SubjectPrerequisite.create!(approvable_id: gal2.course.id, approvable_needed_id: @gal1.course.id)
     SubjectPrerequisite.create!(approvable_id: @gal1.exam.id, approvable_needed_id: @gal1.course.id)

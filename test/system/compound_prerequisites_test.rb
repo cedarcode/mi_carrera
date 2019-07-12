@@ -2,12 +2,12 @@ require "application_system_test_case"
 
 class CompoundPrerequisitesTest < ApplicationSystemTestCase
   setup do
-    maths = SubjectGroup.create!(name: "Matemáticas")
-    prog = SubjectGroup.create!(name: "Programación")
-    @gal1 = Subject.create!(name: "GAL 1", credits: 8, group_id: maths.id)
-    @gal2 = Subject.create!(name: "GAL 2", credits: 8, group_id: maths.id)
-    @p1 = Subject.create!(name: "P1", credits: 5, group_id: prog.id)
-    p2 = Subject.create!(name: "P2", credits: 9, group_id: prog.id)
+    maths = SubjectGroup.create!(code: "1111", name: "Matemáticas")
+    prog = SubjectGroup.create!(code: "2222", name: "Programación")
+    @gal1 = Subject.create!(code: "gal1", name: "GAL 1", credits: 8, group_id: maths.id)
+    @gal2 = Subject.create!(code: "gal2", name: "GAL 2", credits: 8, group_id: maths.id)
+    @p1 = Subject.create!(code: "p1", name: "P1", credits: 5, group_id: prog.id)
+    p2 = Subject.create!(code: "p2", name: "P2", credits: 9, group_id: prog.id)
 
     @gal1.create_course!
     @gal1.create_exam!

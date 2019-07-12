@@ -3,9 +3,9 @@ require "application_system_test_case"
 class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
   setup do
     maths = SubjectGroup.create!(name: "Matemáticas")
-    @gal1 = Subject.create!(name: "GAL 1", credits: 9, group_id: maths.id)
-    @gal2 = Subject.create!(name: "GAL 2", credits: 9, group_id: maths.id)
-    gal3 = Subject.create!(name: "GAL 3", credits: 9, group_id: maths.id)
+    @gal1 = Subject.create!(code: "GAL1", name: "GAL 1", credits: 9, group_id: maths.id)
+    @gal2 = Subject.create!(code: "GAL2", name: "GAL 2", credits: 9, group_id: maths.id)
+    gal3 = Subject.create!(code: "GAL3", name: "GAL 3", credits: 9, group_id: maths.id)
 
     @gal1.create_course!
     @gal1.create_exam!
