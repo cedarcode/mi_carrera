@@ -150,6 +150,16 @@
     "@material/theme" "^3.0.0"
     tslib "^1.9.3"
 
+"@material/linear-progress@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@material/linear-progress/-/linear-progress-3.0.0.tgz#7cf23be025707f0a726e80153bc1750869e8a66e"
+  integrity sha512-zbqwBinkOyvfQtLm6U331d61dIu+STnwEa0fUH/vYTbf6iKvBK1AaAYVpy2Yv34RvWINDzcvPaOHRXk/vNm7PA==
+  dependencies:
+    "@material/animation" "^3.0.0"
+    "@material/base" "^3.0.0"
+    "@material/theme" "^3.0.0"
+    tslib "^1.9.3"
+
 "@material/list@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@material/list/-/list-3.0.0.tgz#bdb89910dfa44a02efea76f1c5c0545534c63081"

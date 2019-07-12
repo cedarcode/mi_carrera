@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@material/checkbox": "^3.0.0",
+    "@material/linear-progress": "^3.0.0",
     "@material/list": "^3.0.0",
     "@material/top-app-bar": "^3.0.0",
     "@material/typography": "^3.0.0",

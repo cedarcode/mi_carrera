@@ -1,9 +1,16 @@
 class Bedel
+  # Fixed for now. Need to be generalized for diverse degrees.
+  DEGREE_CREDITS = 450
+
   def initialize(store)
     @store = store
 
     @store[:approved_courses] ||= []
     @store[:approved_exams] ||= []
+  end
+
+  def progress(group = nil)
+    (credits(group) / credits_needed(group).to_f * 100).floor
   end
 
   def add_approval(approvable)
@@ -97,6 +104,15 @@ class Bedel
   private
 
   attr_reader :store
+
+  def credits_needed(group = nil)
+    if group
+      # FIXME We need something like: group.credits
+      50
+    else
+      DEGREE_CREDITS
+    end
+  end
 
   def exam_credits(group)
     @exam_credits ||= {}

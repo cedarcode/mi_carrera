@@ -14,8 +14,10 @@
           <%= group[:credits] %>
         </span>
       </li>
-      <li role="separator" class="mdc-list-divider"></li>
+
+      <%= progress(bedel.progress(group[:subject_group])) %>
     <% end %>
+
     <li class="mdc-list-item total-credits">
       <span class="mdc-list-item__text">
         Total
@@ -24,5 +26,7 @@
         <%= @groups_and_credits.pluck(:credits).reduce :+ %>
       </span>
     </li>
+
+    <%= progress(bedel.progress) %>
   </ul>
 </div>
