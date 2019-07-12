@@ -4,8 +4,10 @@
       <span class="material-icons toggle-collapse" data-target="prerequisite.button">chevron_right</span>
       <% if logical_prerequisite.logical_operator == "or" %>
         Alguno de los siguientes
-      <% else %>
+      <% elsif logical_prerequisite.logical_operator == "and" %>
         Todos los siguientes
+      <% elsif logical_prerequisite.logical_operator == "not" %>
+        No debe tener
       <% end %>
     </div>
   </a>
