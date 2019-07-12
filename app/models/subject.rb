@@ -5,4 +5,5 @@ class Subject < ApplicationRecord
 
   validates :name, presence: true
   validates :credits, presence: true
+  validates :code, uniqueness: true
 end

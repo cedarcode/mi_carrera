@@ -26,7 +26,7 @@ class StudentAppSeeder
   end
 
   def populate_subject_group!(group_data)
-    SubjectGroup.where(name: group_data["name"]).first_or_create
+    SubjectGroup.where(name: group_data["name"], code: group_data["code"]).first_or_create
   end
 
   def populate_subjects!(subject_groups)
@@ -41,10 +41,11 @@ class StudentAppSeeder
   end
 
   def populate_subject!(data, subject_groups)
-    subject = Subject.where(name: data["name"]).first_or_create
+    subject = Subject.where(code: data["code"]).first_or_create
     group_key = data["group"]
-    group = SubjectGroup.where(name: subject_groups[group_key]["name"]).first
+    group = SubjectGroup.where(code: subject_groups[group_key]["code"]).first
     subject.update!(
+      name: data["name"],
       credits: data["credits"],
       semester: data["semester"],
       short_name: data["short_name"],
@@ -138,7 +139,7 @@ class StudentAppSeeder
           .where(approvable_id: parent.id, subject_group_id: nil, credits_needed: credits)
           .first_or_create!
       else
-        group = SubjectGroup.where(name: subject_groups[group_key]["name"]).first
+        group = SubjectGroup.where(code: subject_groups[group_key]["code"]).first
         CreditsPrerequisite
           .where(approvable_id: parent.id, subject_group_id: group.id, credits_needed: credits)
           .first_or_create!
@@ -149,7 +150,7 @@ class StudentAppSeeder
           .where(parent_prerequisite_id: parent.id, subject_group_id: nil, credits_needed: credits)
           .first_or_create!
       else
-        group = SubjectGroup.where(name: subject_groups[group_key]["name"]).first
+        group = SubjectGroup.where(code: subject_groups[group_key]["code"]).first
         CreditsPrerequisite
           .where(parent_prerequisite_id: parent.id, subject_group_id: group.id, credits_needed: credits)
           .first_or_create!
