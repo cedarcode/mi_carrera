@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_07_12_145744) do
     t.integer "group_id", null: false
     t.string "code"
     t.index ["code"], name: "index_subjects_on_code", unique: true
+    t.string "openfing_id"
+    t.string "eva_id"
   end
 
 end

@@ -3,8 +3,10 @@ calc1:
   name: "Cálculo 1"
   credits: 16
   group: maths
+  openfing_id: "c1"
   semester: 1
   has_exam: true
+  eva_id: "74"
   course-needs:
     - not:
       - subject: calc-dif-int-1
@@ -18,8 +20,10 @@ calc-dif-int-1:
   name: "Cálculo diferencial e integral en una variable"
   credits: 13
   group: maths
+  openfing_id: "civ"
   semester: 1
   has_exam: true
+  eva_id: "1024"
   course-needs:
     - not:
       - subject: calc1
@@ -34,8 +38,10 @@ gal1:
   short_name: "GAL 1"
   credits: 9
   group: maths
+  openfing_id: "gal1"
   semester: 1
   has_exam: true
+  eva_id: "256"
   exam-needs:
     - subject: gal1
       type: course
@@ -45,8 +51,10 @@ f1:
   name: "Física 1"
   credits: 10
   group: experimental_sciences
+  openfing_id: "f1-2018"
   semester: 1
   has_exam: true
+  eva_id: "87"
   exam-needs:
     - subject: f1
       type: course
@@ -56,8 +64,10 @@ calc2:
   name: "Cálculo 2"
   credits: 16
   group: maths
+  openfing_id: "c2"
   semester: 2
   has_exam: true
+  eva_id: "319"
   course-needs:
     - subject: calc1
       type: course
@@ -73,8 +83,10 @@ calc-dif-int-2:
   name: "Cálculo diferencial e integral en varias variables"
   credits: 13
   group: maths
+  openfing_id: "cdivv"
   semester: 2
   has_exam: true
+  eva_id: "1131"
   course-needs:
     - subject: calc-dif-int-1
       type: course
@@ -91,8 +103,10 @@ gal2:
   short_name: "GAL 2"
   credits: 9
   group: maths
+  openfing_id: "gal2"
   semester: 2
   has_exam: true
+  eva_id: "270"
   course-needs:
     - subject: gal1
       type: course
@@ -108,8 +122,10 @@ discreta1:
   name: "Matemática Discreta 1"
   credits: 9
   group: maths
+  openfing_id: "md1"
   semester: 2
   has_exam: true
+  eva_id: "323"
   exam-needs:
     - subject: discreta1
       type: course
@@ -119,8 +135,10 @@ p1:
   name: "Programación 1"
   credits: 10
   group: programming
+  openfing_id: "p1"
   semester: 2
   has_exam: true
+  eva_id: "58"
   exam-needs:
     - subject: p1
       type: course
@@ -130,8 +148,10 @@ pye:
   name: "Probabilidad y Estádistica"
   credits: 10
   group: maths
+  openfing_id: "pye18"
   semester: 3
   has_exam: true
+  eva_id: "54"
   course-needs:
     - and:
       - or:
@@ -153,8 +173,10 @@ discreta2:
   name: "Matemática Discreta 2"
   credits: 9
   group: maths
+  openfing_id: "md2"
   semester: 3
   has_exam: true
+  eva_id: "267"
   course-needs:
     - and:
       - subject: discreta1
@@ -170,8 +192,10 @@ logica:
   name: "Lógica"
   credits: 12
   group: maths
+  openfing_id: "logica19"
   semester: 3
   has_exam: true
+  eva_id: "394"
   course-needs:
     - subject: discreta1
       type: course
@@ -184,8 +208,10 @@ p2:
   name: "Programación 2"
   credits: 12
   group: programming
+  openfing_id: "p2"
   semester: 3
   has_exam: true
+  eva_id: "132"
   course-needs:
     - subject: p1
       type: course
@@ -198,8 +224,10 @@ economia:
   name: "Economía"
   credits: 7
   group: human_sciences
+  openfing_id: "eco"
   semester: 4
   has_exam: true
+  eva_id: "1093"
   exam-needs:
     - subject: economia
       type: course
@@ -209,8 +237,10 @@ p3:
   name: "Programación 3"
   credits: 15
   group: programming
+  openfing_id: "prog3-2018"
   semester: 4
   has_exam: true
+  eva_id: "39"
   course-needs:
     - and:
       - subject: p1
@@ -228,8 +258,10 @@ arqui:
   name: "Arquitectura de Computadoras"
   credits: 12
   group: arqui_op_network
+  openfing_id: "ac"
   semester: 4
   has_exam: true
+  eva_id: "195"
   course-needs:
     - and:
       - or:
@@ -266,8 +298,10 @@ metnum:
   name: "Métodos Numéricos"
   credits: 8
   group: numeric_calculus
+  openfing_id: "metn"
   semester: 4
   has_exam: true
+  eva_id: "62"
   course-needs:
     - and:
       - or:
@@ -296,8 +330,10 @@ iio:
   short_name: "IIO"
   credits: 10
   group: investigation
+  openfing_id: "iio"
   semester: 5
   has_exam: true
+  eva_id: "994"
   course-needs:
     - and:
       - subject: gal1
@@ -325,8 +361,10 @@ teoleng:
   name: "Teoría de Lenguajes"
   credits: 12
   group: programming
+  openfing_id: "tl"
   semester: 5
   has_exam: true
+  eva_id: "687"
   course-needs:
     - and:
       - subject: logica
@@ -351,8 +389,10 @@ sisoper:
   name: "Sistemas Operativos"
   credits: 12
   group: arqui_op_network
+  
   semester: 5
   has_exam: true
+  eva_id: "720"
   course-needs:
     - and:
       - subject: discreta1
@@ -379,8 +419,10 @@ p4:
   name: "Programación 4"
   credits: 15
   group: programming
+  openfing_id: "p4"
   semester: 5
   has_exam: true
+  eva_id: "413"
   course-needs:
     - and:
       - subject: discreta1
@@ -417,8 +459,10 @@ agpi:
   short_name: "AGPI"
   credits: 5
   group: organization_management
+  openfing_id: "agpi"
   semester: 5
   has_exam: true
+  eva_id: "778"
   course-needs:
     - credits: total
       amount: 150
@@ -433,6 +477,7 @@ gescalid:
   group: organization_management
   semester: 5
   has_exam: true
+  eva_id: "156"
   exam-needs:
     - subject: gescalid
       type: course
@@ -442,8 +487,10 @@ fbd:
   name: "Fundamentos de Base de Datos"
   credits: 15
   group: databases
+  openfing_id: "fbd"
   semester: 6
   has_exam: true
+  eva_id: "330"
   course-needs:
     - and:
       - subject: discreta2
@@ -461,7 +508,9 @@ tprog:
   name: "Taller de Programación"
   credits: 15
   group: projects
+  openfing_id: "tp"
   semester: 6
+  eva_id: "315"
   course-needs:
     - and:
       - subject: p4
@@ -477,6 +526,7 @@ pai:
   group: organization_management
   semester: 6
   has_exam: true
+  eva_id: "779"
   course-needs:
     - subject: agpi
       type: course
@@ -492,8 +542,10 @@ redes:
   name: "Redes de Computadoras"
   credits: 12
   group: arqui_op_network
+  openfing_id: "redes"
   semester: 6
   has_exam: true
+  eva_id: "335"
   course-needs:
     - and:
       - subject: arqui
@@ -518,6 +570,7 @@ cc:
   group: organization_management
   semester: 6
   has_exam: true
+  eva_id: "49"
   course-needs:
     - credits: total
       amount: 80
@@ -531,8 +584,10 @@ iis:
   short_name: "IIS"
   credits: 10
   group: software_engeneering
+  openfing_id: "iis19"
   semester: 7
   has_exam: true
+  eva_id: "613"
   course-needs:
     - and:
       - subject: p4
@@ -552,6 +607,7 @@ pis:
   credits: 15
   group: projects
   semester: 8
+  eva_id: "573"
   course-needs:
     - and:
       - subject: p4
@@ -565,6 +621,7 @@ proy:
   credits: 30
   group: projects
   semester: 9
+  eva_id: "627"
   course-needs:
     - or:
       - credits: total
@@ -623,6 +680,7 @@ aln:
   name: "Álgebra Lineal Numérica"
   credits: 9
   group: numeric_calculus
+  eva_id: "1143"
   course-needs:
     - and:
       - subject: p3
@@ -635,6 +693,8 @@ ae:
   name: "Algoritmos Evolutivos"
   credits: 10
   group: investigation
+  openfing_id: "ae"
+  eva_id: "1049"
   course-needs:
     - and:
       - subject: pye
@@ -650,6 +710,7 @@ aaac:
   short_name: "AA de Arqui. de Computadoras"
   credits: 8
   group: arqui_op_network
+  eva_id: "268"
   course-needs:
     - and:
       - subject: arqui
@@ -662,6 +723,7 @@ educbutia:
   name: "Butia: Robótica Educativa"
   credits: 8
   group: artificial_intelligence
+  eva_id: "312"
   course-needs:
     - and:
       - credits: total
@@ -674,6 +736,7 @@ compiladores:
   name: "Diseño de Compiladores"
   credits: 12
   group: programming
+  eva_id: "789"
   course-needs:
     - and:
       - subject: p4
@@ -691,6 +754,7 @@ disdw:
   short_name: "Data Warehouse"
   credits: 10
   group: databases
+  eva_id: "648"
   course-needs:
     - and:
       - subject: p4
@@ -705,6 +769,7 @@ cripto:
   name: "Criptografía"
   credits: 10
   group: arqui_op_network
+  eva_id: "938"
   course-needs:
     - and:
       - subject: discreta1
@@ -720,6 +785,7 @@ fsi:
   short_name: "Seguridad Informática"
   credits: 12
   group: arqui_op_network
+  eva_id: "399"
   course-needs:
     - and:
       - subject: logica
@@ -739,6 +805,7 @@ inpercom:
   short_name: "Inter. Persona Computadora"
   credits: 12
   group: software_engeneering
+  eva_id: "1121"
   course-needs:
     - and:
       - subject: p4
@@ -752,6 +819,7 @@ compgraf:
   short_name: "Intro. a la Computación Gráfica"
   credits: 10
   group: programming
+  eva_id: "205"
   course-needs:
     - and:
       - subject: p4
@@ -768,6 +836,7 @@ progfunc:
   name: "Programación Funcional"
   credits: 10
   group: programming
+  eva_id: "138"
   course-needs:
     - and:
       - subject: discreta1
@@ -784,6 +853,8 @@ plogica:
   name: "Programación Lógica"
   credits: 10
   group: programming
+  openfing_id: "pl"
+  eva_id: "293"
   course-needs:
     - and:
       - subject: discreta2
@@ -811,6 +882,7 @@ iti:
   short_name: "Intro. a la Teo. de la Info."
   credits: 8
   group: maths
+  eva_id: "412"
   course-needs:
     - subject: pye
       type: exam
@@ -820,6 +892,7 @@ mmc:
   name: "Métodos de Monte Carlo"
   credits: 8
   group: numeric_calculus
+  eva_id: "24"
   course-needs:
     - and:
       - subject: iio
@@ -835,6 +908,7 @@ optincert:
   short_name: "Opt. Bajo Incertidumbre"
   credits: 8
   group: investigation
+  eva_id: "397"
   course-needs:
     - subject: iio
       type: exam
@@ -844,7 +918,9 @@ calc3:
   name: "Cálculo 3"
   credits: 10
   group: maths
+  openfing_id: "c3"
   has_exam: true
+  eva_id: "129"
   course-needs:
     - and:
       - subject: calc1
@@ -862,7 +938,9 @@ calc-vec:
   name: "Cálculo vectorial"
   credits: 10
   group: maths
+  openfing_id: "calcvec"
   has_exam: true
+  eva_id: "1183"
   course-needs:
     - and:
       - subject: calc-dif-int-1
@@ -880,7 +958,9 @@ f2:
   name: "Física 2"
   credits: 10
   group: experimental_sciences
+  openfing_id: "f2"
   has_exam: true
+  eva_id: "32"
   course-needs:
     - and:
       - or:
@@ -907,7 +987,9 @@ f3:
   name: "Física 3"
   credits: 10
   group: experimental_sciences
+  openfing_id: "f3"
   has_exam: true
+  eva_id: "32"
   course-needs:
     - and:
       - or:
@@ -941,6 +1023,7 @@ tsi1:
   short_name: "TSI 1"
   credits: 10
   group: projects
+  eva_id: "402"
   course-needs:
     - and:
       - subject: p4
@@ -958,6 +1041,7 @@ fpe:
   short_name: "Fund. de Prog. Entera"
   credits: 8
   group: investigation
+  eva_id: "269"
   course-needs:
     - subject: iio
       type: exam
@@ -984,6 +1068,8 @@ hpc:
   short_name: "Comp. de Alta Performance"
   credits: 10
   group: arqui_op_network
+  openfing_id: "hpc"
+  eva_id: "1064"
   course-needs:
     - and:
       - subject: p4
@@ -1001,6 +1087,7 @@ gpgpu:
   short_name: "GPGPU"
   credits: 7
   group: arqui_op_network
+  eva_id: "1076"
   course-needs:
     - and:
       - subject: arqui
@@ -1015,6 +1102,7 @@ dtr:
   name: "Diseño Topológico de Redes"
   credits: 10
   group: arqui_op_network
+  eva_id: "1083"
   course-needs:
     - subject: iio
       type: course
@@ -1025,6 +1113,7 @@ sig:
   short_name: "Sist. de Info. Geográfica"
   credits: 10
   group: databases
+  eva_id: "967"
   course-needs:
     - and:
       - subject: p4
@@ -1039,6 +1128,7 @@ intmidd:
   name: "Introducción al Middleware"
   credits: 8
   group: databases
+  eva_id: "61"
   course-needs:
     - and:
       - subject: sisoper
@@ -1058,6 +1148,8 @@ intropln:
   short_name: "IPLN"
   credits: 12
   group: artificial_intelligence
+  openfing_id: "pln"
+  eva_id: "211"
   course-needs:
     - and:
       - subject: p4
@@ -1079,6 +1171,7 @@ iogr:
   short_name: "Invest. Oper. y Gest. de Riesgos"
   credits: 6
   group: investigation
+  eva_id: "38"
   course-needs:
     - subject: iio
       type: exam
@@ -1089,6 +1182,7 @@ mor:
   short_name: "MOR"
   credits: 10
   group: investigation
+  eva_id: "38"
   course-needs:
     - and:
       - subject: discreta1
@@ -1122,6 +1216,7 @@ negsoftware:
   short_name: "Int. al Negocio del SW"
   credits: 8
   group: organization_management
+  eva_id: "725"
   course-needs:
     - subject: iis
       type: course
@@ -1131,6 +1226,7 @@ aprendaut:
   name: "Aprendizaje Automático"
   credits: 12
   group: artificial_intelligence
+  eva_id: "43"
   course-needs:
     - and:
       - subject: discreta2
@@ -1152,6 +1248,7 @@ webir:
   short_name: "Webir"
   group: databases
   credits: 10
+  eva_id: "821"
   course-needs:
     - and:
       - subject: p3
@@ -1165,6 +1262,7 @@ rbc:
   short_name: "Robótica Basada en Comp."
   credits: 15
   group: artificial_intelligence
+  eva_id: "186"
   course-needs:
     - and:
       - subject: f1
@@ -1179,7 +1277,9 @@ ecdif:
   name: "Ecuaciones Diferenciales"
   credits: 12
   group: maths
+  openfing_id: "ed"
   has_exam: true
+  eva_id: "342"
   course-needs:
     - and:
       - subject: gal1
@@ -1219,6 +1319,7 @@ ass:
   short_name: "Admin. y Seguridad de Sist."
   credits: 10
   group: databases
+  eva_id: "785"
   course-needs:
     - and:
       - credits: organization_management
@@ -1240,6 +1341,7 @@ adadr:
   short_name: "ADADR"
   credits: 8
   group: arqui_op_network
+  eva_id: "145"
   course-needs:
     - and:
       - subject: p3
@@ -1253,6 +1355,7 @@ aarc:
   short_name: "AARC"
   credits: 8
   group: arqui_op_network
+  eva_id: "247"
   course-needs:
     - subject: redes
       type: course
@@ -1263,6 +1366,7 @@ rrppis:
   short_name: "Relac. Pers. en IS"
   credits: 10
   group: software_engeneering
+  eva_id: "652"
   course-needs:
     - subject: iis
       type: course
@@ -1272,6 +1376,7 @@ robemb:
   name: "Robótica Embebida"
   credits: 10
   group: artificial_intelligence
+  eva_id: "146"
   course-needs:
     - and:
       - credits: experimental_sciences
@@ -1290,6 +1395,7 @@ talgpgpu:
   name: "Taller de GPGPU"
   credits: 7
   group: arqui_op_network
+  eva_id: "1136"
   course-needs:
     - subject: gpgpu
       type: course
@@ -1300,6 +1406,7 @@ tbpm:
   short_name: "TBPM"
   credits: 10
   group: databases
+  eva_id: "423"
   course-needs:
     - subject: tprog
       type: course
@@ -1310,6 +1417,7 @@ tsi2:
   short_name: "TSI 2"
   credits: 15
   group: projects
+  eva_id: "485"
   course-needs:
     - and:
       - subject: p4
@@ -1327,6 +1435,7 @@ tsi3:
   short_name: "TSI 3"
   credits: 8
   group: projects
+  eva_id: "674"
   course-needs:
     - and:
       - subject: fbd
@@ -1366,6 +1475,7 @@ tsig:
   short_name: "Taller de SIG"
   credits: 8
   group: projects
+  eva_id: "429"
   course-needs:
     - and:
       - subject: fbd
@@ -1379,6 +1489,7 @@ tagsi:
   short_name: "TAGSI"
   credits: 15
   group: databases
+  eva_id: "105"
   course-needs:
     - and:
       - subject: fbd
@@ -1392,6 +1503,7 @@ tcace:
   short_name: "Cód. Algebr. para Correc. de Err."
   credits: 7
   group: maths
+  eva_id: "134"
   course-needs:
     - and:
       - subject: pye
@@ -1420,6 +1532,7 @@ teocomp:
   name: "Teoría de la Computación"
   credits: 4
   group: programming
+  eva_id: "812"
   course-needs:
     - subject: teoleng
       type: exam
@@ -1430,6 +1543,7 @@ biomeds:
   short_name: "Semin. de Ing. Biomédica"
   credits: 4
   group: projects
+  eva_id: "578"
   course-needs:
     - subject: pis
       type: course
@@ -1440,6 +1554,7 @@ im:
   short_name: "Imágenes Médicas"
   credits: 8
   group: optionals
+  eva_id: "589"
   course-needs:
     - and:
       - credits: experimental_sciences
@@ -1454,6 +1569,7 @@ idatos:
   name: "Integración de Datos"
   credits: 8
   group: databases
+  eva_id: "664"
   course-needs:
     - and:
       - credits: total
@@ -1467,6 +1583,7 @@ atipi:
   short_name: "ATIPI"
   credits: 6
   group: optionals
+  eva_id: "20"
   course-needs:
     - subject: pye
       type: exam
@@ -1477,6 +1594,7 @@ procpersw:
   short_name: "Proc. Pers. de Software"
   credits: 7
   group: software_engeneering
+  eva_id: "633"
   course-needs:
     - subject: p4
       type: course
@@ -1486,6 +1604,7 @@ modopt:
   name: "Modelado y Optimización"
   credits: 6
   group: investigation
+  eva_id: "1070"
   course-needs:
     - subject: iio
       type: exam
@@ -1496,6 +1615,7 @@ pfa:
   short_name: "Prog. Funcional Avanzada"
   credits: 12
   group: programming
+  eva_id: "965"
   course-needs:
     - subject: progfunc
       type: course
@@ -1505,6 +1625,7 @@ eventosdisc:
   name: "Simulación a Eventos Discretos"
   credits: 10
   group: investigation
+  eva_id: "191"
   course-needs:
     - and:
       - subject: p3
@@ -1551,6 +1672,7 @@ tallersi:
   name: "Taller de Seguridad Informática"
   credits: 7
   group: arqui_op_network
+  eva_id: "324"
   course-needs:
     - and:
       - subject: fbd
@@ -1566,6 +1688,7 @@ tvs:
   short_name: "Taller de Verificación de Sw"
   credits: 8
   group: software_engeneering
+  eva_id: "722"
   course-needs:
     - and:
       - subject: fbd
@@ -1591,6 +1714,8 @@ tso:
   name: "Taller de Sistemas Operativos"
   credits: 10
   group: arqui_op_network
+  openfing_id: "so"
+  eva_id: "708"
   course-needs:
     - and:
       - subject: p4
@@ -1605,6 +1730,7 @@ fismod:
   credits: 10
   group: experimental_sciences
   has_exam: true
+  eva_id: "318"
   course-needs:
     - subject: f3
       type: exam
