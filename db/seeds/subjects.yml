@@ -18,6 +18,7 @@ calc1:
 calc-dif-int-1:
   code: "1061"
   name: "Cálculo diferencial e integral en una variable"
+  short_name: "Cálculo DIV"
   credits: 13
   group: maths
   openfing_id: "civ"
@@ -81,6 +82,7 @@ calc2:
 calc-dif-int-2:
   code: "1062"
   name: "Cálculo diferencial e integral en varias variables"
+  short_name: "Cálculo DIVV"
   credits: 13
   group: maths
   openfing_id: "cdivv"
@@ -389,7 +391,7 @@ sisoper:
   name: "Sistemas Operativos"
   credits: 12
   group: arqui_op_network
-  
+
   semester: 5
   has_exam: true
   eva_id: "720"
@@ -444,7 +446,8 @@ p4:
 
 cts:
   code: "1223"
-  name: "Ciencia Tecnología y Sociedad"
+  name: "Ciencia, Tecnología y Sociedad"
+  short_name: "CTS"
   credits: 8
   group: human_sciences
   semester: 5
@@ -484,7 +487,8 @@ gescalid:
 
 fbd:
   code: "1911"
-  name: "Fundamentos de Base de Datos"
+  name: "Fundamentos de Bases de Datos"
+  short_name: "Bases de datos"
   credits: 15
   group: databases
   openfing_id: "fbd"
@@ -782,7 +786,7 @@ cripto:
 fsi:
   code: "5916"
   name: "Fundamentos de la Seguridad Informática"
-  short_name: "Seguridad Informática"
+  short_name: "FSI"
   credits: 12
   group: arqui_op_network
   eva_id: "399"
@@ -1737,3 +1741,58 @@ fismod:
   exam-needs:
     - subject: fismod
       type: course
+
+pasantia:
+  code: "1731"
+  name: "Pasantía (Computación)"
+  short_name: "Pasantía"
+  credits: 10
+  group: projects
+  eva_id: "702"
+  course-needs:
+    - credits: total
+      amount: 270
+
+grampln:
+  code: "1835"
+  name: "Gramáticas Formales para el Lenguaje Natural"
+  short_name: "Gramáticas"
+  credits: 10
+  group: artificial_intelligence
+  openfing_id: "gf"
+  eva_id: "654"
+  course-needs:
+    - and:
+      - subject: logica
+        type: exam
+      - subject: teoleng
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: pye
+        tpye: exam
+
+bdnr:
+  code: "1949"
+  name: "Bases de datos No Relacionales"
+  short_name: "BDNR"
+  credits: 10
+  group: databases
+  eva_id: "947"
+  course-needs:
+    - subject: fbd
+      type: exam
+
+fuwebsem:
+  code: "1942"
+  name: "Fundamentos de la web semántica"
+  short_name: "Web semántica"
+  credits: 8
+  group: databases
+  eva_id: "536"
+  course-needs:
+    - and:
+      - subject: iis
+        type: exam
+      - subject: fbd
+        type: exam
