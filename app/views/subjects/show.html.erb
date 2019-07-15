@@ -78,14 +78,14 @@
     <h3 class="mdc-list-group__subheader mdc-typography--subtitle2">Links de interés</h3>
     <div class="mdc-list">
       <% if @subject.openfing_id %>
-        <a href="https://open.fing.edu.uy/courses/<%= @subject.openfing_id %>" class="mdc-list-item">
+        <a href="https://open.fing.edu.uy/courses/<%= @subject.openfing_id %>" target="_blank" class="mdc-list-item">
           <span class="mdc-list-item__graphic material-icons">videocam</span>
           <span class="mdc-list-item__text">OpenFING</span>
         </a>
       <% end %>
 
       <% if @subject.eva_id%>
-        <a href="https://eva.fing.edu.uy/course/view.php?id=<%= @subject.eva_id%>" class="mdc-list-item">
+        <a href="https://eva.fing.edu.uy/course/view.php?id=<%= @subject.eva_id%>" target="_blank" class="mdc-list-item">
           <span class="mdc-list-item__graphic material-icons">forum</span>
           <span class="mdc-list-item__text">EVA</span>
         </a>
