@@ -94,3 +94,16 @@ body {
    font-weight: bold;
    font-size: larger;
  }
+
+// Make ellipsis work on list item
+.mdc-list-item__text {
+  @include mdc-typography-overflow-ellipsis;
+
+  display: block;
+  flex: 1;
+  width: 100px;
+}
+
+.credits {
+  padding-left: 15px;
+}

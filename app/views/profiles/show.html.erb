@@ -8,11 +8,13 @@
     <% @groups_and_credits.each do |group| %>
       <li class="mdc-list-item">
         <span class="mdc-list-item__text">
-          <%= truncate(group[:subject_group].name, :length => 35) %>
+          <%= group[:subject_group].name %>
         </span>
-        <span class="mdc-list-item__meta">
-          <%= group[:credits] %>
-        </span>
+        <div class="credits">
+          <span class="mdc-list-item__meta">
+            <%= group[:credits] %>
+          </span>
+        </div>
       </li>
       <li role="separator" class="mdc-list-divider"></li>
     <% end %>
