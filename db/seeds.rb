@@ -26,7 +26,8 @@ class StudentAppSeeder
   end
 
   def populate_subject_group!(group_data)
-    SubjectGroup.where(name: group_data["name"], code: group_data["code"]).first_or_create
+    group = SubjectGroup.where(code: group_data["code"]).first_or_create
+    group.update!(name: group_data["name"])
   end
 
   def populate_subjects!(subject_groups)
