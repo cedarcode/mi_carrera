@@ -687,7 +687,7 @@ aaac:
         type: course
 
 educbutia:
-  name: "Butia:Robótica Educativa"
+  name: "Butia: Robótica Educativa"
   credits: 8
   group: artificial_intelligence
   eva_id: "312"
