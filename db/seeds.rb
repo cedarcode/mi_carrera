@@ -49,6 +49,7 @@ class StudentAppSeeder
       semester: data["semester"],
       short_name: data["short_name"],
       openfing_id: data["openfing_id"],
+      eva_id: data["eva_id"],
       group_id: group.id
     )
     if subject.course.nil?
