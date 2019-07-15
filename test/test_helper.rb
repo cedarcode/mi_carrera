@@ -10,7 +10,10 @@ class ActiveSupport::TestCase
     SubjectGroup.where(name: name).first_or_create
   end
 
-  def create_subject(code: "A code", name: "A subject", credits: 5, exam: true)
+  def create_subject(code: nil, name: "A subject", credits: 5, exam: true)
+    if !code
+      code = name.parameterize
+    end
     group = create_group("Matemática")
     subject = Subject.create!(code: code, name: name, credits: credits, group_id: group.id)
     subject.create_course!

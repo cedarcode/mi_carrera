@@ -2,9 +2,9 @@ require "application_system_test_case"
 
 class AutoUnapprovalTest < ApplicationSystemTestCase
   setup do
-    @subject1 = create_subject(code: "s1", name: "Subject 1", credits: 1, exam: false)
-    @subject2 = create_subject(code: "s2", name: "Subject 2", credits: 2, exam: false)
-    @subject3 = create_subject(code: "s3", name: "Subject 3", credits: 3, exam: false)
+    @subject1 = create_subject(name: "Subject 1", credits: 1, exam: false)
+    @subject2 = create_subject(name: "Subject 2", credits: 2, exam: false)
+    @subject3 = create_subject(name: "Subject 3", credits: 3, exam: false)
 
     SubjectPrerequisite.create!(approvable_id: @subject3.course.id, approvable_needed_id: @subject2.course.id)
     SubjectPrerequisite.create!(approvable_id: @subject2.course.id, approvable_needed_id: @subject1.course.id)
