@@ -6,6 +6,8 @@
     "@material/list": "^3.0.0",
     "@material/top-app-bar": "^3.0.0",
     "@material/typography": "^3.0.0",
+    "@material/menu": "^3.0.0",
+    "@material/menu-surface": "^3.0.0",
     "@rails/webpacker": "3.5",
     "stimulus": "^1.1.1"
   },

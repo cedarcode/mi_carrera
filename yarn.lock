@@ -165,6 +165,34 @@
     "@material/typography" "^3.0.0"
     tslib "^1.9.3"
 
+"@material/menu-surface@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@material/menu-surface/-/menu-surface-3.0.0.tgz#499fece728e9199e063a9caa49ace878cf5563d6"
+  integrity sha512-ILERPQOpgOHpngnMadn4RV/vL5vHvz5JyoH2ttmsaUdfh3kDCifIDFNjTokZNWz3+AAzjbbpSuUjqZkatjPCbw==
+  dependencies:
+    "@material/animation" "^3.0.0"
+    "@material/base" "^3.0.0"
+    "@material/elevation" "^3.0.0"
+    "@material/feature-targeting" "^3.0.0"
+    "@material/rtl" "^3.0.0"
+    "@material/shape" "^3.0.0"
+    "@material/theme" "^3.0.0"
+    tslib "^1.9.3"
+
+"@material/menu@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@material/menu/-/menu-3.0.0.tgz#dc6ab5d4e2ce73ee60a1a204cb63d72ce52b499b"
+  integrity sha512-RHkJV50OyTVnijPTD75TNXPQc+kiDuHDqdYnCcG/b4lWPglFZ/OBOoK6CKDIe3yghhoEcBX/BI2sg59E1fBfmA==
+  dependencies:
+    "@material/base" "^3.0.0"
+    "@material/dom" "^3.0.0"
+    "@material/feature-targeting" "^3.0.0"
+    "@material/list" "^3.0.0"
+    "@material/menu-surface" "^3.0.0"
+    "@material/ripple" "^3.0.0"
+    "@material/rtl" "^3.0.0"
+    tslib "^1.9.3"
+
 "@material/ripple@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-3.0.0.tgz#75baac9b179b5d59496645749441f50b46f94248"
