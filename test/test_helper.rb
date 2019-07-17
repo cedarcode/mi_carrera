@@ -35,6 +35,24 @@ class ActiveSupport::TestCase
     subject
   end
 
+  def create_prerequisite(approvable, options = {})
+    # TODO: Support other prerequisite types and logical operators
+    if options.is_a?(Approvable)
+      target = options
+
+      SubjectPrerequisite.create!(approvable_id: approvable.id, approvable_needed: target)
+    elsif options[:not]
+      target = options[:not]
+
+      SubjectPrerequisite.create!(
+        parent_prerequisite: LogicalPrerequisite.create!(approvable_id: approvable.id, logical_operator: "not"),
+        approvable_needed: target
+      )
+    else
+      raise "Option not supported"
+    end
+  end
+
   def wait_for_async_request
     # Ideally we would really wait for the request to complete instead of
     # sleeping a fixed amount of time

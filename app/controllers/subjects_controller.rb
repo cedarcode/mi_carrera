@@ -46,7 +46,7 @@ class SubjectsController < ApplicationController
   end
 
   def all
-    @subjects = Subject.order(:semester)
+    @subjects = Subject.order(:semester).select { |subject| !bedel.blocked?(subject) }
   end
 
   private

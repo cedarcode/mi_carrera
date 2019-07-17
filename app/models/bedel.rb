@@ -1,5 +1,5 @@
 class Bedel
-  def initialize(store)
+  def initialize(store = {})
     @store = store
 
     @store[:approved_courses] ||= []
@@ -7,6 +7,8 @@ class Bedel
   end
 
   def add_approval(approvable)
+    expire_enrollment_cache
+
     if approvable.is_exam?
       store[:approved_exams] += [approvable.subject_id]
     else
@@ -15,6 +17,8 @@ class Bedel
   end
 
   def remove_approval(approvable)
+    expire_enrollment_cache
+
     if approvable.is_exam?
       store[:approved_exams] -= [approvable.subject_id]
     else
@@ -25,6 +29,8 @@ class Bedel
   end
 
   def refresh_approvals
+    expire_enrollment_cache
+
     original_count = store[:approved_exams].size + store[:approved_courses].size
 
     to_remove = []
@@ -82,16 +88,30 @@ class Bedel
   end
 
   def able_to_do?(item)
-    case item
-    when Subject
-      able_to_do?(item.course)
-    when Approvable
-      if item.prerequisite_tree
-        meets_prerequisites?(item.prerequisite_tree)
+    enrollment_state(item) == :yes
+  end
+
+  def blocked?(item)
+    enrollment_state(item) == :never
+  end
+
+  def enrollment_state(item)
+    approvable =
+      if item.is_a?(Subject)
+        item.course
       else
-        true
+        item
       end
-    end
+
+    @enrollment_state ||= {}
+    @stack ||= [approvable]
+
+    @enrollment_state[approvable] ||=
+      if approvable.prerequisite_tree
+        meets_prerequisites?(approvable.prerequisite_tree)
+      else
+        :yes
+      end
   end
 
   private
@@ -128,25 +148,66 @@ class Bedel
     case prerequisite_item
     when SubjectPrerequisite
       approvable_needed = prerequisite_item.approvable_needed
-      if approvable_needed.is_exam
-        store[:approved_exams].include?(approvable_needed.subject_id)
+
+      if approved?(approvable_needed)
+        :yes
       else
-        store[:approved_courses].include?(approvable_needed.subject_id)
+        if @stack.include?(approvable_needed)
+          :not_yet
+        else
+          @stack.push(approvable_needed)
+          state = enrollment_state(approvable_needed)
+          @stack.pop
+
+          if state == :never
+            :never
+          else
+            :not_yet
+          end
+        end
       end
     when CreditsPrerequisite
-      credits(prerequisite_item.subject_group) >= prerequisite_item.credits_needed
+      if credits(prerequisite_item.subject_group) >= prerequisite_item.credits_needed
+        :yes
+      else
+        :not_yet
+      end
     when LogicalPrerequisite
       if prerequisite_item.logical_operator == "and"
-        prerequisite_item.operands_prerequisites.all? do |prerequisite|
+        states = prerequisite_item.operands_prerequisites.map do |prerequisite|
           meets_prerequisites?(prerequisite)
+        end
+
+        if states.include?(:never)
+          :never
+        elsif states.include?(:not_yet)
+          :locked
+        else
+          :yes
         end
       elsif prerequisite_item.logical_operator == "or"
-        prerequisite_item.operands_prerequisites.any? do |prerequisite|
+        states = prerequisite_item.operands_prerequisites.map do |prerequisite|
           meets_prerequisites?(prerequisite)
         end
+
+        if states.include?(:yes)
+          :yes
+        elsif states.include?(:not_yet)
+          :not_yet
+        else
+          :never
+        end
       elsif prerequisite_item.logical_operator == "not"
-        !meets_prerequisites?(prerequisite_item.operands_prerequisites[0])
+        if meets_prerequisites?(prerequisite_item.operands_prerequisites[0]) == :yes
+          :never
+        else
+          :yes
+        end
       end
     end
+  end
+
+  def expire_enrollment_cache
+    @enrollment_state = {}
   end
 end
