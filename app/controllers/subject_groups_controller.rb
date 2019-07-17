@@ -3,7 +3,6 @@ class SubjectGroupsController < ApplicationController
 
   def show
     @subject_group = SubjectGroup.find(params[:id])
-    @subjects = @subject_group.subjects
     respond_to do |format|
       format.html
     end

@@ -14,5 +14,5 @@
   <h3 class="mdc-list-group__subheader mdc-typography--headline5">Grupo <%= @subject_group.name %></h3>
   <hr class="mdc-list-divider">
 
-  <%= render partial: "subjects/subjects_list", locals: { subjects: @subjects.order(:semester) } %>
+  <%= render partial: "subjects/subjects_list", locals: { subjects: @subject_group.subjects.order(:semester) } %>
 </div>
