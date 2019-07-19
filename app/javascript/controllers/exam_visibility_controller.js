@@ -22,6 +22,7 @@ export default class extends Controller {
           examCheckbox.removeAttribute("disabled");
         } else {
           examCheckbox.setAttribute("disabled", "disabled");
+          examCheckbox.checked = false;
         }
       });
   }
