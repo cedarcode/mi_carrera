@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = [ "exam", "checkbox" ]
 
   approvalChange() {
+    var bedel = this.bedelController;
     let ableToEnrollExam
     let url = '/subjects/' + this.examTarget.dataset.subjectId + '/able_to_enroll';
     let exam = this.examTarget;
@@ -24,6 +25,11 @@ export default class extends Controller {
           examCheckbox.setAttribute("disabled", "disabled");
           examCheckbox.checked = false;
         }
+        bedel.finishUpdate();
       });
+  }
+
+  get bedelController() {
+    return this.application.getControllerForElementAndIdentifier(this.element, "bedel")
   }
 }

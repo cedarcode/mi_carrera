@@ -8,7 +8,12 @@ export default class extends Controller {
     foregroundLayer.addEventListener("click", function(event) {
       event.preventDefault();
     });
-    this.element.append(foregroundLayer);
+    document.body.append(foregroundLayer);
+  }
+
+  finishUpdate(){
+    var foregroundLayer = document.getElementsByClassName("foreground-layer")[0];
+    foregroundLayer.parentNode.removeChild(foregroundLayer);
   }
 
   approvalChange() {
@@ -21,6 +26,7 @@ export default class extends Controller {
       .then(text => {
         this.element.outerHTML = text;
         window.initializeCheckboxes();
+        this.finishUpdate();
       });
   }
 }
