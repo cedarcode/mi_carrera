@@ -94,3 +94,16 @@ body {
    font-weight: bold;
    font-size: larger;
  }
+
+// Make ellipsis work on list item (https://github.com/material-components/material-components-web/issues/1912)
+.mdc-list-item__text {
+  @include mdc-typography-overflow-ellipsis;
+
+  display: block;
+  flex: 1;
+  width: 100px;
+}
+
+.mdc-list-item__meta {
+  padding-left: 15px;
+}
