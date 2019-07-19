@@ -34,7 +34,7 @@
       </span>
 
       <span class="mdc-list-item__meta">
-        <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check", action: "ajax:success->exam-visibility#approvalChange" }) do |form| %>
+        <%= form_with(model: @subject, url: approve_subject_path(@subject), data: @subject.exam ? { controller: "autosave-check", action: "ajax:success->exam-visibility#approvalChange" } : { controller: "autosave-check" }) do |form| %>
           <div class="mdc-checkbox">
             <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.course), disabled: !bedel.able_to_do?(@subject.course), data: { action: "autosave-check#update" } }, "yes", "no" %>
             <div class="mdc-checkbox__background">
