@@ -11,7 +11,7 @@
   <hr class="mdc-list-divider">
 
   <h3 class="mdc-list-group__subheader mdc-typography--subtitle2">Información general</h3>
-  <div class="mdc-list">
+  <div class="mdc-list growing-text-list">
     <label class="mdc-list-item">
       <span class="mdc-list-item__text">
         Créditos: <%= @subject.credits %>
@@ -19,9 +19,9 @@
     </label>
 
     <label class="mdc-list-item">
-      <span class="mdc-list-item__text">
+      <%= link_to subject_group_path(@subject.group), :class => "mdc-list-item__text" do %>
         Grupo: <%= @subject.group.name %>
-      </span>
+      <% end %>
     </label>
   </div>
   <hr class="mdc-list-divider">
