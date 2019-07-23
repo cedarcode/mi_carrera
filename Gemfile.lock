@@ -178,6 +178,8 @@ GEM
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
+    serviceworker-rails (0.6.0)
+      railties (>= 3.1)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -236,6 +238,7 @@ DEPENDENCIES
   rubocop (~> 0.67.0)
   sass-rails (~> 5.0)
   selenium-webdriver
+  serviceworker-rails
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets (~> 4.0.a)
