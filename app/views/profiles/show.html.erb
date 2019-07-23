@@ -1,5 +1,5 @@
 <% content_for :navigation_icon do %>
-  <%= nav_icon("arrow_back", root_path) %>
+  <%= nav_icon("arrow_back", (request.referer || root_path)) %>
 <% end %>
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5">Avance de carrera</h3>
@@ -8,7 +8,7 @@
     <% @groups_and_credits.each do |group| %>
       <li class="mdc-list-item">
         <%= link_to subject_group_path(group[:subject_group]), :class => "mdc-list-item__text" do %>
-          <%= truncate(group[:subject_group].name, :length => 35) %>
+          <%= group[:subject_group].name %>
         <% end %>
         <span class="mdc-list-item__meta">
           <%= group[:credits] %>
