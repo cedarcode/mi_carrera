@@ -238,7 +238,7 @@ DEPENDENCIES
   rubocop (~> 0.67.0)
   sass-rails (~> 5.0)
   selenium-webdriver
-  serviceworker-rails
+  serviceworker-rails (~> 0.6)
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets (~> 4.0.a)
