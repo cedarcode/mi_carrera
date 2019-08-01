@@ -30,29 +30,23 @@
               more_vert
             </a>
             <div class="mdc-menu mdc-menu-surface" data-target="menu.content">
-              <ul class="mdc-list growing-text-list" role="menu">
-                <li role="menuitem">
+              <div class="mdc-list growing-text-list" role="menu">
                   <%= link_to root_path, :class => "mdc-list-item" do %>
                     <span class="mdc-list-item__text">
                       Aprobaciones
                     <span>
                   <% end %>
-                </li>
-                <li role="menuitem">
                   <%= link_to all_subjects_path, :class => "mdc-list-item" do %>
                     <span class="mdc-list-item__text">
                       Materias
                     <span>
                   <% end %>
-                </li>
-                <li role="menuitem">
                   <%= link_to profile_path, :class => "mdc-list-item" do %>
                     <span class="mdc-list-item__text">
                       Avance de carrera
                     </span>
                   <% end %>
-                </li>
-              </ul>
+              </div>
             </div>
           </div>
 
