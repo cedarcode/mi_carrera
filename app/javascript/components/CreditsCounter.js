@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function CreditsCounter(props) {
-  return React.createElement("span", null, `${props.count} créditos`);
+  return <span>{props.count} créditos</span>;
 }
