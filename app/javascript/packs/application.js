@@ -15,6 +15,7 @@ import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
 import CreditsCounter from "../components/CreditsCounter";
+import Bedel from "../components/Bedel";
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -31,6 +32,17 @@ document.addEventListener("turbolinks:load", function() {
   ReactDOM.render(
     React.createElement(CreditsCounter, { count: creditsCount }),
     creditsCounterContainer
+  );
+
+  const subjects = [
+    { name: 'CAL1' },
+    { name: 'GAL1' },
+    { name: 'PROG1' }
+  ]
+
+  ReactDOM.render(
+    React.createElement(Bedel, { subjects }),
+    document.querySelector('.js-bedel')
   );
 });
 
