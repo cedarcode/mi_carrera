@@ -14,12 +14,24 @@ import "serviceworker-companion"
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
+import CreditsCounter from "../components/CreditsCounter";
+import React from "react";
+import ReactDOM from "react-dom";
+
 const application = Application.start()
 const context = require.context("controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
 
 document.addEventListener("turbolinks:load", function() {
   window.initializeCheckboxes();
+
+  let creditsCounterContainer = document.querySelector(".js-credits-count");
+  let creditsCount = creditsCounterContainer.dataset.count;
+
+  ReactDOM.render(
+    React.createElement(CreditsCounter, { count: creditsCount }),
+    creditsCounterContainer
+  );
 });
 
 window.initializeCheckboxes = function() {
