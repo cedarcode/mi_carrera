@@ -235,8 +235,8 @@ DEPENDENCIES
   rollbar (~> 2.19)
   rubocop (~> 0.67.0)
   sass-rails (~> 5.0)
-  serviceworker-rails (~> 0.6)
   selenium-webdriver (~> 3.142)
+  serviceworker-rails (~> 0.6)
   spring (~> 2.1)
   spring-watcher-listen (~> 2.0)
   sprockets (~> 4.0.a)
@@ -247,7 +247,7 @@ DEPENDENCIES
   webpacker (~> 3.6)
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 2.7.0p0
 
 BUNDLED WITH
    1.17.3
