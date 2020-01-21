@@ -1,12 +1,10 @@
 import React from "react";
 
 export default function Bedel(props) {
-  return <div className="mdc-list-group subjects-list">
+  return <div className="mdc-list">
     {
       props.subjects.map((subject, index) => (
-        <div className="mdc-list" key={index}>
-          {subject.name}
-        </div>
+        <p key={index}>{subject.name}</p>
       ))
     }
   </div>;
