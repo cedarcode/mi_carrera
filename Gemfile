@@ -10,14 +10,11 @@ gem 'jbuilder', '~> 2.9'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 3.11'
 gem 'rollbar', '~> 2.19'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 6.0'
 gem 'serviceworker-rails', '~> 0.6'
 gem 'turbolinks', '~> 5.2'
 gem 'uglifier', '~> 4.1'
 gem 'webpacker', '~> 3.6'
-
-# This is needed because of https://github.com/rails/sprockets/issues/567
-gem "sprockets", "~> 4.0.a"
 
 group :development, :test do
   gem 'byebug', '~> 11.0', platforms: [:mri, :mingw, :x64_mingw]
