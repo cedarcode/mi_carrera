@@ -3,7 +3,7 @@ import React from "react";
 export default function Checkbox(props) {
   return(
     <div className="mdc-checkbox">
-      <input type="checkbox" checked={props.checked} disabled={props.disabled} className="mdc-checkbox__native-control" />
+      <input type="checkbox" defaultChecked={props.checked} disabled={props.disabled} className="mdc-checkbox__native-control" />
 
       <div className="mdc-checkbox__background">
         <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">

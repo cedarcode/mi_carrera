@@ -10,4 +10,4 @@
   <%= action_icon("person", profile_path) %>
 <% end %>
 
-<div class="js-bedel"/>
+<div class="js-bedel" data-subjects="<%= @subjects.map { |s| SubjectSerializer.new(s, scope: self).as_json }.to_json %>" />
