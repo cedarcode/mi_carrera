@@ -1,11 +1,11 @@
 import React from "react";
-import Subject from './Subject';
+import SubjectRow from './SubjectRow';
 
 export default function Bedel(props) {
   return <div className="mdc-list">
     {
       props.subjects.map((subject, index) => (
-        <Subject key={index} subject={subject} />
+        <SubjectRow key={index} subject={subject} />
       ))
     }
   </div>;
