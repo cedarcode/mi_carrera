@@ -35,9 +35,9 @@ document.addEventListener("turbolinks:load", function() {
   );
 
   const subjects = [
-    { name: 'CAL1' },
-    { name: 'GAL1' },
-    { name: 'PROG1' }
+    { name: 'CAL1', path: '/subjects/1', has_exam: true, can_enroll_to_exam: true },
+    { name: 'GAL1', path: '/subjects/2', has_exam: true, can_enroll_to_exam: false },
+    { name: 'PROG1', path: '/subjects/3' }
   ]
 
   ReactDOM.render(
