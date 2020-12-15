@@ -1,6 +1,10 @@
 {
   "name": "student",
   "private": true,
+  "engines": {
+    "node": "10.x",
+    "yarn": "1.x"
+  },
   "dependencies": {
     "@material/checkbox": "^3.0.0",
     "@material/list": "^3.0.0",
@@ -8,10 +12,6 @@
     "@material/typography": "^3.0.0",
     "@rails/webpacker": "4.2.2",
     "stimulus": "^1.1.1"
-  },
-  "engines": {
-    "node": "10.23.0",
-    "yarn": "1.22.10"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
