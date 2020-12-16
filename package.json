@@ -1,6 +1,10 @@
 {
   "name": "student",
   "private": true,
+  "engines": {
+    "node": "10.x",
+    "yarn": "1.x"
+  },
   "dependencies": {
     "@material/checkbox": "^3.0.0",
     "@material/list": "^3.0.0",
