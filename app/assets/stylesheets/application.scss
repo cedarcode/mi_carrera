@@ -34,8 +34,8 @@ body {
   padding-right: 16px;
 }
 
-.create_account {
-  color: white;
+a.create-account {
+  color: white !important;
   padding-right: 16px;
 }
 
@@ -101,8 +101,4 @@ body {
 
 .mdc-list-item__meta {
   padding-left: 15px;
-}
-
-.mdc-option-divider {
-  padding-top: 15px;
 }
