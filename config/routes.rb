@@ -17,4 +17,6 @@ Rails.application.routes.draw do
       get 'list' => 'subjects#list_subjects', as: :list
     end
   end
+
+  resources :accounts
 end
