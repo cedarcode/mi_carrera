@@ -2,7 +2,7 @@
   <%= nav_icon("arrow_back", (request.referer || root_path)) %>
 <% end %>
 <% content_for :create_account do %>
-  <%= link_to 'Crear cuenta', new_account_path, class: "create_account" %>
+  <%= link_to 'Crear cuenta', new_account_path, style: "color: white; padding: 16px;" %>
 <% end %>
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5">Avance de carrera</h3>

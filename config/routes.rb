@@ -18,5 +18,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :accounts
+  resources :accounts, only: :new
 end

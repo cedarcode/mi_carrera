@@ -6,7 +6,7 @@ ruby File.read(".ruby-version").strip
 gem 'rails', '~> 6.0.3'
 
 gem 'bootsnap', '~> 1.4', require: false
-gem 'google_sign_in'
+gem 'google_sign_in', '~> 1.2'
 gem 'jbuilder', '~> 2.9'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 3.11'
