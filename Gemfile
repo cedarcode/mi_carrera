@@ -6,6 +6,7 @@ ruby File.read(".ruby-version").strip
 gem 'rails', '~> 6.0.3'
 
 gem 'bootsnap', '~> 1.4', require: false
+gem 'google_sign_in'
 gem 'jbuilder', '~> 2.9'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 3.11'
@@ -15,7 +16,6 @@ gem 'serviceworker-rails', '~> 0.6'
 gem 'turbolinks', '~> 5.2'
 gem 'uglifier', '~> 4.1'
 gem 'webpacker', '~> 4.0'
-gem 'google_sign_in'
 
 group :development, :test do
   gem 'byebug', '~> 11.0', platforms: [:mri, :mingw, :x64_mingw]
