@@ -3,14 +3,18 @@
 <% end %>
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Regístrate</h3>
-  <ul class="mdc-list growing-text-list">
+  <ul class="mdc-list growing-text-list sign-in-border">
 
     <li class="sign-in-option">
-      <div class="sign-in">
-        <!-- span class="icon"></span -->
-        <span><%= google_sign_in_button 'Registrarse con Google', proceed_to: root_path, class: "sign-in-button" %></span>
-      </div>
+        <span><%= google_sign_in_button raw("<i class=\"google-icon\"></i><span>Registrarse con Google</span>"), proceed_to: root_path, class: "sign-in-button" %></span>
     </li>
+    <li class="sign-in-option">
+      <span><%= button_to new_account_path, method: :get, class: "sign-in-button" do %>
+        <span class="facebook-icon"></span>
+        <span>Registrarse con Facebook</span>
+      <% end %></span>
+    </li>
+
   </ul>
 </div>
 
