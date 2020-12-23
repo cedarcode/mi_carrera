@@ -37,8 +37,8 @@ class CreateAccountTest < ApplicationSystemTestCase
 
   test "user signs in with google" do
     visit new_account_path
-    # click_on "Sign in with Google"
-    #
-    # assert_text "Bienvenido"
+    assert_text "Regístrate"
+
+    click_on "Registrarse con Google"
   end
 end
