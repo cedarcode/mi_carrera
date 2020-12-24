@@ -33,7 +33,12 @@
           <span hidden>
             <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
           </span>
-          <%= yield :profile_link %>
+          <% if flash[:google_sign_in] != nil %>
+            <!--%= GoogleSignIn::Identity.new(flash[:google_sign_in]["id_token"]).avatar_url %-->
+            <%= GoogleSignIn::Identity.new(flash[:google_sign_in]["id_token"]).name %>
+          <% else %>
+            <%= yield :profile_link %>
+          <% end %>
           <%= yield :create_account %>
           <%= yield :credits %>
         </section>

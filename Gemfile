@@ -19,7 +19,7 @@ gem 'webpacker', '~> 4.0'
 
 group :development, :test do
   gem 'byebug', '~> 11.0', platforms: [:mri, :mingw, :x64_mingw]
-  gem "dotenv", "~> 2.7"
+  gem "dotenv-rails", "~> 2.7"
 end
 
 group :development do

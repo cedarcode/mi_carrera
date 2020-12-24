@@ -122,7 +122,6 @@ body {
   border: thin solid #888;
   box-shadow: 1px 1px 1px grey;
   white-space: nowrap;
-  display: inline-block;
   vertical-align: middle;
   font-size: 14px;
   font-weight: bold;
@@ -134,7 +133,7 @@ body {
 }
 
 .google-icon {
-  content: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png");
+  content: url("./google-icon.png");
   display: inline-block;
   vertical-align: middle;
   width: 20px;
@@ -143,7 +142,7 @@ body {
 }
 
 .facebook-icon {
-  content: url("https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png");
+  content: url("./facebook-icon.png");
   display: inline-block;
   vertical-align: middle;
   width: 20px;
