@@ -34,6 +34,23 @@ body {
   padding-right: 16px;
 }
 
+.create-account {
+  color: white;
+  padding: 16px;
+}
+
+.google-sign-in-name {
+  padding-right: 16px;
+}
+
+.google-sign-in-image {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 .two-checkboxes {
   display: flex;
   height: 40px;
@@ -133,12 +150,12 @@ body {
 }
 
 .google-icon {
-  content: url("./google-icon.png");
+  background: url(./google-icon.png) transparent 5px 50% no-repeat;
   display: inline-block;
   vertical-align: middle;
   width: 20px;
   height: 20px;
-  padding-right: 10px;
+  padding-right: 30px;
 }
 
 .facebook-icon {
@@ -147,5 +164,5 @@ body {
   vertical-align: middle;
   width: 20px;
   height: 20px;
-  padding-right: 10px;
+  padding-right: 7px;
 }
