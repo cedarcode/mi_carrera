@@ -36,7 +36,10 @@
           <% if flash[:google_sign_in] != nil %>
             <% @login = GoogleSignIn::Identity.new(flash[:google_sign_in]["id_token"]) %>
             <a href="<%= profile_path %>"><%= image_tag @login.avatar_url, class: "google-sign-in-image" %></a>
-            <span class="google-sign-in-name"><%= @login.name %></span>
+            <div class="google-sign-in-name">
+              <span><%= @login.name %></span>
+              <span><%= @login.email_address %></span>
+            </div>
           <% else %>
             <%= yield :profile_link %>
           <% end %>
