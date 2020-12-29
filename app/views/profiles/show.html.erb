@@ -2,7 +2,7 @@
   <%= nav_icon("arrow_back", (request.referer || root_path)) %>
 <% end %>
 <% content_for :create_account do %>
-  <% if flash[:google_sign_in] == nil %>
+  <% if !current_user %>
     <%= link_to 'Crear cuenta', new_account_path, class: "create-account" %>
   <% end %>
 <% end %>

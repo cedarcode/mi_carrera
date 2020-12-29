@@ -168,3 +168,11 @@ body {
   height: 20px;
   padding-right: 7px;
 }
+
+.flash-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  color: red;
+}
