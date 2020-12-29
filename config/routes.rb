@@ -18,9 +18,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :accounts, only: :new do
+  resources :accounts, only: [:new, :edit] do
     collection do
       get :create_callback
+      get :update_callback
     end
   end
 end

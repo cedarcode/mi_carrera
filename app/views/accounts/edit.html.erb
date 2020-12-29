@@ -1,0 +1,19 @@
+<% content_for :navigation_icon do %>
+  <%= nav_icon("arrow_back", (request.referer || root_path)) %>
+<% end %>
+<div class="mdc-list-group">
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Iniciar sesión</h3>
+  <ul class="mdc-list growing-text-list sign-in-border">
+
+    <li class="sign-in-option">
+        <span><%= google_sign_in_button raw("<span class=\"google-icon\"></span><span>Iniciar sesión con Google</span>"), proceed_to: update_callback_accounts_path, class: "sign-in-button" %></span>
+    </li>
+    <li class="sign-in-option">
+      <span><%= button_to edit_account_path, method: :get, class: "sign-in-button" do %>
+        <span class="facebook-icon"></span>
+        <span>Iniciar sesión con Facebook</span>
+      <% end %></span>
+    </li>
+
+  </ul>
+</div>

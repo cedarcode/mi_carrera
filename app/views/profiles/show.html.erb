@@ -1,9 +1,12 @@
 <% content_for :navigation_icon do %>
   <%= nav_icon("arrow_back", (request.referer || root_path)) %>
 <% end %>
-<% content_for :create_account do %>
-  <% if !current_user %>
-    <%= link_to 'Crear cuenta', new_account_path, class: "create-account" %>
+<% content_for :account do %>
+  <% if current_user %>
+    <%= link_to 'Cerrar sesión', log_out, class: "handle-account" %>
+  <% else %>
+    <%= action_icon("login", edit_account_path(0)) %>
+    <%= link_to 'Crear cuenta', new_account_path, class: "handle-account" %>
   <% end %>
 <% end %>
 <div class="mdc-list-group">
