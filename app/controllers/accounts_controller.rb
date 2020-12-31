@@ -23,8 +23,8 @@ class AccountsController < ApplicationController
       session[:user_id] = nil
       redirect_to root_path
     else
-      login = GoogleSignIn::Identity.new(flash[:google_sign_in]["id_token"])
-      user = User.find_by(email_address: login.email_address)
+      google_identity = GoogleSignIn::Identity.new(flash[:google_sign_in]["id_token"])
+      user = User.find_by(email_address: google_identity.email_address)
       if user
         session[:user_id] = user.id
         redirect_to root_path
