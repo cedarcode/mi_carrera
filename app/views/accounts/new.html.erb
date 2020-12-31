@@ -6,13 +6,9 @@
   <ul class="mdc-list growing-text-list sign-in-border">
 
     <li class="sign-in-option">
-        <span><%= google_sign_in_button raw("<span class=\"google-icon\"></span><span>Registrarse con Google</span>"), proceed_to: create_callback_accounts_path, class: "sign-in-button" %></span>
-    </li>
-    <li class="sign-in-option">
-      <span><%= button_to new_account_path, method: :get, class: "sign-in-button" do %>
-        <span class="facebook-icon"></span>
-        <span>Registrarse con Facebook</span>
-      <% end %></span>
+    <%= google_sign_in_button proceed_to: create_callback_accounts_path, class: "sign-in-button" do %>
+      <span class="google-icon"></span> Registrarse con Google
+    <% end %>
     </li>
 
   </ul>
