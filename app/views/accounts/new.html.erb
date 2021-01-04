@@ -1,0 +1,16 @@
+<% content_for :navigation_icon do %>
+  <%= nav_icon("arrow_back", (request.referer || root_path)) %>
+<% end %>
+<div class="mdc-list-group">
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Regístrate</h3>
+  <ul class="mdc-list growing-text-list sign-in-border">
+
+    <li class="sign-in-option">
+    <%= google_sign_in_button proceed_to: create_callback_accounts_path, class: "sign-in-button" do %>
+      <span class="google-icon"></span> Registrarse con Google
+    <% end %>
+    </li>
+
+  </ul>
+</div>
+

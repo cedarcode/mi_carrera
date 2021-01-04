@@ -17,4 +17,10 @@ Rails.application.routes.draw do
       get 'list' => 'subjects#list_subjects', as: :list
     end
   end
+
+  resources :accounts, only: :new do
+    collection do
+      get :create_callback
+    end
+  end
 end

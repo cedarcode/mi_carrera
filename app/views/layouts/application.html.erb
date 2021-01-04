@@ -33,12 +33,26 @@
           <span hidden>
             <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
           </span>
-          <%= yield :profile_link %>
+          <% if current_user %>
+            <%= link_to profile_path do %>
+              <%= image_tag current_user.avatar_url, class: "google-sign-in-image" %>
+            <% end %>
+            <div class="google-sign-in-name">
+              <span><%= current_user.name %></span>
+              <span><%= current_user.email_address %></span>
+            </div>
+          <% else %>
+            <%= yield :profile_link %>
+          <% end %>
+          <%= yield :create_account %>
           <%= yield :credits %>
         </section>
       </div>
     </header>
     <section class="content mdc-top-app-bar--fixed-adjust">
+      <% if flash[:error] %>
+        <div class="flash-error"><%= flash[:error] %></div>
+      <% end %>
       <%= yield %>
     </section>
   </body>

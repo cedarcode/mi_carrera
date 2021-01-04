@@ -6,6 +6,7 @@ ruby File.read(".ruby-version").strip
 gem 'rails', '~> 6.0.3'
 
 gem 'bootsnap', '~> 1.4', require: false
+gem 'google_sign_in', '~> 1.2'
 gem 'jbuilder', '~> 2.9'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 3.11'
@@ -18,6 +19,7 @@ gem 'webpacker', '~> 4.0'
 
 group :development, :test do
   gem 'byebug', '~> 11.0', platforms: [:mri, :mingw, :x64_mingw]
+  gem "dotenv-rails", "~> 2.7"
 end
 
 group :development do

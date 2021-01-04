@@ -34,6 +34,25 @@ body {
   padding-right: 16px;
 }
 
+.create-account {
+  color: white;
+  padding: 16px;
+}
+
+.google-sign-in-name {
+  display: flex;
+  flex-direction: column;
+  padding-right: 16px;
+}
+
+.google-sign-in-image {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 .two-checkboxes {
   display: flex;
   height: 40px;
@@ -96,4 +115,55 @@ body {
 
 .mdc-list-item__meta {
   padding-left: 15px;
+}
+
+.sign-in {
+  text-align: center;
+}
+
+.sign-in-option {
+  padding: 16px;
+  text-align: center;
+}
+
+.sign-in-border {
+  border: 1px solid #ccc;
+  border-radius: 16px;
+}
+
+.sign-in-button {
+  display: inline-block;
+  background: white;
+  color: #444;
+  width: 220px;
+  height: 40px;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sign-in-button:hover {
+  cursor: pointer;
+}
+
+.google-icon {
+  background: url(./google-icon.png) transparent 5px 50% no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  padding-right: 25px;
+}
+
+.flash-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  color: red;
 }
