@@ -9,6 +9,11 @@ class ProfilesController < ApplicationController
   private
 
   def bedel
-    @bedel ||= Bedel.new(session)
+    if session[:user_id]
+      user = User.find_by(id: session[:user_id])
+      @bedel ||= Bedel.new(user.approvals, user)
+    else
+      @bedel ||= Bedel.new(session)
+    end
   end
 end

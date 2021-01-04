@@ -1,16 +1,23 @@
 class Bedel
-  def initialize(store)
+  def initialize(store, user = nil)
     @store = store
+    @user = user
 
-    @store[:approved_courses] ||= []
-    @store[:approved_exams] ||= []
+    if @user
+      @store[:approved_courses] ||= user.approvals[:approved_courses].to_a
+      @store[:approved_exams] ||= user.approvals[:approved_exams].to_a
+    else
+      @store[:approved_courses] ||= []
+      @store[:approved_exams] ||= []
+    end
   end
 
   def add_approval(approvable)
     if approvable.is_exam?
       store[:approved_exams] += [approvable.subject_id]
     else
-      store[:approved_courses] += [approvable.subject_id]
+      User.first.approvals[:approved_courses] += [approvable.subject_id]
+      # store[:approved_courses] += [approvable.subject_id]
     end
   end
 
