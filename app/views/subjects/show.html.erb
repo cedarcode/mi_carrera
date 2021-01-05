@@ -2,10 +2,6 @@
   <%= nav_icon("arrow_back", (request.referer || root_path)) %>
 <% end %>
 
-<% content_for :profile_link do %>
-  <%= action_icon("person", profile_path) %>
-<% end %>
-
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5"><%= @subject.code %> - <%= @subject.name %></h3>
   <hr class="mdc-list-divider">

@@ -6,10 +6,6 @@
   <%= render 'shared/credits_counter' %>
 <% end %>
 
-<% content_for :profile_link do %>
-  <%= action_icon("person", profile_path) %>
-<% end %>
-
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5">Grupo <%= @subject_group.name %></h3>
   <hr class="mdc-list-divider">
