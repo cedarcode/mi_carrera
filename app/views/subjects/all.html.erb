@@ -20,20 +20,8 @@
       <% end %>
     </h3>
 
-    <div class="mdc-list">
-      <% subjects.each do |subject| %>
-        <%= link_to subject_path(subject), :class => "mdc-list-item" do %>
-          <span class="mdc-list-item__text">
-            <%= subject.short_name || subject.name %>
-          </span>
-          <% if bedel.approved?(subject) %>
-            <span class="mdc-list-item__meta material-icons">done</span>
-          <% elsif !bedel.able_to_do?(subject) %>
-            <span class="mdc-list-item__meta material-icons">lock</span>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render partial: "subjects/subjects_list", locals: { subjects: subjects } %>
+
     <hr class="mdc-list-divider">
   <% end %>
 </div>

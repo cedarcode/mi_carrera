@@ -11,7 +11,7 @@
   <hr class="mdc-list-divider">
 
   <h3 class="mdc-list-group__subheader mdc-typography--subtitle2">Información general</h3>
-  <div class="mdc-list">
+  <div class="mdc-list growing-text-list">
     <label class="mdc-list-item">
       <span class="mdc-list-item__text">
         Créditos: <%= @subject.credits %>
@@ -19,9 +19,9 @@
     </label>
 
     <label class="mdc-list-item">
-      <span class="mdc-list-item__text">
+      <%= link_to subject_group_path(@subject.group), :class => "mdc-list-item__text" do %>
         Grupo: <%= @subject.group.name %>
-      </span>
+      <% end %>
     </label>
   </div>
   <hr class="mdc-list-divider">
@@ -34,7 +34,12 @@
       </span>
 
       <span class="mdc-list-item__meta">
-        <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check", action: "ajax:success->exam-visibility#approvalChange" }) do |form| %>
+        <% if @subject.exam %>
+          <% form_data = { controller: "autosave-check", action: "ajax:success->exam-visibility#approvalChange" } %>
+        <% else %>
+          <% form_data = { controller: "autosave-check" } %>
+        <% end %>
+        <%= form_with(model: @subject, url: approve_subject_path(@subject), data: form_data) do |form| %>
           <div class="mdc-checkbox">
             <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.course), disabled: !bedel.able_to_do?(@subject.course), data: { action: "autosave-check#update" } }, "yes", "no" %>
             <div class="mdc-checkbox__background">
