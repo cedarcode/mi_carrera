@@ -11,9 +11,8 @@ class SubjectGroupsController < ApplicationController
   private
 
   def bedel
-    if session[:user_id]
-      user = User.find_by(id: session[:user_id])
-      @bedel ||= Bedel.new(user.approvals, user)
+    if current_user
+      @bedel ||= Bedel.new(current_user.approvals, current_user)
     else
       @bedel ||= Bedel.new(session)
     end

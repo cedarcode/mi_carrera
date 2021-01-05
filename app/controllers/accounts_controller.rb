@@ -6,8 +6,8 @@ class AccountsController < ApplicationController
     google_identity = GoogleSignIn::Identity.new(flash[:google_sign_in]["id_token"])
     user = User.new(name: google_identity.name, email_address: google_identity.email_address,
                     avatar_url: google_identity.avatar_url)
-    user.approvals[:approved_courses] = []
-    user.approvals[:approved_exams] = []
+    user.approvals[:approved_courses] = session[:approved_courses]
+    user.approvals[:approved_exams] = session[:approved_exams]
     if user.save
       session[:user_id] = user.id
       redirect_to root_path

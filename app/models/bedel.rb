@@ -3,21 +3,20 @@ class Bedel
     @store = store
     @user = user
 
-    if @user
-      @store[:approved_courses] ||= user.approvals[:approved_courses].to_a
-      @store[:approved_exams] ||= user.approvals[:approved_exams].to_a
-    else
-      @store[:approved_courses] ||= []
-      @store[:approved_exams] ||= []
-    end
+    @store[:approved_courses] ||= []
+    @store[:approved_exams] ||= []
   end
 
   def add_approval(approvable)
     if approvable.is_exam?
       store[:approved_exams] += [approvable.subject_id]
     else
-      User.first.approvals[:approved_courses] += [approvable.subject_id]
-      # store[:approved_courses] += [approvable.subject_id]
+      store[:approved_courses] += [approvable.subject_id]
+    end
+
+    if @user
+      @user.approvals = store
+      @user.save
     end
   end
 
@@ -55,6 +54,11 @@ class Bedel
     store[:approved_courses] -= to_remove
 
     new_count = store[:approved_exams].size + store[:approved_courses].size
+
+    if @user
+      @user.approvals = store
+      @user.save
+    end
 
     if new_count != original_count
       refresh_approvals
