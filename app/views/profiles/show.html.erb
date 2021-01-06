@@ -5,7 +5,7 @@
   <% if current_user %>
     <%= link_to 'Cerrar sesión', update_callback_accounts_path, class: "handle-account" %>
   <% else %>
-    <%= action_icon("login", edit_account_path(0)) %>
+    <%= action_icon("login", new_session_accounts_path) %>
     <%= link_to 'Crear cuenta', new_account_path, class: "handle-account" %>
   <% end %>
 <% end %>

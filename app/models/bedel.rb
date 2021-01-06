@@ -16,7 +16,7 @@ class Bedel
 
     if @user
       @user.approvals = store
-      @user.save
+      @user.save!
     end
   end
 
@@ -57,7 +57,7 @@ class Bedel
 
     if @user
       @user.approvals = store
-      @user.save
+      @user.save!
     end
 
     if new_count != original_count

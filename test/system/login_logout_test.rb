@@ -10,7 +10,7 @@ class LoginLogoutTest < ApplicationSystemTestCase
     assert_selector "button", text: 'Iniciar sesión con Google'
   end
 
-  test "not logged in user cant see log out link" do
+  test "not logged in user can't see log out link" do
     visit root_path
     click_on "person"
 

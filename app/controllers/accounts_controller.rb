@@ -17,7 +17,7 @@ class AccountsController < ApplicationController
     end
   end
 
-  def edit
+  def new_session
   end
 
   def update_callback
