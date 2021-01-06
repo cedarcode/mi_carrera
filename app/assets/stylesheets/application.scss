@@ -119,11 +119,19 @@ body {
 
 .sign-in {
   text-align: center;
+  align-items: center;
 }
 
 .sign-in-option {
   padding: 16px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-form-option {
+  padding: 16px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .sign-in-border {

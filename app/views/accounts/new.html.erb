@@ -5,20 +5,33 @@
   <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Regístrate</h3>
   <ul class="mdc-list growing-text-list sign-in-border">
 
-    <li class="sign-in-option">
-      <span><label for="email">Email:</span>
-      <span><input type="email" id="email" size="30"></span>
-    </li>
-    <li class="sign-in-option">
-      <span><label for="password">Password:</span>
-      <span><input type="password" id="password" size="26"></span>
+    <li class="sign-in-option sign-in">
+      <%= google_sign_in_button proceed_to: create_callback_account_path, class: "sign-in-button" do %>
+        <span class="google-icon"></span> Registrarse con Google
+      <% end %>
     </li>
     <li role="separator" class="mdc-list-divider"></li>
-    <li class="sign-in-option">
-    <%= google_sign_in_button proceed_to: create_callback_accounts_path, class: "sign-in-button" do %>
-      <span class="google-icon"></span> Registrarse con Google
+
+    <%= form_with url: "/account", method: :post do |form| %>
+      <li class="sign-in-option sign-in">
+        Registrarte con tu correo electrónico
+      </li>
+      <li class="sign-in-option">
+        <%= form.label :name, "Nombre:" %>
+        <%= form.text_field :name, placeholder: "Introduce tu nombre.",required: true %>
+      </li>
+      <li class="sign-in-option">
+        <%= form.label :email, "Email:" %>
+        <%= form.email_field :email, placeholder: "Introduce tu correo electrónico.", required: true %>
+      </li>
+      <li class="sign-in-option">
+        <%= form.label :password, "Contraseña:" %>
+        <%= form.password_field :password, placeholder: "Crea una contraseña.", required: true %>
+      </li>
+      <li class="sign-in-option sign-in">
+        <%= form.submit "Registrarse", class: "sign-in-button" %>
+      </li>
     <% end %>
-    </li>
 
   </ul>
 </div>
