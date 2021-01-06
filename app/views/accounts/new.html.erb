@@ -6,7 +6,16 @@
   <ul class="mdc-list growing-text-list sign-in-border">
 
     <li class="sign-in-option">
-    <%= google_sign_in_button proceed_to: create_callback_account_path, class: "sign-in-button" do %>
+      <span><label for="email">Email:</span>
+      <span><input type="email" id="email" size="30"></span>
+    </li>
+    <li class="sign-in-option">
+      <span><label for="password">Password:</span>
+      <span><input type="password" id="password" size="26"></span>
+    </li>
+    <li role="separator" class="mdc-list-divider"></li>
+    <li class="sign-in-option">
+    <%= google_sign_in_button proceed_to: create_callback_accounts_path, class: "sign-in-button" do %>
       <span class="google-icon"></span> Registrarse con Google
     <% end %>
     </li>
