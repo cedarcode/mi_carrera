@@ -6,7 +6,7 @@
   <ul class="mdc-list growing-text-list sign-in-border">
 
     <li class="sign-in-option">
-    <%= google_sign_in_button proceed_to: update_callback_accounts_path, class: "sign-in-button" do %>
+    <%= google_sign_in_button proceed_to: create_callback_session_path, class: "sign-in-button" do %>
       <span class="google-icon"></span> Iniciar sesión con Google
     <% end %>
     </li>

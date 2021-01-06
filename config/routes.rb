@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   root to: "subjects#index"
 
-  resource :profile, only: :show
-
   resources :subject_groups, only: :show
 
   resources :subjects do
@@ -18,11 +16,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :accounts, only: :new do
+  resource :account, only: [:show, :new] do
     collection do
       get :create_callback
-      get :new_session
-      get :update_callback
+    end
+  end
+
+  resource :session, only: [:new, :destroy] do
+    collection do
+      get :create_callback
     end
   end
 end
