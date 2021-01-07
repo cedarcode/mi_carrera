@@ -2,12 +2,12 @@
   <%= nav_icon("arrow_back", (request.referer || root_path)) %>
 <% end %>
 <div class="mdc-list-group">
-  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Regístrate</h3>
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Registro</h3>
   <ul class="mdc-list growing-text-list sign-in-border">
 
     <li class="sign-in-option sign-in">
       <%= google_sign_in_button proceed_to: create_callback_account_path, class: "sign-in-button" do %>
-        <span class="google-icon"></span> Registrarse con Google
+        <span class="google-icon"></span> Registrarte con Google
       <% end %>
     </li>
     <li role="separator" class="mdc-list-divider"></li>
@@ -18,7 +18,7 @@
       </li>
       <li class="sign-in-option">
         <%= form.label :name, "Nombre:" %>
-        <%= form.text_field :name, placeholder: "Introduce tu nombre.",required: true %>
+        <%= form.text_field :name, placeholder: "Introduce tu nombre.", required: true %>
       </li>
       <li class="sign-in-option">
         <%= form.label :email, "Email:" %>
@@ -29,7 +29,7 @@
         <%= form.password_field :password, placeholder: "Crea una contraseña.", required: true %>
       </li>
       <li class="sign-in-option sign-in">
-        <%= form.submit "Registrarse", class: "sign-in-button" %>
+        <%= form.submit "Registrarte", class: "sign-in-button" %>
       </li>
     <% end %>
 

@@ -5,6 +5,7 @@ ruby File.read(".ruby-version").strip
 
 gem 'rails', '~> 6.0.3'
 
+gem "bcrypt", "~> 3.1"
 gem 'bootsnap', '~> 1.4', require: false
 gem 'google_sign_in', '~> 1.2'
 gem 'jbuilder', '~> 2.9'
