@@ -90,6 +90,9 @@ body {
     color: inherit;
     text-decoration-line: inherit;
   }
+  a.account-session {
+    text-decoration-line: underline;
+  }
   .mdc-list-item__text{
     flex-grow: 1;
   }
@@ -134,9 +137,13 @@ body {
   justify-content: space-around;
 }
 
-.sign-in-border {
-  border: 1px solid #ccc;
-  border-radius: 16px;
+.form-input {
+  height: 30px;
+  padding: 6px 12px;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #d9dadc;
+  border-radius: 0;
 }
 
 .sign-in-button {

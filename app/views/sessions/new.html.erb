@@ -3,7 +3,7 @@
 <% end %>
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Iniciar sesión</h3>
-  <ul class="mdc-list growing-text-list sign-in-border">
+  <ul class="mdc-list growing-text-list">
 
     <li class="sign-in-option sign-in">
     <%= google_sign_in_button proceed_to: create_callback_session_path, class: "sign-in-button" do %>
@@ -18,16 +18,22 @@
       </li>
       <li class="sign-in-option">
         <%= form.label :email, "Email:" %>
-        <%= form.email_field :email, placeholder: "Introduce tu correo electrónico.", required: true %>
+        <%= form.email_field :email, class: "form-input", placeholder: "Introduce tu correo electrónico.", required: true %>
       </li>
       <li class="sign-in-option">
         <%= form.label :password, "Contraseña:" %>
-        <%= form.password_field :password, placeholder: "Introduce tu contraseña.", required: true %>
+        <%= form.password_field :password, class: "form-input", placeholder: "Introduce tu contraseña.", required: true %>
       </li>
       <li class="sign-in-option sign-in">
         <%= form.submit "Iniciar sesión", class: "sign-in-button" %>
       </li>
     <% end %>
+
+    <li role="separator" class="mdc-list-divider"></li>
+    <li class="sign-in-option sign-in">
+      ¿No tienes una cuenta?
+      <%= link_to 'Regístrate', new_account_path, class: "account-session" %>
+    </li>
 
   </ul>
 </div>
