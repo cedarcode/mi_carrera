@@ -10,6 +10,6 @@ export default class extends Controller {
     const screen = document.createElement("div");
     screen.setAttribute("id", "menu-background");
     screen.setAttribute("onclick", "document.getElementById('menu-background').remove()");
-    document.body.appendChild(screen);
+    document.querySelector(".mdc-menu-surface--anchor").prepend(screen);
   }
 }
