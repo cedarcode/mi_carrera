@@ -11,7 +11,8 @@ class AccountsController < ApplicationController
 
   def create
     user = User.new(name: params[:name], email_address: params[:email],
-                    password_digest: params[:password])
+                    password_digest: params[:password],
+                    password_digest_confirmation: params[:password_confirmation])
     user.approvals[:approved_courses] = session[:approved_courses]
     user.approvals[:approved_exams] = session[:approved_exams]
     if user.save
@@ -19,7 +20,7 @@ class AccountsController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "Ocurrió un error al crear el usuario"
-      redirect_to root_path
+      redirect_to new_account_path
     end
   end
 
@@ -34,7 +35,7 @@ class AccountsController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "Ocurrió un error al crear el usuario"
-      redirect_to root_path
+      redirect_to new_account_path
     end
   end
 end

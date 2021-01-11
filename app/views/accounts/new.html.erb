@@ -21,12 +21,16 @@
         <%= form.text_field :name, class: "form-input", placeholder: "Introduce tu nombre.", required: true %>
       </li>
       <li class="sign-in-option">
-        <%= form.label :email, "Email:" %>
+        <%= form.label :email, "Correo electrónico:" %>
         <%= form.email_field :email, class: "form-input", placeholder: "Introduce tu correo electrónico.", required: true %>
       </li>
       <li class="sign-in-option">
         <%= form.label :password, "Contraseña:" %>
         <%= form.password_field :password, class: "form-input", placeholder: "Crea una contraseña.", required: true %>
+      </li>
+      <li class="sign-in-option">
+        <%= form.label :password_confirmation, "Confirma tu contraseña:" %>
+        <%= form.password_field :password_confirmation, class: "form-input", placeholder: "Vuelve a ingresar tu contraseña.", required: true %>
       </li>
       <li class="sign-in-option sign-in">
         <%= form.submit "Registrarte", class: "sign-in-button" %>

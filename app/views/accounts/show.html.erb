@@ -1,9 +1,6 @@
 <% content_for :navigation_icon do %>
   <%= nav_icon("arrow_back", (request.referer || root_path)) %>
 <% end %>
-<% content_for :profile_link do %>
-  <%= action_icon("person", account_path) %>
-<% end %>
 <% content_for :account do %>
   <% if current_user %>
     <%= link_to 'Cerrar sesión', session_path, method: 'delete', class: "handle-account" %>

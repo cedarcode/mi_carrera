@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "Ocurrió un error al iniciar sesión"
-      redirect_to root_path
+      redirect_to new_session_path
     end
   end
 
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "Ocurrió un error al iniciar sesión"
-      redirect_to root_path
+      redirect_to new_session_path
     end
   end
 end
