@@ -35,6 +35,12 @@ class ActiveSupport::TestCase
     subject
   end
 
+  def create_user
+    user = User.create!(name: "Test User", email_address: "test@user.com", password_digest: "123456")
+
+    user
+  end
+
   def wait_for_async_request
     # Ideally we would really wait for the request to complete instead of
     # sleeping a fixed amount of time
