@@ -18,7 +18,6 @@ export default class extends Controller {
     });
     document.querySelector(".mdc-menu-surface--anchor").prepend(screen);
     document.addEventListener("turbolinks:before-cache", function() {
-      const screen = document.getElementById('menu-background');
       if (screen != null) {
             screen.remove();
       }
