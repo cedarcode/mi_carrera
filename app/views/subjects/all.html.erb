@@ -1,5 +1,5 @@
-<% content_for :title do %>
-  <span class="mdc-top-app-bar__title">Student</span>
+<% content_for :navigation_icon do %>
+  <%= nav_icon("arrow_back", (request.referer || root_path)) %>
 <% end %>
 
 <% content_for :credits do %>
