@@ -4,5 +4,7 @@ class User < ApplicationRecord
   serialize :approvals, Hash
 
   has_secure_password
-  validates :password_digest, confirmation: true
+  validates :password_digest, presence: true,
+                              confirmation: true,
+                              on: :create
 end

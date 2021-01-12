@@ -17,6 +17,8 @@ class AccountsController < ApplicationController
     user.approvals[:approved_exams] = session[:approved_exams]
     if user.save
       session[:user_id] = user.id
+      session[:approved_courses] = nil
+      session[:approved_exams] = nil
       redirect_to root_path
     else
       flash[:error] = "Ocurrió un error al crear el usuario"
@@ -32,6 +34,8 @@ class AccountsController < ApplicationController
     user.approvals[:approved_exams] = session[:approved_exams]
     if user.save
       session[:user_id] = user.id
+      session[:approved_courses] = nil
+      session[:approved_exams] = nil
       redirect_to root_path
     else
       flash[:error] = "Ocurrió un error al crear el usuario"
