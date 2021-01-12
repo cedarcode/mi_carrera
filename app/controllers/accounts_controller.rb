@@ -15,7 +15,7 @@ class AccountsController < ApplicationController
                     password_digest_confirmation: params[:password_confirmation])
     user.approvals[:approved_courses] = session[:approved_courses]
     user.approvals[:approved_exams] = session[:approved_exams]
-    if user.save
+    if user.valid?(:account_create) and user.save
       session[:user_id] = user.id
       session[:approved_courses] = nil
       session[:approved_exams] = nil

@@ -3,8 +3,6 @@ class User < ApplicationRecord
   validates :email_address, presence: true, uniqueness: true
   serialize :approvals, Hash
 
-  has_secure_password
-  validates :password_digest, presence: true,
-                              confirmation: true,
-                              on: :create
+  has_secure_password validations: false
+  validates :password_digest, confirmation: true, on: :account_create
 end
