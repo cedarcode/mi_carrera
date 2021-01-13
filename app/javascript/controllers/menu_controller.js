@@ -6,6 +6,12 @@ export default class extends Controller {
 
   connect() {
     this.menu = new MDCMenu(this.contentTarget);
+
+    /*
+      * This help us make sure the menu will be closed on restoration visits
+      * while clicking on the browser's back button, and will not be half-way
+      * open on turbolinks cache.
+    */
     this.menu.open = false;
   }
 
@@ -18,8 +24,9 @@ export default class extends Controller {
     });
     document.querySelector(".mdc-menu-surface--anchor").prepend(screen);
     document.addEventListener("turbolinks:before-cache", function() {
+      const screen = document.getElementById('menu-background');
       if (screen != null) {
-            screen.remove();
+        screen.remove();
       }
     });
   }
