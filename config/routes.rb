@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root to: "subjects#index"
 
+  resources :home, only: :index
+
   resources :subject_groups, only: :show
 
   resources :subjects do

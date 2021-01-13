@@ -30,6 +30,27 @@ body {
   }
 }
 
+.home-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background: white;
+  width: 220px;
+  height: 40px;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.home-button:hover {
+  background-color: lightgray;
+}
+
 .credits-counter {
   padding-right: 16px;
 }
@@ -90,6 +111,9 @@ body {
     color: inherit;
     text-decoration-line: inherit;
   }
+  a.home-button {
+    color: #444;
+  }
   .mdc-list-item__text{
     flex-grow: 1;
   }
@@ -119,11 +143,13 @@ body {
 
 .sign-in {
   text-align: center;
+  align-items: center;
 }
 
 .sign-in-option {
   padding: 16px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .sign-in-border {
