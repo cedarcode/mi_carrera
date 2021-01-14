@@ -1,4 +1,6 @@
 class SubjectsController < ApplicationController
+  before_action :authenticate
+
   def index
     @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject.course) }
   end
@@ -51,5 +53,11 @@ class SubjectsController < ApplicationController
 
   def subject
     @subject ||= Subject.find(params[:id])
+  end
+
+  def authenticate
+    if !current_user and (session[:visitor] != "visitor")
+      redirect_to home_index_path
+    end
   end
 end
