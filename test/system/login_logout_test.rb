@@ -1,6 +1,10 @@
 require "application_system_test_case"
 
 class LoginLogoutTest < ApplicationSystemTestCase
+  setup do
+    visit visitor_home_index_path
+  end
+
   test "user can see log in icon and google log in button" do
     visit root_path
     click_on "person"

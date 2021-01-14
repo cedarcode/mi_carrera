@@ -2,6 +2,8 @@ require "application_system_test_case"
 
 class AutoUnapprovalTest < ApplicationSystemTestCase
   setup do
+    visit visitor_home_index_path
+
     @subject1 = create_subject(name: "Subject 1", credits: 1, exam: false)
     @subject2 = create_subject(name: "Subject 2", credits: 2, exam: false)
     @subject3 = create_subject(name: "Subject 3", credits: 3, exam: false)

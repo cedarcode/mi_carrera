@@ -2,6 +2,8 @@ require "application_system_test_case"
 
 class SubjectWihoutExamTest < ApplicationSystemTestCase
   setup do
+    visit visitor_home_index_path
+
     @subject = create_subject(name: "Taller", credits: 5, exam: false)
   end
 

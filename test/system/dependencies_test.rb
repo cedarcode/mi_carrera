@@ -2,6 +2,8 @@ require "application_system_test_case"
 
 class DependenciesTest < ApplicationSystemTestCase
   setup do
+    visit visitor_home_index_path
+
     @gal1 = create_subject(name: "GAL 1", credits: 9, exam: true)
     gal2 = create_subject(name: "GAL 2", credits: 9, exam: true)
 
