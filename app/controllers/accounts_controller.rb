@@ -47,6 +47,12 @@ class AccountsController < ApplicationController
   end
 
   def reset_password
-    redirect_to root_path
+    user = User.find_by(email_address: params[:email])
+    if user
+      ResetPasswordMailer.forgot_password(user).deliver
+    else
+      flash[:error] = "Ocurrió un error al recuperar la contraseña"
+      redirect_to forgot_password_account_path
+    end
   end
 end
