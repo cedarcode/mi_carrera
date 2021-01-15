@@ -42,4 +42,11 @@ class AccountsController < ApplicationController
       redirect_to new_account_path
     end
   end
+
+  def forgot_password
+  end
+
+  def reset_password
+    redirect_to root_path
+  end
 end
