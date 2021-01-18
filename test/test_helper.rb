@@ -36,7 +36,7 @@ class ActiveSupport::TestCase
   end
 
   def create_user
-    user = User.create!(name: "Test User", email_address: "test@user.com", password_digest: "123456")
+    user = User.create!(name: "Test User", email_address: "test@user.com", password: "123456")
 
     user
   end
