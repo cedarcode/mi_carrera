@@ -11,8 +11,8 @@ class AccountsController < ApplicationController
 
   def create
     user = User.new(name: params[:name], email_address: params[:email],
-                    password_digest: params[:password],
-                    password_digest_confirmation: params[:password_confirmation])
+                    password: params[:password],
+                    password_confirmation: params[:password_confirmation])
     user.approvals[:approved_courses] = session[:approved_courses]
     user.approvals[:approved_exams] = session[:approved_exams]
     if user.valid?(:account_create) and user.save
@@ -63,7 +63,7 @@ class AccountsController < ApplicationController
 
   def update
     user = User.find_by(email_address: params[:email])
-    if (params[:password] == params[:password_confirmation]) and user.update(password_digest: params[:password])
+    if (params[:password] == params[:password_confirmation]) and user.update(password: params[:password])
       session[:email] = nil
       session[:user_id] = user.id
       redirect_to root_path
