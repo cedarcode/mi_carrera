@@ -1,0 +1,30 @@
+<% content_for :navigation_icon do %>
+  <%= nav_icon("arrow_back", (request.referer || root_path)) %>
+<% end %>
+<div class="mdc-list-group">
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Restablecer contraseña</h3>
+  <ul class="mdc-list growing-text-list">
+
+    <%= form_with url: "/account", method: :put do |form| %>
+      <li class="sign-in-option sign-in">
+        Ingresa una nueva contraseña y confirma para poder acceder a tu cuenta.
+      </li>
+       <li class="sign-in-option">
+        <%= form.label :email, "Email:" %>
+        <%= form.email_field :email, class: "form-input", value: session[:email], readonly: true %>
+      </li>
+      <li class="sign-in-option">
+        <%= form.label :password, "Contraseña:" %>
+        <%= form.password_field :password, class: "form-input", placeholder: "Crea una nueva contraseña.", required: true %>
+      </li>
+      <li class="sign-in-option">
+        <%= form.label :password_confirmation, "Confirma tu contraseña:" %>
+        <%= form.password_field :password_confirmation, class: "form-input", placeholder: "Vuelve a ingresar tu nueva contraseña.", required: true %>
+      </li>
+      <li class="sign-in-option sign-in">
+        <%= form.submit "Restablecer contraseña", class: "sign-in-button" %>
+      </li>
+    <% end %>
+
+  </ul>
+</div>

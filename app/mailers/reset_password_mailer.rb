@@ -4,6 +4,6 @@ class ResetPasswordMailer < ApplicationMailer
   def forgot_password(user)
     @user = user
 
-    mail to: user.email_address, subject: 'Reset password instructions'
+    mail to: user.email_address, subject: 'Recuperar contraseña'
   end
 end
