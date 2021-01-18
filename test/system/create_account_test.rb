@@ -21,13 +21,12 @@ class CreateAccountTest < ApplicationSystemTestCase
 
     assert_text "Registrarte con tu correo electrónico"
     assert_selector "button", text: 'Registrarte'
-    fill_in "name", with: 'Test User'
     fill_in "email", with: 'test@test.com'
     fill_in "password", with: '123'
     fill_in "password_confirmation", with: '123'
     click_on "Registrarte"
 
-    assert_text "Test User"
+    assert_text "test@test.com"
   end
 
   test "user can't sign up due to incorrect confirmation password" do
@@ -37,7 +36,6 @@ class CreateAccountTest < ApplicationSystemTestCase
 
     assert_text "Registrarte con tu correo electrónico"
     assert_selector "button", text: 'Registrarte'
-    fill_in "name", with: 'Test User'
     fill_in "email", with: 'test@test.com'
     fill_in "password", with: '123'
     fill_in "password_confirmation", with: '321'
@@ -53,7 +51,6 @@ class CreateAccountTest < ApplicationSystemTestCase
 
     assert_text "Registrarte con tu correo electrónico"
     assert_selector "button", text: 'Registrarte'
-    fill_in "name", with: 'Test User'
     fill_in "email", with: 'test@user.com'
     fill_in "password", with: '123'
     fill_in "password_confirmation", with: '123'

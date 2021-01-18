@@ -32,7 +32,7 @@ class LoginLogoutTest < ApplicationSystemTestCase
     fill_in "password", with: '123456'
     click_on "Iniciar sesión"
 
-    assert_text "Test User"
+    assert_text "test@user.com"
   end
 
   test "user can't sign in if enters wrong password" do
