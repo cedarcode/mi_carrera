@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :home, only: :index do
     collection do
-      get :visitor
+      get :guest
     end
   end
 

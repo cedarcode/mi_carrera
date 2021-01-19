@@ -3,9 +3,7 @@
 <% end %>
 
 <div class="mdc-list-group">
-  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">¿Qué deseas hacer?</h3>
   <ul class="mdc-list growing-text-list">
-
     <li class="sign-in-option sign-in">
       <%= link_to "Registrarte", new_account_path, class: "home-button" %>
     </li>
@@ -13,8 +11,7 @@
       <%= link_to "Iniciar sesión", new_session_path, class: "home-button" %>
     </li>
     <li class="sign-in-option sign-in">
-      <%= link_to "¡Probar la app!", visitor_home_index_path, class: "home-button" %>
+      <%= link_to "¡Probar la app!", guest_home_index_path, class: "home-button" %>
     </li>
-
   </ul>
 </div>
