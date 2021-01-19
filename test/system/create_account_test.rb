@@ -1,10 +1,6 @@
 require "application_system_test_case"
 
 class CreateAccountTest < ApplicationSystemTestCase
-  setup do
-    create_user
-  end
-
   test "user can see a google sign in button" do
     visit root_path
     click_on "person"
@@ -15,45 +11,40 @@ class CreateAccountTest < ApplicationSystemTestCase
   end
 
   test "user can sign up with email and password" do
-    visit root_path
-    click_on "person"
-    click_on "Crear cuenta"
+    visit new_account_path
 
     assert_text "Registrarte con tu correo electrónico"
-    assert_selector "button", text: 'Registrarte'
-    fill_in "email", with: 'test@test.com'
-    fill_in "password", with: '123'
-    fill_in "password_confirmation", with: '123'
+    fill_in "Correo electrónico", with: 'alice@test.com'
+    fill_in "Contraseña", with: 'alice123'
+    fill_in "Confirma tu contraseña", with: 'alice123'
     click_on "Registrarte"
 
-    assert_text "test@test.com"
+    assert_current_path(root_path)
+    assert_text "Student"
+    assert_selector "a", text: "person"
+    assert_text "alice@test.com"
   end
 
   test "user can't sign up due to incorrect confirmation password" do
-    visit root_path
-    click_on "person"
-    click_on "Crear cuenta"
+    visit new_account_path
 
     assert_text "Registrarte con tu correo electrónico"
-    assert_selector "button", text: 'Registrarte'
-    fill_in "email", with: 'test@test.com'
-    fill_in "password", with: '123'
-    fill_in "password_confirmation", with: '321'
+    fill_in "Correo electrónico", with: 'alice@test.com'
+    fill_in "Contraseña", with: 'alice123'
+    fill_in "Confirma tu contraseña", with: 'alice321'
     click_on "Registrarte"
 
     assert_text "Ocurrió un error al crear el usuario"
   end
 
   test "user can't sign up due to email already in use" do
-    visit root_path
-    click_on "person"
-    click_on "Crear cuenta"
+    visit new_account_path
+    create_user
 
     assert_text "Registrarte con tu correo electrónico"
-    assert_selector "button", text: 'Registrarte'
-    fill_in "email", with: 'test@user.com'
-    fill_in "password", with: '123'
-    fill_in "password_confirmation", with: '123'
+    fill_in "Correo electrónico", with: 'bob@test.com'
+    fill_in "Contraseña", with: 'bob321'
+    fill_in "Confirma tu contraseña", with: 'bob321'
     click_on "Registrarte"
 
     assert_text "Ocurrió un error al crear el usuario"
