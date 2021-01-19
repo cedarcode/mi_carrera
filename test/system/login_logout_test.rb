@@ -22,28 +22,25 @@ class LoginLogoutTest < ApplicationSystemTestCase
   end
 
   test "user can sign in with email and password" do
-    visit root_path
-    click_on "person"
-    click_on "login"
+    visit new_session_path
 
     assert_text "Iniciar sesión con tu correo electrónico"
-    assert_selector "button", text: 'Iniciar sesión'
-    fill_in "email", with: 'test@user.com'
-    fill_in "password", with: '123456'
+    fill_in "Correo electrónico", with: 'bob@test.com'
+    fill_in "Contraseña", with: 'bob123'
     click_on "Iniciar sesión"
 
-    assert_text "Test User"
+    assert_current_path(root_path)
+    assert_text "Student"
+    assert_selector "a", text: "person"
+    assert_text "bob@test.com"
   end
 
   test "user can't sign in if enters wrong password" do
-    visit root_path
-    click_on "person"
-    click_on "login"
+    visit new_session_path
 
     assert_text "Iniciar sesión con tu correo electrónico"
-    assert_selector "button", text: 'Iniciar sesión'
-    fill_in "email", with: 'test@user.com'
-    fill_in "password", with: '654321'
+    fill_in "Correo electrónico", with: 'bob@test.com'
+    fill_in "Contraseña", with: 'bob321'
     click_on "Iniciar sesión"
 
     assert_text "Ocurrió un error al iniciar sesión"

@@ -12,13 +12,9 @@
     </li>
     <li role="separator" class="mdc-list-divider"></li>
 
-    <%= form_with url: "/account", method: :post do |form| %>
+    <%= form_with url: "/account" do |form| %>
       <li class="sign-in-option sign-in">
         Registrarte con tu correo electrónico
-      </li>
-      <li class="sign-in-option">
-        <%= form.label :name, "Nombre:" %>
-        <%= form.text_field :name, class: "form-input", placeholder: "Introduce tu nombre.", required: true %>
       </li>
       <li class="sign-in-option">
         <%= form.label :email, "Correo electrónico:" %>
