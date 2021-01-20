@@ -6,8 +6,7 @@ class LoginLogoutTest < ApplicationSystemTestCase
   end
 
   test "user can see sign in icon and google sign in button" do
-    visit root_path
-    click_on "person"
+    visit account_path
     click_on "login"
 
     assert_text "Ingreso"
@@ -15,8 +14,7 @@ class LoginLogoutTest < ApplicationSystemTestCase
   end
 
   test "not signed in user can't see sign out link" do
-    visit root_path
-    click_on "person"
+    visit account_path
 
     assert_no_text "Salir"
   end

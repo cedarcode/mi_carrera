@@ -1,0 +1,19 @@
+<div class="mdc-menu-surface--anchor" data-controller="menu">
+  <a class="mdc-icon-button material-icons" data-action="click->menu#openMenu">
+    more_vert
+  </a>
+  <div class="mdc-menu mdc-menu-surface" data-target="menu.content">
+    <div class="mdc-list">
+      <%= link_to all_subjects_path, class: "mdc-list-item" do %>
+        <span class="mdc-list-item__text">
+          Materias
+        <span>
+      <% end %>
+      <%= link_to account_path, class: "mdc-list-item" do %>
+        <span class="mdc-list-item__text">
+          Avance de carrera
+        </span>
+      <% end %>
+    </div>
+  </div>
+</div>
