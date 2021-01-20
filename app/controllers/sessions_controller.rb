@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      flash[:error] = "Ocurrió un error al iniciar sesión"
+      flash[:error] = "Ocurrió un error al ingresar"
       redirect_to new_session_path
     end
   end
@@ -21,19 +21,11 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email_address: params[:email])
-    if user
-      if user.password_digest == nil and user.update(password: params[:password])
-        session[:user_id] = user.id
-        redirect_to root_path
-      elsif user.authenticate(params[:password])
-        session[:user_id] = user.id
-        redirect_to root_path
-      else
-        flash[:error] = "Ocurrió un error al iniciar sesión"
-        redirect_to new_session_path
-      end
+    if user&.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to root_path
     else
-      flash[:error] = "Ocurrió un error al iniciar sesión"
+      flash[:error] = "Ocurrió un error al ingresar"
       redirect_to new_session_path
     end
   end
