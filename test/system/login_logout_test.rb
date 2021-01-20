@@ -29,7 +29,6 @@ class LoginLogoutTest < ApplicationSystemTestCase
 
     assert_current_path(root_path)
     assert_text "Student"
-    assert_selector "a", text: "person"
     assert_text "bob@test.com"
   end
 
