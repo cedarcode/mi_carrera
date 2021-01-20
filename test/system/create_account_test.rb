@@ -43,10 +43,23 @@ class CreateAccountTest < ApplicationSystemTestCase
 
     assert_text "Registrarte con tu correo electrónico"
     fill_in "Correo electrónico", with: 'bob@test.com'
-    fill_in "Contraseña", with: 'bob321'
-    fill_in "Confirma tu contraseña", with: 'bob321'
+    fill_in "Contraseña", with: 'bob54321'
+    fill_in "Confirma tu contraseña", with: 'bob54321'
     click_on "Registrarte"
 
     assert_text "Ocurrió un error al crear el usuario"
+  end
+
+  test "user can't sign up due to password not meeting length criteria" do
+    visit new_account_path
+
+    assert_text "Registrarte con tu correo electrónico"
+    fill_in "Correo electrónico", with: 'alice@test.com'
+    fill_in "Contraseña", with: 'a123'
+    fill_in "Confirma tu contraseña", with: 'a123'
+    click_on "Registrarte"
+
+    assert_current_path(new_account_path)
+    assert_text "Registrarte con tu correo electrónico"
   end
 end

@@ -26,7 +26,7 @@ class LoginLogoutTest < ApplicationSystemTestCase
 
     assert_text "Iniciar sesión con tu correo electrónico"
     fill_in "Correo electrónico", with: 'bob@test.com'
-    fill_in "Contraseña", with: 'bob123'
+    fill_in "Contraseña", with: 'bob12345'
     click_on "Iniciar sesión"
 
     assert_current_path(root_path)
@@ -40,7 +40,7 @@ class LoginLogoutTest < ApplicationSystemTestCase
 
     assert_text "Iniciar sesión con tu correo electrónico"
     fill_in "Correo electrónico", with: 'bob@test.com'
-    fill_in "Contraseña", with: 'bob321'
+    fill_in "Contraseña", with: 'bob54321'
     click_on "Iniciar sesión"
 
     assert_text "Ocurrió un error al iniciar sesión"

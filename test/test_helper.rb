@@ -36,7 +36,7 @@ class ActiveSupport::TestCase
   end
 
   def create_user
-    User.create!(email_address: "bob@test.com", password: "bob123")
+    User.create!(email_address: "bob@test.com", password: "bob12345")
   end
 
   def wait_for_async_request

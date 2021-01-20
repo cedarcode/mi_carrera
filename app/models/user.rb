@@ -3,5 +3,5 @@ class User < ApplicationRecord
   serialize :approvals, Hash
 
   has_secure_password validations: false
-  validates :password, confirmation: true, on: :account_create
+  validates :password, presence: true, confirmation: true, length: { minimum: 8 }, on: :account_create
 end
