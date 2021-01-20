@@ -1503,7 +1503,7 @@ tagsi:
 
 tcace:
   code: "1042"
-  name: "Teoría de Códigos Algebráicos para la Correción de Errores"
+  name: "Teoría de Códigos Algebraicos para la Corrección de Errores"
   short_name: "Cód. Algebr. para Correc. de Err."
   credits: 7
   group: maths

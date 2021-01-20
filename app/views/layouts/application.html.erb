@@ -48,6 +48,9 @@
           <% end %>
           <%= yield :account %>
           <%= yield :credits %>
+          <% if !content_for?(:navigation_icon) %>
+            <%= render 'shared/menu' %>
+          <% end %>
         </section>
       </div>
     </header>
