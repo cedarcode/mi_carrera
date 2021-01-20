@@ -2,7 +2,8 @@ require "application_system_test_case"
 
 class CreateAccountTest < ApplicationSystemTestCase
   setup do
-    visit visitor_home_index_path
+    visit root_path
+    click_on "¡Probar la app!"
   end
 
   test "user can see a google sign in button" do

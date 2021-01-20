@@ -54,10 +54,4 @@ class SubjectsController < ApplicationController
   def subject
     @subject ||= Subject.find(params[:id])
   end
-
-  def authenticate
-    if !current_user and !session[:guest]
-      redirect_to home_index_path
-    end
-  end
 end

@@ -2,7 +2,8 @@ require "application_system_test_case"
 
 class CompoundPrerequisitesTest < ApplicationSystemTestCase
   setup do
-    visit visitor_home_index_path
+    visit root_path
+    click_on "¡Probar la app!"
 
     maths = create_group(name: "Matemáticas")
     prog = create_group(name: "Programación")

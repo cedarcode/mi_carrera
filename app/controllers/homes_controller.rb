@@ -1,10 +1,10 @@
-class HomeController < ApplicationController
+class HomesController < ApplicationController
   before_action :skip_home
 
-  def index
+  def show
   end
 
-  def guest
+  def guest_session
     session[:guest] = true
     redirect_to root_path
   end
