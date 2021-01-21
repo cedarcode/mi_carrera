@@ -6,20 +6,17 @@
   <ul class="mdc-list growing-text-list">
 
     <%= form_with url: "/account", method: :put do |form| %>
-      <li class="sign-in-option sign-in">
-        Ingresa una nueva contraseña y confirma para poder acceder a tu cuenta.
-      </li>
        <li class="sign-in-option">
         <%= form.label :email, "Email:" %>
         <%= form.email_field :email, class: "form-input", value: session[:email], readonly: true %>
       </li>
       <li class="sign-in-option">
-        <%= form.label :password, "Contraseña:" %>
-        <%= form.password_field :password, class: "form-input", placeholder: "Crea una nueva contraseña.", required: true %>
+        <%= form.label :password, "Nueva contraseña:" %>
+        <%= form.password_field :password, class: "form-input", required: true %>
       </li>
       <li class="sign-in-option">
-        <%= form.label :password_confirmation, "Confirma tu contraseña:" %>
-        <%= form.password_field :password_confirmation, class: "form-input", placeholder: "Vuelve a ingresar tu nueva contraseña.", required: true %>
+        <%= form.label :password_confirmation, "Confirma tu nueva contraseña:" %>
+        <%= form.password_field :password_confirmation, class: "form-input", required: true %>
       </li>
       <li class="sign-in-option sign-in">
         <%= form.submit "Restablecer contraseña", class: "sign-in-button" %>
