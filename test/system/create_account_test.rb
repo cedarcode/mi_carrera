@@ -53,8 +53,8 @@ class CreateAccountTest < ApplicationSystemTestCase
 
     assert_text "Registrarte con tu correo electrónico"
     fill_in "Correo electrónico", with: 'alice@test.com'
-    fill_in "Contraseña", with: 'a123'
-    fill_in "Confirma tu contraseña", with: 'a123'
+    fill_in "Nueva contraseña", with: 'a123'
+    fill_in "Confirma tu nueva contraseña", with: 'a123'
     click_on "Registrarte"
 
     assert_current_path(new_account_path)
