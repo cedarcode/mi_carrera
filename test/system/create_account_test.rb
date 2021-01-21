@@ -2,9 +2,8 @@ require "application_system_test_case"
 
 class CreateAccountTest < ApplicationSystemTestCase
   test "user can see a google sign in button" do
-    visit root_path
-    click_on "person"
-    click_on "Crear cuenta"
+    visit account_path
+    click_on "Registrarte"
 
     assert_text "Registro"
     assert_selector "button", text: 'Registrarte con Google'
@@ -15,13 +14,12 @@ class CreateAccountTest < ApplicationSystemTestCase
 
     assert_text "Registrarte con tu correo electrónico"
     fill_in "Correo electrónico", with: 'alice@test.com'
-    fill_in "Contraseña", with: 'alice123'
-    fill_in "Confirma tu contraseña", with: 'alice123'
+    fill_in "Nueva contraseña", with: 'alice123'
+    fill_in "Confirma tu nueva contraseña", with: 'alice123'
     click_on "Registrarte"
 
     assert_current_path(root_path)
     assert_text "Student"
-    assert_selector "a", text: "person"
     assert_text "alice@test.com"
   end
 
@@ -30,11 +28,11 @@ class CreateAccountTest < ApplicationSystemTestCase
 
     assert_text "Registrarte con tu correo electrónico"
     fill_in "Correo electrónico", with: 'alice@test.com'
-    fill_in "Contraseña", with: 'alice123'
-    fill_in "Confirma tu contraseña", with: 'alice321'
+    fill_in "Nueva contraseña", with: 'alice123'
+    fill_in "Confirma tu nueva contraseña", with: 'alice321'
     click_on "Registrarte"
 
-    assert_text "Ocurrió un error al crear el usuario"
+    assert_text "Ocurrió un error al registrarte"
   end
 
   test "user can't sign up due to email already in use" do
@@ -43,10 +41,10 @@ class CreateAccountTest < ApplicationSystemTestCase
 
     assert_text "Registrarte con tu correo electrónico"
     fill_in "Correo electrónico", with: 'bob@test.com'
-    fill_in "Contraseña", with: 'bob321'
-    fill_in "Confirma tu contraseña", with: 'bob321'
+    fill_in "Nueva contraseña", with: 'bob321'
+    fill_in "Confirma tu nueva contraseña", with: 'bob321'
     click_on "Registrarte"
 
-    assert_text "Ocurrió un error al crear el usuario"
+    assert_text "Ocurrió un error al registrarte"
   end
 end

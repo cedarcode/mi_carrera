@@ -25,7 +25,7 @@ class AccountsController < ApplicationController
       session[:approved_exams] = nil
       redirect_to root_path
     else
-      flash[:error] = "Ocurrió un error al crear el usuario"
+      flash[:error] = "Ocurrió un error al registrarte"
       redirect_to new_account_path
     end
   end
@@ -47,7 +47,7 @@ class AccountsController < ApplicationController
       session[:approved_exams] = nil
       redirect_to root_path
     else
-      flash[:error] = "Ocurrió un error al crear el usuario"
+      flash[:error] = "Ocurrió un error al registrarte"
       redirect_to new_account_path
     end
   end
