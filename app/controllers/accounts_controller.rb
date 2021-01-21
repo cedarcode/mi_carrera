@@ -51,4 +51,10 @@ class AccountsController < ApplicationController
       redirect_to new_account_path
     end
   end
+
+  def verify_email
+    # TODO: Save form information to create account later
+    VerifyEmailMailer.verify(params[:email]).deliver
+    redirect_to root_path
+  end
 end
