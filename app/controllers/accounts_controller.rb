@@ -23,6 +23,7 @@ class AccountsController < ApplicationController
       session[:user_id] = user.id
       session[:approved_courses] = nil
       session[:approved_exams] = nil
+      VerifyEmailMailer.verify(user).deliver
       redirect_to root_path
     else
       flash[:error] = "Ocurrió un error al registrarte"
@@ -53,8 +54,13 @@ class AccountsController < ApplicationController
   end
 
   def verify_email
-    # TODO: Save form information to create account later
-    VerifyEmailMailer.verify(params[:email]).deliver
+    # user = User.find_by(id: session[:user_id])
+    # if user.update(verified: true)
+    #   redirect_to root_path
+    # else
+    #   flash[:error] = "Ocurrió un error al verificar tu correo electrónico"
+    #   redirect_to root_path
+    # end
     redirect_to root_path
   end
 end
