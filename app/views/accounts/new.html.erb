@@ -2,13 +2,41 @@
   <%= nav_icon("arrow_back", (request.referer || root_path)) %>
 <% end %>
 <div class="mdc-list-group">
-  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Regístrate</h3>
-  <ul class="mdc-list growing-text-list sign-in-border">
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Registro</h3>
+  <ul class="mdc-list growing-text-list">
 
-    <li class="sign-in-option">
-    <%= google_sign_in_button proceed_to: create_callback_account_path, class: "sign-in-button" do %>
-      <span class="google-icon"></span> Registrarse con Google
+    <li class="sign-in-option sign-in">
+      <%= google_sign_in_button proceed_to: create_callback_account_path, class: "sign-in-button" do %>
+        <span class="google-icon"></span> Registrarte con Google
+      <% end %>
+    </li>
+    <li role="separator" class="mdc-list-divider"></li>
+
+    <%= form_with url: "/account" do |form| %>
+      <li class="sign-in-option sign-in">
+        Registrarte con tu correo electrónico
+      </li>
+      <li class="sign-in-option">
+        <%= form.label :email, "Correo electrónico:" %>
+        <%= form.email_field :email, class: "form-input", required: true %>
+      </li>
+      <li class="sign-in-option">
+        <%= form.label :password, "Nueva contraseña:" %>
+        <%= form.password_field :password, class: "form-input", required: true %>
+      </li>
+      <li class="sign-in-option">
+        <%= form.label :password_confirmation, "Confirma tu nueva contraseña:" %>
+        <%= form.password_field :password_confirmation, class: "form-input", required: true %>
+      </li>
+      <li class="sign-in-option sign-in">
+        <%= form.submit "Registrarte", class: "sign-in-button" %>
+      </li>
     <% end %>
+
+    <li role="separator" class="mdc-list-divider"></li>
+    <li class="sign-in-option sign-in">
+      ¿Ya estás registrado?
+      <%= link_to 'Ingresar', new_session_path, class: "account-session" %>
     </li>
 
   </ul>

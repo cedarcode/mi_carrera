@@ -3,10 +3,10 @@
 <% end %>
 <% content_for :account do %>
   <% if current_user %>
-    <%= link_to 'Cerrar sesión', session_path, method: 'delete', class: "handle-account" %>
+    <%= link_to 'Salir', session_path, method: 'delete', class: "handle-account" %>
   <% else %>
     <%= action_icon("login", new_session_path) %>
-    <%= link_to 'Crear cuenta', new_account_path, class: "handle-account" %>
+    <%= link_to 'Registrarte', new_account_path, class: "handle-account" %>
   <% end %>
 <% end %>
 <div class="mdc-list-group">

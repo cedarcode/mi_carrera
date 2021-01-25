@@ -92,6 +92,9 @@ body {
     color: inherit;
     text-decoration-line: inherit;
   }
+  a.account-session {
+    text-decoration-line: underline;
+  }
   .mdc-list-item__text{
     flex-grow: 1;
     width: 100px;
@@ -120,16 +123,28 @@ body {
 
 .sign-in {
   text-align: center;
+  align-items: center;
 }
 
 .sign-in-option {
   padding: 16px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.sign-in-border {
-  border: 1px solid #ccc;
-  border-radius: 16px;
+.sign-in-form-option {
+  padding: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-input {
+  height: 30px;
+  padding: 6px 12px;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #d9dadc;
+  border-radius: 0;
 }
 
 .sign-in-button {
