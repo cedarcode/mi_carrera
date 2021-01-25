@@ -27,7 +27,7 @@
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <%= yield :navigation_icon %>
-          <%= yield :title %>
+          <span class="mdc-top-app-bar__title">Student</span>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
           <span hidden>
@@ -46,7 +46,7 @@
           <% end %>
           <%= yield :account %>
           <%= yield :credits %>
-          <% if !content_for?(:navigation_icon) and request.path != home_path %>
+          <% if !content_for?(:navigation_icon) and (current_user || session[:guest]) %>
             <%= render 'shared/menu' %>
           <% end %>
         </section>
