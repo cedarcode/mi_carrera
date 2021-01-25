@@ -9,7 +9,6 @@ AllCops:
     - "bin/*"
     - "db/schema.rb"
     - "tmp/**/*"
-    - "config/environments/*"
 
 Bundler:
   Enabled: true

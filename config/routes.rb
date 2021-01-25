@@ -19,9 +19,10 @@ Rails.application.routes.draw do
   resource :account, only: [:show, :new, :create] do
     collection do
       get :create_callback
-      get :verify_email
     end
   end
+
+  resource :email_verifications, only: [:new, :create]
 
   resource :session, only: [:new, :destroy, :create] do
     collection do
