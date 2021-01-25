@@ -4,11 +4,6 @@ class HomesController < ApplicationController
   def show
   end
 
-  def guest_session
-    session[:guest] = true
-    redirect_to root_path
-  end
-
   private
 
   def skip_home

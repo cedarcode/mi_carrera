@@ -3,11 +3,9 @@ Rails.application.routes.draw do
 
   root to: "subjects#index"
 
-  resource :home, only: :show do
-    collection do
-      post :guest_session
-    end
-  end
+  resource :home, only: :show
+
+  resource :guest_session, only: :create
 
   resources :subject_groups, only: :show
 
