@@ -1,6 +1,4 @@
-class SubjectGroupsController < ApplicationController
-  before_action :authenticate
-
+class SubjectGroupsController < AuthenticatedController
   def show
     @subject_group = SubjectGroup.find(params[:id])
     respond_to do |format|

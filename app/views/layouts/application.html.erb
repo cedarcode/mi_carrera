@@ -46,7 +46,7 @@
           <% end %>
           <%= yield :account %>
           <%= yield :credits %>
-          <% if !content_for?(:navigation_icon) %>
+          <% if !content_for?(:navigation_icon) and request.path != home_path %>
             <%= render 'shared/menu' %>
           <% end %>
         </section>

@@ -1,6 +1,4 @@
-class SubjectsController < ApplicationController
-  before_action :authenticate
-
+class SubjectsController < AuthenticatedController
   def index
     @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject.course) }
   end
