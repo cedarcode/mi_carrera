@@ -1,11 +1,8 @@
-class EmailVerificationsController < ApplicationController
-  def new
-  end
-
-  def create
-    user = User.find_by(id: params[:format])
-    session[:user_id] = user.id
+class UsersController < ApplicationController
+  def email_verification
+    user = User.find_by(id: params[:id])
     if user.update(verified: true)
+      session[:user_id] = user.id
       redirect_to root_path
     else
       flash[:error] = "Ocurrió un error al verificar tu correo electrónico"

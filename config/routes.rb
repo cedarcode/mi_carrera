@@ -22,7 +22,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :email_verifications, only: [:new, :create]
+  resources :users do
+    member do
+      get :email_verification
+    end
+  end
 
   resource :session, only: [:new, :destroy, :create] do
     collection do

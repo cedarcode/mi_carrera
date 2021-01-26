@@ -58,7 +58,8 @@ class CreateAccountTest < ApplicationSystemTestCase
     fill_in "Confirma tu nueva contraseña", with: 'alice123'
     click_on "Registrarte"
 
-    visit verify_email_account_path(User.find_by(email_address: 'alice@test.com'))
+    wait_for_async_request
+    visit email_verification_user_path(User.find_by(email_address: 'alice@test.com'))
 
     assert_current_path(root_path)
     assert_text "alice@test.com"
