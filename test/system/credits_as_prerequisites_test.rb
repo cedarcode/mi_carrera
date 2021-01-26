@@ -2,6 +2,9 @@ require "application_system_test_case"
 
 class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
   setup do
+    visit root_path
+    click_on "¡Probar la app!"
+
     maths = create_group(name: "Matemáticas")
     @gal1 = create_subject(name: "GAL 1", credits: 9, group: maths)
     @gal2 = create_subject(name: "GAL 2", credits: 9, group: maths)

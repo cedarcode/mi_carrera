@@ -2,6 +2,9 @@ require "application_system_test_case"
 
 class LoginLogoutTest < ApplicationSystemTestCase
   setup do
+    visit root_path
+    click_on "¡Probar la app!"
+
     create_user
   end
 

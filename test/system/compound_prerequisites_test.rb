@@ -2,6 +2,9 @@ require "application_system_test_case"
 
 class CompoundPrerequisitesTest < ApplicationSystemTestCase
   setup do
+    visit root_path
+    click_on "¡Probar la app!"
+
     maths = create_group(name: "Matemáticas")
     prog = create_group(name: "Programación")
     @gal1 = create_subject(name: "GAL 1", credits: 8, group: maths)

@@ -32,6 +32,27 @@ body {
   }
 }
 
+.home-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background: white;
+  width: 220px;
+  height: 40px;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.home-button:hover {
+  background-color: lightgray;
+}
+
 .credits-counter {
   padding-right: 16px;
 }
@@ -91,6 +112,9 @@ body {
   a {
     color: inherit;
     text-decoration-line: inherit;
+  }
+  a.home-button {
+    color: #444;
   }
   a.account-session {
     text-decoration-line: underline;
