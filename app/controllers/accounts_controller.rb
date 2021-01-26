@@ -62,7 +62,7 @@ class AccountsController < ApplicationController
       ResetPasswordMailer.forgot_password(user).deliver
       redirect_to root_path
     else
-      flash[:error] = "Ocurrió un error al recuperar la contraseña"
+      flash[:error] = "Ocurrió un error al restablecer la contraseña"
       redirect_to forgot_password_account_path
     end
   end
@@ -77,7 +77,7 @@ class AccountsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      flash[:error] = "Ocurrió un error al resetear la contraseña"
+      flash[:error] = "Ocurrió un error al restablecer la contraseña"
       redirect_to root_path
     end
   end
