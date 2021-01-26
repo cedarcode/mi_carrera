@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2021_01_22_184128) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "approvals"
     t.string "password_digest"
-    t.boolean "verified"
+    t.boolean "verified", default: false
   end
 
 end
