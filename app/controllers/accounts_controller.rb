@@ -44,7 +44,7 @@ class AccountsController < ApplicationController
       }
     )
     if user.save
-      session[:user_id] = user.id
+      sign_in(user.id)
       session[:approved_courses] = nil
       session[:approved_exams] = nil
       redirect_to root_path
