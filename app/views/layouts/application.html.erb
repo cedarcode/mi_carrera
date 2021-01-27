@@ -46,7 +46,7 @@
           <% end %>
           <%= yield :account %>
           <%= yield :credits %>
-          <% if !content_for?(:navigation_icon) %>
+          <% if !content_for?(:navigation_icon) and (current_user || session[:guest]) %>
             <%= render 'shared/menu' %>
           <% end %>
         </section>

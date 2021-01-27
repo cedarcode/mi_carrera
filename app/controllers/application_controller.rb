@@ -19,4 +19,10 @@ class ApplicationController < ActionController::Base
       @bedel ||= Bedel.new(session)
     end
   end
+
+  def authenticate
+    if !current_user and !session[:guest]
+      redirect_to home_path
+    end
+  end
 end

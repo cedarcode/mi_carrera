@@ -1,4 +1,6 @@
 class AccountsController < ApplicationController
+  before_action :authenticate, only: :show
+
   def show
     @groups_and_credits = bedel.credits_by_group
     respond_to do |format|

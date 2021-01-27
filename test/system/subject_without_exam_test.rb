@@ -2,6 +2,9 @@ require "application_system_test_case"
 
 class SubjectWihoutExamTest < ApplicationSystemTestCase
   setup do
+    visit root_path
+    click_on "¡Probar la app!"
+
     @subject = create_subject(name: "Taller", credits: 5, exam: false)
   end
 
