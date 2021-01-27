@@ -10,7 +10,7 @@ class PasswordResetsController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "Ocurrió un error al restablecer la contraseña"
-      redirect_to forgot_password_account_path
+      redirect_to new_password_resets_path
     end
   end
 end
