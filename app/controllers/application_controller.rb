@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     session[:user_id] = user.id
   end
 
+  def sign_out
+    session[:user_id] = nil
+  end
+
   private
 
   def bedel
