@@ -19,8 +19,6 @@ Rails.application.routes.draw do
   resource :account, only: [:show, :new, :create, :edit, :update] do
     collection do
       get :create_callback
-      get :forgot_password
-      post :reset_password
     end
   end
 
