@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email_address: params[:email])
-    if user and user.authenticate(params[:password]) and user.verified
+    if user and user.authenticate(params[:password]) and user.verified?
       sign_in(user)
       redirect_to root_path
     else
