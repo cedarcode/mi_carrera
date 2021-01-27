@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :password_resets, only: [:new, :create]
+
   resource :session, only: [:new, :destroy, :create] do
     collection do
       get :create_callback
