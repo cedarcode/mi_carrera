@@ -16,13 +16,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :account, only: [:show, :new, :create, :edit, :update] do
+  resource :account, only: [:show, :new, :create] do
     collection do
       get :create_callback
     end
   end
 
-  resource :password_resets, only: [:new, :create]
+  resources :password_resets, only: [:new, :create]
+  resources :passwords, only: [:new, :create]
 
   resource :session, only: [:new, :destroy, :create] do
     collection do

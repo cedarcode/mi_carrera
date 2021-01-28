@@ -4,13 +4,14 @@ class PasswordResetsController < ApplicationController
 
   def create
     user = User.find_by(email_address: params[:email])
+
     if user
-      session[:email] = user.email_address
+      user.generate_password_reset_token
+      user.save!
+
       PasswordResetsMailer.password_reset(user).deliver
-      redirect_to root_path
-    else
-      flash[:error] = "Ocurrió un error al restablecer la contraseña"
-      redirect_to new_password_resets_path
     end
+
+    redirect_to root_path, notice: "Se envió un correo electrónico a #{params[:email]}"
   end
 end

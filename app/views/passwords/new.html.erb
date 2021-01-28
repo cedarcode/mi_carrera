@@ -1,27 +1,31 @@
 <% content_for :navigation_icon do %>
   <%= nav_icon("arrow_back", (request.referer ? 'javascript:history.back()' : root_path)) %>
 <% end %>
+
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Restablecer contraseña</h3>
-  <ul class="mdc-list growing-text-list">
 
-    <%= form_with url: "/account", method: :put do |form| %>
-       <li class="sign-in-option">
-        <%= form.label :email, "Email:" %>
-        <%= form.email_field :email, class: "form-input", value: session[:email], readonly: true %>
+  <ul class="mdc-list growing-text-list">
+    <%= form_with url: "/passwords" do |form| %>
+      <%= form.hidden_field :t, value: params[:t] %>
+
+      <li class="sign-in-option">
+        <%= @user.email_address %>
       </li>
+
       <li class="sign-in-option">
         <%= form.label :password, "Nueva contraseña:" %>
         <%= form.password_field :password, class: "form-input", required: true %>
       </li>
+
       <li class="sign-in-option">
         <%= form.label :password_confirmation, "Confirma tu nueva contraseña:" %>
         <%= form.password_field :password_confirmation, class: "form-input", required: true %>
       </li>
+
       <li class="sign-in-option sign-in">
         <%= form.submit "Restablecer contraseña", class: "sign-in-button" %>
       </li>
     <% end %>
-
   </ul>
 </div>

@@ -19,7 +19,7 @@ class AccountsController < ApplicationController
         approved_exams: session[:approved_exams]
       }
     )
-    if user.valid?(:account_create) and user.save
+    if user.save
       session[:user_id] = user.id
       session[:approved_courses] = nil
       session[:approved_exams] = nil
@@ -49,21 +49,6 @@ class AccountsController < ApplicationController
     else
       flash[:error] = "Ocurrió un error al registrarte"
       redirect_to new_account_path
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    user = User.find_by(email_address: params[:email])
-    if (params[:password] == params[:password_confirmation]) and user.update(password: params[:password])
-      session[:email] = nil
-      session[:user_id] = user.id
-      redirect_to root_path
-    else
-      flash[:error] = "Ocurrió un error al restablecer la contraseña"
-      redirect_to root_path
     end
   end
 end
