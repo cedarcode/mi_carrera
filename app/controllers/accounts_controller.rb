@@ -21,7 +21,7 @@ class AccountsController < ApplicationController
         approved_exams: session[:approved_exams]
       }
     )
-    if user.valid?(:account_create) and user.save
+    if user.save
       session[:user_id] = user.id
       session[:approved_courses] = nil
       session[:approved_exams] = nil
