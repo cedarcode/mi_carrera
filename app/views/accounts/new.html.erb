@@ -22,11 +22,11 @@
       </li>
       <li class="sign-in-option">
         <%= form.label :password, "Nueva contraseña:" %>
-        <%= form.password_field :password, class: "form-input", required: true %>
+        <%= form.password_field :password, class: "form-input", autocomplete: "new-password", required: true %>
       </li>
       <li class="sign-in-option">
         <%= form.label :password_confirmation, "Confirma tu nueva contraseña:" %>
-        <%= form.password_field :password_confirmation, class: "form-input", required: true %>
+        <%= form.password_field :password_confirmation, class: "form-input", autocomplete: "new-password", required: true %>
       </li>
       <li class="sign-in-option sign-in">
         <%= form.submit "Registrarte", class: "sign-in-button" %>
