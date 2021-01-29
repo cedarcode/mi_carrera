@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   root to: "subjects#index"
 
+  resource :home, only: :show
+
+  resource :guest_session, only: :create
+
   resources :subject_groups, only: :show
 
   resources :subjects do
@@ -21,6 +25,9 @@ Rails.application.routes.draw do
       get :create_callback
     end
   end
+
+  resources :password_resets, only: [:new, :create]
+  resources :passwords, only: [:new, :create]
 
   resource :session, only: [:new, :destroy, :create] do
     collection do

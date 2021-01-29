@@ -24,6 +24,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "letter_opener", "~> 1.7"
   gem 'listen', '~> 3.1'
   gem 'rubocop', '~> 0.67.0'
   gem 'spring', '~> 2.1'

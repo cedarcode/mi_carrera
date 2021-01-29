@@ -23,6 +23,8 @@
 @import "@material/menu-surface/mdc-menu-surface";
 @import "@material/menu/mdc-menu";
 
+@import "flash";
+
 body {
   display: flex;
   justify-content: center;
@@ -30,6 +32,27 @@ body {
     max-width: 600px;
     flex-grow: 1;
   }
+}
+
+.home-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background: white;
+  width: 220px;
+  height: 40px;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.home-button:hover {
+  background-color: lightgray;
 }
 
 .credits-counter {
@@ -91,6 +114,9 @@ body {
   a {
     color: inherit;
     text-decoration-line: inherit;
+  }
+  a.home-button {
+    color: #444;
   }
   a.account-session {
     text-decoration-line: underline;
@@ -174,14 +200,6 @@ body {
   width: 20px;
   height: 20px;
   padding-right: 20px;
-}
-
-.flash-error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  color: red;
 }
 
 #menu-background {

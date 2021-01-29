@@ -46,15 +46,18 @@
           <% end %>
           <%= yield :account %>
           <%= yield :credits %>
-          <% if !content_for?(:navigation_icon) %>
+          <% if !content_for?(:navigation_icon) and (current_user || session[:guest]) %>
             <%= render 'shared/menu' %>
           <% end %>
         </section>
       </div>
     </header>
     <section class="content mdc-top-app-bar--fixed-adjust">
+      <% if flash[:notice] %>
+        <div class="flash flash-notice"><%= flash[:notice] %></div>
+      <% end %>
       <% if flash[:error] %>
-        <div class="flash-error"><%= flash[:error] %></div>
+        <div class="flash flash-error"><%= flash[:error] %></div>
       <% end %>
       <%= yield %>
     </section>

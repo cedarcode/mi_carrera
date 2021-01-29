@@ -2,6 +2,9 @@ require "application_system_test_case"
 
 class ApprovalTest < ApplicationSystemTestCase
   setup do
+    visit root_path
+    click_on "¡Probar la app!"
+
     @subject = create_subject(name: "GAL 1", credits: 9, exam: true)
   end
 

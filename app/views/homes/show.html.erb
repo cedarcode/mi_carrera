@@ -1,0 +1,17 @@
+<% content_for :title do %>
+  <span class="mdc-top-app-bar__title">Student</span>
+<% end %>
+
+<div class="mdc-list-group">
+  <ul class="mdc-list growing-text-list">
+    <li class="sign-in-option sign-in">
+      <%= link_to "Registrarte", new_account_path, class: "home-button" %>
+    </li>
+    <li class="sign-in-option sign-in">
+      <%= link_to "Iniciar sesión", new_session_path, class: "home-button" %>
+    </li>
+    <li class="sign-in-option sign-in">
+      <%= link_to "¡Probar la app!", guest_session_path, method: :post, class: "home-button" %>
+    </li>
+  </ul>
+</div>
