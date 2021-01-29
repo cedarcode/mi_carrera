@@ -7,7 +7,6 @@ class User < ApplicationRecord
   has_secure_password validations: false
   validates :password, confirmation: true, allow_blank: true
 
-
   def generate_password_reset_token
     self.password_reset_token = SecureRandom.hex(32)
   end
