@@ -44,7 +44,6 @@
               <span><%= current_user.email_address %></span>
             </div>
           <% end %>
-          <%= yield :account %>
           <%= yield :credits %>
           <% if !content_for?(:navigation_icon) and (current_user || session[:guest]) %>
             <%= render 'shared/menu' %>
