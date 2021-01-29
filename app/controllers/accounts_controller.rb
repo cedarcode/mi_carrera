@@ -22,7 +22,8 @@ class AccountsController < ApplicationController
         approved_exams: session[:approved_exams]
       }
     )
-    if user.valid?(:account_create) and user.save
+
+    if user.save
       session[:approved_courses] = nil
       session[:approved_exams] = nil
       EmailVerificationsMailer.verify(user).deliver
@@ -35,6 +36,7 @@ class AccountsController < ApplicationController
 
   def create_callback
     google_identity = GoogleSignIn::Identity.new(flash[:google_sign_in]["id_token"])
+
     user = User.new(
       name: google_identity.name,
       email_address: google_identity.email_address,
@@ -45,6 +47,7 @@ class AccountsController < ApplicationController
         approved_exams: session[:approved_exams]
       }
     )
+
     if user.save
       sign_in(user)
       session[:approved_courses] = nil
