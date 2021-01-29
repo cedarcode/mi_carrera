@@ -4,6 +4,9 @@ class PasswordResetTest < ApplicationSystemTestCase
   include ActionMailer::TestHelper
 
   setup do
+    visit root_path
+    click_on "¡Probar la app!"
+
     @user = create_user(email: "alice@test.com", name: "Alice A")
   end
 

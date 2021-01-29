@@ -7,7 +7,8 @@ class CreateAccountTest < ApplicationSystemTestCase
   end
 
   test "user can see a google sign in button" do
-    visit account_path
+    visit root_path
+    click_on "more_vert"
     click_on "Registrarte"
 
     assert_text "Registro"
