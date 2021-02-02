@@ -19,10 +19,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
     - name: Read .nvmrc
       run: echo ::set-output name=NVMRC::$(cat .nvmrc)
@@ -33,12 +29,17 @@ jobs:
       with:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      run:
+        bundle install --jobs=3 --retry=3 --deployment
+        yarn install --check-files
+
     - name: Run tests
       env:
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: postgres
       run:
-        yarn install --check-files
         bundle exec rake db:create
         bundle exec rake db:schema:load
         bundle exec rake
