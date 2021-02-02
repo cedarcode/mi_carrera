@@ -20,6 +20,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+
+    - name: Yarn install
+      run: yarn install --check-files
+
     - name: Read .nvmrc
       run: echo ::set-output name=NVMRC::$(cat .nvmrc)
       id: nvm
@@ -28,12 +36,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
-
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      run:
-        bundle install --jobs=3 --retry=3 --deployment
-        yarn install --check-files
 
     - name: Run tests
       env:
