@@ -17,8 +17,9 @@ class LoginLogoutTest < ApplicationSystemTestCase
 
   test "not signed in user can't see sign out link" do
     visit root_path
-    click_on "more_vert"
+    find("a.mdc-icon-button").click
 
+    assert_text "Ingresar"
     assert_no_text "Salir"
   end
 
