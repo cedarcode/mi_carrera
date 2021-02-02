@@ -13,8 +13,8 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: link_shortener
-          POSTGRES_PASSWORD: link_shortener
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
@@ -29,12 +29,12 @@ jobs:
       run: echo ::set-output name=NVMRC::$(cat .nvmrc)
       id: nvm
 
-    - name: Setup node
+    - name: Setup Node
       uses: actions/setup-node@v1
       with:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
-    - name: Yarn install
+    - name: Yarn
       run: yarn install --check-files
 
     - name: Run tests
