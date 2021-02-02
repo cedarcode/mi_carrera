@@ -4,13 +4,42 @@ on: [push, pull_request]
 
 jobs:
   test:
-    runs-on: macos-latest
+    runs-on:
+      macos-latest
+      ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:11
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: link_shortener
+          POSTGRES_PASSWORD: link_shortener
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
-      uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
+      uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+    - name: Read .nvmrc
+      run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+      id: nvm
+
+    - name: Setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '${{ steps.nvm.outputs.NVMRC }}'
+
     - name: Run tests
-      run: bundle exec rake
+      env:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+      run:
+        yarn
+        bundle exec rake db:create
+        bundle exec rake db:schema:load
+        bundle exec rake
