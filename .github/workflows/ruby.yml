@@ -47,9 +47,10 @@ jobs:
         RAILS_ENV: test
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: postgres
-        POSTGRES_DB: student_test
-        POSTGRES_HOST: localhost
-        POSTGRES_PORT: 5432
+        PG_HOST: localhost
+        PG_PORT: 5432
+        PGHOST: localhost
+        PGPORT: 5432
       run: |
         bundle exec rake db:create
         bundle exec rake db:schema:load
