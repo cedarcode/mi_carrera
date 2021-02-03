@@ -43,7 +43,7 @@ jobs:
 
     - name: Run tests
       env:
-        POSTGRES_HOST: localhost
+        POSTGRES_HOST: 127.0.0.1
         POSTGRES_PORT: 5432
       run: |
         bundle exec rake db:create
