@@ -10,6 +10,7 @@ jobs:
       postgres:
         image: postgres
         env:
+          POSTGRES_PASSWORD: postgres
           POSTGRES_DB: student_test
         options: >-
           --health-cmd pg_isready
@@ -43,6 +44,7 @@ jobs:
     - name: Run tests
       env:
         RAILS_ENV: test
+        DB_PASSWORD: postgres
         PGHOST: localhost
         PGPORT: 5432
       run: |
