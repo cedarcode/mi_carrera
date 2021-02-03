@@ -1,6 +1,6 @@
 name: Ruby
 
-on: [push, pull_request]
+on: push
 
 jobs:
   test:
@@ -39,9 +39,9 @@ jobs:
 
     - name: Run tests
       env:
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: postgres
-      run:
+        POSTGRES_HOST: localhost
+        POSTGRES_PORT: 5432
+      run: |
         bundle exec rake db:create
         bundle exec rake db:schema:load
         bundle exec rake
