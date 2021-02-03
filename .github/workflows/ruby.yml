@@ -4,14 +4,15 @@ on: push
 
 jobs:
   test:
-    runs-on:
-      ubuntu-latest
+    runs-on: ubuntu-latest
 
     services:
       postgres:
         image: postgres
         env:
+          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: student_test
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -43,7 +44,11 @@ jobs:
 
     - name: Run tests
       env:
-        POSTGRES_HOST: 127.0.0.1
+        RAILS_ENV: test
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_DB: student_test
+        POSTGRES_HOST: localhost
         POSTGRES_PORT: 5432
       run: |
         bundle exec rake db:create
