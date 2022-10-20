@@ -2,7 +2,10 @@ class SubjectsController < ApplicationController
   helper_method :bedel
 
   def index
-    @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject.course) }
+    @subjects = Subject
+                .includes(course: :prerequisite_tree)
+                .order(:semester)
+                .select { |subject| bedel.able_to_do?(subject.course) }
   end
 
   def approve
@@ -39,7 +42,10 @@ class SubjectsController < ApplicationController
   end
 
   def list_subjects
-    @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject.course) }
+    @subjects = Subject
+                .includes(course: :prerequisite_tree)
+                .order(:semester)
+                .select { |subject| bedel.able_to_do?(subject.course) }
     respond_to do |format|
       format.html { render '_subjects_bulk_approve', layout: false }
     end
