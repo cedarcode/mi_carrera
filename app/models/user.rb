@@ -3,8 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-          # for Google OmniAuth
-          :omniauthable, omniauth_providers: [:google_oauth2]
+         # for Google OmniAuth
+         :omniauthable, omniauth_providers: [:google_oauth2]
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -13,5 +13,9 @@ class User < ApplicationRecord
       user.full_name = auth.info.name # assuming the user model has a name
       user.avatar_url = auth.info.image # assuming the user model has an image
     end
+  end
+
+  def image_url
+    avatar_url || ActionController::Base.helpers.asset_path('default_profile_image.jpeg')
   end
 end

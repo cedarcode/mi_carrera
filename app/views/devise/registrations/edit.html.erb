@@ -1,43 +1,55 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+<% content_for :navigation_icon do %>
+  <%= nav_icon("arrow_back", (request.referer || root_path)) %>
 <% end %>
+<div class="mdc-list-group">
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Editar Usuario</h3>
+  <ul class="mdc-list growing-text-list">
 
-<h3>Cancel my account</h3>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <li class="sign-in-option">
+        <%= f.label :full_name %><br />
+        <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", class: "form-input" %>
+      </li>
 
-<%= link_to "Back", :back %>
+      <% if resource.provider.nil? %>
+
+        <li class="sign-in-option">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input" %>
+        </li>
+
+        <li class="sign-in-option">
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-input" %>
+          <% if @minimum_password_length %>
+            <br />
+            <em><%= @minimum_password_length %> characters minimum</em>
+          <% end %>
+        </li>
+
+        <li class="sign-in-option">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input" %>
+        </li>
+
+        <li class="sign-in-option">
+          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.password_field :current_password, autocomplete: "current-password", class: "form-input" %>
+        </li>
+
+      <% end %>
+
+      <div class="button-container">
+        <%= f.button class: 'mdc-button mdc-button--raised update' do %>
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">
+            Update
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+
+  </ul>
+</div>

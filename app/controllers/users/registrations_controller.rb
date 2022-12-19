@@ -1,4 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :configure_permitted_parameters_sign_up, only: [:create]
+  before_action :configure_permitted_parameters_account_update, only: [:update]
 
   private
 
@@ -10,5 +12,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       resource.update_with_password(params)
     end
+  end
+
+  def configure_permitted_parameters_sign_up
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name, :email, :password, :password_confirmation])
+  end
+
+  def configure_permitted_parameters_account_update
+    devise_parameter_sanitizer.permit(:account_update, keys: [:full_name, :email, :password, :password_confirmation, :current_password, :curent_password])
   end
 end

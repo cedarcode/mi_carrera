@@ -1,8 +1,9 @@
 <% content_for :navigation_icon do %>
   <%= nav_icon("arrow_back", (request.referer || root_path)) %>
 <% end %>
+
 <div class="mdc-list-group">
-  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Registro</h3>
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Ingreso</h3>
   <ul class="mdc-list growing-text-list">
 
     <li class="sign-in-option sign-in">
@@ -19,32 +20,31 @@
     </li>
     <li role="separator" class="mdc-list-divider"></li>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+
       <li class="sign-in-option sign-in">
-        Registrarte con tu correo electrónico
+        Ingresar con tu correo electrónico
       </li>
       <li class="sign-in-option">
         <%= f.label :email, "Correo electrónico:" %>
         <%= f.email_field :email, class: "form-input", required: true %>
       </li>
       <li class="sign-in-option">
-        <%= f.label :password, "Nueva contraseña:" %>
+        <%= f.label :password, "Contraseña:" %>
         <%= f.password_field :password, class: "form-input", required: true %>
       </li>
-      <li class="sign-in-option">
-        <%= f.label :password_confirmation, "Confirma tu nueva contraseña:" %>
-        <%= f.password_field :password_confirmation, class: "form-input", required: true %>
-      </li>
       <li class="sign-in-option sign-in">
-        <%= f.submit "Registrarte", class: "sign-in-button" %>
+        <%= f.submit "Ingresar", class: "sign-in-button" %>
       </li>
-    <% end %>
 
-    <li role="separator" class="mdc-list-divider"></li>
-    <li class="sign-in-option sign-in">
-      ¿Ya estás registrado?
-      <%= link_to 'Ingresar', new_session_path(resource), class: "account-session" %>
-    </li>
+    <% end %>
+      <li role="separator" class="mdc-list-divider"></li>
+      <li class="sign-in-option sign-in">
+        ¿No estás registrado?
+        <%= link_to 'Registrarte', new_registration_path(resource), class: "account-session" %>
+      </li>
 
   </ul>
 </div>
+
