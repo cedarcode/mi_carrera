@@ -35,15 +35,7 @@
               <span><%= current_user.full_name %></span>
               <span><%= current_user.email %></span>
             </div>
-
-            <%= link_to edit_user_registration_path do %>
-              <%= image_tag(current_user.image_url, class: "google-sign-in-image") %>
-            <% end %>
-
-            <%= link_to destroy_user_session_path, method: :delete, class: 'white-link' do %>
-              Logout
-            <% end %>
-
+            <%= render 'shared/profile_menu' %>
           <% else %>
             <%= link_to "Login", new_user_session_path, class: 'white-link' %>
           <% end %>
@@ -52,7 +44,7 @@
           </span>
           <%= yield :account %>
           <%= yield :credits %>
-          <% if !content_for?(:navigation_icon) && (current_user || session[:guest]) %>
+          <% if !content_for?(:navigation_icon) %>
             <%= render 'shared/menu' %>
           <% end %>
         </section>

@@ -39,7 +39,7 @@ body {
 .home-button {
   color: white;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -62,6 +62,7 @@ body {
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
+  margin-right: 1em;
 }
 .home-button:hover {
   cursor: pointer;
@@ -150,7 +151,6 @@ body {
 // Make ellipsis work on list item (https://github.com/material-components/material-components-web/issues/1912)
 .mdc-list-item__text {
   @include mdc-typography-overflow-ellipsis;
-
   display: block;
   flex: 1;
 }
@@ -168,6 +168,9 @@ body {
   padding: 16px;
   display: flex;
   flex-direction: column;
+}
+.sign-in-option label {
+  margin-bottom: 5px;
 }
 
 .sign-in-form-option {

@@ -9,33 +9,32 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <li class="sign-in-option">
-        <%= f.label :full_name %><br />
+        <%= f.label :full_name %>
         <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", class: "form-input" %>
       </li>
 
       <% if resource.provider.nil? %>
 
         <li class="sign-in-option">
-          <%= f.label :email %><br />
+          <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input" %>
         </li>
 
         <li class="sign-in-option">
-          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, autocomplete: "new-password", class: "form-input" %>
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
           <% if @minimum_password_length %>
-            <br />
             <em><%= @minimum_password_length %> characters minimum</em>
           <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-input" %>
         </li>
 
         <li class="sign-in-option">
-          <%= f.label :password_confirmation %><br />
+          <%= f.label :password_confirmation %>
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input" %>
         </li>
 
         <li class="sign-in-option">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
           <%= f.password_field :current_password, autocomplete: "current-password", class: "form-input" %>
         </li>
 
