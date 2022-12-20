@@ -1,18 +1,24 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <li class="sign-in-option sign-in">
+    ¿Ya estás registrado?
+    <%= link_to 'Iniciar', new_session_path(resource), class: "account-session" %>
+  </li>
 <% end %>
-
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+  <li class="sign-in-option sign-in">
+    ¿No estás registrado?
+    <%= link_to 'Registrarte',new_registration_path(resource), class: "account-session" %>
+  </li>
 <% end %>
-
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= form_for "Login",
-      url: omniauth_authorize_path(resource_name, provider),
-      method: :post,
-      data: {turbo: "false"} do |f| %>
-        <%= f.submit "Login", type: "image", src: url_for("/assets/btn_google_signin_dark_normal_web.png") %>
-    <% end %>
-  <% end %>
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <li class="sign-in-option sign-in">
+    ¿Has olvidado tu contraseña?
+    <%= link_to 'Restablecer contraseña', new_password_path(resource), class: "account-session" %>
+  </li>
+<% end %>
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <li class="sign-in-option sign-in">
+    ¿No recibiste instrucciones de confirmacion?
+    <%= link_to 'Enviar instrucciones', new_confirmation_path(resource), class: "account-session" %>
+  </li>
 <% end %>

@@ -40,10 +40,7 @@
 
     <% end %>
       <li role="separator" class="mdc-list-divider"></li>
-      <li class="sign-in-option sign-in">
-        ¿No estás registrado?
-        <%= link_to 'Registrarte', new_registration_path(resource), class: "account-session" %>
-      </li>
+      <%= render "devise/shared/links" %>
 
   </ul>
 </div>

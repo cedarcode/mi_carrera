@@ -1,0 +1,3 @@
+<% if resource.errors[field].any? %>
+  <div class="invalid-feedback d-block"><%= resource.errors[field].to_sentence.capitalize %></div>
+<% end %>

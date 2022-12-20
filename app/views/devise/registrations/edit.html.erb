@@ -6,36 +6,40 @@
   <ul class="mdc-list growing-text-list">
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
 
       <li class="sign-in-option">
         <%= f.label :full_name %>
-        <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", class: "form-input" %>
+        <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", class: "form-input #{'is-invalid' if resource.errors[:full_name].any?}" %>
+        <%= render 'shared/invalid_feedback', resource: resource, field: :full_name %>
       </li>
 
       <% if resource.provider.nil? %>
 
         <li class="sign-in-option">
           <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input #{'is-invalid' if resource.errors[:email].any?}" %>
+          <%= render 'shared/invalid_feedback', resource: resource, field: :email %>
         </li>
 
         <li class="sign-in-option">
-          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+          <%= f.label :password %> <i>(Dejar en blanco si no lo quieres cambiar)</i>
           <% if @minimum_password_length %>
-            <em><%= @minimum_password_length %> characters minimum</em>
+            <em><%= @minimum_password_length %> caracteres mínimo</em>
           <% end %>
-          <%= f.password_field :password, autocomplete: "new-password", class: "form-input" %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-input #{'is-invalid' if resource.errors[:password].any?}" %>
+          <%= render 'shared/invalid_feedback', resource: resource, field: :password %>
         </li>
 
         <li class="sign-in-option">
           <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input #{'is-invalid' if resource.errors[:password_confirmation].any?}" %>
+          <%= render 'shared/invalid_feedback', resource: resource, field: :password_confirmation %>
         </li>
 
         <li class="sign-in-option">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-          <%= f.password_field :current_password, autocomplete: "current-password", class: "form-input" %>
+          <%= f.label :current_password %> <i>(Necesitamos tu contraseña actual para validar los cambios)</i>
+          <%= f.password_field :current_password, autocomplete: "current-password", class: "form-input #{'is-invalid' if resource.errors[:current_password].any?}" %>
+          <%= render 'shared/invalid_feedback', resource: resource, field: :current_password %>
         </li>
 
       <% end %>
@@ -44,7 +48,7 @@
         <%= f.button class: 'mdc-button mdc-button--raised update' do %>
           <div class="mdc-button__ripple"></div>
           <span class="mdc-button__label">
-            Update
+            Guardar
           </span>
         <% end %>
       </div>

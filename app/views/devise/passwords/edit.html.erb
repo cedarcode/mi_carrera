@@ -1,0 +1,28 @@
+<% content_for :navigation_icon do %>
+  <%= nav_icon("arrow_back", (request.referer || root_path)) %>
+<% end %>
+
+<div class="mdc-list-group">
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Restablecer Contraseña</h3>
+  <ul class="mdc-list growing-text-list">
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.hidden_field :reset_password_token %>
+
+      <li class="sign-in-option">
+        <%= f.label :password, "New password" %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'is-invalid' if resource.errors[:password].any? %>
+        <%= render 'shared/invalid_feedback', resource: resource, field: :password %>
+      </li>
+
+      <li class="sign-in-option sign-in">
+        <%= f.submit "Change my password", class: "sign-in-button" %>
+      </li>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </ul>
+</div>

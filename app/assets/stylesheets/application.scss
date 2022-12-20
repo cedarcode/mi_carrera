@@ -164,6 +164,10 @@ body {
   align-items: center;
 }
 
+.field_with_errors {
+  display: flex;
+  flex-direction: column;
+}
 .sign-in-option {
   padding: 16px;
   display: flex;
@@ -234,4 +238,20 @@ body {
 
 .button-container button {
   margin: 3px;
+}
+
+.links-container {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.invalid-feedback {
+  color: red;
+}
+
+.is-invalid {
+  border-color: red;
 }
