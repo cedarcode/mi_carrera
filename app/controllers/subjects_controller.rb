@@ -41,8 +41,12 @@ class SubjectsController < ApplicationController
   def list_subjects
     @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject.course) }
     respond_to do |format|
-      format.html { render '_subjects_list', layout: false }
+      format.html { render '_subjects_bulk_approve', layout: false }
     end
+  end
+
+  def all
+    @subjects = Subject.order(:semester)
   end
 
   private

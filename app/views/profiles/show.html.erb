@@ -1,15 +1,15 @@
 <% content_for :navigation_icon do %>
-  <%= link_to "arrow_back", root_path, :class => "material-icons mdc-top-app-bar__navigation-icon" %>
+  <%= nav_icon("arrow_back", (request.referer ? 'javascript:history.back()' : root_path)) %>
 <% end %>
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5">Avance de carrera</h3>
-  <ul class="mdc-list">
+  <ul class="mdc-list growing-text-list">
     <li role="separator" class="mdc-list-divider"></li>
     <% @groups_and_credits.each do |group| %>
       <li class="mdc-list-item">
-        <span class="mdc-list-item__text">
-          <%= truncate(group[:subject_group].name, :length => 35) %>
-        </span>
+        <%= link_to subject_group_path(group[:subject_group]), :class => "mdc-list-item__text" do %>
+          <%= group[:subject_group].name %>
+        <% end %>
         <span class="mdc-list-item__meta">
           <%= group[:credits] %>
         </span>

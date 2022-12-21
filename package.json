@@ -1,17 +1,23 @@
 {
   "name": "student",
   "private": true,
+  "engines": {
+    "node": "12.x",
+    "yarn": "1.x"
+  },
   "dependencies": {
-    "@material/checkbox": "^0.44.0",
-    "@material/list": "^0.44.0",
-    "@material/top-app-bar": "^0.44.0",
-    "@material/typography": "^0.44.0",
-    "@rails/webpacker": "3.5",
+    "@material/checkbox": "^3.0.0",
+    "@material/list": "^3.0.0",
+    "@material/top-app-bar": "^3.0.0",
+    "@material/typography": "^3.0.0",
+    "@material/menu": "^3.0.0",
+    "@material/menu-surface": "^3.0.0",
+    "@rails/webpacker": "4.2.2",
     "stimulus": "^1.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.15.1",
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": "3.10.1"
   }
 }

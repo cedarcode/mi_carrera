@@ -1,40 +1,74 @@
 calc1:
+  code: "1020"
   name: "Cálculo 1"
-  credits: 13
+  credits: 16
   group: maths
+  openfing_id: "c1"
   semester: 1
   has_exam: true
+  eva_id: "74"
+  course-needs:
+    - not:
+      - subject: calc-dif-int-1
+        type: course
   exam-needs:
     - subject: calc1
       type: course
 
+calc-dif-int-1:
+  code: "1061"
+  name: "Cálculo diferencial e integral en una variable"
+  short_name: "Cálculo DIV"
+  credits: 13
+  group: maths
+  openfing_id: "civ"
+  semester: 1
+  has_exam: true
+  eva_id: "1024"
+  course-needs:
+    - not:
+      - subject: calc1
+        type: course
+  exam-needs:
+    - subject: calc-dif-int-1
+      type: course
+
 gal1:
+  code: "1030"
   name: "Geometría y Álgebra Lineal 1"
   short_name: "GAL 1"
   credits: 9
   group: maths
+  openfing_id: "gal1"
   semester: 1
   has_exam: true
+  eva_id: "256"
   exam-needs:
     - subject: gal1
       type: course
 
 f1:
+  code: "1151"
   name: "Física 1"
   credits: 10
   group: experimental_sciences
+  openfing_id: "f1-2018"
   semester: 1
   has_exam: true
+  eva_id: "87"
   exam-needs:
     - subject: f1
       type: course
 
 calc2:
+  code: "1022"
   name: "Cálculo 2"
   credits: 16
   group: maths
+  openfing_id: "c2"
   semester: 2
   has_exam: true
+  eva_id: "319"
   course-needs:
     - subject: calc1
       type: course
@@ -45,13 +79,36 @@ calc2:
       - subject: calc1
         type: exam
 
+calc-dif-int-2:
+  code: "1062"
+  name: "Cálculo diferencial e integral en varias variables"
+  short_name: "Cálculo DIVV"
+  credits: 13
+  group: maths
+  openfing_id: "cdivv"
+  semester: 2
+  has_exam: true
+  eva_id: "1131"
+  course-needs:
+    - subject: calc-dif-int-1
+      type: course
+  exam-needs:
+    - and:
+      - subject: calc-dif-int-2
+        type: course
+      - subject: calc-dif-int-1
+        type: exam
+
 gal2:
+  code: "1031"
   name: "Geometría y Álgebra Lineal 2"
   short_name: "GAL 2"
   credits: 9
   group: maths
+  openfing_id: "gal2"
   semester: 2
   has_exam: true
+  eva_id: "270"
   course-needs:
     - subject: gal1
       type: course
@@ -63,47 +120,65 @@ gal2:
         type: exam
 
 discreta1:
+  code: "1023"
   name: "Matemática Discreta 1"
   credits: 9
   group: maths
+  openfing_id: "md1"
   semester: 2
   has_exam: true
+  eva_id: "323"
   exam-needs:
     - subject: discreta1
       type: course
 
 p1:
+  code: "1322"
   name: "Programación 1"
   credits: 10
   group: programming
+  openfing_id: "p1"
   semester: 2
   has_exam: true
+  eva_id: "58"
   exam-needs:
     - subject: p1
       type: course
 
 pye:
+  code: "1025"
   name: "Probabilidad y Estádistica"
   credits: 10
   group: maths
+  openfing_id: "pye18"
   semester: 3
   has_exam: true
+  eva_id: "54"
   course-needs:
     - and:
-      - subject: calc1
-        type: exam
-      - subject: calc2
-        type: course
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
+      - or:
+        - subject: calc-dif-int-2
+          type: course
+        - subject: calc2
+          type: course
   exam-needs:
     - subject: pye
       type: course
 
 discreta2:
+  code: "1026"
   name: "Matemática Discreta 2"
   credits: 9
   group: maths
+  openfing_id: "md2"
   semester: 3
   has_exam: true
+  eva_id: "267"
   course-needs:
     - and:
       - subject: discreta1
@@ -115,11 +190,14 @@ discreta2:
       type: course
 
 logica:
+  code: "1027"
   name: "Lógica"
   credits: 12
   group: maths
+  openfing_id: "logica19"
   semester: 3
   has_exam: true
+  eva_id: "394"
   course-needs:
     - subject: discreta1
       type: course
@@ -128,11 +206,14 @@ logica:
       type: course
 
 p2:
+  code: "1321"
   name: "Programación 2"
   credits: 12
   group: programming
+  openfing_id: "p2"
   semester: 3
   has_exam: true
+  eva_id: "132"
   course-needs:
     - subject: p1
       type: course
@@ -141,21 +222,27 @@ p2:
       type: course
 
 economia:
+  code: "1224"
   name: "Economía"
   credits: 7
   group: human_sciences
+  openfing_id: "eco"
   semester: 4
   has_exam: true
+  eva_id: "1093"
   exam-needs:
     - subject: economia
       type: course
 
 p3:
+  code: "1323"
   name: "Programación 3"
   credits: 15
   group: programming
+  openfing_id: "prog3-2018"
   semester: 4
   has_exam: true
+  eva_id: "39"
   course-needs:
     - and:
       - subject: p1
@@ -169,15 +256,21 @@ p3:
       type: course
 
 arqui:
+  code: "1443"
   name: "Arquitectura de Computadoras"
   credits: 12
   group: arqui_op_network
+  openfing_id: "ac"
   semester: 4
   has_exam: true
+  eva_id: "195"
   course-needs:
     - and:
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
       - subject: p1
         type: exam
       - subject: logica
@@ -191,6 +284,7 @@ arqui:
       type: course
 
 pol-cientf:
+  code: "1225"
   name: "Politicas Científicas en Información y Computación"
   short_name: "Politicas Científicas"
   credits: 3
@@ -202,42 +296,60 @@ pol-cientf:
       type: course
 
 metnum:
+  code: "1033"
   name: "Métodos Numéricos"
   credits: 8
   group: numeric_calculus
+  openfing_id: "metn"
   semester: 4
   has_exam: true
+  eva_id: "62"
   course-needs:
     - and:
-      - subject: calc2
-        type: exam
+      - or:
+        - subject: calc-dif-int-2
+          type: exam
+        - subject: calc2
+          type: exam
       - subject: gal1
         type: exam
       - subject: p1
         type: exam
       - subject: gal2
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
   exam-needs:
     - subject: metnum
       type: course
 
 iio:
+  code: "1610"
   name: "Introducción a la Investigación de Operaciones"
   short_name: "IIO"
   credits: 10
   group: investigation
+  openfing_id: "iio"
   semester: 5
   has_exam: true
+  eva_id: "994"
   course-needs:
     - and:
       - subject: gal1
         type: exam
-      - subject: calc2
-        type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-2
+          type: exam
+        - subject: calc2
+          type: exam
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
       - subject: gal2
         type: exam
       - subject: pye
@@ -247,11 +359,14 @@ iio:
       type: course
 
 teoleng:
+  code: "1325"
   name: "Teoría de Lenguajes"
   credits: 12
   group: programming
+  openfing_id: "tl"
   semester: 5
   has_exam: true
+  eva_id: "687"
   course-needs:
     - and:
       - subject: logica
@@ -260,8 +375,11 @@ teoleng:
         type: exam
       - subject: gal1
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
       - subject: p3
         type: course
   exam-needs:
@@ -269,17 +387,23 @@ teoleng:
       type: course
 
 sisoper:
+  code: "1537"
   name: "Sistemas Operativos"
   credits: 12
   group: arqui_op_network
+
   semester: 5
   has_exam: true
+  eva_id: "720"
   course-needs:
     - and:
       - subject: discreta1
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
       - subject: gal1
         type: exam
       - subject: arqui
@@ -293,11 +417,14 @@ sisoper:
       type: course
 
 p4:
+  code: "1324"
   name: "Programación 4"
   credits: 15
   group: programming
+  openfing_id: "p4"
   semester: 5
   has_exam: true
+  eva_id: "413"
   course-needs:
     - and:
       - subject: discreta1
@@ -308,14 +435,19 @@ p4:
         type: course
       - subject: gal1
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc1
+          type: exam
+        - subject: calc-dif-int-1
+          type: exam
   exam-needs:
     - subject: p4
       type: course
 
 cts:
-  name: "Ciencia Tecnología y Sociedad"
+  code: "1223"
+  name: "Ciencia, Tecnología y Sociedad"
+  short_name: "CTS"
   credits: 8
   group: human_sciences
   semester: 5
@@ -325,12 +457,15 @@ cts:
       type: course
 
 agpi:
+  code: "1944"
   name: "Administración General para Ingenieros"
   short_name: "AGPI"
   credits: 5
   group: organization_management
+  openfing_id: "agpi"
   semester: 5
   has_exam: true
+  eva_id: "778"
   course-needs:
     - credits: total
       amount: 150
@@ -339,21 +474,27 @@ agpi:
       type: course
 
 gescalid:
+  code: "1940"
   name: "Gestión de Calidad"
   credits: 6
   group: organization_management
   semester: 5
   has_exam: true
+  eva_id: "156"
   exam-needs:
     - subject: gescalid
       type: course
 
 fbd:
-  name: "Fundamentos de Base de Datos"
+  code: "1911"
+  name: "Fundamentos de Bases de Datos"
+  short_name: "Bases de datos"
   credits: 15
   group: databases
+  openfing_id: "fbd"
   semester: 6
   has_exam: true
+  eva_id: "330"
   course-needs:
     - and:
       - subject: discreta2
@@ -367,10 +508,13 @@ fbd:
       type: course
 
 tprog:
+  code: "1327"
   name: "Taller de Programación"
   credits: 15
   group: projects
+  openfing_id: "tp"
   semester: 6
+  eva_id: "315"
   course-needs:
     - and:
       - subject: p4
@@ -379,12 +523,14 @@ tprog:
         type: exam
 
 pai:
+  code: "1945"
   name: "Práctica de Administración para Ingenieros"
   short_name: "PAI"
   credits: 5
   group: organization_management
   semester: 6
   has_exam: true
+  eva_id: "779"
   course-needs:
     - subject: agpi
       type: course
@@ -396,11 +542,14 @@ pai:
         type: exam
 
 redes:
+  code: "1446"
   name: "Redes de Computadoras"
   credits: 12
   group: arqui_op_network
+  openfing_id: "redes"
   semester: 6
   has_exam: true
+  eva_id: "335"
   course-needs:
     - and:
       - subject: arqui
@@ -409,18 +558,23 @@ redes:
         type: course
       - subject: p3
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
   exam-needs:
     - subject: redes
       type: course
 
 cc:
+  code: "1510"
   name: "Control de Calidad"
   credits: 8
   group: organization_management
   semester: 6
   has_exam: true
+  eva_id: "49"
   course-needs:
     - credits: total
       amount: 80
@@ -429,12 +583,15 @@ cc:
       type: course
 
 iis:
+  code: "1716"
   name: "Introducción a la Ingeniería de Software"
   short_name: "IIS"
   credits: 10
   group: software_engeneering
+  openfing_id: "iis19"
   semester: 7
   has_exam: true
+  eva_id: "613"
   course-needs:
     - and:
       - subject: p4
@@ -448,11 +605,13 @@ iis:
       type: course
 
 pis:
+  code: "1721"
   name: "Proyecto de Ingeniería de Software"
   short_name: "PIS"
   credits: 15
   group: projects
   semester: 8
+  eva_id: "573"
   course-needs:
     - and:
       - subject: p4
@@ -461,10 +620,12 @@ pis:
         type: course
 
 proy:
+  code: "1730"
   name: "Proyecto de Grado"
   credits: 30
   group: projects
   semester: 9
+  eva_id: "627"
   course-needs:
     - or:
       - credits: total
@@ -519,9 +680,11 @@ proy:
           type: course
 
 aln:
+  code: "5914"
   name: "Álgebra Lineal Numérica"
   credits: 9
   group: numeric_calculus
+  eva_id: "1143"
   course-needs:
     - and:
       - subject: p3
@@ -530,9 +693,12 @@ aln:
         type: exam
 
 ae:
+  code: "1637"
   name: "Algoritmos Evolutivos"
-  credits: 9
+  credits: 10
   group: investigation
+  openfing_id: "ae"
+  eva_id: "1049"
   course-needs:
     - and:
       - subject: pye
@@ -543,10 +709,12 @@ ae:
         type: exam
 
 aaac:
+  code: "1444"
   name: "Aspectos Avanz. de Arq. de Computadoras"
   short_name: "AA de Arqui. de Computadoras"
   credits: 8
   group: arqui_op_network
+  eva_id: "268"
   course-needs:
     - and:
       - subject: arqui
@@ -555,9 +723,11 @@ aaac:
         type: course
 
 educbutia:
-  name: "Butia:Robótica Educativa"
+  code: "1849"
+  name: "Butia: Robótica Educativa"
   credits: 8
   group: artificial_intelligence
+  eva_id: "312"
   course-needs:
     - and:
       - credits: total
@@ -566,9 +736,11 @@ educbutia:
         type: exam
 
 compiladores:
+  code: "1331"
   name: "Diseño de Compiladores"
   credits: 12
   group: programming
+  eva_id: "789"
   course-needs:
     - and:
       - subject: p4
@@ -581,10 +753,12 @@ compiladores:
         type: course
 
 disdw:
+  code: "1939"
   name: "Diseño y Construcción de Data Warehouse"
   short_name: "Data Warehouse"
   credits: 10
   group: databases
+  eva_id: "648"
   course-needs:
     - and:
       - subject: p4
@@ -595,9 +769,11 @@ disdw:
         type: course
 
 cripto:
+  code: "1545"
   name: "Criptografía"
   credits: 10
   group: arqui_op_network
+  eva_id: "938"
   course-needs:
     - and:
       - subject: discreta1
@@ -608,10 +784,12 @@ cripto:
         type: exam
 
 fsi:
+  code: "5916"
   name: "Fundamentos de la Seguridad Informática"
-  short_name: "Seguridad Informática"
+  short_name: "FSI"
   credits: 12
   group: arqui_op_network
+  eva_id: "399"
   course-needs:
     - and:
       - subject: logica
@@ -626,10 +804,12 @@ fsi:
         type: exam
 
 inpercom:
+  code: "1749"
   name: "Interacción Persona Computadora"
   short_name: "Inter. Persona Computadora"
   credits: 12
   group: software_engeneering
+  eva_id: "1121"
   course-needs:
     - and:
       - subject: p4
@@ -638,10 +818,12 @@ inpercom:
         type: course
 
 compgraf:
+  code: "1316"
   name: "Introducción a la Computación Gráfica"
   short_name: "Intro. a la Computación Gráfica"
   credits: 10
   group: programming
+  eva_id: "205"
   course-needs:
     - and:
       - subject: p4
@@ -654,9 +836,11 @@ compgraf:
         type: course
 
 progfunc:
+  code: "1354"
   name: "Programación Funcional"
   credits: 10
   group: programming
+  eva_id: "138"
   course-needs:
     - and:
       - subject: discreta1
@@ -669,9 +853,12 @@ progfunc:
         type: exam
 
 plogica:
+  code: "1340"
   name: "Programación Lógica"
   credits: 10
   group: programming
+  openfing_id: "pl"
+  eva_id: "293"
   course-needs:
     - and:
       - subject: discreta2
@@ -684,6 +871,7 @@ plogica:
         type: exam
 
 proggen:
+  code: "1333"
   name: "Introducción a la Programación Genérica"
   short_name: "Programación Genérica"
   credits: 10
@@ -693,18 +881,22 @@ proggen:
       type: course
 
 iti:
+  code: "1432"
   name: "Introducción a la Teoría de la Información"
   short_name: "Intro. a la Teo. de la Info."
   credits: 8
   group: maths
+  eva_id: "412"
   course-needs:
     - subject: pye
       type: exam
 
 mmc:
+  code: "1055"
   name: "Métodos de Monte Carlo"
   credits: 8
   group: numeric_calculus
+  eva_id: "24"
   course-needs:
     - and:
       - subject: iio
@@ -715,19 +907,24 @@ mmc:
         type: exam
 
 optincert:
+  code: "1632"
   name: "Optimización Bajo Incertidumbre"
   short_name: "Opt. Bajo Incertidumbre"
   credits: 8
   group: investigation
+  eva_id: "397"
   course-needs:
     - subject: iio
       type: exam
 
 calc3:
+  code: "1024"
   name: "Cálculo 3"
   credits: 10
   group: maths
+  openfing_id: "c3"
   has_exam: true
+  eva_id: "129"
   course-needs:
     - and:
       - subject: calc1
@@ -740,35 +937,70 @@ calc3:
     - subject: calc3
       type: course
 
+calc-vec:
+  code: "1063"
+  name: "Cálculo vectorial"
+  credits: 10
+  group: maths
+  openfing_id: "calcvec"
+  has_exam: true
+  eva_id: "1183"
+  course-needs:
+    - and:
+      - subject: calc-dif-int-1
+        type: exam
+      - subject: gal1
+        type: exam
+      - subject: calc-dif-int-2
+        type: course
+  exam-needs:
+    - subject: calc-vec
+      type: course
+
 f2:
+  code: "1152"
   name: "Física 2"
   credits: 10
   group: experimental_sciences
+  openfing_id: "f2"
   has_exam: true
+  eva_id: "32"
   course-needs:
     - and:
-      - subject: calc1
-        type: course
+      - or:
+        - subject: calc-dif-int-1
+          type: course
+        - subject: calc1
+          type: course
       - subject: f1
         type: course
   exam-needs:
     - and:
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
       - subject: f1
         type: exam
       - subject: f2
         type: course
 
 f3:
+  code: "1153"
   name: "Física 3"
   credits: 10
   group: experimental_sciences
+  openfing_id: "f3"
   has_exam: true
+  eva_id: "32"
   course-needs:
     - and:
-      - subject: calc1
-        type: course
+      - or:
+        - subject: calc-dif-int-1
+          type: course
+        - subject: calc1
+          type: course
       - or:
           - subject: f1
             type: exam
@@ -781,16 +1013,21 @@ f3:
     - and:
       - subject: f1
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
       - subject: f3
         type: course
 
 tsi1:
+  code: "1751"
   name: "Taller de Sistemas de Información 1"
   short_name: "TSI 1"
   credits: 10
   group: projects
+  eva_id: "402"
   course-needs:
     - and:
       - subject: p4
@@ -803,15 +1040,18 @@ tsi1:
         type: course
 
 fpe:
+  code: "1631"
   name: "Fundamentos de Programación Entera"
   short_name: "Fund. de Prog. Entera"
   credits: 8
   group: investigation
+  eva_id: "269"
   course-needs:
     - subject: iio
       type: exam
 
 cd:
+  code: "1935"
   name: "Calidad de Datos"
   credits: 8
   group: organization_management
@@ -827,10 +1067,13 @@ cd:
         type: course
 
 hpc:
+  code: "1434"
   name: "Computación de Alta Performance"
   short_name: "Comp. de Alta Performance"
   credits: 10
   group: arqui_op_network
+  openfing_id: "hpc"
+  eva_id: "1064"
   course-needs:
     - and:
       - subject: p4
@@ -843,10 +1086,12 @@ hpc:
         type: course
 
 gpgpu:
+  code: "1447"
   name: "Computación de Propósito General en Unidades de Procesamiento Gráfico"
   short_name: "GPGPU"
   credits: 7
   group: arqui_op_network
+  eva_id: "1076"
   course-needs:
     - and:
       - subject: arqui
@@ -857,18 +1102,22 @@ gpgpu:
         type: course
 
 dtr:
+  code: "1435"
   name: "Diseño Topológico de Redes"
   credits: 10
   group: arqui_op_network
+  eva_id: "1083"
   course-needs:
     - subject: iio
       type: course
 
 sig:
+  code: "1926"
   name: "Introducción a los Sistemas de Información Geográfica"
   short_name: "Sist. de Info. Geográfica"
   credits: 10
   group: databases
+  eva_id: "967"
   course-needs:
     - and:
       - subject: p4
@@ -879,9 +1128,11 @@ sig:
         type: course
 
 intmidd:
+  code: "1948"
   name: "Introducción al Middleware"
   credits: 8
   group: databases
+  eva_id: "61"
   course-needs:
     - and:
       - subject: sisoper
@@ -896,10 +1147,13 @@ intmidd:
         type: course
 
 intropln:
+  code: "1828"
   name: "Introducción al Procesamiento de Lenguaje Natural"
   short_name: "IPLN"
   credits: 12
   group: artificial_intelligence
+  openfing_id: "pln"
+  eva_id: "211"
   course-needs:
     - and:
       - subject: p4
@@ -916,29 +1170,39 @@ intropln:
         type: course
 
 iogr:
+  code: "1779"
   name: "Investigación Operativa y Gestión de Riesgos"
   short_name: "Invest. Oper. y Gest. de Riesgos"
   credits: 6
   group: investigation
+  eva_id: "38"
   course-needs:
     - subject: iio
       type: exam
 
 mor:
+  code: "1635"
   name: "Metaheurísticas y Optimización sobre Redes"
   short_name: "MOR"
   credits: 10
   group: investigation
+  eva_id: "38"
   course-needs:
     - and:
       - subject: discreta1
         type: exam
       - subject: discreta2
         type: exam
-      - subject: calc2
-        type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-2
+          type: exam
+        - subject: calc2
+          type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
       - subject: p3
         type: exam
       - subject: pye
@@ -951,18 +1215,22 @@ mor:
         type: course
 
 negsoftware:
+  code: "1543"
   name: "Introducción al Negocio del Software"
   short_name: "Int. al Negocio del SW"
   credits: 8
   group: organization_management
+  eva_id: "725"
   course-needs:
     - subject: iis
       type: course
 
 aprendaut:
+  code: "1866"
   name: "Aprendizaje Automático"
   credits: 12
   group: artificial_intelligence
+  eva_id: "43"
   course-needs:
     - and:
       - subject: discreta2
@@ -979,10 +1247,12 @@ aprendaut:
         type: exam
 
 webir:
+  code: "1938"
   name: "Recuperación de Información y Recomendaciones en la Web"
   short_name: "Webir"
   group: databases
   credits: 10
+  eva_id: "821"
   course-needs:
     - and:
       - subject: p3
@@ -991,10 +1261,12 @@ webir:
         type: exam
 
 rbc:
+  code: "1848"
   name: "Robótica Basada en Comportamientos"
   short_name: "Robótica Basada en Comp."
   credits: 15
   group: artificial_intelligence
+  eva_id: "186"
   course-needs:
     - and:
       - subject: f1
@@ -1005,25 +1277,35 @@ rbc:
         type: course
 
 ecdif:
+  code: "1028"
   name: "Ecuaciones Diferenciales"
   credits: 12
   group: maths
+  openfing_id: "ed"
   has_exam: true
+  eva_id: "342"
   course-needs:
     - and:
       - subject: gal1
         type: exam
-      - subject: calc1
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
       - subject: gal2
         type: exam
-      - subject: calc2
-        type: course
+      - or:
+        - subject: calc-dif-int-2
+          type: course
+        - subject: calc2
+          type: course
   exam-needs:
     - subject: ecdif
       type: course
 
 tarqui:
+  code: "1445"
   name: "Taller de Arquitectura de Computadoras"
   short_name: "Taller de Arqui. de Comp."
   credits: 10
@@ -1036,10 +1318,12 @@ tarqui:
         type: course
 
 ass:
+  code: "1918"
   name: "Administración y Seguridad de Sistemas"
   short_name: "Admin. y Seguridad de Sist."
   credits: 10
   group: databases
+  eva_id: "785"
   course-needs:
     - and:
       - credits: organization_management
@@ -1056,10 +1340,12 @@ ass:
         type: course
 
 adadr:
+  code: "1440"
   name: "Análisis y Diseños de Algoritmos Distibuidos en Redes"
   short_name: "ADADR"
   credits: 8
   group: arqui_op_network
+  eva_id: "145"
   course-needs:
     - and:
       - subject: p3
@@ -1068,27 +1354,33 @@ adadr:
         type: exam
 
 aarc:
+  code: "1444"
   name: "Aspectos Avanzados de Redes de Computadoras"
   short_name: "AARC"
   credits: 8
   group: arqui_op_network
+  eva_id: "247"
   course-needs:
     - subject: redes
       type: course
 
 rrppis:
+  code: "1758"
   name: "Relaciones Personales en Ingeniería de Software"
   short_name: "Relac. Pers. en IS"
   credits: 10
   group: software_engeneering
+  eva_id: "652"
   course-needs:
     - subject: iis
       type: course
 
 robemb:
+  code: "1442"
   name: "Robótica Embebida"
   credits: 10
   group: artificial_intelligence
+  eva_id: "146"
   course-needs:
     - and:
       - credits: experimental_sciences
@@ -1103,27 +1395,33 @@ robemb:
         type: course
 
 talgpgpu:
+  code: "1449"
   name: "Taller de GPGPU"
   credits: 7
   group: arqui_op_network
+  eva_id: "1136"
   course-needs:
     - subject: gpgpu
       type: course
 
 tbpm:
+  code: "1766"
   name: "Taller de Gestión y Tecnologías de Procesos de Negocio"
   short_name: "TBPM"
   credits: 10
   group: databases
+  eva_id: "423"
   course-needs:
     - subject: tprog
       type: course
 
 tsi2:
+  code: "1735"
   name: "Taller de Sistemas de Información 2"
   short_name: "TSI 2"
   credits: 15
   group: projects
+  eva_id: "485"
   course-needs:
     - and:
       - subject: p4
@@ -1136,10 +1434,12 @@ tsi2:
         type: course
 
 tsi3:
+  code: "1740"
   name: "Taller de Sistemas de Información 3"
   short_name: "TSI 3"
   credits: 8
   group: projects
+  eva_id: "674"
   course-needs:
     - and:
       - subject: fbd
@@ -1154,6 +1454,7 @@ tsi3:
         type: course
 
 tsi4:
+  code: "1741"
   name: "Taller de Sistemas de Información 4"
   short_name: "TSI 4"
   credits: 15
@@ -1173,10 +1474,12 @@ tsi4:
           type: course
 
 tsig:
+  code: "1776"
   name: "Taller de Sistemas de Información Geográficos Empresariales"
   short_name: "Taller de SIG"
   credits: 8
   group: projects
+  eva_id: "429"
   course-needs:
     - and:
       - subject: fbd
@@ -1185,10 +1488,12 @@ tsig:
         type: course
 
 tagsi:
+  code: "1933"
   name: "Técnicas Avanzadas de Gestión de Sistemas de Información"
   short_name: "TAGSI"
   credits: 15
   group: databases
+  eva_id: "105"
   course-needs:
     - and:
       - subject: fbd
@@ -1197,10 +1502,12 @@ tagsi:
         type: course
 
 tcace:
-  name: "Teoría de Códigos Algebráicos para la Correción de Errores"
+  code: "1042"
+  name: "Teoría de Códigos Algebraicos para la Corrección de Errores"
   short_name: "Cód. Algebr. para Correc. de Err."
   credits: 7
   group: maths
+  eva_id: "134"
   course-needs:
     - and:
       - subject: pye
@@ -1211,35 +1518,47 @@ tcace:
         type: exam
       - subject: discreta2
         type: exam
-      - subject: calc1
-        type: exam
-      - subject: calc2
-        type: exam
+      - or:
+        - subject: calc-dif-int-1
+          type: exam
+        - subject: calc1
+          type: exam
+      - or:
+        - subject: calc-dif-int-2
+          type: exam
+        - subject: calc2
+          type: exam
       - subject: gal1
         type: exam
 
 teocomp:
+  code: "1336"
   name: "Teoría de la Computación"
   credits: 4
   group: programming
+  eva_id: "812"
   course-needs:
     - subject: teoleng
       type: exam
 
 biomeds:
+  code: "5705"
   name: "Seminario de Ingeniería Biomédica"
   short_name: "Semin. de Ing. Biomédica"
   credits: 4
   group: projects
+  eva_id: "578"
   course-needs:
     - subject: pis
       type: course
 
 im:
+  code: "5707"
   name: "Imágenes Médicas: Adquisición, Instrumentación y Gestión"
   short_name: "Imágenes Médicas"
   credits: 8
   group: optionals
+  eva_id: "589"
   course-needs:
     - and:
       - credits: experimental_sciences
@@ -1250,9 +1569,11 @@ im:
         type: course
 
 idatos:
+  code: "1941"
   name: "Integración de Datos"
   credits: 8
   group: databases
+  eva_id: "664"
   course-needs:
     - and:
       - credits: total
@@ -1261,44 +1582,54 @@ idatos:
         type: exam
 
 atipi:
+  code: "1438"
   name: "Aplicaciones de la Teoría de la Información al Procesamiento de Imágenes"
   short_name: "ATIPI"
   credits: 6
   group: optionals
+  eva_id: "20"
   course-needs:
     - subject: pye
       type: exam
 
 procpersw:
+  code: "1767"
   name: "Principios y Fundamentos del Proceso Personal de Software"
   short_name: "Proc. Pers. de Software"
   credits: 7
   group: software_engeneering
+  eva_id: "633"
   course-needs:
     - subject: p4
       type: course
 
 modopt:
+  code: "1624"
   name: "Modelado y Optimización"
   credits: 6
   group: investigation
+  eva_id: "1070"
   course-needs:
     - subject: iio
       type: exam
 
 pfa:
+  code: "1350"
   name: "Programación Funcional Avanzada"
   short_name: "Prog. Funcional Avanzada"
   credits: 12
   group: programming
+  eva_id: "965"
   course-needs:
     - subject: progfunc
       type: course
 
 eventosdisc:
+  code: "1617"
   name: "Simulación a Eventos Discretos"
   credits: 10
   group: investigation
+  eva_id: "191"
   course-needs:
     - and:
       - subject: p3
@@ -1311,6 +1642,7 @@ eventosdisc:
         type: course
 
 sisdistr:
+  code: "1414"
   name: "Sistemas Distribuidos"
   credits: 15
   group: arqui_op_network
@@ -1340,9 +1672,11 @@ sisdistr:
         type: course
 
 tallersi:
+  code: "1437"
   name: "Taller de Seguridad Informática"
   credits: 7
   group: arqui_op_network
+  eva_id: "324"
   course-needs:
     - and:
       - subject: fbd
@@ -1353,10 +1687,12 @@ tallersi:
         type: course
 
 tvs:
+  code: "1742"
   name: "Taller de Verificación de Software"
   short_name: "Taller de Verificación de Sw"
   credits: 8
   group: software_engeneering
+  eva_id: "722"
   course-needs:
     - and:
       - subject: fbd
@@ -1365,6 +1701,7 @@ tvs:
         type: course
 
 tinpercom:
+  code: "1768"
   name: "Taller de Interacción Persona Computadora"
   short_name: "Taller de Inter. Pers. Comp."
   credits: 8
@@ -1377,9 +1714,12 @@ tinpercom:
         type: course
 
 tso:
+  code: "1542"
   name: "Taller de Sistemas Operativos"
-  credits: 8
+  credits: 10
   group: arqui_op_network
+  openfing_id: "so"
+  eva_id: "708"
   course-needs:
     - and:
       - subject: p4
@@ -1388,14 +1728,71 @@ tso:
         type: exam
 
 fismod:
+  code: "1131"
   name: "Introducción a la Física Moderna"
   short_name: "Intro. a la Física Moderna"
   credits: 10
   group: experimental_sciences
   has_exam: true
+  eva_id: "318"
   course-needs:
     - subject: f3
       type: exam
   exam-needs:
     - subject: fismod
       type: course
+
+pasantia:
+  code: "1731"
+  name: "Pasantía (Computación)"
+  short_name: "Pasantía"
+  credits: 10
+  group: projects
+  eva_id: "702"
+  course-needs:
+    - credits: total
+      amount: 270
+
+grampln:
+  code: "1835"
+  name: "Gramáticas Formales para el Lenguaje Natural"
+  short_name: "Gramáticas"
+  credits: 10
+  group: artificial_intelligence
+  openfing_id: "gf"
+  eva_id: "654"
+  course-needs:
+    - and:
+      - subject: logica
+        type: exam
+      - subject: teoleng
+        type: exam
+      - subject: p3
+        type: exam
+      - subject: pye
+        tpye: exam
+
+bdnr:
+  code: "1949"
+  name: "Bases de datos No Relacionales"
+  short_name: "BDNR"
+  credits: 10
+  group: databases
+  eva_id: "947"
+  course-needs:
+    - subject: fbd
+      type: exam
+
+fuwebsem:
+  code: "1942"
+  name: "Fundamentos de la web semántica"
+  short_name: "Web semántica"
+  credits: 8
+  group: databases
+  eva_id: "536"
+  course-needs:
+    - and:
+      - subject: iis
+        type: exam
+      - subject: fbd
+        type: exam

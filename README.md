@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Development
 
-Things you may want to cover:
+Running tests (Chrome by default)
 
-* Ruby version
+```
+$ bundle exec rake
+```
 
-* System dependencies
+Running tests in Firefox
+```
+$ TEST_BROWSER=firefox bundle exec rake
+```
 
-* Configuration
+## Gem Update Policy
 
-* Database creation
+### Gemfile Version Constraints
 
-* Database initialization
+In `Gemfile` define gem dependencies using a version contrainst of `~> MAJOR.MINOR` by default, unless you have reasons
+to use something different. An example of an exception could be `rails`, which is known to make backwards-incompatible
+changes in minor level updates, so in that case we use `~> MAJOR.MINOR.PATCH`.
 
-* How to run the test suite
+### Updating
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Updating gems cheat sheet](https://medium.com/cedarcode/updating-gems-cheat-sheet-346d5666a181)

@@ -17,8 +17,11 @@
 @import "reset";
 @import "@material/checkbox/mdc-checkbox";
 @import "@material/list/mdc-list";
+@import "@material/icon-button/mdc-icon-button";
 @import "@material/typography/mdc-typography";
 @import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/menu-surface/mdc-menu-surface";
+@import "@material/menu/mdc-menu";
 
 body {
   display: flex;
@@ -65,17 +68,41 @@ body {
   top: 0;
 }
 
-// Fix black hover over list item with checkbox (on Chrome 74+)
-:not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::before {
-    filter: opacity(100%);
+.growing-text-list {
+  a {
+    color: inherit;
+    text-decoration-line: inherit;
+  }
+  .mdc-list-item__text{
+    flex-grow: 1;
+    width: 100px;
+  }
+  .mdc-list-item__meta{
+    margin-left: 0px;
+  }
 }
 
-// Fix black background when clicking on list item with checkbox (on Chrome 74+)
-:not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item:active::after {
-     filter: opacity(100%);
- }
+.total-credits {
+  font-weight: bold;
+  font-size: larger;
+}
 
- .total-credits {
-   font-weight: bold;
-   font-size: larger;
- }
+// Make ellipsis work on list item (https://github.com/material-components/material-components-web/issues/1912)
+.mdc-list-item__text {
+  @include mdc-typography-overflow-ellipsis;
+
+  display: block;
+  flex: 1;
+}
+
+.mdc-list-item__meta {
+  padding-left: 15px;
+}
+
+#menu-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

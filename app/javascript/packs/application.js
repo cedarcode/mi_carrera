@@ -9,6 +9,8 @@
 
 console.log('Hello World from Webpacker')
 
+import "install"
+import "serviceworker-companion"
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 

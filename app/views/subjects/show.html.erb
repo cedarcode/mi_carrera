@@ -1,16 +1,13 @@
 <% content_for :navigation_icon do %>
-  <%= link_to "arrow_back", root_path, :class => "material-icons mdc-top-app-bar__navigation-icon" %>
-<% end %>
-
-<% content_for :profile_link do %>
-  <a href="/profile" class="material-icons mdc-top-app-bar__action-item">person</a>
+  <%= nav_icon("arrow_back", (request.referer ? 'javascript:history.back()' : root_path)) %>
 <% end %>
 
 <div class="mdc-list-group">
-  <h3 class="mdc-list-group__subheader mdc-typography--headline5"><%= @subject.name %></h3>
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5"><%= @subject.code %> - <%= @subject.name %></h3>
   <hr class="mdc-list-divider">
 
-  <div class="mdc-list" data-controller="exam-visibility" >
+  <h3 class="mdc-list-group__subheader mdc-typography--subtitle2">Información general</h3>
+  <div class="mdc-list growing-text-list">
     <label class="mdc-list-item">
       <span class="mdc-list-item__text">
         Créditos: <%= @subject.credits %>
@@ -18,22 +15,29 @@
     </label>
 
     <label class="mdc-list-item">
-      <span class="mdc-list-item__text">
+      <%= link_to subject_group_path(@subject.group), :class => "mdc-list-item__text" do %>
         Grupo: <%= @subject.group.name %>
-      </span>
+      <% end %>
     </label>
+  </div>
+  <hr class="mdc-list-divider">
 
-    <hr class="mdc-list-divider">
-
-    <label class="mdc-list-item" for="checkbox_course_approved">
+  <h3 class="mdc-list-group__subheader mdc-typography--subtitle2">Aprobación</h3>
+  <div class="mdc-list" data-controller="exam-visibility" >
+    <label class="mdc-list-item <%= "mdc-list-item--disabled" if !bedel.able_to_do?(@subject.course) %>" for="checkbox_course_approved">
       <span class="mdc-list-item__text">
         Curso aprobado?
       </span>
 
       <span class="mdc-list-item__meta">
-        <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check", action: "ajax:success->exam-visibility#approvalChange" }) do |form| %>
+        <% if @subject.exam %>
+          <% form_data = { controller: "autosave-check", action: "ajax:success->exam-visibility#approvalChange" } %>
+        <% else %>
+          <% form_data = { controller: "autosave-check" } %>
+        <% end %>
+        <%= form_with(model: @subject, url: approve_subject_path(@subject), data: form_data) do |form| %>
           <div class="mdc-checkbox">
-            <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.course), data: { action: "autosave-check#update" } }, "yes", "no" %>
+            <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.course), disabled: !bedel.able_to_do?(@subject.course), data: { action: "autosave-check#update" } }, "yes", "no" %>
             <div class="mdc-checkbox__background">
               <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                 <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -68,9 +72,28 @@
         </span>
       </label>
     <% end %>
-
-  <hr class="mdc-list-divider">
-  <%= render partial: 'prerequisites/index', locals: { prerequisites_course: @subject.course.prerequisite_tree, prerequisites_exam: @subject.exam&.prerequisite_tree } %>
-
   </div>
+  <hr class="mdc-list-divider">
+
+  <% if @subject.openfing_id || @subject.eva_id %>
+    <h3 class="mdc-list-group__subheader mdc-typography--subtitle2">Links de interés</h3>
+    <div class="mdc-list">
+      <% if @subject.openfing_id %>
+        <a href="https://open.fing.edu.uy/courses/<%= @subject.openfing_id %>" target="_blank" class="mdc-list-item">
+          <span class="mdc-list-item__graphic material-icons">videocam</span>
+          <span class="mdc-list-item__text">OpenFING</span>
+        </a>
+      <% end %>
+
+      <% if @subject.eva_id %>
+        <a href="https://eva.fing.edu.uy/course/view.php?id=<%= @subject.eva_id%>" target="_blank" class="mdc-list-item">
+          <span class="mdc-list-item__graphic material-icons">forum</span>
+          <span class="mdc-list-item__text">EVA</span>
+        </a>
+      <% end %>
+    </div>
+    <hr class="mdc-list-divider">
+  <% end %>
+
+  <%= render partial: 'prerequisites/index', locals: { prerequisites_course: @subject.course.prerequisite_tree, prerequisites_exam: @subject.exam&.prerequisite_tree } %>
 </div>

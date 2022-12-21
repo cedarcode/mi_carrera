@@ -5,12 +5,15 @@ Rails.application.routes.draw do
 
   resource :profile, only: :show
 
+  resources :subject_groups, only: :show
+
   resources :subjects do
     member do
       get :able_to_enroll, format: 'json'
       patch :approve
     end
     collection do
+      get :all
       get 'list' => 'subjects#list_subjects', as: :list
     end
   end

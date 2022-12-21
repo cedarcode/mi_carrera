@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_26_183142) do
+ActiveRecord::Schema.define(version: 2019_07_12_145744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2019_04_26_183142) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "code"
+    t.index ["code"], name: "index_subject_groups_on_code", unique: true
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -46,6 +48,10 @@ ActiveRecord::Schema.define(version: 2019_04_26_183142) do
     t.string "short_name"
     t.integer "semester"
     t.integer "group_id", null: false
+    t.string "code"
+    t.index ["code"], name: "index_subjects_on_code", unique: true
+    t.string "openfing_id"
+    t.string "eva_id"
   end
 
 end

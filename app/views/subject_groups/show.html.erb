@@ -1,0 +1,14 @@
+<% content_for :navigation_icon do %>
+  <%= nav_icon("arrow_back", (request.referer ? 'javascript:history.back()' : root_path)) %>
+<% end %>
+
+<% content_for :credits do %>
+  <%= render 'shared/credits_counter' %>
+<% end %>
+
+<div class="mdc-list-group">
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5">Grupo <%= @subject_group.name %></h3>
+  <hr class="mdc-list-divider">
+
+  <%= render partial: "subjects/subjects_list", locals: { subjects: @subject_group.subjects.order(:semester) } %>
+</div>
