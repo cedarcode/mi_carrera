@@ -45,14 +45,14 @@
     "min_credits": 10
   },
   {
-    "code": "4066",
-    "name": "GESTION EN ORGANIZACIONES",
-    "min_credits": 10
-  },
-  {
     "code": "4756",
     "name": "A.INTEG,TALLERES,PASANT.Y PROY",
     "min_credits": 45
+  },
+  {
+    "code": "4066",
+    "name": "GESTION EN ORGANIZACIONES",
+    "min_credits": 10
   },
   {
     "code": "5265",

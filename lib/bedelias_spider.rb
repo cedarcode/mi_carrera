@@ -25,10 +25,11 @@ class BedeliasSpider < Kimurai::Base
       save_to path, subject_group, format: :pretty_json, position: false
 
       node.all('..//li[@data-nodetype="Materia"]/span').each do |subnode|
-        info = subnode.text.split(' - ')
+        info = subnode.text.split(' - créditos: ')
+        subject_credits = info[1].to_i
+        info = info[0].split(' - ')
         subject_code = info[0]
-        subject_name = info[1]
-        subject_credits = info[2][9..-1].split(' ')[0].to_i
+        subject_name = info[1..-1].join(' - ')
 
         subjects[subject_code] = {
           code: subject_code,
@@ -46,6 +47,12 @@ class BedeliasSpider < Kimurai::Base
       prerequisites_rows(page_number) do |row, index|
         column = row.first(:xpath, "td")
         subject_code = column.text.split(' - ')[0]
+
+        if subjects[subject_code].nil?
+          puts "Skipping #{column.text}"
+          next
+        end
+
         type = column.first(:xpath, "following-sibling::td").text
 
         puts "#{page_number}/#{index} Generating #{column.text}, #{type}"
@@ -178,7 +185,7 @@ class BedeliasSpider < Kimurai::Base
         prerequisite[:needs] = 'all'
       elsif node_content.include?('Inscripción a Curso')
         prerequisite[:type] = 'subject'
-        prerequisite[:subjedt_needed] =  node_content.match(/\ [\d[A-Z]]* -/)[0].tr(' -', '')
+        prerequisite[:subjedt_needed] = node_content.match(/\ [\d[A-Z]]* -/)[0].tr(' -', '')
         prerequisite[:needs] = 'enrollment'
       end
     elsif node_type == 'cag' # 'créditos en el Grupo:'
@@ -238,16 +245,16 @@ class BedeliasSpider < Kimurai::Base
   end
 
   def visit_curriculum
-    browser.click_button 'Menu'
+    click("//a[text()='PLANES DE ESTUDIO']")
 
-    click("//a[span[text() = 'Planes de estudio / Previas']]")
+    click("//a[@id='j_idt52:j_idt56:1:j_idt58']")
 
     click("//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']")
     click("//tr//span[text()='FING - FACULTAD DE INGENIERÍA']")
 
     sleep 2
     click("//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div")
-    click("//a[@id='datos1111:j_idt58:31:j_idt70:0:verComposicionPlan']")
+    click("//a[@id='datos1111:j_idt92:35:j_idt104:0:verComposicionPlan']")
   end
 
   def visit_prerequisites
