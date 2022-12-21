@@ -28,11 +28,13 @@
       </li>
       <li class="sign-in-option">
         <%= f.label :email, "Correo electrónico:" %>
-        <%= f.email_field :email, class: "form-input", required: true %>
+        <%= f.email_field :email, class: "form-input #{'is-invalid' if resource.errors[:email].any?}", required: true %>
+        <%= render 'shared/invalid_feedback', resource: resource, field: :email %>
       </li>
       <li class="sign-in-option">
         <%= f.label :password, "Contraseña:" %>
-        <%= f.password_field :password, class: "form-input", required: true %>
+        <%= f.password_field :password, class: "form-input #{'is-invalid' if resource.errors[:password].any?}", required: true %>
+        <%= render 'shared/invalid_feedback', resource: resource, field: :password %>
       </li>
       <li class="sign-in-option sign-in">
         <%= f.submit "Ingresar", class: "sign-in-button" %>

@@ -77,12 +77,6 @@ body {
   padding: 16px;
 }
 
-.google-sign-in-name {
-  display: flex;
-  flex-direction: column;
-  padding-right: 16px;
-}
-
 .google-sign-in-image {
   width: 48px;
   height: 48px;
@@ -254,4 +248,16 @@ body {
 
 .is-invalid {
   border-color: red;
+}
+
+.google-sign-in-name {
+  display: flex;
+  flex-direction: column;
+  padding-right: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .google-sign-in-name {
+    display: none;
+  }
 }

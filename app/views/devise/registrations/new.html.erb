@@ -26,14 +26,17 @@
       <li class="sign-in-option">
         <%= f.label :email, "Correo electrónico:" %>
         <%= f.email_field :email, class: "form-input #{'is-invalid' if resource.errors[:email].any?}", required: true %>
+        <%= render 'shared/invalid_feedback', resource: resource, field: :email %>
       </li>
       <li class="sign-in-option">
         <%= f.label :password, "Nueva contraseña:" %>
         <%= f.password_field :password, class: "form-input #{'is-invalid' if resource.errors[:password].any?}", required: true %>
+        <%= render 'shared/invalid_feedback', resource: resource, field: :password %>
       </li>
       <li class="sign-in-option">
         <%= f.label :password_confirmation, "Confirma tu nueva contraseña:" %>
         <%= f.password_field :password_confirmation, class: "form-input #{'is-invalid' if resource.errors[:password_confirmation].any?}", required: true %>
+        <%= render 'shared/invalid_feedback', resource: resource, field: :password_confirmation %>
       </li>
       <li class="sign-in-option sign-in">
         <%= f.submit "Registrarte", class: "sign-in-button" %>

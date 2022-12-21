@@ -3,19 +3,19 @@
 <% end %>
 
 <div class="mdc-list-group">
-  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">¿Olvidaste tu constraseña?</h3>
+  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">¿Has olvidado tu contraseña?</h3>
   <ul class="mdc-list growing-text-list">
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
       <li class="sign-in-option">
-        <%= f.label :email %>
+        <%= f.label :email, 'Correo electrónico' %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input #{'is-invalid' if resource.errors[:email].any?}" %>
         <%= render 'shared/invalid_feedback', resource: resource, field: :email %>
       </li>
 
       <li class="sign-in-option sign-in">
-        <%= f.submit "Enviarme instrucciones", class: "sign-in-button" %>
+        <%= f.submit "Restablecer contraseña", class: "sign-in-button" %>
       </li>
     <% end %>
 

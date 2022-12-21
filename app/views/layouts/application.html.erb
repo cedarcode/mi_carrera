@@ -36,7 +36,8 @@
               <span><%= current_user.email %></span>
             </div>
             <%= render 'shared/profile_menu' %>
-          <% else %>
+          <% end %>
+          <% if show_login_link? %>
             <%= link_to "Ingresar", new_user_session_path, class: 'white-link' %>
           <% end %>
           <span hidden>

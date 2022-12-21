@@ -31,6 +31,8 @@
 yarn-debug.log*
 .yarn-integrity
 
+/.env
+
 tags
 
 
