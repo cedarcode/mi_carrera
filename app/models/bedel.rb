@@ -1,4 +1,6 @@
 class Bedel
+  attr_reader :store
+
   def initialize(store, user = nil)
     @store = store
     @user = user
@@ -106,8 +108,6 @@ class Bedel
   end
 
   private
-
-  attr_reader :store
 
   def exam_credits(group)
     @exam_credits ||= {}
