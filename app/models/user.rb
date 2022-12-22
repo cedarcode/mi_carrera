@@ -6,6 +6,7 @@ class User < ApplicationRecord
          # for Google OmniAuth
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  serialize :approvals, Hash
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

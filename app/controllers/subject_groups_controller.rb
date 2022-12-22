@@ -1,5 +1,4 @@
 class SubjectGroupsController < ApplicationController
-  helper_method :bedel
 
   def show
     @subject_group = SubjectGroup.find(params[:id])
@@ -8,9 +7,4 @@ class SubjectGroupsController < ApplicationController
     end
   end
 
-  private
-
-  def bedel
-    @bedel ||= Bedel.new(session)
-  end
 end

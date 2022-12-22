@@ -5,10 +5,4 @@ class ProfilesController < ApplicationController
       format.html
     end
   end
-
-  private
-
-  def bedel
-    @bedel ||= Bedel.new(session)
-  end
 end
