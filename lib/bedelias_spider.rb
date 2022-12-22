@@ -129,7 +129,9 @@ class BedeliasSpider < Kimurai::Base
       last = (i == indices.count - 1 ? text.length : indices[i + 1])
       last -= 1
       subject = text[indices[i]..last]
-      subject_code = subject.match(/\ [\d[A-Z]]* -/)[0]
+
+      subject_code = subject.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
+
       subject_code = subject_code.tr(' -', '')
       if subject.include?("U.C.B aprobada:")
         needs = 'all'
@@ -174,18 +176,18 @@ class BedeliasSpider < Kimurai::Base
       elsif node_content.include?('Curso aprobado')
         prerequisite[:type] = 'subject'
         prerequisite[:needs] = 'course'
-        prerequisite[:subject_needed] = node_content.match(/\ [\d[A-Z]]* -/)[0].tr(' -', '')
+        prerequisite[:subject_needed] = node_content.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
       elsif node_content.include?('Examen aprobado')
         prerequisite[:type] = 'subject'
         prerequisite[:needs] = 'exam'
-        prerequisite[:subject_needed] = node_content.match(/\ [\d[A-Z]]* -/)[0].tr(' -', '')
+        prerequisite[:subject_needed] = node_content.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
       elsif node_content.include?('Aprobada')
         prerequisite[:type] = 'subject'
-        prerequisite[:subject_needed] = node_content.match(/\ [\d[A-Z]]* -/)[0].tr(' -', '')
+        prerequisite[:subject_needed] = node_content.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
         prerequisite[:needs] = 'all'
       elsif node_content.include?('Inscripción a Curso')
         prerequisite[:type] = 'subject'
-        prerequisite[:subjedt_needed] = node_content.match(/\ [\d[A-Z]]* -/)[0].tr(' -', '')
+        prerequisite[:subjedt_needed] = node_content.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
         prerequisite[:needs] = 'enrollment'
       end
     elsif node_type == 'cag' # 'créditos en el Grupo:'
