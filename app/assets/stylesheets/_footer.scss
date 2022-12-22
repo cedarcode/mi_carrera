@@ -1,0 +1,22 @@
+footer {
+  padding: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #242424;
+  color: white;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  margin-top: 20px;
+
+  img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
