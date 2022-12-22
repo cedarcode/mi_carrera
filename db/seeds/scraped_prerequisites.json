@@ -21352,5 +21352,998 @@
         "subject_needed": "1325"
       }
     ]
+  },
+  {
+    "subject": "1358",
+    "exam": false,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "CP33",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1325",
+            "needs": "exam"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "subject": "1325",
+    "exam": false,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "logical",
+        "logical_operator": "not",
+        "operands": [
+          {
+            "type": "subject",
+            "needs": "exam",
+            "subject_needed": "CP33"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "needs": "exam",
+            "subject_needed": "CP4"
+          },
+          {
+            "type": "subject",
+            "needs": "exam",
+            "subject_needed": "MA29"
+          },
+          {
+            "type": "logical",
+            "logical_operator": "and",
+            "operands": [
+              {
+                "type": "subject",
+                "subject_needed": "1023P",
+                "needs": "exam"
+              },
+              {
+                "type": "subject",
+                "subject_needed": "1010",
+                "needs": "exam"
+              },
+              {
+                "type": "subject",
+                "subject_needed": "1023",
+                "needs": "exam"
+              }
+            ]
+          },
+          {
+            "type": "logical",
+            "logical_operator": "and",
+            "operands": [
+              {
+                "type": "subject",
+                "subject_needed": "1023P",
+                "needs": "exam"
+              },
+              {
+                "type": "subject",
+                "subject_needed": "1027",
+                "needs": "exam"
+              },
+              {
+                "type": "subject",
+                "subject_needed": "1023",
+                "needs": "exam"
+              }
+            ]
+          },
+          {
+            "type": "logical",
+            "logical_operator": "and",
+            "operands": [
+              {
+                "type": "subject",
+                "subject_needed": "1023P",
+                "needs": "exam"
+              },
+              {
+                "type": "subject",
+                "subject_needed": "1013",
+                "needs": "exam"
+              },
+              {
+                "type": "subject",
+                "subject_needed": "1023",
+                "needs": "exam"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "CP1",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1061",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1020",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1070",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1052",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "MAT33",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1020P",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1061P",
+            "needs": "exam"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "CP29",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1323",
+            "needs": "course"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1021",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "MAT33",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "M9",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1030P",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP2",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP23",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1030",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1071",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1053",
+            "needs": "exam"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "subject": "1325",
+    "exam": true,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "subject",
+        "needs": "course",
+        "subject_needed": "1325"
+      }
+    ]
+  },
+  {
+    "subject": "D87",
+    "exam": false,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1025",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1075",
+            "needs": "exam"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "subject": "D87",
+    "exam": true,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "subject",
+        "needs": "course",
+        "subject_needed": "D87"
+      }
+    ]
+  },
+  {
+    "subject": "1886",
+    "exam": false,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1061",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1061I",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1061R",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1020",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1070",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1052",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1061P",
+            "needs": "exam"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1062",
+            "needs": "course"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1022",
+            "needs": "course"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1072",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "108L",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "172Q",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1022P",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1062P",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1022T",
+            "needs": "exam"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1030",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1071",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "171L",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "171Q",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1053",
+            "needs": "exam"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "subject": "CIM22",
+    "exam": false,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "subject",
+        "needs": "exam",
+        "subject_needed": "SRN02"
+      },
+      {
+        "type": "subject",
+        "needs": "course",
+        "subject_needed": "SRN09"
+      }
+    ]
+  },
+  {
+    "subject": "CIM22",
+    "exam": true,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "subject",
+        "needs": "exam",
+        "subject_needed": "SRN02"
+      },
+      {
+        "type": "subject",
+        "needs": "exam",
+        "subject_needed": "SRN09"
+      }
+    ]
+  },
+  {
+    "subject": "5828",
+    "exam": false,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1033",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1079",
+            "needs": "exam"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1321P",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1321",
+            "needs": "exam"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "subject": "1233",
+    "exam": false,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "credits",
+        "credits": 80
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "CP1",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP22",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1062",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1022",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1072",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "MAT33",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1062P",
+            "needs": "all"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1021",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CM14",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "MAT33",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "M9",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1031P",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP2",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "R101",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP23",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1031",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1058",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "158Q",
+            "needs": "all"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "CP1",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "R100",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP22",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1061",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1020",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1070",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1052",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CAL10",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "MAT33",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1020P",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1061P",
+            "needs": "all"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1021",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CM14",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "MAT33",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "M9",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1030P",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP2",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "R101",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP23",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1030",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1071",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "171Q",
+            "needs": "all"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1053",
+            "needs": "all"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "subject": "2216",
+    "exam": false,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "logical",
+        "logical_operator": "not",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1760",
+            "needs": "all"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "not",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1761",
+            "needs": "all"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "subject": "2217",
+    "exam": false,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "logical",
+        "logical_operator": "not",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1760",
+            "needs": "all"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "not",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1761",
+            "needs": "all"
+          }
+        ]
+      },
+      {
+        "type": "subject",
+        "subject_needed": "2216",
+        "needs": "all"
+      }
+    ]
+  },
+  {
+    "subject": "1346",
+    "exam": false,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "CP15",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1321",
+            "needs": "exam"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "CP4",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1027",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1013",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1010",
+            "needs": "exam"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "subject": "1145",
+    "exam": false,
+    "type": "logical",
+    "logical_operator": "and",
+    "operands": [
+      {
+        "type": "credits",
+        "credits": 250
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "CP1",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP22",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1062",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1022",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1072",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "MAT33",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1062P",
+            "needs": "exam"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "1021",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "MAT33",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "MA09",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "M9",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1031P",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP2",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP23",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1031",
+            "needs": "exam"
+          }
+        ]
+      },
+      {
+        "type": "logical",
+        "logical_operator": "or",
+        "operands": [
+          {
+            "type": "subject",
+            "subject_needed": "CP52",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP24",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP144",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1408",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1411",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP9",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1320",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "1322",
+            "needs": "exam"
+          },
+          {
+            "type": "subject",
+            "subject_needed": "CP10",
+            "needs": "course"
+          }
+        ]
+      }
+    ]
   }
 ]
