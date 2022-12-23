@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("Roboto-Medium.ttf");
+}
+
 .google-sign-in-name {
   display: flex;
   flex-direction: column;
@@ -9,20 +14,32 @@
     display: none;
   }
 }
-
-.google-icon {
-  background: url(./google-icon.png) transparent 5px 50% no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 20px;
-  height: 20px;
-  padding-right: 20px;
+.google-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.google-sign-in-image {
-  width: 48px;
-  height: 48px;
-  padding: 12px;
+.google-sign-in-button {
   cursor: pointer;
-  border-radius: 50%;
+  display: flex;
+  border: 1px solid #d9dadc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  align-items: center;
+  width: 195px;
+
+  .google-sign-in-text {
+    padding-right: 5px;
+    font-size: 14px;
+    color: #3c4043;
+    font-family: "Roboto-Medium";
+  }
+
+  .google-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    padding: 0px;
+  }
 }

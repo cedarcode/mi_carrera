@@ -9,7 +9,7 @@ class CreateAccountTest < ApplicationSystemTestCase
     visit new_user_session_path
     click_on "Registrarte"
     assert_text "Registro"
-    assert_selector(:xpath, './/input[@src="/assets/btn_google_signin_dark_normal_web.png"]')
+    assert_selector(:xpath, './/button[@class="google-sign-in-button"]')
   end
 
   test "user can sign up with email and password" do

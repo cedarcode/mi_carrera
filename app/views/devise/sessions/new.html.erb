@@ -3,13 +3,18 @@
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Ingreso</h3>
   <ul class="mdc-list growing-text-list">
-    <li class="sign-in-option sign-in">
+
+    <li class="sign-in-option google-button-container">
       <%- resource_class.omniauth_providers.each do |provider| %>
         <%= form_for "Login", url: omniauth_authorize_path(resource_name, provider), method: :post do |f| %>
-          <%= f.submit "Login", type: "image", src: url_for("/assets/btn_google_signin_dark_normal_web.png") %>
+          <%= f.button class: 'google-sign-in-button' do %>
+            <%= image_tag asset_path('google-icon.png'), class: 'google-icon' %>
+            <span class='google-sign-in-text'>Continuar con Google</span>
+          <% end %>
         <% end %>
       <% end %>
     </li>
+
     <li role="separator" class="mdc-list-divider"></li>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
