@@ -22,8 +22,10 @@ class CreateAccountTest < ApplicationSystemTestCase
     click_on "Registrarte"
 
     assert_current_path(root_path)
-    assert_text "Student"
-    assert_text "alice@test.com"
+    find(".mdc-menu-surface--anchor").click
+    within(".mdc-menu-surface--anchor") do
+      assert_text "alice@test.com"
+    end
   end
 
   test "user can't sign up due to incorrect confirmation password" do

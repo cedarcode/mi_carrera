@@ -27,7 +27,10 @@ class LoginLogoutTest < ApplicationSystemTestCase
 
     assert_current_path(root_path)
     assert_text "Student"
-    assert_text "bob@test.com"
+    find(".mdc-menu-surface--anchor").click
+    within(".mdc-menu-surface--anchor") do
+      assert_text "bob@test.com"
+    end
   end
 
   test "user can't sign in if enters wrong password" do

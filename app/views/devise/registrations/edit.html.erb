@@ -1,6 +1,5 @@
-<% content_for :navigation_icon do %>
-  <%= nav_icon("arrow_back", (request.referer || root_path)) %>
-<% end %>
+<%= render 'shared/navigation_back' %>
+
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Editar Usuario</h3>
   <ul class="mdc-list growing-text-list">
@@ -8,45 +7,40 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
       <li class="sign-in-option">
-        <%= f.label :full_name, 'Nombre completo' %>
-        <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", class: "form-input #{'is-invalid' if resource.errors[:full_name].any?}" %>
-        <%= render 'shared/invalid_feedback', resource: resource, field: :full_name %>
+        <%= f.label :email, 'Correo electrónico' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input #{'is-invalid' if resource.errors[:email].any?}" %>
+        <%= render 'shared/invalid_feedback', resource: resource, field: :email %>
       </li>
 
-      <% if resource.provider.nil? %>
+      <li class="sign-in-option">
+        <%= f.label :password, 'Nueva contraseña' %> <i>(Dejar en blanco si no lo quieres cambiar)</i>
+        <% if @minimum_password_length %>
+          <em><%= @minimum_password_length %> caracteres mínimo</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-input #{'is-invalid' if resource.errors[:password].any?}" %>
+        <%= render 'shared/invalid_feedback', resource: resource, field: :password %>
+      </li>
 
-        <li class="sign-in-option">
-          <%= f.label :email, 'Correo electrónico' %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input #{'is-invalid' if resource.errors[:email].any?}" %>
-          <%= render 'shared/invalid_feedback', resource: resource, field: :email %>
-        </li>
-
-        <li class="sign-in-option">
-          <%= f.label :password, 'Nueva contraseña' %> <i>(Dejar en blanco si no lo quieres cambiar)</i>
-          <% if @minimum_password_length %>
-            <em><%= @minimum_password_length %> caracteres mínimo</em>
-          <% end %>
-          <%= f.password_field :password, autocomplete: "new-password", class: "form-input #{'is-invalid' if resource.errors[:password].any?}" %>
-          <%= render 'shared/invalid_feedback', resource: resource, field: :password %>
-        </li>
-
-        <li class="sign-in-option">
-          <%= f.label :password_confirmation, 'Confirma tu nueva contraseña' %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input #{'is-invalid' if resource.errors[:password_confirmation].any?}" %>
-          <%= render 'shared/invalid_feedback', resource: resource, field: :password_confirmation %>
-        </li>
-
+      <li class="sign-in-option">
+        <%= f.label :password_confirmation, 'Confirma tu nueva contraseña' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-input #{'is-invalid' if resource.errors[:password_confirmation].any?}" %>
+        <%= render 'shared/invalid_feedback', resource: resource, field: :password_confirmation %>
+      </li>
+      <% if current_user.provider.nil? %>
         <li class="sign-in-option">
           <%= f.label :current_password, 'Contraseña actual' %> <i>(Necesitamos tu contraseña actual para validar los cambios)</i>
           <%= f.password_field :current_password, autocomplete: "current-password", class: "form-input #{'is-invalid' if resource.errors[:current_password].any?}" %>
           <%= render 'shared/invalid_feedback', resource: resource, field: :current_password %>
         </li>
-
       <% end %>
-
       <li class="sign-in-option sign-in">
-        <%= f.submit "Guardar", class: "sign-in-button" %>
+        <%= f.button class: "mdc-button mdc-button--raised" do %>
+          <span class='mdc-button__label'>
+            Guardar
+          </span>
+        <% end %>
       </li>
+
     <% end %>
 
   </ul>

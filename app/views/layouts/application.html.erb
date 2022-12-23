@@ -30,16 +30,6 @@
           <%= link_to 'Student', root_path, class: 'home-button'%>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          <% if current_user %>
-            <div class="google-sign-in-name">
-              <span><%= current_user.full_name %></span>
-              <span><%= current_user.email %></span>
-            </div>
-            <%= render 'shared/profile_menu' %>
-          <% end %>
-          <% if show_login_link? %>
-            <%= link_to "Ingresar", new_user_session_path, class: 'white-link' %>
-          <% end %>
           <span hidden>
             <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
           </span>

@@ -1,0 +1,28 @@
+.google-sign-in-name {
+  display: flex;
+  flex-direction: column;
+  padding-right: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .google-sign-in-name {
+    display: none;
+  }
+}
+
+.google-icon {
+  background: url(./google-icon.png) transparent 5px 50% no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  padding-right: 20px;
+}
+
+.google-sign-in-image {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+}

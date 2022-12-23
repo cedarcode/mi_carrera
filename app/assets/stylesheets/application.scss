@@ -50,20 +50,7 @@ body {
   font-family: "Roboto", sans-serif;
   text-decoration: none;
 }
-.white-link {
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  height: 100%;
-  font-size: 18px;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
-  text-decoration: none;
-  margin-right: 1em;
-}
+
 .home-button:hover {
   cursor: pointer;
 }
@@ -75,14 +62,6 @@ body {
 .handle-account {
   color: white;
   padding: 16px;
-}
-
-.google-sign-in-image {
-  width: 48px;
-  height: 48px;
-  padding: 12px;
-  cursor: pointer;
-  border-radius: 50%;
 }
 
 .two-checkboxes {
@@ -122,16 +101,20 @@ body {
     color: inherit;
     text-decoration-line: inherit;
   }
+
   a.home-button {
     color: #444;
   }
+
   a.account-session {
     text-decoration-line: underline;
   }
+
   .mdc-list-item__text {
     flex-grow: 1;
     width: 100px;
   }
+
   .mdc-list-item__meta {
     margin-left: 0px;
   }
@@ -162,11 +145,13 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .sign-in-option {
   padding: 16px;
   display: flex;
   flex-direction: column;
 }
+
 .sign-in-option label {
   margin-bottom: 5px;
 }
@@ -206,15 +191,6 @@ body {
   cursor: pointer;
 }
 
-.google-icon {
-  background: url(./google-icon.png) transparent 5px 50% no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-  width: 20px;
-  height: 20px;
-  padding-right: 20px;
-}
-
 #menu-background {
   position: fixed;
   top: 0;
@@ -250,14 +226,6 @@ body {
   border-color: red;
 }
 
-.google-sign-in-name {
-  display: flex;
-  flex-direction: column;
-  padding-right: 16px;
-}
-
-@media only screen and (max-width: 600px) {
-  .google-sign-in-name {
-    display: none;
-  }
+.menu-user-info {
+  padding: 0 16px;
 }
