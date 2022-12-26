@@ -4,9 +4,9 @@
   <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Registro</h3>
   <ul class="mdc-list growing-text-list">
 
-    <li class="sign-in-option google-button-container">
+    <li class="form-input-container google-button-container">
       <%- resource_class.omniauth_providers.each do |provider| %>
-        <%= form_for "Login", url: omniauth_authorize_path(resource_name, provider), method: :post do |f| %>
+        <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, local: true do |f| %>
           <%= f.button class: 'google-sign-in-button' do %>
             <%= image_tag asset_path('google-icon.png'), class: 'google-icon' %>
             <span class='google-sign-in-text'>Continuar con Google</span>
@@ -17,26 +17,27 @@
 
     <li role="separator" class="mdc-list-divider"></li>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <li class="sign-in-option sign-in">
+    <%= form_with(model: resource, url: registration_path(resource_name), local: true) do |f| %>
+      <li class="form-input-container sign-in">
         Registrarte con tu correo electrónico
       </li>
-      <li class="sign-in-option">
+      <li class="form-input-container">
+
         <%= f.label :email, "Correo electrónico:" %>
         <%= f.email_field :email, class: "form-input #{'is-invalid' if resource.errors[:email].any?}", required: true %>
         <%= render 'shared/invalid_feedback', resource: resource, field: :email %>
       </li>
-      <li class="sign-in-option">
+      <li class="form-input-container">
         <%= f.label :password, "Nueva contraseña:" %>
         <%= f.password_field :password, class: "form-input #{'is-invalid' if resource.errors[:password].any?}", required: true %>
         <%= render 'shared/invalid_feedback', resource: resource, field: :password %>
       </li>
-      <li class="sign-in-option">
+      <li class="form-input-container">
         <%= f.label :password_confirmation, "Confirma tu nueva contraseña:" %>
         <%= f.password_field :password_confirmation, class: "form-input #{'is-invalid' if resource.errors[:password_confirmation].any?}", required: true %>
         <%= render 'shared/invalid_feedback', resource: resource, field: :password_confirmation %>
       </li>
-      <li class="sign-in-option sign-in">
+      <li class="form-input-container sign-in">
         <%= f.button class: "mdc-button mdc-button--raised" do %>
           <span class='mdc-button__label'>
             Registrarte
@@ -46,7 +47,7 @@
     <% end %>
 
     <li role="separator" class="mdc-list-divider"></li>
-    <li class="sign-in-option sign-in">
+    <li class="form-input-container sign-in">
       ¿Ya estás registrado?
       <%= link_to 'Ingresar', new_session_path(resource), class: "account-session" %>
     </li>

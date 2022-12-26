@@ -22,8 +22,8 @@ class CreateAccountTest < ApplicationSystemTestCase
     click_on "Registrarte"
 
     assert_current_path(root_path)
-    find(".mdc-menu-surface--anchor").click
-    within(".mdc-menu-surface--anchor") do
+    click_actions_menu
+    within_actions_menu do
       assert_text "alice@test.com"
     end
   end
@@ -37,7 +37,7 @@ class CreateAccountTest < ApplicationSystemTestCase
     fill_in "Confirma tu nueva contraseña", with: 'alice321'
     click_on "Registrarte"
 
-    within('.sign-in-option', text: 'Confirma tu nueva contraseña') do
+    within('.form-input-container', text: 'Confirma tu nueva contraseña') do
       assert_text "No coincide"
     end
   end
@@ -52,7 +52,7 @@ class CreateAccountTest < ApplicationSystemTestCase
     fill_in "Confirma tu nueva contraseña", with: 'bob321'
     click_on "Registrarte"
 
-    within('.sign-in-option', text: 'Correo electrónico') do
+    within('.form-input-container', text: 'Correo electrónico') do
       assert_text "Ya está en uso"
     end
   end

@@ -44,4 +44,14 @@ class ActiveSupport::TestCase
     # sleeping a fixed amount of time
     sleep 1
   end
+
+  def within_actions_menu
+    within '.mdc-menu-surface' do
+      yield
+    end
+  end
+  def click_actions_menu
+    find("a", text: 'more_vert').click
+  end
+
 end

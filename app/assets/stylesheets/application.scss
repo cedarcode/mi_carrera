@@ -23,8 +23,8 @@
 @import "@material/menu-surface/mdc-menu-surface";
 @import "@material/menu/mdc-menu";
 @import "@material/button/mdc-button";
+@import "@material/textfield/mdc-text-field";
 
-// @import "@material/*";
 @import "flash";
 
 body {
@@ -146,13 +146,13 @@ body {
   flex-direction: column;
 }
 
-.sign-in-option {
+.form-input-container {
   padding: 16px;
   display: flex;
   flex-direction: column;
 }
 
-.sign-in-option label {
+.form-input-container label {
   margin-bottom: 5px;
 }
 

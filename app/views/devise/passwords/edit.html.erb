@@ -4,10 +4,10 @@
   <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Restablecer Contraseña</h3>
   <ul class="mdc-list growing-text-list">
 
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= form_with(model: resource, url: password_path(resource_name), method: :put, local: true) do |f| %>
       <%= f.hidden_field :reset_password_token %>
 
-      <li class="sign-in-option">
+      <li class="form-input-container">
         <%= f.label :password, "Nueva contraseña" %>
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -15,7 +15,7 @@
         <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-input #{'is-invalid' if resource.errors[:email].any?}" %>
         <%= render 'shared/invalid_feedback', resource: resource, field: :password %>
       </li>
-      <li class="sign-in-option sign-in">
+      <li class="form-input-container sign-in">
         <%= f.button class: "mdc-button mdc-button--raised" do %>
           <span class='mdc-button__label'>
             Restablecer contraseña

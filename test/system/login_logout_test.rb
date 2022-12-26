@@ -27,8 +27,8 @@ class LoginLogoutTest < ApplicationSystemTestCase
 
     assert_current_path(root_path)
     assert_text "Student"
-    find(".mdc-menu-surface--anchor").click
-    within(".mdc-menu-surface--anchor") do
+    click_actions_menu
+    within_actions_menu do
       assert_text "bob@test.com"
     end
   end

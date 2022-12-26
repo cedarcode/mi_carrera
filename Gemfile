@@ -6,11 +6,11 @@ ruby File.read(".ruby-version").strip
 gem 'rails', '~> 6.0.6'
 
 gem 'bootsnap', '~> 1.4', require: false
-gem 'devise'
+gem 'devise', '~> 4.8'
 gem 'jbuilder', '~> 2.9'
-gem "omniauth"
-gem "omniauth-google-oauth2"
-gem "omniauth-rails_csrf_protection"
+gem "omniauth", "~> 2.1"
+gem "omniauth-google-oauth2", '~> 1.1'
+gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 3.11'
 gem 'rollbar', '~> 2.19'

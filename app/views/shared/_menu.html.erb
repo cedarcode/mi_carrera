@@ -12,6 +12,19 @@
           </span>
         </div>
         <li role="separator" class="mdc-list-divider"></li>
+      <% end %>
+      <%= link_to all_subjects_path, class: "mdc-list-item" do %>
+        <span class="mdc-list-item__text">
+          Materias
+        <span>
+      <% end %>
+      <%= link_to profile_path, class: "mdc-list-item" do %>
+        <span class="mdc-list-item__text">
+          Avance de carrera
+        </span>
+      <% end %>
+      <li role="separator" class="mdc-list-divider"></li>
+      <% if current_user %>
         <%= link_to edit_user_registration_path, class: "mdc-list-item" do %>
           <span class="mdc-list-item__text">
             Editar Perfil
@@ -29,16 +42,7 @@
           <span>
         <% end %>
       <% end %>
-      <%= link_to all_subjects_path, class: "mdc-list-item" do %>
-        <span class="mdc-list-item__text">
-          Materias
-        <span>
-      <% end %>
-      <%= link_to profile_path, class: "mdc-list-item" do %>
-        <span class="mdc-list-item__text">
-          Avance de carrera
-        </span>
-      <% end %>
+
     </div>
   </div>
 </div>
