@@ -1097,7 +1097,7 @@
   dependencies:
     "@material/feature-targeting" "^3.1.0"
 
-"@material/theme@^3.0.0", "@material/theme@^3.1.0":
+"@material/theme@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@material/theme/-/theme-3.1.0.tgz#d31147bbc9e20bdaa3e322c9e898e4fc98807d8c"
   integrity sha512-N4JX+akOwg1faAvFvIEhDcwW4cZfUpwEn8lct6Vs3WczjLF6/KdIoLVaYh+eVl1bzfsoIuWvx56j0B1PjXZw9g==

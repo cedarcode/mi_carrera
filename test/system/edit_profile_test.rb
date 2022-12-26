@@ -3,8 +3,8 @@ require "application_system_test_case"
 class EditProfileTest < ApplicationSystemTestCase
   setup do
     visit root_path
-    @user = create_user(email: "alice@test.com", full_name: "Alice A", password: "alice123")
-    @user2 = create_user(email: "alice2@test.com", full_name: "Alice 2", password: "alice123")
+    @user = create_user(email: "alice@test.com", password: "alice123")
+    @user2 = create_user(email: "alice2@test.com", password: "alice123")
     visit new_user_session_path
     fill_in "Correo electrónico", with: @user.email
     fill_in "Contraseña", with: @user.password
@@ -12,11 +12,10 @@ class EditProfileTest < ApplicationSystemTestCase
   end
 
   test "user can edit profile" do
-    find(".google-sign-in-image").click
+    find(".mdc-menu-surface--anchor").click
     click_on "Editar Perfil"
 
     # fail case - current password is wrong
-    fill_in "Nombre completo", with: "Alice B"
     fill_in "Contraseña actual", with: "wrong"
     click_on "Guardar"
     within('.sign-in-option', text: 'Contraseña actual') do
@@ -53,10 +52,12 @@ class EditProfileTest < ApplicationSystemTestCase
     fill_in "Nueva contraseña", with: "alice1234"
     fill_in "Confirma tu nueva contraseña", with: "alice1234"
     fill_in "Contraseña actual", with: @user.password
-    fill_in "Nombre completo", with: "Alice B"
     fill_in "Correo electrónico", with: 'newemail@gmail.com'
     click_on "Guardar"
     assert_text "Actualizaste tu cuenta correctamente."
-    assert_text "Alice B"
+    find(".mdc-menu-surface--anchor").click
+    within(".mdc-menu-surface--anchor") do
+      assert_text "newemail@gmail.com"
+    end
   end
 end

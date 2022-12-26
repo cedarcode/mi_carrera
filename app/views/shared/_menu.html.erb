@@ -4,6 +4,31 @@
   </a>
   <div class="mdc-menu mdc-menu-surface" data-target="menu.content">
     <div class="mdc-list">
+      <% if current_user %>
+        <div class="menu-user-info">
+          <span class="mdc-list-item__text">
+            Logueado como <br>
+            <%= current_user.email %>
+          </span>
+        </div>
+        <li role="separator" class="mdc-list-divider"></li>
+        <%= link_to edit_user_registration_path, class: "mdc-list-item" do %>
+          <span class="mdc-list-item__text">
+            Editar Perfil
+          <span>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete, class: "mdc-list-item" do %>
+          <span class="mdc-list-item__text">
+            Salir
+          </span>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_session_path, class: 'mdc-list-item' do %>
+          <span class="mdc-list-item__text">
+            Ingresar
+          <span>
+        <% end %>
+      <% end %>
       <%= link_to all_subjects_path, class: "mdc-list-item" do %>
         <span class="mdc-list-item__text">
           Materias

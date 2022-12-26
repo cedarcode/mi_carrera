@@ -9,7 +9,7 @@ class LoginLogoutTest < ApplicationSystemTestCase
   test "user can see sign in icon and google sign in button" do
     visit new_user_session_path
     assert_text "Ingreso"
-    assert_selector(:xpath, './/input[@src="/assets/btn_google_signin_dark_normal_web.png"]')
+    assert_selector(:xpath, './/button[@class="google-sign-in-button"]')
   end
 
   test "not signed in user can't see sign out link" do
@@ -27,7 +27,10 @@ class LoginLogoutTest < ApplicationSystemTestCase
 
     assert_current_path(root_path)
     assert_text "Student"
-    assert_text "bob@test.com"
+    find(".mdc-menu-surface--anchor").click
+    within(".mdc-menu-surface--anchor") do
+      assert_text "bob@test.com"
+    end
   end
 
   test "user can't sign in if enters wrong password" do

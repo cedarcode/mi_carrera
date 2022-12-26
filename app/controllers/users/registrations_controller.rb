@@ -6,8 +6,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update_resource(resource, params)
     if resource.provider == 'google_oauth2'
+      # if email changed delete uid and provider
+
+      if resource.email != params[:email]
+        params[:uid] = nil
+        params[:provider] = nil
+      end
+
       params.delete('current_password')
-      resource.password = params['password']
       resource.update_without_password(params)
     else
       resource.update_with_password(params)

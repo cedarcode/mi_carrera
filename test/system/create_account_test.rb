@@ -9,7 +9,7 @@ class CreateAccountTest < ApplicationSystemTestCase
     visit new_user_session_path
     click_on "Registrarte"
     assert_text "Registro"
-    assert_selector(:xpath, './/input[@src="/assets/btn_google_signin_dark_normal_web.png"]')
+    assert_selector(:xpath, './/button[@class="google-sign-in-button"]')
   end
 
   test "user can sign up with email and password" do
@@ -22,8 +22,10 @@ class CreateAccountTest < ApplicationSystemTestCase
     click_on "Registrarte"
 
     assert_current_path(root_path)
-    assert_text "Student"
-    assert_text "alice@test.com"
+    find(".mdc-menu-surface--anchor").click
+    within(".mdc-menu-surface--anchor") do
+      assert_text "alice@test.com"
+    end
   end
 
   test "user can't sign up due to incorrect confirmation password" do

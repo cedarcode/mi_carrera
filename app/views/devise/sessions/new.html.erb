@@ -1,28 +1,23 @@
-<% content_for :navigation_icon do %>
-  <%= nav_icon("arrow_back", (request.referer || root_path)) %>
-<% end %>
+<%= render 'shared/navigation_back' %>
 
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Ingreso</h3>
   <ul class="mdc-list growing-text-list">
 
-    <li class="sign-in-option sign-in">
-
+    <li class="sign-in-option google-button-container">
       <%- resource_class.omniauth_providers.each do |provider| %>
-        <%= form_for "Login",
-          url: omniauth_authorize_path(resource_name, provider),
-          method: :post,
-          data: {turbo: "false"} do |f| %>
-            <%= f.submit "Login", type: "image", src: url_for("/assets/btn_google_signin_dark_normal_web.png") %>
+        <%= form_for "Login", url: omniauth_authorize_path(resource_name, provider), method: :post do |f| %>
+          <%= f.button class: 'google-sign-in-button' do %>
+            <%= image_tag asset_path('google-icon.png'), class: 'google-icon' %>
+            <span class='google-sign-in-text'>Continuar con Google</span>
+          <% end %>
         <% end %>
       <% end %>
-
     </li>
+
     <li role="separator" class="mdc-list-divider"></li>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-
       <li class="sign-in-option sign-in">
         Ingresar con tu correo electrónico
       </li>
@@ -37,13 +32,15 @@
         <%= render 'shared/invalid_feedback', resource: resource, field: :password %>
       </li>
       <li class="sign-in-option sign-in">
-        <%= f.submit "Ingresar", class: "sign-in-button" %>
+        <%= f.button class: "mdc-button mdc-button--raised" do %>
+          <span class='mdc-button__label'>
+            Ingresar
+          </span>
+        <% end %>
       </li>
-
     <% end %>
-      <li role="separator" class="mdc-list-divider"></li>
-      <%= render "devise/shared/links" %>
 
+    <li role="separator" class="mdc-list-divider"></li>
+    <%= render "devise/shared/links" %>
   </ul>
 </div>
-
