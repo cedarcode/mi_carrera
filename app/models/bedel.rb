@@ -7,10 +7,14 @@ class Bedel
   end
 
   def add_approval(approvable)
-    if approvable.is_exam?
-      store[:approved_exams] += [approvable.subject_id]
+    if able_to_do?(approvable)
+      if approvable.is_exam?
+        store[:approved_exams] += [approvable.subject_id]
+      else
+        store[:approved_courses] += [approvable.subject_id]
+      end
     else
-      store[:approved_courses] += [approvable.subject_id]
+      return false
     end
   end
 
