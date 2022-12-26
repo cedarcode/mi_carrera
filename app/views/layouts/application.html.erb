@@ -22,7 +22,7 @@
     <meta name="theme-color" content="#6200ee"/>
   </head>
 
-  <body class="mdc-typography">
+  <body class="mdc-theme--background mdc-typography">
     <header class="mdc-top-app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -33,7 +33,6 @@
           <span hidden>
             <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
           </span>
-          <%= yield :profile_link %>
           <%= yield :credits %>
           <% if !content_for?(:navigation_icon) %>
             <%= render 'shared/menu' %>
@@ -41,16 +40,16 @@
         </section>
       </div>
     </header>
-    <section class="content mdc-top-app-bar--fixed-adjust">
-      <%= yield %>
-
-    </section>
-
-    <footer>
-
-      <%= image_tag asset_path("Logo-cedarcode.jpg") %>
-
+    <main class="mdc-top-app-bar--fixed-adjust">
+      <div class='content'>
+        <%= yield %>
+      </div>
+    </main>
+    <footer class="footer mdc-theme--text-primary-on-light">
+      <span class="mdc-theme--text-secondary-on-light">
+        Built by
+      </span>
+      <a class="mdc-theme--text-primary-on-light" href="https://cedarcode.com">Cedarcode</a>
     </footer>
-
   </body>
 </html>

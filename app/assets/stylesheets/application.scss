@@ -22,12 +22,18 @@
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/menu-surface/mdc-menu-surface";
 @import "@material/menu/mdc-menu";
+@import "@material/theme/mdc-theme";
 
 body {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  flex-direction: column;
+
   .content {
+    margin-left: auto;
+    margin-right: auto;
     max-width: 600px;
+    padding: 0px 20px;
     flex-grow: 1;
   }
 }
@@ -73,11 +79,11 @@ body {
     color: inherit;
     text-decoration-line: inherit;
   }
-  .mdc-list-item__text{
+  .mdc-list-item__text {
     flex-grow: 1;
     width: 100px;
   }
-  .mdc-list-item__meta{
+  .mdc-list-item__meta {
     margin-left: 0px;
   }
 }
