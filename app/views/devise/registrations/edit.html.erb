@@ -9,6 +9,11 @@
       <li class="sign-in-option">
         <%= f.label :email, 'Correo electrónico' %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input #{'is-invalid' if resource.errors[:email].any?}" %>
+        <% if current_user.provider %>
+          <p class="text-muted">
+            Si cambias tu correo electrónico, perderás el acceso con Google
+          </p>
+        <% end %>
         <%= render 'shared/invalid_feedback', resource: resource, field: :email %>
       </li>
 
