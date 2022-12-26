@@ -14,7 +14,7 @@ class Bedel
         store[:approved_courses] += [approvable.subject_id]
       end
     else
-      return false
+      false
     end
   end
 

@@ -25,6 +25,8 @@ Lint:
 
 Metrics/LineLength:
   Max: 120
+  Exclude:
+    - "test/models/bedel_test.rb"
 
 Naming:
   Enabled: true
