@@ -13,69 +13,100 @@ class BedelTest < ActiveSupport::TestCase
     @subject3 = create_subject(name: "Subject 3", credits: 13, exam: true)
   end
 
-  test "approve first version" do
-    bedel = Bedel.new({})
+  test "when bedel was instantiated without a user, a session with a course already approved shouldn't be able to approve it again" do
+    store = {}
+    bedel = Bedel.new(store)
+
     assert(bedel.able_to_do?(@subject2.course))
+
     bedel.add_approval(@subject1.course)
+
     assert_not(bedel.able_to_do?(@subject2.course))
   end
 
-  test '.add_approval subject1 course, when passing user should add subject to users approvals in store and in user.approvals' do
+  test "when bedel was instantiated without a user, .add_approval, when receiving a course, should add subject's course to store" do
+    store = {}
+    bedel = Bedel.new(store)
+
+    bedel.add_approval(@subject1.course)
+
+    assert_equal([@subject1.id], store[:approved_courses])
+  end
+
+  test "when bedel was instantiated without a user, .add_approval, when receiving an exam, should add subject's exam to store" do
+    store = {}
+    bedel = Bedel.new(store)
+
+    bedel.add_approval(@subject3.exam)
+
+    assert_equal([@subject3.id], store[:approved_exams])
+  end
+
+  test "when bedel was instantiated without a user, .remove_approval when receiving a course, should remove subject's course from store" do
+    store = { approved_courses: [@subject1.id] }
+    bedel = Bedel.new(store)
+
+    bedel.remove_approval(@subject1.course)
+
+    assert_equal([], store[:approved_courses])
+  end
+
+  test "when bedel was instantiated without a user, .remove_approval when receiving an exam, should remove subject's exam from store" do
+    store = { approved_exams: [@subject3.id] }
+    bedel = Bedel.new(store)
+
+    bedel.remove_approval(@subject3.exam)
+
+    assert_equal([], store[:approved_exams])
+  end
+
+  test "when bedel was instantiated without a user, .able_to_do? when receiving a course that can't approve, should return false" do
+    store = { approved_courses: [@subject1.id] }
+    bedel = Bedel.new(store)
+
+    assert_not(bedel.able_to_do?(@subject2.course))
+  end
+  test "when bedel was instantiated with a user, .add_approval, when receiving a course, should add subject's course to store and to user.approvals" do
     user = create_user
-    bedel = Bedel.new({}, user)
+    store = {}
+    bedel = Bedel.new(store, user)
+
     bedel.add_approval(@subject1.course)
 
     assert_equal([@subject1.id], user.approvals[:approved_courses])
-    assert_equal([@subject1.id], bedel.store[:approved_courses])
+    assert_equal([@subject1.id], store[:approved_courses])
   end
 
-  test '.add_approval subject3 exam, when passing user should add subject to users approvals in store and in user.approvals' do
+  test "when bedel was instantiated with a user, .add_approval, when receiving an exam, should add subject's exam to store and to user.approvals" do
     user = create_user
-    bedel = Bedel.new({}, user)
+    store = {}
+    bedel = Bedel.new(store, user)
+
     bedel.add_approval(@subject3.exam)
+
     assert_equal([@subject3.id], user.approvals[:approved_exams])
-    assert_equal([@subject3.id], bedel.store[:approved_exams])
+    assert_equal([@subject3.id], store[:approved_exams])
   end
 
-  test '.add_approval subject1 course, when not passing user should add subject to store' do
-    bedel = Bedel.new({})
-    bedel.add_approval(@subject1.course)
-    assert_equal([@subject1.id], bedel.store[:approved_courses])
-  end
-
-  test '.add_approval subject3 exam, when not passing user should add subject to store' do
-    bedel = Bedel.new({})
-    bedel.add_approval(@subject3.exam)
-    assert_equal([@subject3.id], bedel.store[:approved_exams])
-  end
-
-  test '.remove_approval subject1 course, when passing user should remove subject from users approvals in store and in user.approvals' do
+  test "when bedel was instantiated with a user, .remove_approval, when receiving a course, should remove subject's course from store and from user.approvals" do
     user = create_user
-    bedel = Bedel.new({ approved_courses: [@subject1.id] }, user)
+    store = { approved_courses: [@subject1.id] }
+    bedel = Bedel.new(store, user)
 
     bedel.remove_approval(@subject1.course)
+
     assert_equal([], user.approvals[:approved_courses])
-    assert_equal([], bedel.store[:approved_courses])
+    assert_equal([], store[:approved_courses])
   end
 
-  test '.remove_approval subject3 exam, when passing user should remove subject from users approvals in store and in user.approvals' do
+  test "when bedel was instantiated with a user, .remove_approval, when receiving an exam, should remove subject's exam from store and from user.approvals" do
     user = create_user
-    bedel = Bedel.new({ approved_exams: [@subject3.id] }, user)
+    store = { approved_exams: [@subject3.id] }
+    bedel = Bedel.new(store, user)
 
     bedel.remove_approval(@subject3.exam)
+
     assert_equal([], user.approvals[:approved_exams])
-    assert_equal([], bedel.store[:approved_exams])
-  end
-
-  test '.remove_approval subject1 course, when not passing user should remove subject from store' do
-    bedel = Bedel.new(approved_courses: [@subject1.id])
-    bedel.remove_approval(@subject1.course)
-    assert_equal([], bedel.store[:approved_courses])
-  end
-
-  test '.remove_approval subject3 exam, when not passing user should remove subject from store' do
-    bedel = Bedel.new(approved_exams: [@subject3.id])
-    bedel.remove_approval(@subject3.exam)
-    assert_equal([], bedel.store[:approved_exams])
+    assert_equal([], store[:approved_exams])
   end
 end
