@@ -50,8 +50,8 @@ class ActiveSupport::TestCase
       yield
     end
   end
+
   def click_actions_menu
     find("a", text: 'more_vert').click
   end
-
 end

@@ -19,5 +19,9 @@ module Student
     # the framework and any gems in your application.
 
     config.i18n.default_locale = :es
+
+    config.action_view.field_error_proc = Proc.new { |html_tag, _instance|
+      html_tag
+    }
   end
 end

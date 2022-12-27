@@ -23,6 +23,7 @@
 @import "@material/menu-surface/mdc-menu-surface";
 @import "@material/menu/mdc-menu";
 @import "@material/button/mdc-button";
+
 @import "@material/textfield/mdc-text-field";
 
 @import "flash";
@@ -229,8 +230,9 @@ body {
 .menu-user-info {
   padding: 0 16px;
 }
-
-.text-muted {
-  color: #444;
-  font-size: 14px;
+.mdc-text-field-helper-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
 }

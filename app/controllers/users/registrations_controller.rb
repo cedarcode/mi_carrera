@@ -12,12 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         params[:provider] = nil
       end
 
-      if params[:password].present? || params[:password_confirmation].present?
-        resource.update_with_password(params)
-      else
-        params.delete('current_password')
-        resource.update_without_password(params)
-      end
+      resource.update_with_password(params)
 
     else
       resource.update_with_password(params)
@@ -25,14 +20,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def configure_permitted_parameters_sign_up
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name, :email, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :password_confirmation])
   end
 
   def configure_permitted_parameters_account_update
     devise_parameter_sanitizer.permit(
       :account_update,
       keys: [
-        :full_name,
         :email,
         :password,
         :password_confirmation,
