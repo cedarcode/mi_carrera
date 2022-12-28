@@ -38,7 +38,7 @@
           <%= f.password_field :password, class: "mdc-text-field__input", required: true %>
           <div class="mdc-line-ripple"></div>
         </div>
-        <%= render 'shared/helper_text', resource: resource, field: :password, text: '' %>
+        <%= render 'shared/helper_text', resource: resource, field: :password, text: "#{@minimum_password_length} caracteres mínimo." %>
       </li>
       <li class="form-input-container">
         <div class="mdc-text-field <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:password_confirmation].any? %>" data-controller="textfield">

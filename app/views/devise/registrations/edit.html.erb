@@ -24,7 +24,7 @@
           <%= f.password_field :password, class: "mdc-text-field__input", autofocus: true, autocomplete: "password" %>
           <div class="mdc-line-ripple"></div>
         </div>
-        <%= render 'shared/helper_text', resource: resource, field: :password, text: "#{@minimum_password_length} characters minimum. Dejar en blanco si no lo quieres cambiar." %>
+        <%= render 'shared/helper_text', resource: resource, field: :password, text: "#{@minimum_password_length} caracteres mínimo. Dejar en blanco si no lo quieres cambiar." %>
       </li>
       <li class="form-input-container">
         <div class="mdc-text-field <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:password_confirmation].any? %>" data-controller="textfield">
