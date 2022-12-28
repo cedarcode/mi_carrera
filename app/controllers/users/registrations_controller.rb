@@ -5,18 +5,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def update_resource(resource, params)
-    if resource.provider == 'google_oauth2'
-
-      if resource.email != params[:email]
-        params[:uid] = nil
-        params[:provider] = nil
-      end
-
-      resource.update_with_password(params)
-
-    else
-      resource.update_with_password(params)
+    if resource.provider == 'google_oauth2' && resource.email != params[:email]
+      params[:uid] = nil
+      params[:provider] = nil
     end
+
+    resource.update_with_password(params)
   end
 
   def configure_permitted_parameters_sign_up
