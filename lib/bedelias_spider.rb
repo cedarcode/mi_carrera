@@ -3,6 +3,7 @@ require 'pp'
 require 'bedelias_page'
 require 'curriculum_page'
 require 'prerequisites_page'
+require 'prerequisites_tree_page'
 
 class BedeliasSpider < Kimurai::Base
   @name = "bedelias_spider"
@@ -20,6 +21,10 @@ class BedeliasSpider < Kimurai::Base
 
   def prerequisites_page
     @prerequisites_page ||= PrerequisitesPage.new(browser)
+  end
+
+  def prerequisites_tree_page
+    @prerequisites_tree_page ||= PrerequisitesTreePage.new(browser)
   end
 
   def parse_subjects(*_args)
@@ -99,24 +104,13 @@ class BedeliasSpider < Kimurai::Base
     end
   end
 
-  def parse_prerequisite(_response, data: {}, **_keyword_arguments)
-    bedelias_page.visit_prerequisites
-
-    code = data[:subject_code]
-    find("//input[@id='j_idt63:j_idt64:filter']").set(code)
-    sleep 1
-    click("//tr[@data-ri=0]//a")
-    tree = find("//td[@data-rowkey='root']")
-    pp create_prerequisite(tree, code)
-  end
-
   def parse_prerequisites(*_args)
     bedelias_page.visit_prerequisites
-
+    row_index = 0
     prerequisites_pages do
       current_page = prerequisites_page.current_page_number
-
-      prerequisites_rows(current_page) do |row, row_index|
+      prerequisites_page.row_count_in_page.times do
+        row = prerequisites_page.row_with_index(row_index)
         subject_code = row.first(:xpath, "td[1]").text.split(' - ')[0] # retrieve code from column 'Nombre'
         is_exam = row.first(:xpath, "td[2]").text == "Examen" # from column 'Tipo'
 
@@ -124,56 +118,26 @@ class BedeliasSpider < Kimurai::Base
           "#{current_page}/#{row_index} - Generating prerequisite for #{subject_code}, #{is_exam ? "exam" : "course"}"
         )
 
-        click("td[3]/a", row) # 'Ver más'
+        prerequisites_page.see_more(row) # 'Ver más'
 
-        tree = find("//td[@data-rowkey='root']")
-        prerequisite = create_prerequisite(tree, subject_code, is_exam)
+        tree = prerequisites_tree_page.root
+        prerequisite = create_prerequisite_tree(tree, subject_code, is_exam)
         path = File.join(Rails.root, "db", "seeds", "scraped_prerequisites.json")
         save_to path, prerequisite, format: :pretty_json, position: false
 
-        click("//button/span[text()='Volver']")
+        prerequisites_tree_page.back
 
-        # move forward to last selected page on table
-        (current_page - 1).times do
-          click("//span[contains(@class, 'ui-icon-seek-next')]")
-          sleep 0.5
-        end
+        # move to current_page
+        prerequisites_page.advance_to_page(current_page)
+        row_index += 1
       end
     end
   end
 
   private
 
-  def extract_subjects_from_box(box)
-    subjects = []
-    text = box.split('entre: ')[1]
 
-    indices =
-      text
-      .enum_for(:scan, /(?=((Examen)|(Curso)|(U\.C\.B aprobada)))/)
-      .map { Regexp.last_match.offset(0).first } # all indices of 'Exam', 'Curso' and 'U.C.B aprobada'
-
-    (0..(indices.count - 1)).each do |i|
-      last = (i == indices.count - 1 ? text.length : indices[i + 1])
-      last -= 1
-      subject = text[indices[i]..last]
-
-      subject_code = subject.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
-
-      subject_code = subject_code.tr(' -', '')
-      if subject.include?("U.C.B aprobada:")
-        needs = 'all'
-      elsif subject.include?("Examen")
-        needs = 'exam'
-      elsif subject.include?("Curso")
-        needs = 'course'
-      end
-      subjects += [{ subject_needed: subject_code, needs: needs }]
-    end
-    subjects
-  end
-
-  def create_prerequisite(original_prerequisite, subject = nil, exam = false)
+  def create_prerequisite_tree(original_prerequisite, subject = nil, exam = false)
     prerequisite = {}
     if subject
       prerequisite[:subject] = subject
@@ -194,7 +158,7 @@ class BedeliasSpider < Kimurai::Base
           prerequisite[:logical_operator] = "and"
         end
         prerequisite[:operands] = []
-        subjects = extract_subjects_from_box(node_content)
+        subjects = prerequisites_tree_page.extract_subjects_from(node_content)
 
         subjects.each do |s|
           prerequisite[:operands] += [
@@ -236,7 +200,7 @@ class BedeliasSpider < Kimurai::Base
         "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]"
       )
       operands.each do |operand|
-        prerequisite[:operands] += [create_prerequisite(operand)]
+        prerequisite[:operands] += [create_prerequisite_tree(operand)]
       end
     elsif node_type == 'no'
       prerequisite[:type] = 'logical'
@@ -252,7 +216,7 @@ class BedeliasSpider < Kimurai::Base
         "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]"
       )
       operands.each do |operand|
-        prerequisite[:operands] += [create_prerequisite(operand)]
+        prerequisite[:operands] += [create_prerequisite_tree(operand)]
       end
     elsif node_type == 'o'
       prerequisite[:type] = 'logical'
@@ -268,7 +232,7 @@ class BedeliasSpider < Kimurai::Base
         "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]"
       )
       operands.each do |operand|
-        prerequisite[:operands] += [create_prerequisite(operand)]
+        prerequisite[:operands] += [create_prerequisite_tree(operand)]
       end
     end
     prerequisite
@@ -289,15 +253,6 @@ class BedeliasSpider < Kimurai::Base
         sleep 0.5
 
       end
-    end
-  end
-
-  def prerequisites_rows(page_index)
-    row_count = prerequisites_page.row_count_in_page
-
-    row_count.times do |i|
-      row_index = (page_index - 1) * ROWS_PER_PAGE + i
-      yield(prerequisites_page.row_with_index(row_index), i)
     end
   end
 
