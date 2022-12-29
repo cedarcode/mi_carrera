@@ -23,14 +23,12 @@ class BedeliasSpider < Kimurai::Base
   end
 
   def parse_subjects(*_args)
-
     bedelias_page.visit_curriculum
 
     subjects = {}
 
     # get all groups
     curriculum_page.groups.each do |node|
-
       # for each group, break text into code, name and min_credits
       info = node.text.split(' - ')
       code = info[0]
@@ -46,7 +44,6 @@ class BedeliasSpider < Kimurai::Base
 
       # for each group, get all subjects
       curriculum_page.subjects(node).each do |subnode|
-
         # for each subject, break text into code, name and credits
         info = subnode.text.split(' - créditos: ')
         subject_credits = info[1].to_i
@@ -69,10 +66,8 @@ class BedeliasSpider < Kimurai::Base
     bedelias_page.visit_prerequisites
 
     prerequisites_pages do
-
       # for each page, get all rows
       prerequisites_page.rows_in_current_page.each do |row|
-
         # for each row (subject)
         index = row['data-ri'].to_i
         column = row.first(:xpath, "td")
@@ -119,7 +114,6 @@ class BedeliasSpider < Kimurai::Base
     bedelias_page.visit_prerequisites
 
     prerequisites_pages do
-
       current_page = prerequisites_page.current_page_number
 
       prerequisites_rows(current_page) do |row, row_index|

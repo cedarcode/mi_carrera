@@ -1,5 +1,4 @@
 class BedeliasPage
-
   attr_reader :browser
   delegate :find, :click_on, :all, to: :browser
 
@@ -8,7 +7,6 @@ class BedeliasPage
   end
 
   def visit_curriculum
-
     click_on "PLANES DE ESTUDIO"
     click_on "Planes de estudio / Previas"
 

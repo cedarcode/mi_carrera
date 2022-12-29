@@ -1,5 +1,4 @@
 class CurriculumPage < BedeliasPage
-
   def groups
     all("//li[@data-nodetype='Grupo'][not(*//li[@data-nodetype='Grupo'])]/span")
   end
