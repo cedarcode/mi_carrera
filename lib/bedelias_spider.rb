@@ -118,7 +118,10 @@ class BedeliasSpider < Kimurai::Base
   def parse_prerequisites(*_args)
     bedelias_page.visit_prerequisites
 
-    prerequisites_pages do |current_page|
+    prerequisites_pages do
+
+      current_page = prerequisites_page.current_page_number
+
       prerequisites_rows(current_page) do |row, row_index|
         subject_code = row.first(:xpath, "td[1]").text.split(' - ')[0] # retrieve code from column 'Nombre'
         is_exam = row.first(:xpath, "td[2]").text == "Examen" # from column 'Tipo'
