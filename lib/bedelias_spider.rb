@@ -1,5 +1,8 @@
 require 'kimurai'
 require 'pp'
+require 'bedelias_page'
+require 'curriculum_page'
+require 'prerequisites_page'
 
 class BedeliasSpider < Kimurai::Base
   @name = "bedelias_spider"
@@ -7,12 +10,28 @@ class BedeliasSpider < Kimurai::Base
 
   ROWS_PER_PAGE = 20
 
+  def bedelias_page
+    @bedelias_page ||= BedeliasPage.new(browser)
+  end
+
+  def curriculum_page
+    @curriculum_page ||= CurriculumPage.new(browser)
+  end
+
+  def prerequisites_page
+    @prerequisites_page ||= PrerequisitesPage.new(browser)
+  end
+
   def parse_subjects(*_args)
-    visit_curriculum
+
+    bedelias_page.visit_curriculum
 
     subjects = {}
 
-    browser.all("//li[@data-nodetype='Grupo'][not(*//li[@data-nodetype='Grupo'])]/span").each do |node|
+    # get all groups
+    curriculum_page.groups.each do |node|
+
+      # for each group, break text into code, name and min_credits
       info = node.text.split(' - ')
       code = info[0]
       name = info[1]
@@ -20,17 +39,22 @@ class BedeliasSpider < Kimurai::Base
 
       puts "Generating subject group #{code} - #{name}"
 
+      # create group and add it to file
       subject_group = { code: code, name: name, min_credits: min_credits }
       path = File.join(Rails.root, "db", "seeds", "scraped_subject_groups.json")
       save_to path, subject_group, format: :pretty_json, position: false
 
-      node.all('..//li[@data-nodetype="Materia"]/span').each do |subnode|
+      # for each group, get all subjects
+      curriculum_page.subjects(node).each do |subnode|
+
+        # for each subject, break text into code, name and credits
         info = subnode.text.split(' - créditos: ')
         subject_credits = info[1].to_i
         info = info[0].split(' - ')
         subject_code = info[0]
         subject_name = info[1..-1].join(' - ')
 
+        # add the subject to the hash, with code as key
         subjects[subject_code] = {
           code: subject_code,
           name: subject_name,
@@ -41,10 +65,16 @@ class BedeliasSpider < Kimurai::Base
       end
     end
 
-    visit_prerequisites
+    # got to the prerequisites page
+    bedelias_page.visit_prerequisites
 
-    prerequisites_pages do |page_number|
-      prerequisites_rows(page_number) do |row, index|
+    prerequisites_pages do
+
+      # for each page, get all rows
+      prerequisites_page.rows_in_current_page.each do |row|
+
+        # for each row (subject)
+        index = row['data-ri'].to_i
         column = row.first(:xpath, "td")
         subject_code = column.text.split(' - ')[0]
 
@@ -54,9 +84,11 @@ class BedeliasSpider < Kimurai::Base
         end
 
         type = column.first(:xpath, "following-sibling::td").text
+        page_number = prerequisites_page.current_page_number
 
         puts "#{page_number}/#{index} Generating #{column.text}, #{type}"
 
+        # save the subject and whether it has an exam
         if type == "Curso"
           subjects[subject_code][:has_exam] = false
         elsif type == "Examen"
@@ -65,6 +97,7 @@ class BedeliasSpider < Kimurai::Base
       end
     end
 
+    # save to a file
     path = File.join(Rails.root, "db", "seeds", "scraped_subjects.json")
     subjects.values.each do |subject|
       save_to path, subject, format: :pretty_json, position: false
@@ -72,8 +105,7 @@ class BedeliasSpider < Kimurai::Base
   end
 
   def parse_prerequisite(_response, data: {}, **_keyword_arguments)
-    visit_curriculum
-    visit_prerequisites
+    bedelias_page.visit_prerequisites
 
     code = data[:subject_code]
     find("//input[@id='j_idt63:j_idt64:filter']").set(code)
@@ -84,8 +116,7 @@ class BedeliasSpider < Kimurai::Base
   end
 
   def parse_prerequisites(*_args)
-    visit_curriculum
-    visit_prerequisites
+    bedelias_page.visit_prerequisites
 
     prerequisites_pages do |current_page|
       prerequisites_rows(current_page) do |row, row_index|
@@ -246,21 +277,31 @@ class BedeliasSpider < Kimurai::Base
     prerequisite
   end
 
-  def visit_curriculum
-    click("//a[text()='PLANES DE ESTUDIO']")
+  def prerequisites_pages
+    reached_end = false
 
-    click("//a[@id='j_idt52:j_idt56:1:j_idt58']")
+    while !reached_end do
 
-    click("//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']")
-    click("//tr//span[text()='FING - FACULTAD DE INGENIERÍA']")
+      yield
 
-    sleep 2
-    click("//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div")
-    click("//a[@id='datos1111:j_idt92:35:j_idt104:0:verComposicionPlan']")
+      reached_end = prerequisites_page.reached_last_page?
+
+      if !reached_end
+        # move forward one page
+        prerequisites_page.move_to_next_page
+        sleep 0.5
+
+      end
+    end
   end
 
-  def visit_prerequisites
-    find("//button[span[text()='Sistema de previaturas']]").click
+  def prerequisites_rows(page_index)
+    row_count = prerequisites_page.row_count_in_page
+
+    row_count.times do |i|
+      row_index = (page_index - 1) * ROWS_PER_PAGE + i
+      yield(prerequisites_page.row_with_index(row_index), i)
+    end
   end
 
   def click(xpath_selector, scope = browser)
@@ -269,34 +310,5 @@ class BedeliasSpider < Kimurai::Base
 
   def find(xpath_selector, scope = browser)
     scope.find(:xpath, xpath_selector)
-  end
-
-  def prerequisites_pages
-    reached_end = false
-    current_page = 1
-
-    while !reached_end do
-      yield(current_page)
-
-      reached_end = find("//span[contains(@class, 'ui-paginator-next')]")[:class].include?('disabled')
-
-      if !reached_end
-        # move forward one page
-        click("//span[contains(@class, 'ui-icon-seek-next')]")
-        sleep 0.5
-        current_page += 1
-      end
-    end
-  end
-
-  def prerequisites_rows(page_index)
-    row_count = browser.all(:xpath, "//tr[@data-ri]").count
-
-    row_count.times do |i|
-      row_index = (page_index - 1) * ROWS_PER_PAGE + i
-      row = find("//tr[@data-ri=#{row_index}]")
-
-      yield(row, i)
-    end
   end
 end

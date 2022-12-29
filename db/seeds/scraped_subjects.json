@@ -1,5 +1,75 @@
 [
   {
+    "code": "CIM22",
+    "name": "TOPOLOGÍA",
+    "credits": 12,
+    "subject_group": "4083",
+    "has_exam": true
+  },
+  {
+    "code": "SRN14",
+    "name": "MATEMÁTICA DISCRETA I",
+    "credits": 10,
+    "subject_group": "4083",
+    "has_exam": null
+  },
+  {
+    "code": "CIM11",
+    "name": "MATEMÁTICA DISCRETA 2",
+    "credits": 10,
+    "subject_group": "4083",
+    "has_exam": true
+  },
+  {
+    "code": "CH201",
+    "name": "PROBABILIDAD Y ESTADÍSTICA",
+    "credits": 10,
+    "subject_group": "4083",
+    "has_exam": true
+  },
+  {
+    "code": "CIM24",
+    "name": "ECUACIONES DIFERENCIALES",
+    "credits": 10,
+    "subject_group": "4083",
+    "has_exam": true
+  },
+  {
+    "code": "CIM10",
+    "name": "CÁLCULO VECTORIAL",
+    "credits": 12,
+    "subject_group": "4083",
+    "has_exam": true
+  },
+  {
+    "code": "SRN09",
+    "name": "CÁLCULO II",
+    "credits": 16,
+    "subject_group": "4083",
+    "has_exam": true
+  },
+  {
+    "code": "SRN02",
+    "name": "CÁLCULO I",
+    "credits": 16,
+    "subject_group": "4083",
+    "has_exam": true
+  },
+  {
+    "code": "SRN10",
+    "name": "ALGEBRA LINEAL II",
+    "credits": 12,
+    "subject_group": "4083",
+    "has_exam": true
+  },
+  {
+    "code": "SRN03",
+    "name": "ALGEBRA LINEAL I",
+    "credits": 12,
+    "subject_group": "4083",
+    "has_exam": true
+  },
+  {
     "code": "1886",
     "name": "TOPOLOGIA Y ANALISIS REAL",
     "credits": 10,
@@ -630,6 +700,27 @@
     "has_exam": null
   },
   {
+    "code": "SRN26",
+    "name": "FÍSICA 3",
+    "credits": 10,
+    "subject_group": "4442",
+    "has_exam": true
+  },
+  {
+    "code": "SRN11",
+    "name": "FÍSICA 2",
+    "credits": 10,
+    "subject_group": "4442",
+    "has_exam": true
+  },
+  {
+    "code": "REF04",
+    "name": "FÍSICA 1",
+    "credits": 10,
+    "subject_group": "4442",
+    "has_exam": true
+  },
+  {
     "code": "MHC16",
     "name": "BIOQUÍMICA 1 (2020-",
     "credits": 13,
@@ -943,6 +1034,13 @@
     "credits": 66,
     "subject_group": "4442",
     "has_exam": null
+  },
+  {
+    "code": "SRN17",
+    "name": "PROGRAMACIÓN I",
+    "credits": 10,
+    "subject_group": "4580",
+    "has_exam": true
   },
   {
     "code": "1373",
@@ -1421,6 +1519,13 @@
     "has_exam": null
   },
   {
+    "code": "1888",
+    "name": "TALLER DE INICIACION A LOS SISTEMAS CIBER-FISICOS",
+    "credits": 4,
+    "subject_group": "4882",
+    "has_exam": false
+  },
+  {
     "code": "1556",
     "name": "SISTEMAS EMBEBIDOS PARA TIEMPO REAL",
     "credits": 10,
@@ -1862,6 +1967,13 @@
     "has_exam": null
   },
   {
+    "code": "SRN30",
+    "name": "TALLER DE ROBÓTICA",
+    "credits": 2,
+    "subject_group": "4882",
+    "has_exam": null
+  },
+  {
     "code": "1880",
     "name": "CIENCIA DE DATOS Y LENGUAJE NATURAL",
     "credits": 10,
@@ -2273,6 +2385,13 @@
     "credits": 9,
     "subject_group": "4647",
     "has_exam": null
+  },
+  {
+    "code": "CIM20",
+    "name": "MÉTODOS NUMÉRICOS",
+    "credits": 10,
+    "subject_group": "5020",
+    "has_exam": true
   },
   {
     "code": "1872",
@@ -3367,6 +3486,13 @@
     "has_exam": true
   },
   {
+    "code": "SRN13",
+    "name": "ECONOMÍA POLÍTICA",
+    "credits": 10,
+    "subject_group": "5265",
+    "has_exam": null
+  },
+  {
     "code": "1270",
     "name": "CIUDADANIA EN ENTORNOS DIGITALES",
     "credits": 6,
@@ -3547,6 +3673,20 @@
     "credits": 8,
     "subject_group": "5265",
     "has_exam": null
+  },
+  {
+    "code": "SRN22",
+    "name": "COMPRENSIÓN LECTORA DE INGLÉS",
+    "credits": 8,
+    "subject_group": "3582",
+    "has_exam": null
+  },
+  {
+    "code": "SRN25",
+    "name": "TALLER INTERDISCIPLINARIO",
+    "credits": 2,
+    "subject_group": "3582",
+    "has_exam": true
   },
   {
     "code": "5828",
