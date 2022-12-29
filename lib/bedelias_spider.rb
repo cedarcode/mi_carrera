@@ -136,7 +136,6 @@ class BedeliasSpider < Kimurai::Base
 
   private
 
-
   def create_prerequisite_tree(original_prerequisite, subject = nil, exam = false)
     prerequisite = {}
     if subject
