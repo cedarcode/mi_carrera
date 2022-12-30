@@ -17,4 +17,13 @@ class BedelTest < ActiveSupport::TestCase
     bedel.add_approval(@subject1.course)
     assert_not(bedel.able_to_do?(@subject2.course))
   end
+
+  test "when bedel was instantiated without a user, .add_approval when receiving a course that can't approve, should do nothing" do
+    store = { approved_courses: [@subject1.id] }
+    bedel = Bedel.new(store)
+
+    bedel.add_approval(@subject2.course)
+
+    assert_equal([@subject1.id], store[:approved_courses])
+  end
 end
