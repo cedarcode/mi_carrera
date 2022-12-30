@@ -9,6 +9,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0' %>
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700' %>
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/icon?family=Material+Icons' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -41,8 +42,10 @@
         </section>
       </div>
     </header>
-    <section class="content mdc-top-app-bar--fixed-adjust">
-      <%= yield %>
-    </section>
+    <main class="mdc-top-app-bar--fixed-adjust">
+      <div class='content'>
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
