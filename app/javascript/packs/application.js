@@ -7,24 +7,26 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+console.log("Hello World from Webpacker");
 
-import "install"
-import "serviceworker-companion"
-import { Application } from "stimulus"
-import { definitionsFromContext } from "stimulus/webpack-helpers"
+import "install";
+import "serviceworker-companion";
+import "./drawer";
 
-const application = Application.start()
-const context = require.context("controllers", true, /.js$/)
-application.load(definitionsFromContext(context))
+import { Application } from "stimulus";
+import { definitionsFromContext } from "stimulus/webpack-helpers";
 
-document.addEventListener("turbolinks:load", function() {
+const application = Application.start();
+const context = require.context("controllers", true, /.js$/);
+application.load(definitionsFromContext(context));
+
+document.addEventListener("turbolinks:load", function () {
   window.initializeCheckboxes();
 });
 
-window.initializeCheckboxes = function() {
-  document.querySelectorAll(".mdc-checkbox").forEach(function(element) {
-    element.addEventListener("click", function(event) {
+window.initializeCheckboxes = function () {
+  document.querySelectorAll(".mdc-checkbox").forEach(function (element) {
+    element.addEventListener("click", function (event) {
       event.stopPropagation();
     });
   });

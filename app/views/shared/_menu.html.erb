@@ -1,21 +1,23 @@
-<div class="mdc-menu-surface--anchor" data-controller="menu">
-  <a class="mdc-icon-button material-icons" data-action="click->menu#openMenu">
-    more_vert
-  </a>
-  <div class="mdc-menu mdc-menu-surface" data-target="menu.content">
+<aside class="mdc-drawer mdc-drawer--dismissible">
+  <div class="mdc-drawer__content">
     <div class="mdc-list">
-      <%= link_to all_subjects_path, class: "mdc-list-item" do %>
+      <%= link_to root_path, class: "mdc-list-item", aria: { current: 'page'} do %>
+        <span class="mdc-list-item__text">
+          Home
+        <span>
+      <% end %>
+      <%= link_to all_subjects_path, class: "mdc-list-item", aria: { current: 'page'} do %>
         <span class="mdc-list-item__text">
           Materias
         <span>
       <% end %>
-      <%= link_to profile_path, class: "mdc-list-item" do %>
+      <%= link_to profile_path, class: "mdc-list-item", aria: { current: 'page'} do %>
         <span class="mdc-list-item__text">
           Avance de carrera
         </span>
       <% end %>
       <li role="separator" class="mdc-list-divider"></li>
-      <a class='mdc-list-item' href="https://github.com/cedarcode/student" target='_blank'>
+      <a class='mdc-list-item' href="https://github.com/cedarcode/student" target='_blank' aria-current='page'>
         <span class="material-symbols-outlined">
           open_in_new
         </span>
@@ -26,4 +28,4 @@
       </a>
     </div>
   </div>
-</div>
+</aside>

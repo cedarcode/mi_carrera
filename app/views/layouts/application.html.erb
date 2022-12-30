@@ -21,31 +21,35 @@
     <meta name="apple-mobile-web-app-title" content="Student PWA">
     <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
     <meta name="theme-color" content="#6200ee"/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
 
   <body class="mdc-typography">
-    <header class="mdc-top-app-bar">
-      <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <%= yield :navigation_icon %>
-          <%= yield :title %>
-        </section>
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          <span hidden>
-            <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
-          </span>
-          <%= yield :profile_link %>
-          <%= yield :credits %>
-          <% if !content_for?(:navigation_icon) %>
-            <%= render 'shared/menu' %>
-          <% end %>
-        </section>
-      </div>
-    </header>
-    <main class="mdc-top-app-bar--fixed-adjust">
-      <div class='content'>
-        <%= yield %>
-      </div>
-    </main>
+
+    <%= render 'shared/menu' %>
+
+    <div class="mdc-drawer-app-content">
+      <header id='app-bar' class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+            <%= yield :navigation_icon %>
+            <%= yield :title %>
+          </section>
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+            <span hidden>
+              <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
+            </span>
+            <%= yield :credits %>
+          </section>
+        </div>
+      </header>
+      <main class="mdc-top-app-bar--fixed-adjust main-content" id='main-content'>
+        <div class='content'>
+          <%= yield %>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

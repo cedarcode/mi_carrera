@@ -1,7 +1,3 @@
-<% content_for :navigation_icon do %>
-  <%= nav_icon("arrow_back", (request.referer ? 'javascript:history.back()' : root_path)) %>
-<% end %>
-
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5"><%= @subject.code %> - <%= @subject.name %></h3>
   <hr class="mdc-list-divider">
