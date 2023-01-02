@@ -35,4 +35,35 @@ class PrerequisitesTreePage < BedeliasPage
     end
     subjects
   end
+
+  def only_one_approval_needed?(node)
+    node.first(:xpath, "div/span[@class='negrita']").text.split(' ')[0] == '1'
+  end
+
+  def subject_code(node)
+    node.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
+  end
+
+  def expand_prerequisites_tree(node)
+    toggler = node.find("div/span[contains(@class, 'ui-tree-toggler')]")
+    if toggler[:class].include?('plus')
+      toggler.click
+    end
+  end
+
+  def subtrees_roots(node)
+    node.all(:xpath, "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]")
+  end
+
+  def node_content_from_node(node)
+    node.first(:xpath, 'div').text
+  end
+
+  def credits_from_node(node)
+    node_content_from_node(node).split(' créditos')[0].to_i
+  end
+
+  def group_from_node(node)
+    node_content_from_node(node).split('Grupo: ')[1].to_i
+  end
 end

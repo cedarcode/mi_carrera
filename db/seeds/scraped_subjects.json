@@ -3,3906 +3,3906 @@
     "code": "CIM22",
     "name": "TOPOLOGÍA",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "SRN14",
     "name": "MATEMÁTICA DISCRETA I",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CIM11",
     "name": "MATEMÁTICA DISCRETA 2",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "CH201",
     "name": "PROBABILIDAD Y ESTADÍSTICA",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "CIM24",
     "name": "ECUACIONES DIFERENCIALES",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "CIM10",
     "name": "CÁLCULO VECTORIAL",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "SRN09",
     "name": "CÁLCULO II",
     "credits": 16,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "SRN02",
     "name": "CÁLCULO I",
     "credits": 16,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "SRN10",
     "name": "ALGEBRA LINEAL II",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "SRN03",
     "name": "ALGEBRA LINEAL I",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1886",
     "name": "TOPOLOGIA Y ANALISIS REAL",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": false
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1066",
     "name": "FUNCIONES DE VARIABLE COMPLEJA",
     "credits": 5,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1025T",
     "name": "CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA",
     "credits": 8,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "D87",
     "name": "TEORÍA DE JUEGOS",
     "credits": 6,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "MI2",
     "name": "MATEMATICA INICIAL",
     "credits": 4,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "M09",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "M5",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 5,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "GP5",
     "name": "ESTADISTICA ESPACIAL",
     "credits": 5,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA015",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 15,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA48",
     "name": "CRÉDITOS ASIGNADOS POR REVÁLIDA",
     "credits": 48,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA11",
     "name": "CRÉDITOS ASIGNADOS POR REVÁLIDA",
     "credits": 11,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA020",
     "name": "CRÉDITOS ASIGNADOS POR REVÁLIDA",
     "credits": 20,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CAL12",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "2415",
     "name": "CODIGOS PARA CORRECCION DE ERRORES",
     "credits": 8,
-    "subject_group": "4083",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4083"
   },
   {
     "code": "CAL10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP7",
     "name": "ANALISIS COMPLEJO",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP1",
     "name": "ANALISIS MATEMATICO I",
     "credits": 33,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP22",
     "name": "ANALISIS MATEMATICO I (P. 74)",
     "credits": 33,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP44",
     "name": "ANALISIS MATEMATICO I (1ER.SEM.)",
     "credits": 17,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP45",
     "name": "ANALISIS MATEMATICO I (2DO.SEM.)",
     "credits": 16,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP6",
     "name": "ANALISIS MATEMATICO II",
     "credits": 33,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP25",
     "name": "ANALISIS MATEMATICO II (P. 74)",
     "credits": 33,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP48",
     "name": "ANALISIS MATEMATICO II (1ER.SEM.)",
     "credits": 16,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP49",
     "name": "ANALISIS MATEMATICO II (2DO.SEM.)",
     "credits": 17,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1061",
     "name": "CALCULO DIF. E INTEGRAL EN UNA VARIABLE",
     "credits": 13,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1020",
     "name": "CALCULO 1",
     "credits": 16,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1070",
     "name": "CALCULO 1",
     "credits": 16,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1052",
     "name": "CALCULO 1 (ANUAL)",
     "credits": 16,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1062",
     "name": "CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES",
     "credits": 13,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1022",
     "name": "CALCULO 2",
     "credits": 16,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1072",
     "name": "CALCULO 2",
     "credits": 16,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1063",
     "name": "CALCULO VECTORIAL",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1024",
     "name": "CALCULO 3",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1076",
     "name": "CALCULO 3",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1021",
     "name": "ALGEBRA LINEAL",
     "credits": 18,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP2",
     "name": "GEOMETRIA Y ALGEBRA LINEAL",
     "credits": 24,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP23",
     "name": "GEOMETRIA Y ALGEBRA LINEAL (P. 74)",
     "credits": 24,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP46",
     "name": "GEOMETRIA Y ALGEBRA LINEAL (1ER.SEM.)",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP47",
     "name": "GEOMETRIA Y ALGEBRA LINEAL (2DO.SEM.)",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1030",
     "name": "GEOMETRIA Y ALGEBRA LINEAL 1",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1071",
     "name": "GEOMETRIA Y ALGEBRA LINEAL 1",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1053",
     "name": "GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1031",
     "name": "GEOMETRIA Y ALGEBRA LINEAL 2",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1058",
     "name": "GEOMETRIA Y ALGEBRA LINEAL 2",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1012",
     "name": "COMBINATORIA ANALITICA",
     "credits": 8,
-    "subject_group": "4083",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4083"
   },
   {
     "code": "1065",
     "name": "TEORIA DE COD. ALGEB. PARA CORR. DE ERRORES",
     "credits": 7,
-    "subject_group": "4083",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4083"
   },
   {
     "code": "1059",
     "name": "CRIPTOGRAFIA:ASPECTOS TEOR. Y PRACTICOS",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4083"
   },
   {
     "code": "1049",
     "name": "INFERENCIA II (ESTADISTICA BAYESIANA)",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1450",
     "name": "INT. A LA TEORIA DE LA INFORMACION",
     "credits": 8,
-    "subject_group": "4083",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4083"
   },
   {
     "code": "C461",
     "name": "INT. A LA TOPOLOGIA",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "CP4",
     "name": "LOGICA",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1027",
     "name": "LOGICA",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1013",
     "name": "LOGICA MODALIDAD AL REVES",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1010",
     "name": "LOGICA Y COMPUTACION",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1023",
     "name": "MATEMATICA DISCRETA 1",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1026",
     "name": "MATEMATICA DISCRETA 2",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1064",
     "name": "INT. A LAS ECUACIONES DIFERENCIALES",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1028",
     "name": "ECUACIONES DIFERENCIALES",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1074",
     "name": "ECUACIONES DIFERENCIALES",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1025",
     "name": "PROBABILIDAD Y ESTADISTICA",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4083"
   },
   {
     "code": "1075",
     "name": "PROBABILIDAD Y ESTADISTICA",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1043",
     "name": "TEORIA ALGEBRAICA DE GRAFOS",
     "credits": 15,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1042",
     "name": "TEORIA DE COD. ALGEBR. PARA CORREC. DE ERRORES",
     "credits": 7,
-    "subject_group": "4083",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4083"
   },
   {
     "code": "1046",
     "name": "TEORIA DE CODIGOS",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1011",
     "name": "TEORIA DE CODIGOS AVANZADO",
     "credits": 6,
-    "subject_group": "4083",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4083"
   },
   {
     "code": "1037",
     "name": "TEORIA DE JUEGOS Y PROG. FUNCIONAL",
     "credits": 7,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1034",
     "name": "TEORIA DE JUEGOS Y PROG. FUNCIONAL",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "1233",
     "name": "TUTORIA EN MATEMATICA",
     "credits": 4,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "GAL7",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 7,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MAT10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MAT33",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 33,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MAT6",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 6,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MAT8",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA15",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 15,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA16",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 16,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA20",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 20,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA24",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 24,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA25",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 25,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA29",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 29,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA3",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 3,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA5",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 5,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MA9",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MC13",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 13,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MC3",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "MEC",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "M1",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 1,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "M12",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 12,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "M24",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 24,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "M9",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 9,
-    "subject_group": "4083",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4083"
   },
   {
     "code": "SRN26",
     "name": "FÍSICA 3",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4442"
   },
   {
     "code": "SRN11",
     "name": "FÍSICA 2",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4442"
   },
   {
     "code": "REF04",
     "name": "FÍSICA 1",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4442"
   },
   {
     "code": "MHC16",
     "name": "BIOQUÍMICA 1 (2020-",
     "credits": 13,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "MHC24",
     "name": "GENÉTICA GENERAL",
     "credits": 14,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "MHC20",
     "name": "GENÓMICA",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "M000",
     "name": "METODOS CUANTITATIVOS III - PAYSANDU",
     "credits": 6,
-    "subject_group": "4442",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4442"
   },
   {
     "code": "203EU",
     "name": "INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS II (TEÓRICO)",
     "credits": 4,
-    "subject_group": "4442",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4442"
   },
   {
     "code": "M001",
     "name": "MM. CC. III - (MTDEO) - DISEÑO Y ANALISIS DE EXPERIMENTOS",
     "credits": 4,
-    "subject_group": "4442",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4442"
   },
   {
     "code": "CE5",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 5,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CE10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "FA4",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 4,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CE12",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 12,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CP217",
     "name": "MECANICA GENERAL I",
     "credits": 12,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CP26",
     "name": "MECANICA GENERAL I (P. 74)",
     "credits": 22,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CP40",
     "name": "MECANICA GENERAL II (P. 74)",
     "credits": 20,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CP3",
     "name": "MECANICA I",
     "credits": 12,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CP17",
     "name": "MECANICA I (TRANSICION)",
     "credits": 12,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CP8",
     "name": "MECANICA II",
     "credits": 24,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "1120",
     "name": "FISICA GENERAL 1",
     "credits": 13,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "1170",
     "name": "FISICA GENERAL 1",
     "credits": 13,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "1121",
     "name": "FISICA GENERAL 2",
     "credits": 13,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "1172",
     "name": "FISICA GENERAL 2",
     "credits": 13,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CP41",
     "name": "FISICA I (P. 74)",
     "credits": 22,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CP42",
     "name": "FISICA II (P. 74)",
     "credits": 22,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CP43",
     "name": "FISICA III (P. 74)",
     "credits": 20,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "1151",
     "name": "FISICA 1",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4442"
   },
   {
     "code": "1171",
     "name": "FISICA 1",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "1077",
     "name": "FISICA 2",
     "credits": 7,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "1152",
     "name": "FISICA 2",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4442"
   },
   {
     "code": "1153",
     "name": "FISICA 3",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4442"
   },
   {
     "code": "1173",
     "name": "FISICA 3",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "1131",
     "name": "INT. A LA FISICA MODERNA",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4442"
   },
   {
     "code": "CEX28",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 28,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CE11",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 11,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "CE2",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 2,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "FA8",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "FF10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "FG",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 7,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "FG2",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 13,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "FIS14",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 14,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "FIS8",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "FI10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "FL1",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "FL2",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "FL8",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "F2",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 7,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "F66",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 66,
-    "subject_group": "4442",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4442"
   },
   {
     "code": "SRN17",
     "name": "PROGRAMACIÓN I",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4580"
   },
   {
     "code": "1373",
     "name": "PROGRAMACION 1",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4580"
   },
   {
     "code": "1322T",
     "name": "PROGRAMACION 1",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1145",
     "name": "VISION 3D",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "PR4",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 4,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "PR10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1354",
     "name": "PROGRAMACION FUNCIONAL",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "1353",
     "name": "DIDACTICA DE ALGORIT.Y ESTRUCT.DE DATOS",
     "credits": 7,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "1355",
     "name": "COMPLEJIDAD COMPUTACIONAL",
     "credits": 9,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "1358",
     "name": "TEORIA DE LA COMPUTACION",
     "credits": 7,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "1334",
     "name": "ANALISIS DE ALGORITMOS",
     "credits": 15,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP380",
     "name": "ANALISIS NUMERICO II (P. 74)",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1343",
     "name": "BIO-COMPUTACION PARALELA",
     "credits": 6,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1351",
     "name": "COMBINATORIA ANALITICA Y APLICACIONES",
     "credits": 3,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1352",
     "name": "COMPRESION DE DATOS SIN PERDIDA",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "CP52",
     "name": "COMPUTACION",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP24",
     "name": "COMPUTACION (P. 74)",
     "credits": 8,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1349",
     "name": "COMPUTACION GRAFICA AVANZADA",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "1337",
     "name": "CONST.FORMAL DE PROGR.EN TEORIA DE TIPOS",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4580"
   },
   {
     "code": "1347",
     "name": "CONST.FORMAL DE PROGR.EN TEORIA DE TIPOS",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "1345",
     "name": "DESARROLLO WEB",
     "credits": 8,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1331",
     "name": "DISEÑO DE COMPILADORES",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "CP36",
     "name": "INT. A LA COMPUTACION",
     "credits": 9,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1315",
     "name": "INT. A LA COMPUTACION GRAFICA",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1316",
     "name": "INT. A LA COMPUTACION GRAFICA",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "1332",
     "name": "INT. A LA PROGR.PARA DISEÑO GRAFICO",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1328",
     "name": "INT. A LA PROGRAMACION FUNCIONAL",
     "credits": 7,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "1333",
     "name": "INT. A LA PROGRAMACION GENERICA",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "1329",
     "name": "INT. A LA PROGRAMACION LOGICA",
     "credits": 7,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "1338",
     "name": "INT. A LOS FUND.DE LOS LENG.DE PR.OR. OB",
     "credits": 6,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1330",
     "name": "LOGICA DE LA PROGRAMACION IMPERATIVA",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1341",
     "name": "LOGICA DE LA PROGRAMACION IMPERATIVA",
     "credits": 8,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1348",
     "name": "MODELOS Y VERIF. DE SIST. DE TIEMPO REAL",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP32",
     "name": "ORGANIZACION DE LENG. DE PROGRAMACION",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP384",
     "name": "PROCESAMIENTO DE DATOS II (P. 74)",
     "credits": 5,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1350",
     "name": "PROGRAMACION FUNCIONAL AVANZADA",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "CP9",
     "name": "PROGRAMACION I",
     "credits": 8,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP37",
     "name": "PROGRAMACION I (P. 74)",
     "credits": 15,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP15",
     "name": "PROGRAMACION II",
     "credits": 15,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP38",
     "name": "PROGRAMACION II (P. 74)",
     "credits": 8,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP29",
     "name": "PROGRAMACION III",
     "credits": 15,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP374",
     "name": "PROGRAMACION III (P. 74)",
     "credits": 15,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1340",
     "name": "PROGRAMACION LOGICA",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "1320",
     "name": "PROGRAMACION 1",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1322",
     "name": "PROGRAMACION 1",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4580"
   },
   {
     "code": "1372",
     "name": "PROGRAMACION 1",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1321",
     "name": "PROGRAMACION 2",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4580"
   },
   {
     "code": "1323",
     "name": "PROGRAMACION 3",
     "credits": 15,
-    "subject_group": "4580",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4580"
   },
   {
     "code": "1324",
     "name": "PROGRAMACION 4",
     "credits": 15,
-    "subject_group": "4580",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4580"
   },
   {
     "code": "1342",
     "name": "TALLER DE COMPUTACION GRAFICA",
     "credits": 7,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1314",
     "name": "TALLER DE PRODUCCION DE PROG.SIN FALLAS",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP5",
     "name": "TALLER I",
     "credits": 2,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP10",
     "name": "TALLER II",
     "credits": 7,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "CP30",
     "name": "TALLER III (1ER.SEM.)",
     "credits": 15,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1304",
     "name": "TECNOLOGIAS INTERACTIVAS Y VIDEOJUEGOS",
     "credits": 4,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "CP382",
     "name": "TEORIA DE AUTOMATAS (P. 74)",
     "credits": 15,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1336",
     "name": "TEORIA DE LA COMPUTACION",
     "credits": 4,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4580"
   },
   {
     "code": "CP33",
     "name": "TEORIA DE LA PROGRAMACION I",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1325",
     "name": "TEORIA DE LENGUAJES",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4580"
   },
   {
     "code": "CP365",
     "name": "TEORIA DE PROGRAMACION II",
     "credits": 12,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1335",
     "name": "TRANSDUCTORES DE ESTADO FINITO",
     "credits": 7,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1346",
     "name": "VERIFICACION DE MODELOS",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": false
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1339",
     "name": "VERIFICACION Y LOGICA",
     "credits": 10,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "PA7",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 7,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "PP6",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 6,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "PR3",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 3,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "PR6",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 6,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "PR7",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 7,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "PR8",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "4580",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4580"
   },
   {
     "code": "1888",
     "name": "TALLER DE INICIACION A LOS SISTEMAS CIBER-FISICOS",
     "credits": 4,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1556",
     "name": "SISTEMAS EMBEBIDOS PARA TIEMPO REAL",
     "credits": 10,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1536",
     "name": "SISTEMAS EMBEBIDOS PARA TIEMPO REAL",
     "credits": 8,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1952",
     "name": "TALLER DE SISTEMAS CIBER-FISICOS",
     "credits": 6,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "GP6",
     "name": "PLAN.DE SIST.COMP.CLUSTER, GRID Y CLOUD",
     "credits": 8,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1546",
     "name": "TALLER DE RADIO DEFINIDA POR SOFTWARE",
     "credits": 8,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1545",
     "name": "CRIPTOGRAFIA",
     "credits": 10,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "AR20",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 20,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1454",
     "name": "ASPECTOS BASICOS DE REDES DE COMPUT",
     "credits": 12,
-    "subject_group": "4428",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4428"
   },
   {
     "code": "AR12",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 12,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "AR015",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 15,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "AR6",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 6,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1453",
     "name": "COMPL.ARQUITECTURA DE COMPUTADORAS",
     "credits": 5,
-    "subject_group": "4428",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4428"
   },
   {
     "code": "1440",
     "name": "ANALISIS Y DISEÑO DE ALGORIT.DISTRIB.EN REDES",
     "credits": 8,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1443",
     "name": "ARQUITECTURA DE COMPUTADORAS",
     "credits": 12,
-    "subject_group": "4428",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4428"
   },
   {
     "code": "1424",
     "name": "ARQUITECTURA DE COMPUTADORES 1",
     "credits": 10,
-    "subject_group": "4428",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4428"
   },
   {
     "code": "1425",
     "name": "ARQUITECTURA DE COMPUTADORES 2",
     "credits": 10,
-    "subject_group": "4428",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4428"
   },
   {
     "code": "CP28",
     "name": "ARQUITECTURA DE SISTEMAS",
     "credits": 15,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "CP383",
     "name": "ARQUITECTURA DE SISTEMAS (P. 74)",
     "credits": 14,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1444",
     "name": "ASPECTOS AVANZ. DE ARQ.DE COMPUTADORAS",
     "credits": 8,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1448",
     "name": "ASPECTOS AVANZ. DE REDES DE COMPUTADORAS",
     "credits": 8,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "5813",
     "name": "CODIFICACION DE FUENTES SIN PERDIDA",
     "credits": 0,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1447",
     "name": "COMPUT.DE PR.GRAL.EN UNID.DE PROC.GRAF.",
     "credits": 7,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1427",
     "name": "COMPUTACION CUANTICA",
     "credits": 10,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1415",
     "name": "COMPUTACION DE ALTA PERFORMANCE",
     "credits": 5,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1430",
     "name": "COMPUTACION DE ALTA PERFORMANCE",
     "credits": 7,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1434",
     "name": "COMPUTACION DE ALTA PERFORMANCE",
     "credits": 10,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "CP364",
     "name": "COMUNICACION DE DATOS",
     "credits": 15,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1441",
     "name": "CURVAS ELIPTICAS EN CRIPTOGRAFIA",
     "credits": 3,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "CP51",
     "name": "DISEÑO LOGICO",
     "credits": 23,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1512C",
     "name": "DISEÑO LOGICO",
     "credits": 12,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1429",
     "name": "DISEÑO TOPOLOGICO DE REDES",
     "credits": 5,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1412",
     "name": "ESTUDIO COMPLEMENTARIO EN SIST. OPERAT.",
     "credits": 3,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1436",
     "name": "FUND.PARA LA INVEST.EN REDES DE COMPUTAD",
     "credits": 8,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "5915",
     "name": "FUNDAMENTOS DE SEGURIDAD INFORMATICA",
     "credits": 10,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "5916",
     "name": "FUNDAMENTOS DE SEGURIDAD INFORMATICA",
     "credits": 12,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1403",
     "name": "INT. A LA ARQUITECTURA DE COMPUTADORES",
     "credits": 15,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1416",
     "name": "INT. A LA CRIPTOGRAFIA",
     "credits": 12,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1431",
     "name": "INT. A LA TEORIA DE LA INFORMACION",
     "credits": 6,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1432",
     "name": "INT. A LA TEORIA DE LA INFORMACION",
     "credits": 8,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1433",
     "name": "INT. A LAS REDES DE COMPUTADORAS",
     "credits": 15,
-    "subject_group": "4428",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4428"
   },
   {
     "code": "1406",
     "name": "INT. A LAS REDES DE COMPUTADORES",
     "credits": 15,
-    "subject_group": "4428",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4428"
   },
   {
     "code": "1513C",
     "name": "INT. A LOS MICROPROCESADORES",
     "credits": 11,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1446",
     "name": "REDES DE COMPUTADORAS",
     "credits": 12,
-    "subject_group": "4428",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4428"
   },
   {
     "code": "1442",
     "name": "ROBOTICA EMBEBIDA",
     "credits": 10,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1414",
     "name": "SISTEMAS DISTRIBUIDOS",
     "credits": 15,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "CP31",
     "name": "SISTEMAS OPERATIVOS",
     "credits": 12,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1511",
     "name": "SISTEMAS OPERATIVOS",
     "credits": 12,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1518",
     "name": "SISTEMAS OPERATIVOS",
     "credits": 15,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1532",
     "name": "SISTEMAS OPERATIVOS",
     "credits": 15,
-    "subject_group": "4428",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4428"
   },
   {
     "code": "1537",
     "name": "SISTEMAS OPERATIVOS",
     "credits": 12,
-    "subject_group": "4428",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4428"
   },
   {
     "code": "CP372",
     "name": "SISTEMAS OPERATIVOS (P. 74)",
     "credits": 15,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1445",
     "name": "TALLER DE ARQUITECTURA DE COMPUTADORAS",
     "credits": 3,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1439",
     "name": "TALLER DE CRIPTOGRAFIA MODERNA",
     "credits": 8,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1428",
     "name": "TALLER DE FIRMWARE",
     "credits": 10,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1449",
     "name": "TALLER DE GPGPU",
     "credits": 7,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1437",
     "name": "TALLER DE SEGURIDAD INFORMATICA",
     "credits": 7,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1535",
     "name": "TALLER DE SISTEMAS OPERATIVOS",
     "credits": 8,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "1542",
     "name": "TALLER DE SISTEMAS OPERATIVOS",
     "credits": 10,
-    "subject_group": "4428",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4428"
   },
   {
     "code": "1426",
     "name": "TRAF.RESTRIC.T. REAL REDES BEST EFFORT",
     "credits": 6,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "AA9",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 9,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "AR15",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 15,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "AR30",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 30,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "AR8",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "4428",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4428"
   },
   {
     "code": "SRN30",
     "name": "TALLER DE ROBÓTICA",
     "credits": 2,
-    "subject_group": "4882",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4882"
   },
   {
     "code": "1880",
     "name": "CIENCIA DE DATOS Y LENGUAJE NATURAL",
     "credits": 10,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1868",
     "name": "MODELOS ESTADISTICOS PARA CLASIF. Y REGRESION",
     "credits": 6,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1866",
     "name": "APRENDIZAJE AUTOMATICO",
     "credits": 12,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "5842",
     "name": "RECONOCIMIENTO DE PATRONES",
     "credits": 12,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1865",
     "name": "ROBOTICA EDUCATIVA",
     "credits": 8,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1864",
     "name": "ANALISIS SEMANTICO DE LENGUAJE NATURAL",
     "credits": 8,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1857",
     "name": "FUNDAMENTOS DE LA ROBOTICA AUTONOMA",
     "credits": 7,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1820",
     "name": "APRENDIZAJE AUTOMATICO",
     "credits": 6,
-    "subject_group": "4882",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4882"
   },
   {
     "code": "1827",
     "name": "APRENDIZAJE AUTOMATICO",
     "credits": 7,
-    "subject_group": "4882",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4882"
   },
   {
     "code": "1849",
     "name": "BUTIA: ROBOTICA EDUCATIVA",
     "credits": 8,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1832",
     "name": "CONST.DE MOD.PROB.DEL LENGUAJE NATURAL",
     "credits": 6,
-    "subject_group": "4882",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4882"
   },
   {
     "code": "1821",
     "name": "EXTRACCION Y CATEGORIZACION DE INFORM.",
     "credits": 10,
-    "subject_group": "4882",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4882"
   },
   {
     "code": "1835",
     "name": "GRAMATICAS FORMALES PARA EL LENG.NATURAL",
     "credits": 10,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1829",
     "name": "I.A. Y ROBOTICA",
     "credits": 10,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1828",
     "name": "INT. AL PROCESAMIENTO DE LENG. NATURAL",
     "credits": 12,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "5831",
     "name": "INT. AL RECONOCIMIENTO DE PATRONES",
     "credits": 8,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1834",
     "name": "METODOS DE APRENDIZAJE AUTOMATICO",
     "credits": 9,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "1848",
     "name": "ROBOTICA BASADA EN COMPORTAMIENTOS",
     "credits": 15,
-    "subject_group": "4882",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4882"
   },
   {
     "code": "5912",
     "name": "SISTEMAS NEURO FUZZY",
     "credits": 8,
-    "subject_group": "4882",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4882"
   },
   {
     "code": "IAR6",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 6,
-    "subject_group": "4882",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4882"
   },
   {
     "code": "1937T",
     "name": "CRÉDITOS NO ACUM. CON SIST. DE INFORMACIÓN EN SALUD",
     "credits": 4,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "2418",
     "name": "INGENIERIA DE ONTOLOGIAS",
     "credits": 6,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1867",
     "name": "INTEGRACION DE DATOS",
     "credits": 8,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1781",
     "name": "SISTEMAS DE INFORMACION PARA EL ANALISIS DE GRANDES VOLUMENES DE DATOS",
     "credits": 10,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1802",
     "name": "CALIDAD DE DATOS E INFORMACION",
     "credits": 6,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "GP1",
     "name": "GESTION Y TECNOL. DE PROCESOS DE NEGOCIO",
     "credits": 10,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "GP2",
     "name": "GESTION DE LA INFORMACION",
     "credits": 4,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "1949",
     "name": "BASES DE DATOS NO RELACIONALES",
     "credits": 10,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1947",
     "name": "TALLER DE LENG.Y TEC.DE LA WEB SEMANTICA",
     "credits": 10,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1948",
     "name": "INT. AL MIDDLEWARE",
     "credits": 10,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "BD15",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 15,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "BD05",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 5,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "BD015",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 15,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "1918",
     "name": "ADMINISTRACION Y SEGURIDAD DE SISTEMAS",
     "credits": 10,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "CP362",
     "name": "BASES DE DATOS",
     "credits": 15,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "1935",
     "name": "CALIDAD DE DATOS",
     "credits": 8,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1916",
     "name": "DESCUBRIMIENTO DE INF.EN BASES DE DATOS",
     "credits": 8,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "1939",
     "name": "DISEÑO Y CONSTRUCCION DE DATA WAREHOUSE",
     "credits": 10,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1911",
     "name": "FUNDAMENTOS DE BASES DE DATOS",
     "credits": 15,
-    "subject_group": "4647",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4647"
   },
   {
     "code": "1942",
     "name": "FUNDAMENTOS DE LA WEB SEMANTICA",
     "credits": 8,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1926",
     "name": "INT. A LOS SIST. DE INFOR. GEOGRAFICA",
     "credits": 10,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1936",
     "name": "INT. AL MIDDLEWARE",
     "credits": 8,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1941",
     "name": "INTEGRACION DE DATOS",
     "credits": 8,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1919",
     "name": "INTEROPERABILIDAD",
     "credits": 13,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "1934",
     "name": "INTEROPERABILIDAD SEMANTICA",
     "credits": 11,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "1932",
     "name": "METADATA EN SISTEMAS DE INFORMACION",
     "credits": 13,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "CP378",
     "name": "PROCESAMIENTO DE DATOS I (P. 74)",
     "credits": 15,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "1938",
     "name": "RECUP.DE INF.Y RECOMEND.EN LA WEB (WIR)",
     "credits": 10,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1943",
     "name": "SEMINARIO RECUP.DE INF.Y REC.EN LA WEB",
     "credits": 6,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "1937",
     "name": "SISTEMAS DE INFORMACION EN SALUD",
     "credits": 10,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1931",
     "name": "SISTEMAS MULTIFUENTES",
     "credits": 13,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "1917",
     "name": "TECNICAS AVANZADAS PARA LA GEST. DE SIST. DE INF.",
     "credits": 12,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "1933",
     "name": "TECNICAS AVANZADAS PARA LA GEST. DE SIST. DE INF.",
     "credits": 15,
-    "subject_group": "4647",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4647"
   },
   {
     "code": "1929",
     "name": "WEB Y BASE DE DATOS",
     "credits": 6,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "BDSI6",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 6,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "BD10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "BD5",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 5,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "BD8",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "BD9",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 9,
-    "subject_group": "4647",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4647"
   },
   {
     "code": "CIM20",
     "name": "MÉTODOS NUMÉRICOS",
     "credits": 10,
-    "subject_group": "5020",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "5020"
   },
   {
     "code": "1872",
     "name": "APLICACIONES DEL ALGEBRA LINEAL",
     "credits": 9,
-    "subject_group": "5020",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "5020"
   },
   {
     "code": "CN6",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 6,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "1040",
     "name": "ALGEBRA LINEAL NUMERICA",
     "credits": 4,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "5914",
     "name": "ALGEBRA LINEAL NUMERICA",
     "credits": 9,
-    "subject_group": "5020",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5020"
   },
   {
     "code": "1054",
     "name": "ANALISIS DE FOURIER PARA TRATAM.DE IMAGE",
     "credits": 10,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "CP377",
     "name": "ANALISIS NUMERICO I (P. 74)",
     "credits": 14,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "CP379",
     "name": "ANALISIS NUMERICO II (P. 74)",
     "credits": 12,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "CP16",
     "name": "CALCULO NUMERICO",
     "credits": 10,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "CP376",
     "name": "CALCULO NUMERICO (P. 74)",
     "credits": 14,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "1041",
     "name": "METODOS NUMERICOS PARA LA RESOL. DE ECUAC. DIF.",
     "credits": 5,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "1055",
     "name": "METODOS DE MONTE CARLO",
     "credits": 6,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "1057",
     "name": "METODOS MONTECARLO",
     "credits": 8,
-    "subject_group": "5020",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5020"
   },
   {
     "code": "1033",
     "name": "METODOS NUMERICOS",
     "credits": 8,
-    "subject_group": "5020",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "5020"
   },
   {
     "code": "1079",
     "name": "METODOS NUMERICOS",
     "credits": 8,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "1048",
     "name": "TEORIA COMPUTACIONAL DE LA GESTALT",
     "credits": 8,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "CN3",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 3,
-    "subject_group": "5020",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5020"
   },
   {
     "code": "2398",
     "name": "TECNICAS DE DESCOMPOSICION EN PROGRAMACION MATEMATICA",
     "credits": 4,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1877",
     "name": "REFORMULACIONES Y ALGORITMOS PARA PLANIFICACION DE LA PRODUCCION",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1871",
     "name": "FUNDAMENTOS DE OPTIMIZACION",
     "credits": 6,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1639",
     "name": "PRINCIPIOS DE LOGISTICA HUMANITARIA",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1640",
     "name": "OPTIMIZACION CONTINUA Y APLICACIONES",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "3207",
     "name": "HERRAMIENTAS P/EL DISEÑO Y ANALISIS DE REDES DE TRANSP.URB DE PASAJEROS",
     "credits": 8,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1458",
     "name": "DISEÑO TOPOLOGICO DE REDES",
     "credits": 11,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1779",
     "name": "INVESTIGACION DE OPER.Y GEST. DE RIESGOS",
     "credits": 6,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1637",
     "name": "ALGORITMOS EVOLUTIVOS",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1636",
     "name": "MODELOS COMB. DE CONFIABILIDAD EN REDES",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "GP7",
     "name": "TOPICOS EN COLOREO EN GRAFOS Y CONECTIV.",
     "credits": 4,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "1635",
     "name": "METAHEURISTICAS Y OPTIMIZACION SOBRE REDES (MOR)",
     "credits": 11,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1633",
     "name": "TEORIA, ALGORIT. Y APLIC. DE GEST. LOGIS",
     "credits": 8,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1634",
     "name": "ANALISIS DE DATOS EN REDES COMPLEJAS",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1628",
     "name": "ALGORITMOS EVOLUTIVOS",
     "credits": 9,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1625",
     "name": "ALGORITMOS GENETICOS",
     "credits": 6,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "1435",
     "name": "DISEÑO TOPOLOGICO DE REDES",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1621",
     "name": "EXTENS. DE PROG. LINEAL Y PROG. ENTERA",
     "credits": 15,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "1631",
     "name": "FUNDAMENTOS DE PROGRAMACION ENTERA",
     "credits": 8,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1610",
     "name": "INT. A LA INVESTIGACION DE OPERACIONES",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4815"
   },
   {
     "code": "1629",
     "name": "INT. A LA OPTIMIZ.Y A LA PROG. CON RESTR",
     "credits": 6,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "1623",
     "name": "INVESTIGACION DE OPER. EN COMERCIO ELECTRONICO",
     "credits": 6,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "1630",
     "name": "INVESTIGACION DE OPER.Y GEST. DE RIESGOS",
     "credits": 6,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "CP27",
     "name": "INVESTIGACION OPERATIVA",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "CP320",
     "name": "INVESTIGACION OPERATIVA (P. 74)",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "CP373",
     "name": "INVESTIGACION OPERATIVA I (P. 74)",
     "credits": 14,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "CP381",
     "name": "INVESTIGACION OPERATIVA II (P. 74)",
     "credits": 14,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "CP385",
     "name": "INVESTIGACION OPERATIVA III (P. 74)",
     "credits": 14,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "1613",
     "name": "METAHEURISTICAS Y OPTIMIZACION SOBRE REDES",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1624",
     "name": "MODELADO Y OPTIMIZACION",
     "credits": 6,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1626",
     "name": "OPTIMIZACION BAJO INCERTIDUMBRE",
     "credits": 6,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "1632",
     "name": "OPTIMIZACION BAJO INCERTIDUMBRE",
     "credits": 8,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "1627",
     "name": "SEMINARIO:ELEMENTOS DE METAHEURISTICAS",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "1617",
     "name": "SIMULACION A EVENTOS DISCRETOS",
     "credits": 10,
-    "subject_group": "4815",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4815"
   },
   {
     "code": "IO20",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 20,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "IO8",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "4815",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4815"
   },
   {
     "code": "1758T",
     "name": "CRÉDITOS NO ACUM. CON RELACIONES PERS. EN ING. DE SOFT. Y GER. DE PROY.",
     "credits": 4,
-    "subject_group": "5082",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5082"
   },
   {
     "code": "2417",
     "name": "INGENIERIA DE SOFTWARE BASADA EN EVIDENCIAS",
     "credits": 8,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "D84",
     "name": "FORMULACIÓN Y EVALUACIÓN DE PROYECTOS DE INVERSIÓN",
     "credits": 8,
-    "subject_group": "5082",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "5082"
   },
   {
     "code": "A66",
     "name": "GESTIÓN DE PROYECTOS",
     "credits": 10,
-    "subject_group": "5082",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "5082"
   },
   {
     "code": "1782",
     "name": "INVESTIGACION MEDIANTE ENCUESTAS EN COMPUTACION",
     "credits": 5,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1778",
     "name": "TALLER DE PLAN Y SEG DE PROY DE SOFTWARE",
     "credits": 4,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1777",
     "name": "PROFESION EN INGENIERIA DE SOFTWARE",
     "credits": 6,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1773",
     "name": "INGENIERIA DE SOFTWARE EMPIRICA",
     "credits": 7,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1772",
     "name": "INGENIERIA DE SOFTWARE BASADA EN EVID.Y REV.SIST.",
     "credits": 7,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1771",
     "name": "INGENIERIA DE SOFTWARE EMPIRICA",
     "credits": 5,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1770",
     "name": "TALLER DE ING.DIRIGIDA POR MODELOS",
     "credits": 8,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1732",
     "name": "ARQUITECTURA DE SOFTWARE",
     "credits": 8,
-    "subject_group": "5082",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5082"
   },
   {
     "code": "1743",
     "name": "ARQUITECTURA DE SOFTWARE",
     "credits": 12,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1737",
     "name": "GESTION DE SOFTWARE",
     "credits": 7,
-    "subject_group": "5082",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5082"
   },
   {
     "code": "1716",
     "name": "INT. A LA INGENIERIA DE SOFTWARE",
     "credits": 10,
-    "subject_group": "5082",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "5082"
   },
   {
     "code": "1736",
     "name": "INT. A LA INTERAC. PERSONA COMPUTADORA",
     "credits": 6,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1749",
     "name": "INTERACCION PERSONA COMPUTADORA",
     "credits": 12,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1767",
     "name": "PRINC.Y FUND.DEL PROC.PERS.DE SOFTWARE",
     "credits": 7,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1769",
     "name": "PROFESION EN INGENIERIA DE SOFTWARE",
     "credits": 4,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1728",
     "name": "RELACIONES PERSONALES EN ING. DE SOFT. Y GER. DE PROY.",
     "credits": 7,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1758",
     "name": "RELACIONES PERSONALES EN ING. DE SOFT. Y GER. DE PROY.",
     "credits": 10,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1750",
     "name": "TALLER DE ARQUITECTURA DE SOFTWARE",
     "credits": 6,
-    "subject_group": "5082",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5082"
   },
   {
     "code": "1768",
     "name": "TALLER DE INTERACCION PERSONA COMPUTAD.",
     "credits": 8,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "1752",
     "name": "TALLER DE PSP",
     "credits": 7,
-    "subject_group": "5082",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5082"
   },
   {
     "code": "1742",
     "name": "TALLER DE VERIFICACION DEL SOFTWARE",
     "credits": 8,
-    "subject_group": "5082",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5082"
   },
   {
     "code": "CP366",
     "name": "TALLER IV (2DO.SEM.)",
     "credits": 10,
-    "subject_group": "5082",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5082"
   },
   {
     "code": "IS14",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 14,
-    "subject_group": "5082",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5082"
   },
   {
     "code": "SFW10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "5082",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5082"
   },
   {
     "code": "1876",
     "name": "TALLER DE MINERIA DE PROCESOS DE NEGOCIO (TPM)",
     "credits": 8,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "A42",
     "name": "DISEÑO ORGANIZACIONAL",
     "credits": 10,
-    "subject_group": "4756",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4756"
   },
   {
     "code": "BTI29",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 29,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "BT31",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 31,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "BTI33",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 33,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "BTI23",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 23,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "BTI31",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 31,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "ATI3",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 3,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "BTI38",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 38,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1780",
     "name": "TALLER DE ROBOTICA EDUCATIVA",
     "credits": 6,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "1775",
     "name": "TALLER DE SISTEMAS EMPRESARIALES",
     "credits": 15,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "1774",
     "name": "TALLER DE EVAL. DE TECN. DE LA INF.",
     "credits": 10,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "AA28",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 28,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "A028",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 28,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "AI10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "BT28",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 28,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "A28",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 28,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "AI28",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 28,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1753",
     "name": "MODULO TALLER A",
     "credits": 5,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1754",
     "name": "MODULO TALLER B",
     "credits": 4,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1755",
     "name": "MODULO TALLER C",
     "credits": 4,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1756",
     "name": "MODULO TALLER D",
     "credits": 3,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1757",
     "name": "MODULO TALLER E",
     "credits": 2,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1731",
     "name": "PASANTIA (COMPUTACION)",
     "credits": 10,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "1730",
     "name": "PROYECTO DE GRADO",
     "credits": 30,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "1721",
     "name": "PROYECTO DE INGENIERIA DE SOFTWARE",
     "credits": 15,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "5705",
     "name": "SEMINARIO DE INGENIERIA BIOMEDICA",
     "credits": 4,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "1748",
     "name": "SEMINARIO DE PROCESAM. PARALELO APLICADO",
     "credits": 3,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1733",
     "name": "TALLER DE DESARROLLO CLIENTE/SERVIDOR",
     "credits": 21,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1766",
     "name": "TALLER DE GEST.Y TEC.PROC.NEGOCIO (TBPM)",
     "credits": 10,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "1739",
     "name": "TALLER DE GESTION DE SOFTWARE",
     "credits": 15,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1327",
     "name": "TALLER DE PROGRAMACION",
     "credits": 15,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "1925",
     "name": "TALLER DE PROGRAMACION Y ARTE",
     "credits": 10,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1759",
     "name": "TALLER DE SIST. DE INF.GEOGRAF.EMPRESAR.",
     "credits": 8,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "1751",
     "name": "TALLER DE SISTEMAS DE INFORMACION 1",
     "credits": 10,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "1740",
     "name": "TALLER DE SISTEMAS DE INFORMACION 3",
     "credits": 8,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "1741",
     "name": "TALLER DE SISTEMAS DE INFORMACION 4",
     "credits": 15,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "5823",
     "name": "TALLER DE TELEMATICA",
     "credits": 12,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "CP71",
     "name": "TALLER III ( 2DO.SEM.)",
     "credits": 15,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "CP363",
     "name": "TALLER IV (1ER.SEM.)",
     "credits": 15,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1734",
     "name": "TALLER SISTEMAS DE INFORMACION 1",
     "credits": 6,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1735",
     "name": "TALLER SISTEMAS DE INFORMACION 2",
     "credits": 15,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "CP221",
     "name": "TALLER V",
     "credits": 30,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "AT10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "AT28",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 28,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "AT3",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 3,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "AT7",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 7,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "TP25",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 25,
-    "subject_group": "4756",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4756"
   },
   {
     "code": "1776",
     "name": "TALLER DE SIST. DE INF. GEO. EMPRES.",
     "credits": 10,
-    "subject_group": "4756",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4756"
   },
   {
     "code": "2401",
     "name": "LEGISLACION Y RELACIONES INDUSTRIALES",
     "credits": 6,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "A83",
     "name": "CAMBIO ORGANIZACIONAL",
     "credits": 10,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "S42",
     "name": "SOCIOLOGÍA DE LA EMPRESA Y MANAGEMENT",
     "credits": 10,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "I87",
     "name": "PROSPECTIVA: CONSTRUYENDO EL FUTURO",
     "credits": 10,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "D85",
     "name": "PLANIFICACIÓN ESTRATÉGICA",
     "credits": 4,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "A65",
     "name": "INTRODUCCIÓN AL EMPRENDEDURISMO",
     "credits": 10,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "618EU",
     "name": "INTRODUCCIÓN A LOS SISTEMAS DE GESTIÓN",
     "credits": 4,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "559EU",
     "name": "PROPIEDAD INTELECTUAL",
     "credits": 3,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "AT010",
     "name": "GESTIÓN DE PROYECTOS",
     "credits": 4,
-    "subject_group": "4066",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4066"
   },
   {
     "code": "GO10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4066",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4066"
   },
   {
     "code": "1543",
     "name": "INT. AL NEGOCIO DEL SOFTWARE",
     "credits": 6,
-    "subject_group": "4066",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "4066"
   },
   {
     "code": "1944",
     "name": "ADMINISTRACION GENERAL PARA INGENIEROS",
     "credits": 5,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "1510",
     "name": "CONTROL DE CALIDAD",
     "credits": 8,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "1901",
     "name": "CONTROL DE CALIDAD",
     "credits": 8,
-    "subject_group": "4066",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4066"
   },
   {
     "code": "1921",
     "name": "GESTION DE CALIDAD",
     "credits": 8,
-    "subject_group": "4066",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4066"
   },
   {
     "code": "1940",
     "name": "GESTION DE CALIDAD",
     "credits": 6,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "1519",
     "name": "INT. A LA ADMINISTRACION PARA INGENIEROS",
     "credits": 10,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "1507",
     "name": "INT. A LAS ORGANIZACIONES",
     "credits": 10,
-    "subject_group": "4066",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4066"
   },
   {
     "code": "CP375",
     "name": "ORGANIZACION DE EMPRESAS (P. 74)",
     "credits": 10,
-    "subject_group": "4066",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4066"
   },
   {
     "code": "1930",
     "name": "ORGANIZACIONES PARA INGENIEROS",
     "credits": 6,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "1514",
     "name": "ORGANIZACIONES Y SU ADMINISTRACION",
     "credits": 10,
-    "subject_group": "4066",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4066"
   },
   {
     "code": "1945",
     "name": "PRACTICA DE ADMINISTRACION PARA INGENIEROS",
     "credits": 5,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "GA10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "4066",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4066"
   },
   {
     "code": "GO6",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 6,
-    "subject_group": "4066",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4066"
   },
   {
     "code": "GO8",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "4066",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4066"
   },
   {
     "code": "GO9",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 9,
-    "subject_group": "4066",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "4066"
   },
   {
     "code": "A62",
     "name": "GESTIÓN DE LA INNOVACIÓN Y LA TECNOLOGÍA",
     "credits": 10,
-    "subject_group": "4066",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "4066"
   },
   {
     "code": "SRN13",
     "name": "ECONOMÍA POLÍTICA",
     "credits": 10,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "1270",
     "name": "CIUDADANIA EN ENTORNOS DIGITALES",
     "credits": 6,
-    "subject_group": "5265",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5265"
   },
   {
     "code": "FD1",
     "name": "ETICA I",
     "credits": 13,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "C216",
     "name": "EPISTEMOLOGIA, ETICA Y EDUCACION",
     "credits": 8,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "AT002",
     "name": "METODOLOGÍAS DE INVESTIGACIÓN",
     "credits": 5,
-    "subject_group": "5265",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5265"
   },
   {
     "code": "558EU",
     "name": "EPISTEMOLOGÍA",
     "credits": 3,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CHU10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CHS10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CH5",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 5,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "GP3",
     "name": "EPIST. GENET. Y APL. A LA DIDAC. EN INF.",
     "credits": 5,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CH08",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CH3",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 3,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CH04",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 4,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "1229",
     "name": "ANALISIS DE INNOVACIONES",
     "credits": 6,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "1223",
     "name": "CIENCIA, TECNOLOGIA Y SOCIEDAD",
     "credits": 8,
-    "subject_group": "5265",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "5265"
   },
   {
     "code": "1230",
     "name": "COMUNICACION ORAL Y ESCRITA",
     "credits": 5,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "1224",
     "name": "ECONOMIA",
     "credits": 7,
-    "subject_group": "5265",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "5265"
   },
   {
     "code": "1221",
     "name": "ECONOMIA",
     "credits": 7,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CP20",
     "name": "ECONOMIA POLITICA",
     "credits": 7,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CP174",
     "name": "ECONOMIA Y FINANZAS (P. 74)",
     "credits": 7,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "1225",
     "name": "POLITICAS CIENTIFICAS EN INF.Y COMP.",
     "credits": 3,
-    "subject_group": "5265",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "5265"
   },
   {
     "code": "CP18",
     "name": "TECNOLOGIA Y SOCIEDAD",
     "credits": 10,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CH1",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 1,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CH10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CH4",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 4,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CH6",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 6,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "CH8",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "5265",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "5265"
   },
   {
     "code": "SRN22",
     "name": "COMPRENSIÓN LECTORA DE INGLÉS",
     "credits": 8,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "SRN25",
     "name": "TALLER INTERDISCIPLINARIO",
     "credits": 2,
-    "subject_group": "3582",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "3582"
   },
   {
     "code": "5828",
     "name": "TRATAMIENTO DE IMAGENES POR COMPUTADORA",
     "credits": 10,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "736EU",
     "name": "BIONFORMÁTICA",
     "credits": 7,
-    "subject_group": "3582",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "3582"
   },
   {
     "code": "836EU",
     "name": "BIONFORMÁTICA ESTRUCTURAL",
     "credits": 7,
-    "subject_group": "3582",
-    "has_exam": true
+    "has_exam": true,
+    "subject_group": "3582"
   },
   {
     "code": "AT023",
     "name": "PRODUCCIÓN GRÁFICA 3D II",
     "credits": 6,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "3582"
   },
   {
     "code": "AT021",
     "name": "PRODUCCIÓN AUDIOVISUAL INTERACTIVA II",
     "credits": 6,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "3582"
   },
   {
     "code": "816EU",
     "name": "INGLES CIENTÍFICO",
     "credits": 4,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "2107A",
     "name": "TALLER DE COMUNICACIÓN ORAL Y ESCRITA",
     "credits": 1,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "AT003",
     "name": "PROBLEMAS DE DISEÑO",
     "credits": 7,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "3582"
   },
   {
     "code": "AT009",
     "name": "MODELADO 3D PARA PRODUCCION DIGITAL (PERFIL PRODUCTO)",
     "credits": 4,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "3582"
   },
   {
     "code": "MOP8",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 8,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "2217",
     "name": "TUTORIAS ENTRE PARES 2",
     "credits": 4,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "2216",
     "name": "TUTORIAS ENTRE PARES 1",
     "credits": 4,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "1951",
     "name": "TALLER: HERRAMIENTAS PARA LA INNOVACION",
     "credits": 4,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "1216",
     "name": "TALLER ENCARARE: CREAR",
     "credits": 8,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "3582"
   },
   {
     "code": "GP4",
     "name": "REDACC. TEC. DE TESIS Y ART. CIENTIF.",
     "credits": 5,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "2040",
     "name": "INICIACION A LA PROD. AUDIOVIS. Y MULTIMEDIA",
     "credits": 6,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "1438",
     "name": "APLICACION DE TEORIA DE LA INF.AL PROC.DE IMAG.",
     "credits": 6,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "3582"
   },
   {
     "code": "5707",
     "name": "IMAGENES MEDICAS: ADQUISICION, INSTRUMENTACION Y GESTION",
     "credits": 8,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "3582"
   },
   {
     "code": "5709",
     "name": "IMAGENES MEDICAS:ADQ. INSTRUM. Y GESTION",
     "credits": 6,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "3582"
   },
   {
     "code": "1760",
     "name": "MODULO DE EXTENSION A",
     "credits": 4,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "1761",
     "name": "MODULO DE EXTENSION B",
     "credits": 4,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "1762",
     "name": "MODULO DE EXTENSION C",
     "credits": 3,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "1763",
     "name": "MODULO DE EXTENSION D",
     "credits": 3,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "1213",
     "name": "PLANIFICACION DE CLASES: DISEÑO DE UNID.DIDACT.",
     "credits": 2,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "3582"
   },
   {
     "code": "2034",
     "name": "TALLER ENCARARE 1:CREATIVIDAD E INNOVAC.",
     "credits": 5,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "3582"
   },
   {
     "code": "2036",
     "name": "TALLER ENCARARE 2:PLANIF.DE LA FUT.EMPR.",
     "credits": 5,
-    "subject_group": "3582",
-    "has_exam": false
+    "has_exam": false,
+    "subject_group": "3582"
   },
   {
     "code": "2222",
     "name": "TEATRO Y MATEMATICA",
     "credits": 6,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "MOP1",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 4,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "MOP10",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 10,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "MOP20",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 20,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   },
   {
     "code": "MOP30",
     "name": "CREDITOS ASIGNADOS POR REVALIDA",
     "credits": 30,
-    "subject_group": "3582",
-    "has_exam": null
+    "has_exam": null,
+    "subject_group": "3582"
   }
 ]

@@ -33,66 +33,46 @@ class BedeliasSpider < Kimurai::Base
     subjects = {}
 
     # get all groups
-    curriculum_page.groups.each do |node|
-      # for each group, break text into code, name and min_credits
-      info = node.text.split(' - ')
-      code = info[0]
-      name = info[1]
-      min_credits = info[2].split(' ')[1].to_i
+    curriculum_page.groups.each do |group_node|
+      # for each group, get code name min_credits and save it to a json file
+      group_details = curriculum_page.group_details(group_node)
 
-      puts "Generating subject group #{code} - #{name}"
+      puts "Generating subject group #{group_details[:code]} - #{group_details[:name]}"
 
-      # create group and add it to file
-      subject_group = { code: code, name: name, min_credits: min_credits }
       path = File.join(Rails.root, "db", "seeds", "scraped_subject_groups.json")
-      save_to path, subject_group, format: :pretty_json, position: false
+      save_to path, group_details, format: :pretty_json, position: false
 
       # for each group, get all subjects
-      curriculum_page.subjects(node).each do |subnode|
-        # for each subject, break text into code, name and credits
-        info = subnode.text.split(' - créditos: ')
-        subject_credits = info[1].to_i
-        info = info[0].split(' - ')
-        subject_code = info[0]
-        subject_name = info[1..-1].join(' - ')
-
+      curriculum_page.subjects_in_group(group_node).each do |subject|
+        # for each subject, get code, name, credits add the group code
+        subject_details = curriculum_page.subject_details(subject)
+        subject_details[:subject_group] = group_details[:code]
         # add the subject to the hash, with code as key
-        subjects[subject_code] = {
-          code: subject_code,
-          name: subject_name,
-          credits: subject_credits,
-          subject_group: code,
-          has_exam: nil
-        }
+        subjects[subject_details[:code]] = subject_details
       end
     end
 
     # got to the prerequisites page
     bedelias_page.visit_prerequisites
 
-    prerequisites_pages do
+    prerequisites_page.for_each_page do |current_page_number|
       # for each page, get all rows
-      prerequisites_page.rows_in_current_page.each do |row|
-        # for each row (subject)
-        index = row['data-ri'].to_i
-        column = row.first(:xpath, "td")
-        subject_code = column.text.split(' - ')[0]
+      prerequisites_page.rows_in_current_page.each do |subject_row|
+        subject_row_details = curriculum_page.subject_row_details(subject_row)
 
-        if subjects[subject_code].nil?
-          puts "Skipping #{column.text}"
+        if subjects[subject_row_details[:subject_code]].nil?
+          puts "Warning: skipping #{subject_row_details[:subject_name]}"
           next
         end
 
-        type = column.first(:xpath, "following-sibling::td").text
-        page_number = prerequisites_page.current_page_number
-
-        puts "#{page_number}/#{index} Generating #{column.text}, #{type}"
+        puts "#{current_page_number}/#{subject_row_details[:index]} Generating
+              #{subject_row_details[:subject_name]}, #{subject_row_details[:type]}"
 
         # save the subject and whether it has an exam
-        if type == "Curso"
-          subjects[subject_code][:has_exam] = false
-        elsif type == "Examen"
-          subjects[subject_code][:has_exam] = true
+        if subject_row_details[:type] == "Curso"
+          subjects[subject_row_details[:subject_code]][:has_exam] = false
+        elsif subject_row_details[:type] == "Examen"
+          subjects[subject_row_details[:subject_code]][:has_exam] = true
         end
       end
     end
@@ -107,28 +87,26 @@ class BedeliasSpider < Kimurai::Base
   def parse_prerequisites(*_args)
     bedelias_page.visit_prerequisites
     row_index = 0
-    prerequisites_pages do
-      current_page = prerequisites_page.current_page_number
+    prerequisites_page.for_each_page do |current_page_number|
       prerequisites_page.row_count_in_page.times do
-        row = prerequisites_page.row_with_index(row_index)
-        subject_code = row.first(:xpath, "td[1]").text.split(' - ')[0] # retrieve code from column 'Nombre'
-        is_exam = row.first(:xpath, "td[2]").text == "Examen" # from column 'Tipo'
+        subject_row = prerequisites_page.row_with_index(row_index)
+        subject_row_details = curriculum_page.subject_row_details(subject_row)
 
         puts(
-          "#{current_page}/#{row_index} - Generating prerequisite for #{subject_code}, #{is_exam ? "exam" : "course"}"
+          "#{current_page_number}/#{row_index} - Generating prerequisite for
+          #{subject_row_details[:subject_code]}, #{subject_row_details[:is_exam] ? "exam" : "course"}"
         )
 
-        prerequisites_page.see_more(row) # 'Ver más'
+        prerequisites_page.click_on_see_more(subject_row) # 'Ver más'
 
         tree = prerequisites_tree_page.root
-        prerequisite = create_prerequisite_tree(tree, subject_code, is_exam)
+        prerequisite = create_prerequisite_tree(tree, subject_row_details[:subject_code], subject_row_details[:is_exam])
         path = File.join(Rails.root, "db", "seeds", "scraped_prerequisites.json")
         save_to path, prerequisite, format: :pretty_json, position: false
 
         prerequisites_tree_page.back
 
-        # move to current_page
-        prerequisites_page.advance_to_page(current_page)
+        prerequisites_page.advance_to_page(current_page_number)
         row_index += 1
       end
     end
@@ -143,15 +121,15 @@ class BedeliasSpider < Kimurai::Base
       prerequisite[:exam] = exam
     end
     node_type = original_prerequisite['data-nodetype']
-    node_content = original_prerequisite.first(:xpath, 'div').text
+    node_content = prerequisites_tree_page.node_content_from_node(original_prerequisite)
 
     if node_type == 'default'
       if node_content.include?('créditos en el Plan:')
         prerequisite[:type] = 'credits'
-        prerequisite[:credits] = node_content.split(' créditos')[0].to_i
+        prerequisite[:credits] = prerequisites_tree_page.credits_from_node(original_prerequisite)
       elsif node_content.include?('aprobación') || node_content.include?('actividad')
         prerequisite[:type] = 'logical'
-        if original_prerequisite.first(:xpath, "div/span[@class='negrita']").text.split(' ')[0] == '1'
+        if prerequisites_tree_page.only_one_approval_needed?(original_prerequisite)
           prerequisite[:logical_operator] = "or"
         else # change: 'n' approvals needed out of a list of 'm' subjects when 'n'<'m' is not considered
           prerequisite[:logical_operator] = "and"
@@ -167,92 +145,53 @@ class BedeliasSpider < Kimurai::Base
       elsif node_content.include?('Curso aprobado')
         prerequisite[:type] = 'subject'
         prerequisite[:needs] = 'course'
-        prerequisite[:subject_needed] = node_content.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
+        prerequisite[:subject_needed] = prerequisites_tree_page.subject_code(node_content)
       elsif node_content.include?('Examen aprobado')
         prerequisite[:type] = 'subject'
         prerequisite[:needs] = 'exam'
-        prerequisite[:subject_needed] = node_content.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
+        prerequisite[:subject_needed] = prerequisites_tree_page.subject_code(node_content)
       elsif node_content.include?('Aprobada')
         prerequisite[:type] = 'subject'
-        prerequisite[:subject_needed] = node_content.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
+        prerequisite[:subject_needed] = prerequisites_tree_page.subject_code(node_content)
         prerequisite[:needs] = 'all'
       elsif node_content.include?('Inscripción a Curso')
         prerequisite[:type] = 'subject'
-        prerequisite[:subjedt_needed] = node_content.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
+        prerequisite[:subjedt_needed] = prerequisites_tree_page.subject_code(node_content)
         prerequisite[:needs] = 'enrollment'
       end
     elsif node_type == 'cag' # 'créditos en el Grupo:'
       prerequisite[:type] = 'credits'
-      prerequisite[:credits] = node_content.split(' créditos')[0].to_i
-      prerequisite[:group] = node_content.split('Grupo: ')[1].to_i
+      prerequisite[:credits] = prerequisites_tree_page.credits_from_node(original_prerequisite)
+      prerequisite[:group] = prerequisites_tree_page.group_from_node(original_prerequisite)
     elsif node_type == 'y'
       prerequisite[:type] = 'logical'
       prerequisite[:logical_operator] = 'and'
-
-      toggler = find("div/span[contains(@class, 'ui-tree-toggler')]", original_prerequisite)
-      if toggler[:class].include?('plus')
-        toggler.click
-      end
+      prerequisites_tree_page.expand_prerequisites_tree(original_prerequisite)
       prerequisite[:operands] = []
-      operands = original_prerequisite.all(
-        :xpath,
-        "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]"
-      )
-      operands.each do |operand|
-        prerequisite[:operands] += [create_prerequisite_tree(operand)]
+      subtree_roots = prerequisites_tree_page.subtrees_roots(original_prerequisite)
+      subtree_roots.each do |subtree_root|
+        prerequisite[:operands] += [create_prerequisite_tree(subtree_root)]
       end
     elsif node_type == 'no'
       prerequisite[:type] = 'logical'
       prerequisite[:logical_operator] = 'not'
-
-      toggler = find("div/span[contains(@class, 'ui-tree-toggler')]", original_prerequisite)
-      if toggler[:class].include?('plus')
-        toggler.click
-      end
+      prerequisites_tree_page.expand_prerequisites_tree(original_prerequisite)
       prerequisite[:operands] = []
-      operands = original_prerequisite.all(
-        :xpath,
-        "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]"
-      )
-      operands.each do |operand|
-        prerequisite[:operands] += [create_prerequisite_tree(operand)]
+      subtree_roots = prerequisites_tree_page.subtrees_roots(original_prerequisite)
+      subtree_roots.each do |subtree_root|
+        prerequisite[:operands] += [create_prerequisite_tree(subtree_root)]
       end
     elsif node_type == 'o'
       prerequisite[:type] = 'logical'
       prerequisite[:logical_operator] = 'or'
-
-      toggler = find("div/span[contains(@class, 'ui-tree-toggler')]", original_prerequisite)
-      if toggler[:class].include?('plus')
-        toggler.click
-      end
+      prerequisites_tree_page.expand_prerequisites_tree(original_prerequisite)
       prerequisite[:operands] = []
-      operands = original_prerequisite.all(
-        :xpath,
-        "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]"
-      )
-      operands.each do |operand|
-        prerequisite[:operands] += [create_prerequisite_tree(operand)]
+      subtree_roots = prerequisites_tree_page.subtrees_roots(original_prerequisite)
+      subtree_roots.each do |subtree_root|
+        prerequisite[:operands] += [create_prerequisite_tree(subtree_root)]
       end
     end
     prerequisite
-  end
-
-  def prerequisites_pages
-    reached_end = false
-
-    while !reached_end do
-
-      yield
-
-      reached_end = prerequisites_page.reached_last_page?
-
-      if !reached_end
-        # move forward one page
-        prerequisites_page.move_to_next_page
-        sleep 0.5
-
-      end
-    end
   end
 
   def click(xpath_selector, scope = browser)
