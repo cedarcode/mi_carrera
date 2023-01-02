@@ -118,4 +118,12 @@ class BedelTest < ActiveSupport::TestCase
     assert_equal([], user.approvals[:approved_exams])
     assert_equal([], store[:approved_exams])
   end
+  test "when bedel was instantiated without a user, .add_approval when receiving a course that can't approve, should do nothing" do
+    store = { approved_courses: [@subject1.id] }
+    bedel = Bedel.new(store)
+
+    bedel.add_approval(@subject2.course)
+
+    assert_equal([@subject1.id], store[:approved_courses])
+  end
 end

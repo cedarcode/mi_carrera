@@ -22,16 +22,21 @@
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/menu-surface/mdc-menu-surface";
 @import "@material/menu/mdc-menu";
+@import "@material/theme/mdc-theme";
 @import "@material/button/mdc-button";
-
-// @import "@material/*";
+@import "@material/textfield/mdc-text-field";
 @import "flash";
 
 body {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  flex-direction: column;
+
   .content {
+    margin-left: auto;
+    margin-right: auto;
     max-width: 600px;
+    padding: 0px 20px 40px 20px;
     flex-grow: 1;
   }
 }
@@ -136,61 +141,6 @@ body {
   padding-left: 15px;
 }
 
-.sign-in {
-  text-align: center;
-  align-items: center;
-}
-
-.field_with_errors {
-  display: flex;
-  flex-direction: column;
-}
-
-.sign-in-option {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sign-in-option label {
-  margin-bottom: 5px;
-}
-
-.sign-in-form-option {
-  padding: 16px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.form-input {
-  height: 30px;
-  padding: 6px 12px;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #d9dadc;
-  border-radius: 0;
-}
-
-.sign-in-button {
-  display: inline-block;
-  background: white;
-  color: #444;
-  width: 220px;
-  height: 40px;
-  border-radius: 5px;
-  border: thin solid #888;
-  box-shadow: 1px 1px 1px grey;
-  white-space: nowrap;
-  vertical-align: middle;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
-}
-
-.sign-in-button:hover {
-  cursor: pointer;
-}
-
 #menu-background {
   position: fixed;
   top: 0;
@@ -228,4 +178,15 @@ body {
 
 .menu-user-info {
   padding: 0 16px;
+}
+
+.mdc-text-field-helper-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.mdc-text-field-helper-text::before {
+  height: 5px;
 }

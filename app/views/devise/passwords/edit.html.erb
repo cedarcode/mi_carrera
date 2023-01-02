@@ -4,18 +4,20 @@
   <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Restablecer Contraseña</h3>
   <ul class="mdc-list growing-text-list">
 
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= form_with(model: resource, url: password_path(resource_name), method: :put, local: true) do |f| %>
       <%= f.hidden_field :reset_password_token %>
 
-      <li class="sign-in-option">
-        <%= f.label :password, "Nueva contraseña" %>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %>
-        <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-input #{'is-invalid' if resource.errors[:email].any?}" %>
-        <%= render 'shared/invalid_feedback', resource: resource, field: :password %>
+      <li class="form-input-container">
+        <div class="mdc-text-field <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:password].any? %>" data-controller="textfield">
+          <%= render 'shared/invalid_icon', resource: resource, field: :password %>
+          <%= f.label :password, "Nueva contraseña", class: "mdc-floating-label" %>
+          <%= f.password_field :password, class: "mdc-text-field__input", autofocus: true %>
+          <div class="mdc-line-ripple"></div>
+        </div>
+        <%= render 'shared/info_and_errors', resource: resource, field: :password, text: "#{@minimum_password_length} caracteres mínimo" %>
       </li>
-      <li class="sign-in-option sign-in">
+
+      <li class="form-input-container sign-in">
         <%= f.button class: "mdc-button mdc-button--raised" do %>
           <span class='mdc-button__label'>
             Restablecer contraseña

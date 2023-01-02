@@ -12,13 +12,13 @@ class EditProfileTest < ApplicationSystemTestCase
   end
 
   test "user can edit profile" do
-    find(".mdc-menu-surface--anchor").click
+    find("a", text: 'more_vert').click
     click_on "Editar Perfil"
 
     # fail case - current password is wrong
     fill_in "Contraseña actual", with: "wrong"
     click_on "Guardar"
-    within('.sign-in-option', text: 'Contraseña actual') do
+    within('.form-input-container', text: 'Contraseña actual') do
       assert_text "No es válido"
     end
 
@@ -27,7 +27,7 @@ class EditProfileTest < ApplicationSystemTestCase
     fill_in "Nueva contraseña", with: "123"
     fill_in "Confirma tu nueva contraseña", with: "123"
     click_on "Guardar"
-    within('.sign-in-option', text: 'Nueva contraseña') do
+    within('.form-input-container', text: 'Nueva contraseña') do
       assert_text "Es demasiado corto (6 caracteres mínimo)"
     end
 
@@ -36,7 +36,7 @@ class EditProfileTest < ApplicationSystemTestCase
     fill_in "Confirma tu nueva contraseña", with: "alice1234"
     fill_in "Contraseña actual", with: @user.password
     click_on "Guardar"
-    within('.sign-in-option', text: 'Confirma tu nueva contraseña') do
+    within('.form-input-container', text: 'Confirma tu nueva contraseña') do
       assert_text "No coincide"
     end
 
@@ -44,7 +44,7 @@ class EditProfileTest < ApplicationSystemTestCase
     fill_in 'Correo electrónico', with: @user2.email
     fill_in 'Contraseña actual', with: @user.password
     click_on 'Guardar'
-    within('.sign-in-option', text: 'Correo electrónico') do
+    within('.form-input-container', text: 'Correo electrónico') do
       assert_text "Ya está en uso"
     end
 
@@ -55,8 +55,10 @@ class EditProfileTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: 'newemail@gmail.com'
     click_on "Guardar"
     assert_text "Actualizaste tu cuenta correctamente."
-    find(".mdc-menu-surface--anchor").click
-    within(".mdc-menu-surface--anchor") do
+
+    click_actions_menu
+
+    within_actions_menu do
       assert_text "newemail@gmail.com"
     end
   end

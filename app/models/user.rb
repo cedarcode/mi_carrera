@@ -21,4 +21,8 @@ class User < ApplicationRecord
       end
     end
   end
+
+  def oauth_user?
+    provider.present?
+  end
 end
