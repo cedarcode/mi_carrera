@@ -12,7 +12,7 @@ class EditProfileTest < ApplicationSystemTestCase
   end
 
   test "user can edit profile" do
-    find("a", text: 'more_vert').click
+    click_actions_menu
     click_on "Editar Perfil"
 
     # fail case - current password is wrong
