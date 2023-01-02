@@ -28,13 +28,13 @@
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <%= yield :navigation_icon %>
-          <%= yield :title %>
+          <%= link_to 'Student', root_path, class: 'home-button'%>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
           <span hidden>
             <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
           </span>
-          <%= yield :profile_link %>
+          <%= yield :account %>
           <%= yield :credits %>
           <% if !content_for?(:navigation_icon) %>
             <%= render 'shared/menu' %>
@@ -42,10 +42,19 @@
         </section>
       </div>
     </header>
-    <main class="mdc-top-app-bar--fixed-adjust">
+    <section class="mdc-top-app-bar--fixed-adjust">
+      <% if flash[:notice] %>
+        <div class="flash flash-notice"><%= flash[:notice] %></div>
+      <% end %>
+      <% if flash[:error] %>
+        <div class="flash flash-error"><%= flash[:error] %></div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="flash flash-error"><%= flash[:alert] %></div>
+      <% end %>
       <div class='content'>
         <%= yield %>
       </div>
-    </main>
+    </section>
   </body>
 </html>
