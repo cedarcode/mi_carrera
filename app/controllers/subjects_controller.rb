@@ -1,6 +1,4 @@
 class SubjectsController < ApplicationController
-  helper_method :bedel
-
   def index
     @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject.course) }
   end
@@ -50,10 +48,6 @@ class SubjectsController < ApplicationController
   end
 
   private
-
-  def bedel
-    @bedel ||= Bedel.new(session)
-  end
 
   def subject
     @subject ||= Subject.find(params[:id])
