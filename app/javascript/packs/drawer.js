@@ -8,7 +8,7 @@ document.addEventListener("turbolinks:load", function () {
 
   const listEl = document.querySelector(".mdc-drawer .mdc-list");
   const mainContentEl = document.querySelector(".main-content");
-  listEl.addEventListener("click", (event) => {
+  listEl.addEventListener("click", () => {
     mainContentEl.querySelector("input, button").focus();
   });
   document.body.addEventListener("MDCDrawer:closed", () => {
