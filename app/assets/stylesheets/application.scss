@@ -190,3 +190,8 @@ body {
 .mdc-text-field-helper-text::before {
   height: 5px;
 }
+
+.no-decoration {
+  text-decoration: none;
+  color: inherit;
+}
