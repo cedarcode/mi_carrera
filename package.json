@@ -6,15 +6,17 @@
     "yarn": "1.x"
   },
   "dependencies": {
+    "@material/button": "^3.0.0",
     "@material/checkbox": "^3.0.0",
     "@material/list": "^3.0.0",
-    "@material/top-app-bar": "^3.0.0",
-    "@material/typography": "^3.0.0",
     "@material/menu": "^3.0.0",
     "@material/menu-surface": "^3.0.0",
+    "@material/top-app-bar": "^3.0.0",
+    "@material/typography": "^3.0.0",
     "@rails/webpacker": "4.2.2",
     "stimulus": "^1.1.1",
-    "@material/theme": "^3.0.0"
+    "@material/theme": "^3.0.0",
+    "@material/textfield": "^3.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
