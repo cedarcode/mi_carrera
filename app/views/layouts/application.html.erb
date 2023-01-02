@@ -34,7 +34,6 @@
           <span hidden>
             <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
           </span>
-          <%= yield :account %>
           <%= yield :credits %>
           <% if !content_for?(:navigation_icon) %>
             <%= render 'shared/menu' %>
@@ -42,7 +41,7 @@
         </section>
       </div>
     </header>
-    <section class="mdc-top-app-bar--fixed-adjust">
+    <main class="mdc-top-app-bar--fixed-adjust">
       <% if flash[:notice] %>
         <div class="flash flash-notice"><%= flash[:notice] %></div>
       <% end %>
@@ -55,6 +54,12 @@
       <div class='content'>
         <%= yield %>
       </div>
-    </section>
+    </main>
+    <footer class="footer mdc-theme--text-primary-on-light">
+      <span class="mdc-theme--text-secondary-on-light">
+        Built by&nbsp;
+      </span>
+      <a class="mdc-theme--text-primary-on-light" href="https://cedarcode.com" target="_blank" >Cedarcode</a>
+    </footer>
   </body>
 </html>
