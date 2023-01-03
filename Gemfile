@@ -8,7 +8,6 @@ gem 'rails', '~> 6.0.6'
 gem 'bootsnap', '~> 1.4', require: false
 gem 'devise', '~> 4.8'
 gem 'jbuilder', '~> 2.9'
-gem 'nokogiri', '~> 1.13.0'
 gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.1'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
@@ -20,6 +19,7 @@ gem 'serviceworker-rails', '~> 0.6'
 gem 'turbolinks', '~> 5.2'
 gem 'uglifier', '~> 4.1'
 gem 'webpacker', '~> 4.0'
+
 group :development, :test do
   gem 'byebug', '~> 11.0', platforms: [:mri, :mingw, :x64_mingw]
   gem "dotenv-rails", "~> 2.7"
