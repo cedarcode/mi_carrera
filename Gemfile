@@ -12,7 +12,7 @@ gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.1'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pg', '~> 1.1'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.0.0'
 gem 'rollbar', '~> 2.19'
 gem 'sass-rails', '~> 6.0'
 gem 'serviceworker-rails', '~> 0.6'
@@ -29,7 +29,7 @@ group :development do
   gem "letter_opener", "~> 1.7"
   gem 'listen', '~> 3.1'
   gem 'rubocop', '~> 0.67.0'
-  gem 'spring', '~> 2.1'
+  gem 'spring', '~> 2.1.0'
   gem 'spring-watcher-listen', '~> 2.0'
   gem 'web-console', '~> 4.0'
 end
