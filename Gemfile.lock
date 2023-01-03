@@ -288,7 +288,7 @@ DEPENDENCIES
   omniauth-google-oauth2 (~> 1.1)
   omniauth-rails_csrf_protection (~> 1.0)
   pg (~> 1.1)
-  puma (~> 4.3.0)
+  puma (~> 4.3)
   rails (~> 6.0.6)
   rollbar (~> 2.19)
   rubocop (~> 0.67.0)
