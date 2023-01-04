@@ -7,44 +7,25 @@ class CurriculumPage < BedeliasPage
     group_node.all('..//li[@data-nodetype="Materia"]/span')
   end
 
-  def group_details(group)
-    info = group.text.split(' - ')
+  def group_details(group_node)
+    code, name = group_node.text.split(' - ')
+    min_credits = group_node.text.split('créditos: ').last
 
     {
-      code: info[0],
-      name: info[1],
-      min_credits: info[2].split(' ')[1].to_i
+      code: code,
+      name: name,
+      min_credits: min_credits.delete('^0-9').to_i
     }
   end
 
-  def subject_details(subject)
-    info = subject.text.split(' - créditos: ')
-    subject_credits = info[1].to_i
-    info = info[0].split(' - ')
-    subject_code = info[0]
-    subject_name = info[1..-1].join(' - ')
-
+  def subject_details(subject_node)
+    code, name = subject_node.text.split(' - ')
+    credits = subject_node.text.split('créditos: ').last
     {
-      code: subject_code,
-      name: subject_name,
-      credits: subject_credits,
+      code: code,
+      name: name,
+      credits: credits.delete('^0-9').to_i,
       has_exam: nil
-    }
-  end
-
-  def subject_row_details(subject_row)
-    index = subject_row['data-ri'].to_i
-    column = subject_row.first(:xpath, "td")
-    subject_code = column.text.split(' - ')[0]
-    type = column.first(:xpath, "following-sibling::td").text
-    is_exam = subject_row.first(:xpath, "td[2]").text == "Examen" # from column 'Tipo'
-
-    {
-      index: index,
-      subject_code: subject_code,
-      type: type,
-      subject_name: column.text,
-      is_exam: is_exam
     }
   end
 end

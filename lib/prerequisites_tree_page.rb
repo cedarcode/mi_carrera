@@ -4,7 +4,7 @@ class PrerequisitesTreePage < BedeliasPage
   end
 
   def back
-    find("//button/span[text()='Volver']").click
+    click_on 'Volver'
   end
 
   def extract_subjects_from(box)
@@ -37,7 +37,7 @@ class PrerequisitesTreePage < BedeliasPage
   end
 
   def only_one_approval_needed?(node)
-    node.first(:xpath, "div/span[@class='negrita']").text.split(' ')[0] == '1'
+    node.first("div/span[@class='negrita']").text.split(' ')[0] == '1'
   end
 
   def subject_code(node)
@@ -52,11 +52,11 @@ class PrerequisitesTreePage < BedeliasPage
   end
 
   def subtrees_roots(node)
-    node.all(:xpath, "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]")
+    node.all("following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]")
   end
 
   def node_content_from_node(node)
-    node.first(:xpath, 'div').text
+    node.first('div').text
   end
 
   def credits_from_node(node)

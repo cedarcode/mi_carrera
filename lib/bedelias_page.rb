@@ -11,7 +11,9 @@ class BedeliasPage
     click_on "Planes de estudio / Previas"
     find(:css, 'h3', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
     find(:css, 'tr span', text: 'FING - FACULTAD DE INGENIERÍA').click
-    find(:css, 'td', exact_text: 'INGENIERIA EN COMPUTACION').sibling(:css, 'td', match: :first).click
+    within(:css, 'tr', text: 'INGENIERIA EN COMPUTACION', match: :prefer_exact) do
+      find(:css, 'div.ui-row-toggler').click
+    end
     within(:css, '.ui-expanded-row-content .ui-datatable', text: 'Planes') do
       find(:css, 'tr', text: '1997').click_on "Ver más datos"
     end
@@ -19,6 +21,6 @@ class BedeliasPage
 
   def visit_prerequisites
     visit_curriculum
-    find(:css, 'button', text: "Sistema de previaturas").click
+    click_on "Sistema de previaturas"
   end
 end

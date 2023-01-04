@@ -39,25 +39,24 @@ class BedeliasSpider < Kimurai::Base
     # got to the prerequisites page
     bedelias_page.visit_prerequisites
 
-    prerequisites_page.for_each_page do |current_page_number|
-      # for each page, get all rows
-      prerequisites_page.rows_in_current_page.each do |subject_row|
-        subject_row_details = curriculum_page.subject_row_details(subject_row)
+    prerequisites_page.for_each_approvable do |approvable_node, current_page_number|
+      approvable_details = prerequisites_page.approvable_details(approvable_node)
 
-        if subjects[subject_row_details[:subject_code]].nil?
-          puts "Warning: skipping #{subject_row_details[:subject_name]}"
-          next
-        end
+      if subjects[approvable_details[:code]].nil?
+        puts "Warning: skipping #{approvable_details[:description]}"
+        next
+      end
 
-        puts "#{current_page_number}/#{subject_row_details[:index]} Generating " +
-             "#{subject_row_details[:subject_name]}, #{subject_row_details[:type]}"
+      puts(
+        "#{current_page_number}/#{approvable_details[:index]} Generating " +
+        "#{approvable_details[:description]}, #{approvable_details[:type]}"
+      )
 
-        # save the subject and whether it has an exam
-        if subject_row_details[:type] == "Curso"
-          subjects[subject_row_details[:subject_code]][:has_exam] = false
-        elsif subject_row_details[:type] == "Examen"
-          subjects[subject_row_details[:subject_code]][:has_exam] = true
-        end
+      # save the subject and whether it has an exam
+      if approvable_details[:type] == "Curso"
+        subjects[approvable_details[:code]][:has_exam] = false
+      elsif approvable_details[:type] == "Examen"
+        subjects[approvable_details[:code]][:has_exam] = true
       end
     end
 
@@ -70,29 +69,23 @@ class BedeliasSpider < Kimurai::Base
 
   def parse_prerequisites(*_args)
     bedelias_page.visit_prerequisites
-    row_index = 0
-    prerequisites_page.for_each_page do |current_page_number|
-      prerequisites_page.row_count_in_page.times do
-        subject_row = prerequisites_page.row_with_index(row_index)
-        subject_row_details = curriculum_page.subject_row_details(subject_row)
 
-        puts(
-          "#{current_page_number}/#{row_index} - Generating prerequisite for " +
-          "#{subject_row_details[:subject_code]}, #{subject_row_details[:is_exam] ? "exam" : "course"}"
-        )
+    prerequisites_page.for_each_approvable do |approvable_node, current_page_number|
+      approvable_details = prerequisites_page.approvable_details(approvable_node)
 
-        prerequisites_page.click_on_see_more(subject_row) # 'Ver más'
+      puts(
+        "#{current_page_number}/#{approvable_details[:index]} - Generating prerequisite for " +
+        "#{approvable_details[:code]}, #{approvable_details[:is_exam] ? "exam" : "course"}"
+      )
 
-        tree = prerequisites_tree_page.root
-        prerequisite = create_prerequisite_tree(tree, subject_row_details[:subject_code], subject_row_details[:is_exam])
-        path = File.join(Rails.root, "db", "seeds", "scraped_prerequisites.json")
-        save_to path, prerequisite, format: :pretty_json, position: false
+      prerequisites_page.click_on_see_more(approvable_node) # 'Ver más'
 
-        prerequisites_tree_page.back
+      tree = prerequisites_tree_page.root
+      prerequisite = create_prerequisite_tree(tree, approvable_details[:code], approvable_details[:is_exam])
+      path = File.join(Rails.root, "db", "seeds", "scraped_prerequisites.json")
+      save_to path, prerequisite, format: :pretty_json, position: false
 
-        prerequisites_page.advance_to_page(current_page_number)
-        row_index += 1
-      end
+      prerequisites_tree_page.back
     end
   end
 
@@ -183,7 +176,7 @@ class BedeliasSpider < Kimurai::Base
   end
 
   def find(xpath_selector, scope = browser)
-    scope.find(:xpath, xpath_selector)
+    scope.find(xpath_selector)
   end
 
   def bedelias_page

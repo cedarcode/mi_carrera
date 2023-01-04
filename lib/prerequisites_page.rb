@@ -11,23 +11,25 @@ class PrerequisitesPage < BedeliasPage
     find(:css, 'span.ui-paginator-page.ui-state-active').text.to_i
   end
 
-  def row_count_in_page
+  def approvables_count_in_page
     all("//tr[@data-ri]").count
   end
 
-  def row_with_index(index)
-    find("//tr[@data-ri=#{index}]")
+  def approvable_node(approvable_index)
+    find("//tr[@data-ri=#{approvable_index}]")
   end
 
-  def rows_in_current_page
+  def approvables_in_current_page
     all("//tr[@data-ri]")
   end
 
-  def click_on_see_more(row)
-    row.find("td[3]/a").click
+  def click_on_see_more(approvable_node)
+    approvable_node.find("td[3]/a").click
   end
 
   def advance_to_page(page)
+    return if current_page_number == page
+
     find("//span[contains(@class, 'ui-paginator-page') and text()='#{page}' ]")&.click
   rescue Capybara::ElementNotFound
     advance_to_page(last_visible_page_number)
@@ -42,10 +44,38 @@ class PrerequisitesPage < BedeliasPage
     loop do
       yield(current_page_number)
 
+      break if reached_last_page?
+
       move_to_next_page
       sleep 0.5
+    end
+  end
 
-      break if reached_last_page?
+  def approvable_details(approvable_node)
+    index = approvable_node['data-ri'].to_i
+    column = approvable_node.first("td")
+    code = column.text.split(' - ')[0]
+    type = column.first("following-sibling::td").text
+    is_exam = approvable_node.first("td[2]").text == "Examen" # from column 'Tipo'
+
+    {
+      index: index,
+      code: code,
+      type: type,
+      description: column.text,
+      is_exam: is_exam
+    }
+  end
+
+  def for_each_approvable
+    approvable_index = 0
+    for_each_page do |current_page_number|
+      approvables_count_in_page.times do
+        yield(approvable_node(approvable_index), current_page_number)
+        # if the page was reloaded, go back to the current page
+        advance_to_page(current_page_number)
+        approvable_index += 1
+      end
     end
   end
 end
