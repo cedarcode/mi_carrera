@@ -35,9 +35,23 @@ class ActiveSupport::TestCase
     subject
   end
 
+  def create_user(email: "bob@test.com", password: "bob123", provider: nil, uid: nil)
+    User.create!(email: email, password: password, provider: provider, uid: uid)
+  end
+
   def wait_for_async_request
     # Ideally we would really wait for the request to complete instead of
     # sleeping a fixed amount of time
     sleep 1
+  end
+
+  def within_actions_menu
+    within '.mdc-menu-surface' do
+      yield
+    end
+  end
+
+  def click_actions_menu
+    find("a", text: 'more_vert').click
   end
 end
