@@ -8,8 +8,7 @@ class CurriculumPage < BedeliasPage
   end
 
   def group_details(group_node)
-    code, name = group_node.text.split(' - ')
-    min_credits = group_node.text.split('créditos: ').last
+    code, name, min_credits = group_node.text.split(' - ')
 
     {
       code: code,
