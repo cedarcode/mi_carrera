@@ -11,22 +11,6 @@ class BedeliasSpider < Kimurai::Base
 
   ROWS_PER_PAGE = 20
 
-  def bedelias_page
-    @bedelias_page ||= BedeliasPage.new(browser)
-  end
-
-  def curriculum_page
-    @curriculum_page ||= CurriculumPage.new(browser)
-  end
-
-  def prerequisites_page
-    @prerequisites_page ||= PrerequisitesPage.new(browser)
-  end
-
-  def prerequisites_tree_page
-    @prerequisites_tree_page ||= PrerequisitesTreePage.new(browser)
-  end
-
   def parse_subjects(*_args)
     bedelias_page.visit_curriculum
 
@@ -200,5 +184,21 @@ class BedeliasSpider < Kimurai::Base
 
   def find(xpath_selector, scope = browser)
     scope.find(:xpath, xpath_selector)
+  end
+
+  def bedelias_page
+    @bedelias_page ||= BedeliasPage.new(browser)
+  end
+
+  def curriculum_page
+    @curriculum_page ||= CurriculumPage.new(browser)
+  end
+
+  def prerequisites_page
+    @prerequisites_page ||= PrerequisitesPage.new(browser)
+  end
+
+  def prerequisites_tree_page
+    @prerequisites_tree_page ||= PrerequisitesTreePage.new(browser)
   end
 end
