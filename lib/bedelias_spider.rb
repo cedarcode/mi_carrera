@@ -65,8 +65,8 @@ class BedeliasSpider < Kimurai::Base
           next
         end
 
-        puts "#{current_page_number}/#{subject_row_details[:index]} Generating
-              #{subject_row_details[:subject_name]}, #{subject_row_details[:type]}"
+        puts "#{current_page_number}/#{subject_row_details[:index]} Generating " +
+             "#{subject_row_details[:subject_name]}, #{subject_row_details[:type]}"
 
         # save the subject and whether it has an exam
         if subject_row_details[:type] == "Curso"
@@ -93,8 +93,8 @@ class BedeliasSpider < Kimurai::Base
         subject_row_details = curriculum_page.subject_row_details(subject_row)
 
         puts(
-          "#{current_page_number}/#{row_index} - Generating prerequisite for
-          #{subject_row_details[:subject_code]}, #{subject_row_details[:is_exam] ? "exam" : "course"}"
+          "#{current_page_number}/#{row_index} - Generating prerequisite for" +
+          "#{subject_row_details[:subject_code]}, #{subject_row_details[:is_exam] ? "exam" : "course"}"
         )
 
         prerequisites_page.click_on_see_more(subject_row) # 'Ver más'

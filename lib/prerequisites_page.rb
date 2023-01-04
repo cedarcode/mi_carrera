@@ -1,14 +1,14 @@
 class PrerequisitesPage < BedeliasPage
   def reached_last_page?
-    find("//span[contains(@class, 'ui-paginator-next')]")[:class].include?('disabled')
+    find(:css, 'span.ui-paginator-next')[:class].include?('disabled')
   end
 
   def move_to_next_page
-    find("//span[contains(@class, 'ui-icon-seek-next')]").click
+    find(:css, 'span.ui-icon-seek-next').click
   end
 
   def current_page_number
-    find("//span[ contains(@class, 'ui-paginator-page') and contains(@class, 'ui-state-active') ]").text.to_i
+    find(:css, 'span.ui-paginator-page.ui-state-active').text.to_i
   end
 
   def row_count_in_page
@@ -35,7 +35,7 @@ class PrerequisitesPage < BedeliasPage
   end
 
   def last_visible_page_number
-    find("//span[contains(@class, 'ui-paginator-pages')]/span[last()]").text.to_i
+    find(:css, 'span.ui-paginator-pages span:last-child').text.to_i
   end
 
   def for_each_page

@@ -1,6 +1,6 @@
 class BedeliasPage
   attr_reader :browser
-  delegate :find, :click_on, :all, :first, to: :browser
+  delegate :find, :click_on, :all, :first, :within, to: :browser
 
   def initialize(browser)
     @browser = browser
@@ -9,16 +9,16 @@ class BedeliasPage
   def visit_curriculum
     click_on "PLANES DE ESTUDIO"
     click_on "Planes de estudio / Previas"
-
-    find("//h3[text()='TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA']").click
-    find("//tr//span[text()='FING - FACULTAD DE INGENIERÍA']").click
-
-    find("//td[text()='INGENIERIA EN COMPUTACION']/preceding-sibling::td/div").click
-    find("//a[@id='datos1111:j_idt92:35:j_idt104:0:verComposicionPlan']").click
+    find(:css, 'h3', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
+    find(:css, 'tr span', text: 'FING - FACULTAD DE INGENIERÍA').click
+    find(:css, 'td', exact_text: 'INGENIERIA EN COMPUTACION').sibling(:css, 'td', match: :first).click
+    within(:css, '.ui-expanded-row-content .ui-datatable', text: 'Planes') do
+      find(:css, 'tr', text: '1997').click_on "Ver más datos"
+    end
   end
 
   def visit_prerequisites
     visit_curriculum
-    find("//button[span[text()='Sistema de previaturas']]").click
+    find(:css, 'button', text: "Sistema de previaturas").click
   end
 end
