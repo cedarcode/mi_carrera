@@ -77,7 +77,7 @@ class BedeliasSpider < Kimurai::Base
         subject_row_details = curriculum_page.subject_row_details(subject_row)
 
         puts(
-          "#{current_page_number}/#{row_index} - Generating prerequisite for" +
+          "#{current_page_number}/#{row_index} - Generating prerequisite for " +
           "#{subject_row_details[:subject_code]}, #{subject_row_details[:is_exam] ? "exam" : "course"}"
         )
 
