@@ -190,3 +190,23 @@ body {
 .mdc-text-field-helper-text::before {
   height: 5px;
 }
+
+.subject-group-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.checkbox-header {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex {
+  display: flex;
+}
