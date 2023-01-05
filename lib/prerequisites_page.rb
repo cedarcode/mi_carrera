@@ -52,17 +52,16 @@ class PrerequisitesPage < BedeliasPage
   end
 
   def approvable_details(approvable_node)
-    index = approvable_node['data-ri'].to_i
     column = approvable_node.first("td")
     code = column.text.split(' - ')[0]
+    name = column.text.split(' - ')[1]
     type = column.first("following-sibling::td").text
     is_exam = approvable_node.first("td[2]").text == "Examen" # from column 'Tipo'
 
     {
-      index: index,
       code: code,
       type: type,
-      description: column.text,
+      name: name,
       is_exam: is_exam
     }
   end

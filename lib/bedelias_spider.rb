@@ -43,13 +43,13 @@ class BedeliasSpider < Kimurai::Base
       approvable_details = prerequisites_page.approvable_details(approvable_node)
 
       if subjects[approvable_details[:code]].nil?
-        puts "Warning: skipping #{approvable_details[:description]}"
+        puts "Warning: skipping #{approvable_details[:code]} - #{approvable_details[:name]}"
         next
       end
 
       puts(
-        "#{current_page_number}/#{approvable_details[:index]} Generating " +
-        "#{approvable_details[:description]}, #{approvable_details[:type]}"
+        "Page #{current_page_number} Generating " +
+        "#{approvable_details[:code]} - #{approvable_details[:name]}, #{approvable_details[:type]}"
       )
 
       # save the subject and whether it has an exam
@@ -74,14 +74,18 @@ class BedeliasSpider < Kimurai::Base
       approvable_details = prerequisites_page.approvable_details(approvable_node)
 
       puts(
-        "#{current_page_number}/#{approvable_details[:index]} - Generating prerequisite for " +
+        "Page #{current_page_number} - Generating prerequisite for " +
         "#{approvable_details[:code]}, #{approvable_details[:is_exam] ? "exam" : "course"}"
       )
 
       prerequisites_page.click_on_see_more(approvable_node) # 'Ver más'
 
-      tree = prerequisites_tree_page.root
-      prerequisite = create_prerequisite_tree(tree, approvable_details[:code], approvable_details[:is_exam])
+      prerequisite_tree_root_node = prerequisites_tree_page.root
+      prerequisite = create_prerequisite_tree(
+        prerequisite_tree_root_node,
+        approvable_details[:code],
+        approvable_details[:is_exam]
+      )
       path = File.join(Rails.root, "db", "seeds", "scraped_prerequisites.json")
       save_to path, prerequisite, format: :pretty_json, position: false
 
@@ -91,84 +95,15 @@ class BedeliasSpider < Kimurai::Base
 
   private
 
-  def create_prerequisite_tree(original_prerequisite, subject = nil, exam = false)
-    prerequisite = {}
-    if subject
-      prerequisite[:subject] = subject
-      prerequisite[:exam] = exam
-    end
-    node_type = original_prerequisite['data-nodetype']
-    node_content = prerequisites_tree_page.node_content_from_node(original_prerequisite)
+  def create_prerequisite_tree(original_prerequisite, subject_code = nil, is_exam = false)
+    prerequisite_details = prerequisites_tree_page.prerequisite_details(original_prerequisite)
 
-    if node_type == 'default'
-      if node_content.include?('créditos en el Plan:')
-        prerequisite[:type] = 'credits'
-        prerequisite[:credits] = prerequisites_tree_page.credits_from_node(original_prerequisite)
-      elsif node_content.include?('aprobación') || node_content.include?('actividad')
-        prerequisite[:type] = 'logical'
-        if prerequisites_tree_page.only_one_approval_needed?(original_prerequisite)
-          prerequisite[:logical_operator] = "or"
-        else # change: 'n' approvals needed out of a list of 'm' subjects when 'n'<'m' is not considered
-          prerequisite[:logical_operator] = "and"
-        end
-        prerequisite[:operands] = []
-        subjects = prerequisites_tree_page.extract_subjects_from(node_content)
-
-        subjects.each do |s|
-          prerequisite[:operands] += [
-            { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
-          ]
-        end
-      elsif node_content.include?('Curso aprobado')
-        prerequisite[:type] = 'subject'
-        prerequisite[:needs] = 'course'
-        prerequisite[:subject_needed] = prerequisites_tree_page.subject_code(node_content)
-      elsif node_content.include?('Examen aprobado')
-        prerequisite[:type] = 'subject'
-        prerequisite[:needs] = 'exam'
-        prerequisite[:subject_needed] = prerequisites_tree_page.subject_code(node_content)
-      elsif node_content.include?('Aprobada')
-        prerequisite[:type] = 'subject'
-        prerequisite[:subject_needed] = prerequisites_tree_page.subject_code(node_content)
-        prerequisite[:needs] = 'all'
-      elsif node_content.include?('Inscripción a Curso')
-        prerequisite[:type] = 'subject'
-        prerequisite[:subjedt_needed] = prerequisites_tree_page.subject_code(node_content)
-        prerequisite[:needs] = 'enrollment'
-      end
-    elsif node_type == 'cag' # 'créditos en el Grupo:'
-      prerequisite[:type] = 'credits'
-      prerequisite[:credits] = prerequisites_tree_page.credits_from_node(original_prerequisite)
-      prerequisite[:group] = prerequisites_tree_page.group_from_node(original_prerequisite)
-    elsif node_type == 'y'
-      prerequisite[:type] = 'logical'
-      prerequisite[:logical_operator] = 'and'
-      prerequisites_tree_page.expand_prerequisites_tree(original_prerequisite)
-      prerequisite[:operands] = []
-      subtree_roots = prerequisites_tree_page.subtrees_roots(original_prerequisite)
-      subtree_roots.each do |subtree_root|
-        prerequisite[:operands] += [create_prerequisite_tree(subtree_root)]
-      end
-    elsif node_type == 'no'
-      prerequisite[:type] = 'logical'
-      prerequisite[:logical_operator] = 'not'
-      prerequisites_tree_page.expand_prerequisites_tree(original_prerequisite)
-      prerequisite[:operands] = []
-      subtree_roots = prerequisites_tree_page.subtrees_roots(original_prerequisite)
-      subtree_roots.each do |subtree_root|
-        prerequisite[:operands] += [create_prerequisite_tree(subtree_root)]
-      end
-    elsif node_type == 'o'
-      prerequisite[:type] = 'logical'
-      prerequisite[:logical_operator] = 'or'
-      prerequisites_tree_page.expand_prerequisites_tree(original_prerequisite)
-      prerequisite[:operands] = []
-      subtree_roots = prerequisites_tree_page.subtrees_roots(original_prerequisite)
-      subtree_roots.each do |subtree_root|
-        prerequisite[:operands] += [create_prerequisite_tree(subtree_root)]
-      end
+    if subject_code
+      prerequisite_details[:subject_code] = subject_code
+      prerequisite_details[:is_exam] = is_exam
     end
-    prerequisite
+
+    prerequisite_details
   end
 
   def click(xpath_selector, scope = browser)
