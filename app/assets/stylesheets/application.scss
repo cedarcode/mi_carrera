@@ -25,6 +25,7 @@
 @import "@material/theme/mdc-theme";
 @import "@material/button/mdc-button";
 @import "@material/textfield/mdc-text-field";
+@import "@material/dialog/mdc-dialog";
 @import "flash";
 
 body {
@@ -209,4 +210,9 @@ body {
 
 .d-flex {
   display: flex;
+}
+
+.list-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

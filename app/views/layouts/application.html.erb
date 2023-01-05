@@ -24,6 +24,7 @@
   </head>
 
   <body class="mdc-typography">
+    <%= render 'shared/info_dialog' %>
     <header class="mdc-top-app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -31,6 +32,10 @@
           <%= link_to 'Student', root_path, class: 'home-button'%>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+
+          <button class='mdc-icon-button material-symbols-outlined ' data-controller='info-dialog' data-action='click->info-dialog#open'>
+            help
+          </button>
           <span hidden>
             <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
           </span>
