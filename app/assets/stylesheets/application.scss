@@ -62,7 +62,7 @@ body {
 }
 
 .credits-counter {
-  padding-right: 16px;
+  padding: 0 12px;
 }
 
 .handle-account {
@@ -215,13 +215,4 @@ body {
 .list-item {
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-.help-button {
-  height: 30px;
-  width: 30px;
-  margin: 5px;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
 }

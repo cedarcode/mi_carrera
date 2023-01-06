@@ -23,7 +23,7 @@
     <meta name="theme-color" content="#6200ee"/>
   </head>
 
-  <body class="mdc-typography">
+  <body class="mdc-typography" data-controller='info-dialog'>
     <%= render 'shared/info_dialog' %>
     <header class="mdc-top-app-bar">
       <div class="mdc-top-app-bar__row">
@@ -32,7 +32,7 @@
           <%= link_to 'Student', root_path, class: 'home-button'%>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          <%= button_tag 'help', class: 'mdc-icon-button material-symbols-outlined help-button', data: { controller: 'info-dialog', action: 'click->info-dialog#open' } %>
+          <%= button_tag 'help', class: 'mdc-icon-button material-symbols-outlined mdc-top-app-bar__action-item', id: 'help-button', data: { target: 'info-dialog.trigger', action: 'click->info-dialog#open' } %>
           <span hidden>
             <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
           </span>
