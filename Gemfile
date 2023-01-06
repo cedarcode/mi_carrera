@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby File.read(".ruby-version").strip
 
-gem 'rails', '~> 6.0.6'
+gem 'rails', '~> 6.1.7'
 
 gem 'bootsnap', '~> 1.4', require: false
 gem 'devise', '~> 4.8'
@@ -12,7 +12,7 @@ gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.1'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pg', '~> 1.1'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'rollbar', '~> 2.19'
 gem 'sass-rails', '~> 6.0'
 gem 'serviceworker-rails', '~> 0.6'
