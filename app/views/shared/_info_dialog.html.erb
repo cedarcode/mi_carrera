@@ -9,18 +9,18 @@
       <div class="mdc-dialog__content" id="my-dialog-content">
         <ul>
           <li class='list-item'>
-            <span>Marca en la columna C los cursos que hayas aprobado.</span>
+            <span>Marque en la columna C los cursos que hayas aprobado.</span>
           </li>
           <li class='list-item'>
-            <span>Marca en la columna E los exámenes que hayas aprobado.</span>
+            <span>Marque en la columna E los exámenes que hayas aprobado.</span>
           </li>
         </div>
       </ul>
       <div class="mdc-dialog__actions">
-        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="ok">
+        <%= button_tag type: 'button', class: 'mdc-button mdc-dialog__button', data: { 'mdc-dialog-action': 'ok' } do %>
           <div class="mdc-button__ripple"></div>
           <span class="mdc-button__label">Ok</span>
-        </button>
+        <% end %>
       </div>
     </div>
   </div>

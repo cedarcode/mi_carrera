@@ -32,10 +32,7 @@
           <%= link_to 'Student', root_path, class: 'home-button'%>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-
-          <button class='mdc-icon-button material-symbols-outlined ' data-controller='info-dialog' data-action='click->info-dialog#open'>
-            help
-          </button>
+          <%= button_tag 'help', class: 'mdc-icon-button material-symbols-outlined help-button', data: { controller: 'info-dialog', action: 'click->info-dialog#open' } %>
           <span hidden>
             <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
           </span>
