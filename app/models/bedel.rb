@@ -1,6 +1,7 @@
 class Bedel
-  def initialize(store)
+  def initialize(store, user = nil)
     @store = store
+    @user = user
 
     @store[:approved_courses] ||= []
     @store[:approved_exams] ||= []
@@ -15,6 +16,11 @@ class Bedel
       end
     else
       false
+    end
+
+    if @user
+      @user.approvals = store
+      @user.save!
     end
   end
 
@@ -52,6 +58,11 @@ class Bedel
     store[:approved_courses] -= to_remove
 
     new_count = store[:approved_exams].size + store[:approved_courses].size
+
+    if @user
+      @user.approvals = store
+      @user.save!
+    end
 
     if new_count != original_count
       refresh_approvals

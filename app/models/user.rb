@@ -3,6 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  serialize :approvals, Hash
+
   def self.from_omniauth(auth)
     # check that user with same email exists
     existing_user = User.find_by(email: auth.info.email)
