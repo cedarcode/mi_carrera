@@ -7,9 +7,9 @@ class PrerequisitesTreePage < BedeliasPage
     click_on 'Volver'
   end
 
-  def extract_subjects_from(box)
+  def extract_subjects_from(node_content)
     subjects = []
-    text = box.split('entre: ')[1]
+    text = node_content.split('entre: ')[1]
 
     indices =
       text
@@ -40,6 +40,20 @@ class PrerequisitesTreePage < BedeliasPage
     node.first("div/span[@class='negrita']").text.split(' ')[0] == '1'
   end
 
+  def amount_of_subjects_needed(node)
+    node.first("div/span[@class='negrita']").text.split(' ')[0].to_i
+  end
+
+  def needs_all_approvals?(node)
+    amount_of_subjects_needed(node) == ammount_of_subjects_in_node_content(node_content_from_node(node))
+  end
+
+  def ammount_of_subjects_in_node_content(node_content)
+    node_content.split('entre: ')[1]
+                .enum_for(:scan, /(?=((Examen)|(Curso)|(U\.C\.B aprobada)))/)
+                .count
+  end
+
   def subject_code(node)
     node.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
   end
@@ -67,6 +81,13 @@ class PrerequisitesTreePage < BedeliasPage
     node_content_from_node(node).split('Grupo: ')[1].to_i
   end
 
+  def extract_combinations_from_node(node)
+    node_content = node_content_from_node(node)
+    subjects = extract_subjects_from(node_content)
+    amount_of_subjects_needed = amount_of_subjects_needed(node)
+    subjects.combination(amount_of_subjects_needed)
+  end
+
   def prerequisite_type(prerequisite_node)
     node_type = prerequisite_node['data-nodetype']
     node_content = node_content_from_node(prerequisite_node)
@@ -76,10 +97,13 @@ class PrerequisitesTreePage < BedeliasPage
       if node_content.include?('créditos en el Plan:')
         return :credits
       elsif node_content.include?('aprobación') || node_content.include?('actividad')
+        # byebug
         if only_one_approval_needed?(prerequisite_node)
           return :logical_or
-        else # change: 'n' approvals needed out of a list of 'm' subjects when 'n'<'m' is not considered
+        elsif needs_all_approvals?(prerequisite_node)
           return :logical_and
+        else # 'n' approvals needed out of a list of 'm' subjects when 'n'<'m'
+          return :logical_or_combinations
         end
       elsif node_content.include?('Curso aprobado')
         return :subject_course
@@ -101,7 +125,7 @@ class PrerequisitesTreePage < BedeliasPage
     end
   end
 
-  def prerequisite_details(prerequisite_node)
+  def prerequisite_tree(prerequisite_node)
     node_content = node_content_from_node(prerequisite_node)
     type = prerequisite_type(prerequisite_node)
     ret = {}
@@ -132,13 +156,30 @@ class PrerequisitesTreePage < BedeliasPage
           { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
         ]
       end
+    when :logical_or_combinations
+      # now we create an OR of ANDs for each combination of subjects
+      subject_combinations = extract_combinations_from_node(prerequisite_node)
+      ret[:type] = 'logical'
+      ret[:logical_operator] = 'or'
+      ret[:operands] = []
+      subject_combinations.to_a.each do |combination|
+        ret[:operands] += [
+          {
+            type: 'logical',
+            logical_operator: 'and',
+            operands: combination.map do |s|
+              { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
+            end
+          }
+        ]
+      end
     when :logical_and_tree
       ret[:type] = 'logical'
       ret[:logical_operator] = 'and'
       expand_prerequisites_tree(prerequisite_node)
       ret[:operands] = []
       subtrees_roots(prerequisite_node).each do |subtree_root|
-        ret[:operands] += [prerequisite_details(subtree_root)]
+        ret[:operands] += [prerequisite_tree(subtree_root)]
       end
     when :logical_or_tree
       ret[:type] = 'logical'
@@ -146,7 +187,7 @@ class PrerequisitesTreePage < BedeliasPage
       expand_prerequisites_tree(prerequisite_node)
       ret[:operands] = []
       subtrees_roots(prerequisite_node).each do |subtree_root|
-        ret[:operands] += [prerequisite_details(subtree_root)]
+        ret[:operands] += [prerequisite_tree(subtree_root)]
       end
     when :logical_not_tree
       ret[:type] = 'logical'
@@ -154,7 +195,7 @@ class PrerequisitesTreePage < BedeliasPage
       expand_prerequisites_tree(prerequisite_node)
       ret[:operands] = []
       subtrees_roots(prerequisite_node).each do |subtree_root|
-        ret[:operands] += [prerequisite_details(subtree_root)]
+        ret[:operands] += [prerequisite_tree(subtree_root)]
       end
     when :subject_course
       ret[:type] = 'subject'

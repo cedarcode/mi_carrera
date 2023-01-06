@@ -19,11 +19,11 @@ class CurriculumPage < BedeliasPage
 
   def subject_details(subject_node)
     code, name = subject_node.text.split(' - ')
-    credits = subject_node.text.split('créditos: ').last
+    credits = subject_node.text.split('créditos: ').last.delete('^0-9').to_i
     {
       code: code,
       name: name,
-      credits: credits.delete('^0-9').to_i,
+      credits: credits,
       has_exam: nil
     }
   end

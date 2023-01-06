@@ -96,14 +96,14 @@ class BedeliasSpider < Kimurai::Base
   private
 
   def create_prerequisite_tree(original_prerequisite, subject_code = nil, is_exam = false)
-    prerequisite_details = prerequisites_tree_page.prerequisite_details(original_prerequisite)
+    prerequisite_tree = prerequisites_tree_page.prerequisite_tree(original_prerequisite)
 
     if subject_code
-      prerequisite_details[:subject_code] = subject_code
-      prerequisite_details[:is_exam] = is_exam
+      prerequisite_tree[:subject_code] = subject_code
+      prerequisite_tree[:is_exam] = is_exam
     end
 
-    prerequisite_details
+    prerequisite_tree
   end
 
   def click(xpath_selector, scope = browser)
