@@ -14,6 +14,8 @@ class Bedel
       else
         store[:approved_courses] += [approvable.subject_id]
       end
+
+      force_credits_recalculation!
     else
       false
     end
@@ -31,6 +33,7 @@ class Bedel
       store[:approved_courses] -= [approvable.subject_id]
     end
 
+    force_credits_recalculation!
     refresh_approvals
   end
 
@@ -65,6 +68,7 @@ class Bedel
     end
 
     if new_count != original_count
+      force_credits_recalculation!
       refresh_approvals
     end
   end
@@ -129,6 +133,11 @@ class Bedel
       .includes(:exam)
       .where(approvables: { subject_id: nil }, subjects: { id: store[:approved_courses] })
       .sum(:credits)
+  end
+
+  def force_credits_recalculation!
+    @exam_credits = nil
+    @course_credits = nil
   end
 
   def subject_scope(group)
