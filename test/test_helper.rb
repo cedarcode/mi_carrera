@@ -46,12 +46,12 @@ class ActiveSupport::TestCase
   end
 
   def within_actions_menu
-    within '.mdc-menu-surface' do
+    within '.mdc-drawer__content' do
       yield
     end
   end
 
   def click_actions_menu
-    find("a", text: 'more_vert').click
+    find(".mdc-icon-button", text: 'menu').click
   end
 end

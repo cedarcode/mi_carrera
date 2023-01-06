@@ -11,6 +11,7 @@
     "@material/list": "^3.0.0",
     "@material/menu": "^3.0.0",
     "@material/menu-surface": "^3.0.0",
+    "@material/drawer": "^3.0.0",
     "@material/top-app-bar": "^3.0.0",
     "@material/typography": "^3.0.0",
     "@rails/webpacker": "4.2.2",
