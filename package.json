@@ -16,7 +16,8 @@
     "@rails/webpacker": "4.2.2",
     "stimulus": "^1.1.1",
     "@material/theme": "^3.0.0",
-    "@material/textfield": "^3.0.0"
+    "@material/textfield": "^3.0.0",
+    "@material/dialog": "^3.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

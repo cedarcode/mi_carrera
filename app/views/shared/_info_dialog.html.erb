@@ -1,0 +1,28 @@
+<div class="mdc-dialog" data-target='info-dialog.dialog'>
+  <div class="mdc-dialog__container">
+    <div class="mdc-dialog__surface"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="my-dialog-title"
+      aria-describedby="my-dialog-content">
+      <h2 class="mdc-dialog__title" id="my-dialog-title">Ayuda</h2>
+      <div class="mdc-dialog__content" id="my-dialog-content">
+        <ul>
+          <li class='list-item'>
+            <span>Marque en la columna C los cursos que hayas aprobado.</span>
+          </li>
+          <li class='list-item'>
+            <span>Marque en la columna E los exámenes que hayas aprobado.</span>
+          </li>
+        </div>
+      </ul>
+      <div class="mdc-dialog__actions">
+        <%= button_tag type: 'button', class: 'mdc-button mdc-dialog__button', data: { 'mdc-dialog-action': 'ok' } do %>
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">Ok</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="mdc-dialog__scrim"></div>
+</div>
