@@ -23,14 +23,14 @@
     <meta name="theme-color" content="#6200ee"/>
   </head>
 
-  <body class="mdc-typography">
+  <body class="mdc-typography" data-controller='navigation-drawer'>
 
     <%= render 'shared/menu' %>
     <div class="mdc-drawer-app-content">
       <header id='app-bar' class="mdc-top-app-bar">
         <div class="mdc-top-app-bar__row">
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" data-controller='drawer' data-action='click->drawer#open'>menu</button>
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" data-action='click->navigation-drawer#open'>menu</button>
             <%= yield :navigation_icon %>
             <%= link_to 'Student', root_path, class: 'home-button'%>
           </section>

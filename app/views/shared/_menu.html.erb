@@ -1,6 +1,6 @@
-<aside class="mdc-drawer mdc-drawer--modal">
+<aside class="mdc-drawer mdc-drawer--modal" data-target='navigation-drawer.drawer'>
   <div class="mdc-drawer__content">
-    <div class="mdc-list" data-controller='drawer' data-action='click->drawer#close'>
+    <div class="mdc-list" data-action='click->navigation-drawer#close'>
 
       <% if current_user %>
         <div class="menu-user-info">
@@ -11,23 +11,11 @@
         </div>
         <li role="separator" class="mdc-list-divider"></li>
       <% end %>
-      <%= link_to root_path, class: "mdc-list-item #{current_page?(root_path) ? "mdc-list-item--activated" : ""}" do %>
-        <span class="mdc-list-item__text">
-          Inicio
-        <span>
-      <% end %>
-      <%= link_to all_subjects_path, class: "mdc-list-item #{current_page?(all_subjects_path) ? "mdc-list-item--activated" : ""}" do %>
-        <span class="mdc-list-item__text">
-          Materias
-        <span>
-      <% end %>
-      <%= link_to profile_path, class: "mdc-list-item #{current_page?(profile_path) ? "mdc-list-item--activated" : ""}" do %>
-        <span class="mdc-list-item__text">
-          Avance de carrera
-        </span>
-      <% end %>
+      <%= drawer_menu_navigation_item('Inicio', root_path) %>
+      <%= drawer_menu_navigation_item('Materias', all_subjects_path) %>
+      <%= drawer_menu_navigation_item('Avance de Carrera', profile_path) %>
       <li role="separator" class="mdc-list-divider"></li>
-      <a class='mdc-list-item' href="https://github.com/cedarcode/student" target='_blank'>
+      <a class='mdc-list-item' href="https://github.com/cedarcode/student" target='_blank' tabindex='0'>
         <span class="material-symbols-outlined">
           open_in_new
         </span>
@@ -38,18 +26,18 @@
       </a>
       <li role="separator" class="mdc-list-divider"></li>
       <% if current_user %>
-        <%= link_to edit_user_registration_path, class: "mdc-list-item" do %>
+        <%= link_to edit_user_registration_path, class: "mdc-list-item", tabindex: 0 do %>
           <span class="mdc-list-item__text">
             Editar Perfil
           <span>
         <% end %>
-        <%= link_to destroy_user_session_path, method: :delete, class: "mdc-list-item" do %>
+        <%= link_to destroy_user_session_path, method: :delete, class: "mdc-list-item", tabindex: 0 do %>
           <span class="mdc-list-item__text">
             Salir
           </span>
         <% end %>
       <% else %>
-        <%= link_to new_user_session_path, class: "mdc-list-item" do %>
+        <%= link_to new_user_session_path, class: "mdc-list-item", tabindex: 0 do %>
           <span class="mdc-list-item__text">
             Ingresar
           <span>

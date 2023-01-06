@@ -2,9 +2,10 @@ import { Controller } from "stimulus";
 import { MDCDrawer } from "@material/drawer";
 
 export default class extends Controller {
+  static targets = ["drawer"];
+
   connect() {
-    this.drawer = MDCDrawer.attachTo(document.querySelector(".mdc-drawer"));
-    this.drawer.open = false;
+    this.drawer = MDCDrawer.attachTo(this.drawerTarget);
   }
 
   open() {
@@ -13,7 +14,5 @@ export default class extends Controller {
 
   close() {
     this.drawer.open = false;
-    const mainContentEl = document.querySelector(".main-content");
-    mainContentEl.querySelector("input, button").focus();
   }
 }
