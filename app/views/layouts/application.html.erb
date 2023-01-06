@@ -21,19 +21,16 @@
     <meta name="apple-mobile-web-app-title" content="Student PWA">
     <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
     <meta name="theme-color" content="#6200ee"/>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
 
   <body class="mdc-typography">
 
     <%= render 'shared/menu' %>
-
     <div class="mdc-drawer-app-content">
       <header id='app-bar' class="mdc-top-app-bar">
         <div class="mdc-top-app-bar__row">
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" data-controller='drawer' data-action='click->drawer#open'>menu</button>
             <%= yield :navigation_icon %>
             <%= link_to 'Student', root_path, class: 'home-button'%>
           </section>
