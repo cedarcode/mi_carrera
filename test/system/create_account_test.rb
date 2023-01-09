@@ -1,6 +1,7 @@
 require "application_system_test_case"
 
 class CreateAccountTest < ApplicationSystemTestCase
+  include ActionMailer::TestHelper
   setup do
     visit root_path
   end
@@ -26,15 +27,13 @@ class CreateAccountTest < ApplicationSystemTestCase
     end
 
     # going to email confirmation page without token expect error
-    visit user_confirmation_path
-    assert_text "No puedes acceder a esta página sin venir desde el email de confirmación de cuenta." +
-                " Si has llegado aquí desde el email, por favor, revisa que la URL no esté rota."
+    visit user_confirmation_path(confirmation_token: 'invalid_token')
+    assert_current_path(user_confirmation_path, ignore_query: true)
+    assert_text 'Reenviar instrucciones de confirmación'
 
     # get token and confirm account
-    old_token = User.last.confirmation_token
-    new_token = Devise.token_generator.digest(User, :confirmation_token, old_token)
-    User.where(email: 'alice@test.com').update_attribute(:confirmation_token, new_token)
-    visit user_confirmation_url(confirmation_token: old_token)
+    token = User.find_by(email: 'alice@test.com').confirmation_token
+    visit user_confirmation_url(confirmation_token: token)
 
     # expect to be signed in
     assert_current_path(root_path)

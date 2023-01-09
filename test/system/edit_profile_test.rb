@@ -1,6 +1,7 @@
 require "application_system_test_case"
 
 class EditProfileTest < ApplicationSystemTestCase
+  include ActionMailer::TestHelper
   setup do
     visit root_path
     @user = create_user(email: "alice@test.com", password: "alice123")
@@ -48,16 +49,31 @@ class EditProfileTest < ApplicationSystemTestCase
       assert_text "Ya está en uso"
     end
 
-    # success case
+    # success case change password
     fill_in "Nueva contraseña", with: "alice1234"
     fill_in "Confirma tu nueva contraseña", with: "alice1234"
     fill_in "Contraseña actual", with: @user.password
-    fill_in "Correo electrónico", with: 'newemail@gmail.com'
+    fill_in "Correo electrónico", with: @user.email
     click_on "Guardar"
     assert_text "Actualizaste tu cuenta correctamente."
 
-    click_actions_menu
+    # success case change email
+    visit edit_user_registration_path
+    fill_in "Contraseña actual", with: "alice1234"
+    fill_in "Correo electrónico", with: 'newemail@gmail.com'
 
+    assert_emails 1 do
+      click_on "Guardar"
+    end
+
+    assert_text "Actualizaste tu cuenta correctamente, pero tenemos que revalidar tu email. " +
+                "Revisa tu correo para confirmar la dirección."
+
+    # confirm change
+    token = User.find_by(email: @user.email).confirmation_token
+    visit user_confirmation_url(confirmation_token: token)
+
+    click_actions_menu
     within_actions_menu do
       assert_text "newemail@gmail.com"
     end

@@ -15,9 +15,15 @@ class RegistrationsControllerTest < ApplicationControllerTestCase
       }
     }
 
-    assert_equal @regular_user.reload.email, 'newemail@gmail.com'
-    assert_nil @regular_user.reload.provider
-    assert_nil @regular_user.reload.uid
+    @regular_user.reload
+    assert_equal 'newemail@gmail.com', @regular_user.unconfirmed_email
+    @regular_user.confirm
+
+    @regular_user.reload
+    assert_equal true, @regular_user.confirmed?
+    assert_equal 'newemail@gmail.com', @regular_user.email
+    assert_nil @regular_user.provider
+    assert_nil @regular_user.uid
   end
 
   test 'update email of regular user should return http success' do
@@ -52,10 +58,15 @@ class RegistrationsControllerTest < ApplicationControllerTestCase
         current_password: 'secret'
       }
     }
+    @oauth_user.reload
+    assert_equal 'newemail@gmail.com', @oauth_user.unconfirmed_email
+    @oauth_user.confirm
 
-    assert_equal @oauth_user.reload.email, 'newemail@gmail.com'
-    assert_nil @oauth_user.reload.provider
-    assert_nil @oauth_user.reload.uid
+    @oauth_user.reload
+    assert_equal true, @oauth_user.confirmed?
+    assert_equal 'newemail@gmail.com', @oauth_user.email
+    assert_nil @oauth_user.provider
+    assert_nil @oauth_user.uid
   end
 
   test 'update email of oauth user should redirect to root_path' do
