@@ -4,6 +4,7 @@ require 'bedelias_page'
 require 'curriculum_page'
 require 'prerequisites_page'
 require 'prerequisites_tree_page'
+require 'yaml'
 
 class BedeliasSpider
   URL = "https://bedelias.udelar.edu.uy"
