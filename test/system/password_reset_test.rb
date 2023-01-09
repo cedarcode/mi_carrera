@@ -26,7 +26,7 @@ class PasswordResetTest < ApplicationSystemTestCase
     assert_text 'Tu contraseña fue modificada correctamente. Has iniciado sesión.'
 
     # now lets check that the user can login with the new password
-    find(".mdc-menu-surface--anchor").click
+    click_actions_menu
     click_on "Salir"
     visit new_user_session_path
     fill_in "Correo electrónico", with: @user.email

@@ -22,9 +22,11 @@
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/menu-surface/mdc-menu-surface";
 @import "@material/menu/mdc-menu";
+@import "@material/drawer/mdc-drawer";
 @import "@material/theme/mdc-theme";
 @import "@material/button/mdc-button";
 @import "@material/textfield/mdc-text-field";
+@import "@material/dialog/mdc-dialog";
 @import "flash";
 
 body {
@@ -61,7 +63,7 @@ body {
 }
 
 .credits-counter {
-  padding-right: 16px;
+  padding: 0 12px;
 }
 
 .handle-account {
@@ -194,4 +196,29 @@ body {
 .no-decoration {
   text-decoration: none;
   color: inherit;
+}
+
+.subject-group-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.checkbox-header {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.list-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
