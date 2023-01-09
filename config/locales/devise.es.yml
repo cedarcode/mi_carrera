@@ -36,6 +36,11 @@ es:
       signed_in: "Iniciaste sesión correctamente."
       signed_out: "Cerraste sesión correctamente."
       already_signed_out: "Se cerró sesión correctamente."
+    confirmations:
+      user:
+        send_instructions: "Recibirás instrucciones para confirmar tu cuenta en tu email en unos minutos."
+        send_paranoid_instructions: "Si tu email existe en el sistema, recibirás instrucciones para confirmar tu cuenta en tu email en unos minutos."
+        confirmed: "Tu cuenta fue confirmada. Has iniciado sesión."
   errors:
     messages:
       already_confirmed: "ya fue confirmada. Intenta ingresar."

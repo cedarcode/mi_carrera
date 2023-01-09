@@ -19,8 +19,24 @@ class CreateAccountTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: 'alice@test.com'
     fill_in "Nueva contraseña", with: 'alice123'
     fill_in "Confirma tu nueva contraseña", with: 'alice123'
-    click_on "Registrarte"
 
+    # expect email to be sent
+    assert_emails 1 do
+      click_on "Registrarte"
+    end
+
+    # going to email confirmation page without token expect error
+    visit user_confirmation_path
+    assert_text "No puedes acceder a esta página sin venir desde el email de confirmación de cuenta." +
+                " Si has llegado aquí desde el email, por favor, revisa que la URL no esté rota."
+
+    # get token and confirm account
+    old_token = User.last.confirmation_token
+    new_token = Devise.token_generator.digest(User, :confirmation_token, old_token)
+    User.where(email: 'alice@test.com').update_attribute(:confirmation_token, new_token)
+    visit user_confirmation_url(confirmation_token: old_token)
+
+    # expect to be signed in
     assert_current_path(root_path)
     click_actions_menu
     within_actions_menu do
