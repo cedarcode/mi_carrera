@@ -1,5 +1,5 @@
 class PrerequisitesTreePage < BedeliasPage
-  def root
+  def root_node
     find("//td[@data-rowkey='root']")
   end
 
@@ -9,30 +9,21 @@ class PrerequisitesTreePage < BedeliasPage
 
   def extract_subjects_from(node_content)
     subjects = []
-    text = node_content.split('entre: ')[1]
+    _, *approvables = node_content.split(/(?=\b(?:Examen|Curso|U\.C\.B aprobada)\b)\s*/)
 
-    indices =
-      text
-      .enum_for(:scan, /(?=((Examen)|(Curso)|(U\.C\.B aprobada)))/)
-      .map { Regexp.last_match.offset(0).first } # all indices of 'Exam', 'Curso' and 'U.C.B aprobada'
-
-    (0..(indices.count - 1)).each do |i|
-      last = (i == indices.count - 1 ? text.length : indices[i + 1])
-      last -= 1
-      subject = text[indices[i]..last]
-
-      subject_code = subject.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
-
-      subject_code = subject_code.tr(' -', '')
-      if subject.include?("U.C.B aprobada:")
-        needs = 'all'
-      elsif subject.include?("Examen")
-        needs = 'exam'
-      elsif subject.include?("Curso")
-        needs = 'course'
-      end
-      subjects += [{ subject_needed: subject_code, needs: needs }]
+    approvables.each do |approvable|
+      needs =
+        if approvable.include?("U.C.B aprobada:")
+          'all'
+        elsif approvable.include?("Examen")
+          'exam'
+        elsif approvable.include?("Curso")
+          'course'
+        end
+      subject_code = approvable.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
+      subjects << { subject_needed: subject_code, needs: needs }
     end
+
     subjects
   end
 
@@ -97,7 +88,6 @@ class PrerequisitesTreePage < BedeliasPage
       if node_content.include?('créditos en el Plan:')
         return :credits
       elsif node_content.include?('aprobación') || node_content.include?('actividad')
-        # byebug
         if only_one_approval_needed?(prerequisite_node)
           return :logical_or
         elsif needs_all_approvals?(prerequisite_node)

@@ -15,6 +15,12 @@ class PrerequisitesPage < BedeliasPage
     all("//tr[@data-ri]").count
   end
 
+  def approvables_index_in_current_page
+    all("//tr[@data-ri]").map do |approvable_node|
+      approvable_node['data-ri'].to_i
+    end
+  end
+
   def approvable_node(approvable_index)
     find("//tr[@data-ri=#{approvable_index}]")
   end
@@ -30,7 +36,12 @@ class PrerequisitesPage < BedeliasPage
   def advance_to_page(page)
     return if current_page_number == page
 
-    find("//span[contains(@class, 'ui-paginator-page') and text()='#{page}' ]")&.click
+    if last_visible_page_number >= page
+      find(:css, 'span.ui-paginator-page', text: page).click
+    else
+      advance_to_page(last_visible_page_number)
+      advance_to_page(page)
+    end
   rescue Capybara::ElementNotFound
     advance_to_page(last_visible_page_number)
     advance_to_page(page)
@@ -53,8 +64,7 @@ class PrerequisitesPage < BedeliasPage
 
   def approvable_details(approvable_node)
     column = approvable_node.first("td")
-    code = column.text.split(' - ')[0]
-    name = column.text.split(' - ')[1]
+    code, name = column.text.split(' - ')
     type = column.first("following-sibling::td").text
     is_exam = approvable_node.first("td[2]").text == "Examen" # from column 'Tipo'
 
@@ -67,13 +77,11 @@ class PrerequisitesPage < BedeliasPage
   end
 
   def for_each_approvable
-    approvable_index = 0
     for_each_page do |current_page_number|
-      approvables_count_in_page.times do
+      approvables_index_in_current_page.to_a.each do |approvable_index|
         yield(approvable_node(approvable_index), current_page_number)
         # if the page was reloaded, go back to the current page
         advance_to_page(current_page_number)
-        approvable_index += 1
       end
     end
   end

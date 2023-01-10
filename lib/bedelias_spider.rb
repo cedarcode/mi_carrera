@@ -80,7 +80,7 @@ class BedeliasSpider < Kimurai::Base
 
       prerequisites_page.click_on_see_more(approvable_node) # 'Ver más'
 
-      prerequisite_tree_root_node = prerequisites_tree_page.root
+      prerequisite_tree_root_node = prerequisites_tree_page.root_node
       prerequisite = create_prerequisite_tree(
         prerequisite_tree_root_node,
         approvable_details[:code],

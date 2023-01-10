@@ -3,7 +3,7 @@
     "code": "CIM22",
     "name": "TOPOLOGÍA",
     "credits": 12,
-    "has_exam": null,
+    "has_exam": true,
     "subject_group": "4083"
   },
   {
@@ -73,7 +73,7 @@
     "code": "1886",
     "name": "TOPOLOGIA Y ANALISIS REAL",
     "credits": 10,
-    "has_exam": null,
+    "has_exam": false,
     "subject_group": "4083"
   },
   {
@@ -542,7 +542,7 @@
     "code": "1233",
     "name": "TUTORIA EN MATEMATICA",
     "credits": 4,
-    "has_exam": null,
+    "has_exam": false,
     "subject_group": "4756"
   },
   {
@@ -743,7 +743,7 @@
   },
   {
     "code": "M000",
-    "name": "METODOS CUANTITATIVOS III - PAYSANDU",
+    "name": "METODOS CUANTITATIVOS III",
     "credits": 6,
     "has_exam": false,
     "subject_group": "4442"
@@ -757,7 +757,7 @@
   },
   {
     "code": "M001",
-    "name": "MM. CC. III - (MTDEO) - DISEÑO Y ANALISIS DE EXPERIMENTOS",
+    "name": "MM. CC. III",
     "credits": 4,
     "has_exam": true,
     "subject_group": "4442"
@@ -1060,7 +1060,7 @@
     "code": "1145",
     "name": "VISION 3D",
     "credits": 12,
-    "has_exam": null,
+    "has_exam": false,
     "subject_group": "4580"
   },
   {
@@ -1466,7 +1466,7 @@
     "code": "1346",
     "name": "VERIFICACION DE MODELOS",
     "credits": 10,
-    "has_exam": null,
+    "has_exam": false,
     "subject_group": "4580"
   },
   {
@@ -2304,7 +2304,7 @@
   },
   {
     "code": "1938",
-    "name": "RECUP.DE INF.Y RECOMEND.EN LA WEB (WIR)",
+    "name": "RECUPERACION DE INF. Y RECOMEND. EN LA WEB (WIR)",
     "credits": 10,
     "has_exam": false,
     "subject_group": "4647"
@@ -3692,7 +3692,7 @@
     "code": "5828",
     "name": "TRATAMIENTO DE IMAGENES POR COMPUTADORA",
     "credits": 10,
-    "has_exam": null,
+    "has_exam": false,
     "subject_group": "3582"
   },
   {
@@ -3762,14 +3762,14 @@
     "code": "2217",
     "name": "TUTORIAS ENTRE PARES 2",
     "credits": 4,
-    "has_exam": null,
+    "has_exam": false,
     "subject_group": "3582"
   },
   {
     "code": "2216",
     "name": "TUTORIAS ENTRE PARES 1",
     "credits": 4,
-    "has_exam": null,
+    "has_exam": false,
     "subject_group": "3582"
   },
   {
