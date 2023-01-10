@@ -35,12 +35,12 @@ namespace :scrape do
       subject_group.subjects << new_subject
 
       # create the approvables
-      if new_subject.exam.nil?
-        new_subject.exam = Approvable.new(subject: new_subject, is_exam: true)
-      end
-
       if new_subject.course.nil?
         new_subject.course = Approvable.new(subject: new_subject, is_exam: false)
+      end
+
+      if subject[:has_exam] && new_subject.exam.nil?
+        new_subject.exam = Approvable.new(subject: new_subject, is_exam: true)
       end
 
       subject_group.save!
@@ -87,11 +87,12 @@ def prerequisite_tree(prerequisite, approvable, parent_prerequisite)
 
     return nil if subject.nil? # if a subject which isn't in the system is required me don't add that prerequisite
 
-    if prerequisite[:needs] == 'course'
-      subject_prerequisite.approvable_needed = Approvable.find_by(subject: subject, is_exam: false)
-    else
-      subject_prerequisite.approvable_needed = Approvable.find_by(subject: subject, is_exam: true)
-    end
+    subject_prerequisite.approvable_needed =
+      if prerequisite[:needs] == 'course'
+        Approvable.find_by(subject: subject, is_exam: false)
+      else
+        Approvable.find_by(subject: subject, is_exam: true) || Approvable.find_by(subject: subject, is_exam: false)
+      end
 
     subject_prerequisite.save!
     subject_prerequisite
