@@ -24,7 +24,7 @@ class CurriculumPage < BedeliasPage
       code: code,
       name: name,
       credits: credits,
-      has_exam: nil
+      has_exam: false
     }
   end
 end

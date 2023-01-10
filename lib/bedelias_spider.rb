@@ -52,10 +52,8 @@ class BedeliasSpider < Kimurai::Base
         "#{approvable_details[:code]} - #{approvable_details[:name]}, #{approvable_details[:type]}"
       )
 
-      # save the subject and whether it has an exam
-      if approvable_details[:type] == "Curso"
-        subjects[approvable_details[:code]][:has_exam] = false
-      elsif approvable_details[:type] == "Examen"
+      # if an exam is found, save that it has an exam
+      if approvable_details[:type] == "Examen"
         subjects[approvable_details[:code]][:has_exam] = true
       end
     end
