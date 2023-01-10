@@ -14,7 +14,6 @@ namespace :scrape do
     prerequisites = YAML.load_file(File.join(Rails.root, "db", "seeds", "scraped_prerequisites.yml"))
 
     # first create/update all subject groups
-
     subject_groups.each do |_code, group|
       puts "Updating group #{group[:code]}"
       subject_group = SubjectGroup.find_or_initialize_by(code: group[:code])
@@ -23,7 +22,6 @@ namespace :scrape do
     end
 
     # then create/update all subjects
-
     subjects.each do |_code, subject|
       puts "Updating subject #{subject[:code]}"
       subject_group = SubjectGroup.find_by(code: subject[:subject_group])
@@ -84,7 +82,6 @@ def prerequisite_tree(prerequisite, approvable, parent_prerequisite)
     logical_prerequisite.save!
     logical_prerequisite
   when 'subject'
-
     subject_prerequisite = SubjectPrerequisite.new(approvable: approvable, parent_prerequisite: parent_prerequisite)
     subject = Subject.find_by(code: prerequisite[:subject_needed])
 
@@ -99,7 +96,6 @@ def prerequisite_tree(prerequisite, approvable, parent_prerequisite)
     subject_prerequisite.save!
     subject_prerequisite
   when 'credits'
-
     credits_prerequisite = CreditsPrerequisite.new(approvable: approvable, parent_prerequisite: parent_prerequisite)
     credits_prerequisite.credits_needed = prerequisite[:credits]
 
