@@ -77,11 +77,13 @@ class PrerequisitesPage < BedeliasPage
   end
 
   def for_each_approvable
+    approvable_index = 0
     for_each_page do |current_page_number|
-      approvables_index_in_current_page.to_a.each do |approvable_index|
+      approvables_count_in_page.times do
         yield(approvable_node(approvable_index), current_page_number)
         # if the page was reloaded, go back to the current page
         advance_to_page(current_page_number)
+        approvable_index += 1
       end
     end
   end
