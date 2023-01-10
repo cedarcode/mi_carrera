@@ -22,7 +22,7 @@ namespace :scrape do
       subject_group.save!
     end
 
-    # # then create/update all subjects
+    # then create/update all subjects
 
     subjects.each do |_code, subject|
       puts "Updating subject #{subject[:code]}"
@@ -53,7 +53,6 @@ namespace :scrape do
     Prerequisite.destroy_all
 
     prerequisites[:prerequisites].each do |prerequisite|
-      # byebug
       puts "Updating prerequisite of subject #{prerequisite[:subject_code]}, is_exam: #{prerequisite[:is_exam]}"
       subject = Subject.find_by(code: prerequisite[:subject_code])
       approvable = Approvable.find_or_initialize_by(subject: subject, is_exam: prerequisite[:is_exam])
