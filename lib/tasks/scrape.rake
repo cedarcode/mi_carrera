@@ -79,6 +79,8 @@ def prerequisite_tree(prerequisite, approvable, parent_prerequisite)
       end
     end
 
+    return nil if logical_prerequisite.operands_prerequisites.empty? # if all operands are nil don't add this prerequisite
+
     logical_prerequisite.save!
     logical_prerequisite
   when 'subject'
