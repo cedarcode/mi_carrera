@@ -7,6 +7,7 @@ gem 'rails', '~> 6.1.7'
 
 gem 'bootsnap', '~> 1.4', require: false
 gem 'devise', '~> 4.8'
+gem 'importmap-rails', '~> 1.1'
 gem 'jbuilder', '~> 2.9'
 gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.1'
