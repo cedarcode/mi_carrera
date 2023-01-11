@@ -14,7 +14,7 @@ class StudentAppSeeder
   end
 
   def populate_subject_groups!
-    seed_filepath = Rails.root.join('db', 'seeds', 'subject_groups.yml')
+    seed_filepath = Rails.root.join('db/seeds/subject_groups.yml')
     File.open(seed_filepath) do |file|
       subject_groups = YAML.load_file(file)
       subject_groups.keys.sort.each do |key|
@@ -31,7 +31,7 @@ class StudentAppSeeder
   end
 
   def populate_subjects!(subject_groups)
-    seed_filepath = Rails.root.join('db', 'seeds', 'subjects.yml')
+    seed_filepath = Rails.root.join('db/seeds/subjects.yml')
     File.open(seed_filepath) do |file|
       subjects = YAML.load_file(file)
       subjects.keys.sort.each do |key|
