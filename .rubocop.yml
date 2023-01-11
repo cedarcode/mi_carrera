@@ -9,6 +9,7 @@ inherit_mode:
 AllCops:
   TargetRubyVersion: 2.6
   DisabledByDefault: true
+  NewCops: disable
   Exclude:
     - "bin/*"
     - "db/schema.rb"
