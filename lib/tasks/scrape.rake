@@ -79,7 +79,8 @@ def prerequisite_tree(prerequisite, approvable, parent_prerequisite)
       end
     end
 
-    return nil if logical_prerequisite.operands_prerequisites.empty? # if all operands are nil don't add this prerequisite
+    # if all operands are nil don't add this prerequisite
+    return nil if logical_prerequisite.operands_prerequisites.empty?
 
     logical_prerequisite.save!
     logical_prerequisite
@@ -87,7 +88,8 @@ def prerequisite_tree(prerequisite, approvable, parent_prerequisite)
     subject_prerequisite = SubjectPrerequisite.new(approvable: approvable, parent_prerequisite: parent_prerequisite)
     subject = Subject.find_by(code: prerequisite[:subject_needed])
 
-    return nil if subject.nil? # if a subject which isn't in the system is required me don't add that prerequisite
+    # if a subject which isn't in the system is required me don't add that prerequisite
+    return nil if subject.nil?
 
     subject_prerequisite.approvable_needed =
       if prerequisite[:needs] == 'course'
