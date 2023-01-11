@@ -40,9 +40,6 @@ Rails:
 Security:
   Enabled: true
 
-Style/BracesAroundHashParameters:
-  Enabled: true
-
 Style/RedundantBegin:
   Enabled: true
 
