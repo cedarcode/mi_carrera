@@ -23,7 +23,7 @@ Layout:
 Lint:
   Enabled: true
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
   Exclude:
     - "test/models/bedel_test.rb"
