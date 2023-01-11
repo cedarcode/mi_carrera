@@ -30,6 +30,7 @@ group :development do
   gem 'listen', '~> 3.1'
   gem 'rubocop', '~> 1.43.0'
   gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
   gem 'spring', '~> 2.1'
   gem 'spring-watcher-listen', '~> 2.0'
   gem 'web-console', '~> 4.0'
