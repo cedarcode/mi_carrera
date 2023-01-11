@@ -177,7 +177,9 @@ class Bedel
           meets_prerequisites?(prerequisite)
         end
       elsif prerequisite_item.logical_operator == "not"
-        !meets_prerequisites?(operands[0])
+        operands.all? do |prerequisite|
+          !meets_prerequisites?(prerequisite)
+        end
       end
     end
   end

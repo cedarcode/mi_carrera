@@ -7,17 +7,23 @@ class Subject < ApplicationRecord
   validates :credits, presence: true
   validates :code, uniqueness: true
 
-  def exam
+  def stored_exam
     approvables = Bedel::APPROVABLES_BY_SUBJECT_ID[id]
-    approvables.each do |approvable|
-      return approvable if approvable[:is_exam]
+    approvables&.each do |approvable|
+      if approvable[:is_exam]
+        return approvable
+      end
     end
+    nil
   end
 
-  def course
+  def stored_course
     approvables = Bedel::APPROVABLES_BY_SUBJECT_ID[id]
-    approvables.each do |approvable|
-      return approvable if !approvable[:is_exam]
+    approvables&.each do |approvable|
+      if !approvable[:is_exam]
+        return approvable
+      end
     end
+    nil
   end
 end
