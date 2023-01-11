@@ -8,7 +8,7 @@ class Subject < ApplicationRecord
   validates :code, uniqueness: true
 
   def stored_exam
-    approvables = Bedel::APPROVABLES_BY_SUBJECT_ID[id]
+    approvables = Bedel.approvables_by_subject_id[id]
     approvables&.each do |approvable|
       if approvable[:is_exam]
         return approvable
@@ -18,7 +18,7 @@ class Subject < ApplicationRecord
   end
 
   def stored_course
-    approvables = Bedel::APPROVABLES_BY_SUBJECT_ID[id]
+    approvables = Bedel.approvables_by_subject_id[id]
     approvables&.each do |approvable|
       if !approvable[:is_exam]
         return approvable

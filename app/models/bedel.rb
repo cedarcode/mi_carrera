@@ -1,16 +1,33 @@
 class Bedel
-  # create class variable that contains all data necessary
-  APPROVABLES_BY_SUBJECT_ID = Approvable.all.to_a.group_by(&:subject_id)
-  APPROVABLES_BY_ID = Approvable.all.to_a.index_by(&:id)
-  PREREQUISITES_BY_APPROVABLE_ID = Prerequisite.all.to_a.index_by(&:approvable_id)
-  PREREQUISITES_GROUP_BY_PARENT_ID = Prerequisite.all.to_a.group_by(&:parent_prerequisite_id)
-
   def initialize(store, user = nil)
     @store = store
     @user = user
 
     @store[:approved_courses] ||= []
     @store[:approved_exams] ||= []
+  end
+
+  def self.approvables_by_subject_id
+    @@approvables_by_subject_id ||= Approvable.all.to_a.group_by(&:subject_id)
+  end
+
+  def self.approvables_by_id
+    @@approvables_by_id ||= Approvable.all.to_a.index_by(&:id)
+  end
+
+  def self.prerequisites_by_approvable_id
+    @@prerequisites_by_approvable_id ||= Prerequisite.all.to_a.index_by(&:approvable_id)
+  end
+
+  def self.prerequisites_group_by_parent_id
+    @@prerequisites_group_by_parent_id ||= Prerequisite.all.to_a.group_by(&:parent_prerequisite_id)
+  end
+
+  def self.reload_subjects
+    @@approvables_by_subject_id = Approvable.all.to_a.group_by(&:subject_id)
+    @@approvables_by_id = Approvable.all.to_a.index_by(&:id)
+    @@prerequisites_by_approvable_id = Prerequisite.all.to_a.index_by(&:approvable_id)
+    @@prerequisites_group_by_parent_id = Prerequisite.all.to_a.group_by(&:parent_prerequisite_id)
   end
 
   def add_approval(approvable)
@@ -111,7 +128,7 @@ class Bedel
     when Subject
       able_to_do?(item.course)
     when Approvable
-      prerequisite_tree = PREREQUISITES_BY_APPROVABLE_ID[item.id]
+      prerequisite_tree = self.class.prerequisites_by_approvable_id[item.id]
       if prerequisite_tree
         meets_prerequisites?(prerequisite_tree)
       else
@@ -158,7 +175,7 @@ class Bedel
   def meets_prerequisites?(prerequisite_item)
     case prerequisite_item
     when SubjectPrerequisite
-      approvable_needed = APPROVABLES_BY_ID[prerequisite_item.approvable_needed_id]
+      approvable_needed = self.class.approvables_by_id[prerequisite_item.approvable_needed_id]
       if approvable_needed.is_exam
         store[:approved_exams].include?(approvable_needed.subject_id)
       else
@@ -167,7 +184,7 @@ class Bedel
     when CreditsPrerequisite
       credits(prerequisite_item.subject_group) >= prerequisite_item.credits_needed
     when LogicalPrerequisite
-      operands = PREREQUISITES_GROUP_BY_PARENT_ID[prerequisite_item.id]
+      operands = self.class.prerequisites_group_by_parent_id[prerequisite_item.id]
       if prerequisite_item.logical_operator == "and"
         operands.all? do |prerequisite|
           meets_prerequisites?(prerequisite)
