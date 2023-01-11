@@ -1,4 +1,10 @@
 class Bedel
+  # create class variable that contains all data necessary
+  APPROVABLES_BY_SUBJECT_ID = Approvable.all.to_a.group_by(&:subject_id)
+  APPROVABLES_BY_ID = Approvable.all.to_a.index_by(&:id)
+  PREREQUISITES_BY_APPROVABLE_ID = Prerequisite.all.to_a.index_by(&:approvable_id)
+  PREREQUISITES_GROUP_BY_PARENT_ID = Prerequisite.all.to_a.group_by(&:parent_prerequisite_id)
+
   def initialize(store, user = nil)
     @store = store
     @user = user
@@ -105,8 +111,9 @@ class Bedel
     when Subject
       able_to_do?(item.course)
     when Approvable
-      if item.prerequisite_tree
-        meets_prerequisites?(item.prerequisite_tree)
+      prerequisite_tree = PREREQUISITES_BY_APPROVABLE_ID[item.id]
+      if prerequisite_tree
+        meets_prerequisites?(prerequisite_tree)
       else
         true
       end
@@ -151,7 +158,7 @@ class Bedel
   def meets_prerequisites?(prerequisite_item)
     case prerequisite_item
     when SubjectPrerequisite
-      approvable_needed = prerequisite_item.approvable_needed
+      approvable_needed = APPROVABLES_BY_ID[prerequisite_item.approvable_needed_id]
       if approvable_needed.is_exam
         store[:approved_exams].include?(approvable_needed.subject_id)
       else
@@ -160,16 +167,17 @@ class Bedel
     when CreditsPrerequisite
       credits(prerequisite_item.subject_group) >= prerequisite_item.credits_needed
     when LogicalPrerequisite
+      operands = PREREQUISITES_GROUP_BY_PARENT_ID[prerequisite_item.id]
       if prerequisite_item.logical_operator == "and"
-        prerequisite_item.operands_prerequisites.all? do |prerequisite|
+        operands.all? do |prerequisite|
           meets_prerequisites?(prerequisite)
         end
       elsif prerequisite_item.logical_operator == "or"
-        prerequisite_item.operands_prerequisites.any? do |prerequisite|
+        operands.any? do |prerequisite|
           meets_prerequisites?(prerequisite)
         end
       elsif prerequisite_item.logical_operator == "not"
-        !meets_prerequisites?(prerequisite_item.operands_prerequisites[0])
+        !meets_prerequisites?(operands[0])
       end
     end
   end

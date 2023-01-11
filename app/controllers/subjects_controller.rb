@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   def index
-    @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject.course) }
+    @subjects = Subject.includes(course: :prerequisite_tree, exam: :prerequisite_tree).order(:semester).select { |subject| bedel.able_to_do?(subject.course) }
   end
 
   def approve
