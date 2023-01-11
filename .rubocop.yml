@@ -45,6 +45,9 @@ Rails:
 Security:
   Enabled: true
 
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
+
 Style/RedundantBegin:
   Enabled: true
 
