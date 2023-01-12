@@ -1,6 +1,6 @@
 <div class="mdc-list-item growing-text-list">
   <%= link_to subject_path(subject), :class => "mdc-list-item__text" do %>
-    <%= subject.short_name || subject.name %>
+    <%= subject.code + ' - ' + (subject.short_name || subject.name) %>
   <% end %>
   <span class="mdc-list-item__meta two-checkboxes">
     <%= form_with(model: subject, url: approve_subject_path(subject), data: { controller: "autosave-check", action: "ajax:success->bedel#approvalChange ajax:success->autosave-check#notifyCreditsChange" }) do |form| %>
