@@ -23,11 +23,16 @@ class Bedel
     @@prerequisites_group_by_parent_id ||= Prerequisite.all.to_a.group_by(&:parent_prerequisite_id)
   end
 
+  def self.subjects_by_id
+    @@subjects_by_id ||= Subject.all.to_a.index_by(&:id)
+  end
+
   def self.reload_subjects
     @@approvables_by_subject_id = Approvable.all.to_a.group_by(&:subject_id)
     @@approvables_by_id = Approvable.all.to_a.index_by(&:id)
     @@prerequisites_by_approvable_id = Prerequisite.all.to_a.index_by(&:approvable_id)
     @@prerequisites_group_by_parent_id = Prerequisite.all.to_a.group_by(&:parent_prerequisite_id)
+    @@subjects_by_id = Subject.all.to_a.index_by(&:id)
   end
 
   def add_approval(approvable)
@@ -39,13 +44,13 @@ class Bedel
       end
 
       force_credits_recalculation!
+
+      if @user
+        @user.approvals = store
+        @user.save!
+      end
     else
       false
-    end
-
-    if @user
-      @user.approvals = store
-      @user.save!
     end
   end
 

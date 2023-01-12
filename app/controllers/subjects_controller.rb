@@ -1,10 +1,13 @@
 class SubjectsController < ApplicationController
   def index
     @subjects =
-      Subject
-      .includes(course: :prerequisite_tree, exam: :prerequisite_tree)
-      .order(:semester)
-      .select { |subject| bedel.able_to_do?(subject.stored_course) }
+      Bedel.approvables_by_id
+           .filter_map do |_approvable_id, approvable|
+        if approvable[:is_exam] == false && approvable[:subject_id] && bedel.able_to_do?(approvable)
+          Bedel.subjects_by_id[approvable[:subject_id]]
+        end
+      end
+           .sort_by { |subject| [subject.semester ? 0 : 1, subject.semester] }
   end
 
   def approve
@@ -41,19 +44,23 @@ class SubjectsController < ApplicationController
   end
 
   def list_subjects
-    @subjects = Subject.order(:semester).select { |subject| bedel.able_to_do?(subject.stored_course) }
+    @subjects =
+      Bedel.subjects_by_id
+           .sort_by { |_id, subject| [subject.semester ? 0 : 1, subject.semester] }
+           .filter_map { |_id, subject| subject if bedel.able_to_do?(subject.stored_course) }
+
     respond_to do |format|
       format.html { render '_subjects_bulk_approve', layout: false }
     end
   end
 
   def all
-    @subjects = Subject.order(:semester)
+    @subjects = Bedel.subjects_by_id.values.sort_by { |subject| [subject.semester ? 0 : 1, subject.semester] }
   end
 
   private
 
   def subject
-    @subject ||= Subject.find(params[:id])
+    @subject ||= Bedel.subjects_by_id[params[:id].to_i]
   end
 end
