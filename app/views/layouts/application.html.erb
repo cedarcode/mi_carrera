@@ -23,29 +23,46 @@
     <meta name="theme-color" content="#6200ee"/>
   </head>
 
-  <body class="mdc-typography">
-    <header class="mdc-top-app-bar">
-      <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <%= yield :navigation_icon %>
-          <%= yield :title %>
-        </section>
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          <span hidden>
-            <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
-          </span>
-          <%= yield :profile_link %>
-          <%= yield :credits %>
-          <% if !content_for?(:navigation_icon) %>
-            <%= render 'shared/menu' %>
-          <% end %>
-        </section>
-      </div>
-    </header>
-    <main class="mdc-top-app-bar--fixed-adjust">
-      <div class='content'>
-        <%= yield %>
-      </div>
-    </main>
+  <body class="mdc-typography" data-controller='navigation-drawer info-dialog'>
+    <%= render 'shared/menu' %>
+    <%= render 'shared/info_dialog' %>
+    <div class="mdc-drawer-app-content">
+      <header id='app-bar' class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" data-action='click->navigation-drawer#open'>menu</button>
+            <%= yield :navigation_icon %>
+            <%= link_to 'Student', root_path, class: 'home-button'%>
+          </section>
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+            <%= button_tag 'help', class: 'mdc-icon-button material-symbols-outlined mdc-top-app-bar__action-item', data: { target: 'info-dialog.trigger', action: 'click->info-dialog#open' } %>
+            <span hidden>
+              <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
+            </span>
+            <%= yield :credits %>
+          </section>
+        </div>
+      </header>
+      <main class="mdc-top-app-bar--fixed-adjust main-content" id='main-content'>
+        <% if flash[:notice] %>
+          <div class="flash flash-notice"><%= flash[:notice] %></div>
+        <% end %>
+        <% if flash[:error] %>
+          <div class="flash flash-error"><%= flash[:error] %></div>
+        <% end %>
+        <% if flash[:alert] %>
+          <div class="flash flash-error"><%= flash[:alert] %></div>
+        <% end %>
+        <div class='content'>
+          <%= yield %>
+        </div>
+      </main>
+      <footer class="footer mdc-theme--text-primary-on-light">
+        <span class="mdc-theme--text-secondary-on-light">
+          Built by&nbsp;
+        </span>
+        <a class="mdc-theme--text-primary-on-light" href="https://cedarcode.com" target="_blank" >Cedarcode</a>
+      </footer>
+    </div>
   </body>
 </html>

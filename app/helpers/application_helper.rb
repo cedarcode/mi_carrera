@@ -6,4 +6,25 @@ module ApplicationHelper
   def action_icon(name, path)
     link_to(name, path, class: "material-icons mdc-top-app-bar__action-item mdc-icon-button")
   end
+
+  def show_login_link?
+    !user_signed_in? && !current_page?(new_user_session_path)
+  end
+
+  def drawer_menu_navigation_item(text, link)
+    link_options = {}
+    link_options[:tabindex] = 0
+    link_options[:class] = "mdc-list-item"
+    if current_page?(link)
+      link_options[:aria] = { current: 'page' }
+
+      link_options[:class] += " mdc-list-item--activated"
+    end
+
+    link_to link, **link_options do
+      tag.span class: 'mdc-list-item__text' do
+        text
+      end
+    end
+  end
 end
