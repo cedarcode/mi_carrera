@@ -1,4 +1,4 @@
-import { Controller } from "stimulus";
+import { Controller } from "@hotwired/stimulus"
 import { MDCSnackbar } from "@material/snackbar";
 
 export default class extends Controller {
