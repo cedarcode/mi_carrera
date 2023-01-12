@@ -9,7 +9,6 @@ gem 'bootsnap', '~> 1.4', require: false
 gem 'devise', '~> 4.8'
 gem 'importmap-rails', '~> 1.1'
 gem 'jbuilder', '~> 2.9'
-gem 'mini_racer', '~> 0.6.3'
 gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.1'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
@@ -19,7 +18,6 @@ gem 'rollbar', '~> 2.19'
 gem 'sass-rails', '~> 6.0'
 gem 'serviceworker-rails', '~> 0.6'
 gem 'stimulus-rails', '~> 1.2'
-gem 'uglifier', '~> 4.1'
 
 group :development, :test do
   gem 'byebug', '~> 11.0', platforms: [:mri, :mingw, :x64_mingw]
