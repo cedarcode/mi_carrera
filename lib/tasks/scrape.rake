@@ -54,7 +54,7 @@ namespace :scrape do
       puts "Updating prerequisite of subject #{prerequisite[:subject_code]}, is_exam: #{prerequisite[:is_exam]}"
       subject = Subject.find_by(code: prerequisite[:subject_code])
       approvable = Approvable.find_or_initialize_by(subject: subject, is_exam: prerequisite[:is_exam])
-      approvable.prerequisite_tree = prerequisite_tree(prerequisite, approvable, nil)
+      approvable.prerequisite_tree = prerequisite_tree(prerequisite: prerequisite, approvable: approvable)
       approvable.save!
       if prerequisite[:is_exam]
         subject.exam = approvable
@@ -66,14 +66,14 @@ namespace :scrape do
   end
 end
 
-def prerequisite_tree(prerequisite, approvable, parent_prerequisite)
+def prerequisite_tree(prerequisite:, approvable: nil, parent_prerequisite: nil)
   case prerequisite[:type]
   when 'logical'
     logical_prerequisite = LogicalPrerequisite.new(approvable: approvable, parent_prerequisite: parent_prerequisite)
     logical_prerequisite.logical_operator = prerequisite[:logical_operator]
 
     prerequisite[:operands].each do |prerequisite_op|
-      operand = prerequisite_tree(prerequisite_op, nil, logical_prerequisite)
+      operand = prerequisite_tree(prerequisite: prerequisite_op, parent_prerequisite: logical_prerequisite)
       if operand
         logical_prerequisite.operands_prerequisites << operand
       end
