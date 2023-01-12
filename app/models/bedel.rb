@@ -28,10 +28,12 @@ class Bedel
   end
 
   def self.reload_subjects
-    @@approvables_by_subject_id = Approvable.all.to_a.group_by(&:subject_id)
-    @@approvables_by_id = Approvable.all.to_a.index_by(&:id)
-    @@prerequisites_by_approvable_id = Prerequisite.all.to_a.index_by(&:approvable_id)
-    @@prerequisites_group_by_parent_id = Prerequisite.all.to_a.group_by(&:parent_prerequisite_id)
+    approvables = Approvable.all.to_a
+    @@approvables_by_subject_id = approvables.group_by(&:subject_id)
+    @@approvables_by_id = approvables.index_by(&:id)
+    prerequisites = Prerequisite.all.to_a
+    @@prerequisites_by_approvable_id = prerequisites.index_by(&:approvable_id)
+    @@prerequisites_group_by_parent_id = prerequisites.group_by(&:parent_prerequisite_id)
     @@subjects_by_id = Subject.all.to_a.index_by(&:id)
   end
 
@@ -70,7 +72,10 @@ class Bedel
 
     to_remove = []
     store[:approved_exams].each do |subject_id|
-      approvable = Approvable.find_by(subject_id: subject_id, is_exam: true)
+      approvable =
+        self.class.approvables_by_subject_id[subject_id]
+            .filter { |approvable_filter| approvable_filter.is_exam }
+            .first
 
       if !able_to_do?(approvable)
         to_remove += [subject_id]
@@ -80,7 +85,10 @@ class Bedel
 
     to_remove = []
     store[:approved_courses].each do |subject_id|
-      approvable = Approvable.find_by(subject_id: subject_id, is_exam: false)
+      approvable =
+        self.class.approvables_by_subject_id[subject_id]
+            .filter { |approvable_filter| !approvable_filter.is_exam }
+            .first
 
       if !able_to_do?(approvable)
         to_remove += [subject_id]
