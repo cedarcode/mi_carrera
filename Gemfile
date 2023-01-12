@@ -16,7 +16,6 @@ gem 'puma', '~> 4.3'
 gem 'rollbar', '~> 2.19'
 gem 'sass-rails', '~> 6.0'
 gem 'serviceworker-rails', '~> 0.6'
-gem 'turbolinks', '~> 5.2'
 gem 'uglifier', '~> 4.1'
 gem 'webpacker', '~> 4.0'
 
