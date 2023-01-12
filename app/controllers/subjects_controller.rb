@@ -1,13 +1,14 @@
 class SubjectsController < ApplicationController
   def index
     @subjects =
-      Bedel.approvables_by_id
-           .filter_map do |_approvable_id, approvable|
+      Bedel
+      .approvables_by_id
+      .filter_map do |_approvable_id, approvable|
         if approvable[:is_exam] == false && approvable[:subject_id] && bedel.able_to_do?(approvable)
           Bedel.subjects_by_id[approvable[:subject_id]]
         end
       end
-           .sort_by { |subject| [subject.semester ? 0 : 1, subject.semester] }
+      .sort_by { |subject| [subject.semester ? 0 : 1, subject.semester] }
   end
 
   def approve
