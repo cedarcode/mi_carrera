@@ -19,7 +19,6 @@ gem 'sass-rails', '~> 6.0'
 gem 'serviceworker-rails', '~> 0.6'
 gem 'stimulus-rails', '~> 1.2'
 gem 'uglifier', '~> 4.1'
-gem 'webpacker', '~> 4.0'
 
 group :development, :test do
   gem 'byebug', '~> 11.0', platforms: [:mri, :mingw, :x64_mingw]
