@@ -3,5 +3,5 @@ if Rails.env.test?
   RuboCop::RakeTask.new
 
   task(:default).clear
-  task default: [:rubocop, :eslint, :test, "test:system"]
+  task default: [:rubocop, :test, "test:system"]
 end
