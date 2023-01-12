@@ -10,7 +10,10 @@ class SubjectWihoutExamTest < ApplicationSystemTestCase
 
     check "Curso aprobado?", visible: :all
 
-    click_on "Student"
+    click_actions_menu
+    within_actions_menu do
+      click_on 'Inicio'
+    end
 
     assert_text "5 créditos"
   end
