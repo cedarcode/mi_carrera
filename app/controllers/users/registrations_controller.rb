@@ -2,6 +2,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters_sign_up, only: [:create]
   before_action :configure_permitted_parameters_account_update, only: [:update]
 
+  def create
+    super do |resource|
+      resource.add_approvals_in_session(session) if resource.persisted?
+    end
+  end
+
   private
 
   def update_resource(resource, params)
