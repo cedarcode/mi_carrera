@@ -31,6 +31,11 @@ class User < ApplicationRecord
       approved_courses: session[:approved_courses] || [],
       approved_exams: session[:approved_exams] || []
     }
-    save
+  end
+
+  def self.new_with_session(params, session)
+    new(params) do |user|
+      user.add_approvals_in_session(session)
+    end
   end
 end
