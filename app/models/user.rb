@@ -25,4 +25,17 @@ class User < ApplicationRecord
   def oauth_user?
     provider.present?
   end
+
+  def add_approvals_in_session(session)
+    self.approvals = {
+      approved_courses: session[:approved_courses] || [],
+      approved_exams: session[:approved_exams] || []
+    }
+  end
+
+  def self.new_with_session(params, session)
+    new(params) do |user|
+      user.add_approvals_in_session(session)
+    end
+  end
 end
