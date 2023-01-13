@@ -31,7 +31,7 @@
         <% else %>
           <% form_data = { controller: "autosave-check" } %>
         <% end %>
-        <%= form_with(model: @subject, url: approve_subject_path(@subject), data: form_data) do |form| %>
+        <%= form_with(model: @subject, url: approve_subject_path(@subject), data: form_data, local: false) do |form| %>
           <div class="mdc-checkbox">
             <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.course), disabled: !bedel.able_to_do?(@subject.course), data: { action: "autosave-check#update" } }, "yes", "no" %>
             <div class="mdc-checkbox__background">
@@ -53,7 +53,7 @@
         </span>
 
         <span class="mdc-list-item__meta">
-          <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check" }) do |form| %>
+          <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check" }, local: false) do |form| %>
             <div class="mdc-checkbox">
               <%= form.check_box :exam_approved, { id: "checkbox_exam_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.exam), disabled: !bedel.able_to_do?(@subject.exam), data: { action: "autosave-check#update",  target: "exam-visibility.checkbox" } }, "yes", "no" %>
               <div class="mdc-checkbox__background">
