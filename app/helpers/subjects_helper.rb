@@ -23,6 +23,6 @@ module SubjectsHelper
   end
 
   def display_name(subject)
-    subject.code + ' - ' + (subject.short_name || subject.name)
+    "#{subject.code} - #{subject.short_name || subject.name}"
   end
 end
