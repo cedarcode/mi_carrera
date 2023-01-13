@@ -6,4 +6,6 @@ class Subject < ApplicationRecord
   validates :name, presence: true
   validates :credits, presence: true
   validates :code, uniqueness: true
+
+  scope :ordered_by_semester_and_name, -> { order(:semester, :name) }
 end
