@@ -33,7 +33,7 @@
         <div class="mdc-text-field <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:password].any? %>" data-controller="textfield">
           <%= render 'shared/invalid_icon', resource: resource, field: :password %>
           <%= f.label :password, "Nueva contraseña", class: "mdc-floating-label" %>
-          <%= f.password_field :password, class: "mdc-text-field__input", required: true %>
+          <%= f.password_field :password, class: "mdc-text-field__input", required: true, autocomplete: "new-password"  %>
           <div class="mdc-line-ripple"></div>
         </div>
         <%= render 'shared/info_and_errors', resource: resource, field: :password, text: "#{@minimum_password_length} caracteres mínimo." %>
@@ -42,7 +42,7 @@
         <div class="mdc-text-field <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:password_confirmation].any? %>" data-controller="textfield">
           <%= render 'shared/invalid_icon', resource: resource, field: :password_confirmation %>
           <%= f.label :password_confirmation, "Confirma tu nueva contraseña", class: "mdc-floating-label" %>
-          <%= f.password_field :password_confirmation, class: "mdc-text-field__input", required: true %>
+          <%= f.password_field :password_confirmation, class: "mdc-text-field__input", required: true, autocomplete: "new-password"  %>
           <div class="mdc-line-ripple"></div>
         </div>
         <%= render 'shared/info_and_errors', resource: resource, field: :password_confirmation, text: '' %>
