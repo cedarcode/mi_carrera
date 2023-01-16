@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   serialize :approvals, Hash
 
-  def self.from_omniauth(auth)
+  def self.from_omniauth(auth, session = {})
     # check that user with same email exists
     existing_user = User.find_by(email: auth.info.email)
 
@@ -18,6 +18,7 @@ class User < ApplicationRecord
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email
         user.password = Devise.friendly_token[0, 20]
+        user.add_approvals_in_session(session)
       end
     end
   end
