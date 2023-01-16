@@ -126,5 +126,4 @@ Rails.application.configure do
     user_name: 'apikey',
     password: ENV['SENDGRID_API_KEY']
   }
-
 end
