@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   serialize :approvals, Hash
 
-  def self.from_omniauth(auth, session = {})
+  def self.from_omniauth(auth, session)
     # check that user with same email exists
     existing_user = User.find_by(email: auth.info.email)
 
