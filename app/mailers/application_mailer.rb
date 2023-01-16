@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'renzo.minelli@cedarcode.com'
+  default from: ENV['FROM_EMAIL_ADDRESS']
   layout 'mailer'
 end
