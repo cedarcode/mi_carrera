@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = [ "exam", "checkbox" ]
 
   approvalChange() {
-    var bedel = this.bedelController;
+    const bedel = this.bedelController;
     let ableToEnrollExam
     let url = '/subjects/' + this.examTarget.dataset.subjectId + '/able_to_enroll';
     let exam = this.examTarget;
