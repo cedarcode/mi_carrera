@@ -34,3 +34,7 @@ yarn-debug.log*
 .env.local
 
 tags
+
+/config/credentials/test.key
+/config/credentials/development.key
+/config/credentials/production.key
