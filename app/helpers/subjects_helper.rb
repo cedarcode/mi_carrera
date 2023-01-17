@@ -27,7 +27,7 @@ module SubjectsHelper
   end
 
   def display_subject_prerequisite(subject_prerequisite)
-    "#{display_name(subject_prerequisite.approvable_needed.subject)} " +
-      "(#{subject_prerequisite.approvable_needed.is_exam ? "examen" : "curso"})"
+    approvable = subject_prerequisite.approvable_needed
+    "#{display_name(approvable.subject)} (#{approvable.is_exam ? "examen" : "curso"})"
   end
 end
