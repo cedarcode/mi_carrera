@@ -53,14 +53,9 @@ namespace :scrape do
     prerequisites[:prerequisites].each do |prerequisite|
       puts "Updating prerequisite of subject #{prerequisite[:subject_code]}, is_exam: #{prerequisite[:is_exam]}"
       subject = Subject.find_by(code: prerequisite[:subject_code])
-      approvable = Approvable.find_or_initialize_by(subject: subject, is_exam: prerequisite[:is_exam])
+      approvable = prerequisite[:is_exam] ? subject.exam : subject.course
       approvable.prerequisite_tree = prerequisite_tree(prerequisite: prerequisite, approvable: approvable)
       approvable.save!
-      if prerequisite[:is_exam]
-        subject.exam = approvable
-      else
-        subject.course = approvable
-      end
       subject.save!
     end
   end
@@ -92,10 +87,10 @@ def prerequisite_tree(prerequisite:, approvable: nil, parent_prerequisite: nil)
     return nil if subject.nil?
 
     subject_prerequisite.approvable_needed =
-      if prerequisite[:needs] == 'course'
-        Approvable.find_by(subject: subject, is_exam: false)
+      if prerequisite[:needs] == 'exam' && subject.exam
+        subject.exam
       else
-        Approvable.find_by(subject: subject, is_exam: true) || Approvable.find_by(subject: subject, is_exam: false)
+        subject.course
       end
 
     subject_prerequisite.save!
