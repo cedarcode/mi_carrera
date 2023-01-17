@@ -315,7 +315,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection (~> 1.0)
   pg (~> 1.1)
   puma (~> 4.3)
-  rails (~> 7.0.0)
+  rails (~> 7.0.4)
   rollbar (~> 2.19)
   rubocop (~> 1.43)
   rubocop-performance (~> 1.15)
