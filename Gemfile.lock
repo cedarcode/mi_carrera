@@ -86,10 +86,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    dotenv (2.8.1)
-    dotenv-rails (2.8.1)
-      dotenv (= 2.8.1)
-      railties (>= 3.2)
     erubi (1.12.0)
     execjs (2.7.0)
     faraday (2.7.2)
@@ -285,7 +281,6 @@ DEPENDENCIES
   byebug (~> 11.0)
   capybara (~> 3.24)
   devise (~> 4.8)
-  dotenv-rails (~> 2.7)
   jbuilder (~> 2.9)
   letter_opener (~> 1.7)
   listen (~> 3.1)
