@@ -17,4 +17,8 @@ class Subject < ApplicationRecord
       require_exam.where(id: approved_exams)
     ).sum(:credits)
   end
+
+  def approved?(approved_courses, approved_exams)
+    exam ? approved_exams.include?(id) : approved_courses.include?(id)
+  end
 end
