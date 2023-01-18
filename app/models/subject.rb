@@ -21,4 +21,8 @@ class Subject < ApplicationRecord
   def approved?(approved_courses, approved_exams)
     exam ? approved_exams.include?(id) : approved_courses.include?(id)
   end
+
+  def available?(approved_courses, approved_exams)
+    course.available?(approved_courses, approved_exams)
+  end
 end

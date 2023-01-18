@@ -14,8 +14,6 @@ class Bedel
       else
         store[:approved_courses] += [approvable.subject_id]
       end
-
-      force_credits_recalculation!
     else
       false
     end
@@ -33,7 +31,6 @@ class Bedel
       store[:approved_courses] -= [approvable.subject_id]
     end
 
-    force_credits_recalculation!
     refresh_approvals
   end
 
@@ -68,7 +65,6 @@ class Bedel
     end
 
     if new_count != original_count
-      force_credits_recalculation!
       refresh_approvals
     end
   end
@@ -76,8 +72,9 @@ class Bedel
   def credits(group = nil)
     subjects = group ? group.subjects : Subject
 
-    @credits ||= {}
-    @credits[group&.id] ||= subjects.approved_credits(store[:approved_courses], store[:approved_exams])
+    # @credits ||= {}
+    # @credits[group&.id] ||= subjects.approved_credits(store[:approved_courses], store[:approved_exams])
+    subjects.approved_credits(store[:approved_courses], store[:approved_exams])
   end
 
   def credits_by_group
@@ -87,75 +84,14 @@ class Bedel
   end
 
   def approved?(item)
-    case item
-    when Subject
-      if item.exam
-        approved?(item.exam)
-      else
-        approved?(item.course)
-      end
-    when Approvable
-      if item.is_exam?
-        store[:approved_exams].include?(item.subject_id)
-      else
-        store[:approved_courses].include?(item.subject_id)
-      end
-    end
+    item.approved?(store[:approved_courses], store[:approved_exams])
   end
 
   def able_to_do?(item)
-    case item
-    when Subject
-      able_to_do?(item.course)
-    when Approvable
-      if item.prerequisite_tree
-        meets_prerequisites?(item.prerequisite_tree)
-      else
-        true
-      end
-    end
+    item.able_to_do?(store[:approved_courses], store[:approved_exams])
   end
 
   private
 
   attr_reader :store
-
-  def force_credits_recalculation!
-    @exam_credits = nil
-    @course_credits = nil
-  end
-
-  def subject_scope(group)
-    if group
-      group.subjects
-    else
-      Subject
-    end
-  end
-
-  def meets_prerequisites?(prerequisite_item)
-    case prerequisite_item
-    when SubjectPrerequisite
-      approvable_needed = prerequisite_item.approvable_needed
-      if approvable_needed.is_exam
-        store[:approved_exams].include?(approvable_needed.subject_id)
-      else
-        store[:approved_courses].include?(approvable_needed.subject_id)
-      end
-    when CreditsPrerequisite
-      credits(prerequisite_item.subject_group) >= prerequisite_item.credits_needed
-    when LogicalPrerequisite
-      if prerequisite_item.logical_operator == "and"
-        prerequisite_item.operands_prerequisites.all? do |prerequisite|
-          meets_prerequisites?(prerequisite)
-        end
-      elsif prerequisite_item.logical_operator == "or"
-        prerequisite_item.operands_prerequisites.any? do |prerequisite|
-          meets_prerequisites?(prerequisite)
-        end
-      elsif prerequisite_item.logical_operator == "not"
-        !meets_prerequisites?(prerequisite_item.operands_prerequisites[0])
-      end
-    end
-  end
 end
