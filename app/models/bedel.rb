@@ -71,9 +71,6 @@ class Bedel
 
   def credits(group = nil)
     subjects = group ? group.subjects : Subject
-
-    # @credits ||= {}
-    # @credits[group&.id] ||= subjects.approved_credits(store[:approved_courses], store[:approved_exams])
     subjects.approved_credits(store[:approved_courses], store[:approved_exams])
   end
 
