@@ -17,4 +17,35 @@ class ApprovableTest < ActiveSupport::TestCase
     assert_not exam.approved?([subject.id], [])
     assert exam.approved?([], [subject.id])
   end
+
+  test "#available? returns true when no prerequisite" do
+    subject = create_subject(exam: false)
+    course = subject.course
+
+    assert course.available?([], [])
+  end
+
+  test "#available? returns true when prerequisite met" do
+    subject1 = create_subject(exam: false)
+    subject2 = create_subject(exam: false)
+
+    mock = Minitest::Mock.new
+    mock.expect(:met?, true, [[subject1.id], []])
+
+    subject2.course.stub(:prerequisite_tree, mock) do
+      assert subject2.course.available?([subject1.id], [])
+    end
+  end
+
+  test "#available? returns false when prerequisite not met" do
+    subject1 = create_subject(exam: false)
+    subject2 = create_subject(exam: false)
+
+    mock = Minitest::Mock.new
+    mock.expect(:met?, false, [[subject1.id], []])
+
+    subject2.course.stub(:prerequisite_tree, mock) do
+      assert_not subject2.course.available?([subject1.id], [])
+    end
+  end
 end

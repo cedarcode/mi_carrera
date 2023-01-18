@@ -1,7 +1,7 @@
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
-
+require 'minitest/mock'
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
@@ -20,12 +20,13 @@ class ActiveSupport::TestCase
     name: "Subject #{rand(1000)}",
     credits: 5,
     exam: true,
-    group: create_group(name: "Matemática")
+    group: create_group(name: "Matemática"),
+    semester: 1
   )
     if !code
       code = name.parameterize
     end
-    subject = Subject.create!(code: code, name: name, credits: credits, group_id: group.id)
+    subject = Subject.create!(code: code, name: name, credits: credits, group_id: group.id, semester: semester)
     subject.create_course!
 
     if exam

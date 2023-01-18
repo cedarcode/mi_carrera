@@ -88,7 +88,7 @@ class Bedel
   end
 
   def able_to_do?(item)
-    item.able_to_do?(store[:approved_courses], store[:approved_exams])
+    item.available?(store[:approved_courses], store[:approved_exams])
   end
 
   private

@@ -1,6 +1,11 @@
 class TreePreloader
   def preload
-    Subject.ordered_by_semester_and_name.includes(course: :prerequisite_tree, exam: :prerequisite_tree).each do |subject|
+    Subject
+      .ordered_by_semester_and_name
+      .includes(
+        course: :prerequisite_tree,
+        exam: :prerequisite_tree
+      ).each do |subject|
       preload_prerequisite(subject.course.prerequisite_tree) if subject.course&.prerequisite_tree
       preload_prerequisite(subject.exam.prerequisite_tree) if subject.exam&.prerequisite_tree
     end
