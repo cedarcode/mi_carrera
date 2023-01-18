@@ -17,7 +17,7 @@ class ActiveSupport::TestCase
 
   def create_subject(
     code: nil,
-    name: "Subject " + rand(1000),
+    name: "Subject #{rand(1000)}",
     credits: 5,
     exam: true,
     group: create_group(name: "Matemática")

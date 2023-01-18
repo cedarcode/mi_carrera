@@ -8,4 +8,13 @@ class Subject < ApplicationRecord
   validates :code, uniqueness: true
 
   scope :ordered_by_semester_and_name, -> { order(:semester, :name) }
+
+  scope :require_exam, -> { includes(:exam).where.not(exam: { id: nil }) }
+  scope :not_require_exam, -> { includes(:exam).where(exam: { id: nil }) }
+
+  scope :approved_credits, ->(approved_courses, approved_exams) do
+    not_require_exam.where(id: approved_courses).or(
+      require_exam.where(id: approved_exams)
+    ).sum(:credits)
+  end
 end

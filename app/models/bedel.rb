@@ -74,7 +74,10 @@ class Bedel
   end
 
   def credits(group = nil)
-    exam_credits(group) + course_credits(group)
+    subjects = group ? group.subjects : Subject
+
+    @credits ||= {}
+    @credits[group&.id] ||= subjects.approved_credits(store[:approved_courses], store[:approved_exams])
   end
 
   def credits_by_group
@@ -116,24 +119,6 @@ class Bedel
   private
 
   attr_reader :store
-
-  def exam_credits(group)
-    @exam_credits ||= {}
-    @exam_credits[group&.id] ||=
-      subject_scope(group)
-      .joins(:exam)
-      .where(subjects: { id: store[:approved_exams] })
-      .sum(:credits)
-  end
-
-  def course_credits(group)
-    @course_credits ||= {}
-    @course_credits[group&.id] ||=
-      subject_scope(group)
-      .includes(:exam)
-      .where(approvables: { subject_id: nil }, subjects: { id: store[:approved_courses] })
-      .sum(:credits)
-  end
 
   def force_credits_recalculation!
     @exam_credits = nil
