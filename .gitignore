@@ -17,6 +17,18 @@
 /storage/*
 !/storage/.keep
 
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
+
 /public/assets
 .byebug_history
 
@@ -25,9 +37,8 @@
 /config/credentials/test.key
 /config/credentials/development.key
 /config/credentials/production.key
+
 /public/packs
 /public/packs-test
-
-.env.local
 
 tags

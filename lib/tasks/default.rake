@@ -1,4 +1,4 @@
-if Rails.env.test?
+if Rails.env.test? || Rails.env.development?
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new
 
