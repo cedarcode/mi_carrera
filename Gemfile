@@ -15,7 +15,7 @@ gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 4.3'
 gem 'rollbar', '~> 2.19'
-gem 'sass-rails', '~> 6.0'
+gem 'sassc-rails', '~> 2.1.2'
 gem 'serviceworker-rails', '~> 0.6'
 gem 'stimulus-rails', '~> 1.2'
 
