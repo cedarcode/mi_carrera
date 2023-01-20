@@ -21,9 +21,6 @@ class TreePreloader
     when CreditsPrerequisite
       prereq.association(:subject_group).target = subject_groups_by_id[prereq.subject_group_id]
     when SubjectPrerequisite
-      # rubocop:disable Lint/Debugger
-      byebug if prereq.approvable_needed_id.nil? || approvable_by_id[prereq.approvable_needed_id].nil?
-      # rubocop:enable Lint/Debugger
       prereq.association(:approvable_needed).target = approvable_by_id[prereq.approvable_needed_id]
     end
   end
