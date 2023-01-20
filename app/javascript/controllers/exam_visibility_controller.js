@@ -1,14 +1,14 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "exam", "checkbox" ]
+  static targets = [ "exam", "checkboxInputs", "checkbox" ]
 
   approvalChange() {
     let ableToEnrollExam
     let url = '/subjects/' + this.examTarget.dataset.subjectId + '/able_to_enroll';
     let exam = this.examTarget;
     let examCheckbox = this.checkboxTarget;
-    let hiddenExamCheckbox = document.querySelector("input[name='"+examCheckbox.getAttribute("name")+"'][type='hidden']")
+    let checkboxInputs = this.checkboxInputsTarget.querySelectorAll('input');
 
     fetch(url)
       .then(function(response) {
@@ -20,11 +20,9 @@ export default class extends Controller {
         exam.classList.toggle("mdc-list-item--disabled", !ableToEnrollExam);
 
         if (ableToEnrollExam) {
-          examCheckbox.removeAttribute("disabled");
-          hiddenExamCheckbox.removeAttribute("disabled");
+          checkboxInputs.forEach(element => element.removeAttribute("disabled"));
         } else {
-          examCheckbox.setAttribute("disabled", "disabled");
-          hiddenExamCheckbox.setAttribute("disabled", "disabled");
+          checkboxInputs.forEach(element => element.setAttribute("disabled", "disabled"));
           examCheckbox.checked = false;
         }
       });
