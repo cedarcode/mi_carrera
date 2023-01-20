@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   def index
-    @subjects = TreePreloader.new.preload.select { |subject| bedel.able_to_do?(subject.course) }
+    @subjects = Subject.ordered_by_semester_and_name.select { |subject| bedel.able_to_do?(subject.course) }
   end
 
   def approve
@@ -37,7 +37,7 @@ class SubjectsController < ApplicationController
   end
 
   def list_subjects
-    @subjects = TreePreloader.new.preload.select { |subject| bedel.able_to_do?(subject.course) }
+    @subjects = Subject.ordered_by_semester_and_name.select { |subject| bedel.able_to_do?(subject.course) }
     respond_to do |format|
       format.html { render '_subjects_bulk_approve', layout: false }
     end
