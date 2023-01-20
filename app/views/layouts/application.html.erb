@@ -54,13 +54,13 @@
       </header>
       <main class="mdc-top-app-bar--fixed-adjust main-content" id='main-content'>
         <% if flash[:notice] %>
-          <div class="flash flash-notice"><%= flash[:notice] %></div>
+          <%= render 'shared/snackbar', message: flash[:notice]%>
         <% end %>
         <% if flash[:error] %>
-          <div class="flash flash-error"><%= flash[:error] %></div>
+          <%= render 'shared/snackbar', message: flash[:error]%>
         <% end %>
         <% if flash[:alert] %>
-          <div class="flash flash-error"><%= flash[:alert] %></div>
+          <%= render 'shared/snackbar', message: flash[:alert]%>
         <% end %>
         <div class='content'>
           <%= yield %>
