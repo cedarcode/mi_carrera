@@ -47,6 +47,8 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
     check "checkbox_#{@gal1.id}_course_approved", visible: :all
     wait_for_async_request
     check "checkbox_#{@gal1.id}_exam_approved", visible: :all
+    wait_for_async_request
+
     assert_no_text "GAL 3"
   end
 
