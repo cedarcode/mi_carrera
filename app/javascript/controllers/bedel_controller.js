@@ -8,7 +8,7 @@ export default class extends Controller {
     foregroundLayer.addEventListener("click", function(event) {
       event.preventDefault();
     });
-    document.body.append(foregroundLayer);
+    this.element.append(foregroundLayer);
   }
 
   finishUpdate(){
