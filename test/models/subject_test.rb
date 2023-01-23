@@ -49,18 +49,18 @@ class SubjectTest < ActiveSupport::TestCase
     end
   end
 
-  test "#require_exam returns subjects that require exam" do
+  test "#with_exam returns subjects that require exam" do
     s1 = create_subject(exam: false) # rubocop:disable Lint/UselessAssignment
     s2 = create_subject(exam: true)
 
-    assert_equal [s2], Subject.require_exam
+    assert_equal [s2], Subject.with_exam
   end
 
-  test "#not_require_exam returns subjects that do not require exam" do
+  test "#without_exam returns subjects that do not require exam" do
     s1 = create_subject(exam: false)
     s2 = create_subject(exam: true) # rubocop:disable Lint/UselessAssignment
 
-    assert_equal [s1], Subject.not_require_exam
+    assert_equal [s1], Subject.without_exam
   end
 
   test "#ordered_by_semester_and_name returns subjects ordered by semester and name" do

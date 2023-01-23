@@ -9,12 +9,12 @@ class Subject < ApplicationRecord
 
   scope :ordered_by_semester_and_name, -> { order(:semester, :name) }
 
-  scope :require_exam, -> { includes(:exam).where.not(exam: { id: nil }) }
-  scope :not_require_exam, -> { includes(:exam).where(exam: { id: nil }) }
+  scope :with_exam, -> { includes(:exam).where.not(exam: { id: nil }) }
+  scope :without_exam, -> { includes(:exam).where(exam: { id: nil }) }
 
   def self.approved_credits(approved_courses, approved_exams)
-    not_require_exam.where(id: approved_courses).or(
-      require_exam.where(id: approved_exams)
+    without_exam.where(id: approved_courses).or(
+      with_exam.where(id: approved_exams)
     ).sum(:credits)
   end
 
