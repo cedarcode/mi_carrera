@@ -1,5 +1,5 @@
 if Rails.env.test? || Rails.env.development?
-  task :eslint do
+  task eslint: :environment do
     sh "npx eslint app/javascript/"
   end
 end

@@ -43,6 +43,7 @@ jobs:
 
     - name: Run tests
       env:
+        RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         RAILS_ENV: test
         DB_USER: student
         DB_PASSWORD: postgres

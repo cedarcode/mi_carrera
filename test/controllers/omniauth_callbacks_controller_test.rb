@@ -48,4 +48,35 @@ class OmniauthCallbacksControllerTest < ApplicationControllerTestCase
       post user_google_oauth2_omniauth_callback_path
     end
   end
+
+  test 'create a user with google with approvals in session should create user with approvals' do
+    subject1 = create_subject(name: "Subject 1", credits: 16, exam: false)
+    subject2 = create_subject(name: "Subject 2", credits: 16, exam: true)
+    patch approve_subject_path(subject1), params: {
+      subject: {
+        course_approved: 'yes'
+      },
+      format: 'json'
+    }
+    patch approve_subject_path(subject2), params: {
+      subject: {
+        exam_approved: 'yes'
+      },
+      format: 'json'
+    }
+
+    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
+      provider: 'google_oauth2',
+      uid: "345678901",
+      info: {
+        email: 'new@gmail.com'
+      }
+    )
+
+    post user_google_oauth2_omniauth_callback_path
+
+    user = User.where(email: 'new@gmail.com').first
+    assert_equal [subject1.id], user.approvals[:approved_courses]
+    assert_equal [subject2.id], user.approvals[:approved_exams]
+  end
 end

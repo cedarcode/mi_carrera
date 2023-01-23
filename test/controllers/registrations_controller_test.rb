@@ -68,4 +68,33 @@ class RegistrationsControllerTest < ApplicationControllerTestCase
     }
     assert_redirected_to root_path
   end
+
+  test 'create a user with approvals in session should create user with approvals' do
+    subject1 = create_subject(name: "Subject 1", credits: 16, exam: false)
+    subject2 = create_subject(name: "Subject 2", credits: 16, exam: true)
+    patch approve_subject_path(subject1), params: {
+      subject: {
+        course_approved: 'yes'
+      },
+      format: 'json'
+    }
+    patch approve_subject_path(subject2), params: {
+      subject: {
+        exam_approved: 'yes'
+      },
+      format: 'json'
+    }
+
+    post user_registration_path, params: {
+      user: {
+        email: 'newuser@gmail.com',
+        password: 'secret',
+        password_confirmation: 'secret'
+      }
+    }
+
+    user = User.where(email: 'newuser@gmail.com').first
+    assert_equal [subject1.id], user.approvals[:approved_courses]
+    assert_equal [subject2.id], user.approvals[:approved_exams]
+  end
 end

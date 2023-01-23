@@ -1,10 +1,14 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
 inherit_mode:
   merge:
     - Exclude
 
 AllCops:
-  TargetRubyVersion: 2.6
   DisabledByDefault: true
+  NewCops: disable
   Exclude:
     - "bin/*"
     - "db/schema.rb"
@@ -23,7 +27,7 @@ Layout:
 Lint:
   Enabled: true
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
   Exclude:
     - "test/models/bedel_test.rb"
@@ -40,8 +44,8 @@ Rails:
 Security:
   Enabled: true
 
-Style/BracesAroundHashParameters:
-  Enabled: true
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
 
 Style/RedundantBegin:
   Enabled: true

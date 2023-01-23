@@ -14,7 +14,7 @@ class UserTest < ActiveSupport::TestCase
       )
     )
 
-    new_user = User.from_omniauth(auth)
+    new_user = User.from_omniauth(auth, {})
 
     assert new_user.persisted?
     assert_equal new_user.email, auth.info.email
@@ -31,7 +31,7 @@ class UserTest < ActiveSupport::TestCase
       )
     )
 
-    existing_user = User.from_omniauth(auth)
+    existing_user = User.from_omniauth(auth, {})
 
     assert existing_user.persisted?
     assert_equal existing_user.email, auth.info.email
