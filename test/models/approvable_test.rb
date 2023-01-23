@@ -5,7 +5,7 @@ class ApprovableTest < ActiveSupport::TestCase
     subject = create_subject(exam: true)
     course = subject.course
 
-    assert_not course.approved?([], [])
+    assert_not course.approved?([], [subject.id])
     assert course.approved?([subject.id], [])
   end
 
