@@ -12,7 +12,7 @@ class Subject < ApplicationRecord
   scope :require_exam, -> { includes(:exam).where.not(exam: { id: nil }) }
   scope :not_require_exam, -> { includes(:exam).where(exam: { id: nil }) }
 
-  scope :approved_credits, ->(approved_courses, approved_exams) do
+  def self.approved_credits(approved_courses, approved_exams)
     not_require_exam.where(id: approved_courses).or(
       require_exam.where(id: approved_exams)
     ).sum(:credits)
@@ -22,7 +22,5 @@ class Subject < ApplicationRecord
     exam ? approved_exams.include?(id) : approved_courses.include?(id)
   end
 
-  def available?(approved_courses, approved_exams)
-    course.available?(approved_courses, approved_exams)
-  end
+  delegate :available?, to: :course
 end
