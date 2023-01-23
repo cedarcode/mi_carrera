@@ -54,8 +54,8 @@
 
         <span class="mdc-list-item__meta">
           <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check" }, local: false) do |form| %>
-            <div class="mdc-checkbox" data-target="exam-visibility.checkboxInputs">
-              <%= form.check_box :exam_approved, { id: "checkbox_exam_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.exam), disabled: !bedel.able_to_do?(@subject.exam), data: { action: "autosave-check#update", target: "exam-visibility.checkbox" } }, "yes", "no" %>
+            <div class="mdc-checkbox" data-target="exam-visibility.checkbox">
+              <%= form.check_box :exam_approved, { id: "checkbox_exam_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.exam), disabled: !bedel.able_to_do?(@subject.exam), data: { action: "autosave-check#update" } }, "yes", "no" %>
               <div class="mdc-checkbox__background">
                 <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                   <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
