@@ -29,8 +29,7 @@ class User < ApplicationRecord
 
   def add_approvals_in_session(session)
     self.approvals = {
-      approved_courses: session[:approved_courses] || [],
-      approved_exams: session[:approved_exams] || []
+      approved_approvable_ids: session[:approved_approvable_ids] || []
     }
   end
 
