@@ -9,9 +9,9 @@ namespace :scrape do
   desc "reads scraped_subjects.yml, scraped_subject_groups and scraped_prerequisites and if not already " +
        "in database creates them, else it updates them"
   task update_subjects: :environment do
-    subject_groups = YAML.load_file(File.join(Rails.root, "db", "seeds", "scraped_subject_groups.yml"))
-    subjects = YAML.load_file(File.join(Rails.root, "db", "seeds", "scraped_subjects.yml"))
-    prerequisites = YAML.load_file(File.join(Rails.root, "db", "seeds", "scraped_prerequisites.yml"))
+    subject_groups = YAML.load_file(Rails.root.join("db/data/scraped_subject_groups.yml"))
+    subjects = YAML.load_file(Rails.root.join("db/data/scraped_subjects.yml"))
+    prerequisites = YAML.load_file(Rails.root.join("db/data/scraped_prerequisites.yml"))
 
     # first create/update all subject groups
     subject_groups.each do |_code, group|
