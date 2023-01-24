@@ -11,20 +11,29 @@ class BedeliasSpider < Kimurai::Base
 
   ROWS_PER_PAGE = 20
 
+  def initialize
+    super
+
+    @subject_groups_path = File.join(Rails.root, "db", "data", "scraped_subject_groups.yml")
+    @subjects_path = File.join(Rails.root, "db", "data", "scraped_subjects.yml")
+    @prerequisites_path = File.join(Rails.root, "db", "data", "scraped_prerequisites.yml")
+  end
+
   def parse_subjects(*_args)
     bedelias_page.visit_curriculum
 
     subjects = {}
 
     # get all groups
+    groups = {}
     curriculum_page.groups.each do |group_node|
       # for each group, get code name min_credits and save it to a json file
       group_details = curriculum_page.group_details(group_node)
 
       puts "Generating subject group #{group_details[:code]} - #{group_details[:name]}"
 
-      path = File.join(Rails.root, "db", "seeds", "scraped_subject_groups.json")
-      save_to path, group_details, format: :pretty_json, position: false
+      # append group_details to file
+      groups[group_details[:code]] = group_details
 
       # for each group, get all subjects
       curriculum_page.subjects_in_group(group_node).each do |subject|
@@ -34,6 +43,10 @@ class BedeliasSpider < Kimurai::Base
         # add the subject to the hash, with code as key
         subjects[subject_details[:code]] = subject_details
       end
+    end
+
+    File.open(subject_groups_path, "w") do |file|
+      file.write groups.to_yaml
     end
 
     # got to the prerequisites page
@@ -59,15 +72,15 @@ class BedeliasSpider < Kimurai::Base
     end
 
     # save to a file
-    path = File.join(Rails.root, "db", "seeds", "scraped_subjects.json")
-    subjects.values.each do |subject|
-      save_to path, subject, format: :pretty_json, position: false
+    File.open(subjects_path, "w") do |file|
+      file.write subjects.to_yaml
     end
   end
 
   def parse_prerequisites(*_args)
     bedelias_page.visit_prerequisites
 
+    prerequisites = []
     prerequisites_page.for_each_approvable do |approvable_node, current_page_number|
       approvable_details = prerequisites_page.approvable_details(approvable_node)
 
@@ -84,14 +97,20 @@ class BedeliasSpider < Kimurai::Base
         approvable_details[:code],
         approvable_details[:is_exam]
       )
-      path = File.join(Rails.root, "db", "seeds", "scraped_prerequisites.json")
-      save_to path, prerequisite, format: :pretty_json, position: false
+      prerequisites << prerequisite
 
       prerequisites_tree_page.back
+    end
+
+    File.open(prerequisites_path, "w") do |file|
+      data = { prerequisites: prerequisites }
+      file.write data.to_yaml
     end
   end
 
   private
+
+  attr_reader :subject_groups_path, :subjects_path, :prerequisites_path
 
   def create_prerequisite_tree(original_prerequisite, subject_code = nil, is_exam = false)
     prerequisite_tree = prerequisites_tree_page.prerequisite_tree(original_prerequisite)

@@ -1,0 +1,2677 @@
+---
+:prerequisites:
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: subject
+      :needs: course
+      :subject_needed: '1535'
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :needs: exam
+      :subject_needed: '1324'
+    - :type: logical
+      :logical_operator: and
+      :operands:
+      - :type: subject
+        :subject_needed: CP71
+        :needs: course
+      - :type: subject
+        :subject_needed: CP30
+        :needs: course
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP350
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP31
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1511'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1518'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1532'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1537'
+      :needs: exam
+  :subject_code: '1542'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: subject
+        :subject_needed: BTI23
+        :needs: all
+      - :type: subject
+        :subject_needed: BTI29
+        :needs: all
+      - :type: subject
+        :subject_needed: BTI33
+        :needs: all
+      - :type: subject
+        :subject_needed: BTI38
+        :needs: all
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1716'
+      :needs: course
+    - :type: subject
+      :subject_needed: C402
+      :needs: course
+    - :type: subject
+      :subject_needed: CP363
+      :needs: course
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP362
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1911P
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1911'
+      :needs: exam
+  :subject_code: '1742'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: credits
+    :credits: 250
+  :subject_code: '1216'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: credits
+    :credits: 250
+  :subject_code: '2034'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: credits
+    :credits: 250
+  :subject_code: '2036'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: subject
+    :needs: course
+    :subject_needed: SRN25
+  :subject_code: SRN25
+  :is_exam: true
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: subject
+        :subject_needed: AA28
+        :needs: exam
+      - :type: subject
+        :subject_needed: AI28
+        :needs: exam
+      - :type: subject
+        :subject_needed: AT28
+        :needs: exam
+      - :type: subject
+        :subject_needed: AT3
+        :needs: exam
+      - :type: subject
+        :subject_needed: A028
+        :needs: exam
+      - :type: subject
+        :subject_needed: A28
+        :needs: exam
+      - :type: subject
+        :subject_needed: BT28
+        :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: logical
+      :logical_operator: and
+      :operands:
+      - :type: subject
+        :subject_needed: '1324'
+        :needs: exam
+      - :type: subject
+        :subject_needed: '1327'
+        :needs: course
+    - :type: logical
+      :logical_operator: and
+      :operands:
+      - :type: subject
+        :subject_needed: CP71
+        :needs: course
+      - :type: subject
+        :subject_needed: CP30
+        :needs: course
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP31
+      :needs: exam
+    - :type: subject
+      :subject_needed: C350
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1511'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1518'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1532'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1537'
+      :needs: course
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP362
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1911'
+      :needs: exam
+  :subject_code: '1735'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP362
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1911P
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1911'
+      :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1454'
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP364
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1446P
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1433'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1406'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1446'
+      :needs: course
+  :subject_code: '1933'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1631'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1624'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1626'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1632'
+      :needs: course
+  :subject_code: '2398'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: subject
+        :subject_needed: AI28
+        :needs: all
+      - :type: subject
+        :subject_needed: A28
+        :needs: all
+      - :type: subject
+        :subject_needed: BT28
+        :needs: all
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1315'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1316'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1736'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1749'
+      :needs: course
+  :subject_code: '1304'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1631'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1624'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1626'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1632'
+      :needs: course
+  :subject_code: '1633'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: subject
+      :needs: course
+      :subject_needed: '1042'
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: subject
+      :needs: course
+      :subject_needed: '1046'
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: logical
+      :logical_operator: and
+      :operands:
+      - :type: subject
+        :subject_needed: CP1
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP2
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP4
+        :needs: exam
+    - :type: logical
+      :logical_operator: and
+      :operands:
+      - :type: subject
+        :subject_needed: CP1
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP6
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP2
+        :needs: exam
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1023P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1023'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1023P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1026'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1023'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1026'
+          :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: subject
+        :subject_needed: CP1
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP22
+        :needs: exam
+      - :type: subject
+        :subject_needed: MAT33
+        :needs: exam
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: subject
+        :subject_needed: CM14
+        :needs: exam
+      - :type: subject
+        :subject_needed: 1030P
+        :needs: exam
+      - :type: subject
+        :subject_needed: '1030'
+        :needs: exam
+      - :type: subject
+        :subject_needed: '1071'
+        :needs: exam
+      - :type: subject
+        :subject_needed: 171Q
+        :needs: exam
+      - :type: subject
+        :subject_needed: '1053'
+        :needs: exam
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: subject
+        :subject_needed: '1021'
+        :needs: exam
+      - :type: subject
+        :subject_needed: MAT33
+        :needs: exam
+      - :type: subject
+        :subject_needed: M9
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP2
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP23
+        :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP29
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1323'
+      :needs: course
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP6
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP25
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1025P
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1025'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1075'
+      :needs: exam
+  :subject_code: '1065'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: subject
+      :needs: course
+      :subject_needed: '1046'
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1023P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1023'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1023P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1026'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1023'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1026'
+          :needs: exam
+    - :type: logical
+      :logical_operator: and
+      :operands:
+      - :type: subject
+        :subject_needed: CP1
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP2
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP4
+        :needs: exam
+    - :type: logical
+      :logical_operator: and
+      :operands:
+      - :type: subject
+        :subject_needed: CP1
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP6
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP2
+        :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: subject
+        :subject_needed: '1021'
+        :needs: exam
+      - :type: subject
+        :subject_needed: MAT33
+        :needs: exam
+      - :type: subject
+        :subject_needed: M9
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP2
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP23
+        :needs: exam
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CM14
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1030P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CM14
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1031P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CM14
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1030'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CM14
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1071'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CM14
+          :needs: exam
+        - :type: subject
+          :subject_needed: 171Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CM14
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1053'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CM14
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1031'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CM14
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1058'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CM14
+          :needs: exam
+        - :type: subject
+          :subject_needed: 158Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1030P
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1031P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1030P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1030'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1030P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1071'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1030P
+          :needs: exam
+        - :type: subject
+          :subject_needed: 171Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1030P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1053'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1030P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1031'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1030P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1058'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1030P
+          :needs: exam
+        - :type: subject
+          :subject_needed: 158Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1031P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1030'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1031P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1071'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1031P
+          :needs: exam
+        - :type: subject
+          :subject_needed: 171Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1031P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1053'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1031P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1031'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1031P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1058'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1031P
+          :needs: exam
+        - :type: subject
+          :subject_needed: 158Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1030'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1071'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1030'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 171Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1030'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1053'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1030'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1031'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1030'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1058'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1030'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 158Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1071'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 171Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1071'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1053'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1071'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1031'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1071'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1058'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1071'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 158Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 171Q
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1053'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 171Q
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1031'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 171Q
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1058'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 171Q
+          :needs: exam
+        - :type: subject
+          :subject_needed: 158Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1053'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1031'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1053'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1058'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1053'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 158Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1031'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1058'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1031'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 158Q
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1058'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 158Q
+          :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: subject
+        :subject_needed: CP1
+        :needs: exam
+      - :type: subject
+        :subject_needed: CP22
+        :needs: exam
+      - :type: subject
+        :subject_needed: MAT33
+        :needs: exam
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1061'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1062'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1020'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1070'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1052'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1022'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1072'
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: CAL10
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1020P
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1061P
+          :needs: exam
+        - :type: subject
+          :subject_needed: 1062P
+          :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP29
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1323'
+      :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP6
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP25
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1025P
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1025'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1075'
+      :needs: exam
+  :subject_code: '1042'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '2415'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1065'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1042'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1046'
+      :needs: course
+  :subject_code: '1011'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: subject
+    :needs: exam
+    :subject_needed: '1325'
+  :subject_code: '1336'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP33
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1325'
+      :needs: exam
+  :subject_code: '1358'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: subject
+      :needs: exam
+      :subject_needed: CP33
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :needs: exam
+      :subject_needed: CP4
+    - :type: subject
+      :needs: exam
+      :subject_needed: MA29
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1023P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1010'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1023P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1023'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1010'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1023'
+          :needs: exam
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1023P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1027'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1023P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1023'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1027'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1023'
+          :needs: exam
+    - :type: logical
+      :logical_operator: or
+      :operands:
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1023P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1013'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: 1023P
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1023'
+          :needs: exam
+      - :type: logical
+        :logical_operator: and
+        :operands:
+        - :type: subject
+          :subject_needed: '1013'
+          :needs: exam
+        - :type: subject
+          :subject_needed: '1023'
+          :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP1
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1061'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1020'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1070'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1052'
+      :needs: exam
+    - :type: subject
+      :subject_needed: MAT33
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1020P
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1061P
+      :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP29
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1323'
+      :needs: course
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1021'
+      :needs: exam
+    - :type: subject
+      :subject_needed: MAT33
+      :needs: exam
+    - :type: subject
+      :subject_needed: M9
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1030P
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP2
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP23
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1030'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1071'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1053'
+      :needs: exam
+  :subject_code: '1325'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: subject
+    :needs: course
+    :subject_needed: '1325'
+  :subject_code: '1325'
+  :is_exam: true
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1025'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1075'
+      :needs: exam
+  :subject_code: D87
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: subject
+    :needs: course
+    :subject_needed: D87
+  :subject_code: D87
+  :is_exam: true
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1061'
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1061I
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1061R
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1020'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1070'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1052'
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1061P
+      :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1062'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1022'
+      :needs: course
+    - :type: subject
+      :subject_needed: '1072'
+      :needs: exam
+    - :type: subject
+      :subject_needed: 108L
+      :needs: exam
+    - :type: subject
+      :subject_needed: 172Q
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1022P
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1062P
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1022T
+      :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1030'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1071'
+      :needs: exam
+    - :type: subject
+      :subject_needed: 171L
+      :needs: exam
+    - :type: subject
+      :subject_needed: 171Q
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1053'
+      :needs: exam
+  :subject_code: '1886'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: subject
+    :needs: exam
+    :subject_needed: SRN02
+  - :type: subject
+    :needs: course
+    :subject_needed: SRN09
+  :subject_code: CIM22
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: subject
+    :needs: exam
+    :subject_needed: SRN02
+  - :type: subject
+    :needs: exam
+    :subject_needed: SRN09
+  :subject_code: CIM22
+  :is_exam: true
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1033'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1079'
+      :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: 1321P
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1321'
+      :needs: exam
+  :subject_code: '5828'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: credits
+    :credits: 80
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP1
+      :needs: all
+    - :type: subject
+      :subject_needed: CP22
+      :needs: all
+    - :type: subject
+      :subject_needed: '1062'
+      :needs: all
+    - :type: subject
+      :subject_needed: '1022'
+      :needs: all
+    - :type: subject
+      :subject_needed: '1072'
+      :needs: all
+    - :type: subject
+      :subject_needed: MAT33
+      :needs: all
+    - :type: subject
+      :subject_needed: 1062P
+      :needs: all
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1021'
+      :needs: all
+    - :type: subject
+      :subject_needed: CM14
+      :needs: all
+    - :type: subject
+      :subject_needed: MAT33
+      :needs: all
+    - :type: subject
+      :subject_needed: M9
+      :needs: all
+    - :type: subject
+      :subject_needed: 1031P
+      :needs: all
+    - :type: subject
+      :subject_needed: CP2
+      :needs: all
+    - :type: subject
+      :subject_needed: R101
+      :needs: all
+    - :type: subject
+      :subject_needed: CP23
+      :needs: all
+    - :type: subject
+      :subject_needed: '1031'
+      :needs: all
+    - :type: subject
+      :subject_needed: '1058'
+      :needs: all
+    - :type: subject
+      :subject_needed: 158Q
+      :needs: all
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP1
+      :needs: all
+    - :type: subject
+      :subject_needed: R100
+      :needs: all
+    - :type: subject
+      :subject_needed: CP22
+      :needs: all
+    - :type: subject
+      :subject_needed: '1061'
+      :needs: all
+    - :type: subject
+      :subject_needed: '1020'
+      :needs: all
+    - :type: subject
+      :subject_needed: '1070'
+      :needs: all
+    - :type: subject
+      :subject_needed: '1052'
+      :needs: all
+    - :type: subject
+      :subject_needed: CAL10
+      :needs: all
+    - :type: subject
+      :subject_needed: MAT33
+      :needs: all
+    - :type: subject
+      :subject_needed: 1020P
+      :needs: all
+    - :type: subject
+      :subject_needed: 1061P
+      :needs: all
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1021'
+      :needs: all
+    - :type: subject
+      :subject_needed: CM14
+      :needs: all
+    - :type: subject
+      :subject_needed: MAT33
+      :needs: all
+    - :type: subject
+      :subject_needed: M9
+      :needs: all
+    - :type: subject
+      :subject_needed: 1030P
+      :needs: all
+    - :type: subject
+      :subject_needed: CP2
+      :needs: all
+    - :type: subject
+      :subject_needed: R101
+      :needs: all
+    - :type: subject
+      :subject_needed: CP23
+      :needs: all
+    - :type: subject
+      :subject_needed: '1030'
+      :needs: all
+    - :type: subject
+      :subject_needed: '1071'
+      :needs: all
+    - :type: subject
+      :subject_needed: 171Q
+      :needs: all
+    - :type: subject
+      :subject_needed: '1053'
+      :needs: all
+  :subject_code: '1233'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: subject
+      :needs: all
+      :subject_needed: '1760'
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: subject
+      :needs: all
+      :subject_needed: '1761'
+  :subject_code: '2216'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: subject
+      :needs: all
+      :subject_needed: '1760'
+  - :type: logical
+    :logical_operator: not
+    :operands:
+    - :type: subject
+      :needs: all
+      :subject_needed: '1761'
+  - :type: subject
+    :needs: all
+    :subject_needed: '2216'
+  :subject_code: '2217'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP15
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1321'
+      :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP4
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1027'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1013'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1010'
+      :needs: exam
+  :subject_code: '1346'
+  :is_exam: false
+- :type: logical
+  :logical_operator: and
+  :operands:
+  - :type: credits
+    :credits: 250
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP1
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP22
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1062'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1022'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1072'
+      :needs: exam
+    - :type: subject
+      :subject_needed: MAT33
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1062P
+      :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: '1021'
+      :needs: exam
+    - :type: subject
+      :subject_needed: MAT33
+      :needs: exam
+    - :type: subject
+      :subject_needed: MA09
+      :needs: exam
+    - :type: subject
+      :subject_needed: M9
+      :needs: exam
+    - :type: subject
+      :subject_needed: 1031P
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP2
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP23
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1031'
+      :needs: exam
+  - :type: logical
+    :logical_operator: or
+    :operands:
+    - :type: subject
+      :subject_needed: CP52
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP24
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP144
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1408'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1411'
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP9
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1320'
+      :needs: exam
+    - :type: subject
+      :subject_needed: '1322'
+      :needs: exam
+    - :type: subject
+      :subject_needed: CP10
+      :needs: course
+  :subject_code: '1145'
+  :is_exam: false

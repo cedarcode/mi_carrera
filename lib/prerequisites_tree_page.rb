@@ -89,11 +89,11 @@ class PrerequisitesTreePage < BedeliasPage
         return :credits
       elsif node_content.include?('aprobación') || node_content.include?('actividad')
         if only_one_approval_needed?(prerequisite_node)
-          return :logical_or
+          return :any_subject_from_node
         elsif needs_all_approvals?(prerequisite_node)
-          return :logical_and
+          return :all_subjects_from_node
         else # 'n' approvals needed out of a list of 'm' subjects when 'n'<'m'
-          return :logical_or_combinations
+          return :n_subjects_from_node
         end
       elsif node_content.include?('Curso aprobado')
         return :subject_course
@@ -128,65 +128,59 @@ class PrerequisitesTreePage < BedeliasPage
       ret[:type] = 'credits'
       ret[:credits] = credits_from_node(prerequisite_node)
       ret[:group] = group_from_node(prerequisite_node)
-    when :logical_and
+    when :all_subjects_from_node
       ret[:type] = 'logical'
       ret[:logical_operator] = 'and'
-      ret[:operands] = []
-      extract_subjects_from(node_content).each do |s|
-        ret[:operands] += [
-          { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
-        ]
-      end
-    when :logical_or
+      ret[:operands] =
+        extract_subjects_from(node_content).each_with_object([]) do |s, array|
+          array << { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
+        end
+    when :any_subject_from_node
       ret[:type] = 'logical'
       ret[:logical_operator] = 'or'
-      ret[:operands] = []
-      extract_subjects_from(node_content).each do |s|
-        ret[:operands] += [
-          { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
-        ]
-      end
-    when :logical_or_combinations
+      ret[:operands] =
+        extract_subjects_from(node_content).each_with_object([]) do |s, array|
+          array << { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
+        end
+    when :n_subjects_from_node
       # now we create an OR of ANDs for each combination of subjects
       subject_combinations = extract_combinations_from_node(prerequisite_node)
       ret[:type] = 'logical'
       ret[:logical_operator] = 'or'
-      ret[:operands] = []
-      subject_combinations.to_a.each do |combination|
-        ret[:operands] += [
-          {
+      ret[:operands] =
+        subject_combinations.to_a.each_with_object([]) do |combination, array|
+          array << {
             type: 'logical',
             logical_operator: 'and',
             operands: combination.map do |s|
               { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
             end
           }
-        ]
-      end
+        end
     when :logical_and_tree
       ret[:type] = 'logical'
       ret[:logical_operator] = 'and'
       expand_prerequisites_tree(prerequisite_node)
-      ret[:operands] = []
-      subtrees_roots(prerequisite_node).each do |subtree_root|
-        ret[:operands] += [prerequisite_tree(subtree_root)]
-      end
+      ret[:operands] =
+        subtrees_roots(prerequisite_node).each_with_object([]) do |subtree_root, array|
+          array << prerequisite_tree(subtree_root)
+        end
     when :logical_or_tree
       ret[:type] = 'logical'
       ret[:logical_operator] = 'or'
       expand_prerequisites_tree(prerequisite_node)
-      ret[:operands] = []
-      subtrees_roots(prerequisite_node).each do |subtree_root|
-        ret[:operands] += [prerequisite_tree(subtree_root)]
-      end
+      ret[:operands] =
+        subtrees_roots(prerequisite_node).each_with_object([]) do |subtree_root, array|
+          array << prerequisite_tree(subtree_root)
+        end
     when :logical_not_tree
       ret[:type] = 'logical'
       ret[:logical_operator] = 'not'
       expand_prerequisites_tree(prerequisite_node)
-      ret[:operands] = []
-      subtrees_roots(prerequisite_node).each do |subtree_root|
-        ret[:operands] += [prerequisite_tree(subtree_root)]
-      end
+      ret[:operands] =
+        subtrees_roots(prerequisite_node).each_with_object([]) do |subtree_root, array|
+          array << prerequisite_tree(subtree_root)
+        end
     when :subject_course
       ret[:type] = 'subject'
       ret[:needs] = 'course'

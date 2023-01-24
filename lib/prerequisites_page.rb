@@ -11,13 +11,9 @@ class PrerequisitesPage < BedeliasPage
     find(:css, 'span.ui-paginator-page.ui-state-active').text.to_i
   end
 
-  def approvables_count_in_page
-    all("//tr[@data-ri]").count
-  end
-
   def approvables_index_in_current_page
-    all("//tr[@data-ri]").map do |approvable_node|
-      approvable_node['data-ri'].to_i
+    all("//tr[@data-ri]").each_with_object([]) do |approvable_node, array|
+      array << approvable_node['data-ri'].to_i
     end
   end
 
@@ -42,9 +38,6 @@ class PrerequisitesPage < BedeliasPage
       advance_to_page(last_visible_page_number)
       advance_to_page(page)
     end
-  rescue Capybara::ElementNotFound
-    advance_to_page(last_visible_page_number)
-    advance_to_page(page)
   end
 
   def last_visible_page_number
@@ -55,6 +48,7 @@ class PrerequisitesPage < BedeliasPage
     loop do
       yield(current_page_number)
 
+      sleep 0.5
       break if reached_last_page?
 
       move_to_next_page
@@ -77,13 +71,11 @@ class PrerequisitesPage < BedeliasPage
   end
 
   def for_each_approvable
-    approvable_index = 0
     for_each_page do |current_page_number|
-      approvables_count_in_page.times do
+      approvables_index_in_current_page.each do |approvable_index|
         yield(approvable_node(approvable_index), current_page_number)
         # if the page was reloaded, go back to the current page
         advance_to_page(current_page_number)
-        approvable_index += 1
       end
     end
   end
