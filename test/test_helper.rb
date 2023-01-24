@@ -1,6 +1,7 @@
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
+require 'minitest/mock'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
@@ -17,15 +18,16 @@ class ActiveSupport::TestCase
 
   def create_subject(
     code: nil,
-    name: "Subject " + rand(1000),
+    name: "Subject #{rand(1000)}",
     credits: 5,
     exam: true,
-    group: create_group(name: "Matemática")
+    group: create_group(name: "Matemática"),
+    semester: 1
   )
     if !code
       code = name.parameterize
     end
-    subject = Subject.create!(code: code, name: name, credits: credits, group_id: group.id)
+    subject = Subject.create!(code: code, name: name, credits: credits, group_id: group.id, semester: semester)
     subject.create_course!
 
     if exam
@@ -46,12 +48,12 @@ class ActiveSupport::TestCase
   end
 
   def within_actions_menu
-    within '.mdc-menu-surface' do
+    within '.mdc-drawer__content' do
       yield
     end
   end
 
   def click_actions_menu
-    find("a", text: 'more_vert').click
+    find(".mdc-icon-button", text: 'menu').click
   end
 end

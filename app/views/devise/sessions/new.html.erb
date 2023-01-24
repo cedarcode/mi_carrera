@@ -1,5 +1,3 @@
-<%= render 'shared/navigation_back' %>
-
 <div class="mdc-list-group">
   <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Ingreso</h3>
   <ul class="mdc-list growing-text-list">
@@ -35,7 +33,7 @@
         <div class="mdc-text-field <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:password].any? %>" data-controller="textfield">
           <%= render 'shared/invalid_icon', resource: resource, field: :password %>
           <%= f.label :password, "Contraseña", class: "mdc-floating-label" %>
-          <%= f.password_field :password, class: "mdc-text-field__input", required: true, autofocus: true %>
+          <%= f.password_field :password, class: "mdc-text-field__input", required: true, autofocus: true, autocomplete: "current-password"  %>
           <div class="mdc-line-ripple"></div>
         </div>
         <%= render 'shared/info_and_errors', resource: resource, field: :password, text: '' %>

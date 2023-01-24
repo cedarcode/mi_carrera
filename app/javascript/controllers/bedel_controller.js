@@ -20,7 +20,6 @@ export default class extends Controller {
       .then(response => response.text())
       .then(text => {
         this.element.outerHTML = text;
-        window.initializeCheckboxes();
       });
   }
 }
