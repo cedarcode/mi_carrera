@@ -16,7 +16,7 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
       ]
     )
 
-    assert prerequisite.met?([@subject2.id, @subject3.id], [])
+    assert prerequisite.met?([@subject2.course.id, @subject3.course.id])
   end
 
   test "#met? on logical AND returns false when any prerequisite not met" do
@@ -28,7 +28,7 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
       ]
     )
 
-    assert_not prerequisite.met?([@subject2.id], [])
+    assert_not prerequisite.met?([@subject2.course.id])
   end
 
   test "#met? on logical OR returns true when any prerequisite met" do
@@ -40,8 +40,8 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
       ]
     )
 
-    assert prerequisite.met?([@subject2.id], [])
-    assert prerequisite.met?([@subject3.id], [])
+    assert prerequisite.met?([@subject2.course.id])
+    assert prerequisite.met?([@subject3.course.id])
   end
 
   test "#met? on logical OR returns false when all prerequisites not met" do
@@ -53,7 +53,7 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
       ]
     )
 
-    assert_not prerequisite.met?([], [])
+    assert_not prerequisite.met?([])
   end
 
   test "#met? on logical NOT returns true when prerequisite not met" do
@@ -64,7 +64,7 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
       ]
     )
 
-    assert prerequisite.met?([], [])
+    assert prerequisite.met?([])
   end
 
   test "#met? on logical NOT returns false when prerequisite met" do
@@ -75,6 +75,6 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
       ]
     )
 
-    assert_not prerequisite.met?([@subject2.id], [])
+    assert_not prerequisite.met?([@subject2.course.id])
   end
 end
