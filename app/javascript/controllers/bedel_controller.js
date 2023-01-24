@@ -12,8 +12,7 @@ export default class extends Controller {
   }
 
   finishUpdate(){
-    var foregroundLayer = document.getElementsByClassName("foreground-layer")[0];
-    foregroundLayer.parentNode.removeChild(foregroundLayer);
+    document.getElementsByClassName("foreground-layer")[0].remove();
   }
 
   approvalChange() {
