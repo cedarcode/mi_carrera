@@ -2,55 +2,39 @@ class Bedel
   def initialize(store, current_user = nil)
     @current_user = current_user
     @store = store
-    @store[:approved_courses] ||= []
-    @store[:approved_exams] ||= []
+    @store[:approved_approvable_ids] ||= []
   end
 
   def add_approval(approvable)
     if able_to_do?(approvable)
-      if approvable.is_exam?
-        add_approved_exam(approvable.subject_id)
-      else
-        add_approved_course(approvable.subject_id)
-      end
+      add_approved_approvable(approvable.id)
     else
       false
     end
   end
 
   def remove_approval(approvable)
-    if approvable.is_exam?
-      remove_approved_exam(approvable.subject_id)
-    else
-      remove_approved_course(approvable.subject_id)
-    end
-
+    remove_approved_approvable(approvable.id)
     refresh_approvals
   end
 
   def refresh_approvals
-    subjects = TreePreloader.new.preload.index_by(&:id)
+    subjects = TreePreloader.new.preload
+    approvables = subjects.flat_map { |subject| [subject.course, subject.exam].compact }
+    approvables_by_id = approvables.index_by(&:id)
 
     loop do
-      original_count = amount_of_approved_courses_and_exams
+      original_count = approved_approvable_ids.size
 
-      approved_exams.each do |subject_id|
-        approvable = subjects[subject_id].exam
+      approved_approvable_ids.each do |approvable_id|
+        approvable = approvables_by_id[approvable_id]
 
         if !able_to_do?(approvable)
-          remove_approved_exam(subject_id)
+          remove_approved_approvable(approvable_id)
         end
       end
 
-      approved_courses.each do |subject_id|
-        approvable = subjects[subject_id].course
-
-        if !able_to_do?(approvable)
-          remove_approved_course(subject_id)
-        end
-      end
-
-      new_count = amount_of_approved_courses_and_exams
+      new_count = approved_approvable_ids.size
 
       break if new_count == original_count
     end
@@ -58,7 +42,7 @@ class Bedel
 
   def credits(group = nil)
     subjects = group ? group.subjects : Subject
-    subjects.approved_credits(approved_courses, approved_exams)
+    subjects.approved_credits(approved_approvable_ids)
   end
 
   def credits_by_group
@@ -68,47 +52,29 @@ class Bedel
   end
 
   def approved?(item)
-    item.approved?(approved_courses, approved_exams)
+    item.approved?(approved_approvable_ids)
   end
 
   def able_to_do?(item)
-    item.available?(approved_courses, approved_exams)
+    item.available?(approved_approvable_ids)
   end
 
   private
 
   attr_reader :store, :current_user
 
-  def add_approved_course(subject_id)
-    store[:approved_courses] << subject_id
+  def add_approved_approvable(approvable_id)
+    approved_approvable_ids << approvable_id
     update_users_approvals if current_user
   end
 
-  def add_approved_exam(subject_id)
-    store[:approved_exams] << subject_id
+  def remove_approved_approvable(approvable_id)
+    approved_approvable_ids.delete(approvable_id)
     update_users_approvals if current_user
   end
 
-  def remove_approved_course(subject_id)
-    store[:approved_courses].delete(subject_id)
-    update_users_approvals if current_user
-  end
-
-  def remove_approved_exam(subject_id)
-    store[:approved_exams].delete(subject_id)
-    update_users_approvals if current_user
-  end
-
-  def approved_courses
-    store[:approved_courses]
-  end
-
-  def approved_exams
-    store[:approved_exams]
-  end
-
-  def amount_of_approved_courses_and_exams
-    store[:approved_courses].size + store[:approved_exams].size
+  def approved_approvable_ids
+    store[:approved_approvable_ids]
   end
 
   def update_users_approvals
