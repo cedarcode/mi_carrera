@@ -30,7 +30,7 @@ class Bedel
 
   def refresh_approvals
     loop do
-      original_count = amount_of_approved_courses_and_exams()
+      original_count = amount_of_approved_courses_and_exams
 
       approved_exams.each do |subject_id|
         approvable = Approvable.find_by(subject_id: subject_id, is_exam: true)
@@ -48,7 +48,7 @@ class Bedel
         end
       end
 
-      new_count = amount_of_approved_courses_and_exams()
+      new_count = amount_of_approved_courses_and_exams
 
       break if new_count == original_count
     end

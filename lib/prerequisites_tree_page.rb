@@ -86,32 +86,32 @@ class PrerequisitesTreePage < BedeliasPage
     case node_type
     when 'default'
       if node_content.include?('créditos en el Plan:')
-        return :credits
+        :credits
       elsif node_content.include?('aprobación') || node_content.include?('actividad')
         if only_one_approval_needed?(prerequisite_node)
-          return :any_subject_from_node
+          :any_subject_from_node
         elsif needs_all_approvals?(prerequisite_node)
-          return :all_subjects_from_node
+          :all_subjects_from_node
         else # 'n' approvals needed out of a list of 'm' subjects when 'n'<'m'
-          return :n_subjects_from_node
+          :n_subjects_from_node
         end
       elsif node_content.include?('Curso aprobado')
-        return :subject_course
+        :subject_course
       elsif node_content.include?('Examen aprobado')
-        return :subject_exam
+        :subject_exam
       elsif node_content.include?('Aprobada')
-        return :subject_all
+        :subject_all
       elsif node_content.include?('Inscripción a Curso')
-        return :subject_enrollment
+        :subject_enrollment
       end
     when 'cag' # 'créditos en el Grupo:'
-      return :credits_group
+      :credits_group
     when 'y'
-      return :logical_and_tree
+      :logical_and_tree
     when 'no'
-      return :logical_not_tree
+      :logical_not_tree
     when 'o'
-      return :logical_or_tree
+      :logical_or_tree
     end
   end
 

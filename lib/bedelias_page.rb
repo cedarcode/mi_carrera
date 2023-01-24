@@ -1,5 +1,6 @@
 class BedeliasPage
   attr_reader :browser
+
   delegate :find, :click_on, :all, :first, :within, to: :browser
 
   def initialize(browser)

@@ -1,5 +1,4 @@
 require 'kimurai'
-require 'pp'
 require 'bedelias_page'
 require 'curriculum_page'
 require 'prerequisites_page'
@@ -14,9 +13,9 @@ class BedeliasSpider < Kimurai::Base
   def initialize
     super
 
-    @subject_groups_path = File.join(Rails.root, "db", "data", "scraped_subject_groups.yml")
-    @subjects_path = File.join(Rails.root, "db", "data", "scraped_subjects.yml")
-    @prerequisites_path = File.join(Rails.root, "db", "data", "scraped_prerequisites.yml")
+    @subject_groups_path = Rails.root.join("db/data/scraped_subject_groups.yml")
+    @subjects_path = Rails.root.join("db/data/scraped_subjects.yml")
+    @prerequisites_path = Rails.root.join("db/data/scraped_prerequisites.yml")
   end
 
   def parse_subjects(*_args)
@@ -30,7 +29,7 @@ class BedeliasSpider < Kimurai::Base
       # for each group, get code name min_credits and save it to a json file
       group_details = curriculum_page.group_details(group_node)
 
-      puts "Generating subject group #{group_details[:code]} - #{group_details[:name]}"
+      Rails.logger.info "Generating subject group #{group_details[:code]} - #{group_details[:name]}"
 
       # append group_details to file
       groups[group_details[:code]] = group_details
@@ -56,11 +55,11 @@ class BedeliasSpider < Kimurai::Base
       approvable_details = prerequisites_page.approvable_details(approvable_node)
 
       if subjects[approvable_details[:code]].nil?
-        puts "Warning: skipping #{approvable_details[:code]} - #{approvable_details[:name]}"
+        Rails.logger.info "Warning: skipping #{approvable_details[:code]} - #{approvable_details[:name]}"
         next
       end
 
-      puts(
+      Rails.logger.info(
         "Page #{current_page_number} Generating " +
         "#{approvable_details[:code]} - #{approvable_details[:name]}, #{approvable_details[:type]}"
       )
@@ -84,7 +83,7 @@ class BedeliasSpider < Kimurai::Base
     prerequisites_page.for_each_approvable do |approvable_node, current_page_number|
       approvable_details = prerequisites_page.approvable_details(approvable_node)
 
-      puts(
+      Rails.logger.info(
         "Page #{current_page_number} - Generating prerequisite for " +
         "#{approvable_details[:code]}, #{approvable_details[:is_exam] ? "exam" : "course"}"
       )
