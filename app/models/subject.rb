@@ -9,17 +9,17 @@ class Subject < ApplicationRecord
 
   scope :ordered_by_semester_and_name, -> { order(:semester, :name) }
 
-  scope :with_exam, -> { includes(:exam).where.not(exam: { id: nil }) }
-  scope :without_exam, -> { includes(:exam).where(exam: { id: nil }) }
+  scope :with_exam, -> { includes(:exam, :course).where.not(exam: { id: nil }) }
+  scope :without_exam, -> { includes(:exam, :course).where(exam: { id: nil }) }
 
-  def self.approved_credits(approved_courses, approved_exams)
-    without_exam.where(id: approved_courses).or(
-      with_exam.where(id: approved_exams)
+  def self.approved_credits(approved_approvable_ids)
+    without_exam.where(course: { id: approved_approvable_ids }).or(
+      with_exam.where(exam: { id: approved_approvable_ids })
     ).sum(:credits)
   end
 
-  def approved?(approved_courses, approved_exams)
-    exam ? approved_exams.include?(id) : approved_courses.include?(id)
+  def approved?(approved_approvable_ids)
+    approved_approvable_ids.include?(exam ? exam.id : course.id)
   end
 
   delegate :available?, to: :course
