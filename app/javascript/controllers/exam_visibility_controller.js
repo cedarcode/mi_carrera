@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = [ "exam", "checkbox" ]
 
   approvalChange() {
-    const bedel = this.bedelController;
+    const foregroundLayerController = this.foregroundLayerController;
     let ableToEnrollExam
     let url = '/subjects/' + this.examTarget.dataset.subjectId + '/able_to_enroll';
     let exam = this.examTarget;
@@ -26,11 +26,11 @@ export default class extends Controller {
           [examCheck, examHiddenCheck].forEach(element => element.setAttribute("disabled", "disabled"));
           examCheck.checked = false;
         }
-        bedel.finishUpdate();
+        foregroundLayerController.remove();
       });
   }
 
-  get bedelController() {
-    return this.application.getControllerForElementAndIdentifier(this.element, "bedel")
+  get foregroundLayerController() {
+    return this.application.getControllerForElementAndIdentifier(this.element, "foreground-layer")
   }
 }
