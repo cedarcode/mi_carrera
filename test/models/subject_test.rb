@@ -50,7 +50,7 @@ class SubjectTest < ActiveSupport::TestCase
   end
 
   test "#with_exam returns subjects that require exam" do
-    s1 = create_subject(exam: false) # rubocop:disable Lint/UselessAssignment
+    create_subject(exam: false)
     s2 = create_subject(exam: true)
 
     assert_equal [s2], Subject.with_exam
@@ -58,7 +58,7 @@ class SubjectTest < ActiveSupport::TestCase
 
   test "#without_exam returns subjects that do not require exam" do
     s1 = create_subject(exam: false)
-    s2 = create_subject(exam: true) # rubocop:disable Lint/UselessAssignment
+    create_subject(exam: true)
 
     assert_equal [s1], Subject.without_exam
   end
