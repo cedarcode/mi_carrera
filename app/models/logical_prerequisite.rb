@@ -10,4 +10,15 @@ class LogicalPrerequisite < Prerequisite
   )
 
   validates :logical_operator, inclusion: { in: LOGICAL_OPERATORS, message: "%{value} is not a valid logical operator" }
+
+  def met?(approved_courses, approved_exams)
+    case logical_operator
+    when "and"
+      operands_prerequisites.all? { |prereq| prereq.met?(approved_courses, approved_exams) }
+    when "or"
+      operands_prerequisites.any? { |prereq| prereq.met?(approved_courses, approved_exams) }
+    when "not"
+      operands_prerequisites.none? { |prereq| prereq.met?(approved_courses, approved_exams) }
+    end
+  end
 end
