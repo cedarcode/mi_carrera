@@ -6,11 +6,13 @@
       <%= f.hidden_field :reset_password_token %>
 
       <li class="form-input-container">
-        <div class="mdc-text-field <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:password].any? %>" data-controller="textfield">
-          <%= render 'shared/invalid_icon', resource: resource, field: :password %>
-          <%= f.label :password, "Nueva contraseña", class: "mdc-floating-label" %>
-          <%= f.password_field :password, class: "mdc-text-field__input", autofocus: true %>
-          <div class="mdc-line-ripple"></div>
+        <div class="<%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:password].any? %>">
+          <div class="w-100 mdc-text-field" data-controller="textfield">
+            <%= render 'shared/invalid_icon', resource: resource, field: :password %>
+            <%= f.label :password, "Nueva contraseña", class: "mdc-floating-label" %>
+            <%= f.password_field :password, class: "mdc-text-field__input", autofocus: true %>
+            <div class="mdc-line-ripple"></div>
+          </div>
         </div>
         <%= render 'shared/info_and_errors', resource: resource, field: :password, text: "#{@minimum_password_length} caracteres mínimo" %>
       </li>

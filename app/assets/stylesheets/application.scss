@@ -155,14 +155,6 @@ body {
   margin-top: 10px;
 }
 
-.invalid-feedback {
-  color: red;
-}
-
-.is-invalid {
-  border-color: red;
-}
-
 .menu-user-info {
   padding: 0 16px;
 }
@@ -201,4 +193,12 @@ body {
 .list-item {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.helper-line-padding {
+  padding: 0 16px;
 }

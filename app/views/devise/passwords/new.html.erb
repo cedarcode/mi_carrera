@@ -5,11 +5,13 @@
     <%= form_with(model: resource, url: password_path(resource_name), method: :post, local: true) do |f| %>
 
       <li class="form-input-container">
-        <div class="mdc-text-field <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:email].any? %>" data-controller="textfield">
-          <%= render 'shared/invalid_icon', resource: resource, field: :email %>
-          <%= f.label :email, "Correo electrónico", class: "mdc-floating-label" %>
-          <%= f.email_field :email, class: "mdc-text-field__input", autofocus: true %>
-          <div class="mdc-line-ripple"></div>
+        <div class="<%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:email].any? %>">
+          <div class="w-100 mdc-text-field" data-controller="textfield">
+            <%= render 'shared/invalid_icon', resource: resource, field: :email %>
+            <%= f.label :email, "Correo electrónico", class: "mdc-floating-label" %>
+            <%= f.email_field :email, class: "mdc-text-field__input", autofocus: true %>
+            <div class="mdc-line-ripple"></div>
+          </div>
         </div>
         <%= render 'shared/info_and_errors', resource: resource, field: :email, text: '' %>
       </li>
