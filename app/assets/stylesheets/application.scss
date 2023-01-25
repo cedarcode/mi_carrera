@@ -15,19 +15,6 @@
  */
 
 @import "reset";
-@import "@material/checkbox/mdc-checkbox";
-@import "@material/list/mdc-list";
-@import "@material/icon-button/mdc-icon-button";
-@import "@material/typography/mdc-typography";
-@import "@material/top-app-bar/mdc-top-app-bar";
-@import "@material/menu-surface/mdc-menu-surface";
-@import "@material/menu/mdc-menu";
-@import "@material/drawer/mdc-drawer";
-@import "@material/theme/mdc-theme";
-@import "@material/button/mdc-button";
-@import "@material/textfield/mdc-text-field";
-@import "@material/dialog/mdc-dialog";
-@import "@material/snackbar/mdc-snackbar";
 
 body {
   display: flex;
@@ -132,9 +119,7 @@ body {
   font-size: larger;
 }
 
-// Make ellipsis work on list item (https://github.com/material-components/material-components-web/issues/1912)
 .mdc-list-item__text {
-  @include mdc-typography-overflow-ellipsis;
   display: block;
   flex: 1;
 }

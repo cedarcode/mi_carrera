@@ -1,4 +1,4 @@
-import { Controller } from "stimulus";
+import { Controller } from "@hotwired/stimulus";
 import { MDCDrawer } from "@material/drawer";
 
 export default class extends Controller {
