@@ -45,7 +45,7 @@ class BedeliasSpider < Kimurai::Base
     end
 
     File.open(subject_groups_path, "w") do |file|
-      file.write groups.to_yaml
+      file.write groups.deep_stringify_keys.to_yaml
     end
 
     # got to the prerequisites page
@@ -72,7 +72,7 @@ class BedeliasSpider < Kimurai::Base
 
     # save to a file
     File.open(subjects_path, "w") do |file|
-      file.write subjects.to_yaml
+      file.write subjects.deep_stringify_keys.to_yaml
     end
   end
 
@@ -103,7 +103,7 @@ class BedeliasSpider < Kimurai::Base
 
     File.open(prerequisites_path, "w") do |file|
       data = { prerequisites: prerequisites }
-      file.write data.to_yaml
+      file.write data.deep_stringify_keys.to_yaml
     end
   end
 

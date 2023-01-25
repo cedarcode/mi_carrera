@@ -34,6 +34,7 @@ class PrerequisitesPage < BedeliasPage
 
     if last_visible_page_number >= page
       find(:css, 'span.ui-paginator-page', text: page).click
+      sleep 0.5
     else
       advance_to_page(last_visible_page_number)
       advance_to_page(page)
@@ -48,7 +49,6 @@ class PrerequisitesPage < BedeliasPage
     loop do
       yield(current_page_number)
 
-      sleep 0.5
       break if reached_last_page?
 
       move_to_next_page
@@ -65,7 +65,7 @@ class PrerequisitesPage < BedeliasPage
     {
       code: code,
       type: type,
-      name: name,
+      name: name.downcase.titleize,
       is_exam: is_exam
     }
   end

@@ -12,7 +12,7 @@ class CurriculumPage < BedeliasPage
 
     {
       code: code,
-      name: name,
+      name: name.downcase.titleize,
       min_credits: min_credits.delete('^0-9').to_i
     }
   end
@@ -22,9 +22,11 @@ class CurriculumPage < BedeliasPage
     credits = subject_node.text.split('créditos: ').last.delete('^0-9').to_i
     {
       code: code,
-      name: name,
+      name: name.downcase.titleize,
       credits: credits,
-      has_exam: false
+      has_exam: false,
+      eva_link: nil,
+      openfing_link: nil
     }
   end
 end

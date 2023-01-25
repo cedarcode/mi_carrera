@@ -11,6 +11,7 @@ class BedeliasPage
     click_on "PLANES DE ESTUDIO"
     click_on "Planes de estudio / Previas"
     find(:css, 'h3', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
+    sleep 0.5
     find(:css, 'tr span', text: 'FING - FACULTAD DE INGENIERÍA').click
     within(:css, 'tr', text: 'INGENIERIA EN COMPUTACION', match: :prefer_exact) do
       find(:css, 'div.ui-row-toggler').click
