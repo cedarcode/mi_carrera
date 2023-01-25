@@ -65,7 +65,7 @@ class PrerequisitesPage < BedeliasPage
     {
       code: code,
       type: type,
-      name: name.downcase.titleize,
+      name: name,
       is_exam: is_exam
     }
   end
