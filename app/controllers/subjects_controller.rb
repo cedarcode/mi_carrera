@@ -17,10 +17,6 @@ class SubjectsController < ApplicationController
         bedel.remove_approval(subject.exam)
       end
     end
-    data = { credits: bedel.credits }
-    respond_to do |format|
-      format.json { render json: data }
-    end
   end
 
   def able_to_enroll
