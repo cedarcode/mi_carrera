@@ -3,7 +3,7 @@
     <%= display_name(subject) %>
   <% end %>
   <span class="mdc-list-item__meta two-checkboxes">
-    <%= form_with(model: subject, url: approve_subject_path(subject), data: { controller: "autosave-check", action: "turbo:submit-end->bedel#approvalChange" }, local: false) do |form| %>
+    <%= form_with(model: subject, url: approve_subject_path(subject), data: { controller: "autosave-check" }, local: false) do |form| %>
       <div class="mdc-checkbox">
         <%= form.check_box :course_approved, { id: "checkbox_#{subject.id}_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(subject.course), data: { action: "foreground-layer#add autosave-check#update" } }, "yes", "no" %>
         <div class="mdc-checkbox__background">
@@ -17,7 +17,7 @@
     <% end %>
 
     <% if subject.exam %>
-      <%= form_with(model: subject, url: approve_subject_path(subject), data: { controller: "autosave-check", action: "turbo:submit-end->bedel#approvalChange" }, local: false) do |form| %>
+      <%= form_with(model: subject, url: approve_subject_path(subject), data: { controller: "autosave-check" }, local: false) do |form| %>
         <div class="mdc-checkbox">
           <%= form.check_box :exam_approved, { id: "checkbox_#{subject.id}_exam_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(subject.exam), disabled: !bedel.able_to_do?(subject.exam), data: { action: "foreground-layer#add autosave-check#update" } }, "yes", "no" %>
 

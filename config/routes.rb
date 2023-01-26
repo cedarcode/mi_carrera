@@ -19,7 +19,6 @@ Rails.application.routes.draw do
     end
     collection do
       get :all
-      get 'list' => 'subjects#list_subjects', as: :list
     end
   end
 end

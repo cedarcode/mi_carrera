@@ -1,3 +1,7 @@
 <%= turbo_stream.replace "credits" do %>
   <%= render 'shared/credits_counter' %>
 <% end %>
+
+<%= turbo_stream.replace "subjects" do %>
+  <%= render 'subjects_bulk_approve' %>
+<% end %>

@@ -17,6 +17,8 @@ class SubjectsController < ApplicationController
         bedel.remove_approval(subject.exam)
       end
     end
+
+    @subjects = TreePreloader.new.preload.select { |subject| bedel.able_to_do?(subject.course) }
   end
 
   def able_to_enroll
@@ -29,13 +31,6 @@ class SubjectsController < ApplicationController
   def show
     respond_to do |format|
       format.html { subject }
-    end
-  end
-
-  def list_subjects
-    @subjects = TreePreloader.new.preload.select { |subject| bedel.able_to_do?(subject.course) }
-    respond_to do |format|
-      format.html { render '_subjects_bulk_approve', layout: false }
     end
   end
 
