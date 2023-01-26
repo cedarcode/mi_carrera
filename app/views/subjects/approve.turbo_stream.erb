@@ -1,7 +1,13 @@
-<%= turbo_stream.replace "credits" do %>
-  <%= render 'shared/credits_counter' %>
-<% end %>
+<% if @subjects %>
+  <%= turbo_stream.replace "credits" do %>
+    <%= render 'shared/credits_counter' %>
+  <% end %>
 
-<%= turbo_stream.replace "subjects" do %>
-  <%= render 'subjects_bulk_approve' %>
+  <%= turbo_stream.replace "subjects" do %>
+    <%= render 'subjects_bulk_approve' %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace "approvables" do %>
+    <%= render 'approvables' %>
+  <% end %>
 <% end %>

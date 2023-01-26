@@ -9,8 +9,4 @@ export default class extends Controller {
     });
     this.element.append(foregroundLayer);
   }
-
-  remove() {
-    document.getElementsByClassName("foreground-layer")[0].remove();
-  }
 }

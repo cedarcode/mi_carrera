@@ -18,13 +18,8 @@ class SubjectsController < ApplicationController
       end
     end
 
-    @subjects = TreePreloader.new.preload.select { |subject| bedel.able_to_do?(subject.course) }
-  end
-
-  def able_to_enroll
-    able_to_enroll = { exam: bedel.able_to_do?(subject.exam) }
-    respond_to do |format|
-      format.json { render json: able_to_enroll }
+    unless params[:only_approvables]
+      @subjects = TreePreloader.new.preload.select { |subject| bedel.able_to_do?(subject.course) }
     end
   end
 
