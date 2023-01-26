@@ -22,6 +22,8 @@ class TreePreloader
       prereq.association(:subject_group).target = subject_groups_by_id[prereq.subject_group_id]
     when SubjectPrerequisite
       prereq.association(:approvable_needed).target = approvable_by_id[prereq.approvable_needed_id]
+    else
+      raise "Unknown prerequisite type: #{prereq.class}"
     end
   end
 
