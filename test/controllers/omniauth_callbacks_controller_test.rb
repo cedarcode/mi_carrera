@@ -56,13 +56,13 @@ class OmniauthCallbacksControllerTest < ApplicationControllerTestCase
       subject: {
         course_approved: 'yes'
       },
-      format: 'json'
+      format: 'turbo_stream'
     }
     patch approve_subject_path(subject2), params: {
       subject: {
         exam_approved: 'yes'
       },
-      format: 'json'
+      format: 'turbo_stream'
     }
 
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
