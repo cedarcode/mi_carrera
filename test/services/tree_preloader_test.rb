@@ -1,8 +1,6 @@
 require 'test_helper'
-# require 'tree_preloader'
 
 class TreePreloaderTest < ActiveSupport::TestCase
-
   test "preloaded subjects should be mantained after being destroyed" do
     s1 = create_subject(name: "s1", exam: true)
     s2 = create_subject(name: "s2", exam: true)
@@ -14,6 +12,11 @@ class TreePreloaderTest < ActiveSupport::TestCase
     Approvable.destroy_all
     Prerequisite.destroy_all
 
+    # check all entities are destroyed
+    assert_equal 0, Subject.count
+    assert_equal 0, Approvable.count
+    assert_equal 0, Prerequisite.count
+
     # subjects are mantained
     assert_equal 2, subjects.count
     assert_equal "s1", subjects.first.name
@@ -24,8 +27,7 @@ class TreePreloaderTest < ActiveSupport::TestCase
     assert_equal 2, subjects.map(&:exam).count
 
     # prerequisites are mantained
-    assert_equal 1, subjects.last.course.prerequisite_tree.operands_prerequisites.count
-    assert_equal s1.course, subjects.last.course.prerequisite_tree.operands_prerequisites.first.approvable_needed
-
+    assert_equal SubjectPrerequisite, subjects.last.course.prerequisite_tree.class
+    assert_equal s1.course, subjects.last.course.prerequisite_tree.approvable_needed
   end
 end
