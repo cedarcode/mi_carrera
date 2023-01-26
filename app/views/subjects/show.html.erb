@@ -42,14 +42,14 @@
     </label>
 
     <% if @subject.exam %>
-      <label class="mdc-list-item <%= "mdc-list-item--disabled" if !bedel.able_to_do?(@subject.exam) %>" for="checkbox_exam_approved" data-target="exam-visibility.exam" data-subject-id="<%= @subject.id %>">
+      <label class="mdc-list-item <%= "mdc-list-item--disabled" if !bedel.able_to_do?(@subject.exam) %>" for="checkbox_exam_approved" data-exam-visibility-target="exam" data-subject-id="<%= @subject.id %>">
         <span class="mdc-list-item__text">
           Examen aprobado?
         </span>
 
         <span class="mdc-list-item__meta">
           <%= form_with(model: @subject, url: approve_subject_path(@subject), data: { controller: "autosave-check", action: "ajax:success->foreground-layer#remove" }, local: false) do |form| %>
-            <div class="mdc-checkbox" data-target="exam-visibility.checkbox">
+            <div class="mdc-checkbox" data-exam-visibility-target="checkbox">
               <%= form.check_box :exam_approved, { id: "checkbox_exam_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.exam), disabled: !bedel.able_to_do?(@subject.exam), data: { action: "foreground-layer#add autosave-check#update" } }, "yes", "no" %>
               <div class="mdc-checkbox__background">
                 <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">

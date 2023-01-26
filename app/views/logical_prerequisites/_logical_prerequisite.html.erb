@@ -1,7 +1,7 @@
 <div class="mdc-list" data-controller="prerequisite" >
   <a data-action="click->prerequisite#toggle" >
     <div class="mdc-list-item">
-      <span class="material-icons toggle-collapse" data-target="prerequisite.button">chevron_right</span>
+      <span class="material-icons toggle-collapse" data-prerequisite-target="button">chevron_right</span>
       <% if logical_prerequisite.logical_operator == "or" %>
         Alguno de los siguientes
       <% elsif logical_prerequisite.logical_operator == "and" %>
@@ -11,7 +11,7 @@
       <% end %>
     </div>
   </a>
-  <div class="logical-prerequisite-operands" data-target="prerequisite.collapsable" >
+  <div class="logical-prerequisite-operands" data-prerequisite-target="collapsable" >
     <%= render logical_prerequisite.operands_prerequisites %>
   </div>
 </div>
