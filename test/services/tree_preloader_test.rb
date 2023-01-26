@@ -6,7 +6,7 @@ class TreePreloaderTest < ActiveSupport::TestCase
     s2 = create_subject(name: "s2", exam: true)
     SubjectPrerequisite.create!(approvable_id: s2.course.id, approvable_needed_id: s1.course.id)
 
-    subjects = ::TreePreloader.new.preload.sort_by(&:name)
+    subjects = TreePreloader.new.preload.sort_by(&:name)
 
     Subject.destroy_all
     Approvable.destroy_all
