@@ -17,6 +17,7 @@ gem 'rollbar', '~> 2.19'
 gem 'sassc-rails', '~> 2.1.2'
 gem 'serviceworker-rails', '~> 0.6'
 gem 'stimulus-rails', '~> 1.2'
+gem 'turbo-rails', '~> 1.3'
 
 group :development, :test do
   gem 'byebug', '~> 11.0', platforms: [:mri, :mingw, :x64_mingw]
