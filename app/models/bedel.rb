@@ -29,11 +29,13 @@ class Bedel
   end
 
   def refresh_approvals
+    subjects = TreePreloader.new.preload.index_by(&:id)
+
     loop do
       original_count = amount_of_approved_courses_and_exams()
 
       approved_exams.each do |subject_id|
-        approvable = Approvable.find_by(subject_id: subject_id, is_exam: true)
+        approvable = subjects[subject_id].exam
 
         if !able_to_do?(approvable)
           remove_approved_exam(subject_id)
@@ -41,7 +43,7 @@ class Bedel
       end
 
       approved_courses.each do |subject_id|
-        approvable = Approvable.find_by(subject_id: subject_id, is_exam: false)
+        approvable = subjects[subject_id].course
 
         if !able_to_do?(approvable)
           remove_approved_course(subject_id)
