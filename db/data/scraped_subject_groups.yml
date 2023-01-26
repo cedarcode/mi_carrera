@@ -1,53 +1,53 @@
 ---
 '4083':
   code: '4083'
-  name: Matematica
+  name: MATEMATICA
   min_credits: 70
 '4442':
   code: '4442'
-  name: Ciencias Experimentales
+  name: CIENCIAS EXPERIMENTALES
   min_credits: 10
 '4580':
   code: '4580'
-  name: Programacion
+  name: PROGRAMACION
   min_credits: 60
 '4428':
   code: '4428'
-  name: Arquit, S.Op. Y Redes De Comp.
+  name: ARQUIT, S.OP. Y REDES DE COMP.
   min_credits: 30
 '4882':
   code: '4882'
-  name: Int.Artificial Y Robotica
+  name: INT.ARTIFICIAL Y ROBOTICA
   min_credits: 0
 '4647':
   code: '4647'
-  name: B.Datos Y Sist. De Informacion
+  name: B.DATOS Y SIST. DE INFORMACION
   min_credits: 10
 '5020':
   code: '5020'
-  name: Calculo Numerico Y Simbolico
+  name: CALCULO NUMERICO Y SIMBOLICO
   min_credits: 8
 '4815':
   code: '4815'
-  name: Investigacion Operativa
+  name: INVESTIGACION OPERATIVA
   min_credits: 10
 '5082':
   code: '5082'
-  name: Ingenieria De Software
+  name: INGENIERIA DE SOFTWARE
   min_credits: 10
 '4756':
   code: '4756'
-  name: A.Integ,Talleres,Pasant.Y Proy
+  name: A.INTEG,TALLERES,PASANT.Y PROY
   min_credits: 45
 '4066':
   code: '4066'
-  name: Gestion En Organizaciones
+  name: GESTION EN ORGANIZACIONES
   min_credits: 10
 '5265':
   code: '5265'
-  name: Ciencias Humanas Y Sociales
+  name: CIENCIAS HUMANAS Y SOCIALES
   min_credits: 10
 '3582':
   code: '3582'
-  name: Materias Opcionales
+  name: MATERIAS OPCIONALES
   min_credits: 0

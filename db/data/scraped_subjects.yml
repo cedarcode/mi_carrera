@@ -1,7 +1,7 @@
 ---
 CIM22:
   code: CIM22
-  name: Topología
+  name: TOPOLOGÍA
   credits: 12
   has_exam: true
   eva_link:
@@ -9,7 +9,7 @@ CIM22:
   subject_group: '4083'
 SRN14:
   code: SRN14
-  name: Matemática Discreta I
+  name: MATEMÁTICA DISCRETA I
   credits: 10
   has_exam: false
   eva_link:
@@ -17,7 +17,7 @@ SRN14:
   subject_group: '4083'
 CIM11:
   code: CIM11
-  name: Matemática Discreta 2
+  name: MATEMÁTICA DISCRETA 2
   credits: 10
   has_exam: true
   eva_link:
@@ -25,7 +25,7 @@ CIM11:
   subject_group: '4083'
 CH201:
   code: CH201
-  name: Probabilidad Y Estadística
+  name: PROBABILIDAD Y ESTADÍSTICA
   credits: 10
   has_exam: true
   eva_link:
@@ -33,7 +33,7 @@ CH201:
   subject_group: '4083'
 CIM24:
   code: CIM24
-  name: Ecuaciones Diferenciales
+  name: ECUACIONES DIFERENCIALES
   credits: 10
   has_exam: true
   eva_link:
@@ -41,7 +41,7 @@ CIM24:
   subject_group: '4083'
 CIM10:
   code: CIM10
-  name: Cálculo Vectorial
+  name: CÁLCULO VECTORIAL
   credits: 12
   has_exam: true
   eva_link:
@@ -49,7 +49,7 @@ CIM10:
   subject_group: '4083'
 SRN09:
   code: SRN09
-  name: Cálculo Ii
+  name: CÁLCULO II
   credits: 16
   has_exam: true
   eva_link:
@@ -57,7 +57,7 @@ SRN09:
   subject_group: '4083'
 SRN02:
   code: SRN02
-  name: Cálculo I
+  name: CÁLCULO I
   credits: 16
   has_exam: true
   eva_link:
@@ -65,7 +65,7 @@ SRN02:
   subject_group: '4083'
 SRN10:
   code: SRN10
-  name: Algebra Lineal Ii
+  name: ALGEBRA LINEAL II
   credits: 12
   has_exam: true
   eva_link:
@@ -73,7 +73,7 @@ SRN10:
   subject_group: '4083'
 SRN03:
   code: SRN03
-  name: Algebra Lineal I
+  name: ALGEBRA LINEAL I
   credits: 12
   has_exam: true
   eva_link:
@@ -81,7 +81,7 @@ SRN03:
   subject_group: '4083'
 '1886':
   code: '1886'
-  name: Topologia Y Analisis Real
+  name: TOPOLOGIA Y ANALISIS REAL
   credits: 10
   has_exam: false
   eva_link:
@@ -89,7 +89,7 @@ SRN03:
   subject_group: '4083'
 '1066':
   code: '1066'
-  name: Funciones De Variable Compleja
+  name: FUNCIONES DE VARIABLE COMPLEJA
   credits: 5
   has_exam: true
   eva_link:
@@ -97,7 +97,7 @@ SRN03:
   subject_group: '4083'
 1025T:
   code: 1025T
-  name: Creditos No Acum Probabilidad Y Estadistica
+  name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
   credits: 8
   has_exam: false
   eva_link:
@@ -105,7 +105,7 @@ SRN03:
   subject_group: '4083'
 D87:
   code: D87
-  name: Teoría De Juegos
+  name: TEORÍA DE JUEGOS
   credits: 6
   has_exam: true
   eva_link:
@@ -113,7 +113,7 @@ D87:
   subject_group: '4083'
 MI2:
   code: MI2
-  name: Matematica Inicial
+  name: MATEMATICA INICIAL
   credits: 4
   has_exam: true
   eva_link:
@@ -121,7 +121,7 @@ MI2:
   subject_group: '4083'
 M09:
   code: M09
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 9
   has_exam: false
   eva_link:
@@ -129,7 +129,7 @@ M09:
   subject_group: '4083'
 M5:
   code: M5
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 5
   has_exam: false
   eva_link:
@@ -137,7 +137,7 @@ M5:
   subject_group: '4083'
 GP5:
   code: GP5
-  name: Estadistica Espacial
+  name: ESTADISTICA ESPACIAL
   credits: 5
   has_exam: false
   eva_link:
@@ -145,7 +145,7 @@ GP5:
   subject_group: '4083'
 MA015:
   code: MA015
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 15
   has_exam: false
   eva_link:
@@ -153,7 +153,7 @@ MA015:
   subject_group: '4083'
 MA48:
   code: MA48
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 48
   has_exam: false
   eva_link:
@@ -161,7 +161,7 @@ MA48:
   subject_group: '4083'
 MA11:
   code: MA11
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 11
   has_exam: false
   eva_link:
@@ -169,7 +169,7 @@ MA11:
   subject_group: '4083'
 MA020:
   code: MA020
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 20
   has_exam: false
   eva_link:
@@ -177,7 +177,7 @@ MA020:
   subject_group: '4083'
 CAL12:
   code: CAL12
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 12
   has_exam: false
   eva_link:
@@ -185,7 +185,7 @@ CAL12:
   subject_group: '4083'
 '2415':
   code: '2415'
-  name: Codigos Para Correccion De Errores
+  name: CODIGOS PARA CORRECCION DE ERRORES
   credits: 8
   has_exam: false
   eva_link:
@@ -193,7 +193,7 @@ CAL12:
   subject_group: '4083'
 CAL10:
   code: CAL10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -201,7 +201,7 @@ CAL10:
   subject_group: '4083'
 CP7:
   code: CP7
-  name: Analisis Complejo
+  name: ANALISIS COMPLEJO
   credits: 10
   has_exam: false
   eva_link:
@@ -209,7 +209,7 @@ CP7:
   subject_group: '4083'
 CP1:
   code: CP1
-  name: Analisis Matematico I
+  name: ANALISIS MATEMATICO I
   credits: 33
   has_exam: false
   eva_link:
@@ -217,7 +217,7 @@ CP1:
   subject_group: '4083'
 CP22:
   code: CP22
-  name: Analisis Matematico I (P. 74)
+  name: ANALISIS MATEMATICO I (P. 74)
   credits: 33
   has_exam: false
   eva_link:
@@ -225,7 +225,7 @@ CP22:
   subject_group: '4083'
 CP44:
   code: CP44
-  name: Analisis Matematico I (1er.Sem.)
+  name: ANALISIS MATEMATICO I (1ER.SEM.)
   credits: 17
   has_exam: false
   eva_link:
@@ -233,7 +233,7 @@ CP44:
   subject_group: '4083'
 CP45:
   code: CP45
-  name: Analisis Matematico I (2do.Sem.)
+  name: ANALISIS MATEMATICO I (2DO.SEM.)
   credits: 16
   has_exam: false
   eva_link:
@@ -241,7 +241,7 @@ CP45:
   subject_group: '4083'
 CP6:
   code: CP6
-  name: Analisis Matematico Ii
+  name: ANALISIS MATEMATICO II
   credits: 33
   has_exam: false
   eva_link:
@@ -249,7 +249,7 @@ CP6:
   subject_group: '4083'
 CP25:
   code: CP25
-  name: Analisis Matematico Ii (P. 74)
+  name: ANALISIS MATEMATICO II (P. 74)
   credits: 33
   has_exam: false
   eva_link:
@@ -257,7 +257,7 @@ CP25:
   subject_group: '4083'
 CP48:
   code: CP48
-  name: Analisis Matematico Ii (1er.Sem.)
+  name: ANALISIS MATEMATICO II (1ER.SEM.)
   credits: 16
   has_exam: false
   eva_link:
@@ -265,7 +265,7 @@ CP48:
   subject_group: '4083'
 CP49:
   code: CP49
-  name: Analisis Matematico Ii (2do.Sem.)
+  name: ANALISIS MATEMATICO II (2DO.SEM.)
   credits: 17
   has_exam: false
   eva_link:
@@ -273,7 +273,7 @@ CP49:
   subject_group: '4083'
 '1061':
   code: '1061'
-  name: Calculo Dif. E Integral En Una Variable
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
   credits: 13
   has_exam: true
   eva_link:
@@ -281,7 +281,7 @@ CP49:
   subject_group: '4083'
 '1020':
   code: '1020'
-  name: Calculo 1
+  name: CALCULO 1
   credits: 16
   has_exam: true
   eva_link:
@@ -289,7 +289,7 @@ CP49:
   subject_group: '4083'
 '1070':
   code: '1070'
-  name: Calculo 1
+  name: CALCULO 1
   credits: 16
   has_exam: false
   eva_link:
@@ -297,7 +297,7 @@ CP49:
   subject_group: '4083'
 '1052':
   code: '1052'
-  name: Calculo 1 (Anual)
+  name: CALCULO 1 (ANUAL)
   credits: 16
   has_exam: true
   eva_link:
@@ -305,7 +305,7 @@ CP49:
   subject_group: '4083'
 '1062':
   code: '1062'
-  name: Calculo Dif. E Integral En Varias Variables
+  name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
   credits: 13
   has_exam: true
   eva_link:
@@ -313,7 +313,7 @@ CP49:
   subject_group: '4083'
 '1022':
   code: '1022'
-  name: Calculo 2
+  name: CALCULO 2
   credits: 16
   has_exam: true
   eva_link:
@@ -321,7 +321,7 @@ CP49:
   subject_group: '4083'
 '1072':
   code: '1072'
-  name: Calculo 2
+  name: CALCULO 2
   credits: 16
   has_exam: false
   eva_link:
@@ -329,7 +329,7 @@ CP49:
   subject_group: '4083'
 '1063':
   code: '1063'
-  name: Calculo Vectorial
+  name: CALCULO VECTORIAL
   credits: 10
   has_exam: true
   eva_link:
@@ -337,7 +337,7 @@ CP49:
   subject_group: '4083'
 '1024':
   code: '1024'
-  name: Calculo 3
+  name: CALCULO 3
   credits: 10
   has_exam: true
   eva_link:
@@ -345,7 +345,7 @@ CP49:
   subject_group: '4083'
 '1076':
   code: '1076'
-  name: Calculo 3
+  name: CALCULO 3
   credits: 10
   has_exam: false
   eva_link:
@@ -353,7 +353,7 @@ CP49:
   subject_group: '4083'
 '1021':
   code: '1021'
-  name: Algebra Lineal
+  name: ALGEBRA LINEAL
   credits: 18
   has_exam: false
   eva_link:
@@ -361,7 +361,7 @@ CP49:
   subject_group: '4083'
 CP2:
   code: CP2
-  name: Geometria Y Algebra Lineal
+  name: GEOMETRIA Y ALGEBRA LINEAL
   credits: 24
   has_exam: false
   eva_link:
@@ -369,7 +369,7 @@ CP2:
   subject_group: '4083'
 CP23:
   code: CP23
-  name: Geometria Y Algebra Lineal (P. 74)
+  name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
   credits: 24
   has_exam: false
   eva_link:
@@ -377,7 +377,7 @@ CP23:
   subject_group: '4083'
 CP46:
   code: CP46
-  name: Geometria Y Algebra Lineal (1er.Sem.)
+  name: GEOMETRIA Y ALGEBRA LINEAL (1ER.SEM.)
   credits: 12
   has_exam: false
   eva_link:
@@ -385,7 +385,7 @@ CP46:
   subject_group: '4083'
 CP47:
   code: CP47
-  name: Geometria Y Algebra Lineal (2do.Sem.)
+  name: GEOMETRIA Y ALGEBRA LINEAL (2DO.SEM.)
   credits: 12
   has_exam: false
   eva_link:
@@ -393,7 +393,7 @@ CP47:
   subject_group: '4083'
 '1030':
   code: '1030'
-  name: Geometria Y Algebra Lineal 1
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
   credits: 9
   has_exam: true
   eva_link:
@@ -401,7 +401,7 @@ CP47:
   subject_group: '4083'
 '1071':
   code: '1071'
-  name: Geometria Y Algebra Lineal 1
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
   credits: 9
   has_exam: false
   eva_link:
@@ -409,7 +409,7 @@ CP47:
   subject_group: '4083'
 '1053':
   code: '1053'
-  name: Geometria Y Algebra Lineal 1 (Anual)
+  name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
   credits: 9
   has_exam: true
   eva_link:
@@ -417,7 +417,7 @@ CP47:
   subject_group: '4083'
 '1031':
   code: '1031'
-  name: Geometria Y Algebra Lineal 2
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
   credits: 9
   has_exam: true
   eva_link:
@@ -425,7 +425,7 @@ CP47:
   subject_group: '4083'
 '1058':
   code: '1058'
-  name: Geometria Y Algebra Lineal 2
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
   credits: 9
   has_exam: false
   eva_link:
@@ -433,7 +433,7 @@ CP47:
   subject_group: '4083'
 '1012':
   code: '1012'
-  name: Combinatoria Analitica
+  name: COMBINATORIA ANALITICA
   credits: 8
   has_exam: false
   eva_link:
@@ -441,7 +441,7 @@ CP47:
   subject_group: '4083'
 '1065':
   code: '1065'
-  name: Teoria De Cod. Algeb. Para Corr. De Errores
+  name: TEORIA DE COD. ALGEB. PARA CORR. DE ERRORES
   credits: 7
   has_exam: false
   eva_link:
@@ -449,7 +449,7 @@ CP47:
   subject_group: '4083'
 '1059':
   code: '1059'
-  name: Criptografia:Aspectos Teor. Y Practicos
+  name: CRIPTOGRAFIA:ASPECTOS TEOR. Y PRACTICOS
   credits: 12
   has_exam: false
   eva_link:
@@ -457,7 +457,7 @@ CP47:
   subject_group: '4083'
 '1049':
   code: '1049'
-  name: Inferencia Ii (Estadistica Bayesiana)
+  name: INFERENCIA II (ESTADISTICA BAYESIANA)
   credits: 10
   has_exam: false
   eva_link:
@@ -465,7 +465,7 @@ CP47:
   subject_group: '4083'
 '1450':
   code: '1450'
-  name: Int. A La Teoria De La Informacion
+  name: INT. A LA TEORIA DE LA INFORMACION
   credits: 8
   has_exam: false
   eva_link:
@@ -473,7 +473,7 @@ CP47:
   subject_group: '4083'
 C461:
   code: C461
-  name: Int. A La Topologia
+  name: INT. A LA TOPOLOGIA
   credits: 10
   has_exam: false
   eva_link:
@@ -481,7 +481,7 @@ C461:
   subject_group: '4083'
 CP4:
   code: CP4
-  name: Logica
+  name: LOGICA
   credits: 10
   has_exam: false
   eva_link:
@@ -489,7 +489,7 @@ CP4:
   subject_group: '4083'
 '1027':
   code: '1027'
-  name: Logica
+  name: LOGICA
   credits: 12
   has_exam: true
   eva_link:
@@ -497,7 +497,7 @@ CP4:
   subject_group: '4083'
 '1013':
   code: '1013'
-  name: Logica Modalidad Al Reves
+  name: LOGICA MODALIDAD AL REVES
   credits: 12
   has_exam: true
   eva_link:
@@ -505,7 +505,7 @@ CP4:
   subject_group: '4083'
 '1010':
   code: '1010'
-  name: Logica Y Computacion
+  name: LOGICA Y COMPUTACION
   credits: 12
   has_exam: false
   eva_link:
@@ -513,7 +513,7 @@ CP4:
   subject_group: '4083'
 '1023':
   code: '1023'
-  name: Matematica Discreta 1
+  name: MATEMATICA DISCRETA 1
   credits: 9
   has_exam: true
   eva_link:
@@ -521,7 +521,7 @@ CP4:
   subject_group: '4083'
 '1026':
   code: '1026'
-  name: Matematica Discreta 2
+  name: MATEMATICA DISCRETA 2
   credits: 9
   has_exam: true
   eva_link:
@@ -529,7 +529,7 @@ CP4:
   subject_group: '4083'
 '1064':
   code: '1064'
-  name: Int. A Las Ecuaciones Diferenciales
+  name: INT. A LAS ECUACIONES DIFERENCIALES
   credits: 10
   has_exam: true
   eva_link:
@@ -537,7 +537,7 @@ CP4:
   subject_group: '4083'
 '1028':
   code: '1028'
-  name: Ecuaciones Diferenciales
+  name: ECUACIONES DIFERENCIALES
   credits: 12
   has_exam: true
   eva_link:
@@ -545,7 +545,7 @@ CP4:
   subject_group: '4083'
 '1074':
   code: '1074'
-  name: Ecuaciones Diferenciales
+  name: ECUACIONES DIFERENCIALES
   credits: 12
   has_exam: false
   eva_link:
@@ -553,7 +553,7 @@ CP4:
   subject_group: '4083'
 '1025':
   code: '1025'
-  name: Probabilidad Y Estadistica
+  name: PROBABILIDAD Y ESTADISTICA
   credits: 10
   has_exam: true
   eva_link:
@@ -561,7 +561,7 @@ CP4:
   subject_group: '4083'
 '1075':
   code: '1075'
-  name: Probabilidad Y Estadistica
+  name: PROBABILIDAD Y ESTADISTICA
   credits: 10
   has_exam: false
   eva_link:
@@ -569,7 +569,7 @@ CP4:
   subject_group: '4083'
 '1043':
   code: '1043'
-  name: Teoria Algebraica De Grafos
+  name: TEORIA ALGEBRAICA DE GRAFOS
   credits: 15
   has_exam: false
   eva_link:
@@ -577,7 +577,7 @@ CP4:
   subject_group: '4083'
 '1042':
   code: '1042'
-  name: Teoria De Cod. Algebr. Para Correc. De Errores
+  name: TEORIA DE COD. ALGEBR. PARA CORREC. DE ERRORES
   credits: 7
   has_exam: false
   eva_link:
@@ -585,7 +585,7 @@ CP4:
   subject_group: '4083'
 '1046':
   code: '1046'
-  name: Teoria De Codigos
+  name: TEORIA DE CODIGOS
   credits: 12
   has_exam: false
   eva_link:
@@ -593,7 +593,7 @@ CP4:
   subject_group: '4083'
 '1011':
   code: '1011'
-  name: Teoria De Codigos Avanzado
+  name: TEORIA DE CODIGOS AVANZADO
   credits: 6
   has_exam: false
   eva_link:
@@ -601,7 +601,7 @@ CP4:
   subject_group: '4083'
 '1037':
   code: '1037'
-  name: Teoria De Juegos Y Prog. Funcional
+  name: TEORIA DE JUEGOS Y PROG. FUNCIONAL
   credits: 7
   has_exam: false
   eva_link:
@@ -609,7 +609,7 @@ CP4:
   subject_group: '4083'
 '1034':
   code: '1034'
-  name: Teoria De Juegos Y Prog. Funcional
+  name: TEORIA DE JUEGOS Y PROG. FUNCIONAL
   credits: 9
   has_exam: false
   eva_link:
@@ -617,7 +617,7 @@ CP4:
   subject_group: '4083'
 '1233':
   code: '1233'
-  name: Tutoria En Matematica
+  name: TUTORIA EN MATEMATICA
   credits: 4
   has_exam: false
   eva_link:
@@ -625,7 +625,7 @@ CP4:
   subject_group: '4756'
 GAL7:
   code: GAL7
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 7
   has_exam: false
   eva_link:
@@ -633,7 +633,7 @@ GAL7:
   subject_group: '4083'
 MAT10:
   code: MAT10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -641,7 +641,7 @@ MAT10:
   subject_group: '4083'
 MAT33:
   code: MAT33
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 33
   has_exam: false
   eva_link:
@@ -649,7 +649,7 @@ MAT33:
   subject_group: '4083'
 MAT6:
   code: MAT6
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 6
   has_exam: false
   eva_link:
@@ -657,7 +657,7 @@ MAT6:
   subject_group: '4083'
 MAT8:
   code: MAT8
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -665,7 +665,7 @@ MAT8:
   subject_group: '4083'
 MA10:
   code: MA10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -673,7 +673,7 @@ MA10:
   subject_group: '4083'
 MA15:
   code: MA15
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 15
   has_exam: false
   eva_link:
@@ -681,7 +681,7 @@ MA15:
   subject_group: '4083'
 MA16:
   code: MA16
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 16
   has_exam: false
   eva_link:
@@ -689,7 +689,7 @@ MA16:
   subject_group: '4083'
 MA20:
   code: MA20
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 20
   has_exam: false
   eva_link:
@@ -697,7 +697,7 @@ MA20:
   subject_group: '4083'
 MA24:
   code: MA24
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 24
   has_exam: false
   eva_link:
@@ -705,7 +705,7 @@ MA24:
   subject_group: '4083'
 MA25:
   code: MA25
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 25
   has_exam: false
   eva_link:
@@ -713,7 +713,7 @@ MA25:
   subject_group: '4083'
 MA29:
   code: MA29
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 29
   has_exam: false
   eva_link:
@@ -721,7 +721,7 @@ MA29:
   subject_group: '4083'
 MA3:
   code: MA3
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 3
   has_exam: false
   eva_link:
@@ -729,7 +729,7 @@ MA3:
   subject_group: '4083'
 MA5:
   code: MA5
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 5
   has_exam: false
   eva_link:
@@ -737,7 +737,7 @@ MA5:
   subject_group: '4083'
 MA9:
   code: MA9
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 9
   has_exam: false
   eva_link:
@@ -745,7 +745,7 @@ MA9:
   subject_group: '4083'
 MC13:
   code: MC13
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 13
   has_exam: false
   eva_link:
@@ -753,7 +753,7 @@ MC13:
   subject_group: '4083'
 MC3:
   code: MC3
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 12
   has_exam: false
   eva_link:
@@ -761,7 +761,7 @@ MC3:
   subject_group: '4083'
 MEC:
   code: MEC
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 9
   has_exam: false
   eva_link:
@@ -769,7 +769,7 @@ MEC:
   subject_group: '4083'
 M1:
   code: M1
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 1
   has_exam: false
   eva_link:
@@ -777,7 +777,7 @@ M1:
   subject_group: '4083'
 M12:
   code: M12
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 12
   has_exam: false
   eva_link:
@@ -785,7 +785,7 @@ M12:
   subject_group: '4083'
 M24:
   code: M24
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 24
   has_exam: false
   eva_link:
@@ -793,7 +793,7 @@ M24:
   subject_group: '4083'
 M9:
   code: M9
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 9
   has_exam: false
   eva_link:
@@ -801,7 +801,7 @@ M9:
   subject_group: '4083'
 SRN26:
   code: SRN26
-  name: Física 3
+  name: FÍSICA 3
   credits: 10
   has_exam: true
   eva_link:
@@ -809,7 +809,7 @@ SRN26:
   subject_group: '4442'
 SRN11:
   code: SRN11
-  name: Física 2
+  name: FÍSICA 2
   credits: 10
   has_exam: true
   eva_link:
@@ -817,7 +817,7 @@ SRN11:
   subject_group: '4442'
 REF04:
   code: REF04
-  name: Física 1
+  name: FÍSICA 1
   credits: 10
   has_exam: true
   eva_link:
@@ -825,7 +825,7 @@ REF04:
   subject_group: '4442'
 MHC16:
   code: MHC16
-  name: 'Bioquímica 1 (2020 '
+  name: BIOQUÍMICA 1 (2020-
   credits: 13
   has_exam: false
   eva_link:
@@ -833,7 +833,7 @@ MHC16:
   subject_group: '4442'
 MHC24:
   code: MHC24
-  name: Genética General
+  name: GENÉTICA GENERAL
   credits: 14
   has_exam: false
   eva_link:
@@ -841,7 +841,7 @@ MHC24:
   subject_group: '4442'
 MHC20:
   code: MHC20
-  name: Genómica
+  name: GENÓMICA
   credits: 10
   has_exam: false
   eva_link:
@@ -849,7 +849,7 @@ MHC20:
   subject_group: '4442'
 M000:
   code: M000
-  name: Metodos Cuantitativos Iii
+  name: METODOS CUANTITATIVOS III
   credits: 6
   has_exam: false
   eva_link:
@@ -857,7 +857,7 @@ M000:
   subject_group: '4442'
 203EU:
   code: 203EU
-  name: Introducción A Las Ciencias Biológicas Ii (Teórico)
+  name: INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS II (TEÓRICO)
   credits: 4
   has_exam: true
   eva_link:
@@ -865,7 +865,7 @@ M000:
   subject_group: '4442'
 M001:
   code: M001
-  name: Mm. Cc. Iii
+  name: MM. CC. III
   credits: 4
   has_exam: true
   eva_link:
@@ -873,7 +873,7 @@ M001:
   subject_group: '4442'
 CE5:
   code: CE5
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 5
   has_exam: false
   eva_link:
@@ -881,7 +881,7 @@ CE5:
   subject_group: '4442'
 CE10:
   code: CE10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -889,7 +889,7 @@ CE10:
   subject_group: '4442'
 FA4:
   code: FA4
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 4
   has_exam: false
   eva_link:
@@ -897,7 +897,7 @@ FA4:
   subject_group: '4442'
 CE12:
   code: CE12
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 12
   has_exam: false
   eva_link:
@@ -905,7 +905,7 @@ CE12:
   subject_group: '4442'
 CP217:
   code: CP217
-  name: Mecanica General I
+  name: MECANICA GENERAL I
   credits: 12
   has_exam: false
   eva_link:
@@ -913,7 +913,7 @@ CP217:
   subject_group: '4442'
 CP26:
   code: CP26
-  name: Mecanica General I (P. 74)
+  name: MECANICA GENERAL I (P. 74)
   credits: 22
   has_exam: false
   eva_link:
@@ -921,7 +921,7 @@ CP26:
   subject_group: '4442'
 CP40:
   code: CP40
-  name: Mecanica General Ii (P. 74)
+  name: MECANICA GENERAL II (P. 74)
   credits: 20
   has_exam: false
   eva_link:
@@ -929,7 +929,7 @@ CP40:
   subject_group: '4442'
 CP3:
   code: CP3
-  name: Mecanica I
+  name: MECANICA I
   credits: 12
   has_exam: false
   eva_link:
@@ -937,7 +937,7 @@ CP3:
   subject_group: '4442'
 CP17:
   code: CP17
-  name: Mecanica I (Transicion)
+  name: MECANICA I (TRANSICION)
   credits: 12
   has_exam: false
   eva_link:
@@ -945,7 +945,7 @@ CP17:
   subject_group: '4442'
 CP8:
   code: CP8
-  name: Mecanica Ii
+  name: MECANICA II
   credits: 24
   has_exam: false
   eva_link:
@@ -953,7 +953,7 @@ CP8:
   subject_group: '4442'
 '1120':
   code: '1120'
-  name: Fisica General 1
+  name: FISICA GENERAL 1
   credits: 13
   has_exam: false
   eva_link:
@@ -961,7 +961,7 @@ CP8:
   subject_group: '4442'
 '1170':
   code: '1170'
-  name: Fisica General 1
+  name: FISICA GENERAL 1
   credits: 13
   has_exam: false
   eva_link:
@@ -969,7 +969,7 @@ CP8:
   subject_group: '4442'
 '1121':
   code: '1121'
-  name: Fisica General 2
+  name: FISICA GENERAL 2
   credits: 13
   has_exam: false
   eva_link:
@@ -977,7 +977,7 @@ CP8:
   subject_group: '4442'
 '1172':
   code: '1172'
-  name: Fisica General 2
+  name: FISICA GENERAL 2
   credits: 13
   has_exam: false
   eva_link:
@@ -985,7 +985,7 @@ CP8:
   subject_group: '4442'
 CP41:
   code: CP41
-  name: Fisica I (P. 74)
+  name: FISICA I (P. 74)
   credits: 22
   has_exam: false
   eva_link:
@@ -993,7 +993,7 @@ CP41:
   subject_group: '4442'
 CP42:
   code: CP42
-  name: Fisica Ii (P. 74)
+  name: FISICA II (P. 74)
   credits: 22
   has_exam: false
   eva_link:
@@ -1001,7 +1001,7 @@ CP42:
   subject_group: '4442'
 CP43:
   code: CP43
-  name: Fisica Iii (P. 74)
+  name: FISICA III (P. 74)
   credits: 20
   has_exam: false
   eva_link:
@@ -1009,7 +1009,7 @@ CP43:
   subject_group: '4442'
 '1151':
   code: '1151'
-  name: Fisica 1
+  name: FISICA 1
   credits: 10
   has_exam: true
   eva_link:
@@ -1017,7 +1017,7 @@ CP43:
   subject_group: '4442'
 '1171':
   code: '1171'
-  name: Fisica 1
+  name: FISICA 1
   credits: 10
   has_exam: false
   eva_link:
@@ -1025,7 +1025,7 @@ CP43:
   subject_group: '4442'
 '1077':
   code: '1077'
-  name: Fisica 2
+  name: FISICA 2
   credits: 7
   has_exam: false
   eva_link:
@@ -1033,7 +1033,7 @@ CP43:
   subject_group: '4442'
 '1152':
   code: '1152'
-  name: Fisica 2
+  name: FISICA 2
   credits: 10
   has_exam: true
   eva_link:
@@ -1041,7 +1041,7 @@ CP43:
   subject_group: '4442'
 '1153':
   code: '1153'
-  name: Fisica 3
+  name: FISICA 3
   credits: 10
   has_exam: true
   eva_link:
@@ -1049,7 +1049,7 @@ CP43:
   subject_group: '4442'
 '1173':
   code: '1173'
-  name: Fisica 3
+  name: FISICA 3
   credits: 10
   has_exam: false
   eva_link:
@@ -1057,7 +1057,7 @@ CP43:
   subject_group: '4442'
 '1131':
   code: '1131'
-  name: Int. A La Fisica Moderna
+  name: INT. A LA FISICA MODERNA
   credits: 10
   has_exam: true
   eva_link:
@@ -1065,7 +1065,7 @@ CP43:
   subject_group: '4442'
 CEX28:
   code: CEX28
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
   has_exam: false
   eva_link:
@@ -1073,7 +1073,7 @@ CEX28:
   subject_group: '4442'
 CE11:
   code: CE11
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 11
   has_exam: false
   eva_link:
@@ -1081,7 +1081,7 @@ CE11:
   subject_group: '4442'
 CE2:
   code: CE2
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 2
   has_exam: false
   eva_link:
@@ -1089,7 +1089,7 @@ CE2:
   subject_group: '4442'
 FA8:
   code: FA8
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -1097,7 +1097,7 @@ FA8:
   subject_group: '4442'
 FF10:
   code: FF10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -1105,7 +1105,7 @@ FF10:
   subject_group: '4442'
 FG:
   code: FG
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 7
   has_exam: false
   eva_link:
@@ -1113,7 +1113,7 @@ FG:
   subject_group: '4442'
 FG2:
   code: FG2
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 13
   has_exam: false
   eva_link:
@@ -1121,7 +1121,7 @@ FG2:
   subject_group: '4442'
 FIS14:
   code: FIS14
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 14
   has_exam: false
   eva_link:
@@ -1129,7 +1129,7 @@ FIS14:
   subject_group: '4442'
 FIS8:
   code: FIS8
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -1137,7 +1137,7 @@ FIS8:
   subject_group: '4442'
 FI10:
   code: FI10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -1145,7 +1145,7 @@ FI10:
   subject_group: '4442'
 FL1:
   code: FL1
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -1153,7 +1153,7 @@ FL1:
   subject_group: '4442'
 FL2:
   code: FL2
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -1161,7 +1161,7 @@ FL2:
   subject_group: '4442'
 FL8:
   code: FL8
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -1169,7 +1169,7 @@ FL8:
   subject_group: '4442'
 F2:
   code: F2
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 7
   has_exam: false
   eva_link:
@@ -1177,7 +1177,7 @@ F2:
   subject_group: '4442'
 F66:
   code: F66
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 66
   has_exam: false
   eva_link:
@@ -1185,7 +1185,7 @@ F66:
   subject_group: '4442'
 SRN17:
   code: SRN17
-  name: Programación I
+  name: PROGRAMACIÓN I
   credits: 10
   has_exam: true
   eva_link:
@@ -1193,7 +1193,7 @@ SRN17:
   subject_group: '4580'
 '1373':
   code: '1373'
-  name: Programacion 1
+  name: PROGRAMACION 1
   credits: 10
   has_exam: true
   eva_link:
@@ -1201,7 +1201,7 @@ SRN17:
   subject_group: '4580'
 1322T:
   code: 1322T
-  name: Programacion 1
+  name: PROGRAMACION 1
   credits: 10
   has_exam: false
   eva_link:
@@ -1209,7 +1209,7 @@ SRN17:
   subject_group: '4580'
 '1145':
   code: '1145'
-  name: Vision 3d
+  name: VISION 3D
   credits: 12
   has_exam: false
   eva_link:
@@ -1217,7 +1217,7 @@ SRN17:
   subject_group: '4580'
 PR4:
   code: PR4
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 4
   has_exam: false
   eva_link:
@@ -1225,7 +1225,7 @@ PR4:
   subject_group: '4580'
 PR10:
   code: PR10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -1233,7 +1233,7 @@ PR10:
   subject_group: '4580'
 '1354':
   code: '1354'
-  name: Programacion Funcional
+  name: PROGRAMACION FUNCIONAL
   credits: 10
   has_exam: false
   eva_link:
@@ -1241,7 +1241,7 @@ PR10:
   subject_group: '4580'
 '1353':
   code: '1353'
-  name: Didactica De Algorit.Y Estruct.De Datos
+  name: DIDACTICA DE ALGORIT.Y ESTRUCT.DE DATOS
   credits: 7
   has_exam: false
   eva_link:
@@ -1249,7 +1249,7 @@ PR10:
   subject_group: '4580'
 '1355':
   code: '1355'
-  name: Complejidad Computacional
+  name: COMPLEJIDAD COMPUTACIONAL
   credits: 9
   has_exam: false
   eva_link:
@@ -1257,7 +1257,7 @@ PR10:
   subject_group: '4580'
 '1358':
   code: '1358'
-  name: Teoria De La Computacion
+  name: TEORIA DE LA COMPUTACION
   credits: 7
   has_exam: false
   eva_link:
@@ -1265,7 +1265,7 @@ PR10:
   subject_group: '4580'
 '1334':
   code: '1334'
-  name: Analisis De Algoritmos
+  name: ANALISIS DE ALGORITMOS
   credits: 15
   has_exam: false
   eva_link:
@@ -1273,7 +1273,7 @@ PR10:
   subject_group: '4580'
 CP380:
   code: CP380
-  name: Analisis Numerico Ii (P. 74)
+  name: ANALISIS NUMERICO II (P. 74)
   credits: 12
   has_exam: false
   eva_link:
@@ -1281,7 +1281,7 @@ CP380:
   subject_group: '4580'
 '1343':
   code: '1343'
-  name: Bio Computacion Paralela
+  name: BIO-COMPUTACION PARALELA
   credits: 6
   has_exam: false
   eva_link:
@@ -1289,7 +1289,7 @@ CP380:
   subject_group: '4580'
 '1351':
   code: '1351'
-  name: Combinatoria Analitica Y Aplicaciones
+  name: COMBINATORIA ANALITICA Y APLICACIONES
   credits: 3
   has_exam: false
   eva_link:
@@ -1297,7 +1297,7 @@ CP380:
   subject_group: '4580'
 '1352':
   code: '1352'
-  name: Compresion De Datos Sin Perdida
+  name: COMPRESION DE DATOS SIN PERDIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -1305,7 +1305,7 @@ CP380:
   subject_group: '4580'
 CP52:
   code: CP52
-  name: Computacion
+  name: COMPUTACION
   credits: 12
   has_exam: false
   eva_link:
@@ -1313,7 +1313,7 @@ CP52:
   subject_group: '4580'
 CP24:
   code: CP24
-  name: Computacion (P. 74)
+  name: COMPUTACION (P. 74)
   credits: 8
   has_exam: false
   eva_link:
@@ -1321,7 +1321,7 @@ CP24:
   subject_group: '4580'
 '1349':
   code: '1349'
-  name: Computacion Grafica Avanzada
+  name: COMPUTACION GRAFICA AVANZADA
   credits: 12
   has_exam: false
   eva_link:
@@ -1329,7 +1329,7 @@ CP24:
   subject_group: '4580'
 '1337':
   code: '1337'
-  name: Const.Formal De Progr.En Teoria De Tipos
+  name: CONST.FORMAL DE PROGR.EN TEORIA DE TIPOS
   credits: 12
   has_exam: true
   eva_link:
@@ -1337,7 +1337,7 @@ CP24:
   subject_group: '4580'
 '1347':
   code: '1347'
-  name: Const.Formal De Progr.En Teoria De Tipos
+  name: CONST.FORMAL DE PROGR.EN TEORIA DE TIPOS
   credits: 12
   has_exam: false
   eva_link:
@@ -1345,7 +1345,7 @@ CP24:
   subject_group: '4580'
 '1345':
   code: '1345'
-  name: Desarrollo Web
+  name: DESARROLLO WEB
   credits: 8
   has_exam: false
   eva_link:
@@ -1353,7 +1353,7 @@ CP24:
   subject_group: '4580'
 '1331':
   code: '1331'
-  name: Diseño De Compiladores
+  name: DISEÑO DE COMPILADORES
   credits: 12
   has_exam: false
   eva_link:
@@ -1361,7 +1361,7 @@ CP24:
   subject_group: '4580'
 CP36:
   code: CP36
-  name: Int. A La Computacion
+  name: INT. A LA COMPUTACION
   credits: 9
   has_exam: false
   eva_link:
@@ -1369,7 +1369,7 @@ CP36:
   subject_group: '4580'
 '1315':
   code: '1315'
-  name: Int. A La Computacion Grafica
+  name: INT. A LA COMPUTACION GRAFICA
   credits: 10
   has_exam: false
   eva_link:
@@ -1377,7 +1377,7 @@ CP36:
   subject_group: '4580'
 '1316':
   code: '1316'
-  name: Int. A La Computacion Grafica
+  name: INT. A LA COMPUTACION GRAFICA
   credits: 10
   has_exam: false
   eva_link:
@@ -1385,7 +1385,7 @@ CP36:
   subject_group: '4580'
 '1332':
   code: '1332'
-  name: Int. A La Progr.Para Diseño Grafico
+  name: INT. A LA PROGR.PARA DISEÑO GRAFICO
   credits: 12
   has_exam: false
   eva_link:
@@ -1393,7 +1393,7 @@ CP36:
   subject_group: '4580'
 '1328':
   code: '1328'
-  name: Int. A La Programacion Funcional
+  name: INT. A LA PROGRAMACION FUNCIONAL
   credits: 7
   has_exam: false
   eva_link:
@@ -1401,7 +1401,7 @@ CP36:
   subject_group: '4580'
 '1333':
   code: '1333'
-  name: Int. A La Programacion Generica
+  name: INT. A LA PROGRAMACION GENERICA
   credits: 10
   has_exam: false
   eva_link:
@@ -1409,7 +1409,7 @@ CP36:
   subject_group: '4580'
 '1329':
   code: '1329'
-  name: Int. A La Programacion Logica
+  name: INT. A LA PROGRAMACION LOGICA
   credits: 7
   has_exam: false
   eva_link:
@@ -1417,7 +1417,7 @@ CP36:
   subject_group: '4580'
 '1338':
   code: '1338'
-  name: Int. A Los Fund.De Los Leng.De Pr.Or. Ob
+  name: INT. A LOS FUND.DE LOS LENG.DE PR.OR. OB
   credits: 6
   has_exam: false
   eva_link:
@@ -1425,7 +1425,7 @@ CP36:
   subject_group: '4580'
 '1330':
   code: '1330'
-  name: Logica De La Programacion Imperativa
+  name: LOGICA DE LA PROGRAMACION IMPERATIVA
   credits: 12
   has_exam: false
   eva_link:
@@ -1433,7 +1433,7 @@ CP36:
   subject_group: '4580'
 '1341':
   code: '1341'
-  name: Logica De La Programacion Imperativa
+  name: LOGICA DE LA PROGRAMACION IMPERATIVA
   credits: 8
   has_exam: false
   eva_link:
@@ -1441,7 +1441,7 @@ CP36:
   subject_group: '4580'
 '1348':
   code: '1348'
-  name: Modelos Y Verif. De Sist. De Tiempo Real
+  name: MODELOS Y VERIF. DE SIST. DE TIEMPO REAL
   credits: 10
   has_exam: false
   eva_link:
@@ -1449,7 +1449,7 @@ CP36:
   subject_group: '4580'
 CP32:
   code: CP32
-  name: Organizacion De Leng. De Programacion
+  name: ORGANIZACION DE LENG. DE PROGRAMACION
   credits: 10
   has_exam: false
   eva_link:
@@ -1457,7 +1457,7 @@ CP32:
   subject_group: '4580'
 CP384:
   code: CP384
-  name: Procesamiento De Datos Ii (P. 74)
+  name: PROCESAMIENTO DE DATOS II (P. 74)
   credits: 5
   has_exam: false
   eva_link:
@@ -1465,7 +1465,7 @@ CP384:
   subject_group: '4756'
 '1350':
   code: '1350'
-  name: Programacion Funcional Avanzada
+  name: PROGRAMACION FUNCIONAL AVANZADA
   credits: 12
   has_exam: false
   eva_link:
@@ -1473,7 +1473,7 @@ CP384:
   subject_group: '4580'
 CP9:
   code: CP9
-  name: Programacion I
+  name: PROGRAMACION I
   credits: 8
   has_exam: false
   eva_link:
@@ -1481,7 +1481,7 @@ CP9:
   subject_group: '4580'
 CP37:
   code: CP37
-  name: Programacion I (P. 74)
+  name: PROGRAMACION I (P. 74)
   credits: 15
   has_exam: false
   eva_link:
@@ -1489,7 +1489,7 @@ CP37:
   subject_group: '4580'
 CP15:
   code: CP15
-  name: Programacion Ii
+  name: PROGRAMACION II
   credits: 15
   has_exam: false
   eva_link:
@@ -1497,7 +1497,7 @@ CP15:
   subject_group: '4580'
 CP38:
   code: CP38
-  name: Programacion Ii (P. 74)
+  name: PROGRAMACION II (P. 74)
   credits: 8
   has_exam: false
   eva_link:
@@ -1505,7 +1505,7 @@ CP38:
   subject_group: '4580'
 CP29:
   code: CP29
-  name: Programacion Iii
+  name: PROGRAMACION III
   credits: 15
   has_exam: false
   eva_link:
@@ -1513,7 +1513,7 @@ CP29:
   subject_group: '4580'
 CP374:
   code: CP374
-  name: Programacion Iii (P. 74)
+  name: PROGRAMACION III (P. 74)
   credits: 15
   has_exam: false
   eva_link:
@@ -1521,7 +1521,7 @@ CP374:
   subject_group: '4580'
 '1340':
   code: '1340'
-  name: Programacion Logica
+  name: PROGRAMACION LOGICA
   credits: 10
   has_exam: false
   eva_link:
@@ -1529,7 +1529,7 @@ CP374:
   subject_group: '4580'
 '1320':
   code: '1320'
-  name: Programacion 1
+  name: PROGRAMACION 1
   credits: 10
   has_exam: false
   eva_link:
@@ -1537,7 +1537,7 @@ CP374:
   subject_group: '4580'
 '1322':
   code: '1322'
-  name: Programacion 1
+  name: PROGRAMACION 1
   credits: 10
   has_exam: true
   eva_link:
@@ -1545,7 +1545,7 @@ CP374:
   subject_group: '4580'
 '1372':
   code: '1372'
-  name: Programacion 1
+  name: PROGRAMACION 1
   credits: 10
   has_exam: false
   eva_link:
@@ -1553,7 +1553,7 @@ CP374:
   subject_group: '4580'
 '1321':
   code: '1321'
-  name: Programacion 2
+  name: PROGRAMACION 2
   credits: 12
   has_exam: true
   eva_link:
@@ -1561,7 +1561,7 @@ CP374:
   subject_group: '4580'
 '1323':
   code: '1323'
-  name: Programacion 3
+  name: PROGRAMACION 3
   credits: 15
   has_exam: true
   eva_link:
@@ -1569,7 +1569,7 @@ CP374:
   subject_group: '4580'
 '1324':
   code: '1324'
-  name: Programacion 4
+  name: PROGRAMACION 4
   credits: 15
   has_exam: true
   eva_link:
@@ -1577,7 +1577,7 @@ CP374:
   subject_group: '4580'
 '1342':
   code: '1342'
-  name: Taller De Computacion Grafica
+  name: TALLER DE COMPUTACION GRAFICA
   credits: 7
   has_exam: false
   eva_link:
@@ -1585,7 +1585,7 @@ CP374:
   subject_group: '4580'
 '1314':
   code: '1314'
-  name: Taller De Produccion De Prog.Sin Fallas
+  name: TALLER DE PRODUCCION DE PROG.SIN FALLAS
   credits: 12
   has_exam: false
   eva_link:
@@ -1593,7 +1593,7 @@ CP374:
   subject_group: '4580'
 CP5:
   code: CP5
-  name: Taller I
+  name: TALLER I
   credits: 2
   has_exam: false
   eva_link:
@@ -1601,7 +1601,7 @@ CP5:
   subject_group: '4580'
 CP10:
   code: CP10
-  name: Taller Ii
+  name: TALLER II
   credits: 7
   has_exam: false
   eva_link:
@@ -1609,7 +1609,7 @@ CP10:
   subject_group: '4580'
 CP30:
   code: CP30
-  name: Taller Iii (1er.Sem.)
+  name: TALLER III (1ER.SEM.)
   credits: 15
   has_exam: false
   eva_link:
@@ -1617,7 +1617,7 @@ CP30:
   subject_group: '4580'
 '1304':
   code: '1304'
-  name: Tecnologias Interactivas Y Videojuegos
+  name: TECNOLOGIAS INTERACTIVAS Y VIDEOJUEGOS
   credits: 4
   has_exam: false
   eva_link:
@@ -1625,7 +1625,7 @@ CP30:
   subject_group: '4580'
 CP382:
   code: CP382
-  name: Teoria De Automatas (P. 74)
+  name: TEORIA DE AUTOMATAS (P. 74)
   credits: 15
   has_exam: false
   eva_link:
@@ -1633,7 +1633,7 @@ CP382:
   subject_group: '4580'
 '1336':
   code: '1336'
-  name: Teoria De La Computacion
+  name: TEORIA DE LA COMPUTACION
   credits: 4
   has_exam: false
   eva_link:
@@ -1641,7 +1641,7 @@ CP382:
   subject_group: '4580'
 CP33:
   code: CP33
-  name: Teoria De La Programacion I
+  name: TEORIA DE LA PROGRAMACION I
   credits: 12
   has_exam: false
   eva_link:
@@ -1649,7 +1649,7 @@ CP33:
   subject_group: '4580'
 '1325':
   code: '1325'
-  name: Teoria De Lenguajes
+  name: TEORIA DE LENGUAJES
   credits: 12
   has_exam: true
   eva_link:
@@ -1657,7 +1657,7 @@ CP33:
   subject_group: '4580'
 CP365:
   code: CP365
-  name: Teoria De Programacion Ii
+  name: TEORIA DE PROGRAMACION II
   credits: 12
   has_exam: false
   eva_link:
@@ -1665,7 +1665,7 @@ CP365:
   subject_group: '4580'
 '1335':
   code: '1335'
-  name: Transductores De Estado Finito
+  name: TRANSDUCTORES DE ESTADO FINITO
   credits: 7
   has_exam: false
   eva_link:
@@ -1673,7 +1673,7 @@ CP365:
   subject_group: '4580'
 '1346':
   code: '1346'
-  name: Verificacion De Modelos
+  name: VERIFICACION DE MODELOS
   credits: 10
   has_exam: false
   eva_link:
@@ -1681,7 +1681,7 @@ CP365:
   subject_group: '4580'
 '1339':
   code: '1339'
-  name: Verificacion Y Logica
+  name: VERIFICACION Y LOGICA
   credits: 10
   has_exam: false
   eva_link:
@@ -1689,7 +1689,7 @@ CP365:
   subject_group: '4580'
 PA7:
   code: PA7
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 7
   has_exam: false
   eva_link:
@@ -1697,7 +1697,7 @@ PA7:
   subject_group: '4580'
 PP6:
   code: PP6
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 6
   has_exam: false
   eva_link:
@@ -1705,7 +1705,7 @@ PP6:
   subject_group: '4580'
 PR3:
   code: PR3
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 3
   has_exam: false
   eva_link:
@@ -1713,7 +1713,7 @@ PR3:
   subject_group: '4580'
 PR6:
   code: PR6
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 6
   has_exam: false
   eva_link:
@@ -1721,7 +1721,7 @@ PR6:
   subject_group: '4580'
 PR7:
   code: PR7
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 7
   has_exam: false
   eva_link:
@@ -1729,7 +1729,7 @@ PR7:
   subject_group: '4580'
 PR8:
   code: PR8
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -1737,7 +1737,7 @@ PR8:
   subject_group: '4580'
 '1888':
   code: '1888'
-  name: Taller De Iniciacion A Los Sistemas Ciber Fisicos
+  name: TALLER DE INICIACION A LOS SISTEMAS CIBER-FISICOS
   credits: 4
   has_exam: false
   eva_link:
@@ -1745,7 +1745,7 @@ PR8:
   subject_group: '4882'
 '1556':
   code: '1556'
-  name: Sistemas Embebidos Para Tiempo Real
+  name: SISTEMAS EMBEBIDOS PARA TIEMPO REAL
   credits: 10
   has_exam: false
   eva_link:
@@ -1753,7 +1753,7 @@ PR8:
   subject_group: '4428'
 '1536':
   code: '1536'
-  name: Sistemas Embebidos Para Tiempo Real
+  name: SISTEMAS EMBEBIDOS PARA TIEMPO REAL
   credits: 8
   has_exam: false
   eva_link:
@@ -1761,7 +1761,7 @@ PR8:
   subject_group: '4428'
 '1952':
   code: '1952'
-  name: Taller De Sistemas Ciber Fisicos
+  name: TALLER DE SISTEMAS CIBER-FISICOS
   credits: 6
   has_exam: false
   eva_link:
@@ -1769,7 +1769,7 @@ PR8:
   subject_group: '4882'
 GP6:
   code: GP6
-  name: Plan.De Sist.Comp.Cluster, Grid Y Cloud
+  name: PLAN.DE SIST.COMP.CLUSTER, GRID Y CLOUD
   credits: 8
   has_exam: false
   eva_link:
@@ -1777,7 +1777,7 @@ GP6:
   subject_group: '4428'
 '1546':
   code: '1546'
-  name: Taller De Radio Definida Por Software
+  name: TALLER DE RADIO DEFINIDA POR SOFTWARE
   credits: 8
   has_exam: false
   eva_link:
@@ -1785,7 +1785,7 @@ GP6:
   subject_group: '4428'
 '1545':
   code: '1545'
-  name: Criptografia
+  name: CRIPTOGRAFIA
   credits: 10
   has_exam: false
   eva_link:
@@ -1793,7 +1793,7 @@ GP6:
   subject_group: '4428'
 AR20:
   code: AR20
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 20
   has_exam: false
   eva_link:
@@ -1801,7 +1801,7 @@ AR20:
   subject_group: '4428'
 '1454':
   code: '1454'
-  name: Aspectos Basicos De Redes De Comput
+  name: ASPECTOS BASICOS DE REDES DE COMPUT
   credits: 12
   has_exam: true
   eva_link:
@@ -1809,7 +1809,7 @@ AR20:
   subject_group: '4428'
 AR12:
   code: AR12
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 12
   has_exam: false
   eva_link:
@@ -1817,7 +1817,7 @@ AR12:
   subject_group: '4428'
 AR015:
   code: AR015
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 15
   has_exam: false
   eva_link:
@@ -1825,7 +1825,7 @@ AR015:
   subject_group: '4428'
 AR6:
   code: AR6
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 6
   has_exam: false
   eva_link:
@@ -1833,7 +1833,7 @@ AR6:
   subject_group: '4428'
 '1453':
   code: '1453'
-  name: Compl.Arquitectura De Computadoras
+  name: COMPL.ARQUITECTURA DE COMPUTADORAS
   credits: 5
   has_exam: true
   eva_link:
@@ -1841,7 +1841,7 @@ AR6:
   subject_group: '4428'
 '1440':
   code: '1440'
-  name: Analisis Y Diseño De Algorit.Distrib.En Redes
+  name: ANALISIS Y DISEÑO DE ALGORIT.DISTRIB.EN REDES
   credits: 8
   has_exam: false
   eva_link:
@@ -1849,7 +1849,7 @@ AR6:
   subject_group: '4428'
 '1443':
   code: '1443'
-  name: Arquitectura De Computadoras
+  name: ARQUITECTURA DE COMPUTADORAS
   credits: 12
   has_exam: true
   eva_link:
@@ -1857,7 +1857,7 @@ AR6:
   subject_group: '4428'
 '1424':
   code: '1424'
-  name: Arquitectura De Computadores 1
+  name: ARQUITECTURA DE COMPUTADORES 1
   credits: 10
   has_exam: true
   eva_link:
@@ -1865,7 +1865,7 @@ AR6:
   subject_group: '4428'
 '1425':
   code: '1425'
-  name: Arquitectura De Computadores 2
+  name: ARQUITECTURA DE COMPUTADORES 2
   credits: 10
   has_exam: true
   eva_link:
@@ -1873,7 +1873,7 @@ AR6:
   subject_group: '4428'
 CP28:
   code: CP28
-  name: Arquitectura De Sistemas
+  name: ARQUITECTURA DE SISTEMAS
   credits: 15
   has_exam: false
   eva_link:
@@ -1881,7 +1881,7 @@ CP28:
   subject_group: '4428'
 CP383:
   code: CP383
-  name: Arquitectura De Sistemas (P. 74)
+  name: ARQUITECTURA DE SISTEMAS (P. 74)
   credits: 14
   has_exam: false
   eva_link:
@@ -1889,7 +1889,7 @@ CP383:
   subject_group: '4428'
 '1444':
   code: '1444'
-  name: Aspectos Avanz. De Arq.De Computadoras
+  name: ASPECTOS AVANZ. DE ARQ.DE COMPUTADORAS
   credits: 8
   has_exam: false
   eva_link:
@@ -1897,7 +1897,7 @@ CP383:
   subject_group: '4428'
 '1448':
   code: '1448'
-  name: Aspectos Avanz. De Redes De Computadoras
+  name: ASPECTOS AVANZ. DE REDES DE COMPUTADORAS
   credits: 8
   has_exam: false
   eva_link:
@@ -1905,7 +1905,7 @@ CP383:
   subject_group: '4428'
 '5813':
   code: '5813'
-  name: Codificacion De Fuentes Sin Perdida
+  name: CODIFICACION DE FUENTES SIN PERDIDA
   credits: 0
   has_exam: false
   eva_link:
@@ -1913,7 +1913,7 @@ CP383:
   subject_group: '4428'
 '1447':
   code: '1447'
-  name: Comput.De Pr.Gral.En Unid.De Proc.Graf.
+  name: COMPUT.DE PR.GRAL.EN UNID.DE PROC.GRAF.
   credits: 7
   has_exam: false
   eva_link:
@@ -1921,7 +1921,7 @@ CP383:
   subject_group: '4428'
 '1427':
   code: '1427'
-  name: Computacion Cuantica
+  name: COMPUTACION CUANTICA
   credits: 10
   has_exam: false
   eva_link:
@@ -1929,7 +1929,7 @@ CP383:
   subject_group: '4428'
 '1415':
   code: '1415'
-  name: Computacion De Alta Performance
+  name: COMPUTACION DE ALTA PERFORMANCE
   credits: 5
   has_exam: false
   eva_link:
@@ -1937,7 +1937,7 @@ CP383:
   subject_group: '4428'
 '1430':
   code: '1430'
-  name: Computacion De Alta Performance
+  name: COMPUTACION DE ALTA PERFORMANCE
   credits: 7
   has_exam: false
   eva_link:
@@ -1945,7 +1945,7 @@ CP383:
   subject_group: '4428'
 '1434':
   code: '1434'
-  name: Computacion De Alta Performance
+  name: COMPUTACION DE ALTA PERFORMANCE
   credits: 10
   has_exam: false
   eva_link:
@@ -1953,7 +1953,7 @@ CP383:
   subject_group: '4428'
 CP364:
   code: CP364
-  name: Comunicacion De Datos
+  name: COMUNICACION DE DATOS
   credits: 15
   has_exam: false
   eva_link:
@@ -1961,7 +1961,7 @@ CP364:
   subject_group: '4428'
 '1441':
   code: '1441'
-  name: Curvas Elipticas En Criptografia
+  name: CURVAS ELIPTICAS EN CRIPTOGRAFIA
   credits: 3
   has_exam: false
   eva_link:
@@ -1969,7 +1969,7 @@ CP364:
   subject_group: '4428'
 CP51:
   code: CP51
-  name: Diseño Logico
+  name: DISEÑO LOGICO
   credits: 23
   has_exam: false
   eva_link:
@@ -1977,7 +1977,7 @@ CP51:
   subject_group: '4428'
 1512C:
   code: 1512C
-  name: Diseño Logico
+  name: DISEÑO LOGICO
   credits: 12
   has_exam: false
   eva_link:
@@ -1985,7 +1985,7 @@ CP51:
   subject_group: '4428'
 '1429':
   code: '1429'
-  name: Diseño Topologico De Redes
+  name: DISEÑO TOPOLOGICO DE REDES
   credits: 5
   has_exam: false
   eva_link:
@@ -1993,7 +1993,7 @@ CP51:
   subject_group: '4428'
 '1412':
   code: '1412'
-  name: Estudio Complementario En Sist. Operat.
+  name: ESTUDIO COMPLEMENTARIO EN SIST. OPERAT.
   credits: 3
   has_exam: false
   eva_link:
@@ -2001,7 +2001,7 @@ CP51:
   subject_group: '4428'
 '1436':
   code: '1436'
-  name: Fund.Para La Invest.En Redes De Computad
+  name: FUND.PARA LA INVEST.EN REDES DE COMPUTAD
   credits: 8
   has_exam: false
   eva_link:
@@ -2009,7 +2009,7 @@ CP51:
   subject_group: '4428'
 '5915':
   code: '5915'
-  name: Fundamentos De Seguridad Informatica
+  name: FUNDAMENTOS DE SEGURIDAD INFORMATICA
   credits: 10
   has_exam: false
   eva_link:
@@ -2017,7 +2017,7 @@ CP51:
   subject_group: '4428'
 '5916':
   code: '5916'
-  name: Fundamentos De Seguridad Informatica
+  name: FUNDAMENTOS DE SEGURIDAD INFORMATICA
   credits: 12
   has_exam: false
   eva_link:
@@ -2025,7 +2025,7 @@ CP51:
   subject_group: '4428'
 '1403':
   code: '1403'
-  name: Int. A La Arquitectura De Computadores
+  name: INT. A LA ARQUITECTURA DE COMPUTADORES
   credits: 15
   has_exam: false
   eva_link:
@@ -2033,7 +2033,7 @@ CP51:
   subject_group: '4428'
 '1416':
   code: '1416'
-  name: Int. A La Criptografia
+  name: INT. A LA CRIPTOGRAFIA
   credits: 12
   has_exam: false
   eva_link:
@@ -2041,7 +2041,7 @@ CP51:
   subject_group: '4428'
 '1431':
   code: '1431'
-  name: Int. A La Teoria De La Informacion
+  name: INT. A LA TEORIA DE LA INFORMACION
   credits: 6
   has_exam: false
   eva_link:
@@ -2049,7 +2049,7 @@ CP51:
   subject_group: '4428'
 '1432':
   code: '1432'
-  name: Int. A La Teoria De La Informacion
+  name: INT. A LA TEORIA DE LA INFORMACION
   credits: 8
   has_exam: false
   eva_link:
@@ -2057,7 +2057,7 @@ CP51:
   subject_group: '4428'
 '1433':
   code: '1433'
-  name: Int. A Las Redes De Computadoras
+  name: INT. A LAS REDES DE COMPUTADORAS
   credits: 15
   has_exam: true
   eva_link:
@@ -2065,7 +2065,7 @@ CP51:
   subject_group: '4428'
 '1406':
   code: '1406'
-  name: Int. A Las Redes De Computadores
+  name: INT. A LAS REDES DE COMPUTADORES
   credits: 15
   has_exam: true
   eva_link:
@@ -2073,7 +2073,7 @@ CP51:
   subject_group: '4428'
 1513C:
   code: 1513C
-  name: Int. A Los Microprocesadores
+  name: INT. A LOS MICROPROCESADORES
   credits: 11
   has_exam: false
   eva_link:
@@ -2081,7 +2081,7 @@ CP51:
   subject_group: '4428'
 '1446':
   code: '1446'
-  name: Redes De Computadoras
+  name: REDES DE COMPUTADORAS
   credits: 12
   has_exam: true
   eva_link:
@@ -2089,7 +2089,7 @@ CP51:
   subject_group: '4428'
 '1442':
   code: '1442'
-  name: Robotica Embebida
+  name: ROBOTICA EMBEBIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -2097,7 +2097,7 @@ CP51:
   subject_group: '4428'
 '1414':
   code: '1414'
-  name: Sistemas Distribuidos
+  name: SISTEMAS DISTRIBUIDOS
   credits: 15
   has_exam: false
   eva_link:
@@ -2105,7 +2105,7 @@ CP51:
   subject_group: '4428'
 CP31:
   code: CP31
-  name: Sistemas Operativos
+  name: SISTEMAS OPERATIVOS
   credits: 12
   has_exam: false
   eva_link:
@@ -2113,7 +2113,7 @@ CP31:
   subject_group: '4428'
 '1511':
   code: '1511'
-  name: Sistemas Operativos
+  name: SISTEMAS OPERATIVOS
   credits: 12
   has_exam: false
   eva_link:
@@ -2121,7 +2121,7 @@ CP31:
   subject_group: '4428'
 '1518':
   code: '1518'
-  name: Sistemas Operativos
+  name: SISTEMAS OPERATIVOS
   credits: 15
   has_exam: false
   eva_link:
@@ -2129,7 +2129,7 @@ CP31:
   subject_group: '4428'
 '1532':
   code: '1532'
-  name: Sistemas Operativos
+  name: SISTEMAS OPERATIVOS
   credits: 15
   has_exam: true
   eva_link:
@@ -2137,7 +2137,7 @@ CP31:
   subject_group: '4428'
 '1537':
   code: '1537'
-  name: Sistemas Operativos
+  name: SISTEMAS OPERATIVOS
   credits: 12
   has_exam: true
   eva_link:
@@ -2145,7 +2145,7 @@ CP31:
   subject_group: '4428'
 CP372:
   code: CP372
-  name: Sistemas Operativos (P. 74)
+  name: SISTEMAS OPERATIVOS (P. 74)
   credits: 15
   has_exam: false
   eva_link:
@@ -2153,7 +2153,7 @@ CP372:
   subject_group: '4428'
 '1445':
   code: '1445'
-  name: Taller De Arquitectura De Computadoras
+  name: TALLER DE ARQUITECTURA DE COMPUTADORAS
   credits: 3
   has_exam: false
   eva_link:
@@ -2161,7 +2161,7 @@ CP372:
   subject_group: '4428'
 '1439':
   code: '1439'
-  name: Taller De Criptografia Moderna
+  name: TALLER DE CRIPTOGRAFIA MODERNA
   credits: 8
   has_exam: false
   eva_link:
@@ -2169,7 +2169,7 @@ CP372:
   subject_group: '4428'
 '1428':
   code: '1428'
-  name: Taller De Firmware
+  name: TALLER DE FIRMWARE
   credits: 10
   has_exam: false
   eva_link:
@@ -2177,7 +2177,7 @@ CP372:
   subject_group: '4428'
 '1449':
   code: '1449'
-  name: Taller De Gpgpu
+  name: TALLER DE GPGPU
   credits: 7
   has_exam: false
   eva_link:
@@ -2185,7 +2185,7 @@ CP372:
   subject_group: '4428'
 '1437':
   code: '1437'
-  name: Taller De Seguridad Informatica
+  name: TALLER DE SEGURIDAD INFORMATICA
   credits: 7
   has_exam: false
   eva_link:
@@ -2193,7 +2193,7 @@ CP372:
   subject_group: '4428'
 '1535':
   code: '1535'
-  name: Taller De Sistemas Operativos
+  name: TALLER DE SISTEMAS OPERATIVOS
   credits: 8
   has_exam: false
   eva_link:
@@ -2201,7 +2201,7 @@ CP372:
   subject_group: '4428'
 '1542':
   code: '1542'
-  name: Taller De Sistemas Operativos
+  name: TALLER DE SISTEMAS OPERATIVOS
   credits: 10
   has_exam: false
   eva_link:
@@ -2209,7 +2209,7 @@ CP372:
   subject_group: '4428'
 '1426':
   code: '1426'
-  name: Traf.Restric.T. Real Redes Best Effort
+  name: TRAF.RESTRIC.T. REAL REDES BEST EFFORT
   credits: 6
   has_exam: false
   eva_link:
@@ -2217,7 +2217,7 @@ CP372:
   subject_group: '4428'
 AA9:
   code: AA9
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 9
   has_exam: false
   eva_link:
@@ -2225,7 +2225,7 @@ AA9:
   subject_group: '4428'
 AR15:
   code: AR15
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 15
   has_exam: false
   eva_link:
@@ -2233,7 +2233,7 @@ AR15:
   subject_group: '4428'
 AR30:
   code: AR30
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 30
   has_exam: false
   eva_link:
@@ -2241,7 +2241,7 @@ AR30:
   subject_group: '4428'
 AR8:
   code: AR8
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -2249,7 +2249,7 @@ AR8:
   subject_group: '4428'
 SRN30:
   code: SRN30
-  name: Taller De Robótica
+  name: TALLER DE ROBÓTICA
   credits: 2
   has_exam: false
   eva_link:
@@ -2257,7 +2257,7 @@ SRN30:
   subject_group: '4882'
 '1880':
   code: '1880'
-  name: Ciencia De Datos Y Lenguaje Natural
+  name: CIENCIA DE DATOS Y LENGUAJE NATURAL
   credits: 10
   has_exam: false
   eva_link:
@@ -2265,7 +2265,7 @@ SRN30:
   subject_group: '4882'
 '1868':
   code: '1868'
-  name: Modelos Estadisticos Para Clasif. Y Regresion
+  name: MODELOS ESTADISTICOS PARA CLASIF. Y REGRESION
   credits: 6
   has_exam: false
   eva_link:
@@ -2273,7 +2273,7 @@ SRN30:
   subject_group: '4882'
 '1866':
   code: '1866'
-  name: Aprendizaje Automatico
+  name: APRENDIZAJE AUTOMATICO
   credits: 12
   has_exam: false
   eva_link:
@@ -2281,7 +2281,7 @@ SRN30:
   subject_group: '4882'
 '5842':
   code: '5842'
-  name: Reconocimiento De Patrones
+  name: RECONOCIMIENTO DE PATRONES
   credits: 12
   has_exam: false
   eva_link:
@@ -2289,7 +2289,7 @@ SRN30:
   subject_group: '4882'
 '1865':
   code: '1865'
-  name: Robotica Educativa
+  name: ROBOTICA EDUCATIVA
   credits: 8
   has_exam: false
   eva_link:
@@ -2297,7 +2297,7 @@ SRN30:
   subject_group: '4882'
 '1864':
   code: '1864'
-  name: Analisis Semantico De Lenguaje Natural
+  name: ANALISIS SEMANTICO DE LENGUAJE NATURAL
   credits: 8
   has_exam: false
   eva_link:
@@ -2305,7 +2305,7 @@ SRN30:
   subject_group: '4882'
 '1857':
   code: '1857'
-  name: Fundamentos De La Robotica Autonoma
+  name: FUNDAMENTOS DE LA ROBOTICA AUTONOMA
   credits: 7
   has_exam: false
   eva_link:
@@ -2313,7 +2313,7 @@ SRN30:
   subject_group: '4882'
 '1820':
   code: '1820'
-  name: Aprendizaje Automatico
+  name: APRENDIZAJE AUTOMATICO
   credits: 6
   has_exam: false
   eva_link:
@@ -2321,7 +2321,7 @@ SRN30:
   subject_group: '4882'
 '1827':
   code: '1827'
-  name: Aprendizaje Automatico
+  name: APRENDIZAJE AUTOMATICO
   credits: 7
   has_exam: false
   eva_link:
@@ -2329,7 +2329,7 @@ SRN30:
   subject_group: '4882'
 '1849':
   code: '1849'
-  name: 'Butia: Robotica Educativa'
+  name: 'BUTIA: ROBOTICA EDUCATIVA'
   credits: 8
   has_exam: false
   eva_link:
@@ -2337,7 +2337,7 @@ SRN30:
   subject_group: '4882'
 '1832':
   code: '1832'
-  name: Const.De Mod.Prob.Del Lenguaje Natural
+  name: CONST.DE MOD.PROB.DEL LENGUAJE NATURAL
   credits: 6
   has_exam: false
   eva_link:
@@ -2345,7 +2345,7 @@ SRN30:
   subject_group: '4882'
 '1821':
   code: '1821'
-  name: Extraccion Y Categorizacion De Inform.
+  name: EXTRACCION Y CATEGORIZACION DE INFORM.
   credits: 10
   has_exam: false
   eva_link:
@@ -2353,7 +2353,7 @@ SRN30:
   subject_group: '4882'
 '1835':
   code: '1835'
-  name: Gramaticas Formales Para El Leng.Natural
+  name: GRAMATICAS FORMALES PARA EL LENG.NATURAL
   credits: 10
   has_exam: false
   eva_link:
@@ -2361,7 +2361,7 @@ SRN30:
   subject_group: '4882'
 '1829':
   code: '1829'
-  name: I.A. Y Robotica
+  name: I.A. Y ROBOTICA
   credits: 10
   has_exam: false
   eva_link:
@@ -2369,7 +2369,7 @@ SRN30:
   subject_group: '4882'
 '1828':
   code: '1828'
-  name: Int. Al Procesamiento De Leng. Natural
+  name: INT. AL PROCESAMIENTO DE LENG. NATURAL
   credits: 12
   has_exam: false
   eva_link:
@@ -2377,7 +2377,7 @@ SRN30:
   subject_group: '4882'
 '5831':
   code: '5831'
-  name: Int. Al Reconocimiento De Patrones
+  name: INT. AL RECONOCIMIENTO DE PATRONES
   credits: 8
   has_exam: false
   eva_link:
@@ -2385,7 +2385,7 @@ SRN30:
   subject_group: '4882'
 '1834':
   code: '1834'
-  name: Metodos De Aprendizaje Automatico
+  name: METODOS DE APRENDIZAJE AUTOMATICO
   credits: 9
   has_exam: false
   eva_link:
@@ -2393,7 +2393,7 @@ SRN30:
   subject_group: '4882'
 '1848':
   code: '1848'
-  name: Robotica Basada En Comportamientos
+  name: ROBOTICA BASADA EN COMPORTAMIENTOS
   credits: 15
   has_exam: false
   eva_link:
@@ -2401,7 +2401,7 @@ SRN30:
   subject_group: '4882'
 '5912':
   code: '5912'
-  name: Sistemas Neuro Fuzzy
+  name: SISTEMAS NEURO FUZZY
   credits: 8
   has_exam: false
   eva_link:
@@ -2409,7 +2409,7 @@ SRN30:
   subject_group: '4882'
 IAR6:
   code: IAR6
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 6
   has_exam: false
   eva_link:
@@ -2417,7 +2417,7 @@ IAR6:
   subject_group: '4882'
 1937T:
   code: 1937T
-  name: Creditos No Acum. Con Sist. De Informacion En Salud
+  name: CREDITOS NO ACUM. CON SIST. DE INFORMACION EN SALUD
   credits: 4
   has_exam: false
   eva_link:
@@ -2425,7 +2425,7 @@ IAR6:
   subject_group: '4647'
 '2418':
   code: '2418'
-  name: Ingenieria De Ontologias
+  name: INGENIERIA DE ONTOLOGIAS
   credits: 6
   has_exam: false
   eva_link:
@@ -2433,7 +2433,7 @@ IAR6:
   subject_group: '4647'
 '1867':
   code: '1867'
-  name: Integracion De Datos
+  name: INTEGRACION DE DATOS
   credits: 8
   has_exam: false
   eva_link:
@@ -2441,7 +2441,7 @@ IAR6:
   subject_group: '4647'
 '1781':
   code: '1781'
-  name: Sistemas De Informacion Para El Analisis De Grandes Volumenes De Datos
+  name: SISTEMAS DE INFORMACION PARA EL ANALISIS DE GRANDES VOLUMENES DE DATOS
   credits: 10
   has_exam: false
   eva_link:
@@ -2449,7 +2449,7 @@ IAR6:
   subject_group: '4647'
 '1802':
   code: '1802'
-  name: Calidad De Datos E Informacion
+  name: CALIDAD DE DATOS E INFORMACION
   credits: 6
   has_exam: false
   eva_link:
@@ -2457,7 +2457,7 @@ IAR6:
   subject_group: '4647'
 GP1:
   code: GP1
-  name: Gestion Y Tecnol. De Procesos De Negocio
+  name: GESTION Y TECNOL. DE PROCESOS DE NEGOCIO
   credits: 10
   has_exam: false
   eva_link:
@@ -2465,7 +2465,7 @@ GP1:
   subject_group: '4647'
 GP2:
   code: GP2
-  name: Gestion De La Informacion
+  name: GESTION DE LA INFORMACION
   credits: 4
   has_exam: false
   eva_link:
@@ -2473,7 +2473,7 @@ GP2:
   subject_group: '4647'
 '1949':
   code: '1949'
-  name: Bases De Datos No Relacionales
+  name: BASES DE DATOS NO RELACIONALES
   credits: 10
   has_exam: false
   eva_link:
@@ -2481,7 +2481,7 @@ GP2:
   subject_group: '4647'
 '1947':
   code: '1947'
-  name: Taller De Leng.Y Tec.De La Web Semantica
+  name: TALLER DE LENG.Y TEC.DE LA WEB SEMANTICA
   credits: 10
   has_exam: false
   eva_link:
@@ -2489,7 +2489,7 @@ GP2:
   subject_group: '4647'
 '1948':
   code: '1948'
-  name: Int. Al Middleware
+  name: INT. AL MIDDLEWARE
   credits: 10
   has_exam: false
   eva_link:
@@ -2497,7 +2497,7 @@ GP2:
   subject_group: '4647'
 BD15:
   code: BD15
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 15
   has_exam: false
   eva_link:
@@ -2505,7 +2505,7 @@ BD15:
   subject_group: '4647'
 BD05:
   code: BD05
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 5
   has_exam: false
   eva_link:
@@ -2513,7 +2513,7 @@ BD05:
   subject_group: '4647'
 BD015:
   code: BD015
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 15
   has_exam: false
   eva_link:
@@ -2521,7 +2521,7 @@ BD015:
   subject_group: '4647'
 '1918':
   code: '1918'
-  name: Administracion Y Seguridad De Sistemas
+  name: ADMINISTRACION Y SEGURIDAD DE SISTEMAS
   credits: 10
   has_exam: false
   eva_link:
@@ -2529,7 +2529,7 @@ BD015:
   subject_group: '4647'
 CP362:
   code: CP362
-  name: Bases De Datos
+  name: BASES DE DATOS
   credits: 15
   has_exam: false
   eva_link:
@@ -2537,7 +2537,7 @@ CP362:
   subject_group: '4647'
 '1935':
   code: '1935'
-  name: Calidad De Datos
+  name: CALIDAD DE DATOS
   credits: 8
   has_exam: false
   eva_link:
@@ -2545,7 +2545,7 @@ CP362:
   subject_group: '4647'
 '1916':
   code: '1916'
-  name: Descubrimiento De Inf.En Bases De Datos
+  name: DESCUBRIMIENTO DE INF.EN BASES DE DATOS
   credits: 8
   has_exam: false
   eva_link:
@@ -2553,7 +2553,7 @@ CP362:
   subject_group: '4647'
 '1939':
   code: '1939'
-  name: Diseño Y Construccion De Data Warehouse
+  name: DISEÑO Y CONSTRUCCION DE DATA WAREHOUSE
   credits: 10
   has_exam: false
   eva_link:
@@ -2561,7 +2561,7 @@ CP362:
   subject_group: '4647'
 '1911':
   code: '1911'
-  name: Fundamentos De Bases De Datos
+  name: FUNDAMENTOS DE BASES DE DATOS
   credits: 15
   has_exam: true
   eva_link:
@@ -2569,7 +2569,7 @@ CP362:
   subject_group: '4647'
 '1942':
   code: '1942'
-  name: Fundamentos De La Web Semantica
+  name: FUNDAMENTOS DE LA WEB SEMANTICA
   credits: 8
   has_exam: false
   eva_link:
@@ -2577,7 +2577,7 @@ CP362:
   subject_group: '4647'
 '1926':
   code: '1926'
-  name: Int. A Los Sist. De Infor. Geografica
+  name: INT. A LOS SIST. DE INFOR. GEOGRAFICA
   credits: 10
   has_exam: false
   eva_link:
@@ -2585,7 +2585,7 @@ CP362:
   subject_group: '4647'
 '1936':
   code: '1936'
-  name: Int. Al Middleware
+  name: INT. AL MIDDLEWARE
   credits: 8
   has_exam: false
   eva_link:
@@ -2593,7 +2593,7 @@ CP362:
   subject_group: '4647'
 '1941':
   code: '1941'
-  name: Integracion De Datos
+  name: INTEGRACION DE DATOS
   credits: 8
   has_exam: false
   eva_link:
@@ -2601,7 +2601,7 @@ CP362:
   subject_group: '4647'
 '1919':
   code: '1919'
-  name: Interoperabilidad
+  name: INTEROPERABILIDAD
   credits: 13
   has_exam: false
   eva_link:
@@ -2609,7 +2609,7 @@ CP362:
   subject_group: '4647'
 '1934':
   code: '1934'
-  name: Interoperabilidad Semantica
+  name: INTEROPERABILIDAD SEMANTICA
   credits: 11
   has_exam: false
   eva_link:
@@ -2617,7 +2617,7 @@ CP362:
   subject_group: '4647'
 '1932':
   code: '1932'
-  name: Metadata En Sistemas De Informacion
+  name: METADATA EN SISTEMAS DE INFORMACION
   credits: 13
   has_exam: false
   eva_link:
@@ -2625,7 +2625,7 @@ CP362:
   subject_group: '4647'
 CP378:
   code: CP378
-  name: Procesamiento De Datos I (P. 74)
+  name: PROCESAMIENTO DE DATOS I (P. 74)
   credits: 15
   has_exam: false
   eva_link:
@@ -2633,7 +2633,7 @@ CP378:
   subject_group: '4647'
 '1938':
   code: '1938'
-  name: Recuperacion De Inf. Y Recomend. En La Web (Wir)
+  name: RECUPERACION DE INF. Y RECOMEND. EN LA WEB (WIR)
   credits: 10
   has_exam: false
   eva_link:
@@ -2641,7 +2641,7 @@ CP378:
   subject_group: '4647'
 '1943':
   code: '1943'
-  name: Seminario Recup.De Inf.Y Rec.En La Web
+  name: SEMINARIO RECUP.DE INF.Y REC.EN LA WEB
   credits: 6
   has_exam: false
   eva_link:
@@ -2649,7 +2649,7 @@ CP378:
   subject_group: '4647'
 '1937':
   code: '1937'
-  name: Sistemas De Informacion En Salud
+  name: SISTEMAS DE INFORMACION EN SALUD
   credits: 10
   has_exam: false
   eva_link:
@@ -2657,7 +2657,7 @@ CP378:
   subject_group: '4647'
 '1931':
   code: '1931'
-  name: Sistemas Multifuentes
+  name: SISTEMAS MULTIFUENTES
   credits: 13
   has_exam: false
   eva_link:
@@ -2665,7 +2665,7 @@ CP378:
   subject_group: '4647'
 '1917':
   code: '1917'
-  name: Tecnicas Avanzadas Para La Gest. De Sist. De Inf.
+  name: TECNICAS AVANZADAS PARA LA GEST. DE SIST. DE INF.
   credits: 12
   has_exam: false
   eva_link:
@@ -2673,7 +2673,7 @@ CP378:
   subject_group: '4647'
 '1933':
   code: '1933'
-  name: Tecnicas Avanzadas Para La Gest. De Sist. De Inf.
+  name: TECNICAS AVANZADAS PARA LA GEST. DE SIST. DE INF.
   credits: 15
   has_exam: false
   eva_link:
@@ -2681,7 +2681,7 @@ CP378:
   subject_group: '4647'
 '1929':
   code: '1929'
-  name: Web Y Base De Datos
+  name: WEB Y BASE DE DATOS
   credits: 6
   has_exam: false
   eva_link:
@@ -2689,7 +2689,7 @@ CP378:
   subject_group: '4647'
 BDSI6:
   code: BDSI6
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 6
   has_exam: false
   eva_link:
@@ -2697,7 +2697,7 @@ BDSI6:
   subject_group: '4647'
 BD10:
   code: BD10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -2705,7 +2705,7 @@ BD10:
   subject_group: '4647'
 BD5:
   code: BD5
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 5
   has_exam: false
   eva_link:
@@ -2713,7 +2713,7 @@ BD5:
   subject_group: '4647'
 BD8:
   code: BD8
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -2721,7 +2721,7 @@ BD8:
   subject_group: '4647'
 BD9:
   code: BD9
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 9
   has_exam: false
   eva_link:
@@ -2729,7 +2729,7 @@ BD9:
   subject_group: '4647'
 CIM20:
   code: CIM20
-  name: Métodos Numéricos
+  name: MÉTODOS NUMÉRICOS
   credits: 10
   has_exam: true
   eva_link:
@@ -2737,7 +2737,7 @@ CIM20:
   subject_group: '5020'
 '1872':
   code: '1872'
-  name: Aplicaciones Del Algebra Lineal
+  name: APLICACIONES DEL ALGEBRA LINEAL
   credits: 9
   has_exam: true
   eva_link:
@@ -2745,7 +2745,7 @@ CIM20:
   subject_group: '5020'
 CN6:
   code: CN6
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 6
   has_exam: false
   eva_link:
@@ -2753,7 +2753,7 @@ CN6:
   subject_group: '5020'
 '1040':
   code: '1040'
-  name: Algebra Lineal Numerica
+  name: ALGEBRA LINEAL NUMERICA
   credits: 4
   has_exam: false
   eva_link:
@@ -2761,7 +2761,7 @@ CN6:
   subject_group: '5020'
 '5914':
   code: '5914'
-  name: Algebra Lineal Numerica
+  name: ALGEBRA LINEAL NUMERICA
   credits: 9
   has_exam: false
   eva_link:
@@ -2769,7 +2769,7 @@ CN6:
   subject_group: '5020'
 '1054':
   code: '1054'
-  name: Analisis De Fourier Para Tratam.De Image
+  name: ANALISIS DE FOURIER PARA TRATAM.DE IMAGE
   credits: 10
   has_exam: false
   eva_link:
@@ -2777,7 +2777,7 @@ CN6:
   subject_group: '5020'
 CP377:
   code: CP377
-  name: Analisis Numerico I (P. 74)
+  name: ANALISIS NUMERICO I (P. 74)
   credits: 14
   has_exam: false
   eva_link:
@@ -2785,7 +2785,7 @@ CP377:
   subject_group: '5020'
 CP379:
   code: CP379
-  name: Analisis Numerico Ii (P. 74)
+  name: ANALISIS NUMERICO II (P. 74)
   credits: 12
   has_exam: false
   eva_link:
@@ -2793,7 +2793,7 @@ CP379:
   subject_group: '5020'
 CP16:
   code: CP16
-  name: Calculo Numerico
+  name: CALCULO NUMERICO
   credits: 10
   has_exam: false
   eva_link:
@@ -2801,7 +2801,7 @@ CP16:
   subject_group: '5020'
 CP376:
   code: CP376
-  name: Calculo Numerico (P. 74)
+  name: CALCULO NUMERICO (P. 74)
   credits: 14
   has_exam: false
   eva_link:
@@ -2809,7 +2809,7 @@ CP376:
   subject_group: '5020'
 '1041':
   code: '1041'
-  name: Metodos Numericos Para La Resol. De Ecuac. Dif.
+  name: METODOS NUMERICOS PARA LA RESOL. DE ECUAC. DIF.
   credits: 5
   has_exam: false
   eva_link:
@@ -2817,7 +2817,7 @@ CP376:
   subject_group: '5020'
 '1055':
   code: '1055'
-  name: Metodos De Monte Carlo
+  name: METODOS DE MONTE CARLO
   credits: 6
   has_exam: false
   eva_link:
@@ -2825,7 +2825,7 @@ CP376:
   subject_group: '5020'
 '1057':
   code: '1057'
-  name: Metodos Montecarlo
+  name: METODOS MONTECARLO
   credits: 8
   has_exam: false
   eva_link:
@@ -2833,7 +2833,7 @@ CP376:
   subject_group: '5020'
 '1033':
   code: '1033'
-  name: Metodos Numericos
+  name: METODOS NUMERICOS
   credits: 8
   has_exam: true
   eva_link:
@@ -2841,7 +2841,7 @@ CP376:
   subject_group: '5020'
 '1079':
   code: '1079'
-  name: Metodos Numericos
+  name: METODOS NUMERICOS
   credits: 8
   has_exam: false
   eva_link:
@@ -2849,7 +2849,7 @@ CP376:
   subject_group: '5020'
 '1048':
   code: '1048'
-  name: Teoria Computacional De La Gestalt
+  name: TEORIA COMPUTACIONAL DE LA GESTALT
   credits: 8
   has_exam: false
   eva_link:
@@ -2857,7 +2857,7 @@ CP376:
   subject_group: '5020'
 CN3:
   code: CN3
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 3
   has_exam: false
   eva_link:
@@ -2865,7 +2865,7 @@ CN3:
   subject_group: '5020'
 '2398':
   code: '2398'
-  name: Tecnicas De Descomposicion En Programacion Matematica
+  name: TECNICAS DE DESCOMPOSICION EN PROGRAMACION MATEMATICA
   credits: 4
   has_exam: false
   eva_link:
@@ -2873,7 +2873,7 @@ CN3:
   subject_group: '4815'
 '1877':
   code: '1877'
-  name: Reformulaciones Y Algoritmos Para Planificacion De La Produccion
+  name: REFORMULACIONES Y ALGORITMOS PARA PLANIFICACION DE LA PRODUCCION
   credits: 10
   has_exam: false
   eva_link:
@@ -2881,7 +2881,7 @@ CN3:
   subject_group: '4815'
 '1871':
   code: '1871'
-  name: Fundamentos De Optimizacion
+  name: FUNDAMENTOS DE OPTIMIZACION
   credits: 6
   has_exam: false
   eva_link:
@@ -2889,7 +2889,7 @@ CN3:
   subject_group: '4815'
 '1639':
   code: '1639'
-  name: Principios De Logistica Humanitaria
+  name: PRINCIPIOS DE LOGISTICA HUMANITARIA
   credits: 10
   has_exam: false
   eva_link:
@@ -2897,7 +2897,7 @@ CN3:
   subject_group: '4815'
 '1640':
   code: '1640'
-  name: Optimizacion Continua Y Aplicaciones
+  name: OPTIMIZACION CONTINUA Y APLICACIONES
   credits: 10
   has_exam: false
   eva_link:
@@ -2905,7 +2905,7 @@ CN3:
   subject_group: '4815'
 '3207':
   code: '3207'
-  name: Herramientas P/El Diseño Y Analisis De Redes De Transp.Urb De Pasajeros
+  name: HERRAMIENTAS P/EL DISEÑO Y ANALISIS DE REDES DE TRANSP.URB DE PASAJEROS
   credits: 8
   has_exam: false
   eva_link:
@@ -2913,7 +2913,7 @@ CN3:
   subject_group: '4815'
 '1458':
   code: '1458'
-  name: Diseño Topologico De Redes
+  name: DISEÑO TOPOLOGICO DE REDES
   credits: 11
   has_exam: false
   eva_link:
@@ -2921,7 +2921,7 @@ CN3:
   subject_group: '4815'
 '1779':
   code: '1779'
-  name: Investigacion De Oper.Y Gest. De Riesgos
+  name: INVESTIGACION DE OPER.Y GEST. DE RIESGOS
   credits: 6
   has_exam: false
   eva_link:
@@ -2929,7 +2929,7 @@ CN3:
   subject_group: '4815'
 '1637':
   code: '1637'
-  name: Algoritmos Evolutivos
+  name: ALGORITMOS EVOLUTIVOS
   credits: 10
   has_exam: false
   eva_link:
@@ -2937,7 +2937,7 @@ CN3:
   subject_group: '4815'
 '1636':
   code: '1636'
-  name: Modelos Comb. De Confiabilidad En Redes
+  name: MODELOS COMB. DE CONFIABILIDAD EN REDES
   credits: 10
   has_exam: false
   eva_link:
@@ -2945,7 +2945,7 @@ CN3:
   subject_group: '4815'
 GP7:
   code: GP7
-  name: Topicos En Coloreo En Grafos Y Conectiv.
+  name: TOPICOS EN COLOREO EN GRAFOS Y CONECTIV.
   credits: 4
   has_exam: false
   eva_link:
@@ -2953,7 +2953,7 @@ GP7:
   subject_group: '4815'
 '1635':
   code: '1635'
-  name: Metaheuristicas Y Optimizacion Sobre Redes (Mor)
+  name: METAHEURISTICAS Y OPTIMIZACION SOBRE REDES (MOR)
   credits: 11
   has_exam: false
   eva_link:
@@ -2961,7 +2961,7 @@ GP7:
   subject_group: '4815'
 '1633':
   code: '1633'
-  name: Teoria, Algorit. Y Aplic. De Gest. Logis
+  name: TEORIA, ALGORIT. Y APLIC. DE GEST. LOGIS
   credits: 8
   has_exam: false
   eva_link:
@@ -2969,7 +2969,7 @@ GP7:
   subject_group: '4815'
 '1634':
   code: '1634'
-  name: Analisis De Datos En Redes Complejas
+  name: ANALISIS DE DATOS EN REDES COMPLEJAS
   credits: 10
   has_exam: false
   eva_link:
@@ -2977,7 +2977,7 @@ GP7:
   subject_group: '4815'
 '1628':
   code: '1628'
-  name: Algoritmos Evolutivos
+  name: ALGORITMOS EVOLUTIVOS
   credits: 9
   has_exam: false
   eva_link:
@@ -2985,7 +2985,7 @@ GP7:
   subject_group: '4815'
 '1625':
   code: '1625'
-  name: Algoritmos Geneticos
+  name: ALGORITMOS GENETICOS
   credits: 6
   has_exam: false
   eva_link:
@@ -2993,7 +2993,7 @@ GP7:
   subject_group: '4815'
 '1435':
   code: '1435'
-  name: Diseño Topologico De Redes
+  name: DISEÑO TOPOLOGICO DE REDES
   credits: 10
   has_exam: false
   eva_link:
@@ -3001,7 +3001,7 @@ GP7:
   subject_group: '4815'
 '1621':
   code: '1621'
-  name: Extens. De Prog. Lineal Y Prog. Entera
+  name: EXTENS. DE PROG. LINEAL Y PROG. ENTERA
   credits: 15
   has_exam: false
   eva_link:
@@ -3009,7 +3009,7 @@ GP7:
   subject_group: '4815'
 '1631':
   code: '1631'
-  name: Fundamentos De Programacion Entera
+  name: FUNDAMENTOS DE PROGRAMACION ENTERA
   credits: 8
   has_exam: false
   eva_link:
@@ -3017,7 +3017,7 @@ GP7:
   subject_group: '4815'
 '1610':
   code: '1610'
-  name: Int. A La Investigacion De Operaciones
+  name: INT. A LA INVESTIGACION DE OPERACIONES
   credits: 10
   has_exam: true
   eva_link:
@@ -3025,7 +3025,7 @@ GP7:
   subject_group: '4815'
 '1629':
   code: '1629'
-  name: Int. A La Optimiz.Y A La Prog. Con Restr
+  name: INT. A LA OPTIMIZ.Y A LA PROG. CON RESTR
   credits: 6
   has_exam: false
   eva_link:
@@ -3033,7 +3033,7 @@ GP7:
   subject_group: '4815'
 '1623':
   code: '1623'
-  name: Investigacion De Oper. En Comercio Electronico
+  name: INVESTIGACION DE OPER. EN COMERCIO ELECTRONICO
   credits: 6
   has_exam: false
   eva_link:
@@ -3041,7 +3041,7 @@ GP7:
   subject_group: '4815'
 '1630':
   code: '1630'
-  name: Investigacion De Oper.Y Gest. De Riesgos
+  name: INVESTIGACION DE OPER.Y GEST. DE RIESGOS
   credits: 6
   has_exam: false
   eva_link:
@@ -3049,7 +3049,7 @@ GP7:
   subject_group: '4815'
 CP27:
   code: CP27
-  name: Investigacion Operativa
+  name: INVESTIGACION OPERATIVA
   credits: 10
   has_exam: false
   eva_link:
@@ -3057,7 +3057,7 @@ CP27:
   subject_group: '4815'
 CP320:
   code: CP320
-  name: Investigacion Operativa (P. 74)
+  name: INVESTIGACION OPERATIVA (P. 74)
   credits: 10
   has_exam: false
   eva_link:
@@ -3065,7 +3065,7 @@ CP320:
   subject_group: '4815'
 CP373:
   code: CP373
-  name: Investigacion Operativa I (P. 74)
+  name: INVESTIGACION OPERATIVA I (P. 74)
   credits: 14
   has_exam: false
   eva_link:
@@ -3073,7 +3073,7 @@ CP373:
   subject_group: '4815'
 CP381:
   code: CP381
-  name: Investigacion Operativa Ii (P. 74)
+  name: INVESTIGACION OPERATIVA II (P. 74)
   credits: 14
   has_exam: false
   eva_link:
@@ -3081,7 +3081,7 @@ CP381:
   subject_group: '4815'
 CP385:
   code: CP385
-  name: Investigacion Operativa Iii (P. 74)
+  name: INVESTIGACION OPERATIVA III (P. 74)
   credits: 14
   has_exam: false
   eva_link:
@@ -3089,7 +3089,7 @@ CP385:
   subject_group: '4815'
 '1613':
   code: '1613'
-  name: Metaheuristicas Y Optimizacion Sobre Redes
+  name: METAHEURISTICAS Y OPTIMIZACION SOBRE REDES
   credits: 10
   has_exam: false
   eva_link:
@@ -3097,7 +3097,7 @@ CP385:
   subject_group: '4815'
 '1624':
   code: '1624'
-  name: Modelado Y Optimizacion
+  name: MODELADO Y OPTIMIZACION
   credits: 6
   has_exam: false
   eva_link:
@@ -3105,7 +3105,7 @@ CP385:
   subject_group: '4815'
 '1626':
   code: '1626'
-  name: Optimizacion Bajo Incertidumbre
+  name: OPTIMIZACION BAJO INCERTIDUMBRE
   credits: 6
   has_exam: false
   eva_link:
@@ -3113,7 +3113,7 @@ CP385:
   subject_group: '4815'
 '1632':
   code: '1632'
-  name: Optimizacion Bajo Incertidumbre
+  name: OPTIMIZACION BAJO INCERTIDUMBRE
   credits: 8
   has_exam: false
   eva_link:
@@ -3121,7 +3121,7 @@ CP385:
   subject_group: '4815'
 '1627':
   code: '1627'
-  name: Seminario:Elementos De Metaheuristicas
+  name: SEMINARIO:ELEMENTOS DE METAHEURISTICAS
   credits: 10
   has_exam: false
   eva_link:
@@ -3129,7 +3129,7 @@ CP385:
   subject_group: '4815'
 '1617':
   code: '1617'
-  name: Simulacion A Eventos Discretos
+  name: SIMULACION A EVENTOS DISCRETOS
   credits: 10
   has_exam: false
   eva_link:
@@ -3137,7 +3137,7 @@ CP385:
   subject_group: '4815'
 IO20:
   code: IO20
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 20
   has_exam: false
   eva_link:
@@ -3145,7 +3145,7 @@ IO20:
   subject_group: '4815'
 IO8:
   code: IO8
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -3153,7 +3153,7 @@ IO8:
   subject_group: '4815'
 1758T:
   code: 1758T
-  name: Creditos No Acum. Con Relaciones Pers. En Ing. De Soft. Y Ger. De Proy.
+  name: CREDITOS NO ACUM. CON RELACIONES PERS. EN ING. DE SOFT. Y GER. DE PROY.
   credits: 4
   has_exam: false
   eva_link:
@@ -3161,7 +3161,7 @@ IO8:
   subject_group: '5082'
 '2417':
   code: '2417'
-  name: Ingenieria De Software Basada En Evidencias
+  name: INGENIERIA DE SOFTWARE BASADA EN EVIDENCIAS
   credits: 8
   has_exam: false
   eva_link:
@@ -3169,7 +3169,7 @@ IO8:
   subject_group: '5082'
 D84:
   code: D84
-  name: Formulación Y Evaluación De Proyectos De Inversión
+  name: FORMULACIÓN Y EVALUACIÓN DE PROYECTOS DE INVERSIÓN
   credits: 8
   has_exam: true
   eva_link:
@@ -3177,7 +3177,7 @@ D84:
   subject_group: '5082'
 A66:
   code: A66
-  name: Gestión De Proyectos
+  name: GESTIÓN DE PROYECTOS
   credits: 10
   has_exam: true
   eva_link:
@@ -3185,7 +3185,7 @@ A66:
   subject_group: '5082'
 '1782':
   code: '1782'
-  name: Investigacion Mediante Encuestas En Computacion
+  name: INVESTIGACION MEDIANTE ENCUESTAS EN COMPUTACION
   credits: 5
   has_exam: false
   eva_link:
@@ -3193,7 +3193,7 @@ A66:
   subject_group: '5082'
 '1778':
   code: '1778'
-  name: Taller De Plan Y Seg De Proy De Software
+  name: TALLER DE PLAN Y SEG DE PROY DE SOFTWARE
   credits: 4
   has_exam: false
   eva_link:
@@ -3201,7 +3201,7 @@ A66:
   subject_group: '5082'
 '1777':
   code: '1777'
-  name: Profesion En Ingenieria De Software
+  name: PROFESION EN INGENIERIA DE SOFTWARE
   credits: 6
   has_exam: false
   eva_link:
@@ -3209,7 +3209,7 @@ A66:
   subject_group: '5082'
 '1773':
   code: '1773'
-  name: Ingenieria De Software Empirica
+  name: INGENIERIA DE SOFTWARE EMPIRICA
   credits: 7
   has_exam: false
   eva_link:
@@ -3217,7 +3217,7 @@ A66:
   subject_group: '5082'
 '1772':
   code: '1772'
-  name: Ingenieria De Software Basada En Evid.Y Rev.Sist.
+  name: INGENIERIA DE SOFTWARE BASADA EN EVID.Y REV.SIST.
   credits: 7
   has_exam: false
   eva_link:
@@ -3225,7 +3225,7 @@ A66:
   subject_group: '5082'
 '1771':
   code: '1771'
-  name: Ingenieria De Software Empirica
+  name: INGENIERIA DE SOFTWARE EMPIRICA
   credits: 5
   has_exam: false
   eva_link:
@@ -3233,7 +3233,7 @@ A66:
   subject_group: '5082'
 '1770':
   code: '1770'
-  name: Taller De Ing.Dirigida Por Modelos
+  name: TALLER DE ING.DIRIGIDA POR MODELOS
   credits: 8
   has_exam: false
   eva_link:
@@ -3241,7 +3241,7 @@ A66:
   subject_group: '5082'
 '1732':
   code: '1732'
-  name: Arquitectura De Software
+  name: ARQUITECTURA DE SOFTWARE
   credits: 8
   has_exam: false
   eva_link:
@@ -3249,7 +3249,7 @@ A66:
   subject_group: '5082'
 '1743':
   code: '1743'
-  name: Arquitectura De Software
+  name: ARQUITECTURA DE SOFTWARE
   credits: 12
   has_exam: false
   eva_link:
@@ -3257,7 +3257,7 @@ A66:
   subject_group: '5082'
 '1737':
   code: '1737'
-  name: Gestion De Software
+  name: GESTION DE SOFTWARE
   credits: 7
   has_exam: false
   eva_link:
@@ -3265,7 +3265,7 @@ A66:
   subject_group: '5082'
 '1716':
   code: '1716'
-  name: Int. A La Ingenieria De Software
+  name: INT. A LA INGENIERIA DE SOFTWARE
   credits: 10
   has_exam: true
   eva_link:
@@ -3273,7 +3273,7 @@ A66:
   subject_group: '5082'
 '1736':
   code: '1736'
-  name: Int. A La Interac. Persona Computadora
+  name: INT. A LA INTERAC. PERSONA COMPUTADORA
   credits: 6
   has_exam: false
   eva_link:
@@ -3281,7 +3281,7 @@ A66:
   subject_group: '5082'
 '1749':
   code: '1749'
-  name: Interaccion Persona Computadora
+  name: INTERACCION PERSONA COMPUTADORA
   credits: 12
   has_exam: false
   eva_link:
@@ -3289,7 +3289,7 @@ A66:
   subject_group: '5082'
 '1767':
   code: '1767'
-  name: Princ.Y Fund.Del Proc.Pers.De Software
+  name: PRINC.Y FUND.DEL PROC.PERS.DE SOFTWARE
   credits: 7
   has_exam: false
   eva_link:
@@ -3297,7 +3297,7 @@ A66:
   subject_group: '5082'
 '1769':
   code: '1769'
-  name: Profesion En Ingenieria De Software
+  name: PROFESION EN INGENIERIA DE SOFTWARE
   credits: 4
   has_exam: false
   eva_link:
@@ -3305,7 +3305,7 @@ A66:
   subject_group: '5082'
 '1728':
   code: '1728'
-  name: Relaciones Personales En Ing. De Soft. Y Ger. De Proy.
+  name: RELACIONES PERSONALES EN ING. DE SOFT. Y GER. DE PROY.
   credits: 7
   has_exam: false
   eva_link:
@@ -3313,7 +3313,7 @@ A66:
   subject_group: '5082'
 '1758':
   code: '1758'
-  name: Relaciones Personales En Ing. De Soft. Y Ger. De Proy.
+  name: RELACIONES PERSONALES EN ING. DE SOFT. Y GER. DE PROY.
   credits: 10
   has_exam: false
   eva_link:
@@ -3321,7 +3321,7 @@ A66:
   subject_group: '5082'
 '1750':
   code: '1750'
-  name: Taller De Arquitectura De Software
+  name: TALLER DE ARQUITECTURA DE SOFTWARE
   credits: 6
   has_exam: false
   eva_link:
@@ -3329,7 +3329,7 @@ A66:
   subject_group: '5082'
 '1768':
   code: '1768'
-  name: Taller De Interaccion Persona Computad.
+  name: TALLER DE INTERACCION PERSONA COMPUTAD.
   credits: 8
   has_exam: false
   eva_link:
@@ -3337,7 +3337,7 @@ A66:
   subject_group: '5082'
 '1752':
   code: '1752'
-  name: Taller De Psp
+  name: TALLER DE PSP
   credits: 7
   has_exam: false
   eva_link:
@@ -3345,7 +3345,7 @@ A66:
   subject_group: '5082'
 '1742':
   code: '1742'
-  name: Taller De Verificacion Del Software
+  name: TALLER DE VERIFICACION DEL SOFTWARE
   credits: 8
   has_exam: false
   eva_link:
@@ -3353,7 +3353,7 @@ A66:
   subject_group: '5082'
 CP366:
   code: CP366
-  name: Taller Iv (2do.Sem.)
+  name: TALLER IV (2DO.SEM.)
   credits: 10
   has_exam: false
   eva_link:
@@ -3361,7 +3361,7 @@ CP366:
   subject_group: '5082'
 IS14:
   code: IS14
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 14
   has_exam: false
   eva_link:
@@ -3369,7 +3369,7 @@ IS14:
   subject_group: '5082'
 SFW10:
   code: SFW10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -3377,7 +3377,7 @@ SFW10:
   subject_group: '5082'
 '1876':
   code: '1876'
-  name: Taller De Mineria De Procesos De Negocio (Tpm)
+  name: TALLER DE MINERIA DE PROCESOS DE NEGOCIO (TPM)
   credits: 8
   has_exam: false
   eva_link:
@@ -3385,7 +3385,7 @@ SFW10:
   subject_group: '4756'
 A42:
   code: A42
-  name: Diseño Organizacional
+  name: DISEÑO ORGANIZACIONAL
   credits: 10
   has_exam: true
   eva_link:
@@ -3393,7 +3393,7 @@ A42:
   subject_group: '4756'
 BTI29:
   code: BTI29
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 29
   has_exam: false
   eva_link:
@@ -3401,7 +3401,7 @@ BTI29:
   subject_group: '4756'
 BT31:
   code: BT31
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 31
   has_exam: false
   eva_link:
@@ -3409,7 +3409,7 @@ BT31:
   subject_group: '4756'
 BTI33:
   code: BTI33
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 33
   has_exam: false
   eva_link:
@@ -3417,7 +3417,7 @@ BTI33:
   subject_group: '4756'
 BTI23:
   code: BTI23
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 23
   has_exam: false
   eva_link:
@@ -3425,7 +3425,7 @@ BTI23:
   subject_group: '4756'
 BTI31:
   code: BTI31
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 31
   has_exam: false
   eva_link:
@@ -3433,7 +3433,7 @@ BTI31:
   subject_group: '4756'
 ATI3:
   code: ATI3
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 3
   has_exam: false
   eva_link:
@@ -3441,7 +3441,7 @@ ATI3:
   subject_group: '4756'
 BTI38:
   code: BTI38
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 38
   has_exam: false
   eva_link:
@@ -3449,7 +3449,7 @@ BTI38:
   subject_group: '4756'
 '1780':
   code: '1780'
-  name: Taller De Robotica Educativa
+  name: TALLER DE ROBOTICA EDUCATIVA
   credits: 6
   has_exam: false
   eva_link:
@@ -3457,7 +3457,7 @@ BTI38:
   subject_group: '4756'
 '1775':
   code: '1775'
-  name: Taller De Sistemas Empresariales
+  name: TALLER DE SISTEMAS EMPRESARIALES
   credits: 15
   has_exam: false
   eva_link:
@@ -3465,7 +3465,7 @@ BTI38:
   subject_group: '4756'
 '1774':
   code: '1774'
-  name: Taller De Eval. De Tecn. De La Inf.
+  name: TALLER DE EVAL. DE TECN. DE LA INF.
   credits: 10
   has_exam: false
   eva_link:
@@ -3473,7 +3473,7 @@ BTI38:
   subject_group: '4756'
 AA28:
   code: AA28
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
   has_exam: false
   eva_link:
@@ -3481,7 +3481,7 @@ AA28:
   subject_group: '4756'
 A028:
   code: A028
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
   has_exam: false
   eva_link:
@@ -3489,7 +3489,7 @@ A028:
   subject_group: '4756'
 AI10:
   code: AI10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -3497,7 +3497,7 @@ AI10:
   subject_group: '4756'
 BT28:
   code: BT28
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
   has_exam: false
   eva_link:
@@ -3505,7 +3505,7 @@ BT28:
   subject_group: '4756'
 A28:
   code: A28
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
   has_exam: false
   eva_link:
@@ -3513,7 +3513,7 @@ A28:
   subject_group: '4756'
 AI28:
   code: AI28
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
   has_exam: false
   eva_link:
@@ -3521,7 +3521,7 @@ AI28:
   subject_group: '4756'
 '1753':
   code: '1753'
-  name: Modulo Taller A
+  name: MODULO TALLER A
   credits: 5
   has_exam: false
   eva_link:
@@ -3529,7 +3529,7 @@ AI28:
   subject_group: '4756'
 '1754':
   code: '1754'
-  name: Modulo Taller B
+  name: MODULO TALLER B
   credits: 4
   has_exam: false
   eva_link:
@@ -3537,7 +3537,7 @@ AI28:
   subject_group: '4756'
 '1755':
   code: '1755'
-  name: Modulo Taller C
+  name: MODULO TALLER C
   credits: 4
   has_exam: false
   eva_link:
@@ -3545,7 +3545,7 @@ AI28:
   subject_group: '4756'
 '1756':
   code: '1756'
-  name: Modulo Taller D
+  name: MODULO TALLER D
   credits: 3
   has_exam: false
   eva_link:
@@ -3553,7 +3553,7 @@ AI28:
   subject_group: '4756'
 '1757':
   code: '1757'
-  name: Modulo Taller E
+  name: MODULO TALLER E
   credits: 2
   has_exam: false
   eva_link:
@@ -3561,7 +3561,7 @@ AI28:
   subject_group: '4756'
 '1731':
   code: '1731'
-  name: Pasantia (Computacion)
+  name: PASANTIA (COMPUTACION)
   credits: 10
   has_exam: false
   eva_link:
@@ -3569,7 +3569,7 @@ AI28:
   subject_group: '4756'
 '1730':
   code: '1730'
-  name: Proyecto De Grado
+  name: PROYECTO DE GRADO
   credits: 30
   has_exam: false
   eva_link:
@@ -3577,7 +3577,7 @@ AI28:
   subject_group: '4756'
 '1721':
   code: '1721'
-  name: Proyecto De Ingenieria De Software
+  name: PROYECTO DE INGENIERIA DE SOFTWARE
   credits: 15
   has_exam: false
   eva_link:
@@ -3585,7 +3585,7 @@ AI28:
   subject_group: '4756'
 '5705':
   code: '5705'
-  name: Seminario De Ingenieria Biomedica
+  name: SEMINARIO DE INGENIERIA BIOMEDICA
   credits: 4
   has_exam: false
   eva_link:
@@ -3593,7 +3593,7 @@ AI28:
   subject_group: '4756'
 '1748':
   code: '1748'
-  name: Seminario De Procesam. Paralelo Aplicado
+  name: SEMINARIO DE PROCESAM. PARALELO APLICADO
   credits: 3
   has_exam: false
   eva_link:
@@ -3601,7 +3601,7 @@ AI28:
   subject_group: '4756'
 '1733':
   code: '1733'
-  name: Taller De Desarrollo Cliente/Servidor
+  name: TALLER DE DESARROLLO CLIENTE/SERVIDOR
   credits: 21
   has_exam: false
   eva_link:
@@ -3609,7 +3609,7 @@ AI28:
   subject_group: '4756'
 '1766':
   code: '1766'
-  name: Taller De Gest.Y Tec.Proc.Negocio (Tbpm)
+  name: TALLER DE GEST.Y TEC.PROC.NEGOCIO (TBPM)
   credits: 10
   has_exam: false
   eva_link:
@@ -3617,7 +3617,7 @@ AI28:
   subject_group: '4756'
 '1739':
   code: '1739'
-  name: Taller De Gestion De Software
+  name: TALLER DE GESTION DE SOFTWARE
   credits: 15
   has_exam: false
   eva_link:
@@ -3625,7 +3625,7 @@ AI28:
   subject_group: '4756'
 '1327':
   code: '1327'
-  name: Taller De Programacion
+  name: TALLER DE PROGRAMACION
   credits: 15
   has_exam: false
   eva_link:
@@ -3633,7 +3633,7 @@ AI28:
   subject_group: '4756'
 '1925':
   code: '1925'
-  name: Taller De Programacion Y Arte
+  name: TALLER DE PROGRAMACION Y ARTE
   credits: 10
   has_exam: false
   eva_link:
@@ -3641,7 +3641,7 @@ AI28:
   subject_group: '4756'
 '1759':
   code: '1759'
-  name: Taller De Sist. De Inf.Geograf.Empresar.
+  name: TALLER DE SIST. DE INF.GEOGRAF.EMPRESAR.
   credits: 8
   has_exam: false
   eva_link:
@@ -3649,7 +3649,7 @@ AI28:
   subject_group: '4756'
 '1751':
   code: '1751'
-  name: Taller De Sistemas De Informacion 1
+  name: TALLER DE SISTEMAS DE INFORMACION 1
   credits: 10
   has_exam: false
   eva_link:
@@ -3657,7 +3657,7 @@ AI28:
   subject_group: '4756'
 '1740':
   code: '1740'
-  name: Taller De Sistemas De Informacion 3
+  name: TALLER DE SISTEMAS DE INFORMACION 3
   credits: 8
   has_exam: false
   eva_link:
@@ -3665,7 +3665,7 @@ AI28:
   subject_group: '4756'
 '1741':
   code: '1741'
-  name: Taller De Sistemas De Informacion 4
+  name: TALLER DE SISTEMAS DE INFORMACION 4
   credits: 15
   has_exam: false
   eva_link:
@@ -3673,7 +3673,7 @@ AI28:
   subject_group: '4756'
 '5823':
   code: '5823'
-  name: Taller De Telematica
+  name: TALLER DE TELEMATICA
   credits: 12
   has_exam: false
   eva_link:
@@ -3681,7 +3681,7 @@ AI28:
   subject_group: '4756'
 CP71:
   code: CP71
-  name: Taller Iii ( 2do.Sem.)
+  name: TALLER III ( 2DO.SEM.)
   credits: 15
   has_exam: false
   eva_link:
@@ -3689,7 +3689,7 @@ CP71:
   subject_group: '4756'
 CP363:
   code: CP363
-  name: Taller Iv (1er.Sem.)
+  name: TALLER IV (1ER.SEM.)
   credits: 15
   has_exam: false
   eva_link:
@@ -3697,7 +3697,7 @@ CP363:
   subject_group: '4756'
 '1734':
   code: '1734'
-  name: Taller Sistemas De Informacion 1
+  name: TALLER SISTEMAS DE INFORMACION 1
   credits: 6
   has_exam: false
   eva_link:
@@ -3705,7 +3705,7 @@ CP363:
   subject_group: '4756'
 '1735':
   code: '1735'
-  name: Taller Sistemas De Informacion 2
+  name: TALLER SISTEMAS DE INFORMACION 2
   credits: 15
   has_exam: false
   eva_link:
@@ -3713,7 +3713,7 @@ CP363:
   subject_group: '4756'
 CP221:
   code: CP221
-  name: Taller V
+  name: TALLER V
   credits: 30
   has_exam: false
   eva_link:
@@ -3721,7 +3721,7 @@ CP221:
   subject_group: '4756'
 AT10:
   code: AT10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -3729,7 +3729,7 @@ AT10:
   subject_group: '4756'
 AT28:
   code: AT28
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
   has_exam: false
   eva_link:
@@ -3737,7 +3737,7 @@ AT28:
   subject_group: '4756'
 AT3:
   code: AT3
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 3
   has_exam: false
   eva_link:
@@ -3745,7 +3745,7 @@ AT3:
   subject_group: '4756'
 AT7:
   code: AT7
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 7
   has_exam: false
   eva_link:
@@ -3753,7 +3753,7 @@ AT7:
   subject_group: '4756'
 TP25:
   code: TP25
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 25
   has_exam: false
   eva_link:
@@ -3761,7 +3761,7 @@ TP25:
   subject_group: '4756'
 '1776':
   code: '1776'
-  name: Taller De Sist. De Inf. Geo. Empres.
+  name: TALLER DE SIST. DE INF. GEO. EMPRES.
   credits: 10
   has_exam: false
   eva_link:
@@ -3769,7 +3769,7 @@ TP25:
   subject_group: '4756'
 '2401':
   code: '2401'
-  name: Legislacion Y Relaciones Industriales
+  name: LEGISLACION Y RELACIONES INDUSTRIALES
   credits: 6
   has_exam: true
   eva_link:
@@ -3777,7 +3777,7 @@ TP25:
   subject_group: '4066'
 A83:
   code: A83
-  name: Cambio Organizacional
+  name: CAMBIO ORGANIZACIONAL
   credits: 10
   has_exam: true
   eva_link:
@@ -3785,7 +3785,7 @@ A83:
   subject_group: '4066'
 S42:
   code: S42
-  name: Sociología De La Empresa Y Management
+  name: SOCIOLOGÍA DE LA EMPRESA Y MANAGEMENT
   credits: 10
   has_exam: true
   eva_link:
@@ -3793,7 +3793,7 @@ S42:
   subject_group: '4066'
 I87:
   code: I87
-  name: 'Prospectiva: Construyendo El Futuro'
+  name: 'PROSPECTIVA: CONSTRUYENDO EL FUTURO'
   credits: 10
   has_exam: true
   eva_link:
@@ -3801,7 +3801,7 @@ I87:
   subject_group: '4066'
 D85:
   code: D85
-  name: Planificación Estratégica
+  name: PLANIFICACIÓN ESTRATÉGICA
   credits: 4
   has_exam: true
   eva_link:
@@ -3809,7 +3809,7 @@ D85:
   subject_group: '4066'
 A65:
   code: A65
-  name: Introducción Al Emprendedurismo
+  name: INTRODUCCIÓN AL EMPRENDEDURISMO
   credits: 10
   has_exam: true
   eva_link:
@@ -3817,7 +3817,7 @@ A65:
   subject_group: '4066'
 618EU:
   code: 618EU
-  name: Introducción A Los Sistemas De Gestión
+  name: INTRODUCCIÓN A LOS SISTEMAS DE GESTIÓN
   credits: 4
   has_exam: true
   eva_link:
@@ -3825,7 +3825,7 @@ A65:
   subject_group: '4066'
 559EU:
   code: 559EU
-  name: Propiedad Intelectual
+  name: PROPIEDAD INTELECTUAL
   credits: 3
   has_exam: true
   eva_link:
@@ -3833,7 +3833,7 @@ A65:
   subject_group: '4066'
 AT010:
   code: AT010
-  name: Gestión De Proyectos
+  name: GESTIÓN DE PROYECTOS
   credits: 4
   has_exam: false
   eva_link:
@@ -3841,7 +3841,7 @@ AT010:
   subject_group: '4066'
 GO10:
   code: GO10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -3849,7 +3849,7 @@ GO10:
   subject_group: '4066'
 '1543':
   code: '1543'
-  name: Int. Al Negocio Del Software
+  name: INT. AL NEGOCIO DEL SOFTWARE
   credits: 6
   has_exam: false
   eva_link:
@@ -3857,7 +3857,7 @@ GO10:
   subject_group: '4066'
 '1944':
   code: '1944'
-  name: Administracion General Para Ingenieros
+  name: ADMINISTRACION GENERAL PARA INGENIEROS
   credits: 5
   has_exam: true
   eva_link:
@@ -3865,7 +3865,7 @@ GO10:
   subject_group: '4066'
 '1510':
   code: '1510'
-  name: Control De Calidad
+  name: CONTROL DE CALIDAD
   credits: 8
   has_exam: true
   eva_link:
@@ -3873,7 +3873,7 @@ GO10:
   subject_group: '4066'
 '1901':
   code: '1901'
-  name: Control De Calidad
+  name: CONTROL DE CALIDAD
   credits: 8
   has_exam: false
   eva_link:
@@ -3881,7 +3881,7 @@ GO10:
   subject_group: '4066'
 '1921':
   code: '1921'
-  name: Gestion De Calidad
+  name: GESTION DE CALIDAD
   credits: 8
   has_exam: false
   eva_link:
@@ -3889,7 +3889,7 @@ GO10:
   subject_group: '4066'
 '1940':
   code: '1940'
-  name: Gestion De Calidad
+  name: GESTION DE CALIDAD
   credits: 6
   has_exam: true
   eva_link:
@@ -3897,7 +3897,7 @@ GO10:
   subject_group: '4066'
 '1519':
   code: '1519'
-  name: Int. A La Administracion Para Ingenieros
+  name: INT. A LA ADMINISTRACION PARA INGENIEROS
   credits: 10
   has_exam: true
   eva_link:
@@ -3905,7 +3905,7 @@ GO10:
   subject_group: '4066'
 '1507':
   code: '1507'
-  name: Int. A Las Organizaciones
+  name: INT. A LAS ORGANIZACIONES
   credits: 10
   has_exam: false
   eva_link:
@@ -3913,7 +3913,7 @@ GO10:
   subject_group: '4066'
 CP375:
   code: CP375
-  name: Organizacion De Empresas (P. 74)
+  name: ORGANIZACION DE EMPRESAS (P. 74)
   credits: 10
   has_exam: false
   eva_link:
@@ -3921,7 +3921,7 @@ CP375:
   subject_group: '4066'
 '1930':
   code: '1930'
-  name: Organizaciones Para Ingenieros
+  name: ORGANIZACIONES PARA INGENIEROS
   credits: 6
   has_exam: true
   eva_link:
@@ -3929,7 +3929,7 @@ CP375:
   subject_group: '4066'
 '1514':
   code: '1514'
-  name: Organizaciones Y Su Administracion
+  name: ORGANIZACIONES Y SU ADMINISTRACION
   credits: 10
   has_exam: false
   eva_link:
@@ -3937,7 +3937,7 @@ CP375:
   subject_group: '4066'
 '1945':
   code: '1945'
-  name: Practica De Administracion Para Ingenieros
+  name: PRACTICA DE ADMINISTRACION PARA INGENIEROS
   credits: 5
   has_exam: true
   eva_link:
@@ -3945,7 +3945,7 @@ CP375:
   subject_group: '4066'
 GA10:
   code: GA10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -3953,7 +3953,7 @@ GA10:
   subject_group: '4066'
 GO6:
   code: GO6
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 6
   has_exam: false
   eva_link:
@@ -3961,7 +3961,7 @@ GO6:
   subject_group: '4066'
 GO8:
   code: GO8
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -3969,7 +3969,7 @@ GO8:
   subject_group: '4066'
 GO9:
   code: GO9
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 9
   has_exam: false
   eva_link:
@@ -3977,7 +3977,7 @@ GO9:
   subject_group: '4066'
 A62:
   code: A62
-  name: Gestión De La Innovación Y La Tecnología
+  name: GESTIÓN DE LA INNOVACIÓN Y LA TECNOLOGÍA
   credits: 10
   has_exam: true
   eva_link:
@@ -3985,7 +3985,7 @@ A62:
   subject_group: '4066'
 SRN13:
   code: SRN13
-  name: Economía Política
+  name: ECONOMÍA POLÍTICA
   credits: 10
   has_exam: false
   eva_link:
@@ -3993,7 +3993,7 @@ SRN13:
   subject_group: '5265'
 '1270':
   code: '1270'
-  name: Ciudadania En Entornos Digitales
+  name: CIUDADANIA EN ENTORNOS DIGITALES
   credits: 6
   has_exam: false
   eva_link:
@@ -4001,7 +4001,7 @@ SRN13:
   subject_group: '5265'
 FD1:
   code: FD1
-  name: Etica I
+  name: ETICA I
   credits: 13
   has_exam: false
   eva_link:
@@ -4009,7 +4009,7 @@ FD1:
   subject_group: '5265'
 C216:
   code: C216
-  name: Epistemologia, Etica Y Educacion
+  name: EPISTEMOLOGIA, ETICA Y EDUCACION
   credits: 8
   has_exam: false
   eva_link:
@@ -4017,7 +4017,7 @@ C216:
   subject_group: '5265'
 AT002:
   code: AT002
-  name: Metodologías De Investigación
+  name: METODOLOGÍAS DE INVESTIGACIÓN
   credits: 5
   has_exam: false
   eva_link:
@@ -4025,7 +4025,7 @@ AT002:
   subject_group: '5265'
 558EU:
   code: 558EU
-  name: Epistemología
+  name: EPISTEMOLOGÍA
   credits: 3
   has_exam: false
   eva_link:
@@ -4033,7 +4033,7 @@ AT002:
   subject_group: '5265'
 CHU10:
   code: CHU10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -4041,7 +4041,7 @@ CHU10:
   subject_group: '5265'
 CHS10:
   code: CHS10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -4049,7 +4049,7 @@ CHS10:
   subject_group: '5265'
 CH5:
   code: CH5
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 5
   has_exam: false
   eva_link:
@@ -4057,7 +4057,7 @@ CH5:
   subject_group: '5265'
 GP3:
   code: GP3
-  name: Epist. Genet. Y Apl. A La Didac. En Inf.
+  name: EPIST. GENET. Y APL. A LA DIDAC. EN INF.
   credits: 5
   has_exam: false
   eva_link:
@@ -4065,7 +4065,7 @@ GP3:
   subject_group: '5265'
 CH08:
   code: CH08
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -4073,7 +4073,7 @@ CH08:
   subject_group: '5265'
 CH3:
   code: CH3
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 3
   has_exam: false
   eva_link:
@@ -4081,7 +4081,7 @@ CH3:
   subject_group: '5265'
 CH04:
   code: CH04
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 4
   has_exam: false
   eva_link:
@@ -4089,7 +4089,7 @@ CH04:
   subject_group: '5265'
 '1229':
   code: '1229'
-  name: Analisis De Innovaciones
+  name: ANALISIS DE INNOVACIONES
   credits: 6
   has_exam: false
   eva_link:
@@ -4097,7 +4097,7 @@ CH04:
   subject_group: '5265'
 '1223':
   code: '1223'
-  name: Ciencia, Tecnologia Y Sociedad
+  name: CIENCIA, TECNOLOGIA Y SOCIEDAD
   credits: 8
   has_exam: true
   eva_link:
@@ -4105,7 +4105,7 @@ CH04:
   subject_group: '5265'
 '1230':
   code: '1230'
-  name: Comunicacion Oral Y Escrita
+  name: COMUNICACION ORAL Y ESCRITA
   credits: 5
   has_exam: false
   eva_link:
@@ -4113,7 +4113,7 @@ CH04:
   subject_group: '5265'
 '1224':
   code: '1224'
-  name: Economia
+  name: ECONOMIA
   credits: 7
   has_exam: true
   eva_link:
@@ -4121,7 +4121,7 @@ CH04:
   subject_group: '5265'
 '1221':
   code: '1221'
-  name: Economia
+  name: ECONOMIA
   credits: 7
   has_exam: false
   eva_link:
@@ -4129,7 +4129,7 @@ CH04:
   subject_group: '5265'
 CP20:
   code: CP20
-  name: Economia Politica
+  name: ECONOMIA POLITICA
   credits: 7
   has_exam: false
   eva_link:
@@ -4137,7 +4137,7 @@ CP20:
   subject_group: '5265'
 CP174:
   code: CP174
-  name: Economia Y Finanzas (P. 74)
+  name: ECONOMIA Y FINANZAS (P. 74)
   credits: 7
   has_exam: false
   eva_link:
@@ -4145,7 +4145,7 @@ CP174:
   subject_group: '5265'
 '1225':
   code: '1225'
-  name: Politicas Cientificas En Inf.Y Comp.
+  name: POLITICAS CIENTIFICAS EN INF.Y COMP.
   credits: 3
   has_exam: false
   eva_link:
@@ -4153,7 +4153,7 @@ CP174:
   subject_group: '5265'
 CP18:
   code: CP18
-  name: Tecnologia Y Sociedad
+  name: TECNOLOGIA Y SOCIEDAD
   credits: 10
   has_exam: false
   eva_link:
@@ -4161,7 +4161,7 @@ CP18:
   subject_group: '5265'
 CH1:
   code: CH1
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 1
   has_exam: false
   eva_link:
@@ -4169,7 +4169,7 @@ CH1:
   subject_group: '5265'
 CH10:
   code: CH10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -4177,7 +4177,7 @@ CH10:
   subject_group: '5265'
 CH4:
   code: CH4
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 4
   has_exam: false
   eva_link:
@@ -4185,7 +4185,7 @@ CH4:
   subject_group: '5265'
 CH6:
   code: CH6
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 6
   has_exam: false
   eva_link:
@@ -4193,7 +4193,7 @@ CH6:
   subject_group: '5265'
 CH8:
   code: CH8
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -4201,7 +4201,7 @@ CH8:
   subject_group: '5265'
 SRN22:
   code: SRN22
-  name: Comprensión Lectora De Inglés
+  name: COMPRENSIÓN LECTORA DE INGLÉS
   credits: 8
   has_exam: false
   eva_link:
@@ -4209,7 +4209,7 @@ SRN22:
   subject_group: '3582'
 SRN25:
   code: SRN25
-  name: Taller Interdisciplinario
+  name: TALLER INTERDISCIPLINARIO
   credits: 2
   has_exam: true
   eva_link:
@@ -4217,7 +4217,7 @@ SRN25:
   subject_group: '3582'
 '5828':
   code: '5828'
-  name: Tratamiento De Imagenes Por Computadora
+  name: TRATAMIENTO DE IMAGENES POR COMPUTADORA
   credits: 10
   has_exam: false
   eva_link:
@@ -4225,7 +4225,7 @@ SRN25:
   subject_group: '3582'
 736EU:
   code: 736EU
-  name: Bionformática
+  name: BIONFORMÁTICA
   credits: 7
   has_exam: true
   eva_link:
@@ -4233,7 +4233,7 @@ SRN25:
   subject_group: '3582'
 836EU:
   code: 836EU
-  name: Bionformática Estructural
+  name: BIONFORMÁTICA ESTRUCTURAL
   credits: 7
   has_exam: true
   eva_link:
@@ -4241,7 +4241,7 @@ SRN25:
   subject_group: '3582'
 AT023:
   code: AT023
-  name: Producción Gráfica 3d Ii
+  name: PRODUCCIÓN GRÁFICA 3D II
   credits: 6
   has_exam: false
   eva_link:
@@ -4249,7 +4249,7 @@ AT023:
   subject_group: '3582'
 AT021:
   code: AT021
-  name: Producción Audiovisual Interactiva Ii
+  name: PRODUCCIÓN AUDIOVISUAL INTERACTIVA II
   credits: 6
   has_exam: false
   eva_link:
@@ -4257,7 +4257,7 @@ AT021:
   subject_group: '3582'
 816EU:
   code: 816EU
-  name: Ingles Científico
+  name: INGLES CIENTÍFICO
   credits: 4
   has_exam: false
   eva_link:
@@ -4265,7 +4265,7 @@ AT021:
   subject_group: '3582'
 2107A:
   code: 2107A
-  name: Taller De Comunicación Oral Y Escrita
+  name: TALLER DE COMUNICACIÓN ORAL Y ESCRITA
   credits: 1
   has_exam: false
   eva_link:
@@ -4273,7 +4273,7 @@ AT021:
   subject_group: '3582'
 AT003:
   code: AT003
-  name: Problemas De Diseño
+  name: PROBLEMAS DE DISEÑO
   credits: 7
   has_exam: false
   eva_link:
@@ -4281,7 +4281,7 @@ AT003:
   subject_group: '3582'
 AT009:
   code: AT009
-  name: Modelado 3d Para Produccion Digital (Perfil Producto)
+  name: MODELADO 3D PARA PRODUCCION DIGITAL (PERFIL PRODUCTO)
   credits: 4
   has_exam: false
   eva_link:
@@ -4289,7 +4289,7 @@ AT009:
   subject_group: '3582'
 MOP8:
   code: MOP8
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
   has_exam: false
   eva_link:
@@ -4297,7 +4297,7 @@ MOP8:
   subject_group: '3582'
 '2217':
   code: '2217'
-  name: Tutorias Entre Pares 2
+  name: TUTORIAS ENTRE PARES 2
   credits: 4
   has_exam: false
   eva_link:
@@ -4305,7 +4305,7 @@ MOP8:
   subject_group: '3582'
 '2216':
   code: '2216'
-  name: Tutorias Entre Pares 1
+  name: TUTORIAS ENTRE PARES 1
   credits: 4
   has_exam: false
   eva_link:
@@ -4313,7 +4313,7 @@ MOP8:
   subject_group: '3582'
 '1951':
   code: '1951'
-  name: 'Taller: Herramientas Para La Innovacion'
+  name: 'TALLER: HERRAMIENTAS PARA LA INNOVACION'
   credits: 4
   has_exam: false
   eva_link:
@@ -4321,7 +4321,7 @@ MOP8:
   subject_group: '3582'
 '1216':
   code: '1216'
-  name: 'Taller Encarare: Crear'
+  name: 'TALLER ENCARARE: CREAR'
   credits: 8
   has_exam: false
   eva_link:
@@ -4329,7 +4329,7 @@ MOP8:
   subject_group: '3582'
 GP4:
   code: GP4
-  name: Redacc. Tec. De Tesis Y Art. Cientif.
+  name: REDACC. TEC. DE TESIS Y ART. CIENTIF.
   credits: 5
   has_exam: false
   eva_link:
@@ -4337,7 +4337,7 @@ GP4:
   subject_group: '3582'
 '2040':
   code: '2040'
-  name: Iniciacion A La Prod. Audiovis. Y Multimedia
+  name: INICIACION A LA PROD. AUDIOVIS. Y MULTIMEDIA
   credits: 6
   has_exam: false
   eva_link:
@@ -4345,7 +4345,7 @@ GP4:
   subject_group: '3582'
 '1438':
   code: '1438'
-  name: Aplicacion De Teoria De La Inf.Al Proc.De Imag.
+  name: APLICACION DE TEORIA DE LA INF.AL PROC.DE IMAG.
   credits: 6
   has_exam: false
   eva_link:
@@ -4353,7 +4353,7 @@ GP4:
   subject_group: '3582'
 '5707':
   code: '5707'
-  name: 'Imagenes Medicas: Adquisicion, Instrumentacion Y Gestion'
+  name: 'IMAGENES MEDICAS: ADQUISICION, INSTRUMENTACION Y GESTION'
   credits: 8
   has_exam: false
   eva_link:
@@ -4361,7 +4361,7 @@ GP4:
   subject_group: '3582'
 '5709':
   code: '5709'
-  name: Imagenes Medicas:Adq. Instrum. Y Gestion
+  name: IMAGENES MEDICAS:ADQ. INSTRUM. Y GESTION
   credits: 6
   has_exam: false
   eva_link:
@@ -4369,7 +4369,7 @@ GP4:
   subject_group: '3582'
 '1760':
   code: '1760'
-  name: Modulo De Extension A
+  name: MODULO DE EXTENSION A
   credits: 4
   has_exam: false
   eva_link:
@@ -4377,7 +4377,7 @@ GP4:
   subject_group: '3582'
 '1761':
   code: '1761'
-  name: Modulo De Extension B
+  name: MODULO DE EXTENSION B
   credits: 4
   has_exam: false
   eva_link:
@@ -4385,7 +4385,7 @@ GP4:
   subject_group: '3582'
 '1762':
   code: '1762'
-  name: Modulo De Extension C
+  name: MODULO DE EXTENSION C
   credits: 3
   has_exam: false
   eva_link:
@@ -4393,7 +4393,7 @@ GP4:
   subject_group: '3582'
 '1763':
   code: '1763'
-  name: Modulo De Extension D
+  name: MODULO DE EXTENSION D
   credits: 3
   has_exam: false
   eva_link:
@@ -4401,7 +4401,7 @@ GP4:
   subject_group: '3582'
 '1213':
   code: '1213'
-  name: 'Planificacion De Clases: Diseño De Unid.Didact.'
+  name: 'PLANIFICACION DE CLASES: DISEÑO DE UNID.DIDACT.'
   credits: 2
   has_exam: false
   eva_link:
@@ -4409,7 +4409,7 @@ GP4:
   subject_group: '3582'
 '2034':
   code: '2034'
-  name: Taller Encarare 1:Creatividad E Innovac.
+  name: TALLER ENCARARE 1:CREATIVIDAD E INNOVAC.
   credits: 5
   has_exam: false
   eva_link:
@@ -4417,7 +4417,7 @@ GP4:
   subject_group: '3582'
 '2036':
   code: '2036'
-  name: Taller Encarare 2:Planif.De La Fut.Empr.
+  name: TALLER ENCARARE 2:PLANIF.DE LA FUT.EMPR.
   credits: 5
   has_exam: false
   eva_link:
@@ -4425,7 +4425,7 @@ GP4:
   subject_group: '3582'
 '2222':
   code: '2222'
-  name: Teatro Y Matematica
+  name: TEATRO Y MATEMATICA
   credits: 6
   has_exam: false
   eva_link:
@@ -4433,7 +4433,7 @@ GP4:
   subject_group: '3582'
 MOP1:
   code: MOP1
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 4
   has_exam: false
   eva_link:
@@ -4441,7 +4441,7 @@ MOP1:
   subject_group: '3582'
 MOP10:
   code: MOP10
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
   has_exam: false
   eva_link:
@@ -4449,7 +4449,7 @@ MOP10:
   subject_group: '3582'
 MOP20:
   code: MOP20
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 20
   has_exam: false
   eva_link:
@@ -4457,7 +4457,7 @@ MOP20:
   subject_group: '3582'
 MOP30:
   code: MOP30
-  name: Creditos Asignados Por Revalida
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 30
   has_exam: false
   eva_link:
