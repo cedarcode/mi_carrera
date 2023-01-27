@@ -32,7 +32,7 @@ class Bedel
     subjects = TreePreloader.new.preload.index_by(&:id)
 
     loop do
-      original_count = amount_of_approved_courses_and_exams()
+      original_count = amount_of_approved_courses_and_exams
 
       approved_exams.each do |subject_id|
         approvable = subjects[subject_id].exam
@@ -50,7 +50,7 @@ class Bedel
         end
       end
 
-      new_count = amount_of_approved_courses_and_exams()
+      new_count = amount_of_approved_courses_and_exams
 
       break if new_count == original_count
     end
