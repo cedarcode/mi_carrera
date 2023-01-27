@@ -27,6 +27,8 @@ class Bedel
       end
 
       refresh_approvals
+    else
+      false
     end
   end
 
