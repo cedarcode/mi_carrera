@@ -5,9 +5,11 @@ class ApplicationController < ActionController::Base
 
   def bedel
     if current_user
+      current_user.approvals ||= []
       @bedel ||= Bedel.new(current_user.approvals, current_user)
     else
-      @bedel ||= Bedel.new(session)
+      session[:approved_approvable_ids] ||= []
+      @bedel ||= Bedel.new(session[:approved_approvable_ids])
     end
   end
 end

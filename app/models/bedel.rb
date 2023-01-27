@@ -1,8 +1,7 @@
 class Bedel
-  def initialize(store, current_user = nil)
+  def initialize(approved_approvable_ids, current_user = nil)
     @current_user = current_user
-    @store = store
-    @store[:approved_approvable_ids] ||= []
+    @approved_approvable_ids = approved_approvable_ids
   end
 
   def add_approval(approvable)
@@ -61,7 +60,7 @@ class Bedel
 
   private
 
-  attr_reader :store, :current_user
+  attr_reader :approved_approvable_ids, :current_user
 
   def add_approved_approvable(approvable_id)
     approved_approvable_ids << approvable_id
@@ -73,12 +72,8 @@ class Bedel
     update_users_approvals if current_user
   end
 
-  def approved_approvable_ids
-    store[:approved_approvable_ids]
-  end
-
   def update_users_approvals
-    current_user.approvals = store
+    current_user.approvals = approved_approvable_ids
     current_user.save!
   end
 end

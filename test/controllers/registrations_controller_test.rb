@@ -94,6 +94,6 @@ class RegistrationsControllerTest < ApplicationControllerTestCase
     }
 
     user = User.where(email: 'newuser@gmail.com').first
-    assert_equal [subject1.course.id, subject2.exam.id], user.approvals[:approved_approvable_ids]
+    assert_equal [subject1.course.id, subject2.exam.id], user.approvals
   end
 end

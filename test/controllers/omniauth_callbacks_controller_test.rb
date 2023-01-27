@@ -76,6 +76,6 @@ class OmniauthCallbacksControllerTest < ApplicationControllerTestCase
     post user_google_oauth2_omniauth_callback_path
 
     user = User.where(email: 'new@gmail.com').first
-    assert_equal [subject1.course.id, subject2.exam.id], user.approvals[:approved_approvable_ids]
+    assert_equal [subject1.course.id, subject2.exam.id], user.approvals
   end
 end
