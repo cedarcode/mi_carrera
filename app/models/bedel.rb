@@ -7,7 +7,7 @@ class Bedel
   end
 
   def add_approval(approvable)
-    if able_to_do?(approvable)
+    if able_to_do?(approvable) and !approved?(approvable)
       if approvable.is_exam?
         add_approved_exam(approvable.subject_id)
       else
@@ -19,13 +19,15 @@ class Bedel
   end
 
   def remove_approval(approvable)
-    if approvable.is_exam?
-      remove_approved_exam(approvable.subject_id)
-    else
-      remove_approved_course(approvable.subject_id)
-    end
+    if approved?(approvable)
+      if approvable.is_exam?
+        remove_approved_exam(approvable.subject_id)
+      else
+        remove_approved_course(approvable.subject_id)
+      end
 
-    refresh_approvals
+      refresh_approvals
+    end
   end
 
   def refresh_approvals

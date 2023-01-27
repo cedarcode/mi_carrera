@@ -13,6 +13,7 @@ class SubjectsController < ApplicationController
     elsif params[:subject][:exam_approved]
       if params[:subject][:exam_approved] == "yes"
         bedel.add_approval(subject.exam)
+        bedel.add_approval(subject.course)
       elsif params[:subject][:exam_approved] == "no"
         bedel.remove_approval(subject.exam)
       end
