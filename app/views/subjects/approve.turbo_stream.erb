@@ -1,13 +1,13 @@
-<% if @subjects %>
+<% if params[:only_approvables] %>
+  <%= turbo_stream.replace "approvables" do %>
+    <%= render 'approvables' %>
+  <% end %>
+<% else %>
   <%= turbo_stream.replace "credits" do %>
     <%= render 'shared/credits_counter' %>
   <% end %>
 
   <%= turbo_stream.replace "subjects" do %>
     <%= render 'subjects_bulk_approve' %>
-  <% end %>
-<% else %>
-  <%= turbo_stream.replace "approvables" do %>
-    <%= render 'approvables' %>
   <% end %>
 <% end %>
