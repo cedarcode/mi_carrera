@@ -14,12 +14,10 @@ Rails.application.routes.draw do
 
   resources :subjects do
     member do
-      get :able_to_enroll, format: 'json'
       patch :approve
     end
     collection do
       get :all
-      get 'list' => 'subjects#list_subjects', as: :list
     end
   end
 end

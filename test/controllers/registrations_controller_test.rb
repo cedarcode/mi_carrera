@@ -76,13 +76,13 @@ class RegistrationsControllerTest < ApplicationControllerTestCase
       subject: {
         course_approved: 'yes'
       },
-      format: 'json'
+      format: 'turbo_stream'
     }
     patch approve_subject_path(subject2), params: {
       subject: {
         exam_approved: 'yes'
       },
-      format: 'json'
+      format: 'turbo_stream'
     }
 
     post user_registration_path, params: {

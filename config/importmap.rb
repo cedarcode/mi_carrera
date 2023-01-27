@@ -5,6 +5,7 @@ pin "install", to: "install.js"
 pin "serviceworker-companion", to: "serviceworker-companion.js"
 pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
+pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
 pin "@rails/ujs", to: "https://ga.jspm.io/npm:@rails/ujs@7.0.4/lib/assets/compiled/rails-ujs.js"
 pin "@material/dialog", to: "https://ga.jspm.io/npm:@material/dialog@3.2.0/dist/mdc.dialog.js"
 pin "@material/drawer", to: "https://ga.jspm.io/npm:@material/drawer@3.2.0/dist/mdc.drawer.js"

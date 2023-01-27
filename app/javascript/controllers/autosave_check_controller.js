@@ -1,13 +1,8 @@
-import Rails from "@rails/ujs";
 import { Controller } from "@hotwired/stimulus"
+import { Turbo } from "@hotwired/turbo-rails"
 
 export default class extends Controller {
   update() {
-    Rails.fire(this.element, 'submit');
-  }
-
-  notifyCreditsChange(event) {
-    let updateCreditsEvent = new CustomEvent('credits-change', { detail: event.detail[0]["credits"] });
-    document.querySelector(".js-credits-count").dispatchEvent(updateCreditsEvent);
+    Turbo.navigator.submitForm(this.element)
   }
 }
