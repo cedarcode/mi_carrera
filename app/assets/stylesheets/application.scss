@@ -104,12 +104,12 @@ body {
     text-decoration-line: underline;
   }
 
-  .mdc-list-item__text {
+  .mdc-deprecated-list-item__text {
     flex-grow: 1;
     width: 100px;
   }
 
-  .mdc-list-item__meta {
+  .mdc-deprecated-list-item__meta {
     margin-left: 0px;
   }
 }
@@ -119,12 +119,12 @@ body {
   font-size: larger;
 }
 
-.mdc-list-item__text {
+.mdc-deprecated-list-item__text {
   display: block;
   flex: 1;
 }
 
-.mdc-list-item__meta {
+.mdc-deprecated-list-item__meta {
   padding-left: 15px;
 }
 

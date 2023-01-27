@@ -1,6 +1,6 @@
-<div class="mdc-list-group">
-  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Ingreso</h3>
-  <ul class="mdc-list growing-text-list">
+<div class="mdc-deprecated-list-group">
+  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5 sign-in">Ingreso</h3>
+  <ul class="mdc-deprecated-list growing-text-list">
 
     <li class="form-input-container google-button-container">
 
@@ -14,7 +14,7 @@
       <% end %>
     </li>
 
-    <li role="separator" class="mdc-list-divider"></li>
+    <li role="separator" class="mdc-deprecated-list-divider"></li>
 
     <%= form_with(model: resource, url: session_path(resource_name), local: true) do |f| %>
       <li class="form-input-container sign-in">
@@ -47,7 +47,7 @@
       </li>
     <% end %>
 
-    <li role="separator" class="mdc-list-divider"></li>
+    <li role="separator" class="mdc-deprecated-list-divider"></li>
     <%= render "devise/shared/links" %>
   </ul>
 </div>

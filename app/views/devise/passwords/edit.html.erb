@@ -1,6 +1,6 @@
-<div class="mdc-list-group">
-  <h3 class="mdc-list-group__subheader mdc-typography--headline5 sign-in">Restablecer Contraseña</h3>
-  <ul class="mdc-list growing-text-list">
+<div class="mdc-deprecated-list-group">
+  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5 sign-in">Restablecer Contraseña</h3>
+  <ul class="mdc-deprecated-list growing-text-list">
 
     <%= form_with(model: resource, url: password_path(resource_name), method: :put, local: true) do |f| %>
       <%= f.hidden_field :reset_password_token %>

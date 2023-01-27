@@ -1,8 +1,8 @@
-<div class="mdc-list-item growing-text-list">
-  <%= link_to subject_path(subject), :class => "mdc-list-item__text" do %>
+<div class="mdc-deprecated-list-item growing-text-list">
+  <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item__text" do %>
     <%= display_name(subject) %>
   <% end %>
-  <span class="mdc-list-item__meta two-checkboxes">
+  <span class="mdc-deprecated-list-item__meta two-checkboxes">
     <%= form_with(model: subject, url: approve_subject_path(subject), data: { controller: "autosave-check" }, local: false) do |form| %>
       <div class="mdc-checkbox">
         <%= form.check_box :course_approved, { id: "checkbox_#{subject.id}_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(subject.course), data: { action: "foreground-layer#add autosave-check#update" } }, "yes", "no" %>
