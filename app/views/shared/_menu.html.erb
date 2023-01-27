@@ -16,6 +16,7 @@
       <%= drawer_menu_navigation_item('Avance de Carrera', profile_path) %>
       <li role="separator" class="mdc-deprecated-list-divider"></li>
       <a class='mdc-deprecated-list-item' href="https://github.com/cedarcode/student" target='_blank' tabindex='0'>
+        <span class="mdc-deprecated-list-item__ripple"></span>
         <span class="material-symbols-outlined">
           open_in_new
         </span>
@@ -27,17 +28,20 @@
       <li role="separator" class="mdc-deprecated-list-divider"></li>
       <% if current_user %>
         <%= link_to edit_user_registration_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
+          <span class="mdc-deprecated-list-item__ripple"></span>
           <span class="mdc-deprecated-list-item__text">
             Editar Perfil
           <span>
         <% end %>
         <%= link_to destroy_user_session_path, method: :delete, class: "mdc-deprecated-list-item", tabindex: 0 do %>
+          <span class="mdc-deprecated-list-item__ripple"></span>
           <span class="mdc-deprecated-list-item__text">
             Salir
           </span>
         <% end %>
       <% else %>
         <%= link_to new_user_session_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
+          <span class="mdc-deprecated-list-item__ripple"></span>
           <span class="mdc-deprecated-list-item__text">
             Ingresar
           <span>

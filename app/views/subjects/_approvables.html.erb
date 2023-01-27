@@ -1,5 +1,6 @@
 <div class="mdc-deprecated-list position-relative" data-controller="foreground-layer" id="approvables">
   <label class="mdc-deprecated-list-item <%= "mdc-deprecated-list-item--disabled" if !bedel.able_to_do?(@subject.course) %>" for="checkbox_course_approved">
+    <span class="mdc-deprecated-list-item__ripple"></span>
     <span class="mdc-deprecated-list-item__text">
       Curso aprobado?
     </span>
@@ -22,6 +23,7 @@
 
   <% if @subject.exam %>
     <label class="mdc-deprecated-list-item <%= "mdc-deprecated-list-item--disabled" if !bedel.able_to_do?(@subject.exam) %>" for="checkbox_exam_approved">
+      <span class="mdc-deprecated-list-item__ripple"></span>
       <span class="mdc-deprecated-list-item__text">
         Examen aprobado?
       </span>

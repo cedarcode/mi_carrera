@@ -22,9 +22,8 @@ module ApplicationHelper
     end
 
     link_to link, **link_options do
-      tag.span class: 'mdc-deprecated-list-item__text' do
-        text
-      end
+      tag.span(class: 'mdc-deprecated-list-item__ripple') +
+        tag.span(text, class: 'mdc-deprecated-list-item__text')
     end
   end
 end

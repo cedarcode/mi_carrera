@@ -27,6 +27,7 @@
     <div class="mdc-deprecated-list">
       <% if @subject.openfing_id %>
         <a href="https://open.fing.edu.uy/courses/<%= @subject.openfing_id %>" target="_blank" class="mdc-deprecated-list-item">
+          <span class="mdc-deprecated-list-item__ripple"></span>
           <span class="mdc-deprecated-list-item__graphic material-icons">videocam</span>
           <span class="mdc-deprecated-list-item__text">OpenFING</span>
         </a>
@@ -34,6 +35,7 @@
 
       <% if @subject.eva_id %>
         <a href="https://eva.fing.edu.uy/course/view.php?id=<%= @subject.eva_id%>" target="_blank" class="mdc-deprecated-list-item">
+          <span class="mdc-deprecated-list-item__ripple"></span>
           <span class="mdc-deprecated-list-item__graphic material-icons">forum</span>
           <span class="mdc-deprecated-list-item__text">EVA</span>
         </a>
