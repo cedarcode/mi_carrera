@@ -57,7 +57,7 @@ class PrerequisitesTreePage < BedeliasPage
   end
 
   def subtrees_roots(node)
-    node.all("following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]")
+    node.all("following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]", visible: false)
   end
 
   def node_content_from_node(node)

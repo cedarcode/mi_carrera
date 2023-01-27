@@ -1,24 +1,42 @@
-require 'kimurai'
+require 'selenium-webdriver'
+require 'capybara'
 require 'bedelias_page'
 require 'curriculum_page'
 require 'prerequisites_page'
 require 'prerequisites_tree_page'
 
-class BedeliasSpider < Kimurai::Base
-  @name = "bedelias_spider"
-  @engine = :selenium_chrome
+class BedeliasSpider
 
-  ROWS_PER_PAGE = 20
+  URL = "https://bedelias.udelar.edu.uy"
 
-  def initialize
-    super
-
+  def initialize()
     @subject_groups_path = Rails.root.join("db/data/scraped_subject_groups.yml")
     @subjects_path = Rails.root.join("db/data/scraped_subjects.yml")
     @prerequisites_path = Rails.root.join("db/data/scraped_prerequisites.yml")
+
+    Capybara.register_driver :selenium do |app|
+      Capybara::Selenium::Driver.new(
+        app,
+        browser: :chrome,
+        options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu])
+      )
+    end
+
+    Capybara.configure do |config|
+      config.default_driver = :selenium
+      config.run_server = false
+      config.default_selector = :xpath
+      config.save_path = "tmp"
+      config.default_max_wait_time = 10
+      config.ignore_hidden_elements = false
+      config.threadsafe = true
+    end
+
+    @browser = Capybara.current_session
+    @browser.visit URL
   end
 
-  def parse_subjects(*_args)
+  def parse_subjects_and_prerequisites()
     bedelias_page.visit_curriculum
 
     subjects = {}
@@ -74,10 +92,9 @@ class BedeliasSpider < Kimurai::Base
     File.open(subjects_path, "w") do |file|
       file.write subjects.deep_stringify_keys.to_yaml
     end
-  end
 
-  def parse_prerequisites(*_args)
-    bedelias_page.visit_prerequisites
+    # now the prerequisites
+    prerequisites_page.move_to_first_page
 
     prerequisites = []
     prerequisites_page.for_each_approvable do |approvable_node, current_page_number|
@@ -105,11 +122,12 @@ class BedeliasSpider < Kimurai::Base
       data = { prerequisites: prerequisites }
       file.write data.deep_stringify_keys.to_yaml
     end
+
   end
 
   private
 
-  attr_reader :subject_groups_path, :subjects_path, :prerequisites_path
+  attr_reader :browser, :subject_groups_path, :subjects_path, :prerequisites_path
 
   def create_prerequisite_tree(original_prerequisite, subject_code = nil, is_exam = false)
     prerequisite_tree = prerequisites_tree_page.prerequisite_tree(original_prerequisite)

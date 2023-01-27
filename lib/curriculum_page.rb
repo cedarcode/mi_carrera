@@ -1,10 +1,10 @@
 class CurriculumPage < BedeliasPage
   def groups
-    all("//li[@data-nodetype='Grupo'][not(*//li[@data-nodetype='Grupo'])]/span")
+    all("//li[@data-nodetype='Grupo'][not(*//li[@data-nodetype='Grupo'])]/span", visible: false)
   end
 
   def subjects_in_group(group_node)
-    group_node.all('..//li[@data-nodetype="Materia"]/span')
+    group_node.all('..//li[@data-nodetype="Materia"]/span', visible: false)
   end
 
   def group_details(group_node)

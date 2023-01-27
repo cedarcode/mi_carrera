@@ -9,7 +9,6 @@ gem 'bootsnap', '~> 1.4', require: false
 gem 'devise', '~> 4.8'
 gem 'importmap-rails', '~> 1.1'
 gem 'jbuilder', '~> 2.11'
-gem 'kimurai', "~> 1.4"
 gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.1'
 gem "omniauth-rails_csrf_protection", '~> 1.0'

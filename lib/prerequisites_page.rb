@@ -3,6 +3,11 @@ class PrerequisitesPage < BedeliasPage
     find(:css, 'span.ui-paginator-next')[:class].include?('disabled')
   end
 
+  def move_to_first_page
+    find(:css, 'span.ui-icon-seek-first').click
+    sleep 0.5
+  end
+
   def move_to_next_page
     find(:css, 'span.ui-icon-seek-next').click
   end
@@ -19,10 +24,6 @@ class PrerequisitesPage < BedeliasPage
 
   def approvable_node(approvable_index)
     find("//tr[@data-ri=#{approvable_index}]")
-  end
-
-  def approvables_in_current_page
-    all("//tr[@data-ri]")
   end
 
   def click_on_see_more(approvable_node)
