@@ -6,10 +6,9 @@ require 'prerequisites_page'
 require 'prerequisites_tree_page'
 
 class BedeliasSpider
-
   URL = "https://bedelias.udelar.edu.uy"
 
-  def initialize()
+  def initialize
     @subject_groups_path = Rails.root.join("db/data/scraped_subject_groups.yml")
     @subjects_path = Rails.root.join("db/data/scraped_subjects.yml")
     @prerequisites_path = Rails.root.join("db/data/scraped_prerequisites.yml")
@@ -36,7 +35,7 @@ class BedeliasSpider
     @browser.visit URL
   end
 
-  def parse_subjects_and_prerequisites()
+  def parse_subjects_and_prerequisites
     bedelias_page.visit_curriculum
 
     subjects = {}
@@ -122,7 +121,6 @@ class BedeliasSpider
       data = { prerequisites: prerequisites }
       file.write data.deep_stringify_keys.to_yaml
     end
-
   end
 
   private
