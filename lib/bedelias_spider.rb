@@ -13,11 +13,13 @@ class BedeliasSpider
     @subjects_path = Rails.root.join("db/data/scraped_subjects.yml")
     @prerequisites_path = Rails.root.join("db/data/scraped_prerequisites.yml")
 
+    headless = ENV["HEADLESS"] == nil || ENV["HEADLESS"] == "true"
+
     Capybara.register_driver :selenium do |app|
       Capybara::Selenium::Driver.new(
         app,
         browser: :chrome,
-        options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu])
+        options: Selenium::WebDriver::Chrome::Options.new(args: headless ? %w[headless disable-gpu] : %w[disable-gpu])
       )
     end
 
