@@ -5,24 +5,24 @@ class ApprovableTest < ActiveSupport::TestCase
     subject = create_subject(exam: true)
     course = subject.course
 
-    assert_not course.approved?([], [subject.id])
-    assert course.approved?([subject.id], [])
+    assert_not course.approved?([])
+    assert course.approved?([subject.course.id])
   end
 
   test "#approved? returns true when is_exam and exam approved" do
     subject = create_subject(exam: true)
     exam = subject.exam
 
-    assert_not exam.approved?([], [])
-    assert_not exam.approved?([subject.id], [])
-    assert exam.approved?([], [subject.id])
+    assert_not exam.approved?([])
+    assert_not exam.approved?([subject.course.id])
+    assert exam.approved?([subject.course.id, subject.exam.id])
   end
 
   test "#available? returns true when no prerequisite" do
     subject = create_subject(exam: false)
     course = subject.course
 
-    assert course.available?([], [])
+    assert course.available?([])
   end
 
   test "#available? returns true when prerequisite met" do
@@ -30,10 +30,10 @@ class ApprovableTest < ActiveSupport::TestCase
     subject2 = create_subject(exam: false)
 
     mock = Minitest::Mock.new
-    mock.expect(:met?, true, [[subject1.id], []])
+    mock.expect(:met?, true, [[subject1.course.id]])
 
     subject2.course.stub(:prerequisite_tree, mock) do
-      assert subject2.course.available?([subject1.id], [])
+      assert subject2.course.available?([subject1.course.id])
     end
   end
 
@@ -42,10 +42,10 @@ class ApprovableTest < ActiveSupport::TestCase
     subject2 = create_subject(exam: false)
 
     mock = Minitest::Mock.new
-    mock.expect(:met?, false, [[subject1.id], []])
+    mock.expect(:met?, false, [[subject1.course.id]])
 
     subject2.course.stub(:prerequisite_tree, mock) do
-      assert_not subject2.course.available?([subject1.id], [])
+      assert_not subject2.course.available?([subject1.course.id])
     end
   end
 end

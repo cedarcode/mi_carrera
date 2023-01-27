@@ -3,7 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
-  serialize :approvals, Hash
+  serialize :approvals, Array
 
   def self.from_omniauth(auth, session)
     # check that user with same email exists
@@ -28,10 +28,7 @@ class User < ApplicationRecord
   end
 
   def add_approvals_in_session(session)
-    self.approvals = {
-      approved_courses: session[:approved_courses] || [],
-      approved_exams: session[:approved_exams] || []
-    }
+    self.approvals = session[:approved_approvable_ids] || []
   end
 
   def self.new_with_session(params, session)
