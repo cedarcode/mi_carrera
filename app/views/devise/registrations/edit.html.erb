@@ -6,6 +6,7 @@
 
       <li class="form-input-container">
         <div class="mdc-text-field mdc-text-field--filled <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:email].any? %>" data-controller="textfield">
+          <span class="mdc-text-field__ripple"></span>
           <%= render 'shared/invalid_icon', resource: resource, field: :email %>
           <%= f.label :email, "Correo electrónico", class: "mdc-floating-label" %>
           <%= f.email_field :email, class: "mdc-text-field__input", required: true, autofocus: true, autocomplete: "email" %>
@@ -17,6 +18,7 @@
       </li>
       <li class="form-input-container">
         <div class="mdc-text-field mdc-text-field--filled <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:password].any? %>" data-controller="textfield">
+          <span class="mdc-text-field__ripple"></span>
           <%= render 'shared/invalid_icon', resource: resource, field: :password %>
           <%= f.label :password, "Nueva contraseña", class: "mdc-floating-label" %>
           <%= f.password_field :password, class: "mdc-text-field__input", autofocus: true, autocomplete: "new-password" %>
@@ -26,6 +28,7 @@
       </li>
       <li class="form-input-container">
         <div class="mdc-text-field mdc-text-field--filled <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:password_confirmation].any? %>" data-controller="textfield">
+          <span class="mdc-text-field__ripple"></span>
           <%= render 'shared/invalid_icon', resource: resource, field: :password_confirmation %>
           <%= f.label :password_confirmation, "Confirma tu nueva contraseña", class: "mdc-floating-label" %>
           <%= f.password_field :password_confirmation, class: "mdc-text-field__input", autofocus: true, autocomplete: "new-password" %>
@@ -35,6 +38,7 @@
       </li>
       <li class="form-input-container">
         <div class="mdc-text-field mdc-text-field--filled <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:current_password].any? %>" data-controller="textfield">
+          <span class="mdc-text-field__ripple"></span>
           <%= render 'shared/invalid_icon', resource: resource, field: :current_password %>
           <%= f.label :current_password, "Contraseña actual", class: "mdc-floating-label" %>
           <%= f.password_field :current_password, class: "mdc-text-field__input", required: true, autofocus: true, autocomplete: 'current-password' %>
