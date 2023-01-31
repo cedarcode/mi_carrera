@@ -21,7 +21,7 @@ module ApplicationHelper
       link_options[:class] += " mdc-deprecated-list-item--activated"
     end
 
-    link_to link, **link_options do
+    link_to(link, **link_options) do
       tag.span(class: 'mdc-deprecated-list-item__ripple') +
         tag.span(text, class: 'mdc-deprecated-list-item__text')
     end

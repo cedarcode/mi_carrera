@@ -15,7 +15,7 @@ class BedeliasSpider
 
     headless = ENV["HEADLESS"] == nil || ENV["HEADLESS"] == "true"
 
-    Capybara.register_driver :selenium do |app|
+    Capybara.register_driver(:selenium) do |app|
       Capybara::Selenium::Driver.new(
         app,
         browser: :chrome,
@@ -34,7 +34,7 @@ class BedeliasSpider
     end
 
     @browser = Capybara.current_session
-    @browser.visit URL
+    @browser.visit(URL)
   end
 
   def parse_subjects_and_prerequisites
@@ -48,7 +48,7 @@ class BedeliasSpider
       # for each group, get code name min_credits and save it to a json file
       group_details = curriculum_page.group_details(group_node)
 
-      Rails.logger.info "Generating subject group #{group_details[:code]} - #{group_details[:name]}"
+      Rails.logger.info("Generating subject group #{group_details[:code]} - #{group_details[:name]}")
 
       # append group_details to file
       groups[group_details[:code]] = group_details
@@ -74,7 +74,7 @@ class BedeliasSpider
       approvable_details = prerequisites_page.approvable_details(approvable_node)
 
       if subjects[approvable_details[:code]].nil?
-        Rails.logger.info "Warning: skipping #{approvable_details[:code]} - #{approvable_details[:name]}"
+        Rails.logger.info("Warning: skipping #{approvable_details[:code]} - #{approvable_details[:name]}")
         next
       end
 
