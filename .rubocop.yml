@@ -55,6 +55,8 @@ Style/MethodCallWithArgsParentheses:
     - within
     - write
     - raise
+  Exclude:
+    - "db/migrate/*"
 
 Style/RedundantBegin:
   Enabled: true
