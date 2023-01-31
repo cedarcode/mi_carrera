@@ -49,6 +49,12 @@ Rails/LexicallyScopedActionFilter:
 
 Style/MethodCallWithArgsParentheses:
   Enabled: true
+  AllowedMethods:
+    - sleep
+    - click_on
+    - within
+    - write
+    - raise
 
 Style/RedundantBegin:
   Enabled: true
