@@ -13,15 +13,15 @@ class AutoUnapprovalTest < ApplicationSystemTestCase
   test "unapproving Subject 1 unapproves the rest" do
     visit root_path
     find("#checkbox_#{@subject1.id}_course_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
     find("#checkbox_#{@subject2.id}_course_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
     find("#checkbox_#{@subject3.id}_course_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     visit root_path
     find("#checkbox_#{@subject1.id}_course_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
     visit root_path
 
     assert_text "0 créditos"

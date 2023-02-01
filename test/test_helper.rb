@@ -44,10 +44,8 @@ class ActiveSupport::TestCase
     User.create!(email: email, password: password, provider: provider, uid: uid)
   end
 
-  def wait_for_async_request
-    # Ideally we would really wait for the request to complete instead of
-    # sleeping a fixed amount of time
-    sleep 1
+  def wait_for_approvables_reloaded
+    assert page.has_no_selector?('.foreground-layer')
   end
 
   def within_actions_menu

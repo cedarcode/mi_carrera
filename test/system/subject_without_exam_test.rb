@@ -10,7 +10,7 @@ class SubjectWihoutExamTest < ApplicationSystemTestCase
 
     check "Curso aprobado?", visible: :all
 
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     click_on "Student"
 

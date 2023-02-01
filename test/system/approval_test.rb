@@ -9,7 +9,7 @@ class ApprovalTest < ApplicationSystemTestCase
     visit subject_path(@subject)
 
     check "Curso aprobado?", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     visit root_path
 
     assert_text "0 créditos"
@@ -22,7 +22,7 @@ class ApprovalTest < ApplicationSystemTestCase
     visit root_path
 
     find("#checkbox_#{@subject.id}_course_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
     visit root_path
 
     assert_text "0 créditos"
@@ -35,7 +35,7 @@ class ApprovalTest < ApplicationSystemTestCase
     visit subject_path(@subject)
 
     check "Examen aprobado?", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     visit root_path
 
     assert_text "9 créditos"
@@ -47,7 +47,7 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student adds approved exam from index" do
     visit root_path
     find("#checkbox_#{@subject.id}_course_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     find("#checkbox_#{@subject.id}_exam_approved", visible: :all).click
 
@@ -62,11 +62,11 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student remove approved course from show" do
     visit subject_path(@subject)
     check "Curso aprobado?", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     visit subject_path(@subject)
     uncheck "Curso aprobado?", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     visit subject_path(@subject)
 
     assert page.has_unchecked_field?("Curso aprobado?", visible: :all)
@@ -77,11 +77,11 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student remove approved course from index" do
     visit root_path
     find("#checkbox_#{@subject.id}_course_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     visit root_path
     find("#checkbox_#{@subject.id}_course_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
     visit root_path
 
     assert page.has_unchecked_field?("checkbox_#{@subject.id}_course_approved", visible: :all)
@@ -92,13 +92,13 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student remove approved exam from show" do
     visit subject_path(@subject)
     check "Curso aprobado?", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "Examen aprobado?", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     visit subject_path(@subject)
     uncheck "Examen aprobado?", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     visit subject_path(@subject)
 
     assert page.has_unchecked_field?("Examen aprobado?", visible: :all)
@@ -109,13 +109,13 @@ class ApprovalTest < ApplicationSystemTestCase
   test "student remove approved exam from index" do
     visit root_path
     find("#checkbox_#{@subject.id}_course_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
     find("#checkbox_#{@subject.id}_exam_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     visit root_path
     find("#checkbox_#{@subject.id}_exam_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
     visit root_path
 
     assert_text "0 créditos"
