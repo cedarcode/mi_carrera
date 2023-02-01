@@ -1,23 +1,23 @@
-<div class="mdc-list-group">
-  <h3 class="mdc-list-group__subheader mdc-typography--headline5">Avance de Carrera</h3>
-  <ul class="mdc-list growing-text-list">
-    <li role="separator" class="mdc-list-divider"></li>
+<div class="mdc-deprecated-list-group">
+  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5">Avance de Carrera</h3>
+  <ul class="mdc-deprecated-list growing-text-list">
+    <li role="separator" class="mdc-deprecated-list-divider"></li>
     <% @groups_and_credits.each do |group| %>
-      <li class="mdc-list-item">
-        <%= link_to subject_group_path(group[:subject_group]), :class => "mdc-list-item__text" do %>
+      <li class="mdc-deprecated-list-item">
+        <%= link_to subject_group_path(group[:subject_group]), :class => "mdc-deprecated-list-item__text" do %>
           <%= group[:subject_group].name %>
         <% end %>
-        <span class="mdc-list-item__meta">
+        <span class="mdc-deprecated-list-item__meta">
           <%= group[:credits] %>
         </span>
       </li>
-      <li role="separator" class="mdc-list-divider"></li>
+      <li role="separator" class="mdc-deprecated-list-divider"></li>
     <% end %>
-    <li class="mdc-list-item total-credits">
-      <span class="mdc-list-item__text">
+    <li class="mdc-deprecated-list-item total-credits">
+      <span class="mdc-deprecated-list-item__text">
         Total
       </span>
-      <span class="mdc-list-item__meta">
+      <span class="mdc-deprecated-list-item__meta">
         <%= @groups_and_credits.pluck(:credits).reduce :+ %>
       </span>
     </li>

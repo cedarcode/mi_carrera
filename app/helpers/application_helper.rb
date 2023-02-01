@@ -14,17 +14,16 @@ module ApplicationHelper
   def drawer_menu_navigation_item(text, link)
     link_options = {}
     link_options[:tabindex] = 0
-    link_options[:class] = "mdc-list-item"
+    link_options[:class] = "mdc-deprecated-list-item"
     if current_page?(link)
       link_options[:aria] = { current: 'page' }
 
-      link_options[:class] += " mdc-list-item--activated"
+      link_options[:class] += " mdc-deprecated-list-item--activated"
     end
 
     link_to link, **link_options do
-      tag.span class: 'mdc-list-item__text' do
-        text
-      end
+      tag.span(class: 'mdc-deprecated-list-item__ripple') +
+        tag.span(text, class: 'mdc-deprecated-list-item__text')
     end
   end
 end

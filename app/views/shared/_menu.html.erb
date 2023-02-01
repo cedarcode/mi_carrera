@@ -1,44 +1,48 @@
 <aside class="mdc-drawer mdc-drawer--modal" data-navigation-drawer-target='drawer'>
   <div class="mdc-drawer__content">
-    <div class="mdc-list" data-action='click->navigation-drawer#close'>
+    <div class="mdc-deprecated-list" data-action='click->navigation-drawer#close'>
 
       <% if current_user %>
         <div class="menu-user-info">
-          <span class="mdc-list-item__text">
+          <span class="mdc-deprecated-list-item__text">
             Logueado como <br>
             <%= current_user.email %>
           </span>
         </div>
-        <li role="separator" class="mdc-list-divider"></li>
+        <li role="separator" class="mdc-deprecated-list-divider"></li>
       <% end %>
       <%= drawer_menu_navigation_item('Inicio', root_path) %>
       <%= drawer_menu_navigation_item('Materias', all_subjects_path) %>
       <%= drawer_menu_navigation_item('Avance de Carrera', profile_path) %>
-      <li role="separator" class="mdc-list-divider"></li>
-      <a class='mdc-list-item' href="https://github.com/cedarcode/student" target='_blank' tabindex='0'>
+      <li role="separator" class="mdc-deprecated-list-divider"></li>
+      <a class='mdc-deprecated-list-item' href="https://github.com/cedarcode/student" target='_blank' tabindex='0'>
+        <span class="mdc-deprecated-list-item__ripple"></span>
         <span class="material-symbols-outlined">
           open_in_new
         </span>
         &nbsp;
-        <span class='mdc-list-item__text'>
+        <span class='mdc-deprecated-list-item__text'>
           Colabora en Github
         </span>
       </a>
-      <li role="separator" class="mdc-list-divider"></li>
+      <li role="separator" class="mdc-deprecated-list-divider"></li>
       <% if current_user %>
-        <%= link_to edit_user_registration_path, class: "mdc-list-item", tabindex: 0 do %>
-          <span class="mdc-list-item__text">
+        <%= link_to edit_user_registration_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
+          <span class="mdc-deprecated-list-item__ripple"></span>
+          <span class="mdc-deprecated-list-item__text">
             Editar Perfil
           <span>
         <% end %>
-        <%= link_to destroy_user_session_path, method: :delete, class: "mdc-list-item", tabindex: 0 do %>
-          <span class="mdc-list-item__text">
+        <%= link_to destroy_user_session_path, method: :delete, class: "mdc-deprecated-list-item", tabindex: 0 do %>
+          <span class="mdc-deprecated-list-item__ripple"></span>
+          <span class="mdc-deprecated-list-item__text">
             Salir
           </span>
         <% end %>
       <% else %>
-        <%= link_to new_user_session_path, class: "mdc-list-item", tabindex: 0 do %>
-          <span class="mdc-list-item__text">
+        <%= link_to new_user_session_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
+          <span class="mdc-deprecated-list-item__ripple"></span>
+          <span class="mdc-deprecated-list-item__text">
             Ingresar
           <span>
         <% end %>

@@ -1,13 +1,14 @@
-<div class="mdc-list">
+<div class="mdc-deprecated-list">
   <% subjects.each do |subject| %>
-    <%= link_to subject_path(subject), :class => "mdc-list-item" do %>
-      <span class="mdc-list-item__text">
+    <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item" do %>
+      <span class="mdc-deprecated-list-item__ripple"></span>
+      <span class="mdc-deprecated-list-item__text">
         <%= display_name(subject) %>
       </span>
       <% if bedel.approved?(subject) %>
-        <span class="mdc-list-item__meta material-icons">done</span>
+        <span class="mdc-deprecated-list-item__meta material-icons">done</span>
       <% elsif !bedel.able_to_do?(subject) %>
-        <span class="mdc-list-item__meta material-icons">lock</span>
+        <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
       <% end %>
     <% end %>
   <% end %>
