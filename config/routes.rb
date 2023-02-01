@@ -12,10 +12,11 @@ Rails.application.routes.draw do
 
   resources :subject_groups, only: :show
 
+  resources :approvables, only: [] do
+    resource :approval, only: [:create, :destroy]
+  end
+
   resources :subjects do
-    member do
-      patch :approve
-    end
     collection do
       get :all
     end
