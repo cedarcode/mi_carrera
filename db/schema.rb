@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_22_163937) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_31_224800) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_163937) do
     t.string "openfing_id"
     t.string "eva_id"
     t.string "code"
+    t.boolean "hidden_by_default", default: false
     t.index ["code"], name: "index_subjects_on_code", unique: true
   end
 

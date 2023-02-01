@@ -17,7 +17,10 @@ class ApprovalsController < ApplicationController
     if params[:subject_show]
       @subject = @approvable.subject
     else
-      @subjects = TreePreloader.new.preload.select { |subject| current_student.available?(subject.course) }
+      @subjects = TreePreloader.new.preload.select do |subject|
+        (!subject.hidden_by_default || current_student.approved?(subject.course)) &&
+          current_student.available?(subject.course)
+      end
     end
 
     render :update
