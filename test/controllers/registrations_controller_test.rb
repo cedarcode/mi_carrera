@@ -72,13 +72,13 @@ class RegistrationsControllerTest < ApplicationControllerTestCase
   test 'create a user with approvals in session should create user with approvals' do
     subject1 = create_subject(name: "Subject 1", credits: 16, exam: false)
     subject2 = create_subject(name: "Subject 2", credits: 16, exam: true)
-    patch approve_subject_path(subject1), params: {
+    post approvable_approval_path(subject1.course), params: {
       subject: {
         course_approved: 'yes'
       },
       format: 'turbo_stream'
     }
-    patch approve_subject_path(subject2), params: {
+    post approvable_approval_path(subject2.exam), params: {
       subject: {
         exam_approved: 'yes'
       },
