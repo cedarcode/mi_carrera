@@ -40,3 +40,11 @@ jobs:
       run: |
         bundle exec rake db:create db:schema:load
         bundle exec rake
+
+    - name: Upload screenshots
+      if: failure()
+      uses: actions/upload-artifact@v3
+      with:
+        name: system_test_screenshots
+        path: ./tmp/screenshots
+        retention-days: 2
