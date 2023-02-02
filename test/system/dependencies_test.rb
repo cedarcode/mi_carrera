@@ -46,7 +46,7 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can disable exams from show" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     uncheck "Curso aprobado?", visible: :all
 
@@ -58,7 +58,7 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can disable exams from index" do
     visit root_path
     find("#checkbox_#{@gal1.id}_course_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     find("#checkbox_#{@gal1.id}_course_approved", visible: :all).click
 
@@ -76,7 +76,7 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can reaveal hidden subjects from show" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     visit root_path
     assert_text "GAL 2"
@@ -92,11 +92,11 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can hide subjects from show" do
     visit subject_path(@gal1)
     check "Curso aprobado?", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     visit subject_path(@gal1)
     uncheck "Curso aprobado?", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     visit root_path
     assert_no_text "GAL 2"
@@ -105,7 +105,7 @@ class DependenciesTest < ApplicationSystemTestCase
   test "student can hide subjects from index" do
     visit root_path
     find("#checkbox_#{@gal1.id}_course_approved", visible: :all).click
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     find("#checkbox_#{@gal1.id}_course_approved", visible: :all).click
 

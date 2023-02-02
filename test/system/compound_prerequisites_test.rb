@@ -39,20 +39,20 @@ class CompoundPrerequisitesTest < ApplicationSystemTestCase
 
     assert_no_text "P2"
     check "checkbox_#{@gal1.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal1.id}_exam_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     assert_no_text "P2"
   end
 
   test "student can see subjects if they meet the requirements of the first operand" do
     visit root_path
     check "checkbox_#{@gal1.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal1.id}_exam_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal2.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal2.id}_exam_approved", visible: :all
 
     assert_text "P2"
@@ -61,9 +61,9 @@ class CompoundPrerequisitesTest < ApplicationSystemTestCase
   test "student can see subjects if they meet the requirements of the second operand" do
     visit root_path
     check "checkbox_#{@gal1.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal2.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@p1.id}_course_approved", visible: :all
 
     assert_text "P2"
@@ -72,11 +72,11 @@ class CompoundPrerequisitesTest < ApplicationSystemTestCase
   test "student can see subjects if they meet the requirements of the third operand" do
     visit root_path
     check "checkbox_#{@gal1.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal1.id}_exam_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@p1.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@p1.id}_exam_approved", visible: :all
 
     assert_text "P2"

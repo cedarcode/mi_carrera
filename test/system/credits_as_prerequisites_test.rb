@@ -23,7 +23,7 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
   test "student can see subjects with enough credits" do
     visit root_path
     check "checkbox_#{@gal1.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal1.id}_exam_approved", visible: :all
 
     assert_text "GAL 2"
@@ -32,7 +32,7 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
   test "student can hide subjects" do
     visit root_path
     check "checkbox_#{@gal1.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal1.id}_exam_approved", visible: :all
 
     assert_text "GAL 2"
@@ -45,9 +45,9 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
 
     assert_no_text "GAL 3"
     check "checkbox_#{@gal1.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal1.id}_exam_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
 
     assert_no_text "GAL 3"
   end
@@ -55,11 +55,11 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
   test "student can see subjects with enough group credits" do
     visit root_path
     check "checkbox_#{@gal1.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal1.id}_exam_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal2.id}_course_approved", visible: :all
-    wait_for_async_request
+    wait_for_approvables_reloaded
     check "checkbox_#{@gal2.id}_exam_approved", visible: :all
 
     assert_text "GAL 3"
