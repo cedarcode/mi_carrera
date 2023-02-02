@@ -17,7 +17,7 @@ namespace :scrape do
     subject_groups.each do |_code, group|
       puts "Updating group #{group["code"]}"
       subject_group = SubjectGroup.find_or_initialize_by(code: group["code"])
-      subject_group.name = group["name"].split.map { |name| capitalize_name(name) }.join(' ')
+      subject_group.name = capitalize_name(group["name"])
       subject_group.save!
     end
 
@@ -27,7 +27,7 @@ namespace :scrape do
       new_subject = Subject.find_or_initialize_by(code: subject["code"])
 
       # capitalize only the first letter of words
-      new_subject.name = subject["name"].split.map { |name| capitalize_name(name) }.join(' ')
+      new_subject.name = capitalize_name(subject["name"])
       new_subject.credits = subject["credits"]
       new_subject.group = SubjectGroup.find_by(code: subject["subject_group"])
       new_subject.save!
@@ -51,7 +51,9 @@ namespace :scrape do
 end
 
 def capitalize_name(name)
-  ['I', 'II', 'III', 'IV', 'V'].include?(name) ? name : name.capitalize
+  name.split.map do |word|
+    ['I', 'II', 'III', 'IV', 'V'].include?(word) ? word : word.capitalize
+  end.join(' ')
 end
 
 def prerequisite_tree(prerequisite:, approvable: nil, parent_prerequisite: nil)
