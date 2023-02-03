@@ -35,7 +35,9 @@ class BaseStudent
     approvables_by_id = approvables.index_by(&:id)
 
     loop do
-      break unless ids.reject! { |id| !approvables_by_id[id].available?(ids) }
+      rejected = ids.reject! { |id| !approvables_by_id[id].available?(ids) }
+
+      break unless rejected
     end
   end
 end
