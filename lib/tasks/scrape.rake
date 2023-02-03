@@ -31,6 +31,7 @@ namespace :scrape do
       new_subject.credits = subject["credits"]
       new_subject.hidden_by_default = subject["hidden_by_default"] || false
       new_subject.group = SubjectGroup.find_by(code: subject["subject_group"])
+      new_subject.semester = subject["semester"]
       new_subject.save!
 
       # create the approvables
