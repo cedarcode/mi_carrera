@@ -35,4 +35,43 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
     assert prerequisite.met?([])
     assert_not prerequisite.met?([@subject1.course.id])
   end
+
+  test "#met? on logical AT_LEAST returns true conditions are met" do
+    prerequisite = LogicalPrerequisite.new(
+      logical_operator: "at_least",
+      amount_of_subjects_needed: 2,
+      operands_prerequisites: [
+        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id),
+        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject3.course.id),
+      ]
+    )
+
+    assert prerequisite.met?([@subject2.course.id, @subject3.course.id])
+  end
+
+  test "#met? on logical AT_LEAST returns false when any prerequisite not met" do
+    prerequisite = LogicalPrerequisite.new(
+      logical_operator: "at_least",
+      amount_of_subjects_needed: 2,
+      operands_prerequisites: [
+        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id),
+        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject3.course.id)
+      ]
+    )
+
+    assert_not prerequisite.met?([@subject2.course.id])
+  end
+
+  test "validates that the amount of subjects is loe than operand prerequisites count" do
+    prerequisite = LogicalPrerequisite.new(
+      logical_operator: "at_least",
+      amount_of_subjects_needed: 3,
+      operands_prerequisites: [
+        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id),
+        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject3.course.id)
+      ]
+    )
+
+    assert_not prerequisite.valid?
+  end
 end
