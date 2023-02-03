@@ -14,7 +14,7 @@ class ApprovalsController < ApplicationController
   private
 
   def render_turbo_stream
-    if params[:only_approvables]
+    if params[:subject_show]
       @subject = @approvable.subject
     else
       @subjects = TreePreloader.new.preload.select { |subject| bedel.able_to_do?(subject.course) }

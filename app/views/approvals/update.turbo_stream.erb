@@ -1,4 +1,4 @@
-<% if params[:only_approvables] %>
+<% if params[:subject_show] %>
   <%= turbo_stream.replace "approvables" do %>
     <%= render 'subjects/approvables' %>
   <% end %>
