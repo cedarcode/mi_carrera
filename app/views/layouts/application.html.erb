@@ -35,7 +35,6 @@
 
   <body class="mdc-typography" data-controller='navigation-drawer info-dialog'>
     <%= render 'shared/menu' %>
-    <%= render 'shared/info_dialog' %>
     <div class="mdc-drawer-app-content">
       <header id='app-bar' class="mdc-top-app-bar">
         <div class="mdc-top-app-bar__row">
@@ -45,7 +44,6 @@
             <%= link_to 'MiCarrera', root_path, class: 'home-button'%>
           </section>
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-            <%= button_tag 'help', class: 'mdc-icon-button material-symbols-outlined mdc-top-app-bar__action-item', data: { 'info-dialog-target': 'trigger', action: 'click->info-dialog#open' } %>
             <span hidden>
               <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
             </span>
