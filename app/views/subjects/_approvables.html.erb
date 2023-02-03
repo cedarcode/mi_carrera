@@ -6,7 +6,7 @@
     </span>
 
     <span class="mdc-deprecated-list-item__meta">
-      <%= form_with(model: @subject, url: approve_subject_path(@subject, only_approvables: true), data: { controller: "autosave-check" }, local: false) do |form| %>
+      <%= form_with(model: @subject.course, url: approvable_approval_path(@subject.course, subject_show: true), data: { controller: "autosave-check" }, local: false, method: bedel.approved?(@subject.course) ? :delete : :post) do |form| %>
         <div class="mdc-checkbox">
           <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.course), disabled: !bedel.able_to_do?(@subject.course), data: { action: "foreground-layer#add autosave-check#update" } }, "yes", "no" %>
           <div class="mdc-checkbox__background">
@@ -29,7 +29,7 @@
       </span>
 
       <span class="mdc-deprecated-list-item__meta">
-        <%= form_with(model: @subject, url: approve_subject_path(@subject, only_approvables: true), data: { controller: "autosave-check" }, local: false) do |form| %>
+        <%= form_with(model: @subject.exam, url: approvable_approval_path(@subject.exam, subject_show: true), data: { controller: "autosave-check" }, local: false, method: bedel.approved?(@subject.exam) ? :delete : :post) do |form| %>
           <div class="mdc-checkbox">
             <%= form.check_box :exam_approved, { id: "checkbox_exam_approved", class: "mdc-checkbox__native-control", checked: bedel.approved?(@subject.exam), disabled: !bedel.able_to_do?(@subject.exam), data: { action: "foreground-layer#add autosave-check#update" } }, "yes", "no" %>
             <div class="mdc-checkbox__background">

@@ -1,6 +1,6 @@
-<% if params[:only_approvables] %>
+<% if params[:subject_show] %>
   <%= turbo_stream.replace "approvables" do %>
-    <%= render 'approvables' %>
+    <%= render 'subjects/approvables' %>
   <% end %>
 <% else %>
   <%= turbo_stream.replace "credits" do %>
@@ -8,6 +8,6 @@
   <% end %>
 
   <%= turbo_stream.replace "subjects" do %>
-    <%= render 'subjects_bulk_approve' %>
+    <%= render 'subjects/subjects_bulk_approve' %>
   <% end %>
 <% end %>
