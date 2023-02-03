@@ -1,0 +1,24 @@
+.mdc-banner {
+  background-color: lavender !important;
+  display: flex;
+  justify-content: center;
+
+  .mdc-banner__content {
+    display: flex;
+    max-width: 600px;
+    
+    .mdc-banner__text {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-right: 5px;
+      font-size: medium;
+      margin-left: 0;
+      padding-left: 20px;
+    }
+
+    .mdc-banner__actions {
+      align-self: center;
+      padding-right: 20px;
+    }
+  }  
+}  
