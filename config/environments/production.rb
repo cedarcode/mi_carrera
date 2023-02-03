@@ -118,6 +118,6 @@ Rails.application.configure do
     address: "smtp.sendgrid.net",
     port: 587,
     user_name: 'apikey',
-    password: Rails.application.credentials.sendgrid[:api_key]
+    password: Rails.application.credentials.sendgrid_api_key
   }
 end
