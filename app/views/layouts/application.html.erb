@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Student</title>
+    <title>MiCarrera</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,14 +17,14 @@
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Student PWA">
+    <meta name="apple-mobile-web-app-title" content="MiCarrera PWA">
     <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
     <meta name="theme-color" content="#6200ee"/>
 
     <meta name="description" content="Sistema de trackeo de previaturas de materias realizadas por estudiantes en la FING">
-    <meta property="og:title" content="Student App"/>
+    <meta property="og:title" content="MiCarrera"/>
     <meta property="og:description" content="Sistema de trackeo de previaturas de materias realizadas por estudiantes en la FING"/>
-    <meta property="og:site_name" content="Student App">
+    <meta property="og:site_name" content="MiCarrera">
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://student.cedarcode.com/"/>
     <meta property="og:image" content="<%= image_url('icon-512.png') %>">
@@ -42,7 +42,7 @@
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
             <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" data-action='click->navigation-drawer#open'>menu</button>
             <%= yield :navigation_icon %>
-            <%= link_to 'Student', root_path, class: 'home-button'%>
+            <%= link_to 'MiCarrera', root_path, class: 'home-button'%>
           </section>
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
             <%= button_tag 'help', class: 'mdc-icon-button material-symbols-outlined mdc-top-app-bar__action-item', data: { 'info-dialog-target': 'trigger', action: 'click->info-dialog#open' } %>

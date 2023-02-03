@@ -26,7 +26,7 @@ class LoginLogoutTest < ApplicationSystemTestCase
     click_on "Ingresar"
 
     assert_current_path(root_path)
-    assert_text "Student"
+    assert_text "MiCarrera"
     click_actions_menu
     within_actions_menu do
       assert_text "bob@test.com"

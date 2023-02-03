@@ -12,7 +12,7 @@ class SubjectWihoutExamTest < ApplicationSystemTestCase
 
     wait_for_approvables_reloaded
 
-    click_on "Student"
+    click_on "MiCarrera"
 
     assert_text "5 créditos"
   end
