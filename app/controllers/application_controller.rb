@@ -1,15 +1,9 @@
 class ApplicationController < ActionController::Base
-  helper_method :bedel
+  helper_method :current_student
 
   private
 
-  def bedel
-    @bedel ||= if current_user
-                 current_user.approvals ||= []
-                 Bedel.new(current_user.approvals, current_user)
-               else
-                 session[:approved_approvable_ids] ||= []
-                 Bedel.new(session[:approved_approvable_ids])
-               end
+  def current_student
+    @current_student ||= current_user ? UserStudent.new(current_user) : SessionStudent.new(session)
   end
 end

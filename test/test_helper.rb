@@ -10,7 +10,7 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  def create_group(code: nil, name: "Subject " + rand(1000))
+  def create_group(code: nil, name: "Subject #{rand(1000)}")
     if !code
       code = name.parameterize
     end
@@ -40,8 +40,8 @@ class ActiveSupport::TestCase
     subject
   end
 
-  def create_user(email: "bob@test.com", password: "bob123", provider: nil, uid: nil)
-    User.create!(email: email, password: password, provider: provider, uid: uid)
+  def create_user(email: "bob#{rand(1000)}@test.com", password: "bob123", provider: nil, uid: nil, approvals: nil)
+    User.create!(email: email, password: password, provider: provider, uid: uid, approvals:)
   end
 
   def wait_for_approvables_reloaded

@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   def index
-    @subjects = TreePreloader.new.preload.select { |subject| bedel.able_to_do?(subject.course) }
+    @subjects = TreePreloader.new.preload.select { |subject| current_student.available?(subject.course) }
   end
 
   def show

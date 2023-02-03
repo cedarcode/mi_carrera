@@ -5,9 +5,9 @@
       <span class="mdc-deprecated-list-item__text">
         <%= display_name(subject) %>
       </span>
-      <% if bedel.approved?(subject) %>
+      <% if current_student.approved?(subject) %>
         <span class="mdc-deprecated-list-item__meta material-icons">done</span>
-      <% elsif !bedel.able_to_do?(subject) %>
+      <% elsif !current_student.available?(subject) %>
         <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
       <% end %>
     <% end %>

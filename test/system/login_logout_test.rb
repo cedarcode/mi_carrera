@@ -3,7 +3,7 @@ require "application_system_test_case"
 class LoginLogoutTest < ApplicationSystemTestCase
   setup do
     visit root_path
-    create_user
+    create_user(email: "bob@test.com")
   end
 
   test "user can see sign in icon and google sign in button" do
