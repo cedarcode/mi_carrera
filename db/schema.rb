@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_214419) do
     t.integer "credits_needed"
     t.integer "subject_group_id"
     t.integer "approvable_needed_id"
+    t.integer "amount_of_subjects_needed"
   end
 
   create_table "subject_groups", force: :cascade do |t|
