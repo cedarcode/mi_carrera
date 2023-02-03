@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-class StudentAppSeeder
+class MiCarreraSeeder
   def seed
     Prerequisite.all.delete_all
     subject_groups = populate_subject_groups!
@@ -175,4 +175,4 @@ class StudentAppSeeder
   end
 end
 
-StudentAppSeeder.new.seed
+MiCarreraSeeder.new.seed

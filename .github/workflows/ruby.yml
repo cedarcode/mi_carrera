@@ -10,7 +10,7 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: student
+          POSTGRES_USER: mi_carrera
           POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
@@ -33,7 +33,7 @@ jobs:
       env:
         RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         RAILS_ENV: test
-        DB_USER: student
+        DB_USER: mi_carrera
         DB_PASSWORD: postgres
         PGHOST: localhost
         PGPORT: 5432

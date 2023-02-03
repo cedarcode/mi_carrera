@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: student_development
+  database: mi_carrera_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: student
+  #username: mi_carrera
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: student_test
+  database: mi_carrera_test
   username: <%= ENV["DB_USER"] %>
   password: <%= ENV["DB_PASSWORD"] %>
 
@@ -82,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: student_production
-  username: student
-  password: <%= ENV['STUDENT_DATABASE_PASSWORD'] %>
+  database: mi_carrera_production
+  username: mi_carrera
+  password: <%= ENV['MI_CARRERA_DATABASE_PASSWORD'] %>
