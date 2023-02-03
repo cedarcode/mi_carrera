@@ -70,7 +70,8 @@ def prerequisite_tree(prerequisite:, approvable: nil, parent_prerequisite: nil)
     logical_prerequisite = LogicalPrerequisite.new(
       approvable: approvable,
       parent_prerequisite: parent_prerequisite,
-      logical_operator: prerequisite["logical_operator"]
+      logical_operator: prerequisite["logical_operator"],
+      amount_of_subjects_needed: prerequisite["amount_of_subjects_needed"],
     )
 
     prerequisite["operands"].each do |prerequisite_op|
