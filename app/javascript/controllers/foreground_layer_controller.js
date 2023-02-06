@@ -1,9 +1,12 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["checkbox"];
+  static targets = ["checkbox", "spinnerTemplate"];
 
-  add() {
+  add({ target }) {
+    const spinner = this.spinnerTemplateTarget.content.firstElementChild.cloneNode(true);
+    target.parentElement.replaceChildren(spinner)
+
     for (const checkbox of this.checkboxTargets) {
       checkbox.disabled = true;
     }
