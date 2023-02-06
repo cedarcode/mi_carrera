@@ -6,7 +6,7 @@
   <span class="mdc-deprecated-list-item__meta two-checkboxes">
     <%= form_with(model: subject.course, url: approvable_approval_path(subject.course), data: { controller: "autosave-check" }, local: false, method: current_student.approved?(subject.course) ? :delete : :post) do |form| %>
       <div class="mdc-checkbox">
-        <%= form.check_box :course_approved, { id: "checkbox_#{subject.id}_course_approved", class: "mdc-checkbox__native-control", checked: current_student.approved?(subject.course), data: { action: "foreground-layer#add autosave-check#update" } }, "yes", "no" %>
+        <%= form.check_box :course_approved, { id: "checkbox_#{subject.id}_course_approved", class: "mdc-checkbox__native-control", checked: current_student.approved?(subject.course), data: { action: "foreground-layer#add autosave-check#update", "foreground-layer-target": "checkbox" } }, "yes", "no" %>
         <div class="mdc-checkbox__background">
           <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
             <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -20,7 +20,7 @@
     <% if subject.exam %>
       <%= form_with(model: subject.exam, url: approvable_approval_path(subject.exam), data: { controller: "autosave-check" }, local: false, method: current_student.approved?(subject.exam) ? :delete : :post) do |form| %>
         <div class="mdc-checkbox">
-          <%= form.check_box :exam_approved, { id: "checkbox_#{subject.id}_exam_approved", class: "mdc-checkbox__native-control", checked: current_student.approved?(subject.exam), disabled: !current_student.available?(subject.exam), data: { action: "foreground-layer#add autosave-check#update" } }, "yes", "no" %>
+          <%= form.check_box :exam_approved, { id: "checkbox_#{subject.id}_exam_approved", class: "mdc-checkbox__native-control", checked: current_student.approved?(subject.exam), disabled: !current_student.available?(subject.exam), data: { action: "foreground-layer#add autosave-check#update", "foreground-layer-target": "checkbox" } }, "yes", "no" %>
 
           <div class="mdc-checkbox__background">
             <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
