@@ -45,7 +45,7 @@ class ActiveSupport::TestCase
   end
 
   def wait_for_approvables_reloaded
-    assert page.has_no_selector?('.foreground-layer')
+    assert page.has_no_selector?('.mdc-circular-progress')
   end
 
   def within_actions_menu
