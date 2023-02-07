@@ -61,7 +61,7 @@
         <% if flash[:alert] %>
           <%= render 'shared/snackbar', message: flash[:alert]%>
         <% end %>
-        <%= render 'shared/welcome_banner' %>
+        <%= yield :welcome_banner %>
         <div class='content'>
           <%= yield %>
         </div>
