@@ -61,7 +61,7 @@
         <% if flash[:alert] %>
           <%= render 'shared/snackbar', message: flash[:alert]%>
         <% end %>
-        <%= render 'shared/banner', message: "Bienvenido! Marcá los cursos y exámenes que aprobaste para ver qué materias podés cursar.", action: "Listo" %>
+        <%= render 'shared/welcome_banner' %>
         <div class='content'>
           <%= yield %>
         </div>
