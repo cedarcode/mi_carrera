@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
   setup do
-    maths = create_group(name: "Matemáticas")
+    maths = create :subject_group
     @gal1 = create_subject(name: "GAL 1", credits: 9, group: maths)
     @gal2 = create_subject(name: "GAL 2", credits: 9, group: maths)
     gal3 = create_subject(name: "GAL 3", credits: 9, group: maths)

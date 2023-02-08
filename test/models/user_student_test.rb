@@ -68,8 +68,8 @@ class UserStudentTest < ActiveSupport::TestCase
   end
 
   test "#group_credits returns approved credits for the given group" do
-    group1 = create_group
-    group2 = create_group
+    group1 = create :subject_group
+    group2 = create :subject_group
 
     subject1 = create_subject(credits: 10, exam: false, group: group1)
     subject2 = create_subject(credits: 11, exam: true, group: group1)
@@ -88,8 +88,8 @@ class UserStudentTest < ActiveSupport::TestCase
   end
 
   test "#total_credits returns total approved credits" do
-    group1 = create_group
-    group2 = create_group
+    group1 = create :subject_group
+    group2 = create :subject_group
 
     subject1 = create_subject(credits: 10, exam: false, group: group1)
     subject2 = create_subject(credits: 11, exam: true, group: group1)

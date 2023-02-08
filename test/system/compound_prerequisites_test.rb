@@ -2,8 +2,8 @@ require "application_system_test_case"
 
 class CompoundPrerequisitesTest < ApplicationSystemTestCase
   setup do
-    maths = create_group(name: "Matemáticas")
-    prog = create_group(name: "Programación")
+    maths = create :subject_group
+    prog = create :subject_group
     @gal1 = create_subject(name: "GAL 1", credits: 8, group: maths)
     @gal2 = create_subject(name: "GAL 2", credits: 8, group: maths)
     @p1 = create_subject(name: "P1", credits: 5, group: prog)

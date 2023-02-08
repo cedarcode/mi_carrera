@@ -16,7 +16,7 @@ class CreditsPrerequisiteTest < ActiveSupport::TestCase
   end
 
   test "#met? returns true when credits >= needed with subject_group and other subjects" do
-    group = create_group(name: 'test_group')
+    group = create :subject_group
     s1_with_group = create_subject(exam: false, credits: 2, group: group)
     s2_with_group = create_subject(exam: false, credits: 3, group: group)
     s3_without_group = create_subject(exam: false, credits: 3)
@@ -25,7 +25,7 @@ class CreditsPrerequisiteTest < ActiveSupport::TestCase
   end
 
   test "#met? returns false when credits < needed with subject_group and other subjects" do
-    group = create_group(name: 'test_group')
+    group = create :subject_group
     s1_with_group = create_subject(exam: false, credits: 2, group: group)
     s3_without_group = create_subject(exam: false, credits: 3)
     prerequisite = CreditsPrerequisite.new(credits_needed: 5, subject_group: group)
