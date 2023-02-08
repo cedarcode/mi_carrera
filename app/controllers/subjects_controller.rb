@@ -10,7 +10,7 @@ class SubjectsController < ApplicationController
   end
 
   def all
-    @subjects = Subject.ordered_by_semester_and_name
+    @subjects = TreePreloader.new.preload
   end
 
   private
