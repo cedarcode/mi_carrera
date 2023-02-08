@@ -4,77 +4,35 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
   setup do
     @subject1 = create :subject
     @subject2 = create :subject
-    @subject3 = create :subject
   end
 
   test "#met? on logical AND returns true when all prerequisites met" do
-    prerequisite = LogicalPrerequisite.new(
-      logical_operator: "and",
-      operands_prerequisites: [
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id),
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject3.course.id)
-      ]
-    )
+    prerequisite = build(:and_prerequisite, operands_prerequisites: [
+      create(:subject_prerequisite, approvable_needed: @subject1.course),
+      create(:subject_prerequisite, approvable_needed: @subject2.course)
+    ])
 
-    assert prerequisite.met?([@subject2.course.id, @subject3.course.id])
-  end
-
-  test "#met? on logical AND returns false when any prerequisite not met" do
-    prerequisite = LogicalPrerequisite.new(
-      logical_operator: "and",
-      operands_prerequisites: [
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id),
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject3.course.id)
-      ]
-    )
-
-    assert_not prerequisite.met?([@subject2.course.id])
+    assert_not prerequisite.met?([@subject1.course.id])
+    assert prerequisite.met?([@subject1.course.id, @subject2.course.id])
   end
 
   test "#met? on logical OR returns true when any prerequisite met" do
-    prerequisite = LogicalPrerequisite.new(
-      logical_operator: "or",
-      operands_prerequisites: [
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id),
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject3.course.id)
-      ]
-    )
-
-    assert prerequisite.met?([@subject2.course.id])
-    assert prerequisite.met?([@subject3.course.id])
-  end
-
-  test "#met? on logical OR returns false when all prerequisites not met" do
-    prerequisite = LogicalPrerequisite.new(
-      logical_operator: "or",
-      operands_prerequisites: [
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id),
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject3.course.id)
-      ]
-    )
+    prerequisite = build(:or_prerequisite, operands_prerequisites: [
+      create(:subject_prerequisite, approvable_needed: @subject1.course),
+      create(:subject_prerequisite, approvable_needed: @subject2.course)
+    ])
 
     assert_not prerequisite.met?([])
+    assert prerequisite.met?([@subject1.course.id])
+    assert prerequisite.met?([@subject2.course.id])
   end
 
   test "#met? on logical NOT returns true when prerequisite not met" do
-    prerequisite = LogicalPrerequisite.new(
-      logical_operator: "not",
-      operands_prerequisites: [
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id)
-      ]
-    )
+    prerequisite = build(:not_prerequisite, operands_prerequisites: [
+      create(:subject_prerequisite, approvable_needed: @subject1.course)
+    ])
 
     assert prerequisite.met?([])
-  end
-
-  test "#met? on logical NOT returns false when prerequisite met" do
-    prerequisite = LogicalPrerequisite.new(
-      logical_operator: "not",
-      operands_prerequisites: [
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id)
-      ]
-    )
-
-    assert_not prerequisite.met?([@subject2.course.id])
+    assert_not prerequisite.met?([@subject1.course.id])
   end
 end

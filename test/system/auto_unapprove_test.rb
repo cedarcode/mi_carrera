@@ -6,8 +6,8 @@ class AutoUnapprovalTest < ApplicationSystemTestCase
     @subject2 = create :subject, name: "Subject 2", credits: 2
     @subject3 = create :subject, name: "Subject 3", credits: 3
 
-    SubjectPrerequisite.create!(approvable_id: @subject3.course.id, approvable_needed_id: @subject2.course.id)
-    SubjectPrerequisite.create!(approvable_id: @subject2.course.id, approvable_needed_id: @subject1.course.id)
+    create :subject_prerequisite, approvable: @subject3.course, approvable_needed: @subject2.course
+    create :subject_prerequisite, approvable: @subject2.course, approvable_needed: @subject1.course
   end
 
   test "unapproving Subject 1 unapproves the rest" do

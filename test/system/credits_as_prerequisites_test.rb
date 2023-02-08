@@ -7,11 +7,11 @@ class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
     @gal2 = create :subject, :with_exam, name: "GAL 2", credits: 9, group: maths
     gal3 = create :subject, :with_exam, name: "GAL 3", credits: 9, group: maths
 
-    SubjectPrerequisite.create!(approvable_id: @gal1.exam.id, approvable_needed_id: @gal1.course.id)
-    CreditsPrerequisite.create!(approvable_id: @gal2.course.id, subject_group_id: nil, credits_needed: 5)
-    SubjectPrerequisite.create!(approvable_id: @gal2.exam.id, approvable_needed_id: @gal2.course.id)
-    CreditsPrerequisite.create!(approvable_id: gal3.course.id, subject_group_id: maths.id, credits_needed: 10)
-    SubjectPrerequisite.create!(approvable_id: gal3.exam.id, approvable_needed_id: gal3.course.id)
+    create :subject_prerequisite, approvable: @gal1.exam, approvable_needed: @gal1.course
+    create :credits_prerequisite, approvable: @gal2.course, credits_needed: 5
+    create :subject_prerequisite, approvable: @gal2.exam, approvable_needed: @gal2.course
+    create :credits_prerequisite, approvable: gal3.course, subject_group: maths, credits_needed: 10
+    create :subject_prerequisite, approvable: gal3.exam, approvable_needed: gal3.course
   end
 
   test "student cant see subjects without enough credits" do

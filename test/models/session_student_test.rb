@@ -5,7 +5,7 @@ class SessionStudentTest < ActiveSupport::TestCase
     subject1 = create :subject, :with_exam
     subject2 = create :subject, :with_exam
 
-    SubjectPrerequisite.create!(approvable_id: subject2.course.id, approvable_needed: subject1.course)
+    create(:subject_prerequisite, approvable: subject2.course, approvable_needed: subject1.course)
 
     session = {}
     student = SessionStudent.new(session)
@@ -27,8 +27,8 @@ class SessionStudentTest < ActiveSupport::TestCase
     subject3 = create :subject, :with_exam
     subject4 = create :subject, :with_exam
 
-    SubjectPrerequisite.create!(approvable_id: subject2.course.id, approvable_needed: subject3.course)
-    SubjectPrerequisite.create!(approvable_id: subject3.course.id, approvable_needed: subject1.course)
+    create(:subject_prerequisite, approvable: subject2.course, approvable_needed: subject3.course)
+    create(:subject_prerequisite, approvable: subject3.course, approvable_needed: subject1.course)
 
     session = {
       approved_approvable_ids: [subject1.course.id, subject2.course.id, subject3.course.id, subject4.course.id]
@@ -42,7 +42,7 @@ class SessionStudentTest < ActiveSupport::TestCase
 
   test "#available? returns true if subject_or_approvable is available" do
     subject1 = create :subject, :with_exam
-    SubjectPrerequisite.create!(approvable_id: subject1.exam.id, approvable_needed: subject1.course)
+    create(:subject_prerequisite, approvable: subject1.exam, approvable_needed: subject1.course)
 
     assert SessionStudent.new({ approved_approvable_ids: [] }).available?(subject1)
     assert SessionStudent.new({ approved_approvable_ids: [] }).available?(subject1.course)

@@ -5,7 +5,7 @@ class UserStudentTest < ActiveSupport::TestCase
     subject1 = create :subject, :with_exam
     subject2 = create :subject, :with_exam
 
-    SubjectPrerequisite.create!(approvable_id: subject2.course.id, approvable_needed: subject1.course)
+    create :subject_prerequisite, approvable: subject2.course, approvable_needed: subject1.course
 
     user = create :user
     student = UserStudent.new(user)
@@ -27,8 +27,8 @@ class UserStudentTest < ActiveSupport::TestCase
     subject3 = create :subject, :with_exam
     subject4 = create :subject, :with_exam
 
-    SubjectPrerequisite.create!(approvable_id: subject2.course.id, approvable_needed: subject3.course)
-    SubjectPrerequisite.create!(approvable_id: subject3.course.id, approvable_needed: subject1.course)
+    create :subject_prerequisite, approvable: subject2.course, approvable_needed: subject3.course
+    create :subject_prerequisite, approvable: subject3.course, approvable_needed: subject1.course
 
     user = create :user, approvals: [subject1.course.id, subject2.course.id, subject3.course.id, subject4.course.id]
     student = UserStudent.new(user)
@@ -40,7 +40,7 @@ class UserStudentTest < ActiveSupport::TestCase
 
   test "#available? returns true if subject_or_approvable is available" do
     subject1 = create :subject, :with_exam
-    SubjectPrerequisite.create!(approvable_id: subject1.exam.id, approvable_needed: subject1.course)
+    create :subject_prerequisite, approvable: subject1.exam, approvable_needed: subject1.course
 
     assert UserStudent.new(create :user).available?(subject1)
     assert UserStudent.new(create :user).available?(subject1.course)
