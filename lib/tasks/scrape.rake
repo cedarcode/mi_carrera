@@ -29,6 +29,7 @@ namespace :scrape do
       # capitalize only the first letter of words
       new_subject.name = capitalize_name(subject["name"])
       new_subject.credits = subject["credits"]
+      new_subject.hidden_by_default = subject["hidden_by_default"] || false
       new_subject.group = SubjectGroup.find_by(code: subject["subject_group"])
       new_subject.save!
 
