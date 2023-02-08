@@ -4,12 +4,12 @@ class PasswordResetTest < ApplicationSystemTestCase
   include ActionMailer::TestHelper
 
   setup do
-    @user = create_user(email: "alice@test.com")
+    @user = create :user
   end
 
   test "successfully resets password" do
     visit new_user_password_path
-    fill_in "Correo electrónico", with: "alice@test.com"
+    fill_in "Correo electrónico", with: @user.email
 
     assert_emails(1) do
       click_on "Restablecer contraseña"

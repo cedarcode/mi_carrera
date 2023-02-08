@@ -2,8 +2,8 @@ require "application_controller_test_case"
 
 class RegistrationsControllerTest < ApplicationControllerTestCase
   setup do
-    @oauth_user = create_user(email: 'oauth@gmail.com', password: 'secret', provider: 'google_oauth2', uid: '123456')
-    @regular_user = create_user(email: 'user1@gmail.com', password: 'secret')
+    @oauth_user = create :user, provider: 'google_oauth2', uid: '123456'
+    @regular_user = create :user
   end
 
   test 'update email of regular user should maintain provider and uid as nil' do

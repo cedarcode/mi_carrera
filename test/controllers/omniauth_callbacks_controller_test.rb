@@ -2,7 +2,7 @@ require "application_controller_test_case"
 
 class OmniauthCallbacksControllerTest < ApplicationControllerTestCase
   setup do
-    @oauth_user = create_user(email: 'user1@gmail.com', password: 'secret', provider: 'google_oauth2', uid: '123456789')
+    @oauth_user = create :user, provider: 'google_oauth2', uid: '123456789'
     OmniAuth.config.test_mode = true
   end
 

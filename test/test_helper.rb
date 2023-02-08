@@ -42,10 +42,6 @@ class ActiveSupport::TestCase
     subject
   end
 
-  def create_user(email: "bob#{rand(1000)}@test.com", password: "bob123", provider: nil, uid: nil, approvals: nil)
-    User.create!(email: email, password: password, provider: provider, uid: uid, approvals:)
-  end
-
   def wait_for_approvables_reloaded
     assert page.has_no_selector?('.mdc-circular-progress')
   end
