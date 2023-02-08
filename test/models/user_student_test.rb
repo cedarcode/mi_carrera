@@ -106,4 +106,13 @@ class UserStudentTest < ActiveSupport::TestCase
     user = create_user(approvals: [subject1.course.id, subject2.exam.id, subject3.course.id])
     assert_equal 33, UserStudent.new(user).total_credits
   end
+
+  test "#add of subject.exam adds subject.course as well" do
+    subject = create_subject(exam: true)
+    user = create_user(approvals: [])
+    student = UserStudent.new(user)
+    student.add(subject.exam)
+
+    assert_equal [subject.course.id, subject.exam.id].sort, user.reload.approvals.sort
+  end
 end

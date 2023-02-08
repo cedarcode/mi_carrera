@@ -108,4 +108,13 @@ class SessionStudentTest < ActiveSupport::TestCase
     student = SessionStudent.new(approved_approvable_ids: [subject1.course.id, subject2.exam.id, subject3.course.id])
     assert_equal 33, student.total_credits
   end
+
+  test "#add subject.exam adds subject.course as well" do
+    subject = create_subject(exam: true)
+    session = { approved_approvable_ids: [] }
+    student = SessionStudent.new(session)
+    student.add(subject.exam)
+
+    assert_equal [subject.course.id, subject.exam.id].sort, session[:approved_approvable_ids].sort
+  end
 end

@@ -84,7 +84,6 @@ class RegistrationsControllerTest < ApplicationControllerTestCase
       },
       format: 'turbo_stream'
     }
-
     post user_registration_path, params: {
       user: {
         email: 'newuser@gmail.com',
@@ -92,8 +91,8 @@ class RegistrationsControllerTest < ApplicationControllerTestCase
         password_confirmation: 'secret'
       }
     }
-
     user = User.where(email: 'newuser@gmail.com').first
-    assert_equal [subject1.course.id, subject2.exam.id, subject2.course.id], user.approvals
+
+    assert_equal [subject1.course.id, subject2.exam.id, subject2.course.id].sort, user.approvals.sort
   end
 end
