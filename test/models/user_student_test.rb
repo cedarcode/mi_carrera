@@ -113,6 +113,6 @@ class UserStudentTest < ActiveSupport::TestCase
     student = UserStudent.new(user)
     student.add(subject.exam)
 
-    assert_equal [subject.course.id, subject.exam.id].sort, user.reload.approvals.sort
+    assert_equal [subject.exam.id, subject.course.id], user.reload.approvals
   end
 end

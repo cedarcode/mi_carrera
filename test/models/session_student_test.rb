@@ -115,6 +115,6 @@ class SessionStudentTest < ActiveSupport::TestCase
     student = SessionStudent.new(session)
     student.add(subject.exam)
 
-    assert_equal [subject.course.id, subject.exam.id].sort, session[:approved_approvable_ids].sort
+    assert_equal [subject.exam.id, subject.course.id], session[:approved_approvable_ids]
   end
 end
