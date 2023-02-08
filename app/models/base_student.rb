@@ -4,8 +4,9 @@ class BaseStudent
   end
 
   def add(approvable)
-    if approvable.available?(ids)
+    if ids.exclude?(approvable.id) && approvable.available?(ids)
       ids << approvable.id
+      add(approvable.subject.course) if approvable.is_exam?
       save!
     end
   end
