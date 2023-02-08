@@ -36,6 +36,7 @@ class User < ApplicationRecord
   def self.new_with_session(params, session)
     new(params) do |user|
       user.add_approvals_in_session(session)
+      user.welcome_banner_viewed = true
     end
   end
 end

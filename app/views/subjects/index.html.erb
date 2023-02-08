@@ -3,7 +3,9 @@
 <% end %>
 
 <% content_for :welcome_banner do %>
-  <%= render 'shared/welcome_banner' %>
+  <% unless current_student.welcome_banner_viewed? %>
+    <%= render 'shared/welcome_banner' %>
+  <% end %>
 <% end %>
 
 <%= render 'subjects_bulk_approve' %>

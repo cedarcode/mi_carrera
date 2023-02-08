@@ -10,9 +10,11 @@
         </div>
       </div>
       <div class="mdc-banner__actions">
-        <button type="button" class="mdc-button mdc-banner__primary-action">
-          <div class="mdc-button__label">Listo</div>
-        </button>
+        <%= form_with url: user_onboardings_path, method: :patch, local: false do |f| %>
+          <%= f.button class: 'mdc-button mdc-banner__primary-action' do %>
+            <div class="mdc-button__label">Listo</div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

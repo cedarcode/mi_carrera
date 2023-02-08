@@ -21,4 +21,6 @@ Rails.application.routes.draw do
       get :all
     end
   end
+
+  resource :user_onboardings, only: :update
 end
