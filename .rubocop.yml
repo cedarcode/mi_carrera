@@ -32,6 +32,9 @@ Layout/LineLength:
   Exclude:
     - "test/models/bedel_test.rb"
 
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
 Naming:
   Enabled: true
 
