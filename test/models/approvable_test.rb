@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ApprovableTest < ActiveSupport::TestCase
   test "#approved? returns true when not is_exam and course approved" do
-    subject = create_subject(exam: true)
+    subject = create :subject, :with_exam
     course = subject.course
 
     assert_not course.approved?([])
@@ -10,7 +10,7 @@ class ApprovableTest < ActiveSupport::TestCase
   end
 
   test "#approved? returns true when is_exam and exam approved" do
-    subject = create_subject(exam: true)
+    subject = create :subject, :with_exam
     exam = subject.exam
 
     assert_not exam.approved?([])
@@ -19,15 +19,15 @@ class ApprovableTest < ActiveSupport::TestCase
   end
 
   test "#available? returns true when no prerequisite" do
-    subject = create_subject(exam: false)
+    subject = create :subject
     course = subject.course
 
     assert course.available?([])
   end
 
   test "#available? returns true when prerequisite met" do
-    subject1 = create_subject(exam: false)
-    subject2 = create_subject(exam: false)
+    subject1 = create :subject
+    subject2 = create :subject
 
     mock = Minitest::Mock.new
     mock.expect(:met?, true, [[subject1.course.id]])
@@ -38,8 +38,8 @@ class ApprovableTest < ActiveSupport::TestCase
   end
 
   test "#available? returns false when prerequisite not met" do
-    subject1 = create_subject(exam: false)
-    subject2 = create_subject(exam: false)
+    subject1 = create :subject
+    subject2 = create :subject
 
     mock = Minitest::Mock.new
     mock.expect(:met?, false, [[subject1.course.id]])

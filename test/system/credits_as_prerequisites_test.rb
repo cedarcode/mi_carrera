@@ -3,9 +3,9 @@ require "application_system_test_case"
 class CreditsAsPrerequisitesTest < ApplicationSystemTestCase
   setup do
     maths = create :subject_group
-    @gal1 = create_subject(name: "GAL 1", credits: 9, group: maths)
-    @gal2 = create_subject(name: "GAL 2", credits: 9, group: maths)
-    gal3 = create_subject(name: "GAL 3", credits: 9, group: maths)
+    @gal1 = create :subject, :with_exam, name: "GAL 1", credits: 9, group: maths
+    @gal2 = create :subject, :with_exam, name: "GAL 2", credits: 9, group: maths
+    gal3 = create :subject, :with_exam, name: "GAL 3", credits: 9, group: maths
 
     SubjectPrerequisite.create!(approvable_id: @gal1.exam.id, approvable_needed_id: @gal1.course.id)
     CreditsPrerequisite.create!(approvable_id: @gal2.course.id, subject_group_id: nil, credits_needed: 5)

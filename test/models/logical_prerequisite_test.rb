@@ -2,9 +2,9 @@ require 'test_helper'
 
 class LogicalPrerequisiteTest < ActiveSupport::TestCase
   setup do
-    @subject1 = create_subject(exam: false)
-    @subject2 = create_subject(exam: false)
-    @subject3 = create_subject(exam: false)
+    @subject1 = create :subject
+    @subject2 = create :subject
+    @subject3 = create :subject
   end
 
   test "#met? on logical AND returns true when all prerequisites met" do

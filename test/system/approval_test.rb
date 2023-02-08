@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class ApprovalTest < ApplicationSystemTestCase
   setup do
-    @subject = create_subject(name: "GAL 1", credits: 9, exam: true)
+    @subject = create :subject, :with_exam, name: "GAL 1", credits: 9
   end
 
   test "student adds approved course from show" do

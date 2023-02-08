@@ -2,8 +2,8 @@ require 'test_helper'
 
 class UserStudentTest < ActiveSupport::TestCase
   test "#add adds approvable.id only if available" do
-    subject1 = create_subject
-    subject2 = create_subject
+    subject1 = create :subject, :with_exam
+    subject2 = create :subject, :with_exam
 
     SubjectPrerequisite.create!(approvable_id: subject2.course.id, approvable_needed: subject1.course)
 
@@ -22,10 +22,10 @@ class UserStudentTest < ActiveSupport::TestCase
   end
 
   test "#remove removes approvable.id and other approvables that are not available anymore" do
-    subject1 = create_subject
-    subject2 = create_subject
-    subject3 = create_subject
-    subject4 = create_subject
+    subject1 = create :subject, :with_exam
+    subject2 = create :subject, :with_exam
+    subject3 = create :subject, :with_exam
+    subject4 = create :subject, :with_exam
 
     SubjectPrerequisite.create!(approvable_id: subject2.course.id, approvable_needed: subject3.course)
     SubjectPrerequisite.create!(approvable_id: subject3.course.id, approvable_needed: subject1.course)
@@ -39,7 +39,7 @@ class UserStudentTest < ActiveSupport::TestCase
   end
 
   test "#available? returns true if subject_or_approvable is available" do
-    subject1 = create_subject
+    subject1 = create :subject, :with_exam
     SubjectPrerequisite.create!(approvable_id: subject1.exam.id, approvable_needed: subject1.course)
 
     assert UserStudent.new(create :user).available?(subject1)
@@ -49,8 +49,8 @@ class UserStudentTest < ActiveSupport::TestCase
   end
 
   test "#approved? returns true if subject_or_approvable is approved" do
-    subject1 = create_subject(exam: false)
-    subject2 = create_subject
+    subject1 = create :subject
+    subject2 = create :subject, :with_exam
 
     assert_not UserStudent.new(create :user, approvals: []).approved?(subject1)
     assert_not UserStudent.new(create :user, approvals: []).approved?(subject1.course)
@@ -71,9 +71,9 @@ class UserStudentTest < ActiveSupport::TestCase
     group1 = create :subject_group
     group2 = create :subject_group
 
-    subject1 = create_subject(credits: 10, exam: false, group: group1)
-    subject2 = create_subject(credits: 11, exam: true, group: group1)
-    subject3 = create_subject(credits: 12, exam: false, group: group2)
+    subject1 = create :subject, credits: 10, group: group1
+    subject2 = create :subject, :with_exam, credits: 11, group: group1
+    subject3 = create :subject, credits: 12, group: group2
 
     user = create :user, approvals: []
     assert_equal 0, UserStudent.new(user).group_credits(group1)
@@ -91,9 +91,9 @@ class UserStudentTest < ActiveSupport::TestCase
     group1 = create :subject_group
     group2 = create :subject_group
 
-    subject1 = create_subject(credits: 10, exam: false, group: group1)
-    subject2 = create_subject(credits: 11, exam: true, group: group1)
-    subject3 = create_subject(credits: 12, exam: false, group: group2)
+    subject1 = create :subject, credits: 10, group: group1
+    subject2 = create :subject, :with_exam, credits: 11, group: group1
+    subject3 = create :subject, credits: 12, group: group2
 
     user = create :user, approvals: []
     assert_equal 0, UserStudent.new(user).total_credits
@@ -108,7 +108,7 @@ class UserStudentTest < ActiveSupport::TestCase
   end
 
   test "#add of subject.exam adds subject.course as well" do
-    subject = create_subject(exam: true)
+    subject = create :subject, :with_exam
     user = create :user, approvals: []
     student = UserStudent.new(user)
     student.add(subject.exam)

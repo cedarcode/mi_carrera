@@ -70,8 +70,8 @@ class RegistrationsControllerTest < ApplicationControllerTestCase
   end
 
   test 'create a user with approvals in session should create user with approvals' do
-    subject1 = create_subject(name: "Subject 1", credits: 16, exam: false)
-    subject2 = create_subject(name: "Subject 2", credits: 16, exam: true)
+    subject1 = create :subject, name: "Subject 1", credits: 16
+    subject2 = create :subject, :with_exam, name: "Subject 2", credits: 16
     post approvable_approval_path(subject1.course), params: {
       subject: {
         course_approved: 'yes'

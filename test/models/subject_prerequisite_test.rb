@@ -2,8 +2,8 @@ require 'test_helper'
 
 class SubjectPrerequisiteTest < ActiveSupport::TestCase
   test "#met? returns true when subject course is approved" do
-    subject = create_subject(exam: false)
-    subject_needed = create_subject(exam: false)
+    subject = create :subject
+    subject_needed = create :subject
     prerequisite = SubjectPrerequisite.create!(
       approvable_id: subject.course.id,
       approvable_needed_id: subject_needed.course.id
@@ -12,8 +12,8 @@ class SubjectPrerequisiteTest < ActiveSupport::TestCase
   end
 
   test "#met? returns false when subject course is not approved" do
-    subject = create_subject(exam: false)
-    subject_needed = create_subject(exam: false)
+    subject = create :subject
+    subject_needed = create :subject
     prerequisite = SubjectPrerequisite.create!(
       approvable_id: subject.course.id,
       approvable_needed_id: subject_needed.course.id
@@ -22,8 +22,8 @@ class SubjectPrerequisiteTest < ActiveSupport::TestCase
   end
 
   test "#met? returns true when subject exam is approved" do
-    subject = create_subject(exam: false)
-    subject_needed = create_subject(exam: true)
+    subject = create :subject
+    subject_needed = create :subject, :with_exam
     prerequisite = SubjectPrerequisite.create!(
       approvable_id: subject.course.id,
       approvable_needed_id: subject_needed.exam.id
@@ -33,8 +33,8 @@ class SubjectPrerequisiteTest < ActiveSupport::TestCase
   end
 
   test "#met? return false when subject exam is not approved" do
-    subject = create_subject(exam: false)
-    subject_needed = create_subject(exam: true)
+    subject = create :subject
+    subject_needed = create :subject, :with_exam
     prerequisite = SubjectPrerequisite.create!(
       approvable_id: subject.course.id,
       approvable_needed_id: subject_needed.exam.id

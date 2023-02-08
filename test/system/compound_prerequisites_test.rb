@@ -4,10 +4,10 @@ class CompoundPrerequisitesTest < ApplicationSystemTestCase
   setup do
     maths = create :subject_group
     prog = create :subject_group
-    @gal1 = create_subject(name: "GAL 1", credits: 8, group: maths)
-    @gal2 = create_subject(name: "GAL 2", credits: 8, group: maths)
-    @p1 = create_subject(name: "P1", credits: 5, group: prog)
-    p2 = create_subject(name: "P2", credits: 9, group: prog)
+    @gal1 = create :subject, :with_exam, name: "GAL 1", credits: 8, group: maths
+    @gal2 = create :subject, :with_exam, name: "GAL 2", credits: 8, group: maths
+    @p1 = create :subject, :with_exam, name: "P1", credits: 5, group: prog
+    p2 = create :subject, :with_exam, name: "P2", credits: 9, group: prog
 
     SubjectPrerequisite.create!(approvable_id: @gal1.exam.id, approvable_needed_id: @gal1.course.id)
     SubjectPrerequisite.create!(approvable_id: @gal2.exam.id, approvable_needed_id: @gal2.course.id)
