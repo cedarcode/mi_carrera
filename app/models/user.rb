@@ -23,6 +23,8 @@ class User < ApplicationRecord
     end
   end
 
+  def remember_me = true
+
   def oauth_user?
     provider.present?
   end
