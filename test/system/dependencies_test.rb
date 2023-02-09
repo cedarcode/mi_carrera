@@ -2,19 +2,19 @@ require "application_system_test_case"
 
 class DependenciesTest < ApplicationSystemTestCase
   setup do
-    @gal1 = create_subject(name: "GAL 1", credits: 9, exam: true)
-    gal2 = create_subject(name: "GAL 2", credits: 9, exam: true)
+    @gal1 = create :subject, :with_exam, name: "GAL 1", credits: 9
+    gal2 = create :subject, :with_exam, name: "GAL 2", credits: 9
 
-    SubjectPrerequisite.create!(approvable_id: gal2.course.id, approvable_needed_id: @gal1.course.id)
-    SubjectPrerequisite.create!(approvable_id: @gal1.exam.id, approvable_needed_id: @gal1.course.id)
-    SubjectPrerequisite.create!(approvable_id: gal2.exam.id, approvable_needed_id: gal2.course.id)
+    create :subject_prerequisite, approvable: gal2.course, approvable_needed: @gal1.course
+    create :subject_prerequisite, approvable: @gal1.exam, approvable_needed: @gal1.course
+    create :subject_prerequisite, approvable: gal2.exam, approvable_needed: gal2.course
 
-    @subject1 = create_subject(name: "Subject 1", credits: 1, exam: false)
-    @subject2 = create_subject(name: "Subject 2", credits: 2, exam: true)
-    @subject3 = create_subject(name: "Subject 3", credits: 3, exam: false)
+    @subject1 = create :subject, name: "Subject 1", credits: 1
+    @subject2 = create :subject, :with_exam, name: "Subject 2", credits: 2
+    @subject3 = create :subject, name: "Subject 3", credits: 3
 
-    SubjectPrerequisite.create!(approvable_id: @subject2.course.id, approvable_needed_id: @subject1.course.id)
-    SubjectPrerequisite.create!(approvable_id: @subject3.course.id, approvable_needed_id: @subject2.exam.id)
+    create :subject_prerequisite, approvable: @subject2.course, approvable_needed: @subject1.course
+    create :subject_prerequisite, approvable: @subject3.course, approvable_needed: @subject2.exam
   end
 
   test "student sees exam disabled" do

@@ -3,7 +3,7 @@ require "application_system_test_case"
 class LoginLogoutTest < ApplicationSystemTestCase
   setup do
     visit root_path
-    create_user(email: "bob@test.com")
+    @user = create :user
   end
 
   test "user can see sign in icon and google sign in button" do
@@ -21,15 +21,15 @@ class LoginLogoutTest < ApplicationSystemTestCase
     visit new_user_session_path
 
     assert_text "Ingresar con tu correo electrónico"
-    fill_in "Correo electrónico", with: 'bob@test.com'
-    fill_in "Contraseña", with: 'bob123'
+    fill_in "Correo electrónico", with: @user.email
+    fill_in "Contraseña", with: @user.password
     click_on "Ingresar"
 
     assert_current_path(root_path)
     assert_text "MiCarrera"
     click_actions_menu
     within_actions_menu do
-      assert_text "bob@test.com"
+      assert_text @user.email
     end
   end
 
@@ -37,8 +37,8 @@ class LoginLogoutTest < ApplicationSystemTestCase
     visit new_user_session_path
 
     assert_text "Ingresar con tu correo electrónico"
-    fill_in "Correo electrónico", with: 'bob@test.com'
-    fill_in "Contraseña", with: 'bob321'
+    fill_in "Correo electrónico", with: @user.email
+    fill_in "Contraseña", with: 'incorrect'
     click_on "Ingresar"
 
     assert_text "Email y/o contraseña inválidos."

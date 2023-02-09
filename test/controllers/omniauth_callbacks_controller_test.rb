@@ -2,7 +2,7 @@ require "application_controller_test_case"
 
 class OmniauthCallbacksControllerTest < ApplicationControllerTestCase
   setup do
-    @oauth_user = create_user(email: 'user1@gmail.com', password: 'secret', provider: 'google_oauth2', uid: '123456789')
+    @oauth_user = create :user, provider: 'google_oauth2', uid: '123456789'
     OmniAuth.config.test_mode = true
   end
 
@@ -50,8 +50,8 @@ class OmniauthCallbacksControllerTest < ApplicationControllerTestCase
   end
 
   test 'create a user with google with approvals in session should create user with approvals' do
-    subject1 = create_subject(name: "Subject 1", credits: 16, exam: false)
-    subject2 = create_subject(name: "Subject 2", credits: 16, exam: true)
+    subject1 = create :subject, name: "Subject 1", credits: 16
+    subject2 = create :subject, :with_exam, name: "Subject 2", credits: 16
     post approvable_approval_path(subject1.course), params: {
       subject: {
         course_approved: 'yes'

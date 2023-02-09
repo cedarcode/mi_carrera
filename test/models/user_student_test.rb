@@ -2,12 +2,12 @@ require 'test_helper'
 
 class UserStudentTest < ActiveSupport::TestCase
   test "#add adds approvable.id only if available" do
-    subject1 = create_subject
-    subject2 = create_subject
+    subject1 = create :subject, :with_exam
+    subject2 = create :subject, :with_exam
 
-    SubjectPrerequisite.create!(approvable_id: subject2.course.id, approvable_needed: subject1.course)
+    create :subject_prerequisite, approvable: subject2.course, approvable_needed: subject1.course
 
-    user = create_user
+    user = create :user
     student = UserStudent.new(user)
 
     student.add(subject2.course)
@@ -22,15 +22,15 @@ class UserStudentTest < ActiveSupport::TestCase
   end
 
   test "#remove removes approvable.id and other approvables that are not available anymore" do
-    subject1 = create_subject
-    subject2 = create_subject
-    subject3 = create_subject
-    subject4 = create_subject
+    subject1 = create :subject, :with_exam
+    subject2 = create :subject, :with_exam
+    subject3 = create :subject, :with_exam
+    subject4 = create :subject, :with_exam
 
-    SubjectPrerequisite.create!(approvable_id: subject2.course.id, approvable_needed: subject3.course)
-    SubjectPrerequisite.create!(approvable_id: subject3.course.id, approvable_needed: subject1.course)
+    create :subject_prerequisite, approvable: subject2.course, approvable_needed: subject3.course
+    create :subject_prerequisite, approvable: subject3.course, approvable_needed: subject1.course
 
-    user = create_user(approvals: [subject1.course.id, subject2.course.id, subject3.course.id, subject4.course.id])
+    user = create :user, approvals: [subject1.course.id, subject2.course.id, subject3.course.id, subject4.course.id]
     student = UserStudent.new(user)
 
     student.remove(subject1.course)
@@ -39,77 +39,80 @@ class UserStudentTest < ActiveSupport::TestCase
   end
 
   test "#available? returns true if subject_or_approvable is available" do
-    subject1 = create_subject
-    SubjectPrerequisite.create!(approvable_id: subject1.exam.id, approvable_needed: subject1.course)
+    subject1 = create :subject, :with_exam
+    create :subject_prerequisite, approvable: subject1.exam, approvable_needed: subject1.course
 
-    assert UserStudent.new(create_user).available?(subject1)
-    assert UserStudent.new(create_user).available?(subject1.course)
-    assert_not UserStudent.new(create_user).available?(subject1.exam)
-    assert UserStudent.new(create_user(approvals: [subject1.course.id])).available?(subject1.exam)
+    user = create :user
+    assert UserStudent.new(user).available?(subject1)
+    assert UserStudent.new(user).available?(subject1.course)
+    assert_not UserStudent.new(user).available?(subject1.exam)
+
+    user.approvals = [subject1.course.id]
+    assert UserStudent.new(user).available?(subject1.exam)
   end
 
   test "#approved? returns true if subject_or_approvable is approved" do
-    subject1 = create_subject(exam: false)
-    subject2 = create_subject
+    subject1 = create :subject
+    subject2 = create :subject, :with_exam
 
-    assert_not UserStudent.new(create_user(approvals: [])).approved?(subject1)
-    assert_not UserStudent.new(create_user(approvals: [])).approved?(subject1.course)
-    assert UserStudent.new(create_user(approvals: [subject1.course.id])).approved?(subject1)
-    assert UserStudent.new(create_user(approvals: [subject1.course.id])).approved?(subject1.course)
+    assert_not UserStudent.new(create :user, approvals: []).approved?(subject1)
+    assert_not UserStudent.new(create :user, approvals: []).approved?(subject1.course)
+    assert UserStudent.new(create :user, approvals: [subject1.course.id]).approved?(subject1)
+    assert UserStudent.new(create :user, approvals: [subject1.course.id]).approved?(subject1.course)
 
-    assert_not UserStudent.new(create_user(approvals: [])).approved?(subject2)
-    assert_not UserStudent.new(create_user(approvals: [])).approved?(subject2.course)
-    assert_not UserStudent.new(create_user(approvals: [])).approved?(subject2.exam)
-    assert_not UserStudent.new(create_user(approvals: [subject2.course.id])).approved?(subject2)
+    assert_not UserStudent.new(create :user, approvals: []).approved?(subject2)
+    assert_not UserStudent.new(create :user, approvals: []).approved?(subject2.course)
+    assert_not UserStudent.new(create :user, approvals: []).approved?(subject2.exam)
+    assert_not UserStudent.new(create :user, approvals: [subject2.course.id]).approved?(subject2)
 
-    assert UserStudent.new(create_user(approvals: [subject2.exam.id])).approved?(subject2)
-    assert_not UserStudent.new(create_user(approvals: [subject2.exam.id])).approved?(subject2.course)
-    assert UserStudent.new(create_user(approvals: [subject2.exam.id])).approved?(subject2.exam)
+    assert UserStudent.new(create :user, approvals: [subject2.exam.id]).approved?(subject2)
+    assert_not UserStudent.new(create :user, approvals: [subject2.exam.id]).approved?(subject2.course)
+    assert UserStudent.new(create :user, approvals: [subject2.exam.id]).approved?(subject2.exam)
   end
 
   test "#group_credits returns approved credits for the given group" do
-    group1 = create_group
-    group2 = create_group
+    group1 = create :subject_group
+    group2 = create :subject_group
 
-    subject1 = create_subject(credits: 10, exam: false, group: group1)
-    subject2 = create_subject(credits: 11, exam: true, group: group1)
-    subject3 = create_subject(credits: 12, exam: false, group: group2)
+    subject1 = create :subject, credits: 10, group: group1
+    subject2 = create :subject, :with_exam, credits: 11, group: group1
+    subject3 = create :subject, credits: 12, group: group2
 
-    user = create_user(approvals: [])
+    user = create :user, approvals: []
     assert_equal 0, UserStudent.new(user).group_credits(group1)
-    user = create_user(approvals: [subject1.course.id])
+    user = create :user, approvals: [subject1.course.id]
     assert_equal 10, UserStudent.new(user).group_credits(group1)
-    user = create_user(approvals: [subject1.course.id, subject2.course.id])
+    user = create :user, approvals: [subject1.course.id, subject2.course.id]
     assert_equal 10, UserStudent.new(user).group_credits(group1)
-    user = create_user(approvals: [subject1.course.id, subject2.exam.id])
+    user = create :user, approvals: [subject1.course.id, subject2.exam.id]
     assert_equal 21, UserStudent.new(user).group_credits(group1)
-    user = create_user(approvals: [subject1.course.id, subject2.exam.id, subject3.course.id])
+    user = create :user, approvals: [subject1.course.id, subject2.exam.id, subject3.course.id]
     assert_equal 21, UserStudent.new(user).group_credits(group1)
   end
 
   test "#total_credits returns total approved credits" do
-    group1 = create_group
-    group2 = create_group
+    group1 = create :subject_group
+    group2 = create :subject_group
 
-    subject1 = create_subject(credits: 10, exam: false, group: group1)
-    subject2 = create_subject(credits: 11, exam: true, group: group1)
-    subject3 = create_subject(credits: 12, exam: false, group: group2)
+    subject1 = create :subject, credits: 10, group: group1
+    subject2 = create :subject, :with_exam, credits: 11, group: group1
+    subject3 = create :subject, credits: 12, group: group2
 
-    user = create_user(approvals: [])
+    user = create :user, approvals: []
     assert_equal 0, UserStudent.new(user).total_credits
-    user = create_user(approvals: [subject1.course.id])
+    user = create :user, approvals: [subject1.course.id]
     assert_equal 10, UserStudent.new(user).total_credits
-    user = create_user(approvals: [subject1.course.id, subject2.course.id])
+    user = create :user, approvals: [subject1.course.id, subject2.course.id]
     assert_equal 10, UserStudent.new(user).total_credits
-    user = create_user(approvals: [subject1.course.id, subject2.exam.id])
+    user = create :user, approvals: [subject1.course.id, subject2.exam.id]
     assert_equal 21, UserStudent.new(user).total_credits
-    user = create_user(approvals: [subject1.course.id, subject2.exam.id, subject3.course.id])
+    user = create :user, approvals: [subject1.course.id, subject2.exam.id, subject3.course.id]
     assert_equal 33, UserStudent.new(user).total_credits
   end
 
   test "#add of subject.exam adds subject.course as well" do
-    subject = create_subject(exam: true)
-    user = create_user(approvals: [])
+    subject = create :subject, :with_exam
+    user = create :user, approvals: []
     student = UserStudent.new(user)
     student.add(subject.exam)
 

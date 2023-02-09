@@ -2,10 +2,10 @@ require 'test_helper'
 
 class SessionStudentTest < ActiveSupport::TestCase
   test "#add adds approvable.id only if available" do
-    subject1 = create_subject
-    subject2 = create_subject
+    subject1 = create :subject, :with_exam
+    subject2 = create :subject, :with_exam
 
-    SubjectPrerequisite.create!(approvable_id: subject2.course.id, approvable_needed: subject1.course)
+    create(:subject_prerequisite, approvable: subject2.course, approvable_needed: subject1.course)
 
     session = {}
     student = SessionStudent.new(session)
@@ -22,13 +22,13 @@ class SessionStudentTest < ActiveSupport::TestCase
   end
 
   test "#remove removes approvable.id and other approvables that are not available anymore" do
-    subject1 = create_subject
-    subject2 = create_subject
-    subject3 = create_subject
-    subject4 = create_subject
+    subject1 = create :subject, :with_exam
+    subject2 = create :subject, :with_exam
+    subject3 = create :subject, :with_exam
+    subject4 = create :subject, :with_exam
 
-    SubjectPrerequisite.create!(approvable_id: subject2.course.id, approvable_needed: subject3.course)
-    SubjectPrerequisite.create!(approvable_id: subject3.course.id, approvable_needed: subject1.course)
+    create(:subject_prerequisite, approvable: subject2.course, approvable_needed: subject3.course)
+    create(:subject_prerequisite, approvable: subject3.course, approvable_needed: subject1.course)
 
     session = {
       approved_approvable_ids: [subject1.course.id, subject2.course.id, subject3.course.id, subject4.course.id]
@@ -41,8 +41,8 @@ class SessionStudentTest < ActiveSupport::TestCase
   end
 
   test "#available? returns true if subject_or_approvable is available" do
-    subject1 = create_subject
-    SubjectPrerequisite.create!(approvable_id: subject1.exam.id, approvable_needed: subject1.course)
+    subject1 = create :subject, :with_exam
+    create(:subject_prerequisite, approvable: subject1.exam, approvable_needed: subject1.course)
 
     assert SessionStudent.new({ approved_approvable_ids: [] }).available?(subject1)
     assert SessionStudent.new({ approved_approvable_ids: [] }).available?(subject1.course)
@@ -51,8 +51,8 @@ class SessionStudentTest < ActiveSupport::TestCase
   end
 
   test "#approved? returns true if subject_or_approvable is approved" do
-    subject1 = create_subject(exam: false)
-    subject2 = create_subject
+    subject1 = create :subject
+    subject2 = create :subject, :with_exam
 
     assert_not SessionStudent.new({ approved_approvable_ids: [] }).approved?(subject1)
     assert_not SessionStudent.new({ approved_approvable_ids: [] }).approved?(subject1.course)
@@ -70,12 +70,12 @@ class SessionStudentTest < ActiveSupport::TestCase
   end
 
   test "#group_credits returns approved credits for the given group" do
-    group1 = create_group
-    group2 = create_group
+    group1 = create :subject_group
+    group2 = create :subject_group
 
-    subject1 = create_subject(credits: 10, exam: false, group: group1)
-    subject2 = create_subject(credits: 11, exam: true, group: group1)
-    subject3 = create_subject(credits: 12, exam: false, group: group2)
+    subject1 = create :subject, credits: 10, group: group1
+    subject2 = create :subject, :with_exam, credits: 11, group: group1
+    subject3 = create :subject, credits: 12, group: group2
 
     student = SessionStudent.new(approved_approvable_ids: [])
     assert_equal 0, student.group_credits(group1)
@@ -90,12 +90,12 @@ class SessionStudentTest < ActiveSupport::TestCase
   end
 
   test "#total_credits returns total approved credits" do
-    group1 = create_group
-    group2 = create_group
+    group1 = create :subject_group
+    group2 = create :subject_group
 
-    subject1 = create_subject(credits: 10, exam: false, group: group1)
-    subject2 = create_subject(credits: 11, exam: true, group: group1)
-    subject3 = create_subject(credits: 12, exam: false, group: group2)
+    subject1 = create :subject, credits: 10, group: group1
+    subject2 = create :subject, :with_exam, credits: 11, group: group1
+    subject3 = create :subject, credits: 12, group: group2
 
     student = SessionStudent.new(approved_approvable_ids: [])
     assert_equal 0, student.total_credits
@@ -110,7 +110,7 @@ class SessionStudentTest < ActiveSupport::TestCase
   end
 
   test "#add subject.exam adds subject.course as well" do
-    subject = create_subject(exam: true)
+    subject = create :subject, :with_exam
     session = { approved_approvable_ids: [] }
     student = SessionStudent.new(session)
     student.add(subject.exam)

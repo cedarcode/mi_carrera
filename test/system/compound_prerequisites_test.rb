@@ -2,30 +2,31 @@ require "application_system_test_case"
 
 class CompoundPrerequisitesTest < ApplicationSystemTestCase
   setup do
-    maths = create_group(name: "Matemáticas")
-    prog = create_group(name: "Programación")
-    @gal1 = create_subject(name: "GAL 1", credits: 8, group: maths)
-    @gal2 = create_subject(name: "GAL 2", credits: 8, group: maths)
-    @p1 = create_subject(name: "P1", credits: 5, group: prog)
-    p2 = create_subject(name: "P2", credits: 9, group: prog)
+    maths = create :subject_group
+    prog = create :subject_group
+    @gal1 = create :subject, :with_exam, name: "GAL 1", credits: 8, group: maths
+    @gal2 = create :subject, :with_exam, name: "GAL 2", credits: 8, group: maths
+    @p1 = create :subject, :with_exam, name: "P1", credits: 5, group: prog
+    p2 = create :subject, :with_exam, name: "P2", credits: 9, group: prog
 
-    SubjectPrerequisite.create!(approvable_id: @gal1.exam.id, approvable_needed_id: @gal1.course.id)
-    SubjectPrerequisite.create!(approvable_id: @gal2.exam.id, approvable_needed_id: @gal2.course.id)
-    SubjectPrerequisite.create!(approvable_id: @p1.exam.id, approvable_needed_id: @p1.course.id)
-    or_prerequisite = LogicalPrerequisite.create!(approvable_id: p2.course.id, logical_operator: "or")
-    CreditsPrerequisite.create!(parent_prerequisite_id: or_prerequisite.id, subject_group_id: nil, credits_needed: 15)
-    and_prerequisite = LogicalPrerequisite.create!(parent_prerequisite_id: or_prerequisite.id, logical_operator: "and")
-    SubjectPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id, approvable_needed_id: @gal1.course.id)
-    SubjectPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id, approvable_needed_id: @gal2.course.id)
-    SubjectPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id, approvable_needed_id: @p1.course.id)
-    and_prerequisite = LogicalPrerequisite.create!(parent_prerequisite_id: or_prerequisite.id, logical_operator: "and")
-    CreditsPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id,
-                                subject_group_id: maths.id,
-                                credits_needed: 5)
+    create :subject_prerequisite, approvable: @gal1.exam, approvable_needed: @gal1.course
+    create :subject_prerequisite, approvable: @gal2.exam, approvable_needed: @gal2.course
+    create :subject_prerequisite, approvable: @p1.exam, approvable_needed: @p1.course
 
-    CreditsPrerequisite.create!(parent_prerequisite_id: and_prerequisite.id,
-                                subject_group_id: prog.id,
-                                credits_needed: 5)
+    create :or_prerequisite, approvable: p2.course, operands_prerequisites: [
+      create(:credits_prerequisite, credits_needed: 15),
+
+      create(:and_prerequisite, operands_prerequisites: [
+        create(:subject_prerequisite, approvable_needed: @gal1.course),
+        create(:subject_prerequisite, approvable_needed: @gal2.course),
+        create(:subject_prerequisite, approvable_needed: @p1.course)
+      ]),
+
+      create(:and_prerequisite, operands_prerequisites: [
+        create(:credits_prerequisite, subject_group: maths, credits_needed: 5),
+        create(:credits_prerequisite, subject_group: prog, credits_needed: 5)
+      ])
+    ]
   end
 
   test "student cant see subjects without enough credits" do

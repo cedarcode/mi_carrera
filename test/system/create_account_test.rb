@@ -44,10 +44,10 @@ class CreateAccountTest < ApplicationSystemTestCase
 
   test "user can't sign up due to email already in use" do
     visit new_user_registration_path
-    create_user(email: 'bob@test.com')
+    user = create :user
 
     assert_text "Registrarte con tu correo electrónico"
-    fill_in "Correo electrónico", with: 'bob@test.com'
+    fill_in "Correo electrónico", with: user.email
     fill_in "Nueva contraseña", with: 'bob321'
     fill_in "Confirma tu nueva contraseña", with: 'bob321'
     click_on "Registrarte"

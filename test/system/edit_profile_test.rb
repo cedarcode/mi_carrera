@@ -3,8 +3,8 @@ require "application_system_test_case"
 class EditProfileTest < ApplicationSystemTestCase
   setup do
     visit root_path
-    @user = create_user(email: "alice@test.com", password: "alice123")
-    @user2 = create_user(email: "alice2@test.com", password: "alice123")
+    @user = create :user
+    @user2 = create :user
     visit new_user_session_path
     fill_in "Correo electrónico", with: @user.email
     fill_in "Contraseña", with: @user.password

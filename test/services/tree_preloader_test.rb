@@ -2,9 +2,9 @@ require 'test_helper'
 
 class TreePreloaderTest < ActiveSupport::TestCase
   test "preloaded subjects should be mantained after being destroyed" do
-    s1 = create_subject(name: "s1", exam: true)
-    s2 = create_subject(name: "s2", exam: true)
-    SubjectPrerequisite.create!(approvable_id: s2.course.id, approvable_needed_id: s1.course.id)
+    s1 = create :subject, :with_exam, name: "s1"
+    s2 = create :subject, :with_exam, name: "s2"
+    create :subject_prerequisite, approvable: s2.course, approvable_needed: s1.course
 
     subjects = TreePreloader.new.preload.sort_by(&:name)
 
