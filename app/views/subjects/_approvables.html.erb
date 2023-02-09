@@ -1,7 +1,7 @@
 <div class="mdc-deprecated-list position-relative" data-controller="loading" id="approvables">
   <%= render "approvals/spinner_template" %>
 
-  <label class="mdc-deprecated-list-item <%= "mdc-deprecated-list-item--disabled" if !current_student.available?(@subject.course) %>" for="checkbox_course_approved">
+  <label class="mdc-deprecated-list-item <%= "mdc-deprecated-list-item--disabled" if !current_student.available?(@subject.course) %>" for="<%= dom_id(@subject.course) %>">
     <span class="mdc-deprecated-list-item__ripple"></span>
     <span class="mdc-deprecated-list-item__text">
       Curso aprobado?
@@ -10,7 +10,7 @@
     <span class="mdc-deprecated-list-item__meta">
       <%= form_with(model: @subject.course, url: approvable_approval_path(@subject.course, subject_show: true), data: { controller: "autosave-check" }, local: false, method: current_student.approved?(@subject.course) ? :delete : :post) do |form| %>
         <div class="mdc-checkbox">
-          <%= form.check_box :course_approved, { id: "checkbox_course_approved", class: "mdc-checkbox__native-control", checked: current_student.approved?(@subject.course), disabled: !current_student.available?(@subject.course), data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" } }, "yes", "no" %>
+          <%= form.check_box :course_approved, { id: dom_id(@subject.course), class: "mdc-checkbox__native-control", checked: current_student.approved?(@subject.course), disabled: !current_student.available?(@subject.course), data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" } }, "yes", "no" %>
           <div class="mdc-checkbox__background">
             <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
               <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -24,7 +24,7 @@
   </label>
 
   <% if @subject.exam %>
-    <label class="mdc-deprecated-list-item <%= "mdc-deprecated-list-item--disabled" if !current_student.available?(@subject.exam) %>" for="checkbox_exam_approved">
+    <label class="mdc-deprecated-list-item <%= "mdc-deprecated-list-item--disabled" if !current_student.available?(@subject.exam) %>" for="<%= dom_id(@subject.exam) %>">
       <span class="mdc-deprecated-list-item__ripple"></span>
       <span class="mdc-deprecated-list-item__text">
         Examen aprobado?
@@ -33,7 +33,7 @@
       <span class="mdc-deprecated-list-item__meta">
         <%= form_with(model: @subject.exam, url: approvable_approval_path(@subject.exam, subject_show: true), data: { controller: "autosave-check" }, local: false, method: current_student.approved?(@subject.exam) ? :delete : :post) do |form| %>
           <div class="mdc-checkbox">
-            <%= form.check_box :exam_approved, { id: "checkbox_exam_approved", class: "mdc-checkbox__native-control", checked: current_student.approved?(@subject.exam), disabled: !current_student.available?(@subject.exam), data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" } }, "yes", "no" %>
+            <%= form.check_box :exam_approved, { id: dom_id(@subject.exam), class: "mdc-checkbox__native-control", checked: current_student.approved?(@subject.exam), disabled: !current_student.available?(@subject.exam), data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" } }, "yes", "no" %>
             <div class="mdc-checkbox__background">
               <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                 <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
