@@ -11,8 +11,4 @@ class ActiveSupport::TestCase
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
-
-  def click_actions_menu
-    find(".mdc-icon-button", text: 'menu').click
-  end
 end

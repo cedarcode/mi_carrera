@@ -16,4 +16,8 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   def assert_approvable_checkbox(approvable, **opts)
     assert_selector(:field, dom_id(approvable), **opts.merge(visible: false))
   end
+
+  def click_actions_menu
+    find(".mdc-icon-button", text: 'menu').click
+  end
 end
