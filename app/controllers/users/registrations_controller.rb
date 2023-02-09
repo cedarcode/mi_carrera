@@ -1,6 +1,13 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters_sign_up, only: [:create]
   before_action :configure_permitted_parameters_account_update, only: [:update]
+  after_action :remove_approvables_in_cookies, only: [:create, :update]
+
+  def create
+    super do |user|
+      user.add_approvals_in_cookie(cookies.permanent) if user.persisted?
+    end
+  end
 
   private
 

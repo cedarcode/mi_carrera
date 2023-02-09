@@ -1,6 +1,8 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  after_action :remove_approvables_in_cookies, only: [:google_oauth2]
+
   def google_oauth2
-    user = User.from_omniauth(auth, session)
+    user = User.from_omniauth(auth, cookies.permanent)
 
     if user.present?
       sign_out_all_scopes
