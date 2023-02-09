@@ -46,7 +46,7 @@ class UserStudentTest < ActiveSupport::TestCase
     assert UserStudent.new(user).available?(subject1)
     assert UserStudent.new(user).available?(subject1.course)
     assert_not UserStudent.new(user).available?(subject1.exam)
-    
+
     user.approvals = [subject1.course.id]
     assert UserStudent.new(user).available?(subject1.exam)
   end
