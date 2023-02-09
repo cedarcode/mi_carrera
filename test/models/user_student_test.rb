@@ -42,10 +42,13 @@ class UserStudentTest < ActiveSupport::TestCase
     subject1 = create :subject, :with_exam
     create :subject_prerequisite, approvable: subject1.exam, approvable_needed: subject1.course
 
-    assert UserStudent.new(create :user).available?(subject1)
-    assert UserStudent.new(create :user).available?(subject1.course)
-    assert_not UserStudent.new(create :user).available?(subject1.exam)
-    assert UserStudent.new(create :user, approvals: [subject1.course.id]).available?(subject1.exam)
+    user = create :user
+    assert UserStudent.new(user).available?(subject1)
+    assert UserStudent.new(user).available?(subject1.course)
+    assert_not UserStudent.new(user).available?(subject1.exam)
+    
+    user.approvals = [subject1.course.id]
+    assert UserStudent.new(user).available?(subject1.exam)
   end
 
   test "#approved? returns true if subject_or_approvable is approved" do
