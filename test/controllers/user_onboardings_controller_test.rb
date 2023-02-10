@@ -2,7 +2,7 @@ require "application_controller_test_case"
 
 class UserOnboardingsControllerTest < ApplicationControllerTestCase
   setup do
-    @user = create_user(email: 'user1@gmail.com', password: 'secret')
+    @user = create :user
   end
 
   test 'patch update should return ok when signed in' do
