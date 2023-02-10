@@ -19,6 +19,7 @@ class User < ApplicationRecord
         user.email = auth.info.email
         user.password = Devise.friendly_token[0, 20]
         user.add_approvals_in_cookie(cookie)
+        user.welcome_banner_viewed = true
       end
     end
   end

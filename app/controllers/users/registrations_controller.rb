@@ -4,7 +4,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     super do |user|
-      user.add_approvals_in_cookie(cookies.permanent) if user.persisted?
+      if user.persisted?
+        user.welcome_banner_viewed = true
+        user.add_approvals_in_cookie(cookies.permanent)
+      end
     end
   end
 
