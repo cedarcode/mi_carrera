@@ -11,18 +11,4 @@ class ActiveSupport::TestCase
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
-
-  def wait_for_approvables_reloaded
-    assert page.has_no_selector?('.mdc-circular-progress')
-  end
-
-  def within_actions_menu
-    within '.mdc-drawer__content' do
-      yield
-    end
-  end
-
-  def click_actions_menu
-    find(".mdc-icon-button", text: 'menu').click
-  end
 end
