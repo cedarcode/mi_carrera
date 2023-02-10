@@ -4,6 +4,14 @@ class CookieStudent < BaseStudent
     super(cookie_to_hash(cookie[:approved_approvable_ids]))
   end
 
+  def welcome_banner_viewed?
+    cookie[:welcome_banner_viewed] == "true"
+  end
+
+  def welcome_banner_mark_as_viewed!
+    cookie[:welcome_banner_viewed] = "true"
+  end
+
   private
 
   attr_reader :cookie
