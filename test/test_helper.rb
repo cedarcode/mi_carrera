@@ -11,8 +11,4 @@ class ActiveSupport::TestCase
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
-
-  def hash_to_cookie(hash)
-    hash.map(&:to_s).join('&')
-  end
 end

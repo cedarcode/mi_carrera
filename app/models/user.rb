@@ -31,13 +31,7 @@ class User < ApplicationRecord
   end
 
   def add_approvals_in_cookie(cookie)
-    self.approvals = cookie_to_hash(cookie[:approved_approvable_ids])
+    self.approvals = JSON.parse(cookie[:approved_approvable_ids] || "[]")
     save!
-  end
-
-  private
-
-  def cookie_to_hash(cookie)
-    cookie.is_a?(String) ? cookie.split('&').map(&:to_i) : []
   end
 end

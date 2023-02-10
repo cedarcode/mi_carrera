@@ -9,7 +9,7 @@ class ApprovalsControllerTest < ApplicationControllerTestCase
     post approvable_approval_path(subject1.exam, subject_show: true), params: { format: 'turbo_stream' }
     post approvable_approval_path(subject2.course, subject_show: true), params: { format: 'turbo_stream' }
 
-    assert_equal hash_to_cookie([subject1.course.id, subject1.exam.id, subject2.course.id]),
+    assert_equal [subject1.course.id, subject1.exam.id, subject2.course.id].to_json,
                  cookies.get_cookie('approved_approvable_ids').value
   end
 
