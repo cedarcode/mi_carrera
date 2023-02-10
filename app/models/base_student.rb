@@ -21,6 +21,8 @@ class BaseStudent
   def approved?(subject_or_approvable) = subject_or_approvable.approved?(ids)
   def group_credits(group) = group.subjects.approved_credits(ids)
   def total_credits = Subject.approved_credits(ids)
+  def welcome_banner_viewed? = raise NotImplementedError
+  def welcome_banner_mark_as_viewed! = raise NotImplementedError
 
   private
 

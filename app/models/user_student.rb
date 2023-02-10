@@ -4,6 +4,14 @@ class UserStudent < BaseStudent
     @user = user
   end
 
+  def welcome_banner_viewed?
+    user.welcome_banner_viewed
+  end
+
+  def welcome_banner_mark_as_viewed!
+    user.update!(welcome_banner_viewed: true)
+  end
+
   private
 
   attr_reader :user

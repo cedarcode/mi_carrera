@@ -4,6 +4,14 @@ class SessionStudent < BaseStudent
     @session = session
   end
 
+  def welcome_banner_viewed?
+    session[:welcome_banner_viewed]
+  end
+
+  def welcome_banner_mark_as_viewed!
+    session[:welcome_banner_viewed] = true
+  end
+
   private
 
   attr_reader :session
