@@ -36,7 +36,7 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
     assert_not prerequisite.met?([@subject1.course.id])
   end
 
-  test "#met? on logical AT_LEAST returns true conditions are met" do
+  test "#met? on logical AT_LEAST returns true when conditions are met" do
     prerequisite = LogicalPrerequisite.new(
       logical_operator: "at_least",
       amount_of_subjects_needed: 2,
