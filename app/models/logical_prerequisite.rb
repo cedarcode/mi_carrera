@@ -29,7 +29,7 @@ class LogicalPrerequisite < Prerequisite
 
   def amount_of_subjects_less_than_prerequisites_count
     if amount_of_subjects_needed > operands_prerequisites.size
-      errors.add :admins, "Prerequisite has less operands_prerequisites than it should"
+      errors.add :amount_of_subjects_needed, "must be less than or equal to operands prerequisites count"
     end
   end
 end
