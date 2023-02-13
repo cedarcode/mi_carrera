@@ -37,40 +37,20 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
   end
 
   test "#met? on logical AT_LEAST returns true when conditions are met" do
-    prerequisite = LogicalPrerequisite.new(
-      logical_operator: "at_least",
-      amount_of_subjects_needed: 2,
-      operands_prerequisites: [
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id),
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject3.course.id),
-      ]
-    )
+    prerequisite = build(:at_least_prerequisite, amount_of_subjects_needed: 2, operands_prerequisites: [
+      create(:subject_prerequisite, approvable_needed: @subject1.course),
+      create(:subject_prerequisite, approvable_needed: @subject2.course),
+    ])
 
-    assert prerequisite.met?([@subject2.course.id, @subject3.course.id])
-  end
-
-  test "#met? on logical AT_LEAST returns false when any prerequisite not met" do
-    prerequisite = LogicalPrerequisite.new(
-      logical_operator: "at_least",
-      amount_of_subjects_needed: 2,
-      operands_prerequisites: [
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id),
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject3.course.id)
-      ]
-    )
-
-    assert_not prerequisite.met?([@subject2.course.id])
+    assert_not prerequisite.met?([@subject1.course.id])
+    assert prerequisite.met?([@subject1.course.id, @subject2.course.id])
   end
 
   test "validates that the amount of subjects is loe than operand prerequisites count" do
-    prerequisite = LogicalPrerequisite.new(
-      logical_operator: "at_least",
-      amount_of_subjects_needed: 3,
-      operands_prerequisites: [
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject2.course.id),
-        SubjectPrerequisite.create!(approvable_id: @subject1.course.id, approvable_needed_id: @subject3.course.id)
-      ]
-    )
+    prerequisite = build(:at_least_prerequisite, amount_of_subjects_needed: 3, operands_prerequisites: [
+      create(:subject_prerequisite, approvable_needed: @subject1.course),
+      create(:subject_prerequisite, approvable_needed: @subject2.course),
+    ])
 
     assert_not prerequisite.valid?
   end
