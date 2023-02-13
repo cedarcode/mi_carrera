@@ -20,7 +20,7 @@
     <% if subject.exam %>
       <%= form_with(model: subject.exam, url: approvable_approval_path(subject.exam), data: { controller: "autosave-check" }, local: false, method: current_student.approved?(subject.exam) ? :delete : :post) do |form| %>
         <div class="mdc-checkbox">
-          <%= form.check_box :exam_approved, { id: dom_id(subject.exam), class: "mdc-checkbox__native-control", checked: current_student.approved?(subject.exam), disabled: !current_student.available?(subject.exam) && !current_student.approved?(subject.exam), data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" } }, "yes", "no" %>
+          <%= form.check_box :exam_approved, { id: dom_id(subject.exam), class: "mdc-checkbox__native-control", checked: current_student.approved?(subject.exam), disabled: approvable_disabled?(current_student, subject.exam), data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" } }, "yes", "no" %>
 
           <div class="mdc-checkbox__background">
             <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
