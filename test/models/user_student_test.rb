@@ -120,4 +120,12 @@ class UserStudentTest < ActiveSupport::TestCase
 
     assert_equal [subject.exam.id, subject.course.id], user.reload.approvals
   end
+
+  test "#met? returns true if prerequisite met" do
+    subject1 = create :subject, :with_exam
+    prereq = create(:subject_prerequisite, approvable: subject1.exam, approvable_needed: subject1.course)
+
+    assert_not UserStudent.new(create :user, approvals: []).met?(prereq)
+    assert UserStudent.new(create :user, approvals: [subject1.course.id]).met?(prereq)
+  end
 end

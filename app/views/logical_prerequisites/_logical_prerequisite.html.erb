@@ -10,6 +10,8 @@
       <% elsif logical_prerequisite.logical_operator == "not" %>
         No debe tener
       <% end %>
+
+      <%= render 'prerequisites/met_checkmark', prerequisite: logical_prerequisite %>
     </div>
   </a>
   <div class="logical-prerequisite-operands" data-prerequisite-target="collapsable" >
