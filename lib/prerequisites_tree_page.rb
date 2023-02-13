@@ -80,13 +80,6 @@ class PrerequisitesTreePage < BedeliasPage
     node_content_from_node(node).split('Grupo: ')[1].to_i
   end
 
-  def extract_combinations_from_node(node)
-    node_content = node_content_from_node(node)
-    subjects = extract_subjects_from(node_content)
-    amount_of_subjects_needed = amount_of_subjects_needed(node)
-    subjects.combination(amount_of_subjects_needed)
-  end
-
   def prerequisite_type(prerequisite_node)
     node_type = prerequisite_node['data-nodetype']
     node_content = node_content_from_node(prerequisite_node)
