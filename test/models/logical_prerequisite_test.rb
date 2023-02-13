@@ -40,6 +40,7 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
     prerequisite = build(:at_least_prerequisite, amount_of_subjects_needed: 2, operands_prerequisites: [
       create(:subject_prerequisite, approvable_needed: @subject1.course),
       create(:subject_prerequisite, approvable_needed: @subject2.course),
+      create(:subject_prerequisite, approvable_needed: create(:subject).course),
     ])
 
     assert_not prerequisite.met?([@subject1.course.id])
