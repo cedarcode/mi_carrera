@@ -13,7 +13,9 @@ class BaseStudent
 
   def remove(approvable)
     ids.delete(approvable.id)
-    refresh_approvals
+    if !approvable.is_exam? && approvable.subject.exam.present? && ids.include?(approvable.subject.exam.id)
+      ids.delete(approvable.subject.exam.id)
+    end
     save!
   end
 
@@ -31,16 +33,5 @@ class BaseStudent
 
   def save!
     raise NotImplementedError
-  end
-
-  def refresh_approvals
-    approvables = TreePreloader.new.preload.flat_map { |subject| [subject.course, subject.exam].compact }
-    approvables_by_id = approvables.index_by(&:id)
-
-    loop do
-      rejected = ids.reject! { |id| !approvables_by_id[id].available?(ids) }
-
-      break unless rejected
-    end
   end
 end

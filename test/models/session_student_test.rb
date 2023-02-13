@@ -21,7 +21,7 @@ class SessionStudentTest < ActiveSupport::TestCase
     assert_equal [subject1.course.id, subject2.course.id], session[:approved_approvable_ids]
   end
 
-  test "#remove removes approvable.id and other approvables that are not available anymore" do
+  test "#remove removes approvable.id and just the exam of the subject" do
     subject1 = create :subject, :with_exam
     subject2 = create :subject, :with_exam
     subject3 = create :subject, :with_exam
@@ -31,13 +31,14 @@ class SessionStudentTest < ActiveSupport::TestCase
     create(:subject_prerequisite, approvable: subject3.course, approvable_needed: subject1.course)
 
     session = {
-      approved_approvable_ids: [subject1.course.id, subject2.course.id, subject3.course.id, subject4.course.id]
+      approved_approvable_ids: [subject1.course.id, subject1.exam.id, subject2.course.id, subject3.course.id,
+                                subject4.course.id]
     }
     student = SessionStudent.new(session)
 
     student.remove(subject1.course)
 
-    assert_equal [subject4.course.id], session[:approved_approvable_ids]
+    assert_equal [subject2.course.id, subject3.course.id, subject4.course.id], session[:approved_approvable_ids]
   end
 
   test "#available? returns true if subject_or_approvable is available" do
