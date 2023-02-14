@@ -64,10 +64,6 @@ class PrerequisitesTreePage < BedeliasPage
     end
   end
 
-  def subtrees_roots(node)
-    node.all("following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]", visible: false)
-  end
-
   def node_content_from_node(node)
     node.first('div').text
   end
@@ -167,29 +163,11 @@ class PrerequisitesTreePage < BedeliasPage
           }
         end
     when :logical_and_tree
-      ret[:type] = 'logical'
-      ret[:logical_operator] = 'and'
-      expand_prerequisites_tree(prerequisite_node)
-      ret[:operands] =
-        subtrees_roots(prerequisite_node).each_with_object([]) do |subtree_root, array|
-          array << prerequisite_tree(subtree_root)
-        end
+      ret = logical_prerequisite_branch_node_details(prerequisite_node, operator: 'and')
     when :logical_or_tree
-      ret[:type] = 'logical'
-      ret[:logical_operator] = 'or'
-      expand_prerequisites_tree(prerequisite_node)
-      ret[:operands] =
-        subtrees_roots(prerequisite_node).each_with_object([]) do |subtree_root, array|
-          array << prerequisite_tree(subtree_root)
-        end
+      ret = logical_prerequisite_branch_node_details(prerequisite_node, operator: 'or')
     when :logical_not_tree
-      ret[:type] = 'logical'
-      ret[:logical_operator] = 'not'
-      expand_prerequisites_tree(prerequisite_node)
-      ret[:operands] =
-        subtrees_roots(prerequisite_node).each_with_object([]) do |subtree_root, array|
-          array << prerequisite_tree(subtree_root)
-        end
+      ret = logical_prerequisite_branch_node_details(prerequisite_node, operator: 'not')
     when :subject_course
       ret = subject_prerequisite_node_details(prerequisite_node, variant: 'course')
     when :subject_exam
@@ -201,6 +179,24 @@ class PrerequisitesTreePage < BedeliasPage
     end
 
     ret
+  end
+
+  def logical_prerequisite_branch_node_details(prerequisite_node, operator:)
+    expand_prerequisites_tree(prerequisite_node)
+    child_nodes = prerequisite_node.all(
+      "following-sibling::td/div/table/tbody/tr/td[contains(@class, 'ui-treenode ')]",
+      visible: false
+    )
+    operands =
+      child_nodes.each_with_object([]) do |child_node, array|
+        array << prerequisite_tree(child_node)
+      end
+
+    {
+      type: 'logical',
+      logical_operator: operator,
+      operands: operands,
+    }
   end
 
   def subject_prerequisite_node_details(prerequisite_node, variant:)
