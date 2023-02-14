@@ -122,4 +122,12 @@ class CookieStudentTest < ActiveSupport::TestCase
 
     assert_equal [subject.exam.id, subject.course.id], approvable_ids_in_cookie(cookies)
   end
+
+  test "#met? returns true if prerequisite met" do
+    subject1 = create :subject, :with_exam
+    prereq = create(:subject_prerequisite, approvable: subject1.exam, approvable_needed: subject1.course)
+
+    assert_not build(:cookie_student, approved_approvable_ids: []).met?(prereq)
+    assert build(:cookie_student, approved_approvable_ids: [subject1.course.id]).met?(prereq)
+  end
 end
