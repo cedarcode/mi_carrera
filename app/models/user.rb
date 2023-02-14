@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   serialize :approvals, Array
 
-  def self.from_omniauth(auth, session)
+  def self.from_omniauth(auth, cookie)
     # check that user with same email exists
     existing_user = User.find_by(email: auth.info.email)
 
@@ -18,7 +18,8 @@ class User < ApplicationRecord
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email
         user.password = Devise.friendly_token[0, 20]
-        user.add_approvals_in_session(session)
+        user.approvals = JSON.parse(cookie[:approved_approvable_ids] || "[]")
+        user.welcome_banner_viewed = cookie[:welcome_banner_viewed] == "true"
       end
     end
   end
@@ -27,16 +28,5 @@ class User < ApplicationRecord
 
   def oauth_user?
     provider.present?
-  end
-
-  def add_approvals_in_session(session)
-    self.approvals = session[:approved_approvable_ids] || []
-  end
-
-  def self.new_with_session(params, session)
-    new(params) do |user|
-      user.add_approvals_in_session(session)
-      user.welcome_banner_viewed = true
-    end
   end
 end
