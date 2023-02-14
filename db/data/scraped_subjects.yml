@@ -12,7 +12,7 @@ SRN14:
   code: SRN14
   name: MATEMÁTICA DISCRETA I
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -109,7 +109,7 @@ SRN03:
   code: 1025T
   name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
   credits: 8
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -146,7 +146,7 @@ M5:
   code: M5
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 5
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -182,7 +182,7 @@ MA11:
   code: MA11
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 11
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -200,7 +200,7 @@ CAL12:
   code: CAL12
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 12
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -218,7 +218,7 @@ CAL10:
   code: CAL10
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -227,7 +227,7 @@ CP7:
   code: CP7
   name: ANALISIS COMPLEJO
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -236,7 +236,7 @@ CP1:
   code: CP1
   name: ANALISIS MATEMATICO I
   credits: 33
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -245,7 +245,7 @@ CP22:
   code: CP22
   name: ANALISIS MATEMATICO I (P. 74)
   credits: 33
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -254,7 +254,7 @@ CP44:
   code: CP44
   name: ANALISIS MATEMATICO I (1ER.SEM.)
   credits: 17
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -272,7 +272,7 @@ CP6:
   code: CP6
   name: ANALISIS MATEMATICO II
   credits: 33
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -281,7 +281,7 @@ CP25:
   code: CP25
   name: ANALISIS MATEMATICO II (P. 74)
   credits: 33
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -299,7 +299,7 @@ CP49:
   code: CP49
   name: ANALISIS MATEMATICO II (2DO.SEM.)
   credits: 17
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -326,7 +326,7 @@ CP49:
   code: '1070'
   name: CALCULO 1
   credits: 16
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -362,7 +362,7 @@ CP49:
   code: '1072'
   name: CALCULO 2
   credits: 16
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -388,7 +388,7 @@ CP49:
   code: '1076'
   name: CALCULO 3
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -397,7 +397,7 @@ CP49:
   code: '1021'
   name: ALGEBRA LINEAL
   credits: 18
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -406,7 +406,7 @@ CP2:
   code: CP2
   name: GEOMETRIA Y ALGEBRA LINEAL
   credits: 24
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -415,7 +415,7 @@ CP23:
   code: CP23
   name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
   credits: 24
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -451,7 +451,7 @@ CP47:
   code: '1071'
   name: GEOMETRIA Y ALGEBRA LINEAL 1
   credits: 9
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -478,7 +478,7 @@ CP47:
   code: '1058'
   name: GEOMETRIA Y ALGEBRA LINEAL 2
   credits: 9
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -538,7 +538,7 @@ CP4:
   code: CP4
   name: LOGICA
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -564,7 +564,7 @@ CP4:
   code: '1010'
   name: LOGICA Y COMPUTACION
   credits: 12
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -626,7 +626,7 @@ CP4:
   code: '1075'
   name: PROBABILIDAD Y ESTADISTICA
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -715,7 +715,7 @@ MAT33:
   code: MAT33
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 33
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -751,7 +751,7 @@ MA15:
   code: MA15
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 15
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -760,7 +760,7 @@ MA16:
   code: MA16
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 16
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -769,7 +769,7 @@ MA20:
   code: MA20
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 20
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -787,7 +787,7 @@ MA25:
   code: MA25
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 25
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -796,7 +796,7 @@ MA29:
   code: MA29
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 29
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -832,7 +832,7 @@ MC13:
   code: MC13
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 13
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -868,7 +868,7 @@ M12:
   code: M12
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 12
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -877,7 +877,7 @@ M24:
   code: M24
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 24
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -886,7 +886,7 @@ M9:
   code: M9
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 9
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4083'
@@ -1021,7 +1021,7 @@ CP26:
   code: CP26
   name: MECANICA GENERAL I (P. 74)
   credits: 22
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1039,7 +1039,7 @@ CP3:
   code: CP3
   name: MECANICA I
   credits: 12
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1048,7 +1048,7 @@ CP17:
   code: CP17
   name: MECANICA I (TRANSICION)
   credits: 12
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1066,7 +1066,7 @@ CP8:
   code: '1120'
   name: FISICA GENERAL 1
   credits: 13
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1075,7 +1075,7 @@ CP8:
   code: '1170'
   name: FISICA GENERAL 1
   credits: 13
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1084,7 +1084,7 @@ CP8:
   code: '1121'
   name: FISICA GENERAL 2
   credits: 13
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1093,7 +1093,7 @@ CP8:
   code: '1172'
   name: FISICA GENERAL 2
   credits: 13
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1102,7 +1102,7 @@ CP41:
   code: CP41
   name: FISICA I (P. 74)
   credits: 22
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1120,7 +1120,7 @@ CP43:
   code: CP43
   name: FISICA III (P. 74)
   credits: 20
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1138,7 +1138,7 @@ CP43:
   code: '1171'
   name: FISICA 1
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1172,7 +1172,7 @@ CP43:
   code: '1173'
   name: FISICA 3
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1234,7 +1234,7 @@ FG:
   code: FG
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 7
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1243,7 +1243,7 @@ FG2:
   code: FG2
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 13
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1252,7 +1252,7 @@ FIS14:
   code: FIS14
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 14
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1261,7 +1261,7 @@ FIS8:
   code: FIS8
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4442'
@@ -1342,7 +1342,7 @@ SRN17:
   code: 1322T
   name: PROGRAMACION 1
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1359,7 +1359,7 @@ PR4:
   code: PR4
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 4
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1454,7 +1454,7 @@ CP52:
   code: CP52
   name: COMPUTACION
   credits: 12
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1463,7 +1463,7 @@ CP24:
   code: CP24
   name: COMPUTACION (P. 74)
   credits: 8
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1513,7 +1513,7 @@ CP36:
   code: CP36
   name: INT. A LA COMPUTACION
   credits: 9
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1522,7 +1522,7 @@ CP36:
   code: '1315'
   name: INT. A LA COMPUTACION GRAFICA
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1634,7 +1634,7 @@ CP9:
   code: CP9
   name: PROGRAMACION I
   credits: 8
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1643,7 +1643,7 @@ CP37:
   code: CP37
   name: PROGRAMACION I (P. 74)
   credits: 15
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1652,7 +1652,7 @@ CP15:
   code: CP15
   name: PROGRAMACION II
   credits: 15
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1661,7 +1661,7 @@ CP38:
   code: CP38
   name: PROGRAMACION II (P. 74)
   credits: 8
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1670,7 +1670,7 @@ CP29:
   code: CP29
   name: PROGRAMACION III
   credits: 15
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1697,7 +1697,7 @@ CP374:
   code: '1320'
   name: PROGRAMACION 1
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1715,7 +1715,7 @@ CP374:
   code: '1372'
   name: PROGRAMACION 1
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1821,7 +1821,7 @@ CP33:
   code: CP33
   name: TEORIA DE LA PROGRAMACION I
   credits: 12
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1910,7 +1910,7 @@ PR7:
   code: PR7
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 7
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4580'
@@ -1986,7 +1986,7 @@ AR20:
   code: AR20
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 20
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4428'
@@ -2075,7 +2075,7 @@ CP28:
   code: CP28
   name: ARQUITECTURA DE SISTEMAS
   credits: 15
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4428'
@@ -2161,7 +2161,7 @@ CP364:
   code: CP364
   name: COMUNICACION DE DATOS
   credits: 15
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4428'
@@ -2241,7 +2241,7 @@ CP51:
   code: '1403'
   name: INT. A LA ARQUITECTURA DE COMPUTADORES
   credits: 15
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4428'
@@ -2326,7 +2326,7 @@ CP31:
   code: CP31
   name: SISTEMAS OPERATIVOS
   credits: 12
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4428'
@@ -2335,7 +2335,7 @@ CP31:
   code: '1511'
   name: SISTEMAS OPERATIVOS
   credits: 12
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4428'
@@ -2344,7 +2344,7 @@ CP31:
   code: '1518'
   name: SISTEMAS OPERATIVOS
   credits: 15
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4428'
@@ -2465,7 +2465,7 @@ AR30:
   code: AR30
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 30
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4428'
@@ -2658,7 +2658,7 @@ IAR6:
   code: 1937T
   name: CREDITOS NO ACUM. CON SIST. DE INFORMACION EN SALUD
   credits: 4
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4647'
@@ -2741,7 +2741,7 @@ BD15:
   code: BD15
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 15
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4647'
@@ -2750,7 +2750,7 @@ BD05:
   code: BD05
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 5
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4647'
@@ -2759,7 +2759,7 @@ BD015:
   code: BD015
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 15
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4647'
@@ -2776,7 +2776,7 @@ CP362:
   code: CP362
   name: BASES DE DATOS
   credits: 15
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4647'
@@ -2955,7 +2955,7 @@ BD10:
   code: BD10
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4647'
@@ -3060,7 +3060,7 @@ CP16:
   code: CP16
   name: CALCULO NUMERICO
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '5020'
@@ -3113,7 +3113,7 @@ CP376:
   code: '1079'
   name: METODOS NUMERICOS
   credits: 8
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '5020'
@@ -3330,7 +3330,7 @@ CP27:
   code: CP27
   name: INVESTIGACION OPERATIVA
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4815'
@@ -3434,7 +3434,7 @@ IO8:
   code: IO8
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 8
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4815'
@@ -3443,7 +3443,7 @@ IO8:
   code: 1758T
   name: CREDITOS NO ACUM. CON RELACIONES PERS. EN ING. DE SOFT. Y GER. DE PROY.
   credits: 4
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '5082'
@@ -3659,7 +3659,7 @@ IS14:
   code: IS14
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 14
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '5082'
@@ -3693,7 +3693,7 @@ BTI29:
   code: BTI29
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 29
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -3702,7 +3702,7 @@ BT31:
   code: BT31
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 31
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -3711,7 +3711,7 @@ BTI33:
   code: BTI33
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 33
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -3720,7 +3720,7 @@ BTI23:
   code: BTI23
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 23
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -3729,7 +3729,7 @@ BTI31:
   code: BTI31
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 31
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -3738,7 +3738,7 @@ ATI3:
   code: ATI3
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 3
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -3747,7 +3747,7 @@ BTI38:
   code: BTI38
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 38
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -3780,7 +3780,7 @@ AA28:
   code: AA28
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -3789,7 +3789,7 @@ A028:
   code: A028
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -3807,7 +3807,7 @@ BT28:
   code: BT28
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -3816,7 +3816,7 @@ A28:
   code: A28
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -3825,7 +3825,7 @@ AI28:
   code: AI28
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -4051,7 +4051,7 @@ AT10:
   code: AT10
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -4060,7 +4060,7 @@ AT28:
   code: AT28
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 28
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -4069,7 +4069,7 @@ AT3:
   code: AT3
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 3
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -4087,7 +4087,7 @@ TP25:
   code: TP25
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 25
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4756'
@@ -4221,7 +4221,7 @@ GO10:
   code: '1921'
   name: GESTION DE CALIDAD
   credits: 8
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4066'
@@ -4291,7 +4291,7 @@ GA10:
   code: GA10
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '4066'
@@ -4388,7 +4388,7 @@ CHU10:
   code: CHU10
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 10
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '5265'
@@ -4549,7 +4549,7 @@ CH4:
   code: CH4
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 4
-  has_exam: false
+  has_exam: true
   eva_link:
   openfing_link:
   subject_group: '5265'
