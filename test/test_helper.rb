@@ -14,5 +14,7 @@ class ActiveSupport::TestCase
 
   def approvable_ids_in_cookie(cookie)
     JSON.parse(cookie[:approved_approvable_ids] || "[]")
+    value = cookie[:approved_approvable_ids]
+    value.present? ? JSON.parse(value) : nil
   end
 end

@@ -20,7 +20,6 @@ class User < ApplicationRecord
         user.password = Devise.friendly_token[0, 20]
         user.approvals = JSON.parse(cookie[:approved_approvable_ids] || "[]")
         user.welcome_banner_viewed = cookie[:welcome_banner_viewed] == "true"
-        user.save!
       end
     end
   end

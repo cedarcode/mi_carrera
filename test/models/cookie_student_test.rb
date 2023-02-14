@@ -8,11 +8,11 @@ class CookieStudentTest < ActiveSupport::TestCase
     create(:subject_prerequisite, approvable: subject2.course, approvable_needed: subject1.course)
 
     cookies = build(:cookie)
-    student = build(:cookie_student, cookies: cookies)
+    student = build(:cookie_student, cookies:)
 
     student.add(subject2.course)
 
-    assert_empty approvable_ids_in_cookie(cookies)
+    assert_nil approvable_ids_in_cookie(cookies)
 
     student.add(subject1.course)
     assert_equal [subject1.course.id], approvable_ids_in_cookie(cookies)
@@ -30,50 +30,46 @@ class CookieStudentTest < ActiveSupport::TestCase
     create(:subject_prerequisite, approvable: subject2.course, approvable_needed: subject3.course)
     create(:subject_prerequisite, approvable: subject3.course, approvable_needed: subject1.course)
 
-    cookie = build(:cookie,
-                   approved_approvable_ids: [subject1.course.id, subject2.course.id, subject3.course.id,
-                                             subject4.course.id])
-    student = build(:cookie_student, cookies: cookie)
+    cookies = build(:cookie,
+                    approved_approvable_ids: [
+                      subject1.course.id,
+                      subject2.course.id,
+                      subject3.course.id,
+                      subject4.course.id
+                    ])
+    student = build(:cookie_student, cookies:)
     student.remove(subject1.course)
 
-    assert_equal [subject4.course.id], approvable_ids_in_cookie(cookie)
+    assert_equal [subject4.course.id], approvable_ids_in_cookie(cookies)
   end
 
   test "#available? returns true if subject_or_approvable is available" do
     subject1 = create :subject, :with_exam
     create(:subject_prerequisite, approvable: subject1.exam, approvable_needed: subject1.course)
 
-    empty_cookie = build(:cookie, approved_approvable_ids: [])
-    assert build(:cookie_student, cookies: empty_cookie).available?(subject1)
-    assert build(:cookie_student, cookies: empty_cookie).available?(subject1.course)
-    assert_not build(:cookie_student, cookies: empty_cookie).available?(subject1.exam)
+    assert build(:cookie_student, approved_approvable_ids: []).available?(subject1)
+    assert build(:cookie_student, approved_approvable_ids: []).available?(subject1.course)
+    assert_not build(:cookie_student, approved_approvable_ids: []).available?(subject1.exam)
 
-    cookie = build(:cookie, approved_approvable_ids: [subject1.course.id])
-    assert build(:cookie_student, cookies: cookie).available?(subject1.exam)
+    cookies = build(:cookie, approved_approvable_ids: [subject1.course.id])
+    assert build(:cookie_student, cookies:).available?(subject1.exam)
   end
 
   test "#approved? returns true if subject_or_approvable is approved" do
     subject1 = create :subject
     subject2 = create :subject, :with_exam
 
-    empty_cookie = build(:cookie, approved_approvable_ids: [])
-    assert_not build(:cookie_student, cookies: empty_cookie).approved?(subject1)
-    assert_not build(:cookie_student, cookies: empty_cookie).approved?(subject1.course)
-    assert build(:cookie_student,
-                 cookies: build(:cookie, approved_approvable_ids: [subject1.course.id])).approved?(subject1)
-    assert build(:cookie_student,
-                 cookies: build(:cookie, approved_approvable_ids: [subject1.course.id])).approved?(subject1.course)
-    assert_not build(:cookie_student, cookies: empty_cookie).approved?(subject2)
-    assert_not build(:cookie_student, cookies: empty_cookie).approved?(subject2.course)
-    assert_not build(:cookie_student, cookies: empty_cookie).approved?(subject2.exam)
-    assert_not build(:cookie_student,
-                     cookies: build(:cookie, approved_approvable_ids: [subject2.course.id])).approved?(subject2)
-    assert build(:cookie_student,
-                 cookies: build(:cookie, approved_approvable_ids: [subject2.exam.id])).approved?(subject2)
-    assert_not build(:cookie_student,
-                     cookies: build(:cookie, approved_approvable_ids: [subject2.exam.id])).approved?(subject2.course)
-    assert build(:cookie_student,
-                 cookies: build(:cookie, approved_approvable_ids: [subject2.exam.id])).approved?(subject2.exam)
+    assert_not build(:cookie_student, approved_approvable_ids: []).approved?(subject1)
+    assert_not build(:cookie_student, approved_approvable_ids: []).approved?(subject1.course)
+    assert build(:cookie_student, approved_approvable_ids: [subject1.course.id]).approved?(subject1)
+    assert build(:cookie_student, approved_approvable_ids: [subject1.course.id]).approved?(subject1.course)
+    assert_not build(:cookie_student, approved_approvable_ids: []).approved?(subject2)
+    assert_not build(:cookie_student, approved_approvable_ids: []).approved?(subject2.course)
+    assert_not build(:cookie_student, approved_approvable_ids: []).approved?(subject2.exam)
+    assert_not build(:cookie_student, approved_approvable_ids: [subject2.course.id]).approved?(subject2)
+    assert build(:cookie_student, approved_approvable_ids: [subject2.exam.id]).approved?(subject2)
+    assert_not build(:cookie_student, approved_approvable_ids: [subject2.exam.id]).approved?(subject2.course)
+    assert build(:cookie_student, approved_approvable_ids: [subject2.exam.id]).approved?(subject2.exam)
   end
 
   test "#group_credits returns approved credits for the given group" do
@@ -84,19 +80,16 @@ class CookieStudentTest < ActiveSupport::TestCase
     subject2 = create :subject, :with_exam, credits: 11, group: group1
     subject3 = create :subject, credits: 12, group: group2
 
-    student = build(:cookie_student, cookies: build(:cookie, approved_approvable_ids: []))
+    student = build(:cookie_student, approved_approvable_ids: [])
     assert_equal 0, student.group_credits(group1)
-    student = build(:cookie_student, cookies: build(:cookie, approved_approvable_ids: [subject1.course.id]))
+    student = build(:cookie_student, approved_approvable_ids: [subject1.course.id])
     assert_equal 10, student.group_credits(group1)
-    student = build(:cookie_student,
-                    cookies: build(:cookie, approved_approvable_ids: [subject1.course.id, subject2.course.id]))
+    student = build(:cookie_student, approved_approvable_ids: [subject1.course.id, subject2.course.id])
     assert_equal 10, student.group_credits(group1)
-    student = build(:cookie_student,
-                    cookies: build(:cookie, approved_approvable_ids: [subject1.course.id, subject2.exam.id]))
+    student = build(:cookie_student, approved_approvable_ids: [subject1.course.id, subject2.exam.id])
     assert_equal 21, student.group_credits(group1)
     student = build(:cookie_student,
-                    cookies: build(:cookie,
-                                   approved_approvable_ids: [subject1.course.id, subject2.exam.id, subject3.course.id]))
+                    approved_approvable_ids: [subject1.course.id, subject2.exam.id, subject3.course.id])
     assert_equal 21, student.group_credits(group1)
   end
 
@@ -108,26 +101,23 @@ class CookieStudentTest < ActiveSupport::TestCase
     subject2 = create :subject, :with_exam, credits: 11, group: group1
     subject3 = create :subject, credits: 12, group: group2
 
-    student = build(:cookie_student, cookies: build(:cookie, approved_approvable_ids: []))
+    student = build(:cookie_student, approved_approvable_ids: [])
     assert_equal 0, student.total_credits
-    student = build(:cookie_student, cookies: build(:cookie, approved_approvable_ids: [subject1.course.id]))
+    student = build(:cookie_student, approved_approvable_ids: [subject1.course.id])
     assert_equal 10, student.total_credits
-    student = build(:cookie_student,
-                    cookies: build(:cookie, approved_approvable_ids: [subject1.course.id, subject2.course.id]))
+    student = build(:cookie_student, approved_approvable_ids: [subject1.course.id, subject2.course.id])
     assert_equal 10, student.total_credits
-    student = build(:cookie_student,
-                    cookies: build(:cookie, approved_approvable_ids: [subject1.course.id, subject2.exam.id]))
+    student = build(:cookie_student, approved_approvable_ids: [subject1.course.id, subject2.exam.id])
     assert_equal 21, student.total_credits
     student = build(:cookie_student,
-                    cookies: build(:cookie,
-                                   approved_approvable_ids: [subject1.course.id, subject2.exam.id, subject3.course.id]))
+                    approved_approvable_ids: [subject1.course.id, subject2.exam.id, subject3.course.id])
     assert_equal 33, student.total_credits
   end
 
   test "#add subject.exam adds subject.course as well" do
     subject = create :subject, :with_exam
     cookies = build(:cookie)
-    student = build(:cookie_student, cookies: cookies)
+    student = build(:cookie_student, cookies:)
     student.add(subject.exam)
 
     assert_equal [subject.exam.id, subject.course.id], approvable_ids_in_cookie(cookies)
