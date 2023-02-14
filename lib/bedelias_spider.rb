@@ -63,10 +63,6 @@ class BedeliasSpider
       end
     end
 
-    File.open(subject_groups_path, "w") do |file|
-      file.write groups.deep_stringify_keys.to_yaml
-    end
-
     # got to the prerequisites page
     bedelias_page.visit_prerequisites
 
@@ -89,13 +85,6 @@ class BedeliasSpider
       end
     end
 
-    subjects = YAML.load(File.read(subjects_path)).to_h.deep_merge(subjects.deep_stringify_keys)
-
-    # save to a file
-    File.open(subjects_path, "w") do |file|
-      file.write subjects.to_yaml
-    end
-
     # now the prerequisites
     prerequisites_page.move_to_first_page
 
@@ -116,9 +105,25 @@ class BedeliasSpider
         approvable_details[:code],
         approvable_details[:is_exam]
       )
+
       prerequisites << prerequisite
 
       prerequisites_tree_page.back
+    end
+
+    prerequisites.each do |prerequisite_tree|
+      add_exams_missing_in_prerequisites_page(prerequisite_tree, subjects)
+    end
+
+    File.open(subject_groups_path, "w") do |file|
+      file.write groups.deep_stringify_keys.to_yaml
+    end
+
+    subjects = YAML.load(File.read(subjects_path)).to_h.deep_merge(subjects.deep_stringify_keys)
+
+    # save to a file
+    File.open(subjects_path, "w") do |file|
+      file.write subjects.to_yaml
     end
 
     File.open(prerequisites_path, "w") do |file|
@@ -130,6 +135,18 @@ class BedeliasSpider
   private
 
   attr_reader :browser, :subject_groups_path, :subjects_path, :prerequisites_path
+
+  def add_exams_missing_in_prerequisites_page(prerequisite_tree, subjects)
+    if prerequisite_tree[:type] == 'subject' && prerequisite_tree[:needs] == 'exam'
+      if subjects[prerequisite_tree[:subject_needed]].present?
+        subjects[prerequisite_tree[:subject_needed]][:has_exam] ||= true
+      end
+    elsif prerequisite_tree[:type] == 'logical'
+      prerequisite_tree[:operands].each do |operand|
+        add_exams_missing_in_prerequisites_page(operand, subjects)
+      end
+    end
+  end
 
   def create_prerequisite_tree(original_prerequisite, subject_code = nil, is_exam = false)
     prerequisite_tree = prerequisites_tree_page.prerequisite_tree(original_prerequisite)
