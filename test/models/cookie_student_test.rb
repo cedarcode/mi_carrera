@@ -21,7 +21,7 @@ class CookieStudentTest < ActiveSupport::TestCase
     assert_equal [subject1.course.id, subject2.course.id], approvable_ids_in_cookie(cookies)
   end
 
-  test "#remove removes approvable.id and other approvables that are not available anymore" do
+  test "#remove removes approvable.id and just the exam of the subject" do
     subject1 = create :subject, :with_exam
     subject2 = create :subject, :with_exam
     subject3 = create :subject, :with_exam
@@ -40,7 +40,7 @@ class CookieStudentTest < ActiveSupport::TestCase
     student = build(:cookie_student, cookies:)
     student.remove(subject1.course)
 
-    assert_equal [subject4.course.id], approvable_ids_in_cookie(cookies)
+    assert_equal [subject2.course.id, subject3.course.id, subject4.course.id], approvable_ids_in_cookie(cookies)
   end
 
   test "#available? returns true if subject_or_approvable is available" do
