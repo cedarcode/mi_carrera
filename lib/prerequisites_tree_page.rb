@@ -69,14 +69,6 @@ class PrerequisitesTreePage < BedeliasPage
     node.first('div').text
   end
 
-  def credits_from_node(node)
-    node_content_from_node(node).split(' créditos')[0].to_i
-  end
-
-  def group_from_node(node)
-    node_content_from_node(node).split('Grupo: ')[1].to_i
-  end
-
   def prerequisite_type(prerequisite_node)
     node_type = prerequisite_node['data-nodetype']
     node_content = node_content_from_node(prerequisite_node)
@@ -114,41 +106,41 @@ class PrerequisitesTreePage < BedeliasPage
   end
 
   def prerequisite_tree(prerequisite_node)
-    node_content = node_content_from_node(prerequisite_node)
     type = prerequisite_type(prerequisite_node)
-    ret = {}
 
     case type
     when :credits
-      ret[:type] = 'credits'
-      ret[:credits] = credits_from_node(prerequisite_node)
+      credits_prerequisite_details(prerequisite_node)
     when :credits_group
-      ret[:type] = 'credits'
-      ret[:credits] = credits_from_node(prerequisite_node)
-      ret[:group] = group_from_node(prerequisite_node)
+      credits_prerequisite_details(prerequisite_node, group: true)
     when :all_subjects_from_node
-      ret = logical_prerequisite_leaf_node_details(prerequisite_node, operator: 'and')
+      logical_prerequisite_leaf_node_details(prerequisite_node, operator: 'and')
     when :any_subject_from_node
-      ret = logical_prerequisite_leaf_node_details(prerequisite_node, operator: 'or')
+      logical_prerequisite_leaf_node_details(prerequisite_node, operator: 'or')
     when :n_subjects_from_node
-      ret = logical_prerequisite_leaf_node_details(prerequisite_node, operator: 'at_least')
+      logical_prerequisite_leaf_node_details(prerequisite_node, operator: 'at_least')
     when :logical_and_tree
-      ret = logical_prerequisite_branch_node_details(prerequisite_node, operator: 'and')
+      logical_prerequisite_branch_node_details(prerequisite_node, operator: 'and')
     when :logical_or_tree
-      ret = logical_prerequisite_branch_node_details(prerequisite_node, operator: 'or')
+      logical_prerequisite_branch_node_details(prerequisite_node, operator: 'or')
     when :logical_not_tree
-      ret = logical_prerequisite_branch_node_details(prerequisite_node, operator: 'not')
+      logical_prerequisite_branch_node_details(prerequisite_node, operator: 'not')
     when :subject_course
-      ret = subject_prerequisite_node_details(prerequisite_node, variant: 'course')
+      subject_prerequisite_node_details(prerequisite_node, variant: 'course')
     when :subject_exam
-      ret = subject_prerequisite_node_details(prerequisite_node, variant: 'exam')
+      subject_prerequisite_node_details(prerequisite_node, variant: 'exam')
     when :subject_all
-      ret = subject_prerequisite_node_details(prerequisite_node, variant: 'all')
+      subject_prerequisite_node_details(prerequisite_node, variant: 'all')
     when :subject_enrollment
-      ret = subject_prerequisite_node_details(prerequisite_node, variant: 'enrollment')
+      subject_prerequisite_node_details(prerequisite_node, variant: 'enrollment')
     end
+  end
 
-    ret
+  def credits_prerequisite_details(prerequisite_node, group: false)
+    {
+      type: 'credits',
+      credits: node_content_from_node(prerequisite_node).split(' créditos')[0].to_i,
+    }.merge!(group ? { group: node_content_from_node(prerequisite_node).split('Grupo: ')[1].to_i } : {})
   end
 
   def logical_prerequisite_leaf_node_details(prerequisite_node, operator:)
