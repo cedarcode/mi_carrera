@@ -1,6 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
-    user = User.from_omniauth(auth, cookies.permanent)
+    user = User.from_omniauth(auth, cookies)
 
     if user.present?
       sign_out_all_scopes
