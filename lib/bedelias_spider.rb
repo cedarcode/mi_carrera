@@ -139,7 +139,7 @@ class BedeliasSpider
   def add_exams_missing_in_prerequisites_page(prerequisite_tree, subjects)
     if prerequisite_tree[:type] == 'subject' && prerequisite_tree[:needs] == 'exam'
       if subjects[prerequisite_tree[:subject_needed]]
-        subjects[prerequisite_tree[:subject_needed]][:has_exam] ||= true
+        subjects[prerequisite_tree[:subject_needed]][:has_exam] = true
       end
     elsif prerequisite_tree[:type] == 'logical'
       prerequisite_tree[:operands].each do |operand|
