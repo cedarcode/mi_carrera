@@ -7,7 +7,8 @@ class PrerequisitesTreePage < BedeliasPage
     click_on 'Volver'
   end
 
-  def extract_subjects_from(node_content)
+  def extract_subjects_from(prerequisite_node)
+    node_content = node_content_from_node(prerequisite_node)
     subjects = []
     _, *approvables = node_content.split(/(?=\b(?:Examen|Curso|U\.C\.B aprobada)\b)\s*/)
 
@@ -126,42 +127,11 @@ class PrerequisitesTreePage < BedeliasPage
       ret[:credits] = credits_from_node(prerequisite_node)
       ret[:group] = group_from_node(prerequisite_node)
     when :all_subjects_from_node
-      ret[:type] = 'logical'
-      ret[:logical_operator] = 'and'
-      ret[:operands] =
-        extract_subjects_from(node_content).each_with_object([]) do |s, array|
-          array << {
-            type: 'subject',
-            subject_needed_code: s[:subject_needed_code],
-            subject_needed_name: s[:subject_needed_name],
-            needs: s[:needs]
-          }
-        end
+      ret = logical_prerequisite_leaf_node_details(prerequisite_node, operator: 'and')
     when :any_subject_from_node
-      ret[:type] = 'logical'
-      ret[:logical_operator] = 'or'
-      ret[:operands] =
-        extract_subjects_from(node_content).each_with_object([]) do |s, array|
-          array << {
-            type: 'subject',
-            subject_needed_code: s[:subject_needed_code],
-            subject_needed_name: s[:subject_needed_name],
-            needs: s[:needs]
-          }
-        end
+      ret = logical_prerequisite_leaf_node_details(prerequisite_node, operator: 'or')
     when :n_subjects_from_node
-      ret[:type] = 'logical'
-      ret[:logical_operator] = 'at_least'
-      ret[:amount_of_subjects_needed] = amount_of_subjects_needed(prerequisite_node)
-      ret[:operands] =
-        extract_subjects_from(node_content).each_with_object([]) do |s, array|
-          array << {
-            type: 'subject',
-            subject_needed_code: s[:subject_needed_code],
-            subject_needed_name: s[:subject_needed_name],
-            needs: s[:needs]
-          }
-        end
+      ret = logical_prerequisite_leaf_node_details(prerequisite_node, operator: 'at_least')
     when :logical_and_tree
       ret = logical_prerequisite_branch_node_details(prerequisite_node, operator: 'and')
     when :logical_or_tree
@@ -179,6 +149,26 @@ class PrerequisitesTreePage < BedeliasPage
     end
 
     ret
+  end
+
+  def logical_prerequisite_leaf_node_details(prerequisite_node, operator:)
+    operands =
+      extract_subjects_from(prerequisite_node).each_with_object([]) do |subject, array|
+        array << {
+          type: 'subject',
+          subject_needed_code: subject[:subject_needed_code],
+          subject_needed_name: subject[:subject_needed_name],
+          needs: subject[:needs],
+        }
+      end
+
+    details = {}
+    details[:type] = 'logical'
+    details[:logical_operator] = operator
+    details[:amount_of_subjects_needed] = amount_of_subjects_needed(prerequisite_node) if operator == 'at_least'
+    details[:operands] = operands
+
+    details
   end
 
   def logical_prerequisite_branch_node_details(prerequisite_node, operator:)
