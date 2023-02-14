@@ -5,8 +5,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super do |user|
       if user.persisted?
-        user.welcome_banner_viewed = true
-        user.add_approvals_in_cookie(cookies.permanent)
+        user.approvals = JSON.parse(cookies.permanent[:approved_approvable_ids] || "[]")
+        user.welcome_banner_viewed = cookies.permanent[:welcome_banner_viewed] == "true"
       end
     end
   end

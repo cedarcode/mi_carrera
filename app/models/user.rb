@@ -18,8 +18,9 @@ class User < ApplicationRecord
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email
         user.password = Devise.friendly_token[0, 20]
-        user.add_approvals_in_cookie(cookie)
-        user.welcome_banner_viewed = true
+        user.approvals = JSON.parse(cookie[:approved_approvable_ids] || "[]")
+        user.welcome_banner_viewed = cookie[:welcome_banner_viewed] == "true"
+        user.save!
       end
     end
   end
@@ -28,10 +29,5 @@ class User < ApplicationRecord
 
   def oauth_user?
     provider.present?
-  end
-
-  def add_approvals_in_cookie(cookie)
-    self.approvals = JSON.parse(cookie[:approved_approvable_ids] || "[]")
-    save!
   end
 end

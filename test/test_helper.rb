@@ -11,4 +11,8 @@ class ActiveSupport::TestCase
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
+
+  def approvable_ids_in_cookie(cookie)
+    JSON.parse(cookie[:approved_approvable_ids] || "[]")
+  end
 end
