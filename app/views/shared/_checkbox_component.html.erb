@@ -1,6 +1,6 @@
 <%= form_with(
   model: approvable,
-  url: approvable_approval_path(approvable, subject_show: subject_show),
+  url: approvable_approval_path(approvable, subject_show:),
   data: { controller: "autosave-check" },
   method: current_student.approved?(approvable) ? :delete : :post,
   local: false,
