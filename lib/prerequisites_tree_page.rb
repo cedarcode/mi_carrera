@@ -191,27 +191,24 @@ class PrerequisitesTreePage < BedeliasPage
           array << prerequisite_tree(subtree_root)
         end
     when :subject_course
-      ret[:type] = 'subject'
-      ret[:needs] = 'course'
-      ret[:subject_needed_code] = subject_code(node_content)
-      ret[:subject_needed_name] = subject_name(node_content)
+      ret = subject_prerequisite_node_details(prerequisite_node, variant: 'course')
     when :subject_exam
-      ret[:type] = 'subject'
-      ret[:needs] = 'exam'
-      ret[:subject_needed_code] = subject_code(node_content)
-      ret[:subject_needed_name] = subject_name(node_content)
+      ret = subject_prerequisite_node_details(prerequisite_node, variant: 'exam')
     when :subject_all
-      ret[:type] = 'subject'
-      ret[:needs] = 'all'
-      ret[:subject_needed_code] = subject_code(node_content)
-      ret[:subject_needed_name] = subject_name(node_content)
+      ret = subject_prerequisite_node_details(prerequisite_node, variant: 'all')
     when :subject_enrollment
-      ret[:type] = 'subject'
-      ret[:needs] = 'enrollment'
-      ret[:subject_needed_code] = subject_code(node_content)
-      ret[:subject_needed_name] = subject_name(node_content)
+      ret = subject_prerequisite_node_details(prerequisite_node, variant: 'enrollment')
     end
 
     ret
+  end
+
+  def subject_prerequisite_node_details(prerequisite_node, variant:)
+    {
+      type: 'subject',
+      needs: variant,
+      subject_needed_code: subject_code(node_content_from_node(prerequisite_node)),
+      subject_needed_name: subject_name(node_content_from_node(prerequisite_node)),
+    }
   end
 end
