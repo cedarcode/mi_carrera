@@ -85,7 +85,7 @@ def prerequisite_tree(prerequisite:, approvable: nil, parent_prerequisite: nil)
       parent_prerequisite: parent_prerequisite
     )
 
-    subject = Subject.find_by(code: prerequisite["subject_needed"])
+    subject = Subject.find_by(code: prerequisite["subject_needed_code"])
     # if a subject which isn't in the system is required me don't add that prerequisite
     return nil unless subject
     return nil if prerequisite["needs"] == 'exam' && subject.exam.nil?
