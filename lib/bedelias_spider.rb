@@ -119,11 +119,9 @@ class BedeliasSpider
       file.write groups.deep_stringify_keys.to_yaml
     end
 
-    subjects = YAML.load(File.read(subjects_path)).to_h.deep_merge(subjects.deep_stringify_keys)
-
     # save to a file
     File.open(subjects_path, "w") do |file|
-      file.write subjects.to_yaml
+      file.write subjects.deep_stringify_keys.to_yaml
     end
 
     File.open(prerequisites_path, "w") do |file|
