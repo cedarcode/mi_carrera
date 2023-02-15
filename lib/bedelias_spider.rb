@@ -153,6 +153,7 @@ class BedeliasSpider
             name: prerequisite_tree[:subject_needed_name],
             credits: 0,
             has_exam: prerequisite_tree[:needs] == 'exam',
+            subject_group: nil,
             eva_link: nil,
             openfing_link: nil
           }

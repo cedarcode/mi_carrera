@@ -4867,6 +4867,7 @@ MOP30:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 C350:
   code: C350
@@ -4875,6 +4876,7 @@ C350:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1025P:
   code: 1025P
@@ -4883,6 +4885,7 @@ C350:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1446P:
   code: 1446P
@@ -4891,6 +4894,7 @@ C350:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 107L:
   code: 107L
@@ -4899,6 +4903,7 @@ C350:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 170Q:
   code: 170Q
@@ -4907,6 +4912,7 @@ C350:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 M13:
   code: M13
@@ -4915,6 +4921,7 @@ M13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1020P:
   code: 1020P
@@ -4923,6 +4930,7 @@ M13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1061P:
   code: 1061P
@@ -4931,6 +4939,7 @@ M13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1443P:
   code: 1443P
@@ -4939,6 +4948,7 @@ M13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1322P:
   code: 1322P
@@ -4947,6 +4957,7 @@ M13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1321P:
   code: 1321P
@@ -4955,6 +4966,7 @@ M13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 M14:
   code: M14
@@ -4963,6 +4975,7 @@ M14:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1063P:
   code: 1063P
@@ -4971,6 +4984,7 @@ M14:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1024P:
   code: 1024P
@@ -4979,6 +4993,7 @@ M14:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 MA47:
   code: MA47
@@ -4987,6 +5002,7 @@ MA47:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 172Q:
   code: 172Q
@@ -4995,6 +5011,7 @@ MA47:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1062P:
   code: 1062P
@@ -5003,6 +5020,7 @@ MA47:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 CM14:
   code: CM14
@@ -5011,6 +5029,7 @@ CM14:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1030P:
   code: 1030P
@@ -5019,6 +5038,7 @@ CM14:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 171L:
   code: 171L
@@ -5027,6 +5047,7 @@ CM14:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 171Q:
   code: 171Q
@@ -5035,6 +5056,7 @@ CM14:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 176Q:
   code: 176Q
@@ -5043,6 +5065,7 @@ CM14:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 MAT14:
   code: MAT14
@@ -5051,6 +5074,7 @@ MAT14:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 MA51:
   code: MA51
@@ -5059,6 +5083,7 @@ MA51:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1020R:
   code: 1020R
@@ -5067,6 +5092,7 @@ MA51:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1023P:
   code: 1023P
@@ -5075,6 +5101,7 @@ MA51:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 MA09:
   code: MA09
@@ -5083,6 +5110,7 @@ MA09:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1031P:
   code: 1031P
@@ -5091,6 +5119,7 @@ MA09:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 CP102:
   code: CP102
@@ -5099,6 +5128,7 @@ CP102:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1510R:
   code: 1510R
@@ -5107,6 +5137,7 @@ CP102:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 CQ3:
   code: CQ3
@@ -5115,6 +5146,7 @@ CQ3:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 158Q:
   code: 158Q
@@ -5123,6 +5155,7 @@ CQ3:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 FF12:
   code: FF12
@@ -5131,6 +5164,7 @@ FF12:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 F10:
   code: F10
@@ -5139,6 +5173,7 @@ F10:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1120P:
   code: 1120P
@@ -5147,6 +5182,7 @@ F10:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1151P:
   code: 1151P
@@ -5155,6 +5191,7 @@ F10:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 M1020:
   code: M1020
@@ -5163,6 +5200,7 @@ M1020:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1152P:
   code: 1152P
@@ -5171,6 +5209,7 @@ M1020:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 F7:
   code: F7
@@ -5179,6 +5218,7 @@ F7:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 F8:
   code: F8
@@ -5187,6 +5227,7 @@ F8:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1153P:
   code: 1153P
@@ -5195,6 +5236,7 @@ F8:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 CP13:
   code: CP13
@@ -5203,6 +5245,7 @@ CP13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1036R:
   code: 1036R
@@ -5211,6 +5254,7 @@ CP13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 '1036':
   code: '1036'
@@ -5219,6 +5263,7 @@ CP13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1911P:
   code: 1911P
@@ -5227,6 +5272,7 @@ CP13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 '1906':
   code: '1906'
@@ -5235,6 +5281,7 @@ CP13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1716P:
   code: 1716P
@@ -5243,6 +5290,7 @@ CP13:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 CR10:
   code: CR10
@@ -5251,6 +5299,7 @@ CR10:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 B11:
   code: B11
@@ -5259,6 +5308,7 @@ B11:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 R101:
   code: R101
@@ -5267,6 +5317,7 @@ R101:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 B101:
   code: B101
@@ -5275,6 +5326,7 @@ B101:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 IN35:
   code: IN35
@@ -5283,6 +5335,7 @@ IN35:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 PR27:
   code: PR27
@@ -5291,6 +5344,7 @@ PR27:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1758P:
   code: 1758P
@@ -5299,6 +5353,7 @@ PR27:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1937P:
   code: 1937P
@@ -5307,6 +5362,7 @@ PR27:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 CP350:
   code: CP350
@@ -5315,6 +5371,7 @@ CP350:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1061I:
   code: 1061I
@@ -5323,6 +5380,7 @@ CP350:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1061R:
   code: 1061R
@@ -5331,6 +5389,7 @@ CP350:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 108L:
   code: 108L
@@ -5339,6 +5398,7 @@ CP350:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1022P:
   code: 1022P
@@ -5347,6 +5407,7 @@ CP350:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 1022T:
   code: 1022T
@@ -5355,6 +5416,7 @@ CP350:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 CP144:
   code: CP144
@@ -5363,6 +5425,7 @@ CP144:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 '1408':
   code: '1408'
@@ -5371,6 +5434,7 @@ CP144:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
 '1411':
   code: '1411'
@@ -5379,4 +5443,5 @@ CP144:
   has_exam: true
   eva_link:
   openfing_link:
+  subject_group:
   hidden_by_default: true
