@@ -91,7 +91,7 @@ def prerequisite_tree(prerequisite:, approvable: nil, parent_prerequisite: nil)
     return nil if prerequisite["needs"] == 'exam' && subject.exam.nil?
 
     subject_prerequisite.approvable_needed =
-      if prerequisite["needs"] == 'exam'
+      if prerequisite["needs"] == 'exam' || (prerequisite["needs"] == 'all' && subject.exam)
         subject.exam
       else
         subject.course
