@@ -5318,41 +5318,21 @@ prerequisites:
         subject_needed_name: MECANICA I (TRANSICION)
         needs: exam
     - type: logical
-      logical_operator: or
+      logical_operator: at_least
+      amount_of_subjects_needed: 2
       operands:
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1152P
-          subject_needed_name: CREDITOS NO ACUM FISICA 2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1151'
-          subject_needed_name: FISICA 1
-          needs: course
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1152P
-          subject_needed_name: CREDITOS NO ACUM FISICA 2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1152'
-          subject_needed_name: FISICA 2
-          needs: course
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1151'
-          subject_needed_name: FISICA 1
-          needs: course
-        - type: subject
-          subject_needed_code: '1152'
-          subject_needed_name: FISICA 2
-          needs: course
+      - type: subject
+        subject_needed_code: 1152P
+        subject_needed_name: CREDITOS NO ACUM FISICA 2
+        needs: exam
+      - type: subject
+        subject_needed_code: '1151'
+        subject_needed_name: FISICA 1
+        needs: course
+      - type: subject
+        subject_needed_code: '1152'
+        subject_needed_name: FISICA 2
+        needs: course
   - type: logical
     logical_operator: or
     operands:
@@ -7048,118 +7028,29 @@ prerequisites:
     logical_operator: or
     operands:
     - type: logical
-      logical_operator: or
+      logical_operator: at_least
+      amount_of_subjects_needed: 2
       operands:
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: course
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: course
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: course
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: course
+      - type: subject
+        subject_needed_code: 1030P
+        subject_needed_name: CREDITOS NO ACUM GAL1
+        needs: exam
+      - type: subject
+        subject_needed_code: 1031P
+        subject_needed_name: CREDITOS NO ACUM GAL2
+        needs: exam
+      - type: subject
+        subject_needed_code: '1030'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1053'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+        needs: exam
+      - type: subject
+        subject_needed_code: '1031'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+        needs: course
     - type: logical
       logical_operator: or
       operands:
@@ -9930,41 +9821,21 @@ prerequisites:
         subject_needed_name: LOGICA
         needs: exam
     - type: logical
-      logical_operator: or
+      logical_operator: at_least
+      amount_of_subjects_needed: 2
       operands:
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1026'
-          subject_needed_name: MATEMATICA DISCRETA 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1026'
-          subject_needed_name: MATEMATICA DISCRETA 2
-          needs: exam
+      - type: subject
+        subject_needed_code: 1023P
+        subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1023'
+        subject_needed_name: MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1026'
+        subject_needed_name: MATEMATICA DISCRETA 2
+        needs: exam
     - type: logical
       logical_operator: and
       operands:
@@ -14998,41 +14869,21 @@ prerequisites:
         subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
         needs: exam
     - type: logical
-      logical_operator: or
+      logical_operator: at_least
+      amount_of_subjects_needed: 2
       operands:
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1026'
-          subject_needed_name: MATEMATICA DISCRETA 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1026'
-          subject_needed_name: MATEMATICA DISCRETA 2
-          needs: exam
+      - type: subject
+        subject_needed_code: 1023P
+        subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1023'
+        subject_needed_name: MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1026'
+        subject_needed_name: MATEMATICA DISCRETA 2
+        needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -15052,613 +14903,53 @@ prerequisites:
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
     - type: logical
-      logical_operator: or
+      logical_operator: at_least
+      amount_of_subjects_needed: 2
       operands:
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
+      - type: subject
+        subject_needed_code: '1061'
+        subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+        needs: exam
+      - type: subject
+        subject_needed_code: '1062'
+        subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+        needs: exam
+      - type: subject
+        subject_needed_code: '1020'
+        subject_needed_name: CALCULO 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1070'
+        subject_needed_name: CALCULO 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1052'
+        subject_needed_name: CALCULO 1 (ANUAL)
+        needs: exam
+      - type: subject
+        subject_needed_code: '1022'
+        subject_needed_name: CALCULO 2
+        needs: exam
+      - type: subject
+        subject_needed_code: '1072'
+        subject_needed_name: CALCULO 2
+        needs: exam
+      - type: subject
+        subject_needed_code: CAL10
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: 1020P
+        subject_needed_name: CREDITOS NO ACUM CALCULO 1
+        needs: exam
+      - type: subject
+        subject_needed_code: 1061P
+        subject_needed_name: CREDITOS NO ACUM CDIV
+        needs: exam
+      - type: subject
+        subject_needed_code: 1062P
+        subject_needed_name: CREDITOS NO ACUM CDIVV
+        needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -15762,41 +15053,21 @@ prerequisites:
     logical_operator: or
     operands:
     - type: logical
-      logical_operator: or
+      logical_operator: at_least
+      amount_of_subjects_needed: 2
       operands:
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1026'
-          subject_needed_name: MATEMATICA DISCRETA 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1026'
-          subject_needed_name: MATEMATICA DISCRETA 2
-          needs: exam
+      - type: subject
+        subject_needed_code: 1023P
+        subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1023'
+        subject_needed_name: MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1026'
+        subject_needed_name: MATEMATICA DISCRETA 2
+        needs: exam
     - type: logical
       logical_operator: and
       operands:
@@ -15854,503 +15125,49 @@ prerequisites:
         subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
         needs: exam
     - type: logical
-      logical_operator: or
+      logical_operator: at_least
+      amount_of_subjects_needed: 2
       operands:
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CM14
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CM14
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CM14
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CM14
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: '1071'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CM14
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 171Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CM14
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CM14
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CM14
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: '1058'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CM14
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 158Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1071'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: 171Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1058'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: 158Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1071'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-        - type: subject
-          subject_needed_code: 171Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1058'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-        - type: subject
-          subject_needed_code: 158Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1071'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 171Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1058'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 158Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1071'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 171Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1071'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1071'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1071'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1058'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1071'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 158Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 171Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 171Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 171Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1058'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 171Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 158Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: '1058'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: 158Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1058'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 158Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1058'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 158Q
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
+      - type: subject
+        subject_needed_code: CM14
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: 1030P
+        subject_needed_name: CREDITOS NO ACUM GAL1
+        needs: exam
+      - type: subject
+        subject_needed_code: 1031P
+        subject_needed_name: CREDITOS NO ACUM GAL2
+        needs: exam
+      - type: subject
+        subject_needed_code: '1030'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1071'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: 171Q
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1053'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+        needs: exam
+      - type: subject
+        subject_needed_code: '1031'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+        needs: exam
+      - type: subject
+        subject_needed_code: '1058'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+        needs: exam
+      - type: subject
+        subject_needed_code: 158Q
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+        needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -16370,613 +15187,53 @@ prerequisites:
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
     - type: logical
-      logical_operator: or
+      logical_operator: at_least
+      amount_of_subjects_needed: 2
       operands:
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1062'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
-          needs: exam
-        - type: subject
-          subject_needed_code: 1062P
-          subject_needed_name: CREDITOS NO ACUM CDIVV
-          needs: exam
+      - type: subject
+        subject_needed_code: '1061'
+        subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+        needs: exam
+      - type: subject
+        subject_needed_code: '1062'
+        subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+        needs: exam
+      - type: subject
+        subject_needed_code: '1020'
+        subject_needed_name: CALCULO 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1070'
+        subject_needed_name: CALCULO 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1052'
+        subject_needed_name: CALCULO 1 (ANUAL)
+        needs: exam
+      - type: subject
+        subject_needed_code: '1022'
+        subject_needed_name: CALCULO 2
+        needs: exam
+      - type: subject
+        subject_needed_code: '1072'
+        subject_needed_name: CALCULO 2
+        needs: exam
+      - type: subject
+        subject_needed_code: CAL10
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: 1020P
+        subject_needed_name: CREDITOS NO ACUM CALCULO 1
+        needs: exam
+      - type: subject
+        subject_needed_code: 1061P
+        subject_needed_name: CREDITOS NO ACUM CDIV
+        needs: exam
+      - type: subject
+        subject_needed_code: 1062P
+        subject_needed_name: CREDITOS NO ACUM CDIVV
+        needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -17084,113 +15341,53 @@ prerequisites:
       subject_needed_code: MA29
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
     - type: logical
-      logical_operator: or
+      logical_operator: at_least
+      amount_of_subjects_needed: 2
       operands:
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1010'
-          subject_needed_name: LOGICA Y COMPUTACION
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1010'
-          subject_needed_name: LOGICA Y COMPUTACION
-          needs: exam
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
+      - type: subject
+        subject_needed_code: 1023P
+        subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1010'
+        subject_needed_name: LOGICA Y COMPUTACION
+        needs: exam
+      - type: subject
+        subject_needed_code: '1023'
+        subject_needed_name: MATEMATICA DISCRETA 1
+        needs: exam
     - type: logical
-      logical_operator: or
+      logical_operator: at_least
+      amount_of_subjects_needed: 2
       operands:
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1027'
-          subject_needed_name: LOGICA
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1027'
-          subject_needed_name: LOGICA
-          needs: exam
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
+      - type: subject
+        subject_needed_code: 1023P
+        subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1027'
+        subject_needed_name: LOGICA
+        needs: exam
+      - type: subject
+        subject_needed_code: '1023'
+        subject_needed_name: MATEMATICA DISCRETA 1
+        needs: exam
     - type: logical
-      logical_operator: or
+      logical_operator: at_least
+      amount_of_subjects_needed: 2
       operands:
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1013'
-          subject_needed_name: LOGICA MODALIDAD AL REVES
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
-      - type: logical
-        logical_operator: and
-        operands:
-        - type: subject
-          subject_needed_code: '1013'
-          subject_needed_name: LOGICA MODALIDAD AL REVES
-          needs: exam
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: exam
+      - type: subject
+        subject_needed_code: 1023P
+        subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1013'
+        subject_needed_name: LOGICA MODALIDAD AL REVES
+        needs: exam
+      - type: subject
+        subject_needed_code: '1023'
+        subject_needed_name: MATEMATICA DISCRETA 1
+        needs: exam
   - type: logical
     logical_operator: or
     operands:
