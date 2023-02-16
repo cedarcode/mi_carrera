@@ -204,14 +204,14 @@ CP49:
   short_name:
   semester:
 '1061':
-  eva_id:
-  openfing_id:
+  eva_id: '1024'
+  openfing_id: civ
   hidden_by_default:
-  short_name:
+  short_name: Cálculo DIV
   semester: 1
 '1020':
-  eva_id:
-  openfing_id:
+  eva_id: '74'
+  openfing_id: c1
   hidden_by_default: true
   short_name:
   semester:
@@ -228,14 +228,14 @@ CP49:
   short_name:
   semester:
 '1062':
-  eva_id:
-  openfing_id:
+  eva_id: '1131'
+  openfing_id: cdivv
   hidden_by_default:
-  short_name:
+  short_name: Cálculo DIVV
   semester: 2
 '1022':
-  eva_id:
-  openfing_id:
+  eva_id: '319'
+  openfing_id: c2
   hidden_by_default: true
   short_name:
   semester:
@@ -246,14 +246,14 @@ CP49:
   short_name:
   semester:
 '1063':
-  eva_id:
-  openfing_id:
+  eva_id: '1183'
+  openfing_id: calcvec
   hidden_by_default:
   short_name:
   semester:
 '1024':
-  eva_id:
-  openfing_id:
+  eva_id: '129'
+  openfing_id: c3
   hidden_by_default: true
   short_name:
   semester:
@@ -294,10 +294,10 @@ CP47:
   short_name:
   semester:
 '1030':
-  eva_id:
-  openfing_id:
+  eva_id: '256'
+  openfing_id: gal1
   hidden_by_default:
-  short_name:
+  short_name: GAL 1
   semester: 1
 '1071':
   eva_id:
@@ -312,10 +312,10 @@ CP47:
   short_name:
   semester:
 '1031':
-  eva_id:
-  openfing_id:
+  eva_id: '270'
+  openfing_id: gal2
   hidden_by_default:
-  short_name:
+  short_name: GAL 2
   semester: 2
 '1058':
   eva_id:
@@ -366,8 +366,8 @@ CP4:
   short_name:
   semester:
 '1027':
-  eva_id:
-  openfing_id:
+  eva_id: '394'
+  openfing_id: logica19
   hidden_by_default:
   short_name:
   semester: 3
@@ -384,14 +384,14 @@ CP4:
   short_name:
   semester:
 '1023':
-  eva_id:
-  openfing_id:
+  eva_id: '323'
+  openfing_id: md1
   hidden_by_default:
   short_name:
   semester: 1
 '1026':
-  eva_id:
-  openfing_id:
+  eva_id: '267'
+  openfing_id: md2
   hidden_by_default:
   short_name:
   semester: 2
@@ -402,8 +402,8 @@ CP4:
   short_name:
   semester:
 '1028':
-  eva_id:
-  openfing_id:
+  eva_id: '342'
+  openfing_id: ed
   hidden_by_default: true
   short_name:
   semester:
@@ -414,8 +414,8 @@ CP4:
   short_name:
   semester:
 '1025':
-  eva_id:
-  openfing_id:
+  eva_id: '54'
+  openfing_id: pye18
   hidden_by_default:
   short_name:
   semester: 3
@@ -432,10 +432,10 @@ CP4:
   short_name:
   semester:
 '1042':
-  eva_id:
+  eva_id: '134'
   openfing_id:
   hidden_by_default: true
-  short_name:
+  short_name: Cód. Algebr. para Correc. de Err.
   semester:
 '1046':
   eva_id:
@@ -756,8 +756,8 @@ CP43:
   short_name:
   semester:
 '1151':
-  eva_id:
-  openfing_id:
+  eva_id: '87'
+  openfing_id: f1-2018
   hidden_by_default:
   short_name:
   semester: 3
@@ -774,14 +774,14 @@ CP43:
   short_name:
   semester:
 '1152':
-  eva_id:
-  openfing_id:
+  eva_id: '32'
+  openfing_id: f2
   hidden_by_default:
   short_name:
   semester:
 '1153':
-  eva_id:
-  openfing_id:
+  eva_id: '32'
+  openfing_id: f3
   hidden_by_default:
   short_name:
   semester:
@@ -792,10 +792,10 @@ CP43:
   short_name:
   semester:
 '1131':
-  eva_id:
+  eva_id: '318'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Intro. a la Física Moderna
   semester:
 CEX28:
   eva_id:
@@ -924,7 +924,7 @@ PR10:
   short_name:
   semester:
 '1354':
-  eva_id:
+  eva_id: '138'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -1014,7 +1014,7 @@ CP24:
   short_name:
   semester:
 '1331':
-  eva_id:
+  eva_id: '789'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -1032,10 +1032,10 @@ CP36:
   short_name:
   semester:
 '1316':
-  eva_id:
+  eva_id: '205'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Intro. a la Computación Gráfica
   semester:
 '1332':
   eva_id:
@@ -1053,7 +1053,7 @@ CP36:
   eva_id:
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Programación Genérica
   semester:
 '1329':
   eva_id:
@@ -1098,10 +1098,10 @@ CP384:
   short_name:
   semester:
 '1350':
-  eva_id:
+  eva_id: '965'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Prog. Funcional Avanzada
   semester:
 CP9:
   eva_id:
@@ -1140,8 +1140,8 @@ CP374:
   short_name:
   semester:
 '1340':
-  eva_id:
-  openfing_id:
+  eva_id: '293'
+  openfing_id: pl
   hidden_by_default:
   short_name:
   semester: 7
@@ -1152,8 +1152,8 @@ CP374:
   short_name:
   semester:
 '1322':
-  eva_id:
-  openfing_id:
+  eva_id: '58'
+  openfing_id: p1
   hidden_by_default:
   short_name:
   semester: 2
@@ -1164,20 +1164,20 @@ CP374:
   short_name:
   semester:
 '1321':
-  eva_id:
-  openfing_id:
+  eva_id: '132'
+  openfing_id: p2
   hidden_by_default:
   short_name:
   semester: 3
 '1323':
-  eva_id:
-  openfing_id:
+  eva_id: '39'
+  openfing_id: prog3-2018
   hidden_by_default:
   short_name:
   semester: 4
 '1324':
-  eva_id:
-  openfing_id:
+  eva_id: '413'
+  openfing_id: p4
   hidden_by_default:
   short_name:
   semester: 5
@@ -1224,7 +1224,7 @@ CP382:
   short_name:
   semester:
 '1336':
-  eva_id:
+  eva_id: '812'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -1236,8 +1236,8 @@ CP33:
   short_name:
   semester:
 '1325':
-  eva_id:
-  openfing_id:
+  eva_id: '687'
+  openfing_id: tl
   hidden_by_default:
   short_name:
   semester: 5
@@ -1338,7 +1338,7 @@ GP6:
   short_name:
   semester:
 '1545':
-  eva_id:
+  eva_id: '938'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -1380,14 +1380,14 @@ AR6:
   short_name:
   semester:
 '1440':
-  eva_id:
+  eva_id: '145'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: ADADR
   semester:
 '1443':
-  eva_id:
-  openfing_id:
+  eva_id: '195'
+  openfing_id: ac
   hidden_by_default:
   short_name:
   semester: 4
@@ -1416,10 +1416,10 @@ CP383:
   short_name:
   semester:
 '1444':
-  eva_id:
+  eva_id: '247'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: AARC
   semester:
 '1448':
   eva_id:
@@ -1434,10 +1434,10 @@ CP383:
   short_name:
   semester:
 '1447':
-  eva_id:
+  eva_id: '1076'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: GPGPU
   semester:
 '1427':
   eva_id:
@@ -1458,10 +1458,10 @@ CP383:
   short_name:
   semester:
 '1434':
-  eva_id:
-  openfing_id:
+  eva_id: '1064'
+  openfing_id: hpc
   hidden_by_default:
-  short_name:
+  short_name: Comp. de Alta Performance
   semester:
 CP364:
   eva_id:
@@ -1512,10 +1512,10 @@ CP51:
   short_name:
   semester:
 '5916':
-  eva_id:
+  eva_id: '399'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: FSI
   semester:
 '1403':
   eva_id:
@@ -1536,10 +1536,10 @@ CP51:
   short_name:
   semester:
 '1432':
-  eva_id:
+  eva_id: '412'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Intro. a la Teo. de la Info.
   semester:
 '1433':
   eva_id:
@@ -1560,13 +1560,13 @@ CP51:
   short_name:
   semester:
 '1446':
-  eva_id:
-  openfing_id:
+  eva_id: '335'
+  openfing_id: redes
   hidden_by_default:
   short_name:
   semester: 6
 '1442':
-  eva_id:
+  eva_id: '146'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -1602,7 +1602,7 @@ CP31:
   short_name:
   semester:
 '1537':
-  eva_id:
+  eva_id: '720'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -1617,7 +1617,7 @@ CP372:
   eva_id:
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Taller de Arqui. de Comp.
   semester:
 '1439':
   eva_id:
@@ -1632,13 +1632,13 @@ CP372:
   short_name:
   semester:
 '1449':
-  eva_id:
+  eva_id: '1136'
   openfing_id:
   hidden_by_default:
   short_name:
   semester:
 '1437':
-  eva_id:
+  eva_id: '324'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -1650,8 +1650,8 @@ CP372:
   short_name:
   semester:
 '1542':
-  eva_id:
-  openfing_id:
+  eva_id: '708'
+  openfing_id: so
   hidden_by_default:
   short_name:
   semester:
@@ -1704,7 +1704,7 @@ SRN30:
   short_name:
   semester:
 '1866':
-  eva_id:
+  eva_id: '43'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -1746,7 +1746,7 @@ SRN30:
   short_name:
   semester:
 '1849':
-  eva_id:
+  eva_id: '312'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -1764,10 +1764,10 @@ SRN30:
   short_name:
   semester:
 '1835':
-  eva_id:
-  openfing_id:
+  eva_id: '654'
+  openfing_id: gf
   hidden_by_default:
-  short_name:
+  short_name: Gramáticas
   semester:
 '1829':
   eva_id:
@@ -1776,10 +1776,10 @@ SRN30:
   short_name:
   semester:
 '1828':
-  eva_id:
-  openfing_id:
+  eva_id: '211'
+  openfing_id: pln
   hidden_by_default:
-  short_name:
+  short_name: IPLN
   semester:
 '5831':
   eva_id:
@@ -1794,10 +1794,10 @@ SRN30:
   short_name:
   semester:
 '1848':
-  eva_id:
+  eva_id: '186'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Robótica Basada en Comp.
   semester:
 '5912':
   eva_id:
@@ -1854,10 +1854,10 @@ GP2:
   short_name:
   semester:
 '1949':
-  eva_id:
+  eva_id: '947'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: BDNR
   semester:
 '1947':
   eva_id:
@@ -1866,7 +1866,7 @@ GP2:
   short_name:
   semester:
 '1948':
-  eva_id:
+  eva_id: '61'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -1890,10 +1890,10 @@ BD015:
   short_name:
   semester:
 '1918':
-  eva_id:
+  eva_id: '785'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Admin. y Seguridad de Sist.
   semester:
 CP362:
   eva_id:
@@ -1914,28 +1914,28 @@ CP362:
   short_name:
   semester:
 '1939':
-  eva_id:
+  eva_id: '648'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Data Warehouse
   semester:
 '1911':
-  eva_id:
-  openfing_id:
+  eva_id: '330'
+  openfing_id: fbd
   hidden_by_default:
-  short_name:
+  short_name: Bases de datos
   semester: 6
 '1942':
-  eva_id:
+  eva_id: '536'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Web semántica
   semester:
 '1926':
-  eva_id:
+  eva_id: '967'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Sist. de Info. Geográfica
   semester:
 '1936':
   eva_id:
@@ -1944,7 +1944,7 @@ CP362:
   short_name:
   semester:
 '1941':
-  eva_id:
+  eva_id: '664'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -1974,10 +1974,10 @@ CP378:
   short_name:
   semester:
 '1938':
-  eva_id:
+  eva_id: '821'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Webir
   semester:
 '1943':
   eva_id:
@@ -2004,10 +2004,10 @@ CP378:
   short_name:
   semester:
 '1933':
-  eva_id:
+  eva_id: '105'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: TAGSI
   semester:
 '1929':
   eva_id:
@@ -2070,7 +2070,7 @@ CN6:
   short_name:
   semester:
 '5914':
-  eva_id:
+  eva_id: '1143'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -2112,7 +2112,7 @@ CP376:
   short_name:
   semester:
 '1055':
-  eva_id:
+  eva_id: '24'
   openfing_id:
   hidden_by_default: true
   short_name:
@@ -2124,8 +2124,8 @@ CP376:
   short_name:
   semester:
 '1033':
-  eva_id:
-  openfing_id:
+  eva_id: '62'
+  openfing_id: metn
   hidden_by_default:
   short_name:
   semester: 4
@@ -2190,14 +2190,14 @@ CN3:
   short_name:
   semester:
 '1779':
-  eva_id:
+  eva_id: '38'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Invest. Oper. y Gest. de Riesgos
   semester:
 '1637':
-  eva_id:
-  openfing_id:
+  eva_id: '1049'
+  openfing_id: ae
   hidden_by_default:
   short_name:
   semester:
@@ -2214,10 +2214,10 @@ GP7:
   short_name:
   semester:
 '1635':
-  eva_id:
+  eva_id: '38'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: MOR
   semester:
 '1633':
   eva_id:
@@ -2244,7 +2244,7 @@ GP7:
   short_name:
   semester:
 '1435':
-  eva_id:
+  eva_id: '1083'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -2256,16 +2256,16 @@ GP7:
   short_name:
   semester:
 '1631':
-  eva_id:
+  eva_id: '269'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Fund. de Prog. Entera
   semester:
 '1610':
-  eva_id:
-  openfing_id:
+  eva_id: '994'
+  openfing_id: iio
   hidden_by_default:
-  short_name:
+  short_name: IIO
   semester: 5
 '1629':
   eva_id:
@@ -2322,7 +2322,7 @@ CP385:
   short_name:
   semester:
 '1624':
-  eva_id:
+  eva_id: '1070'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -2334,10 +2334,10 @@ CP385:
   short_name:
   semester:
 '1632':
-  eva_id:
+  eva_id: '397'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Opt. Bajo Incertidumbre
   semester:
 '1627':
   eva_id:
@@ -2346,7 +2346,7 @@ CP385:
   short_name:
   semester:
 '1617':
-  eva_id:
+  eva_id: '191'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -2448,10 +2448,10 @@ A66:
   short_name:
   semester:
 '1716':
-  eva_id:
-  openfing_id:
+  eva_id: '613'
+  openfing_id: iis19
   hidden_by_default:
-  short_name:
+  short_name: IIS
   semester: 7
 '1736':
   eva_id:
@@ -2460,16 +2460,16 @@ A66:
   short_name:
   semester:
 '1749':
-  eva_id:
+  eva_id: '1121'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Inter. Persona Computadora
   semester:
 '1767':
-  eva_id:
+  eva_id: '633'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Proc. Pers. de Software
   semester:
 '1769':
   eva_id:
@@ -2484,10 +2484,10 @@ A66:
   short_name:
   semester:
 '1758':
-  eva_id:
+  eva_id: '652'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Relac. Pers. en IS
   semester:
 '1750':
   eva_id:
@@ -2499,7 +2499,7 @@ A66:
   eva_id:
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Taller de Inter. Pers. Comp.
   semester:
 '1752':
   eva_id:
@@ -2508,10 +2508,10 @@ A66:
   short_name:
   semester:
 '1742':
-  eva_id:
+  eva_id: '722'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Taller de Verificación de Sw
   semester:
 CP366:
   eva_id:
@@ -2670,28 +2670,28 @@ AI28:
   short_name:
   semester:
 '1731':
-  eva_id:
+  eva_id: '702'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Pasantía
   semester:
 '1730':
-  eva_id:
+  eva_id: '627'
   openfing_id:
   hidden_by_default:
   short_name:
   semester: 9
 '1721':
-  eva_id:
+  eva_id: '573'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: PIS
   semester: 8
 '5705':
-  eva_id:
+  eva_id: '578'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Semin. de Ing. Biomédica
   semester:
 '1748':
   eva_id:
@@ -2706,10 +2706,10 @@ AI28:
   short_name:
   semester:
 '1766':
-  eva_id:
+  eva_id: '423'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: TBPM
   semester:
 '1739':
   eva_id:
@@ -2718,8 +2718,8 @@ AI28:
   short_name:
   semester:
 '1327':
-  eva_id:
-  openfing_id:
+  eva_id: '315'
+  openfing_id: tp
   hidden_by_default:
   short_name:
   semester: 6
@@ -2736,22 +2736,22 @@ AI28:
   short_name:
   semester:
 '1751':
-  eva_id:
+  eva_id: '402'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: TSI 1
   semester:
 '1740':
-  eva_id:
+  eva_id: '674'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: TSI 3
   semester:
 '1741':
   eva_id:
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: TSI 4
   semester:
 '5823':
   eva_id:
@@ -2778,10 +2778,10 @@ CP363:
   short_name:
   semester:
 '1735':
-  eva_id:
+  eva_id: '485'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: TSI 2
   semester:
 CP221:
   eva_id:
@@ -2820,10 +2820,10 @@ TP25:
   short_name:
   semester:
 '1776':
-  eva_id:
+  eva_id: '429'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Taller de SIG
   semester:
 '2401':
   eva_id:
@@ -2886,19 +2886,19 @@ GO10:
   short_name:
   semester:
 '1543':
-  eva_id:
+  eva_id: '725'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Int. al Negocio del SW
   semester:
 '1944':
-  eva_id:
-  openfing_id:
+  eva_id: '778'
+  openfing_id: agpi
   hidden_by_default:
-  short_name:
+  short_name: AGPI
   semester: 7
 '1510':
-  eva_id:
+  eva_id: '49'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -2916,7 +2916,7 @@ GO10:
   short_name:
   semester:
 '1940':
-  eva_id:
+  eva_id: '156'
   openfing_id:
   hidden_by_default:
   short_name:
@@ -2952,10 +2952,10 @@ CP375:
   short_name:
   semester:
 '1945':
-  eva_id:
+  eva_id: '779'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: PAI
   semester: 8
 GA10:
   eva_id:
@@ -3075,7 +3075,7 @@ CH04:
   eva_id:
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: CTS
   semester:
 '1230':
   eva_id:
@@ -3084,8 +3084,8 @@ CH04:
   short_name:
   semester:
 '1224':
-  eva_id:
-  openfing_id:
+  eva_id: '1093'
+  openfing_id: eco
   hidden_by_default:
   short_name:
   semester: 4
@@ -3111,7 +3111,7 @@ CP174:
   eva_id:
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Politicas Científicas
   semester: 8
 CP18:
   eva_id:
@@ -3258,16 +3258,16 @@ GP4:
   short_name:
   semester:
 '1438':
-  eva_id:
+  eva_id: '20'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: ATIPI
   semester:
 '5707':
-  eva_id:
+  eva_id: '589'
   openfing_id:
   hidden_by_default:
-  short_name:
+  short_name: Imágenes Médicas
   semester:
 '5709':
   eva_id:
