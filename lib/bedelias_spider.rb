@@ -143,9 +143,9 @@ class BedeliasSpider
     # curriculum page or the exam doesn't show up in the prerequisites
     # page.
 
-    if prerequisite_tree[:type] == 'subject' && prerequisite_tree[:needs] == 'exam'
+    if prerequisite_tree[:type] == 'subject'
       if subjects[prerequisite_tree[:subject_needed_code]]
-        subjects[prerequisite_tree[:subject_needed_code]][:has_exam] = true
+        subjects[prerequisite_tree[:subject_needed_code]][:has_exam] = true if prerequisite_tree[:needs] == 'exam'
       else
         subjects[prerequisite_tree[:subject_needed_code]] =
           {

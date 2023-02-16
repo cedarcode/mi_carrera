@@ -5445,3 +5445,174 @@ CP144:
   openfing_link:
   subject_group:
   hidden_by_default: true
+C402:
+  code: C402
+  name: TALLER IV (ANUAL)
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+1224P:
+  code: 1224P
+  name: CREDITOS NO ACUM ECONOMIA
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+1028M:
+  code: 1028M
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+1028P:
+  code: 1028P
+  name: CREDITOS NO ACUM EC. DIFERENCIALES
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+FIS13:
+  code: FIS13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+FI13:
+  code: FI13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+F1Y3:
+  code: F1Y3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+F30:
+  code: F30
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+117Q:
+  code: 117Q
+  name: FISICA GENERAL 1
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+MA7:
+  code: MA7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+1328P:
+  code: 1328P
+  name: CREDITOS NO ACUM INT. A LA PROG. FUNCIONAL
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+125L:
+  code: 125L
+  name: PROBABILIDAD Y ESTADISTICA
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+175Q:
+  code: 175Q
+  name: PROBABILIDAD Y ESTADISTICA
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+1640P:
+  code: 1640P
+  name: CREDITOS NO ACUM. OPTIMIZACIÓN CONTINUA DE APLICACIONES
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+1945P:
+  code: 1945P
+  name: CREDITOS NO ACUM. PRACTICA DE ADM. PARA INGENIEROS
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+1324P:
+  code: 1324P
+  name: CREDITOS NO ACUM PROGRAMACION 4
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+1721P:
+  code: 1721P
+  name: CREDITOS NO ACUM PROYECTO ING. DE SOFTWARE
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+1781P:
+  code: 1781P
+  name: CREDITOS NO ACUM. SIST. DE INFOR. PARA GRANDES VOLÚMENES DE DATOS
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
+R100:
+  code: R100
+  name: ANALISIS MATEMATICO I
+  credits: 0
+  has_exam: false
+  eva_link:
+  openfing_link:
+  subject_group:
+  hidden_by_default: true
