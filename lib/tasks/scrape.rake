@@ -32,9 +32,12 @@ namespace :scrape do
       new_subject.credits = subject["credits"]
       new_subject.group = SubjectGroup.find_by(code: subject["subject_group"])
 
-      subject_overrides[code].each do |key, value|
-        new_subject[key] = value
-      end
+      new_subject.eva_id = subject_overrides.dig('code', 'eva_id')
+      new_subject.openfing_id = subject_overrides.dig('code', 'openfing_id')
+      new_subject.openfing_id = subject_overrides.dig('code', 'openfing_id')
+      new_subject.short_name = subject_overrides.dig('code', 'short_name')
+      new_subject.semester = subject_overrides.dig('code', 'semester')
+      new_subject.hidden_by_default = subject_overrides.dig('code', 'hidden_by_default') || false
 
       new_subject.save!
 

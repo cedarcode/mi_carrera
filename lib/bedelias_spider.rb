@@ -120,9 +120,7 @@ class BedeliasSpider
     end
 
     # save to a file
-    File.open(subjects_path, "w") do |file|
-      file.write subjects.deep_stringify_keys.to_yaml
-    end
+    File.write(subjects_path, subjects.deep_stringify_keys.to_yaml)
 
     File.open(prerequisites_path, "w") do |file|
       data = { prerequisites: prerequisites }
