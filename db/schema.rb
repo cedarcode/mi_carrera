@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_06_221022) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_15_214419) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_06_221022) do
     t.datetime "updated_at", precision: nil, null: false
     t.string "short_name"
     t.integer "semester"
-    t.integer "group_id", null: false
+    t.integer "group_id"
     t.string "openfing_id"
     t.string "eva_id"
     t.string "code"

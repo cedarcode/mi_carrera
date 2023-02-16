@@ -11,8 +11,12 @@
     </label>
 
     <label class="mdc-deprecated-list-item">
-      <%= link_to subject_group_path(@subject.group), :class => "mdc-deprecated-list-item__text" do %>
-        Grupo: <%= @subject.group.name %>
+      <% if @subject.group %>
+        <%= link_to subject_group_path(@subject.group), :class => "mdc-deprecated-list-item__text" do %>
+          Grupo: <%= @subject.group.name %>
+        <% end %>
+      <% else  %>
+        Grupo: Desconocido
       <% end %>
     </label>
   </div>

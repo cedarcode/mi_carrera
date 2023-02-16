@@ -20,8 +20,12 @@ class PrerequisitesTreePage < BedeliasPage
         elsif approvable.include?("Curso")
           'course'
         end
-      subject_code = approvable.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
-      subjects << { subject_needed: subject_code, needs: needs }
+
+      subjects << {
+        subject_needed_code: subject_code(approvable),
+        subject_needed_name: subject_name(approvable),
+        needs: needs,
+      }
     end
 
     subjects
@@ -47,6 +51,10 @@ class PrerequisitesTreePage < BedeliasPage
 
   def subject_code(node)
     node.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
+  end
+
+  def subject_name(node)
+    node.split('- ', 2).last.strip
   end
 
   def expand_prerequisites_tree(node)
@@ -133,14 +141,24 @@ class PrerequisitesTreePage < BedeliasPage
       ret[:logical_operator] = 'and'
       ret[:operands] =
         extract_subjects_from(node_content).each_with_object([]) do |s, array|
-          array << { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
+          array << {
+            type: 'subject',
+            subject_needed_code: s[:subject_needed_code],
+            subject_needed_name: s[:subject_needed_name],
+            needs: s[:needs]
+          }
         end
     when :any_subject_from_node
       ret[:type] = 'logical'
       ret[:logical_operator] = 'or'
       ret[:operands] =
         extract_subjects_from(node_content).each_with_object([]) do |s, array|
-          array << { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
+          array << {
+            type: 'subject',
+            subject_needed_code: s[:subject_needed_code],
+            subject_needed_name: s[:subject_needed_name],
+            needs: s[:needs]
+          }
         end
     when :n_subjects_from_node
       # now we create an OR of ANDs for each combination of subjects
@@ -153,7 +171,12 @@ class PrerequisitesTreePage < BedeliasPage
             type: 'logical',
             logical_operator: 'and',
             operands: combination.map do |s|
-              { type: 'subject', subject_needed: s[:subject_needed], needs: s[:needs] }
+              {
+                type: 'subject',
+                subject_needed_code: s[:subject_needed_code],
+                subject_needed_name: s[:subject_needed_name],
+                needs: s[:needs]
+              }
             end
           }
         end
@@ -184,19 +207,23 @@ class PrerequisitesTreePage < BedeliasPage
     when :subject_course
       ret[:type] = 'subject'
       ret[:needs] = 'course'
-      ret[:subject_needed] = subject_code(node_content)
+      ret[:subject_needed_code] = subject_code(node_content)
+      ret[:subject_needed_name] = subject_name(node_content)
     when :subject_exam
       ret[:type] = 'subject'
       ret[:needs] = 'exam'
-      ret[:subject_needed] = subject_code(node_content)
+      ret[:subject_needed_code] = subject_code(node_content)
+      ret[:subject_needed_name] = subject_name(node_content)
     when :subject_all
       ret[:type] = 'subject'
       ret[:needs] = 'all'
-      ret[:subject_needed] = subject_code(node_content)
+      ret[:subject_needed_code] = subject_code(node_content)
+      ret[:subject_needed_name] = subject_name(node_content)
     when :subject_enrollment
       ret[:type] = 'subject'
       ret[:needs] = 'enrollment'
-      ret[:subject_needed] = subject_code(node_content)
+      ret[:subject_needed_code] = subject_code(node_content)
+      ret[:subject_needed_name] = subject_name(node_content)
     end
 
     ret

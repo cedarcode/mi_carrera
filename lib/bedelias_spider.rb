@@ -112,7 +112,7 @@ class BedeliasSpider
     end
 
     prerequisites.each do |prerequisite_tree|
-      add_exams_missing_in_prerequisites_page(prerequisite_tree, subjects)
+      add_missing_exams_and_subjects(prerequisite_tree, subjects)
     end
 
     File.open(subject_groups_path, "w") do |file|
@@ -136,14 +136,31 @@ class BedeliasSpider
 
   attr_reader :browser, :subject_groups_path, :subjects_path, :prerequisites_path
 
-  def add_exams_missing_in_prerequisites_page(prerequisite_tree, subjects)
-    if prerequisite_tree[:type] == 'subject' && prerequisite_tree[:needs] == 'exam'
-      if subjects[prerequisite_tree[:subject_needed]]
-        subjects[prerequisite_tree[:subject_needed]][:has_exam] = true
+  def add_missing_exams_and_subjects(prerequisite_tree, subjects)
+    # Check in the prereequisite tree if we have subject prerequisites
+    # that point to a subject or an exam that we didn't scrape.
+    # This can happen because the subject doesn't show up in the
+    # curriculum page or the exam doesn't show up in the prerequisites
+    # page.
+
+    if prerequisite_tree[:type] == 'subject'
+      if subjects[prerequisite_tree[:subject_needed_code]]
+        subjects[prerequisite_tree[:subject_needed_code]][:has_exam] = true if prerequisite_tree[:needs] == 'exam'
+      else
+        subjects[prerequisite_tree[:subject_needed_code]] =
+          {
+            code: prerequisite_tree[:subject_needed_code],
+            name: prerequisite_tree[:subject_needed_name],
+            credits: 0,
+            has_exam: prerequisite_tree[:needs] == 'exam',
+            subject_group: nil,
+            eva_link: nil,
+            openfing_link: nil
+          }
       end
     elsif prerequisite_tree[:type] == 'logical'
       prerequisite_tree[:operands].each do |operand|
-        add_exams_missing_in_prerequisites_page(operand, subjects)
+        add_missing_exams_and_subjects(operand, subjects)
       end
     end
   end
