@@ -89,7 +89,7 @@ class PrerequisitesTreePage < BedeliasPage
 
   def logical_prerequisite_leaf_node_details(prerequisite_node, operator:)
     operands =
-      extract_subjects_from(prerequisite_node).each_with_object([]) do |subject, array|
+      extract_subjects_from_logical_prerequisite_leaf_node(prerequisite_node).each_with_object([]) do |subject, array|
         array << {
           type: 'subject',
           subject_needed_code: subject[:subject_needed_code],
@@ -134,7 +134,7 @@ class PrerequisitesTreePage < BedeliasPage
     }
   end
 
-  def extract_subjects_from(prerequisite_node)
+  def extract_subjects_from_logical_prerequisite_leaf_node(prerequisite_node)
     node_content = node_content_from_node(prerequisite_node)
     subjects = []
     _, *approvables = node_content.split(/(?=\b(?:Examen|Curso|U\.C\.B aprobada)\b)\s*/)
