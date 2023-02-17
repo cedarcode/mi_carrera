@@ -2,7 +2,12 @@ class ApprovalsController < ApplicationController
   before_action :set_approvable
 
   def create
+    previous_total_credits = current_student.total_credits
+
     current_student.add(@approvable)
+
+    @graduated = current_student.total_credits >= 450 && previous_total_credits < 450
+
     render_turbo_stream
   end
 
