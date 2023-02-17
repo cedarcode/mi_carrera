@@ -3347,7 +3347,6 @@ MOP30:
   credits: 30
   has_exam: false
   subject_group: '3582'
-  hidden_by_default: true
 '2241':
   code: '2241'
   name: ADMINISTRACION DE EMPRESAS
@@ -3359,6 +3358,12 @@ C350:
   name: SISTEMAS OPERATIVOS
   credits: 0
   has_exam: true
+  subject_group:
+C402:
+  code: C402
+  name: TALLER IV (ANUAL)
+  credits: 0
+  has_exam: false
   subject_group:
 1025P:
   code: 1025P
@@ -3402,6 +3407,24 @@ M13:
   credits: 0
   has_exam: true
   subject_group:
+MA09:
+  code: MA09
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+1031P:
+  code: 1031P
+  name: CREDITOS NO ACUM GAL2
+  credits: 0
+  has_exam: true
+  subject_group:
+R101:
+  code: R101
+  name: GEOMETRIA Y ALGEBRA LINEAL
+  credits: 0
+  has_exam: true
+  subject_group:
 1443P:
   code: 1443P
   name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
@@ -3420,9 +3443,45 @@ M13:
   credits: 0
   has_exam: true
   subject_group:
+1061R:
+  code: 1061R
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  credits: 0
+  has_exam: true
+  subject_group:
+MAT14:
+  code: MAT14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MA47:
+  code: MA47
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MA51:
+  code: MA51
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
 M14:
   code: M14
   name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+1020R:
+  code: 1020R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+1062P:
+  code: 1062P
+  name: CREDITOS NO ACUM CDIVV
   credits: 0
   has_exam: true
   subject_group:
@@ -3438,21 +3497,9 @@ M14:
   credits: 0
   has_exam: true
   subject_group:
-MA47:
-  code: MA47
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: true
-  subject_group:
 172Q:
   code: 172Q
   name: CALCULO 2
-  credits: 0
-  has_exam: true
-  subject_group:
-1062P:
-  code: 1062P
-  name: CREDITOS NO ACUM CDIVV
   credits: 0
   has_exam: true
   subject_group:
@@ -3486,39 +3533,9 @@ CM14:
   credits: 0
   has_exam: true
   subject_group:
-MAT14:
-  code: MAT14
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: true
-  subject_group:
-MA51:
-  code: MA51
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: true
-  subject_group:
-1020R:
-  code: 1020R
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: true
-  subject_group:
 1023P:
   code: 1023P
   name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-  credits: 0
-  has_exam: true
-  subject_group:
-MA09:
-  code: MA09
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: true
-  subject_group:
-1031P:
-  code: 1031P
-  name: CREDITOS NO ACUM GAL2
   credits: 0
   has_exam: true
   subject_group:
@@ -3540,11 +3557,29 @@ CQ3:
   credits: 0
   has_exam: true
   subject_group:
+1224P:
+  code: 1224P
+  name: CREDITOS NO ACUM ECONOMIA
+  credits: 0
+  has_exam: false
+  subject_group:
 158Q:
   code: 158Q
   name: GEOMETRIA Y ALGEBRA LINEAL 2
   credits: 0
   has_exam: true
+  subject_group:
+1028M:
+  code: 1028M
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+1028P:
+  code: 1028P
+  name: CREDITOS NO ACUM EC. DIFERENCIALES
+  credits: 0
+  has_exam: false
   subject_group:
 FF12:
   code: FF12
@@ -3552,11 +3587,35 @@ FF12:
   credits: 0
   has_exam: true
   subject_group:
+FIS13:
+  code: FIS13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+FI13:
+  code: FI13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+F1Y3:
+  code: F1Y3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
 F10:
   code: F10
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 0
   has_exam: true
+  subject_group:
+F30:
+  code: F30
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
   subject_group:
 1120P:
   code: 1120P
@@ -3570,15 +3629,21 @@ F10:
   credits: 0
   has_exam: true
   subject_group:
-M1020:
-  code: M1020
-  name: CREDITOS ASIGNADOS POR REVALIDA
+117Q:
+  code: 117Q
+  name: FISICA GENERAL 1
   credits: 0
-  has_exam: true
+  has_exam: false
   subject_group:
 1152P:
   code: 1152P
   name: CREDITOS NO ACUM FISICA 2
+  credits: 0
+  has_exam: true
+  subject_group:
+M1020:
+  code: M1020
+  name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 0
   has_exam: true
   subject_group:
@@ -3624,6 +3689,12 @@ CP13:
   credits: 0
   has_exam: true
   subject_group:
+MA7:
+  code: MA7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
 '1906':
   code: '1906'
   name: GESTION DE CALIDAD
@@ -3648,161 +3719,23 @@ B11:
   credits: 0
   has_exam: true
   subject_group:
-R101:
-  code: R101
-  name: GEOMETRIA Y ALGEBRA LINEAL
-  credits: 0
-  has_exam: true
-  subject_group:
 B101:
   code: B101
   name: GEOMETRIA Y ALGEBRA LINEAL (ANUAL)
   credits: 0
   has_exam: true
   subject_group:
-IN35:
-  code: IN35
-  name: IN35 - PROGRAMACION 1
-  credits: 0
-  has_exam: true
-  subject_group:
-PR27:
-  code: PR27
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: true
-  subject_group:
-1758P:
-  code: 1758P
-  name: CREDITOS NO ACUM. CON RELAC. PERS. EN ING. DE SOFTWARE Y GERENC. DE PROYEC.
-  credits: 0
-  has_exam: true
-  subject_group:
-1937P:
-  code: 1937P
-  name: CREDITOS NO ACUM. CON SISTEMAS DE INF. EN SALUD
-  credits: 0
-  has_exam: true
-  subject_group:
-CP350:
-  code: CP350
-  name: ANALISIS DINAMICO DE ESTRUCTURAS
-  credits: 0
-  has_exam: true
-  subject_group:
-1061I:
-  code: 1061I
-  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-  credits: 0
-  has_exam: true
-  subject_group:
-1061R:
-  code: 1061R
-  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-  credits: 0
-  has_exam: true
-  subject_group:
-108L:
-  code: 108L
-  name: CALCULO 2
-  credits: 0
-  has_exam: true
-  subject_group:
-1022P:
-  code: 1022P
-  name: CREDITOS NO ACUM CALCULO 2
-  credits: 0
-  has_exam: true
-  subject_group:
-1022T:
-  code: 1022T
-  name: CREDITOS POR CALCULO 2
-  credits: 0
-  has_exam: true
-  subject_group:
-CP144:
-  code: CP144
-  name: COMPUTACION I
-  credits: 0
-  has_exam: true
-  subject_group:
-'1408':
-  code: '1408'
-  name: COMPUTACION 1
-  credits: 0
-  has_exam: true
-  subject_group:
-'1411':
-  code: '1411'
-  name: COMPUTACION 1
-  credits: 0
-  has_exam: true
-  subject_group:
-C402:
-  code: C402
-  name: TALLER IV (ANUAL)
-  credits: 0
-  has_exam: false
-  subject_group:
-1224P:
-  code: 1224P
-  name: CREDITOS NO ACUM ECONOMIA
-  credits: 0
-  has_exam: false
-  subject_group:
-1028M:
-  code: 1028M
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: false
-  subject_group:
-1028P:
-  code: 1028P
-  name: CREDITOS NO ACUM EC. DIFERENCIALES
-  credits: 0
-  has_exam: false
-  subject_group:
-FIS13:
-  code: FIS13
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: false
-  subject_group:
-FI13:
-  code: FI13
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: false
-  subject_group:
-F1Y3:
-  code: F1Y3
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: false
-  subject_group:
-F30:
-  code: F30
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: false
-  subject_group:
-117Q:
-  code: 117Q
-  name: FISICA GENERAL 1
-  credits: 0
-  has_exam: false
-  subject_group:
-MA7:
-  code: MA7
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  credits: 0
-  has_exam: false
-  subject_group:
 1328P:
   code: 1328P
   name: CREDITOS NO ACUM INT. A LA PROG. FUNCIONAL
   credits: 0
   has_exam: false
+  subject_group:
+IN35:
+  code: IN35
+  name: IN35 - PROGRAMACION 1
+  credits: 0
+  has_exam: true
   subject_group:
 125L:
   code: 125L
@@ -3828,6 +3761,12 @@ MA7:
   credits: 0
   has_exam: false
   subject_group:
+PR27:
+  code: PR27
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
 1324P:
   code: 1324P
   name: CREDITOS NO ACUM PROGRAMACION 4
@@ -3840,15 +3779,75 @@ MA7:
   credits: 0
   has_exam: false
   subject_group:
+1758P:
+  code: 1758P
+  name: CREDITOS NO ACUM. CON RELAC. PERS. EN ING. DE SOFTWARE Y GERENC. DE PROYEC.
+  credits: 0
+  has_exam: true
+  subject_group:
+1937P:
+  code: 1937P
+  name: CREDITOS NO ACUM. CON SISTEMAS DE INF. EN SALUD
+  credits: 0
+  has_exam: true
+  subject_group:
 1781P:
   code: 1781P
   name: CREDITOS NO ACUM. SIST. DE INFOR. PARA GRANDES VOLÚMENES DE DATOS
   credits: 0
   has_exam: false
   subject_group:
+CP350:
+  code: CP350
+  name: ANALISIS DINAMICO DE ESTRUCTURAS
+  credits: 0
+  has_exam: true
+  subject_group:
+1061I:
+  code: 1061I
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  credits: 0
+  has_exam: true
+  subject_group:
+108L:
+  code: 108L
+  name: CALCULO 2
+  credits: 0
+  has_exam: true
+  subject_group:
+1022P:
+  code: 1022P
+  name: CREDITOS NO ACUM CALCULO 2
+  credits: 0
+  has_exam: true
+  subject_group:
+1022T:
+  code: 1022T
+  name: CREDITOS POR CALCULO 2
+  credits: 0
+  has_exam: true
+  subject_group:
 R100:
   code: R100
   name: ANALISIS MATEMATICO I
   credits: 0
   has_exam: false
+  subject_group:
+CP144:
+  code: CP144
+  name: COMPUTACION I
+  credits: 0
+  has_exam: true
+  subject_group:
+'1408':
+  code: '1408'
+  name: COMPUTACION 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1411':
+  code: '1411'
+  name: COMPUTACION 1
+  credits: 0
+  has_exam: true
   subject_group:

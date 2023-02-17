@@ -150,8 +150,6 @@ class BedeliasSpider
             credits: 0,
             has_exam: prerequisite_tree[:needs] == 'exam',
             subject_group: nil,
-            eva_link: nil,
-            openfing_link: nil
           }
       end
     elsif prerequisite_tree[:type] == 'logical'
