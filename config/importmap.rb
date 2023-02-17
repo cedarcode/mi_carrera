@@ -17,3 +17,4 @@ pin "@material/base/foundation", to: "https://ga.jspm.io/npm:@material/base@14.0
 pin "@material/dom/focus-trap", to: "https://ga.jspm.io/npm:@material/dom@14.0.0/focus-trap.js"
 pin "@material/dom/ponyfill", to: "https://ga.jspm.io/npm:@material/dom@14.0.0/ponyfill.js"
 pin "tslib", to: "https://ga.jspm.io/npm:tslib@2.5.0/tslib.es6.js"
+pin "canvas-confetti", to: "https://ga.jspm.io/npm:canvas-confetti@1.6.0/dist/confetti.module.mjs"
