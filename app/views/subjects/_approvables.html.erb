@@ -1,4 +1,4 @@
-<div class="mdc-deprecated-list position-relative" data-controller="loading" id="approvables">
+<div class="mdc-deprecated-list position-relative" data-controller="loading <%= "confetti" if @graduated %>" id="approvables">
   <%= render "approvals/spinner_template" %>
 
   <label class="mdc-deprecated-list-item <%= "mdc-deprecated-list-item--disabled" if !current_student.available?(@subject.course) %>" for="<%= dom_id(@subject.course) %>">

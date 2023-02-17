@@ -1,4 +1,4 @@
-<div class="mdc-deprecated-list-group subjects-list" data-controller="bedel loading" id="subjects" >
+<div class="mdc-deprecated-list-group subjects-list" data-controller="bedel loading <%= "confetti" if @graduated %>" id="subjects" >
   <%= render "approvals/spinner_template" %>
 
   <% @subjects.group_by(&:semester).each do |semester, subjects| %>
