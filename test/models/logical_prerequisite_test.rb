@@ -35,4 +35,24 @@ class LogicalPrerequisiteTest < ActiveSupport::TestCase
     assert prerequisite.met?([])
     assert_not prerequisite.met?([@subject1.course.id])
   end
+
+  test "#met? on logical AT_LEAST returns true when conditions are met" do
+    prerequisite = build(:at_least_prerequisite, amount_of_subjects_needed: 2, operands_prerequisites: [
+      create(:subject_prerequisite, approvable_needed: @subject1.course),
+      create(:subject_prerequisite, approvable_needed: @subject2.course),
+      create(:subject_prerequisite, approvable_needed: create(:subject).course),
+    ])
+
+    assert_not prerequisite.met?([@subject1.course.id])
+    assert prerequisite.met?([@subject1.course.id, @subject2.course.id])
+  end
+
+  test "validates that the amount of subjects is less than operand prerequisites count" do
+    prerequisite = build(:at_least_prerequisite, amount_of_subjects_needed: 3, operands_prerequisites: [
+      create(:subject_prerequisite, approvable_needed: @subject1.course),
+      create(:subject_prerequisite, approvable_needed: @subject2.course),
+    ])
+
+    assert_not prerequisite.valid?
+  end
 end

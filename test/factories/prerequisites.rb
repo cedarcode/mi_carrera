@@ -21,5 +21,9 @@ FactoryBot.define do
     factory :not_prerequisite do
       logical_operator { "not" }
     end
+
+    factory :at_least_prerequisite do
+      logical_operator { "at_least" }
+    end
   end
 end

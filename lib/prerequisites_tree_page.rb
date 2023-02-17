@@ -80,13 +80,6 @@ class PrerequisitesTreePage < BedeliasPage
     node_content_from_node(node).split('Grupo: ')[1].to_i
   end
 
-  def extract_combinations_from_node(node)
-    node_content = node_content_from_node(node)
-    subjects = extract_subjects_from(node_content)
-    amount_of_subjects_needed = amount_of_subjects_needed(node)
-    subjects.combination(amount_of_subjects_needed)
-  end
-
   def prerequisite_type(prerequisite_node)
     node_type = prerequisite_node['data-nodetype']
     node_content = node_content_from_node(prerequisite_node)
@@ -161,23 +154,16 @@ class PrerequisitesTreePage < BedeliasPage
           }
         end
     when :n_subjects_from_node
-      # now we create an OR of ANDs for each combination of subjects
-      subject_combinations = extract_combinations_from_node(prerequisite_node)
       ret[:type] = 'logical'
-      ret[:logical_operator] = 'or'
+      ret[:logical_operator] = 'at_least'
+      ret[:amount_of_subjects_needed] = amount_of_subjects_needed(prerequisite_node)
       ret[:operands] =
-        subject_combinations.to_a.each_with_object([]) do |combination, array|
+        extract_subjects_from(node_content).each_with_object([]) do |s, array|
           array << {
-            type: 'logical',
-            logical_operator: 'and',
-            operands: combination.map do |s|
-              {
-                type: 'subject',
-                subject_needed_code: s[:subject_needed_code],
-                subject_needed_name: s[:subject_needed_name],
-                needs: s[:needs]
-              }
-            end
+            type: 'subject',
+            subject_needed_code: s[:subject_needed_code],
+            subject_needed_name: s[:subject_needed_name],
+            needs: s[:needs]
           }
         end
     when :logical_and_tree

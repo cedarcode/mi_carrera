@@ -9,6 +9,8 @@
         Todos los siguientes
       <% elsif logical_prerequisite.logical_operator == "not" %>
         No debe tener
+      <% elsif logical_prerequisite.logical_operator == "at_least" %>
+        Debe tener al menos <%= logical_prerequisite.amount_of_subjects_needed %> de los siguientes
       <% end %>
 
       <%= render 'prerequisites/met_checkmark', prerequisite: logical_prerequisite %>
