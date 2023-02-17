@@ -25,8 +25,6 @@ class CurriculumPage < BedeliasPage
       name: name,
       credits: credits,
       has_exam: false,
-      eva_link: nil,
-      openfing_link: nil
     }
   end
 end
