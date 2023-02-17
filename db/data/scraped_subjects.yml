@@ -3347,7 +3347,6 @@ MOP30:
   credits: 30
   has_exam: false
   subject_group: '3582'
-  hidden_by_default: true
 '2241':
   code: '2241'
   name: ADMINISTRACION DE EMPRESAS
