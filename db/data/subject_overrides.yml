@@ -1,0 +1,1208 @@
+---
+CIM22:
+  hidden_by_default: true
+SRN14:
+  hidden_by_default: true
+CIM11:
+  hidden_by_default: true
+CH201:
+  hidden_by_default: true
+CIM24:
+  hidden_by_default: true
+CIM10:
+  hidden_by_default: true
+SRN09:
+  hidden_by_default: true
+SRN02:
+  hidden_by_default: true
+SRN10:
+  hidden_by_default: true
+SRN03:
+  hidden_by_default: true
+1025T:
+  hidden_by_default: true
+D87:
+  hidden_by_default: true
+MI2:
+  hidden_by_default: true
+  semester: 1
+M09:
+  hidden_by_default: true
+M5:
+  hidden_by_default: true
+GP5:
+  hidden_by_default: true
+MA015:
+  hidden_by_default: true
+MA48:
+  hidden_by_default: true
+MA11:
+  hidden_by_default: true
+MA020:
+  hidden_by_default: true
+CAL12:
+  hidden_by_default: true
+'2415':
+  hidden_by_default: true
+CAL10:
+  hidden_by_default: true
+CP7:
+  hidden_by_default: true
+CP1:
+  hidden_by_default: true
+CP22:
+  hidden_by_default: true
+CP44:
+  hidden_by_default: true
+CP45:
+  hidden_by_default: true
+CP6:
+  hidden_by_default: true
+CP25:
+  hidden_by_default: true
+CP48:
+  hidden_by_default: true
+CP49:
+  hidden_by_default: true
+'1061':
+  eva_id: '1024'
+  openfing_id: civ
+  short_name: Cálculo DIV
+  semester: 1
+'1020':
+  eva_id: '74'
+  openfing_id: c1
+  hidden_by_default: true
+'1070':
+  hidden_by_default: true
+'1052':
+  hidden_by_default: true
+'1062':
+  eva_id: '1131'
+  openfing_id: cdivv
+  short_name: Cálculo DIVV
+  semester: 2
+'1022':
+  eva_id: '319'
+  openfing_id: c2
+  hidden_by_default: true
+'1072':
+  hidden_by_default: true
+'1063':
+  eva_id: '1183'
+  openfing_id: calcvec
+'1024':
+  eva_id: '129'
+  openfing_id: c3
+  hidden_by_default: true
+'1076':
+  hidden_by_default: true
+'1021':
+  hidden_by_default: true
+CP2:
+  hidden_by_default: true
+CP23:
+  hidden_by_default: true
+CP46:
+  hidden_by_default: true
+CP47:
+  hidden_by_default: true
+'1030':
+  eva_id: '256'
+  openfing_id: gal1
+  short_name: GAL 1
+  semester: 1
+'1071':
+  hidden_by_default: true
+'1053':
+  hidden_by_default: true
+'1031':
+  eva_id: '270'
+  openfing_id: gal2
+  short_name: GAL 2
+  semester: 2
+'1058':
+  hidden_by_default: true
+'1059':
+  hidden_by_default: true
+'1049':
+  hidden_by_default: true
+C461:
+  hidden_by_default: true
+CP4:
+  hidden_by_default: true
+'1027':
+  eva_id: '394'
+  openfing_id: logica19
+  semester: 3
+'1010':
+  hidden_by_default: true
+'1023':
+  eva_id: '323'
+  openfing_id: md1
+  semester: 1
+'1026':
+  eva_id: '267'
+  openfing_id: md2
+  semester: 2
+'1028':
+  eva_id: '342'
+  openfing_id: ed
+  hidden_by_default: true
+'1074':
+  hidden_by_default: true
+'1025':
+  eva_id: '54'
+  openfing_id: pye18
+  semester: 3
+'1075':
+  hidden_by_default: true
+'1043':
+  hidden_by_default: true
+'1042':
+  eva_id: '134'
+  hidden_by_default: true
+  short_name: Cód. Algebr. para Correc. de Err.
+'1046':
+  hidden_by_default: true
+'1037':
+  hidden_by_default: true
+'1034':
+  hidden_by_default: true
+'1233':
+  hidden_by_default: true
+GAL7:
+  hidden_by_default: true
+MAT10:
+  hidden_by_default: true
+MAT33:
+  hidden_by_default: true
+MAT6:
+  hidden_by_default: true
+MAT8:
+  hidden_by_default: true
+MA10:
+  hidden_by_default: true
+MA15:
+  hidden_by_default: true
+MA16:
+  hidden_by_default: true
+MA20:
+  hidden_by_default: true
+MA24:
+  hidden_by_default: true
+MA25:
+  hidden_by_default: true
+MA29:
+  hidden_by_default: true
+MA3:
+  hidden_by_default: true
+MA5:
+  hidden_by_default: true
+MA9:
+  hidden_by_default: true
+MC13:
+  hidden_by_default: true
+MC3:
+  hidden_by_default: true
+MEC:
+  hidden_by_default: true
+M1:
+  hidden_by_default: true
+M12:
+  hidden_by_default: true
+M24:
+  hidden_by_default: true
+M9:
+  hidden_by_default: true
+SRN26:
+  hidden_by_default: true
+SRN11:
+  hidden_by_default: true
+REF04:
+  hidden_by_default: true
+MHC16:
+  hidden_by_default: true
+MHC24:
+  hidden_by_default: true
+MHC20:
+  hidden_by_default: true
+M000:
+  hidden_by_default: true
+203EU:
+  hidden_by_default: true
+M001:
+  hidden_by_default: true
+CE5:
+  hidden_by_default: true
+CE10:
+  hidden_by_default: true
+FA4:
+  hidden_by_default: true
+CE12:
+  hidden_by_default: true
+CP217:
+  hidden_by_default: true
+CP26:
+  hidden_by_default: true
+CP40:
+  hidden_by_default: true
+CP3:
+  hidden_by_default: true
+CP17:
+  hidden_by_default: true
+CP8:
+  hidden_by_default: true
+'1120':
+  hidden_by_default: true
+'1170':
+  hidden_by_default: true
+'1121':
+  hidden_by_default: true
+'1172':
+  hidden_by_default: true
+CP41:
+  hidden_by_default: true
+CP42:
+  hidden_by_default: true
+CP43:
+  hidden_by_default: true
+'1151':
+  eva_id: '87'
+  openfing_id: f1-2018
+  semester: 3
+'1171':
+  hidden_by_default: true
+'1077':
+  hidden_by_default: true
+'1152':
+  eva_id: '32'
+  openfing_id: f2
+'1153':
+  eva_id: '32'
+  openfing_id: f3
+'1173':
+  hidden_by_default: true
+'1131':
+  eva_id: '318'
+  short_name: Intro. a la Física Moderna
+CEX28:
+  hidden_by_default: true
+CE11:
+  hidden_by_default: true
+CE2:
+  hidden_by_default: true
+FA8:
+  hidden_by_default: true
+FF10:
+  hidden_by_default: true
+FG:
+  hidden_by_default: true
+FG2:
+  hidden_by_default: true
+FIS14:
+  hidden_by_default: true
+FIS8:
+  hidden_by_default: true
+FI10:
+  hidden_by_default: true
+FL1:
+  hidden_by_default: true
+FL2:
+  hidden_by_default: true
+FL8:
+  hidden_by_default: true
+F2:
+  hidden_by_default: true
+F66:
+  hidden_by_default: true
+SRN17:
+  hidden_by_default: true
+'1373':
+  hidden_by_default: true
+1322T:
+  hidden_by_default: true
+PR4:
+  hidden_by_default: true
+PR10:
+  hidden_by_default: true
+'1354':
+  eva_id: '138'
+  semester: 7
+'1334':
+  hidden_by_default: true
+CP380:
+  hidden_by_default: true
+'1343':
+  hidden_by_default: true
+'1351':
+  hidden_by_default: true
+CP52:
+  hidden_by_default: true
+CP24:
+  hidden_by_default: true
+'1345':
+  hidden_by_default: true
+'1331':
+  eva_id: '789'
+CP36:
+  hidden_by_default: true
+'1315':
+  hidden_by_default: true
+'1316':
+  eva_id: '205'
+  short_name: Intro. a la Computación Gráfica
+'1332':
+  hidden_by_default: true
+'1333':
+  short_name: Programación Genérica
+'1338':
+  hidden_by_default: true
+'1330':
+  hidden_by_default: true
+'1341':
+  hidden_by_default: true
+'1348':
+  hidden_by_default: true
+CP32:
+  hidden_by_default: true
+CP384:
+  hidden_by_default: true
+'1350':
+  eva_id: '965'
+  short_name: Prog. Funcional Avanzada
+CP9:
+  hidden_by_default: true
+CP37:
+  hidden_by_default: true
+CP15:
+  hidden_by_default: true
+CP38:
+  hidden_by_default: true
+CP29:
+  hidden_by_default: true
+CP374:
+  hidden_by_default: true
+'1340':
+  eva_id: '293'
+  openfing_id: pl
+  semester: 7
+'1320':
+  hidden_by_default: true
+'1322':
+  eva_id: '58'
+  openfing_id: p1
+  semester: 2
+'1372':
+  hidden_by_default: true
+'1321':
+  eva_id: '132'
+  openfing_id: p2
+  semester: 3
+'1323':
+  eva_id: '39'
+  openfing_id: prog3-2018
+  semester: 4
+'1324':
+  eva_id: '413'
+  openfing_id: p4
+  semester: 5
+'1342':
+  hidden_by_default: true
+'1314':
+  hidden_by_default: true
+CP5:
+  hidden_by_default: true
+CP10:
+  hidden_by_default: true
+CP30:
+  hidden_by_default: true
+CP382:
+  hidden_by_default: true
+'1336':
+  eva_id: '812'
+CP33:
+  hidden_by_default: true
+'1325':
+  eva_id: '687'
+  openfing_id: tl
+  semester: 5
+CP365:
+  hidden_by_default: true
+'1335':
+  hidden_by_default: true
+'1339':
+  hidden_by_default: true
+PA7:
+  hidden_by_default: true
+PP6:
+  hidden_by_default: true
+PR3:
+  hidden_by_default: true
+PR6:
+  hidden_by_default: true
+PR7:
+  hidden_by_default: true
+PR8:
+  hidden_by_default: true
+'1536':
+  hidden_by_default: true
+GP6:
+  hidden_by_default: true
+'1545':
+  eva_id: '938'
+AR20:
+  hidden_by_default: true
+'1454':
+  hidden_by_default: true
+AR12:
+  hidden_by_default: true
+AR015:
+  hidden_by_default: true
+AR6:
+  hidden_by_default: true
+'1453':
+  hidden_by_default: true
+'1440':
+  eva_id: '145'
+  short_name: ADADR
+'1443':
+  eva_id: '195'
+  openfing_id: ac
+  semester: 4
+'1424':
+  hidden_by_default: true
+'1425':
+  hidden_by_default: true
+CP28:
+  hidden_by_default: true
+CP383:
+  hidden_by_default: true
+'1444':
+  eva_id: '247'
+  short_name: AARC
+'5813':
+  hidden_by_default: true
+'1447':
+  eva_id: '1076'
+  short_name: GPGPU
+'1427':
+  hidden_by_default: true
+'1415':
+  hidden_by_default: true
+'1430':
+  hidden_by_default: true
+'1434':
+  eva_id: '1064'
+  openfing_id: hpc
+  short_name: Comp. de Alta Performance
+CP364:
+  hidden_by_default: true
+'1441':
+  hidden_by_default: true
+CP51:
+  hidden_by_default: true
+1512C:
+  hidden_by_default: true
+'1429':
+  hidden_by_default: true
+'1412':
+  hidden_by_default: true
+'1436':
+  hidden_by_default: true
+'5915':
+  hidden_by_default: true
+'5916':
+  eva_id: '399'
+  short_name: FSI
+'1403':
+  hidden_by_default: true
+'1416':
+  hidden_by_default: true
+'1431':
+  hidden_by_default: true
+'1432':
+  eva_id: '412'
+  short_name: Intro. a la Teo. de la Info.
+1513C:
+  hidden_by_default: true
+'1446':
+  eva_id: '335'
+  openfing_id: redes
+  semester: 6
+'1442':
+  eva_id: '146'
+CP31:
+  hidden_by_default: true
+'1511':
+  hidden_by_default: true
+'1518':
+  hidden_by_default: true
+'1532':
+  hidden_by_default: true
+'1537':
+  eva_id: '720'
+  semester: 5
+CP372:
+  hidden_by_default: true
+'1445':
+  short_name: Taller de Arqui. de Comp.
+'1439':
+  hidden_by_default: true
+'1449':
+  eva_id: '1136'
+'1437':
+  eva_id: '324'
+'1535':
+  hidden_by_default: true
+'1542':
+  eva_id: '708'
+  openfing_id: so
+'1426':
+  hidden_by_default: true
+AA9:
+  hidden_by_default: true
+AR15:
+  hidden_by_default: true
+AR30:
+  hidden_by_default: true
+AR8:
+  hidden_by_default: true
+SRN30:
+  hidden_by_default: true
+'1866':
+  eva_id: '43'
+'1820':
+  hidden_by_default: true
+'1827':
+  hidden_by_default: true
+'1849':
+  eva_id: '312'
+'1832':
+  hidden_by_default: true
+'1821':
+  hidden_by_default: true
+'1835':
+  eva_id: '654'
+  openfing_id: gf
+  short_name: Gramáticas
+'1828':
+  eva_id: '211'
+  openfing_id: pln
+  short_name: IPLN
+'1848':
+  eva_id: '186'
+  short_name: Robótica Basada en Comp.
+'5912':
+  hidden_by_default: true
+IAR6:
+  hidden_by_default: true
+1937T:
+  hidden_by_default: true
+GP1:
+  hidden_by_default: true
+GP2:
+  hidden_by_default: true
+'1949':
+  eva_id: '947'
+  short_name: BDNR
+'1948':
+  eva_id: '61'
+BD15:
+  hidden_by_default: true
+BD05:
+  hidden_by_default: true
+BD015:
+  hidden_by_default: true
+'1918':
+  eva_id: '785'
+  short_name: Admin. y Seguridad de Sist.
+CP362:
+  hidden_by_default: true
+'1916':
+  hidden_by_default: true
+'1939':
+  eva_id: '648'
+  short_name: Data Warehouse
+'1911':
+  eva_id: '330'
+  openfing_id: fbd
+  short_name: Bases de datos
+  semester: 6
+'1942':
+  eva_id: '536'
+  short_name: Web semántica
+'1926':
+  eva_id: '967'
+  short_name: Sist. de Info. Geográfica
+'1941':
+  eva_id: '664'
+'1919':
+  hidden_by_default: true
+'1934':
+  hidden_by_default: true
+CP378:
+  hidden_by_default: true
+'1938':
+  eva_id: '821'
+  short_name: Webir
+'1943':
+  hidden_by_default: true
+'1931':
+  hidden_by_default: true
+'1917':
+  hidden_by_default: true
+'1933':
+  eva_id: '105'
+  short_name: TAGSI
+'1929':
+  hidden_by_default: true
+BDSI6:
+  hidden_by_default: true
+BD10:
+  hidden_by_default: true
+BD5:
+  hidden_by_default: true
+BD8:
+  hidden_by_default: true
+BD9:
+  hidden_by_default: true
+CN6:
+  hidden_by_default: true
+'1040':
+  hidden_by_default: true
+'5914':
+  eva_id: '1143'
+'1054':
+  hidden_by_default: true
+CP377:
+  hidden_by_default: true
+CP379:
+  hidden_by_default: true
+CP16:
+  hidden_by_default: true
+CP376:
+  hidden_by_default: true
+'1041':
+  hidden_by_default: true
+'1055':
+  eva_id: '24'
+  hidden_by_default: true
+'1033':
+  eva_id: '62'
+  openfing_id: metn
+  semester: 4
+'1079':
+  hidden_by_default: true
+'1048':
+  hidden_by_default: true
+CN3:
+  hidden_by_default: true
+'1779':
+  eva_id: '38'
+  short_name: Invest. Oper. y Gest. de Riesgos
+'1637':
+  eva_id: '1049'
+  openfing_id: ae
+GP7:
+  hidden_by_default: true
+'1635':
+  eva_id: '38'
+  short_name: MOR
+'1625':
+  hidden_by_default: true
+'1435':
+  eva_id: '1083'
+'1621':
+  hidden_by_default: true
+'1631':
+  eva_id: '269'
+  short_name: Fund. de Prog. Entera
+'1610':
+  eva_id: '994'
+  openfing_id: iio
+  short_name: IIO
+  semester: 5
+'1629':
+  hidden_by_default: true
+'1623':
+  hidden_by_default: true
+CP27:
+  hidden_by_default: true
+CP320:
+  hidden_by_default: true
+CP373:
+  hidden_by_default: true
+CP381:
+  hidden_by_default: true
+CP385:
+  hidden_by_default: true
+'1624':
+  eva_id: '1070'
+'1626':
+  hidden_by_default: true
+'1632':
+  eva_id: '397'
+  short_name: Opt. Bajo Incertidumbre
+'1627':
+  hidden_by_default: true
+'1617':
+  eva_id: '191'
+IO20:
+  hidden_by_default: true
+IO8:
+  hidden_by_default: true
+1758T:
+  hidden_by_default: true
+'1732':
+  hidden_by_default: true
+'1737':
+  hidden_by_default: true
+'1716':
+  eva_id: '613'
+  openfing_id: iis19
+  short_name: IIS
+  semester: 7
+'1749':
+  eva_id: '1121'
+  short_name: Inter. Persona Computadora
+'1767':
+  eva_id: '633'
+  short_name: Proc. Pers. de Software
+'1728':
+  hidden_by_default: true
+'1758':
+  eva_id: '652'
+  short_name: Relac. Pers. en IS
+'1750':
+  hidden_by_default: true
+'1768':
+  short_name: Taller de Inter. Pers. Comp.
+'1752':
+  hidden_by_default: true
+'1742':
+  eva_id: '722'
+  short_name: Taller de Verificación de Sw
+CP366:
+  hidden_by_default: true
+IS14:
+  hidden_by_default: true
+SFW10:
+  hidden_by_default: true
+BTI29:
+  hidden_by_default: true
+BT31:
+  hidden_by_default: true
+BTI33:
+  hidden_by_default: true
+BTI23:
+  hidden_by_default: true
+BTI31:
+  hidden_by_default: true
+ATI3:
+  hidden_by_default: true
+BTI38:
+  hidden_by_default: true
+AA28:
+  hidden_by_default: true
+A028:
+  hidden_by_default: true
+AI10:
+  hidden_by_default: true
+BT28:
+  hidden_by_default: true
+A28:
+  hidden_by_default: true
+AI28:
+  hidden_by_default: true
+'1753':
+  hidden_by_default: true
+'1754':
+  hidden_by_default: true
+'1755':
+  hidden_by_default: true
+'1756':
+  hidden_by_default: true
+'1757':
+  hidden_by_default: true
+'1731':
+  eva_id: '702'
+  short_name: Pasantía
+'1730':
+  eva_id: '627'
+  semester: 9
+'1721':
+  eva_id: '573'
+  short_name: PIS
+  semester: 8
+'5705':
+  eva_id: '578'
+  short_name: Semin. de Ing. Biomédica
+'1748':
+  hidden_by_default: true
+'1733':
+  hidden_by_default: true
+'1766':
+  eva_id: '423'
+  short_name: TBPM
+'1739':
+  hidden_by_default: true
+'1327':
+  eva_id: '315'
+  openfing_id: tp
+  semester: 6
+'1925':
+  hidden_by_default: true
+'1751':
+  eva_id: '402'
+  short_name: TSI 1
+'1740':
+  eva_id: '674'
+  short_name: TSI 3
+'1741':
+  short_name: TSI 4
+'5823':
+  hidden_by_default: true
+CP71:
+  hidden_by_default: true
+CP363:
+  hidden_by_default: true
+'1734':
+  hidden_by_default: true
+'1735':
+  eva_id: '485'
+  short_name: TSI 2
+CP221:
+  hidden_by_default: true
+AT10:
+  hidden_by_default: true
+AT28:
+  hidden_by_default: true
+AT3:
+  hidden_by_default: true
+AT7:
+  hidden_by_default: true
+TP25:
+  hidden_by_default: true
+'1776':
+  eva_id: '429'
+  short_name: Taller de SIG
+'2401':
+  hidden_by_default: true
+AT010:
+  hidden_by_default: true
+GO10:
+  hidden_by_default: true
+'1543':
+  eva_id: '725'
+  short_name: Int. al Negocio del SW
+'1944':
+  eva_id: '778'
+  openfing_id: agpi
+  short_name: AGPI
+  semester: 7
+'1510':
+  eva_id: '49'
+'1901':
+  hidden_by_default: true
+'1921':
+  hidden_by_default: true
+'1940':
+  eva_id: '156'
+'1507':
+  hidden_by_default: true
+CP375:
+  hidden_by_default: true
+'1930':
+  hidden_by_default: true
+'1514':
+  hidden_by_default: true
+'1945':
+  eva_id: '779'
+  short_name: PAI
+  semester: 8
+GA10:
+  hidden_by_default: true
+GO6:
+  hidden_by_default: true
+GO8:
+  hidden_by_default: true
+GO9:
+  hidden_by_default: true
+SRN13:
+  hidden_by_default: true
+FD1:
+  hidden_by_default: true
+C216:
+  hidden_by_default: true
+AT002:
+  hidden_by_default: true
+558EU:
+  hidden_by_default: true
+CHU10:
+  hidden_by_default: true
+CHS10:
+  hidden_by_default: true
+CH5:
+  hidden_by_default: true
+GP3:
+  hidden_by_default: true
+CH08:
+  hidden_by_default: true
+CH3:
+  hidden_by_default: true
+CH04:
+  hidden_by_default: true
+'1229':
+  hidden_by_default: true
+'1223':
+  short_name: CTS
+'1230':
+  hidden_by_default: true
+'1224':
+  eva_id: '1093'
+  openfing_id: eco
+  semester: 4
+'1221':
+  hidden_by_default: true
+CP20:
+  hidden_by_default: true
+CP174:
+  hidden_by_default: true
+'1225':
+  short_name: Politicas Científicas
+  semester: 8
+CP18:
+  hidden_by_default: true
+CH1:
+  hidden_by_default: true
+CH10:
+  hidden_by_default: true
+CH4:
+  hidden_by_default: true
+CH6:
+  hidden_by_default: true
+CH8:
+  hidden_by_default: true
+SRN22:
+  hidden_by_default: true
+SRN25:
+  hidden_by_default: true
+736EU:
+  hidden_by_default: true
+836EU:
+  hidden_by_default: true
+AT023:
+  hidden_by_default: true
+AT021:
+  hidden_by_default: true
+816EU:
+  hidden_by_default: true
+2107A:
+  hidden_by_default: true
+AT003:
+  hidden_by_default: true
+AT009:
+  hidden_by_default: true
+MOP8:
+  hidden_by_default: true
+'2216':
+  hidden_by_default: true
+'1951':
+  hidden_by_default: true
+GP4:
+  hidden_by_default: true
+'2040':
+  hidden_by_default: true
+'1438':
+  eva_id: '20'
+  short_name: ATIPI
+'5707':
+  eva_id: '589'
+  short_name: Imágenes Médicas
+'1760':
+  hidden_by_default: true
+'1761':
+  hidden_by_default: true
+'1762':
+  hidden_by_default: true
+'1763':
+  hidden_by_default: true
+'2222':
+  hidden_by_default: true
+MOP1:
+  hidden_by_default: true
+MOP10:
+  hidden_by_default: true
+MOP20:
+  hidden_by_default: true
+MOP30:
+  hidden_by_default: true
+'2241':
+  hidden_by_default: true
+C350:
+  hidden_by_default: true
+1025P:
+  hidden_by_default: true
+1446P:
+  hidden_by_default: true
+107L:
+  hidden_by_default: true
+170Q:
+  hidden_by_default: true
+M13:
+  hidden_by_default: true
+1020P:
+  hidden_by_default: true
+1061P:
+  hidden_by_default: true
+1443P:
+  hidden_by_default: true
+1322P:
+  hidden_by_default: true
+1321P:
+  hidden_by_default: true
+M14:
+  hidden_by_default: true
+1063P:
+  hidden_by_default: true
+1024P:
+  hidden_by_default: true
+MA47:
+  hidden_by_default: true
+172Q:
+  hidden_by_default: true
+1062P:
+  hidden_by_default: true
+CM14:
+  hidden_by_default: true
+1030P:
+  hidden_by_default: true
+171L:
+  hidden_by_default: true
+171Q:
+  hidden_by_default: true
+176Q:
+  hidden_by_default: true
+MAT14:
+  hidden_by_default: true
+MA51:
+  hidden_by_default: true
+1020R:
+  hidden_by_default: true
+1023P:
+  hidden_by_default: true
+MA09:
+  hidden_by_default: true
+1031P:
+  hidden_by_default: true
+CP102:
+  hidden_by_default: true
+1510R:
+  hidden_by_default: true
+CQ3:
+  hidden_by_default: true
+158Q:
+  hidden_by_default: true
+FF12:
+  hidden_by_default: true
+F10:
+  hidden_by_default: true
+1120P:
+  hidden_by_default: true
+1151P:
+  hidden_by_default: true
+M1020:
+  hidden_by_default: true
+1152P:
+  hidden_by_default: true
+F7:
+  hidden_by_default: true
+F8:
+  hidden_by_default: true
+1153P:
+  hidden_by_default: true
+CP13:
+  hidden_by_default: true
+1036R:
+  hidden_by_default: true
+'1036':
+  hidden_by_default: true
+1911P:
+  hidden_by_default: true
+'1906':
+  hidden_by_default: true
+1716P:
+  hidden_by_default: true
+CR10:
+  hidden_by_default: true
+B11:
+  hidden_by_default: true
+R101:
+  hidden_by_default: true
+B101:
+  hidden_by_default: true
+IN35:
+  hidden_by_default: true
+PR27:
+  hidden_by_default: true
+1758P:
+  hidden_by_default: true
+1937P:
+  hidden_by_default: true
+CP350:
+  hidden_by_default: true
+1061I:
+  hidden_by_default: true
+1061R:
+  hidden_by_default: true
+108L:
+  hidden_by_default: true
+1022P:
+  hidden_by_default: true
+1022T:
+  hidden_by_default: true
+CP144:
+  hidden_by_default: true
+'1408':
+  hidden_by_default: true
+'1411':
+  hidden_by_default: true
+C402:
+  hidden_by_default: true
+1224P:
+  hidden_by_default: true
+1028M:
+  hidden_by_default: true
+1028P:
+  hidden_by_default: true
+FIS13:
+  hidden_by_default: true
+FI13:
+  hidden_by_default: true
+F1Y3:
+  hidden_by_default: true
+F30:
+  hidden_by_default: true
+117Q:
+  hidden_by_default: true
+MA7:
+  hidden_by_default: true
+1328P:
+  hidden_by_default: true
+125L:
+  hidden_by_default: true
+175Q:
+  hidden_by_default: true
+1640P:
+  hidden_by_default: true
+1945P:
+  hidden_by_default: true
+1324P:
+  hidden_by_default: true
+1721P:
+  hidden_by_default: true
+1781P:
+  hidden_by_default: true
+R100:
+  hidden_by_default: true

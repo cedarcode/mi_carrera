@@ -11,6 +11,7 @@ namespace :scrape do
   task update_subjects: :environment do
     subject_groups = YAML.load_file(Rails.root.join("db/data/scraped_subject_groups.yml"))
     subjects = YAML.load_file(Rails.root.join("db/data/scraped_subjects.yml"))
+    subject_overrides = YAML.load_file(Rails.root.join("db/data/subject_overrides.yml"))
     prerequisites = YAML.load_file(Rails.root.join("db/data/scraped_prerequisites.yml"))
 
     # first create/update all subject groups
@@ -22,16 +23,21 @@ namespace :scrape do
     end
 
     # then create/update all subjects
-    subjects.each do |_code, subject|
-      puts "Updating subject #{subject["code"]}"
-      new_subject = Subject.find_or_initialize_by(code: subject["code"])
+    subjects.each do |code, subject|
+      puts "Updating subject #{code}"
+      new_subject = Subject.find_or_initialize_by(code:)
 
       # capitalize only the first letter of words
       new_subject.name = capitalize_name(subject["name"])
       new_subject.credits = subject["credits"]
-      new_subject.hidden_by_default = subject["hidden_by_default"] || false
       new_subject.group = SubjectGroup.find_by(code: subject["subject_group"])
-      new_subject.semester = subject["semester"]
+
+      new_subject.eva_id = subject_overrides.dig('code', 'eva_id')
+      new_subject.openfing_id = subject_overrides.dig('code', 'openfing_id')
+      new_subject.short_name = subject_overrides.dig('code', 'short_name')
+      new_subject.semester = subject_overrides.dig('code', 'semester')
+      new_subject.hidden_by_default = subject_overrides.dig('code', 'hidden_by_default') || false
+
       new_subject.save!
 
       # create the approvables
