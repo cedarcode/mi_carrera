@@ -15,8 +15,6 @@
         disabled: !current_student.available?(approvable) && !current_student.approved?(approvable),
         data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
       },
-      "yes",
-      "no",
     ) %>
     <div class="mdc-checkbox__background">
       <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
