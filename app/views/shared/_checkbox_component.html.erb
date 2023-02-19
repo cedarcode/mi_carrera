@@ -7,7 +7,7 @@
 ) do |form| %>
   <div class="mdc-checkbox">
     <%= form.check_box(
-      approvable.is_exam? ? :exam_approved : :course_approved,
+      :approved,
       {
         id: dom_id(approvable),
         class: "mdc-checkbox__native-control",
