@@ -55,7 +55,7 @@
       Del curso:
     </span>
     <div class="mdc-deprecated-list">
-      <%= render @subject.course.prerequisite_tree %>
+      <%= render @subject.course.prerequisite_tree, negative: false %>
     </div>
   <% end %>
 
@@ -64,7 +64,7 @@
       Del examen:
     </span>
     <div class="mdc-deprecated-list">
-      <%= render @subject.exam.prerequisite_tree %>
+      <%= render @subject.exam.prerequisite_tree, negative: false %>
     </div>
   <% end %>
 </div>
