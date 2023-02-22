@@ -54,13 +54,17 @@
     <span class="mdc-deprecated-list-group__subheader mdc-typography--subtitle1 prerequisite-type">
       Del curso:
     </span>
-    <%= render @subject.course.prerequisite_tree %>
+    <div class="mdc-deprecated-list">
+      <%= render @subject.course.prerequisite_tree %>
+    </div>
   <% end %>
 
   <% if @subject.exam&.prerequisite_tree %>
     <span class="mdc-deprecated-list-group__subheader mdc-typography--subtitle1 prerequisite-type">
       Del examen:
     </span>
-    <%= render @subject.exam.prerequisite_tree %>
+    <div class="mdc-deprecated-list">
+      <%= render @subject.exam.prerequisite_tree %>
+    </div>
   <% end %>
 </div>
