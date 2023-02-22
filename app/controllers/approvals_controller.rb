@@ -19,7 +19,7 @@ class ApprovalsController < ApplicationController
   private
 
   def render_turbo_stream
-    if params[:subject_show]
+    if params[:subject_show] == "true"
       @subject = @approvable.subject
     else
       @subjects = TreePreloader.new.preload.select do |subject|

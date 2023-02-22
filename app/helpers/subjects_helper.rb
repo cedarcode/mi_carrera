@@ -30,8 +30,4 @@ module SubjectsHelper
     approvable = subject_prerequisite.approvable_needed
     "#{display_name(approvable.subject)} (#{approvable.is_exam ? "examen" : "curso"})"
   end
-
-  def approvable_disabled?(student, approvable)
-    !student.available?(approvable) && !student.approved?(approvable)
-  end
 end
