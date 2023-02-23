@@ -26,4 +26,17 @@ module ApplicationHelper
         tag.span(text, class: 'mdc-deprecated-list-item__text')
     end
   end
+
+  def logical_prerequisite_description(prerequisite, negative)
+    case prerequisite.logical_operator
+    when "or"
+      negative ? "Ninguno de los siguientes" : "Alguno de los siguientes"
+    when "and"
+      negative ? "Al menos uno de los siguientes sin cumplir" : "Todos los siguientes"
+    when "at_least"
+      "Debe tener #{negative ? 'menos de' : 'al menos'} #{prerequisite.amount_of_subjects_needed} de los siguientes"
+    else
+      raise "Unexpected logical operator: #{prerequisite.logical_operator}"
+    end
+  end
 end

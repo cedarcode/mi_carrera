@@ -1,22 +1,16 @@
-<div class="mdc-deprecated-list" data-controller="prerequisite" >
-  <a data-action="click->prerequisite#toggle" >
-    <div class="mdc-deprecated-list-item">
+<% if logical_prerequisite.logical_operator == "not" %>
+  <%= render logical_prerequisite.operands_prerequisites, negative: true %>
+<% else %>
+  <div data-controller="prerequisite" >
+    <a data-action="click->prerequisite#toggle" class="mdc-deprecated-list-item">
       <span class="mdc-deprecated-list-item__ripple"></span>
       <span class="material-icons toggle-collapse" data-prerequisite-target="button">chevron_right</span>
-      <% if logical_prerequisite.logical_operator == "or" %>
-        Alguno de los siguientes
-      <% elsif logical_prerequisite.logical_operator == "and" %>
-        Todos los siguientes
-      <% elsif logical_prerequisite.logical_operator == "not" %>
-        No debe tener
-      <% elsif logical_prerequisite.logical_operator == "at_least" %>
-        Debe tener al menos <%= logical_prerequisite.amount_of_subjects_needed %> de los siguientes
-      <% end %>
+      <%= logical_prerequisite_description(logical_prerequisite, negative) %>
 
-      <%= render 'prerequisites/met_checkmark', prerequisite: logical_prerequisite %>
+      <%= render 'prerequisites/met_checkmark', prerequisite: logical_prerequisite, negative: %>
+    </a>
+    <div class="logical-prerequisite-operands" data-prerequisite-target="collapsable" >
+      <%= render logical_prerequisite.operands_prerequisites, negative: false %>
     </div>
-  </a>
-  <div class="logical-prerequisite-operands" data-prerequisite-target="collapsable" >
-    <%= render logical_prerequisite.operands_prerequisites %>
   </div>
-</div>
+<% end %>
