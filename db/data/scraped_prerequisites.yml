@@ -5951,6 +5951,59 @@ prerequisites:
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: CP31
+      subject_needed_name: SISTEMAS OPERATIVOS
+      needs: exam
+    - type: subject
+      subject_needed_code: C350
+      subject_needed_name: SISTEMAS OPERATIVOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1511'
+      subject_needed_name: SISTEMAS OPERATIVOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1518'
+      subject_needed_name: SISTEMAS OPERATIVOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1532'
+      subject_needed_name: SISTEMAS OPERATIVOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1537'
+      subject_needed_name: SISTEMAS OPERATIVOS
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP362
+      subject_needed_name: BASES DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1911'
+      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP29
+      subject_needed_name: PROGRAMACION III
+      needs: exam
+    - type: subject
+      subject_needed_code: '1323'
+      subject_needed_name: PROGRAMACION 3
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: MA29
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
       subject_needed_code: CP4
       subject_needed_name: LOGICA
       needs: exam
@@ -5988,55 +6041,6 @@ prerequisites:
     - type: subject
       subject_needed_code: '1446'
       subject_needed_name: REDES DE COMPUTADORAS
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP362
-      subject_needed_name: BASES DE DATOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1911'
-      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP29
-      subject_needed_name: PROGRAMACION III
-      needs: exam
-    - type: subject
-      subject_needed_code: '1323'
-      subject_needed_name: PROGRAMACION 3
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP31
-      subject_needed_name: SISTEMAS OPERATIVOS
-      needs: exam
-    - type: subject
-      subject_needed_code: C350
-      subject_needed_name: SISTEMAS OPERATIVOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1511'
-      subject_needed_name: SISTEMAS OPERATIVOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1518'
-      subject_needed_name: SISTEMAS OPERATIVOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1532'
-      subject_needed_name: SISTEMAS OPERATIVOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1537'
-      subject_needed_name: SISTEMAS OPERATIVOS
       needs: exam
   subject_code: '5916'
   is_exam: false
@@ -11899,6 +11903,25 @@ prerequisites:
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      needs: exam
+    - type: subject
+      subject_needed_code: CP37
+      subject_needed_name: PROGRAMACION I (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: CP15
+      subject_needed_name: PROGRAMACION II
+      needs: exam
+    - type: subject
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: CP52
       subject_needed_name: COMPUTACION
       needs: exam
@@ -11938,21 +11961,17 @@ prerequisites:
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: 1321P
-      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      subject_needed_code: 1025P
+      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
       needs: exam
     - type: subject
-      subject_needed_code: CP37
-      subject_needed_name: PROGRAMACION I (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: CP15
-      subject_needed_name: PROGRAMACION II
-      needs: exam
-    - type: subject
-      subject_needed_code: '1321'
-      subject_needed_name: PROGRAMACION 2
+      subject_needed_code: '1025'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
       needs: course
+    - type: subject
+      subject_needed_code: '1075'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
   subject_code: '1323'
   is_exam: false
 - type: logical
