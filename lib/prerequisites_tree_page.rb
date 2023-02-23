@@ -177,8 +177,12 @@ class PrerequisitesTreePage < BedeliasPage
                 .count
   end
 
-  def subject_code(node)
-    node.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
+  def subject_code(approvable_text)
+    approvable_text.match(/([\dA-Z]+ - )?([\dA-Z]+) -/)[2]
+  end
+
+  def subject_name(approvable_text)
+    approvable_text.split('- ', 2).last.strip
   end
 
   def expand_prerequisites_tree(node)
