@@ -160,7 +160,7 @@ class PrerequisitesTreePage < BedeliasPage
   end
 
   def only_one_approval_needed?(node)
-    node.first("div/span[@class='negrita']").text.split(' ')[0] == '1'
+    amount_of_subjects_needed(node) == 1
   end
 
   def amount_of_subjects_needed(node)
