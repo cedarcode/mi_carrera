@@ -9,6 +9,7 @@ module Scraper::Bedelias
   # 5265 - CIENCIAS HUMANAS Y SOCIALES - min: 10 créditos
   # SRN14 - MATEMÁTICA DISCRETA I - créditos: 10
   CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:min|créditos): (\d+)( créditos)?\z/
+  MAX_PAGES = ENV["MAX_PAGES"]&.to_i
 
   def scrape
     Capybara.configure do |config|
@@ -80,7 +81,7 @@ module Scraper::Bedelias
   def process_prerequisites(subjects)
     total_pages = /\(\d+ de (\d+)\)/.match(find(".ui-paginator-current").text).captures[0]
 
-    1.upto(total_pages.to_i).flat_map do |page|
+    1.upto(MAX_PAGES || total_pages.to_i).flat_map do |page|
       Rails.logger.info "Page #{page}"
 
       go_to_page(page, total_pages)
