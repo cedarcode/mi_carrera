@@ -637,7 +637,7 @@ MHC20:
   subject_group: '4442'
 M000:
   code: M000
-  name: METODOS CUANTITATIVOS III
+  name: METODOS CUANTITATIVOS III - PAYSANDU
   credits: 6
   has_exam: false
   subject_group: '4442'
@@ -649,7 +649,7 @@ M000:
   subject_group: '4442'
 M001:
   code: M001
-  name: MM. CC. III
+  name: MM. CC. III - (MTDEO) - DISEÑO Y ANALISIS DE EXPERIMENTOS
   credits: 4
   has_exam: true
   subject_group: '4442'
@@ -3739,7 +3739,7 @@ B101:
   subject_group:
 IN35:
   code: IN35
-  name: IN35 - PROGRAMACION 1
+  name: PROGRAMACION 1
   credits: 0
   has_exam: true
   subject_group:

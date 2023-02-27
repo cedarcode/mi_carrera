@@ -177,7 +177,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   subject_code: SRN03
   is_exam: true
 - type: logical
@@ -186,7 +186,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   subject_code: SRN10
   is_exam: false
 - type: logical
@@ -195,11 +195,11 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   - type: subject
     needs: course
     subject_needed_code: SRN10
-    subject_needed_name: SRN10 - ALGEBRA LINEAL II
+    subject_needed_name: ALGEBRA LINEAL II
   subject_code: SRN10
   is_exam: true
 - type: logical
@@ -1230,7 +1230,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: 736EU
-    subject_needed_name: 736EU - BIONFORMÁTICA
+    subject_needed_name: BIONFORMÁTICA
   subject_code: 736EU
   is_exam: true
 - type: logical
@@ -1248,7 +1248,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: 836EU
-    subject_needed_name: 836EU - BIONFORMÁTICA ESTRUCTURAL
+    subject_needed_name: BIONFORMÁTICA ESTRUCTURAL
   subject_code: 836EU
   is_exam: true
 - type: logical
@@ -3094,7 +3094,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: A83
-    subject_needed_name: A83 - CAMBIO ORGANIZACIONAL
+    subject_needed_name: CAMBIO ORGANIZACIONAL
   subject_code: A83
   is_exam: true
 - type: logical
@@ -3103,7 +3103,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   subject_code: SRN02
   is_exam: true
 - type: logical
@@ -3112,7 +3112,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   subject_code: SRN09
   is_exam: false
 - type: logical
@@ -3121,11 +3121,11 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   - type: subject
     needs: course
     subject_needed_code: SRN09
-    subject_needed_name: SRN09 - CÁLCULO II
+    subject_needed_name: CÁLCULO II
   subject_code: SRN09
   is_exam: true
 - type: logical
@@ -3134,15 +3134,15 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: SRN09
-    subject_needed_name: SRN09 - CÁLCULO II
+    subject_needed_name: CÁLCULO II
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   - type: subject
     needs: exam
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   subject_code: CIM10
   is_exam: false
 - type: logical
@@ -3151,15 +3151,15 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: SRN09
-    subject_needed_name: SRN09 - CÁLCULO II
+    subject_needed_name: CÁLCULO II
   - type: subject
     needs: exam
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   subject_code: CIM10
   is_exam: true
 - type: logical
@@ -4230,7 +4230,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: A42
-    subject_needed_name: A42 - DISEÑO ORGANIZACIONAL
+    subject_needed_name: DISEÑO ORGANIZACIONAL
   subject_code: A42
   is_exam: true
 - type: logical
@@ -4783,19 +4783,19 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: SRN10
-    subject_needed_name: SRN10 - ALGEBRA LINEAL II
+    subject_needed_name: ALGEBRA LINEAL II
   - type: subject
     needs: exam
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   - type: subject
     needs: course
     subject_needed_code: SRN09
-    subject_needed_name: SRN09 - CÁLCULO II
+    subject_needed_name: CÁLCULO II
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   subject_code: CIM24
   is_exam: false
 - type: logical
@@ -4804,19 +4804,19 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: SRN09
-    subject_needed_name: SRN09 - CÁLCULO II
+    subject_needed_name: CÁLCULO II
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   - type: subject
     needs: exam
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   - type: subject
     needs: exam
     subject_needed_code: SRN10
-    subject_needed_name: SRN10 - ALGEBRA LINEAL II
+    subject_needed_name: ALGEBRA LINEAL II
   subject_code: CIM24
   is_exam: true
 - type: logical
@@ -5544,7 +5544,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: REF04
-    subject_needed_name: REF04 - FÍSICA 1
+    subject_needed_name: FÍSICA 1
   subject_code: REF04
   is_exam: true
 - type: logical
@@ -5553,7 +5553,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: REF04
-    subject_needed_name: REF04 - FÍSICA 1
+    subject_needed_name: FÍSICA 1
   subject_code: SRN11
   is_exam: false
 - type: logical
@@ -5562,11 +5562,11 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: REF04
-    subject_needed_name: REF04 - FÍSICA 1
+    subject_needed_name: FÍSICA 1
   - type: subject
     needs: course
     subject_needed_code: SRN11
-    subject_needed_name: SRN11 - FÍSICA 2
+    subject_needed_name: FÍSICA 2
   subject_code: SRN11
   is_exam: true
 - type: logical
@@ -5575,11 +5575,11 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: REF04
-    subject_needed_name: REF04 - FÍSICA 1
+    subject_needed_name: FÍSICA 1
   - type: subject
     needs: course
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   subject_code: SRN26
   is_exam: false
 - type: logical
@@ -5588,15 +5588,15 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   - type: subject
     needs: exam
     subject_needed_code: REF04
-    subject_needed_name: REF04 - FÍSICA 1
+    subject_needed_name: FÍSICA 1
   - type: subject
     needs: course
     subject_needed_code: SRN26
-    subject_needed_name: SRN26 - FÍSICA 3
+    subject_needed_name: FÍSICA 3
   subject_code: SRN26
   is_exam: true
 - type: logical
@@ -5614,7 +5614,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: D84
-    subject_needed_name: D84 - FORMULACIÓN Y EVALUACIÓN DE PROYECTOS DE INVERSIÓN
+    subject_needed_name: FORMULACIÓN Y EVALUACIÓN DE PROYECTOS DE INVERSIÓN
   subject_code: D84
   is_exam: true
 - type: logical
@@ -6637,7 +6637,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: A66
-    subject_needed_name: A66 - GESTIÓN DE PROYECTOS
+    subject_needed_name: GESTIÓN DE PROYECTOS
   subject_code: A66
   is_exam: true
 - type: logical
@@ -9066,7 +9066,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: 203EU
-    subject_needed_name: 203EU - INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS II (TEÓRICO)
+    subject_needed_name: INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS II (TEÓRICO)
   subject_code: 203EU
   is_exam: true
 - type: logical
@@ -9082,7 +9082,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: 618EU
-    subject_needed_name: 618EU - INTRODUCCIÓN A LOS SISTEMAS DE GESTIÓN
+    subject_needed_name: INTRODUCCIÓN A LOS SISTEMAS DE GESTIÓN
   subject_code: 618EU
   is_exam: true
 - type: logical
@@ -9098,7 +9098,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: A65
-    subject_needed_name: A65 - INTRODUCCIÓN AL EMPRENDEDURISMO
+    subject_needed_name: INTRODUCCIÓN AL EMPRENDEDURISMO
   subject_code: A65
   is_exam: true
 - type: logical
@@ -9831,11 +9831,11 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: SRN14
-    subject_needed_name: SRN14 - MATEMÁTICA DISCRETA I
+    subject_needed_name: MATEMÁTICA DISCRETA I
   - type: subject
     needs: course
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   subject_code: CIM11
   is_exam: false
 - type: logical
@@ -9844,11 +9844,11 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: SRN14
-    subject_needed_name: SRN14 - MATEMÁTICA DISCRETA I
+    subject_needed_name: MATEMÁTICA DISCRETA I
   - type: subject
     needs: exam
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   subject_code: CIM11
   is_exam: true
 - type: logical
@@ -10473,7 +10473,7 @@ prerequisites:
       needs: exam
     - type: subject
       subject_needed_code: IN35
-      subject_needed_name: IN35 - PROGRAMACION 1
+      subject_needed_name: PROGRAMACION 1
       needs: exam
     - type: subject
       subject_needed_code: '1320'
@@ -10637,19 +10637,19 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: SRN09
-    subject_needed_name: SRN09 - CÁLCULO II
+    subject_needed_name: CÁLCULO II
   - type: subject
     needs: exam
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   - type: subject
     needs: course
     subject_needed_code: SRN10
-    subject_needed_name: SRN10 - ALGEBRA LINEAL II
+    subject_needed_name: ALGEBRA LINEAL II
   subject_code: CIM20
   is_exam: false
 - type: logical
@@ -10658,19 +10658,19 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   - type: subject
     needs: exam
     subject_needed_code: SRN09
-    subject_needed_name: SRN09 - CÁLCULO II
+    subject_needed_name: CÁLCULO II
   - type: subject
     needs: exam
     subject_needed_code: SRN10
-    subject_needed_name: SRN10 - ALGEBRA LINEAL II
+    subject_needed_name: ALGEBRA LINEAL II
   - type: subject
     needs: exam
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   subject_code: CIM20
   is_exam: true
 - type: logical
@@ -10688,7 +10688,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: M001
-    subject_needed_name: M001 - MM. CC. III - (MTDEO) - DISEÑO Y ANALISIS DE EXPERIMENTOS
+    subject_needed_name: MM. CC. III - (MTDEO) - DISEÑO Y ANALISIS DE EXPERIMENTOS
   subject_code: M001
   is_exam: true
 - type: logical
@@ -10942,7 +10942,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: D85
-    subject_needed_name: D85 - PLANIFICACIÓN ESTRATÉGICA
+    subject_needed_name: PLANIFICACIÓN ESTRATÉGICA
   subject_code: D85
   is_exam: true
 - type: logical
@@ -11437,15 +11437,15 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   - type: subject
     needs: course
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   - type: subject
     needs: course
     subject_needed_code: SRN09
-    subject_needed_name: SRN09 - CÁLCULO II
+    subject_needed_name: CÁLCULO II
   subject_code: CH201
   is_exam: false
 - type: logical
@@ -11454,15 +11454,15 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: SRN09
-    subject_needed_name: SRN09 - CÁLCULO II
+    subject_needed_name: CÁLCULO II
   - type: subject
     needs: exam
     subject_needed_code: SRN03
-    subject_needed_name: SRN03 - ALGEBRA LINEAL I
+    subject_needed_name: ALGEBRA LINEAL I
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   subject_code: CH201
   is_exam: true
 - type: logical
@@ -12189,7 +12189,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: SRN17
-    subject_needed_name: SRN17 - PROGRAMACIÓN I
+    subject_needed_name: PROGRAMACIÓN I
   subject_code: SRN17
   is_exam: true
 - type: logical
@@ -12205,7 +12205,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: 559EU
-    subject_needed_name: 559EU - PROPIEDAD INTELECTUAL
+    subject_needed_name: PROPIEDAD INTELECTUAL
   subject_code: 559EU
   is_exam: true
 - type: logical
@@ -12221,7 +12221,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: I87
-    subject_needed_name: 'I87 - PROSPECTIVA: CONSTRUYENDO EL FUTURO'
+    subject_needed_name: 'PROSPECTIVA: CONSTRUYENDO EL FUTURO'
   subject_code: I87
   is_exam: true
 - type: logical
@@ -14659,7 +14659,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: SRN25
-    subject_needed_name: SRN25 - TALLER INTERDISCIPLINARIO
+    subject_needed_name: TALLER INTERDISCIPLINARIO
   subject_code: SRN25
   is_exam: true
 - type: logical
@@ -15589,7 +15589,7 @@ prerequisites:
   - type: subject
     needs: course
     subject_needed_code: D87
-    subject_needed_name: D87 - TEORÍA DE JUEGOS
+    subject_needed_name: TEORÍA DE JUEGOS
   subject_code: D87
   is_exam: true
 - type: logical
@@ -15692,11 +15692,11 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   - type: subject
     needs: course
     subject_needed_code: SRN09
-    subject_needed_name: SRN09 - CÁLCULO II
+    subject_needed_name: CÁLCULO II
   subject_code: CIM22
   is_exam: false
 - type: logical
@@ -15705,11 +15705,11 @@ prerequisites:
   - type: subject
     needs: exam
     subject_needed_code: SRN02
-    subject_needed_name: SRN02 - CÁLCULO I
+    subject_needed_name: CÁLCULO I
   - type: subject
     needs: exam
     subject_needed_code: SRN09
-    subject_needed_name: SRN09 - CÁLCULO II
+    subject_needed_name: CÁLCULO II
   subject_code: CIM22
   is_exam: true
 - type: logical
