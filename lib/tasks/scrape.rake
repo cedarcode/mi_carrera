@@ -9,6 +9,8 @@ namespace :scrape do
   desc "reads scraped_subjects.yml, scraped_subject_groups and scraped_prerequisites and if not already " +
        "in database creates them, else it updates them"
   task update_subjects: :environment do
+    require 'csv'
+
     subject_groups = YAML.load_file(Rails.root.join("db/data/scraped_subject_groups.yml"))
     subjects = YAML.load_file(Rails.root.join("db/data/scraped_subjects.yml"))
     subject_overrides = YAML.load_file(Rails.root.join("db/data/subject_overrides.yml"))
@@ -18,7 +20,7 @@ namespace :scrape do
     subject_groups.each do |_code, group|
       puts "Updating group #{group["code"]}"
       subject_group = SubjectGroup.find_or_initialize_by(code: group["code"])
-      subject_group.name = capitalize_name(group["name"])
+      subject_group.name = capitalize_name(correct_typos(group["name"].downcase))
       subject_group.save!
     end
 
@@ -28,7 +30,7 @@ namespace :scrape do
       new_subject = Subject.find_or_initialize_by(code:)
 
       # capitalize only the first letter of words
-      new_subject.name = capitalize_name(subject["name"])
+      new_subject.name = capitalize_name(correct_typos(subject["name"].downcase))
       new_subject.credits = subject["credits"]
       new_subject.group = SubjectGroup.find_by(code: subject["subject_group"])
 
@@ -62,6 +64,16 @@ def capitalize_name(name)
   name.split.map do |word|
     ['I', 'II', 'III', 'IV', 'V'].include?(word) ? word : word.capitalize
   end.join(' ')
+end
+
+def correct_typos(text)
+  text.split.map do |word|
+    typos_list[word] || word
+  end.join(' ')
+end
+
+def typos_list
+  @typos_list ||= CSV.parse(Rails.root.join("lib/typos_list.csv").read).to_h
 end
 
 def prerequisite_tree(prerequisite:, approvable: nil, parent_prerequisite: nil)
