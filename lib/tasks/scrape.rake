@@ -9,8 +9,6 @@ namespace :scrape do
   desc "reads scraped_subjects.yml, scraped_subject_groups and scraped_prerequisites and if not already " +
        "in database creates them, else it updates them"
   task update_subjects: :environment do
-    require 'csv'
-
     subject_groups = YAML.load_file(Rails.root.join("db/data/scraped_subject_groups.yml"))
     subjects = YAML.load_file(Rails.root.join("db/data/scraped_subjects.yml"))
     subject_overrides = YAML.load_file(Rails.root.join("db/data/subject_overrides.yml"))
@@ -73,7 +71,7 @@ def correct_typos(text)
 end
 
 def typos_list
-  @typos_list ||= CSV.parse(Rails.root.join("lib/typos_list.csv").read).to_h
+  @typos_list ||= YAML.load_file(Rails.root.join("lib/typos_list.yml"))
 end
 
 def prerequisite_tree(prerequisite:, approvable: nil, parent_prerequisite: nil)
