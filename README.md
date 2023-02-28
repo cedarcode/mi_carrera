@@ -13,14 +13,14 @@ Sistema de trackeo de materias realizadas para los estudiantes de Computación d
 $ git clone https://github.com/cedarcode/mi_carrera.git
 $ cd mi_carrera/
 $ bundle install
-$ bundle exec rails db:create db:migrate
-$ bundle exec rails scrape:update_subjects
+$ bin/rails db:create db:migrate
+$ bin/rails scrape:update_subjects
 ```
 
 ### Levantar el servidor
 
 ```
-$ bundle exec rails s
+$ bin/rails s
 ```
 
 Una vez hecho esto podés entrar a http://localhost:3000 y usar la aplicación normalmente.
