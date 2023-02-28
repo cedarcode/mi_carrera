@@ -9115,6 +9115,13 @@ prerequisites:
   - type: logical
     logical_operator: not
     operands:
+    - type: subject
+      needs: enrollment
+      subject_needed_code: '1013'
+      subject_needed_name: LOGICA MODALIDAD AL REVES
+  - type: logical
+    logical_operator: not
+    operands:
     - type: logical
       logical_operator: or
       operands:
@@ -9139,16 +9146,16 @@ prerequisites:
         subject_needed_name: LOGICA Y COMPUTACION
         needs: exam
   - type: logical
-    logical_operator: not
+    logical_operator: or
     operands:
     - type: subject
-      needs: enrollment
-      subject_needed_code: '1013'
-      subject_needed_name: LOGICA MODALIDAD AL REVES
-  - type: subject
-    needs: course
-    subject_needed_code: '1023'
-    subject_needed_name: MATEMATICA DISCRETA 1
+      subject_needed_code: '1023'
+      subject_needed_name: MATEMATICA DISCRETA 1
+      needs: course
+    - type: subject
+      subject_needed_code: SRN14
+      subject_needed_name: SRN14 - MATEMÁTICA DISCRETA I
+      needs: course
   subject_code: '1027'
   is_exam: false
 - type: logical
