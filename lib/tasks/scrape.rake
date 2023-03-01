@@ -18,7 +18,7 @@ namespace :scrape do
     subject_groups.each do |_code, group|
       puts "Updating group #{group["code"]}"
       subject_group = SubjectGroup.find_or_initialize_by(code: group["code"])
-      subject_group.name = capitalize_name(correct_typos(group["name"]))
+      subject_group.name = format_name(group["name"])
       subject_group.save!
     end
 
@@ -28,7 +28,7 @@ namespace :scrape do
       new_subject = Subject.find_or_initialize_by(code:)
 
       # capitalize only the first letter of words
-      new_subject.name = capitalize_name(correct_typos(subject["name"]))
+      new_subject.name = format_name(subject["name"])
       new_subject.credits = subject["credits"]
       new_subject.group = SubjectGroup.find_by(code: subject["subject_group"])
 
@@ -58,15 +58,13 @@ namespace :scrape do
   end
 end
 
-def capitalize_name(name)
+def format_name(name)
   name.split.map do |word|
-    ['I', 'II', 'III', 'IV', 'V'].include?(word) ? word : word.capitalize
-  end.join(' ')
-end
-
-def correct_typos(text)
-  text.split.map do |word|
-    typos_list[word.downcase] || word
+    if ['I', 'II', 'III', 'IV', 'V'].include?(word)
+      word
+    else
+      (typos_list[word.downcase] || word).capitalize
+    end
   end.join(' ')
 end
 
