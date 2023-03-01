@@ -1,26 +1,26 @@
-# README
+# MiCarrera
 
-## Development
+Sistema de trackeo de materias realizadas para los estudiantes de Computación de la FING con el objetivo de que el manejo de las materias, previaturas y el avance de carrera sea más fácil y claro.
 
-Running tests (Chrome by default)
+### Requisitos
+
+* Ruby 3.2.0
+* PostgreSQL (preferentemente v14)
+
+### Setup
 
 ```
-$ bundle exec rake
+$ git clone https://github.com/cedarcode/mi_carrera.git
+$ cd mi_carrera/
+$ bundle install
+$ bin/rails db:create db:migrate
+$ bin/rails scrape:update_subjects
 ```
 
-Running tests in Firefox
+### Levantar el servidor
+
 ```
-$ TEST_BROWSER=firefox bundle exec rake
+$ bin/rails s
 ```
 
-## Gem Update Policy
-
-### Gemfile Version Constraints
-
-In `Gemfile` define gem dependencies using a version contrainst of `~> MAJOR.MINOR` by default, unless you have reasons
-to use something different. An example of an exception could be `rails`, which is known to make backwards-incompatible
-changes in minor level updates, so in that case we use `~> MAJOR.MINOR.PATCH`.
-
-### Updating
-
-[Updating gems cheat sheet](https://medium.com/cedarcode/updating-gems-cheat-sheet-346d5666a181)
+Una vez hecho esto podés entrar a http://localhost:3000 y usar la aplicación normalmente.
