@@ -1,24 +1,17 @@
 module SubjectsHelper
-  def semester_to_text(semester)
-    case semester
-    when 1
-      "Primer"
-    when 2
-      "Segundo"
-    when 3
-      "Tercer"
-    when 4
-      "Cuarto"
-    when 5
-      "Quinto"
-    when 6
-      "Sexto"
-    when 7
-      "Séptimo"
-    when 8
-      "Octavo"
-    when 9
-      "Noveno"
+  def formatted_category(category)
+    case category
+    when :first_semester then 'Primer semestre'
+    when :second_semester then 'Segundo semestre'
+    when :third_semester then 'Tercer semestre'
+    when :fourth_semester then 'Cuarto semestre'
+    when :fifth_semester then 'Quinto semestre'
+    when :sixth_semester then 'Sexto semestre'
+    when :seventh_semester then 'Séptimo semestre'
+    when :eighth_semester then 'Octavo semestre'
+    when :nineth_semester then 'Noveno semestre'
+    when :inactive then 'Materias inactivas'
+    when :optional then 'Materias opcionales'
     end
   end
 

@@ -22,5 +22,25 @@ class Subject < ApplicationRecord
     approved_approvable_ids.include?(exam ? exam.id : course.id)
   end
 
+  def category
+    if semester.present?
+      case semester
+      when 1 then :first_semester
+      when 2 then :second_semester
+      when 3 then :third_semester
+      when 4 then :fourth_semester
+      when 5 then :fifth_semester
+      when 6 then :sixth_semester
+      when 7 then :seventh_semester
+      when 8 then :eighth_semester
+      when 9 then :nineth_semester
+      end
+    elsif !active?
+      :inactive
+    else
+      :optional
+    end
+  end
+
   delegate :available?, to: :course
 end

@@ -1,9 +1,9 @@
 <div class="mdc-deprecated-list-group subjects-list" data-controller="bedel loading <%= "confetti" if @graduated %>" id="subjects" >
   <%= render "approvals/spinner_template" %>
 
-  <% @subjects.group_by(&:semester).each do |semester, subjects| %>
+  <% @subjects.group_by(&:category).each do |category, subjects| %>
     <div class='mdc-deprecated-list-group__subheader subject-group-header'>
-      <h3 class="mdc-typography--subtitle2"><%= semester.present? ? semester_to_text(semester) + " semestre" : "Materias optativas" %></h3>
+      <h3 class="mdc-typography--subtitle2"><%= formatted_category(category) %></h3>
       <div class='mdc-typography--subtitle2 d-flex'>
         <h3 class='checkbox-header'>Curso</h3>
         <h3 class='checkbox-header'>Examen</h3>
