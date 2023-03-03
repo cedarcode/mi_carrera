@@ -1,4 +1,4 @@
-module Scraper::PrerequisitesTree
+module Scraper::PrerequisitesTreePage
   extend self
 
   NODE_TYPE_MAPPING = {

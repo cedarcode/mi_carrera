@@ -103,7 +103,7 @@ module Scraper::Bedelias
 
         approvable_row.click_on "Ver más"
 
-        prereq = Scraper::PrerequisitesTree.prerequisite_tree(find("[data-rowkey='root']"))
+        prereq = Scraper::PrerequisitesTreePage.prerequisite_tree(find("[data-rowkey='root']"))
 
         click_on 'Volver'
         # Clicking on 'Volver' takes us to the first page so we have
