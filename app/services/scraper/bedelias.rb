@@ -67,8 +67,9 @@ module Scraper::Bedelias
     group_nodes.each do |group_node|
       group_code, name, credits = CODE_NAME_CREDITS_REGEX.match(group_node.text(:all)).captures
       groups[group_code] = { code: group_code, name:, min_credits: credits.to_i }
+      subject_nodes_in_group = group_node.all(:xpath, '..//..//li[@data-nodetype="Materia"]/span', visible: false)
 
-      group_node.all(:xpath, '..//..//li[@data-nodetype="Materia"]/span', visible: false).each do |subject_node|
+      subject_nodes_in_group.each do |subject_node|
         code, name, credits = CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all)).captures
         subjects[code] = { code:, name:, credits: credits.to_i, has_exam: false, subject_group: group_code }
       end
