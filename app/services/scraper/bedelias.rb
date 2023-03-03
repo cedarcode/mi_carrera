@@ -88,11 +88,12 @@ module Scraper::Bedelias
 
       go_to_page(page, total_pages)
 
+      # Need to iterate over row ids (data-ri) rather than the row nodes
+      # because each time we navigate to the details page for an approvable and
+      # navigate back to this index page, the nodes are different
       all('[data-ri]').map { |node| node['data-ri'] }.map do |row_id|
-        go_to_page(page, total_pages)
-
-        row = find("[data-ri='#{row_id}']")
-        name, type = row.all('td')[0..1]
+        approvable_row = find("[data-ri='#{row_id}']")
+        name, type = approvable_row.all('td')[0..1]
         Rails.logger.info "#{name.text} (#{type.text})"
 
         subject_code = /\A(\w+) - .*\z/.match(name.text).captures[0]
@@ -100,11 +101,14 @@ module Scraper::Bedelias
 
         subjects[subject_code][:has_exam] ||= is_exam if subjects[subject_code]
 
-        row.click_on "Ver más"
+        approvable_row.click_on "Ver más"
 
         prereq = Scraper::PrerequisitesTree.prerequisite_tree(find("[data-rowkey='root']"))
 
         click_on 'Volver'
+        # Clicking on 'Volver' takes us to the first page so we have
+        # to navigate to the page that we previously were.
+        go_to_page(page, total_pages)
 
         prereq.merge(subject_code:, is_exam:)
       end
