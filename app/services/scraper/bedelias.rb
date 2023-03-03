@@ -62,12 +62,13 @@ module Scraper::Bedelias
   def process_groups_and_subjects(groups, subjects)
     node_type = "[data-nodetype='Grupo']"
     selector = ".arbolComposicion #{node_type}:not(:has(#{node_type})) > .ui-treenode-content > .ui-treenode-label"
+    group_nodes = all(selector, visible: false)
 
-    all(selector, visible: false).each do |node|
-      group_code, name, credits = CODE_NAME_CREDITS_REGEX.match(node.text(:all)).captures
+    group_nodes.each do |group_node|
+      group_code, name, credits = CODE_NAME_CREDITS_REGEX.match(group_node.text(:all)).captures
       groups[group_code] = { code: group_code, name:, min_credits: credits.to_i }
 
-      node.all(:xpath, '..//..//li[@data-nodetype="Materia"]/span', visible: false).each do |subject_node|
+      group_node.all(:xpath, '..//..//li[@data-nodetype="Materia"]/span', visible: false).each do |subject_node|
         code, name, credits = CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all)).captures
         subjects[code] = { code:, name:, credits: credits.to_i, has_exam: false, subject_group: group_code }
       end
