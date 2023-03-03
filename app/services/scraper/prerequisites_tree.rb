@@ -30,7 +30,7 @@ module Scraper::PrerequisitesTree
 
     case title
     # 1 aprobación/es entre: Curso de la U.C.B: 1511 - SISTEMAS OPERATIVOS ...
-    when /\A\d+ (aprobación|actividad)\/es entre:\z/ then logical_prerequisite(content)
+    when /\A\d+ (aprobación|actividad)\/es entre:\z/ then logical_leaf_prerequisite(content)
     # 15 créditos en el Grupo: 4756 - A.INTEG,TALLERES,PASANT.Y PROY
     # 380 créditos en el Plan: 1997 - INGENIERIA EN COMPUTACION
     when /\A\d+ créditos en el (Grupo|Plan):\z/ then credits_prerequisite(content)
@@ -56,7 +56,7 @@ module Scraper::PrerequisitesTree
     { type: 'credits', credits: credits.to_i, group: (group.to_i if type == "Grupo") }.compact
   end
 
-  def logical_prerequisite(content)
+  def logical_leaf_prerequisite(content)
     amount_of_subjects_needed = /\A(\d+) (aprobación|actividad)\/es entre: $/.match(content).captures[0].to_i
     approvables = content.lines[1..]
 
