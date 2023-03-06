@@ -1202,10 +1202,17 @@ prerequisites:
     needs: all
     subject_needed_code: CP362
     subject_needed_name: BASES DE DATOS
-  - type: subject
-    needs: all
-    subject_needed_code: '1911'
-    subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1911P
+      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1911'
+      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
   subject_code: '1949'
   is_exam: false
 - type: logical
@@ -6550,6 +6557,56 @@ prerequisites:
     subject_needed_code: '1940'
     subject_needed_name: GESTION DE CALIDAD
   subject_code: '1940'
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1906'
+        subject_needed_name: GESTION DE CALIDAD
+        needs: exam
+      - type: subject
+        subject_needed_code: '1921'
+        subject_needed_name: GESTION DE CALIDAD
+        needs: exam
+      - type: subject
+        subject_needed_code: '1940'
+        subject_needed_name: GESTION DE CALIDAD
+        needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1510'
+      subject_needed_name: CONTROL DE CALIDAD
+      needs: all
+    - type: subject
+      subject_needed_code: '1901'
+      subject_needed_name: CONTROL DE CALIDAD
+      needs: all
+  subject_code: '1954'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1940'
+      subject_needed_name: GESTION DE CALIDAD
+      needs: course
+    - type: subject
+      subject_needed_code: '1954'
+      subject_needed_name: GESTION DE CALIDAD
+      needs: course
+  subject_code: '1954'
   is_exam: true
 - type: logical
   logical_operator: and
