@@ -10,12 +10,14 @@ module Scraper::Bedelias
   # SRN14 - MATEMÁTICA DISCRETA I - créditos: 10
   CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:min|créditos): (\d+)( créditos)?\z/
   MAX_PAGES = ENV["MAX_PAGES"]&.to_i
+  THREADS = (ENV['THREADS'] || 6).to_f
 
   def scrape
     Capybara.configure do |config|
       config.default_driver = ENV["HEADLESS"] == "false" ? :selenium_chrome : :selenium_chrome_headless
       config.run_server = false
       config.save_path = "tmp"
+      config.threadsafe = true
     end
 
     groups = {}
@@ -81,9 +83,25 @@ module Scraper::Bedelias
   end
 
   def process_prerequisites(subjects)
-    total_pages = /\(\d+ de (\d+)\)/.match(find(".ui-paginator-current").text).captures[0]
+    Thread.abort_on_exception = true
 
-    1.upto(MAX_PAGES || total_pages.to_i).flat_map do |page|
+    total_pages = /\(\d+ de (\d+)\)/.match(find(".ui-paginator-current").text).captures[0]
+    max_pages = MAX_PAGES || total_pages.to_i
+
+    1.upto(max_pages).each_slice((max_pages / THREADS).ceil).map do |slice|
+      Thread.new do
+        using_session(Capybara::Session.new(page.mode)) do
+          process_prerequisites_slice(subjects, slice, total_pages)
+        end
+      end
+    end.flat_map(&:value)
+  end
+
+  def process_prerequisites_slice(subjects, slice, total_pages)
+    go_to_groups_and_subjects_page
+    go_to_prerequisites_page
+
+    slice.flat_map do |page|
       Rails.logger.info "Page #{page}"
 
       go_to_page(page, total_pages)
