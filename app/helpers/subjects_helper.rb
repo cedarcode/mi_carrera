@@ -12,6 +12,7 @@ module SubjectsHelper
     when :nineth_semester then 'Noveno semestre'
     when :inactive then 'Materias inactivas'
     when :optional then 'Materias opcionales'
+    when :revalid then 'Reválidas'
     end
   end
 

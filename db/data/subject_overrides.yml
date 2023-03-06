@@ -27,25 +27,25 @@ MI2:
   inactive: true
   semester: 1
 M09:
-  hidden_by_default: true
+  revalid: true
 M5:
-  hidden_by_default: true
+  revalid: true
 GP5:
   inactive: true
 MA015:
-  hidden_by_default: true
+  revalid: true
 MA48:
-  hidden_by_default: true
+  revalid: true
 MA11:
-  hidden_by_default: true
+  revalid: true
 MA020:
-  hidden_by_default: true
+  revalid: true
 CAL12:
-  hidden_by_default: true
+  revalid: true
 '2415':
   inactive: true
 CAL10:
-  hidden_by_default: true
+  revalid: true
 CP7:
   inactive: true
 CP1:
@@ -172,49 +172,49 @@ CP4:
 '1233':
   inactive: true
 GAL7:
-  hidden_by_default: true
+  revalid: true
 MAT10:
-  hidden_by_default: true
+  revalid: true
 MAT33:
-  hidden_by_default: true
+  revalid: true
 MAT6:
-  hidden_by_default: true
+  revalid: true
 MAT8:
-  hidden_by_default: true
+  revalid: true
 MA10:
-  hidden_by_default: true
+  revalid: true
 MA15:
-  hidden_by_default: true
+  revalid: true
 MA16:
-  hidden_by_default: true
+  revalid: true
 MA20:
-  hidden_by_default: true
+  revalid: true
 MA24:
-  hidden_by_default: true
+  revalid: true
 MA25:
-  hidden_by_default: true
+  revalid: true
 MA29:
-  hidden_by_default: true
+  revalid: true
 MA3:
-  hidden_by_default: true
+  revalid: true
 MA5:
-  hidden_by_default: true
+  revalid: true
 MA9:
-  hidden_by_default: true
+  revalid: true
 MC13:
-  hidden_by_default: true
+  revalid: true
 MC3:
-  hidden_by_default: true
+  revalid: true
 MEC:
-  hidden_by_default: true
+  revalid: true
 M1:
-  hidden_by_default: true
+  revalid: true
 M12:
-  hidden_by_default: true
+  revalid: true
 M24:
-  hidden_by_default: true
+  revalid: true
 M9:
-  hidden_by_default: true
+  revalid: true
 SRN26:
   inactive: true
 SRN11:
@@ -234,13 +234,13 @@ M000:
 M001:
   inactive: true
 CE5:
-  hidden_by_default: true
+  revalid: true
 CE10:
-  hidden_by_default: true
+  revalid: true
 FA4:
-  hidden_by_default: true
+  revalid: true
 CE12:
-  hidden_by_default: true
+  revalid: true
 CP217:
   inactive: true
 CP26:
@@ -287,35 +287,35 @@ CP43:
   eva_id: '318'
   short_name: Intro. a la Física Moderna
 CEX28:
-  hidden_by_default: true
+  revalid: true
 CE11:
-  hidden_by_default: true
+  revalid: true
 CE2:
-  hidden_by_default: true
+  revalid: true
 FA8:
-  hidden_by_default: true
+  revalid: true
 FF10:
-  hidden_by_default: true
+  revalid: true
 FG:
-  hidden_by_default: true
+  revalid: true
 FG2:
-  hidden_by_default: true
+  revalid: true
 FIS14:
-  hidden_by_default: true
+  revalid: true
 FIS8:
-  hidden_by_default: true
+  revalid: true
 FI10:
-  hidden_by_default: true
+  revalid: true
 FL1:
-  hidden_by_default: true
+  revalid: true
 FL2:
-  hidden_by_default: true
+  revalid: true
 FL8:
-  hidden_by_default: true
+  revalid: true
 F2:
-  hidden_by_default: true
+  revalid: true
 F66:
-  hidden_by_default: true
+  revalid: true
 SRN17:
   inactive: true
 '1373':
@@ -323,9 +323,9 @@ SRN17:
 1322T:
   inactive: true
 PR4:
-  hidden_by_default: true
+  revalid: true
 PR10:
-  hidden_by_default: true
+  revalid: true
 '1354':
   eva_id: '138'
   semester: 7
@@ -434,17 +434,17 @@ CP365:
 '1339':
   inactive: true
 PA7:
-  hidden_by_default: true
+  revalid: true
 PP6:
-  hidden_by_default: true
+  revalid: true
 PR3:
-  hidden_by_default: true
+  revalid: true
 PR6:
-  hidden_by_default: true
+  revalid: true
 PR7:
-  hidden_by_default: true
+  revalid: true
 PR8:
-  hidden_by_default: true
+  revalid: true
 '1536':
   inactive: true
 GP6:
@@ -452,15 +452,15 @@ GP6:
 '1545':
   eva_id: '938'
 AR20:
-  hidden_by_default: true
+  revalid: true
 '1454':
   inactive: true
 AR12:
-  hidden_by_default: true
+  revalid: true
 AR015:
-  hidden_by_default: true
+  revalid: true
 AR6:
-  hidden_by_default: true
+  revalid: true
 '1453':
   inactive: true
 '1440':
@@ -561,13 +561,13 @@ CP372:
 '1426':
   inactive: true
 AA9:
-  hidden_by_default: true
+  revalid: true
 AR15:
-  hidden_by_default: true
+  revalid: true
 AR30:
-  hidden_by_default: true
+  revalid: true
 AR8:
-  hidden_by_default: true
+  revalid: true
 SRN30:
   inactive: true
 '1866':
@@ -596,7 +596,7 @@ SRN30:
 '5912':
   inactive: true
 IAR6:
-  hidden_by_default: true
+  revalid: true
 1937T:
   inactive: true
 GP1:
@@ -609,11 +609,11 @@ GP2:
 '1948':
   eva_id: '61'
 BD15:
-  hidden_by_default: true
+  revalid: true
 BD05:
-  hidden_by_default: true
+  revalid: true
 BD015:
-  hidden_by_default: true
+  revalid: true
 '1918':
   eva_id: '785'
   short_name: Admin. y Seguridad de Sist.
@@ -658,17 +658,17 @@ CP378:
 '1929':
   inactive: true
 BDSI6:
-  hidden_by_default: true
+  revalid: true
 BD10:
-  hidden_by_default: true
+  revalid: true
 BD5:
-  hidden_by_default: true
+  revalid: true
 BD8:
-  hidden_by_default: true
+  revalid: true
 BD9:
-  hidden_by_default: true
+  revalid: true
 CN6:
-  hidden_by_default: true
+  revalid: true
 '1040':
   inactive: true
 '5914':
@@ -697,7 +697,7 @@ CP376:
 '1048':
   inactive: true
 CN3:
-  hidden_by_default: true
+  revalid: true
 '1779':
   eva_id: '38'
   short_name: Invest. Oper. y Gest. de Riesgos
@@ -749,9 +749,9 @@ CP385:
 '1617':
   eva_id: '191'
 IO20:
-  hidden_by_default: true
+  revalid: true
 IO8:
-  hidden_by_default: true
+  revalid: true
 1758T:
   inactive: true
 '1732':
@@ -786,35 +786,35 @@ IO8:
 CP366:
   inactive: true
 IS14:
-  hidden_by_default: true
+  revalid: true
 SFW10:
-  hidden_by_default: true
+  revalid: true
 BTI29:
-  hidden_by_default: true
+  revalid: true
 BT31:
-  hidden_by_default: true
+  revalid: true
 BTI33:
-  hidden_by_default: true
+  revalid: true
 BTI23:
-  hidden_by_default: true
+  revalid: true
 BTI31:
-  hidden_by_default: true
+  revalid: true
 ATI3:
-  hidden_by_default: true
+  revalid: true
 BTI38:
-  hidden_by_default: true
+  revalid: true
 AA28:
-  hidden_by_default: true
+  revalid: true
 A028:
-  hidden_by_default: true
+  revalid: true
 AI10:
-  hidden_by_default: true
+  revalid: true
 BT28:
-  hidden_by_default: true
+  revalid: true
 A28:
-  hidden_by_default: true
+  revalid: true
 AI28:
-  hidden_by_default: true
+  revalid: true
 '1753':
   inactive: true
 '1754':
@@ -875,15 +875,15 @@ CP363:
 CP221:
   inactive: true
 AT10:
-  hidden_by_default: true
+  revalid: true
 AT28:
-  hidden_by_default: true
+  revalid: true
 AT3:
-  hidden_by_default: true
+  revalid: true
 AT7:
-  hidden_by_default: true
+  revalid: true
 TP25:
-  hidden_by_default: true
+  revalid: true
 '1776':
   eva_id: '429'
   short_name: Taller de SIG
@@ -892,7 +892,7 @@ TP25:
 AT010:
   inactive: true
 GO10:
-  hidden_by_default: true
+  revalid: true
 '1543':
   eva_id: '725'
   short_name: Int. al Negocio del SW
@@ -922,13 +922,13 @@ CP375:
   short_name: PAI
   semester: 8
 GA10:
-  hidden_by_default: true
+  revalid: true
 GO6:
-  hidden_by_default: true
+  revalid: true
 GO8:
-  hidden_by_default: true
+  revalid: true
 GO9:
-  hidden_by_default: true
+  revalid: true
 SRN13:
   inactive: true
 FD1:
@@ -940,19 +940,19 @@ AT002:
 558EU:
   inactive: true
 CHU10:
-  hidden_by_default: true
+  revalid: true
 CHS10:
-  hidden_by_default: true
+  revalid: true
 CH5:
-  hidden_by_default: true
+  revalid: true
 GP3:
   inactive: true
 CH08:
-  hidden_by_default: true
+  revalid: true
 CH3:
-  hidden_by_default: true
+  revalid: true
 CH04:
-  hidden_by_default: true
+  revalid: true
 '1229':
   inactive: true
 '1223':
@@ -975,15 +975,15 @@ CP174:
 CP18:
   inactive: true
 CH1:
-  hidden_by_default: true
+  revalid: true
 CH10:
-  hidden_by_default: true
+  revalid: true
 CH4:
-  hidden_by_default: true
+  revalid: true
 CH6:
-  hidden_by_default: true
+  revalid: true
 CH8:
-  hidden_by_default: true
+  revalid: true
 SRN22:
   inactive: true
 SRN25:
@@ -1005,7 +1005,7 @@ AT003:
 AT009:
   inactive: true
 MOP8:
-  hidden_by_default: true
+  revalid: true
 '2216':
   inactive: true
 '1951':
@@ -1031,53 +1031,53 @@ GP4:
 '2222':
   inactive: true
 MOP1:
-  hidden_by_default: true
+  revalid: true
 MOP10:
-  hidden_by_default: true
+  revalid: true
 MOP20:
-  hidden_by_default: true
+  revalid: true
 MOP30:
-  hidden_by_default: true
+  revalid: true
 '2241':
   inactive: true
 C350:
   inactive: true
 1025P:
-  inactive: true
+  revalid: true
 1446P:
-  inactive: true
+  revalid: true
 107L:
   inactive: true
 170Q:
   inactive: true
 M13:
-  hidden_by_default: true
+  revalid: true
 1020P:
-  inactive: true
+  revalid: true
 1061P:
-  inactive: true
+  revalid: true
 1443P:
-  inactive: true
+  revalid: true
 1322P:
-  inactive: true
+  revalid: true
 1321P:
-  inactive: true
+  revalid: true
 M14:
-  hidden_by_default: true
+  revalid: true
 1063P:
-  inactive: true
+  revalid: true
 1024P:
-  inactive: true
+  revalid: true
 MA47:
-  hidden_by_default: true
+  revalid: true
 172Q:
   inactive: true
 1062P:
-  inactive: true
+  revalid: true
 CM14:
-  hidden_by_default: true
+  revalid: true
 1030P:
-  inactive: true
+  revalid: true
 171L:
   inactive: true
 171Q:
@@ -1085,57 +1085,57 @@ CM14:
 176Q:
   inactive: true
 MAT14:
-  hidden_by_default: true
+  revalid: true
 MA51:
-  hidden_by_default: true
+  revalid: true
 1020R:
-  hidden_by_default: true
+  revalid: true
 1023P:
-  inactive: true
+  revalid: true
 MA09:
-  hidden_by_default: true
+  revalid: true
 1031P:
-  inactive: true
+  revalid: true
 CP102:
   inactive: true
 1510R:
-  hidden_by_default: true
+  revalid: true
 CQ3:
   inactive: true
 158Q:
   inactive: true
 FF12:
-  hidden_by_default: true
+  revalid: true
 F10:
-  hidden_by_default: true
+  revalid: true
 1120P:
-  inactive: true
+  revalid: true
 1151P:
-  inactive: true
+  revalid: true
 M1020:
-  hidden_by_default: true
+  revalid: true
 1152P:
-  inactive: true
+  revalid: true
 F7:
-  hidden_by_default: true
+  revalid: true
 F8:
-  hidden_by_default: true
+  revalid: true
 1153P:
-  inactive: true
+  revalid: true
 CP13:
   inactive: true
 1036R:
-  hidden_by_default: true
+  revalid: true
 '1036':
   inactive: true
 1911P:
-  inactive: true
+  revalid: true
 '1906':
   inactive: true
 1716P:
-  inactive: true
+  revalid: true
 CR10:
-  hidden_by_default: true
+  revalid: true
 B11:
   inactive: true
 R101:
@@ -1145,11 +1145,11 @@ B101:
 IN35:
   inactive: true
 PR27:
-  hidden_by_default: true
+  revalid: true
 1758P:
-  inactive: true
+  revalid: true
 1937P:
-  inactive: true
+  revalid: true
 CP350:
   inactive: true
 1061I:
@@ -1159,7 +1159,7 @@ CP350:
 108L:
   inactive: true
 1022P:
-  inactive: true
+  revalid: true
 1022T:
   inactive: true
 CP144:
@@ -1171,39 +1171,39 @@ CP144:
 C402:
   inactive: true
 1224P:
-  inactive: true
+  revalid: true
 1028M:
-  hidden_by_default: true
+  revalid: true
 1028P:
-  inactive: true
+  revalid: true
 FIS13:
-  hidden_by_default: true
+  revalid: true
 FI13:
-  hidden_by_default: true
+  revalid: true
 F1Y3:
-  hidden_by_default: true
+  revalid: true
 F30:
-  hidden_by_default: true
+  revalid: true
 117Q:
   inactive: true
 MA7:
-  hidden_by_default: true
+  revalid: true
 1328P:
-  inactive: true
+  revalid: true
 125L:
   inactive: true
 175Q:
   inactive: true
 1640P:
-  inactive: true
+  revalid: true
 1945P:
-  inactive: true
+  revalid: true
 1324P:
-  inactive: true
+  revalid: true
 1721P:
-  inactive: true
+  revalid: true
 1781P:
-  inactive: true
+  revalid: true
 R100:
   inactive: true
 '1435':

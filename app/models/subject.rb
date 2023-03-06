@@ -37,6 +37,8 @@ class Subject < ApplicationRecord
       end
     elsif !active?
       :inactive
+    elsif revalid?
+      :revalid
     else
       :optional
     end
