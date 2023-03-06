@@ -1,11 +1,8 @@
+task scraper: :environment do
+  Scraper::Bedelias.scrape
+end
+
 namespace :scrape do
-  desc "scrape subject groups, subjects and their prerequisites from bedelias.udelar.edu.uy to YAML file"
-  task subjects: :environment do
-    require 'bedelias_spider'
-
-    BedeliasSpider.new.parse_subjects_and_prerequisites
-  end
-
   desc "reads scraped_subjects.yml, scraped_subject_groups and scraped_prerequisites and if not already " +
        "in database creates them, else it updates them"
   task update_subjects: :environment do
