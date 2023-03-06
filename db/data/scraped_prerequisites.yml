@@ -9211,7 +9211,7 @@ prerequisites:
       needs: course
     - type: subject
       subject_needed_code: SRN14
-      subject_needed_name: SRN14 - MATEMÁTICA DISCRETA I
+      subject_needed_name: MATEMÁTICA DISCRETA I
       needs: course
   subject_code: '1027'
   is_exam: false
