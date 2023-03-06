@@ -2825,6 +2825,12 @@ TP25:
   credits: 10
   has_exam: false
   subject_group: '4756'
+'1954':
+  code: '1954'
+  name: GESTION DE CALIDAD
+  credits: 7
+  has_exam: true
+  subject_group: '4066'
 '2401':
   code: '2401'
   name: LEGISLACION Y RELACIONES INDUSTRIALES
@@ -3443,6 +3449,12 @@ R101:
   credits: 0
   has_exam: true
   subject_group:
+1911P:
+  code: 1911P
+  name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+  credits: 0
+  has_exam: true
+  subject_group:
 1061R:
   code: 1061R
   name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
@@ -3680,12 +3692,6 @@ CP13:
 '1036':
   code: '1036'
   name: FUNCIONES DE VARIABLE COMPLEJA
-  credits: 0
-  has_exam: true
-  subject_group:
-1911P:
-  code: 1911P
-  name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
   credits: 0
   has_exam: true
   subject_group:
