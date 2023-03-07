@@ -36,6 +36,7 @@ namespace :scrape do
       new_subject.hidden_by_default = subject_overrides.dig(code, 'hidden_by_default') || false
       new_subject.active = !subject_overrides.dig(code, 'inactive')
       new_subject.revalid = subject_overrides.dig(code, 'revalid') || false
+      new_subject.external = subject_overrides.dig(code, 'external') || false
 
       new_subject.save!
 

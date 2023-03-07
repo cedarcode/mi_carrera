@@ -2,7 +2,7 @@
 CIM22:
   inactive: true
 SRN14:
-  inactive: true
+  external: true
 CIM11:
   inactive: true
 CH201:
@@ -12,13 +12,13 @@ CIM24:
 CIM10:
   inactive: true
 SRN09:
-  inactive: true
+  external: true
 SRN02:
-  inactive: true
+  external: true
 SRN10:
-  inactive: true
+  external: true
 SRN03:
-  inactive: true
+  external: true
 1025T:
   inactive: true
 D87:
@@ -216,9 +216,9 @@ M24:
 M9:
   revalid: true
 SRN26:
-  inactive: true
+  external: true
 SRN11:
-  inactive: true
+  external: true
 REF04:
   inactive: true
 MHC16:
@@ -317,7 +317,7 @@ F2:
 F66:
   revalid: true
 SRN17:
-  inactive: true
+  external: true
 '1373':
   inactive: true
 1322T:
@@ -569,7 +569,7 @@ AR30:
 AR8:
   revalid: true
 SRN30:
-  inactive: true
+  external: true
 '1866':
   eva_id: '43'
 '1820':
@@ -930,7 +930,7 @@ GO8:
 GO9:
   revalid: true
 SRN13:
-  inactive: true
+  external: true
 FD1:
   inactive: true
 C216:
@@ -985,9 +985,9 @@ CH6:
 CH8:
   revalid: true
 SRN22:
-  inactive: true
+  external: true
 SRN25:
-  inactive: true
+  external: true
 736EU:
   inactive: true
 836EU:
