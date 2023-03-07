@@ -816,15 +816,15 @@ A28:
 AI28:
   revalid: true
 '1753':
-  inactive: true
+  extension_module: true
 '1754':
-  inactive: true
+  extension_module: true
 '1755':
-  inactive: true
+  extension_module: true
 '1756':
-  inactive: true
+  extension_module: true
 '1757':
-  inactive: true
+  extension_module: true
 '1731':
   eva_id: '702'
   short_name: Pasantía
@@ -1021,13 +1021,13 @@ GP4:
   eva_id: '589'
   short_name: Imágenes Médicas
 '1760':
-  inactive: true
+  extension_module: true
 '1761':
-  inactive: true
+  extension_module: true
 '1762':
-  inactive: true
+  extension_module: true
 '1763':
-  inactive: true
+  extension_module: true
 '2222':
   inactive: true
 MOP1:

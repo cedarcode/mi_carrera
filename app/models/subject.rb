@@ -41,6 +41,8 @@ class Subject < ApplicationRecord
       :revalid
     elsif external?
       :external
+    elsif extension_module?
+      :extension_module
     else
       :optional
     end

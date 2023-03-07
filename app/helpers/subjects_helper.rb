@@ -10,9 +10,10 @@ module SubjectsHelper
     eighth_semester: 8,
     nineth_semester: 9,
     optional: 10,
-    external: 11,
-    inactive: 12,
-    revalid: 13,
+    extension_module: 11,
+    external: 12,
+    inactive: 13,
+    revalid: 14,
   }
 
   def subjects_grouped_by_category(subjects)
@@ -34,6 +35,7 @@ module SubjectsHelper
     when :optional then 'Materias opcionales'
     when :revalid then 'Reválidas'
     when :external then 'Materias dictadas en institutos del interior'
+    when :extension_module then 'Módulos de Taller y Extensión'
     end
   end
 

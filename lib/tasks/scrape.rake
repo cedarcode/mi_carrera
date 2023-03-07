@@ -37,6 +37,7 @@ namespace :scrape do
       new_subject.active = !subject_overrides.dig(code, 'inactive')
       new_subject.revalid = subject_overrides.dig(code, 'revalid') || false
       new_subject.external = subject_overrides.dig(code, 'external') || false
+      new_subject.extension_module = subject_overrides.dig(code, 'extension_module') || false
 
       new_subject.save!
 
