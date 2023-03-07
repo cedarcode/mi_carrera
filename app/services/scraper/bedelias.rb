@@ -102,8 +102,6 @@ module Scraper::Bedelias
     go_to_prerequisites_page
 
     slice.flat_map do |page|
-      Rails.logger.info "Page #{page}"
-
       go_to_page(page, total_pages)
 
       # Need to iterate over row ids (data-ri) rather than the row nodes
