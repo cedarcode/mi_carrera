@@ -48,5 +48,9 @@ class Subject < ApplicationRecord
     end
   end
 
+  def hidden_by_default?
+    revalid? || !active? || external? || extension_module?
+  end
+
   delegate :available?, to: :course
 end
