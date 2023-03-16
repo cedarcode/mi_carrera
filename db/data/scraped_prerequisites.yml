@@ -7311,6 +7311,10 @@ prerequisites:
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: exam
     - type: subject
+      subject_needed_code: 1911P
+      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+    - type: subject
       subject_needed_code: '1911'
       subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
       needs: course
