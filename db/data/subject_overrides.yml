@@ -24,7 +24,6 @@ SRN03:
 D87:
   hidden_by_default: true
 MI2:
-  hidden_by_default: true
   semester: 1
 M09:
   hidden_by_default: true
