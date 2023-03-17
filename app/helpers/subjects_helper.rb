@@ -13,7 +13,7 @@ module SubjectsHelper
     when 'inactive' then 'Materias inactivas'
     when 'optional' then 'Materias opcionales'
     when 'revalid' then 'Reválidas'
-    when 'external' then 'Materias dictadas en institutos del interior'
+    when 'outside_montevideo' then 'Materias dictadas en institutos del interior'
     when 'extension_module' then 'Módulos de Taller y Extensión'
     end
   end

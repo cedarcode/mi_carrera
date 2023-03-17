@@ -22,7 +22,7 @@ class Subject < ApplicationRecord
     nineth_semester
     optional
     extension_module
-    external
+    outside_montevideo
     inactive
     revalid
   ]
@@ -43,7 +43,7 @@ class Subject < ApplicationRecord
   end
 
   def hidden_by_default?
-    revalid? || inactive? || external? || extension_module?
+    revalid? || inactive? || outside_montevideo? || extension_module?
   end
 
   delegate :available?, to: :course
