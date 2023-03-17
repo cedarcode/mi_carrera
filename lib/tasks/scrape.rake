@@ -32,11 +32,7 @@ namespace :scrape do
       new_subject.eva_id = subject_overrides.dig(code, 'eva_id')
       new_subject.openfing_id = subject_overrides.dig(code, 'openfing_id')
       new_subject.short_name = subject_overrides.dig(code, 'short_name')
-      new_subject.semester = subject_overrides.dig(code, 'semester')
-      new_subject.active = !subject_overrides.dig(code, 'inactive')
-      new_subject.revalid = subject_overrides.dig(code, 'revalid') || false
-      new_subject.external = subject_overrides.dig(code, 'external') || false
-      new_subject.extension_module = subject_overrides.dig(code, 'extension_module') || false
+      new_subject.category = subject_overrides.dig(code, 'category') || 'optional'
 
       new_subject.save!
 

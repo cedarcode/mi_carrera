@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="mdc-deprecated-list-group subjects-list">
-  <% subjects_grouped_by_category(@subjects).each do |category, subjects| %>
+  <% @subjects.group_by(&:category).each do |category, subjects| %>
     <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
       <%= formatted_category(category) %>
     </h3>

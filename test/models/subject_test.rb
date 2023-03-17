@@ -62,11 +62,11 @@ class SubjectTest < ActiveSupport::TestCase
     assert_equal [s1], Subject.without_exam
   end
 
-  test "#ordered_by_semester_and_name returns subjects ordered by semester and name" do
-    s1 = create :subject, :with_exam, semester: 1, name: 'A', code: 'A1'
-    s2 = create :subject, :with_exam, semester: 1, name: 'B', code: 'B1'
-    s3 = create :subject, :with_exam, semester: 2, name: 'A', code: 'A2'
+  test "#ordered_by_category_and_name returns subjects ordered by category and name" do
+    s1 = create :subject, :with_exam, category: 'first_semester', name: 'A', code: 'A1'
+    s2 = create :subject, :with_exam, category: 'first_semester', name: 'B', code: 'B1'
+    s3 = create :subject, :with_exam, category: 'second_semester', name: 'A', code: 'A2'
 
-    assert_equal [s1, s2, s3], Subject.ordered_by_semester_and_name
+    assert_equal [s1, s2, s3], Subject.ordered_by_category_and_name
   end
 end

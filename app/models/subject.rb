@@ -7,10 +7,30 @@ class Subject < ApplicationRecord
   validates :credits, presence: true
   validates :code, uniqueness: true
 
-  scope :ordered_by_semester_and_name, -> { order(:semester, :name) }
-
   scope :with_exam, -> { includes(:exam, :course).where.not(exam: { id: nil }) }
   scope :without_exam, -> { includes(:exam, :course).where(exam: { id: nil }) }
+
+  CATEGORIES = %i[
+    first_semester
+    second_semester
+    third_semester
+    fourth_semester
+    fifth_semester
+    sixth_semester
+    seventh_semester
+    eighth_semester
+    nineth_semester
+    optional
+    extension_module
+    external
+    inactive
+    revalid
+  ]
+
+  enum category: CATEGORIES.index_with { |category| category.to_s }
+
+  scope :ordered_by_category, -> { in_order_of(:category, CATEGORIES) }
+  scope :ordered_by_category_and_name, -> { ordered_by_category.order(:name) }
 
   def self.approved_credits(approved_approvable_ids)
     without_exam.where(course: { id: approved_approvable_ids }).or(
@@ -22,34 +42,8 @@ class Subject < ApplicationRecord
     approved_approvable_ids.include?(exam ? exam.id : course.id)
   end
 
-  def category
-    if semester.present?
-      case semester
-      when 1 then :first_semester
-      when 2 then :second_semester
-      when 3 then :third_semester
-      when 4 then :fourth_semester
-      when 5 then :fifth_semester
-      when 6 then :sixth_semester
-      when 7 then :seventh_semester
-      when 8 then :eighth_semester
-      when 9 then :nineth_semester
-      end
-    elsif !active?
-      :inactive
-    elsif revalid?
-      :revalid
-    elsif external?
-      :external
-    elsif extension_module?
-      :extension_module
-    else
-      :optional
-    end
-  end
-
   def hidden_by_default?
-    revalid? || !active? || external? || extension_module?
+    revalid? || inactive? || external? || extension_module?
   end
 
   delegate :available?, to: :course

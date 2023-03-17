@@ -3,7 +3,7 @@ FactoryBot.define do
     sequence(:code) { |n| "SUBJECT-#{n}" }
     sequence(:name) { |n| "Subject #{n}" }
     credits { 5 }
-    semester { 1 }
+    category { 'first_semester' }
     group
     course { association :course, subject: instance }
 

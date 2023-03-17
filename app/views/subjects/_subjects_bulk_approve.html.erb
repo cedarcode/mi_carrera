@@ -1,7 +1,7 @@
 <div class="mdc-deprecated-list-group subjects-list" data-controller="bedel loading <%= "confetti" if @graduated %>" id="subjects" >
   <%= render "approvals/spinner_template" %>
 
-  <% subjects_grouped_by_category(@subjects).each do |category, subjects| %>
+  <% @subjects.group_by(&:category).each do |category, subjects| %>
     <div class='mdc-deprecated-list-group__subheader subject-group-header'>
       <h3 class="mdc-typography--subtitle2"><%= formatted_category(category) %></h3>
       <div class='mdc-typography--subtitle2 d-flex'>

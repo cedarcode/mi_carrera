@@ -1,280 +1,279 @@
 ---
 CIM22:
-  inactive: true
+  category: 'inactive'
 SRN14:
-  external: true
+  category: 'external'
 CIM11:
-  inactive: true
+  category: 'inactive'
 CH201:
-  inactive: true
+  category: 'inactive'
 CIM24:
-  inactive: true
+  category: 'inactive'
 CIM10:
-  inactive: true
+  category: 'inactive'
 SRN09:
-  external: true
+  category: 'external'
 SRN02:
-  external: true
+  category: 'external'
 SRN10:
-  external: true
+  category: 'external'
 SRN03:
-  external: true
+  category: 'external'
 1025T:
-  inactive: true
+  category: 'inactive'
 D87:
-  inactive: true
+  category: 'inactive'
 MI2:
-  inactive: true
-  semester: 1
+  category: 'first_semester'
 M09:
-  revalid: true
+  category: 'revalid'
 M5:
-  revalid: true
+  category: 'revalid'
 GP5:
-  inactive: true
+  category: 'inactive'
 MA015:
-  revalid: true
+  category: 'revalid'
 MA48:
-  revalid: true
+  category: 'revalid'
 MA11:
-  revalid: true
+  category: 'revalid'
 MA020:
-  revalid: true
+  category: 'revalid'
 CAL12:
-  revalid: true
+  category: 'revalid'
 '2415':
-  inactive: true
+  category: 'inactive'
 CAL10:
-  revalid: true
+  category: 'revalid'
 CP7:
-  inactive: true
+  category: 'inactive'
 CP1:
-  inactive: true
+  category: 'inactive'
 CP22:
-  inactive: true
+  category: 'inactive'
 CP44:
-  inactive: true
+  category: 'inactive'
 CP45:
-  inactive: true
+  category: 'inactive'
 CP6:
-  inactive: true
+  category: 'inactive'
 CP25:
-  inactive: true
+  category: 'inactive'
 CP48:
-  inactive: true
+  category: 'inactive'
 CP49:
-  inactive: true
+  category: 'inactive'
 '1061':
   eva_id: '1024'
   openfing_id: civ
   short_name: Cálculo DIV
-  semester: 1
+  category: 'first_semester'
 '1020':
   eva_id: '74'
   openfing_id: c1
-  inactive: true
+  category: 'inactive'
 '1070':
-  inactive: true
+  category: 'inactive'
 '1052':
-  inactive: true
+  category: 'inactive'
 '1062':
   eva_id: '1131'
   openfing_id: cdivv
   short_name: Cálculo DIVV
-  semester: 2
+  category: 'second_semester'
 '1022':
   eva_id: '319'
   openfing_id: c2
-  inactive: true
+  category: 'inactive'
 '1072':
-  inactive: true
+  category: 'inactive'
 '1063':
   eva_id: '1183'
   openfing_id: calcvec
 '1024':
   eva_id: '129'
   openfing_id: c3
-  inactive: true
+  category: 'inactive'
 '1076':
-  inactive: true
+  category: 'inactive'
 '1021':
-  inactive: true
+  category: 'inactive'
 CP2:
-  inactive: true
+  category: 'inactive'
 CP23:
-  inactive: true
+  category: 'inactive'
 CP46:
-  inactive: true
+  category: 'inactive'
 CP47:
-  inactive: true
+  category: 'inactive'
 '1030':
   eva_id: '256'
   openfing_id: gal1
   short_name: GAL 1
-  semester: 1
+  category: 'first_semester'
 '1071':
-  inactive: true
+  category: 'inactive'
 '1053':
-  inactive: true
+  category: 'inactive'
 '1031':
   eva_id: '270'
   openfing_id: gal2
   short_name: GAL 2
-  semester: 2
+  category: 'second_semester'
 '1058':
-  inactive: true
+  category: 'inactive'
 '1059':
-  inactive: true
+  category: 'inactive'
 '1049':
-  inactive: true
+  category: 'inactive'
 C461:
-  inactive: true
+  category: 'inactive'
 CP4:
-  inactive: true
+  category: 'inactive'
 '1027':
   eva_id: '394'
   openfing_id: logica19
-  semester: 3
+  category: 'third_semester'
 '1010':
-  inactive: true
+  category: 'inactive'
 '1023':
   eva_id: '323'
   openfing_id: md1
-  semester: 1
+  category: 'first_semester'
 '1026':
   eva_id: '267'
   openfing_id: md2
-  semester: 2
+  category: 'second_semester'
 '1028':
   eva_id: '342'
   openfing_id: ed
-  inactive: true
+  category: 'inactive'
 '1074':
-  inactive: true
+  category: 'inactive'
 '1025':
   eva_id: '54'
   openfing_id: pye18
-  semester: 3
+  category: 'third_semester'
 '1075':
-  inactive: true
+  category: 'inactive'
 '1043':
-  inactive: true
+  category: 'inactive'
 '1042':
   eva_id: '134'
-  inactive: true
+  category: 'inactive'
   short_name: Cód. Algebr. para Correc. de Err.
 '1046':
-  inactive: true
+  category: 'inactive'
 '1037':
-  inactive: true
+  category: 'inactive'
 '1034':
-  inactive: true
+  category: 'inactive'
 '1233':
-  inactive: true
+  category: 'inactive'
 GAL7:
-  revalid: true
+  category: 'revalid'
 MAT10:
-  revalid: true
+  category: 'revalid'
 MAT33:
-  revalid: true
+  category: 'revalid'
 MAT6:
-  revalid: true
+  category: 'revalid'
 MAT8:
-  revalid: true
+  category: 'revalid'
 MA10:
-  revalid: true
+  category: 'revalid'
 MA15:
-  revalid: true
+  category: 'revalid'
 MA16:
-  revalid: true
+  category: 'revalid'
 MA20:
-  revalid: true
+  category: 'revalid'
 MA24:
-  revalid: true
+  category: 'revalid'
 MA25:
-  revalid: true
+  category: 'revalid'
 MA29:
-  revalid: true
+  category: 'revalid'
 MA3:
-  revalid: true
+  category: 'revalid'
 MA5:
-  revalid: true
+  category: 'revalid'
 MA9:
-  revalid: true
+  category: 'revalid'
 MC13:
-  revalid: true
+  category: 'revalid'
 MC3:
-  revalid: true
+  category: 'revalid'
 MEC:
-  revalid: true
+  category: 'revalid'
 M1:
-  revalid: true
+  category: 'revalid'
 M12:
-  revalid: true
+  category: 'revalid'
 M24:
-  revalid: true
+  category: 'revalid'
 M9:
-  revalid: true
+  category: 'revalid'
 SRN26:
-  external: true
+  category: 'external'
 SRN11:
-  external: true
+  category: 'external'
 REF04:
-  inactive: true
+  category: 'inactive'
 MHC16:
-  inactive: true
+  category: 'inactive'
 MHC24:
-  inactive: true
+  category: 'inactive'
 MHC20:
-  inactive: true
+  category: 'inactive'
 M000:
-  inactive: true
+  category: 'inactive'
 203EU:
-  inactive: true
+  category: 'inactive'
 M001:
-  inactive: true
+  category: 'inactive'
 CE5:
-  revalid: true
+  category: 'revalid'
 CE10:
-  revalid: true
+  category: 'revalid'
 FA4:
-  revalid: true
+  category: 'revalid'
 CE12:
-  revalid: true
+  category: 'revalid'
 CP217:
-  inactive: true
+  category: 'inactive'
 CP26:
-  inactive: true
+  category: 'inactive'
 CP40:
-  inactive: true
+  category: 'inactive'
 CP3:
-  inactive: true
+  category: 'inactive'
 CP17:
-  inactive: true
+  category: 'inactive'
 CP8:
-  inactive: true
+  category: 'inactive'
 '1120':
-  inactive: true
+  category: 'inactive'
 '1170':
-  inactive: true
+  category: 'inactive'
 '1121':
-  inactive: true
+  category: 'inactive'
 '1172':
-  inactive: true
+  category: 'inactive'
 CP41:
-  inactive: true
+  category: 'inactive'
 CP42:
-  inactive: true
+  category: 'inactive'
 CP43:
-  inactive: true
+  category: 'inactive'
 '1151':
   eva_id: '87'
   openfing_id: f1-2018
-  semester: 3
+  category: 'third_semester'
 '1171':
-  inactive: true
+  category: 'inactive'
 '1077':
-  inactive: true
+  category: 'inactive'
 '1152':
   eva_id: '32'
   openfing_id: f2
@@ -282,306 +281,306 @@ CP43:
   eva_id: '32'
   openfing_id: f3
 '1173':
-  inactive: true
+  category: 'inactive'
 '1131':
   eva_id: '318'
   short_name: Intro. a la Física Moderna
 CEX28:
-  revalid: true
+  category: 'revalid'
 CE11:
-  revalid: true
+  category: 'revalid'
 CE2:
-  revalid: true
+  category: 'revalid'
 FA8:
-  revalid: true
+  category: 'revalid'
 FF10:
-  revalid: true
+  category: 'revalid'
 FG:
-  revalid: true
+  category: 'revalid'
 FG2:
-  revalid: true
+  category: 'revalid'
 FIS14:
-  revalid: true
+  category: 'revalid'
 FIS8:
-  revalid: true
+  category: 'revalid'
 FI10:
-  revalid: true
+  category: 'revalid'
 FL1:
-  revalid: true
+  category: 'revalid'
 FL2:
-  revalid: true
+  category: 'revalid'
 FL8:
-  revalid: true
+  category: 'revalid'
 F2:
-  revalid: true
+  category: 'revalid'
 F66:
-  revalid: true
+  category: 'revalid'
 SRN17:
-  external: true
+  category: 'external'
 '1373':
-  inactive: true
+  category: 'inactive'
 1322T:
-  inactive: true
+  category: 'inactive'
 PR4:
-  revalid: true
+  category: 'revalid'
 PR10:
-  revalid: true
+  category: 'revalid'
 '1354':
   eva_id: '138'
-  semester: 7
+  category: 'seventh_semester'
 '1334':
-  inactive: true
+  category: 'inactive'
 CP380:
-  inactive: true
+  category: 'inactive'
 '1343':
-  inactive: true
+  category: 'inactive'
 '1351':
-  inactive: true
+  category: 'inactive'
 CP52:
-  inactive: true
+  category: 'inactive'
 CP24:
-  inactive: true
+  category: 'inactive'
 '1345':
-  inactive: true
+  category: 'inactive'
 '1331':
   eva_id: '789'
 CP36:
-  inactive: true
+  category: 'inactive'
 '1315':
-  inactive: true
+  category: 'inactive'
 '1316':
   eva_id: '205'
   short_name: Intro. a la Computación Gráfica
 '1332':
-  inactive: true
+  category: 'inactive'
 '1333':
   short_name: Programación Genérica
 '1338':
-  inactive: true
+  category: 'inactive'
 '1330':
-  inactive: true
+  category: 'inactive'
 '1341':
-  inactive: true
+  category: 'inactive'
 '1348':
-  inactive: true
+  category: 'inactive'
 CP32:
-  inactive: true
+  category: 'inactive'
 CP384:
-  inactive: true
+  category: 'inactive'
 '1350':
   eva_id: '965'
   short_name: Prog. Funcional Avanzada
 CP9:
-  inactive: true
+  category: 'inactive'
 CP37:
-  inactive: true
+  category: 'inactive'
 CP15:
-  inactive: true
+  category: 'inactive'
 CP38:
-  inactive: true
+  category: 'inactive'
 CP29:
-  inactive: true
+  category: 'inactive'
 CP374:
-  inactive: true
+  category: 'inactive'
 '1340':
   eva_id: '293'
   openfing_id: pl
-  semester: 7
+  category: 'seventh_semester'
 '1320':
-  inactive: true
+  category: 'inactive'
 '1322':
   eva_id: '58'
   openfing_id: p1
-  semester: 2
+  category: 'second_semester'
 '1372':
-  inactive: true
+  category: 'inactive'
 '1321':
   eva_id: '132'
   openfing_id: p2
-  semester: 3
+  category: 'third_semester'
 '1323':
   eva_id: '39'
   openfing_id: prog3-2018
-  semester: 4
+  category: 'fourth_semester'
 '1324':
   eva_id: '413'
   openfing_id: p4
-  semester: 5
+  category: 'fifth_semester'
 '1342':
-  inactive: true
+  category: 'inactive'
 '1314':
-  inactive: true
+  category: 'inactive'
 CP5:
-  inactive: true
+  category: 'inactive'
 CP10:
-  inactive: true
+  category: 'inactive'
 CP30:
-  inactive: true
+  category: 'inactive'
 CP382:
-  inactive: true
+  category: 'inactive'
 '1336':
   eva_id: '812'
 CP33:
-  inactive: true
+  category: 'inactive'
 '1325':
   eva_id: '687'
   openfing_id: tl
-  semester: 5
+  category: 'fifth_semester'
 CP365:
-  inactive: true
+  category: 'inactive'
 '1335':
-  inactive: true
+  category: 'inactive'
 '1339':
-  inactive: true
+  category: 'inactive'
 PA7:
-  revalid: true
+  category: 'revalid'
 PP6:
-  revalid: true
+  category: 'revalid'
 PR3:
-  revalid: true
+  category: 'revalid'
 PR6:
-  revalid: true
+  category: 'revalid'
 PR7:
-  revalid: true
+  category: 'revalid'
 PR8:
-  revalid: true
+  category: 'revalid'
 '1536':
-  inactive: true
+  category: 'inactive'
 GP6:
-  inactive: true
+  category: 'inactive'
 '1545':
   eva_id: '938'
 AR20:
-  revalid: true
+  category: 'revalid'
 '1454':
-  inactive: true
+  category: 'inactive'
 AR12:
-  revalid: true
+  category: 'revalid'
 AR015:
-  revalid: true
+  category: 'revalid'
 AR6:
-  revalid: true
+  category: 'revalid'
 '1453':
-  inactive: true
+  category: 'inactive'
 '1440':
   eva_id: '145'
   short_name: ADADR
 '1443':
   eva_id: '195'
   openfing_id: ac
-  semester: 4
+  category: 'fourth_semester'
 '1424':
-  inactive: true
+  category: 'inactive'
 '1425':
-  inactive: true
+  category: 'inactive'
 CP28:
-  inactive: true
+  category: 'inactive'
 CP383:
-  inactive: true
+  category: 'inactive'
 '1444':
   eva_id: '247'
   short_name: AARC
 '5813':
-  inactive: true
+  category: 'inactive'
 '1447':
   eva_id: '1076'
   short_name: GPGPU
 '1427':
-  inactive: true
+  category: 'inactive'
 '1415':
-  inactive: true
+  category: 'inactive'
 '1430':
-  inactive: true
+  category: 'inactive'
 '1434':
   eva_id: '1064'
   openfing_id: hpc
   short_name: Comp. de Alta Performance
 CP364:
-  inactive: true
+  category: 'inactive'
 '1441':
-  inactive: true
+  category: 'inactive'
 CP51:
-  inactive: true
+  category: 'inactive'
 1512C:
-  inactive: true
+  category: 'inactive'
 '1429':
-  inactive: true
+  category: 'inactive'
 '1412':
-  inactive: true
+  category: 'inactive'
 '1436':
-  inactive: true
+  category: 'inactive'
 '5915':
-  inactive: true
+  category: 'inactive'
 '5916':
   eva_id: '399'
   short_name: FSI
 '1403':
-  inactive: true
+  category: 'inactive'
 '1416':
-  inactive: true
+  category: 'inactive'
 '1431':
-  inactive: true
+  category: 'inactive'
 '1432':
   eva_id: '412'
   short_name: Intro. a la Teo. de la Info.
 1513C:
-  inactive: true
+  category: 'inactive'
 '1446':
   eva_id: '335'
   openfing_id: redes
-  semester: 6
+  category: 'sixth_semester'
 '1442':
   eva_id: '146'
 CP31:
-  inactive: true
+  category: 'inactive'
 '1511':
-  inactive: true
+  category: 'inactive'
 '1518':
-  inactive: true
+  category: 'inactive'
 '1532':
-  inactive: true
+  category: 'inactive'
 '1537':
   eva_id: '720'
-  semester: 5
+  category: 'fifth_semester'
 CP372:
-  inactive: true
+  category: 'inactive'
 '1445':
   short_name: Taller de Arqui. de Comp.
 '1439':
-  inactive: true
+  category: 'inactive'
 '1449':
   eva_id: '1136'
 '1437':
   eva_id: '324'
 '1535':
-  inactive: true
+  category: 'inactive'
 '1542':
   eva_id: '708'
   openfing_id: so
 '1426':
-  inactive: true
+  category: 'inactive'
 AA9:
-  revalid: true
+  category: 'revalid'
 AR15:
-  revalid: true
+  category: 'revalid'
 AR30:
-  revalid: true
+  category: 'revalid'
 AR8:
-  revalid: true
+  category: 'revalid'
 SRN30:
-  external: true
+  category: 'external'
 '1866':
   eva_id: '43'
 '1820':
-  inactive: true
+  category: 'inactive'
 '1827':
-  inactive: true
+  category: 'inactive'
 '1849':
   eva_id: '312'
 '1832':
-  inactive: true
+  category: 'inactive'
 '1821':
-  inactive: true
+  category: 'inactive'
 '1835':
   eva_id: '654'
   openfing_id: gf
@@ -594,33 +593,33 @@ SRN30:
   eva_id: '186'
   short_name: Robótica Basada en Comp.
 '5912':
-  inactive: true
+  category: 'inactive'
 IAR6:
-  revalid: true
+  category: 'revalid'
 1937T:
-  inactive: true
+  category: 'inactive'
 GP1:
-  inactive: true
+  category: 'inactive'
 GP2:
-  inactive: true
+  category: 'inactive'
 '1949':
   eva_id: '947'
   short_name: BDNR
 '1948':
   eva_id: '61'
 BD15:
-  revalid: true
+  category: 'revalid'
 BD05:
-  revalid: true
+  category: 'revalid'
 BD015:
-  revalid: true
+  category: 'revalid'
 '1918':
   eva_id: '785'
   short_name: Admin. y Seguridad de Sist.
 CP362:
-  inactive: true
+  category: 'inactive'
 '1916':
-  inactive: true
+  category: 'inactive'
 '1939':
   eva_id: '648'
   short_name: Data Warehouse
@@ -628,7 +627,7 @@ CP362:
   eva_id: '330'
   openfing_id: fbd
   short_name: Bases de datos
-  semester: 6
+  category: 'sixth_semester'
 '1942':
   eva_id: '536'
   short_name: Web semántica
@@ -638,66 +637,66 @@ CP362:
 '1941':
   eva_id: '664'
 '1919':
-  inactive: true
+  category: 'inactive'
 '1934':
-  inactive: true
+  category: 'inactive'
 CP378:
-  inactive: true
+  category: 'inactive'
 '1938':
   eva_id: '821'
   short_name: Webir
 '1943':
-  inactive: true
+  category: 'inactive'
 '1931':
-  inactive: true
+  category: 'inactive'
 '1917':
-  inactive: true
+  category: 'inactive'
 '1933':
   eva_id: '105'
   short_name: TAGSI
 '1929':
-  inactive: true
+  category: 'inactive'
 BDSI6:
-  revalid: true
+  category: 'revalid'
 BD10:
-  revalid: true
+  category: 'revalid'
 BD5:
-  revalid: true
+  category: 'revalid'
 BD8:
-  revalid: true
+  category: 'revalid'
 BD9:
-  revalid: true
+  category: 'revalid'
 CN6:
-  revalid: true
+  category: 'revalid'
 '1040':
-  inactive: true
+  category: 'inactive'
 '5914':
   eva_id: '1143'
 '1054':
-  inactive: true
+  category: 'inactive'
 CP377:
-  inactive: true
+  category: 'inactive'
 CP379:
-  inactive: true
+  category: 'inactive'
 CP16:
-  inactive: true
+  category: 'inactive'
 CP376:
-  inactive: true
+  category: 'inactive'
 '1041':
-  inactive: true
+  category: 'inactive'
 '1055':
   eva_id: '24'
-  inactive: true
+  category: 'inactive'
 '1033':
   eva_id: '62'
   openfing_id: metn
-  semester: 4
+  category: 'fourth_semester'
 '1079':
-  inactive: true
+  category: 'inactive'
 '1048':
-  inactive: true
+  category: 'inactive'
 CN3:
-  revalid: true
+  category: 'revalid'
 '1779':
   eva_id: '38'
   short_name: Invest. Oper. y Gest. de Riesgos
@@ -705,16 +704,16 @@ CN3:
   eva_id: '1049'
   openfing_id: ae
 GP7:
-  inactive: true
+  category: 'inactive'
 '1635':
   eva_id: '38'
   short_name: MOR
 '1625':
-  inactive: true
+  category: 'inactive'
 '1435':
   eva_id: '1083'
 '1621':
-  inactive: true
+  category: 'inactive'
 '1631':
   eva_id: '269'
   short_name: Fund. de Prog. Entera
@@ -722,47 +721,47 @@ GP7:
   eva_id: '994'
   openfing_id: iio
   short_name: IIO
-  semester: 5
+  category: 'fifth_semester'
 '1629':
-  inactive: true
+  category: 'inactive'
 '1623':
-  inactive: true
+  category: 'inactive'
 CP27:
-  inactive: true
+  category: 'inactive'
 CP320:
-  inactive: true
+  category: 'inactive'
 CP373:
-  inactive: true
+  category: 'inactive'
 CP381:
-  inactive: true
+  category: 'inactive'
 CP385:
-  inactive: true
+  category: 'inactive'
 '1624':
   eva_id: '1070'
 '1626':
-  inactive: true
+  category: 'inactive'
 '1632':
   eva_id: '397'
   short_name: Opt. Bajo Incertidumbre
 '1627':
-  inactive: true
+  category: 'inactive'
 '1617':
   eva_id: '191'
 IO20:
-  revalid: true
+  category: 'revalid'
 IO8:
-  revalid: true
+  category: 'revalid'
 1758T:
-  inactive: true
+  category: 'inactive'
 '1732':
-  inactive: true
+  category: 'inactive'
 '1737':
-  inactive: true
+  category: 'inactive'
 '1716':
   eva_id: '613'
   openfing_id: iis19
   short_name: IIS
-  semester: 7
+  category: 'seventh_semester'
 '1749':
   eva_id: '1121'
   short_name: Inter. Persona Computadora
@@ -770,89 +769,89 @@ IO8:
   eva_id: '633'
   short_name: Proc. Pers. de Software
 '1728':
-  inactive: true
+  category: 'inactive'
 '1758':
   eva_id: '652'
   short_name: Relac. Pers. en IS
 '1750':
-  inactive: true
+  category: 'inactive'
 '1768':
   short_name: Taller de Inter. Pers. Comp.
 '1752':
-  inactive: true
+  category: 'inactive'
 '1742':
   eva_id: '722'
   short_name: Taller de Verificación de Sw
 CP366:
-  inactive: true
+  category: 'inactive'
 IS14:
-  revalid: true
+  category: 'revalid'
 SFW10:
-  revalid: true
+  category: 'revalid'
 BTI29:
-  revalid: true
+  category: 'revalid'
 BT31:
-  revalid: true
+  category: 'revalid'
 BTI33:
-  revalid: true
+  category: 'revalid'
 BTI23:
-  revalid: true
+  category: 'revalid'
 BTI31:
-  revalid: true
+  category: 'revalid'
 ATI3:
-  revalid: true
+  category: 'revalid'
 BTI38:
-  revalid: true
+  category: 'revalid'
 AA28:
-  revalid: true
+  category: 'revalid'
 A028:
-  revalid: true
+  category: 'revalid'
 AI10:
-  revalid: true
+  category: 'revalid'
 BT28:
-  revalid: true
+  category: 'revalid'
 A28:
-  revalid: true
+  category: 'revalid'
 AI28:
-  revalid: true
+  category: 'revalid'
 '1753':
-  extension_module: true
+  category: 'extension_module'
 '1754':
-  extension_module: true
+  category: 'extension_module'
 '1755':
-  extension_module: true
+  category: 'extension_module'
 '1756':
-  extension_module: true
+  category: 'extension_module'
 '1757':
-  extension_module: true
+  category: 'extension_module'
 '1731':
   eva_id: '702'
   short_name: Pasantía
 '1730':
   eva_id: '627'
-  semester: 9
+  category: 'nineth_semester'
 '1721':
   eva_id: '573'
   short_name: PIS
-  semester: 8
+  category: 'eighth_semester'
 '5705':
   eva_id: '578'
   short_name: Semin. de Ing. Biomédica
 '1748':
-  inactive: true
+  category: 'inactive'
 '1733':
-  inactive: true
+  category: 'inactive'
 '1766':
   eva_id: '423'
   short_name: TBPM
 '1739':
-  inactive: true
+  category: 'inactive'
 '1327':
   eva_id: '315'
   openfing_id: tp
-  semester: 6
+  category: 'sixth_semester'
 '1925':
-  inactive: true
+  category: 'inactive'
 '1751':
   eva_id: '402'
   short_name: TSI 1
@@ -862,37 +861,37 @@ AI28:
 '1741':
   short_name: TSI 4
 '5823':
-  inactive: true
+  category: 'inactive'
 CP71:
-  inactive: true
+  category: 'inactive'
 CP363:
-  inactive: true
+  category: 'inactive'
 '1734':
-  inactive: true
+  category: 'inactive'
 '1735':
   eva_id: '485'
   short_name: TSI 2
 CP221:
-  inactive: true
+  category: 'inactive'
 AT10:
-  revalid: true
+  category: 'revalid'
 AT28:
-  revalid: true
+  category: 'revalid'
 AT3:
-  revalid: true
+  category: 'revalid'
 AT7:
-  revalid: true
+  category: 'revalid'
 TP25:
-  revalid: true
+  category: 'revalid'
 '1776':
   eva_id: '429'
   short_name: Taller de SIG
 '2401':
-  inactive: true
+  category: 'inactive'
 AT010:
-  inactive: true
+  category: 'inactive'
 GO10:
-  revalid: true
+  category: 'revalid'
 '1543':
   eva_id: '725'
   short_name: Int. al Negocio del SW
@@ -900,120 +899,120 @@ GO10:
   eva_id: '778'
   openfing_id: agpi
   short_name: AGPI
-  semester: 7
+  category: 'seventh_semester'
 '1510':
   eva_id: '49'
 '1901':
-  inactive: true
+  category: 'inactive'
 '1921':
-  inactive: true
+  category: 'inactive'
 '1940':
   eva_id: '156'
 '1507':
-  inactive: true
+  category: 'inactive'
 CP375:
-  inactive: true
+  category: 'inactive'
 '1930':
-  inactive: true
+  category: 'inactive'
 '1514':
-  inactive: true
+  category: 'inactive'
 '1945':
   eva_id: '779'
   short_name: PAI
-  semester: 8
+  category: 'eighth_semester'
 GA10:
-  revalid: true
+  category: 'revalid'
 GO6:
-  revalid: true
+  category: 'revalid'
 GO8:
-  revalid: true
+  category: 'revalid'
 GO9:
-  revalid: true
+  category: 'revalid'
 SRN13:
-  external: true
+  category: 'external'
 FD1:
-  inactive: true
+  category: 'inactive'
 C216:
-  inactive: true
+  category: 'inactive'
 AT002:
-  inactive: true
+  category: 'inactive'
 558EU:
-  inactive: true
+  category: 'inactive'
 CHU10:
-  revalid: true
+  category: 'revalid'
 CHS10:
-  revalid: true
+  category: 'revalid'
 CH5:
-  revalid: true
+  category: 'revalid'
 GP3:
-  inactive: true
+  category: 'inactive'
 CH08:
-  revalid: true
+  category: 'revalid'
 CH3:
-  revalid: true
+  category: 'revalid'
 CH04:
-  revalid: true
+  category: 'revalid'
 '1229':
-  inactive: true
+  category: 'inactive'
 '1223':
   short_name: CTS
 '1230':
-  inactive: true
+  category: 'inactive'
 '1224':
   eva_id: '1093'
   openfing_id: eco
-  semester: 4
+  category: 'fourth_semester'
 '1221':
-  inactive: true
+  category: 'inactive'
 CP20:
-  inactive: true
+  category: 'inactive'
 CP174:
-  inactive: true
+  category: 'inactive'
 '1225':
   short_name: Politicas Científicas
-  semester: 8
+  category: 'eighth_semester'
 CP18:
-  inactive: true
+  category: 'inactive'
 CH1:
-  revalid: true
+  category: 'revalid'
 CH10:
-  revalid: true
+  category: 'revalid'
 CH4:
-  revalid: true
+  category: 'revalid'
 CH6:
-  revalid: true
+  category: 'revalid'
 CH8:
-  revalid: true
+  category: 'revalid'
 SRN22:
-  external: true
+  category: 'external'
 SRN25:
-  external: true
+  category: 'external'
 736EU:
-  inactive: true
+  category: 'inactive'
 836EU:
-  inactive: true
+  category: 'inactive'
 AT023:
-  inactive: true
+  category: 'inactive'
 AT021:
-  inactive: true
+  category: 'inactive'
 816EU:
-  inactive: true
+  category: 'inactive'
 2107A:
-  inactive: true
+  category: 'inactive'
 AT003:
-  inactive: true
+  category: 'inactive'
 AT009:
-  inactive: true
+  category: 'inactive'
 MOP8:
-  revalid: true
+  category: 'revalid'
 '2216':
-  inactive: true
+  category: 'inactive'
 '1951':
-  inactive: true
+  category: 'inactive'
 GP4:
-  inactive: true
+  category: 'inactive'
 '2040':
-  inactive: true
+  category: 'inactive'
 '1438':
   eva_id: '20'
   short_name: ATIPI
@@ -1021,200 +1020,200 @@ GP4:
   eva_id: '589'
   short_name: Imágenes Médicas
 '1760':
-  extension_module: true
+  category: 'extension_module'
 '1761':
-  extension_module: true
+  category: 'extension_module'
 '1762':
-  extension_module: true
+  category: 'extension_module'
 '1763':
-  extension_module: true
+  category: 'extension_module'
 '2222':
-  inactive: true
+  category: 'inactive'
 MOP1:
-  revalid: true
+  category: 'revalid'
 MOP10:
-  revalid: true
+  category: 'revalid'
 MOP20:
-  revalid: true
+  category: 'revalid'
 MOP30:
-  revalid: true
+  category: 'revalid'
 '2241':
-  inactive: true
+  category: 'inactive'
 C350:
-  inactive: true
+  category: 'inactive'
 1025P:
-  revalid: true
+  category: 'revalid'
 1446P:
-  revalid: true
+  category: 'revalid'
 107L:
-  inactive: true
+  category: 'inactive'
 170Q:
-  inactive: true
+  category: 'inactive'
 M13:
-  revalid: true
+  category: 'revalid'
 1020P:
-  revalid: true
+  category: 'revalid'
 1061P:
-  revalid: true
+  category: 'revalid'
 1443P:
-  revalid: true
+  category: 'revalid'
 1322P:
-  revalid: true
+  category: 'revalid'
 1321P:
-  revalid: true
+  category: 'revalid'
 M14:
-  revalid: true
+  category: 'revalid'
 1063P:
-  revalid: true
+  category: 'revalid'
 1024P:
-  revalid: true
+  category: 'revalid'
 MA47:
-  revalid: true
+  category: 'revalid'
 172Q:
-  inactive: true
+  category: 'inactive'
 1062P:
-  revalid: true
+  category: 'revalid'
 CM14:
-  revalid: true
+  category: 'revalid'
 1030P:
-  revalid: true
+  category: 'revalid'
 171L:
-  inactive: true
+  category: 'inactive'
 171Q:
-  inactive: true
+  category: 'inactive'
 176Q:
-  inactive: true
+  category: 'inactive'
 MAT14:
-  revalid: true
+  category: 'revalid'
 MA51:
-  revalid: true
+  category: 'revalid'
 1020R:
-  revalid: true
+  category: 'revalid'
 1023P:
-  revalid: true
+  category: 'revalid'
 MA09:
-  revalid: true
+  category: 'revalid'
 1031P:
-  revalid: true
+  category: 'revalid'
 CP102:
-  inactive: true
+  category: 'inactive'
 1510R:
-  revalid: true
+  category: 'revalid'
 CQ3:
-  inactive: true
+  category: 'inactive'
 158Q:
-  inactive: true
+  category: 'inactive'
 FF12:
-  revalid: true
+  category: 'revalid'
 F10:
-  revalid: true
+  category: 'revalid'
 1120P:
-  revalid: true
+  category: 'revalid'
 1151P:
-  revalid: true
+  category: 'revalid'
 M1020:
-  revalid: true
+  category: 'revalid'
 1152P:
-  revalid: true
+  category: 'revalid'
 F7:
-  revalid: true
+  category: 'revalid'
 F8:
-  revalid: true
+  category: 'revalid'
 1153P:
-  revalid: true
+  category: 'revalid'
 CP13:
-  inactive: true
+  category: 'inactive'
 1036R:
-  revalid: true
+  category: 'revalid'
 '1036':
-  inactive: true
+  category: 'inactive'
 1911P:
-  revalid: true
+  category: 'revalid'
 '1906':
-  inactive: true
+  category: 'inactive'
 1716P:
-  revalid: true
+  category: 'revalid'
 CR10:
-  revalid: true
+  category: 'revalid'
 B11:
-  inactive: true
+  category: 'inactive'
 R101:
-  inactive: true
+  category: 'inactive'
 B101:
-  inactive: true
+  category: 'inactive'
 IN35:
-  inactive: true
+  category: 'inactive'
 PR27:
-  revalid: true
+  category: 'revalid'
 1758P:
-  revalid: true
+  category: 'revalid'
 1937P:
-  revalid: true
+  category: 'revalid'
 CP350:
-  inactive: true
+  category: 'inactive'
 1061I:
-  inactive: true
+  category: 'inactive'
 1061R:
-  inactive: true
+  category: 'inactive'
 108L:
-  inactive: true
+  category: 'inactive'
 1022P:
-  revalid: true
+  category: 'revalid'
 1022T:
-  inactive: true
+  category: 'inactive'
 CP144:
-  inactive: true
+  category: 'inactive'
 '1408':
-  inactive: true
+  category: 'inactive'
 '1411':
-  inactive: true
+  category: 'inactive'
 C402:
-  inactive: true
+  category: 'inactive'
 1224P:
-  revalid: true
+  category: 'revalid'
 1028M:
-  revalid: true
+  category: 'revalid'
 1028P:
-  revalid: true
+  category: 'revalid'
 FIS13:
-  revalid: true
+  category: 'revalid'
 FI13:
-  revalid: true
+  category: 'revalid'
 F1Y3:
-  revalid: true
+  category: 'revalid'
 F30:
-  revalid: true
+  category: 'revalid'
 117Q:
-  inactive: true
+  category: 'inactive'
 MA7:
-  revalid: true
+  category: 'revalid'
 1328P:
-  revalid: true
+  category: 'revalid'
 125L:
-  inactive: true
+  category: 'inactive'
 175Q:
-  inactive: true
+  category: 'inactive'
 1640P:
-  revalid: true
+  category: 'revalid'
 1945P:
-  revalid: true
+  category: 'revalid'
 1324P:
-  revalid: true
+  category: 'revalid'
 1721P:
-  revalid: true
+  category: 'revalid'
 1781P:
-  revalid: true
+  category: 'revalid'
 R100:
-  inactive: true
+  category: 'inactive'
 '1435':
-  inactive: true
+  category: 'inactive'
 '1628':
-  inactive: true
+  category: 'inactive'
 '1771':
-  inactive: true
+  category: 'inactive'
 '1906':
-  inactive: true
+  category: 'inactive'
 '1921':
-  inactive: true
+  category: 'inactive'
 '1940':
-  inactive: true
+  category: 'inactive'
