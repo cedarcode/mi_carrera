@@ -14,7 +14,7 @@ module SubjectsHelper
     when 'optional' then 'Materias opcionales'
     when 'revalid' then 'Reválidas'
     when 'outside_montevideo' then 'Materias dictadas en institutos del interior'
-    when 'extension_module' then 'Módulos de Taller y Extensión'
+    when 'extension_module' then 'Módulos de taller y extensión'
     end
   end
 
