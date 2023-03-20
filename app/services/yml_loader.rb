@@ -40,7 +40,7 @@ module YmlLoader
     # destroy all prerequisites
     Prerequisite.destroy_all
 
-    prerequisites["prerequisites"].each do |prerequisite|
+    prerequisites.each do |prerequisite|
       puts "Updating prerequisite of subject #{prerequisite["subject_code"]}, is_exam: #{prerequisite["is_exam"]}"
       subject = Subject.find_by(code: prerequisite["subject_code"])
       approvable = prerequisite["is_exam"] ? subject.exam : subject.course

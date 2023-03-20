@@ -1,5 +1,4 @@
 ---
-prerequisites:
 - type: logical
   logical_operator: and
   operands:
