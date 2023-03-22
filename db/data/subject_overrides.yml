@@ -1,279 +1,279 @@
 ---
 CIM22:
-  hidden_by_default: true
+  category: 'inactive'
 SRN14:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 CIM11:
-  hidden_by_default: true
+  category: 'inactive'
 CH201:
-  hidden_by_default: true
+  category: 'inactive'
 CIM24:
-  hidden_by_default: true
+  category: 'inactive'
 CIM10:
-  hidden_by_default: true
+  category: 'inactive'
 SRN09:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 SRN02:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 SRN10:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 SRN03:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 1025T:
-  hidden_by_default: true
+  category: 'inactive'
 D87:
-  hidden_by_default: true
+  category: 'inactive'
 MI2:
-  semester: 1
+  category: 'first_semester'
 M09:
-  hidden_by_default: true
+  category: 'revalid'
 M5:
-  hidden_by_default: true
+  category: 'revalid'
 GP5:
-  hidden_by_default: true
+  category: 'inactive'
 MA015:
-  hidden_by_default: true
+  category: 'revalid'
 MA48:
-  hidden_by_default: true
+  category: 'revalid'
 MA11:
-  hidden_by_default: true
+  category: 'revalid'
 MA020:
-  hidden_by_default: true
+  category: 'revalid'
 CAL12:
-  hidden_by_default: true
+  category: 'revalid'
 '2415':
-  hidden_by_default: true
+  category: 'inactive'
 CAL10:
-  hidden_by_default: true
+  category: 'revalid'
 CP7:
-  hidden_by_default: true
+  category: 'inactive'
 CP1:
-  hidden_by_default: true
+  category: 'inactive'
 CP22:
-  hidden_by_default: true
+  category: 'inactive'
 CP44:
-  hidden_by_default: true
+  category: 'inactive'
 CP45:
-  hidden_by_default: true
+  category: 'inactive'
 CP6:
-  hidden_by_default: true
+  category: 'inactive'
 CP25:
-  hidden_by_default: true
+  category: 'inactive'
 CP48:
-  hidden_by_default: true
+  category: 'inactive'
 CP49:
-  hidden_by_default: true
+  category: 'inactive'
 '1061':
   eva_id: '1024'
   openfing_id: civ
   short_name: Cálculo DIV
-  semester: 1
+  category: 'first_semester'
 '1020':
   eva_id: '74'
   openfing_id: c1
-  hidden_by_default: true
+  category: 'inactive'
 '1070':
-  hidden_by_default: true
+  category: 'inactive'
 '1052':
-  hidden_by_default: true
+  category: 'inactive'
 '1062':
   eva_id: '1131'
   openfing_id: cdivv
   short_name: Cálculo DIVV
-  semester: 2
+  category: 'second_semester'
 '1022':
   eva_id: '319'
   openfing_id: c2
-  hidden_by_default: true
+  category: 'inactive'
 '1072':
-  hidden_by_default: true
+  category: 'inactive'
 '1063':
   eva_id: '1183'
   openfing_id: calcvec
 '1024':
   eva_id: '129'
   openfing_id: c3
-  hidden_by_default: true
+  category: 'inactive'
 '1076':
-  hidden_by_default: true
+  category: 'inactive'
 '1021':
-  hidden_by_default: true
+  category: 'inactive'
 CP2:
-  hidden_by_default: true
+  category: 'inactive'
 CP23:
-  hidden_by_default: true
+  category: 'inactive'
 CP46:
-  hidden_by_default: true
+  category: 'inactive'
 CP47:
-  hidden_by_default: true
+  category: 'inactive'
 '1030':
   eva_id: '256'
   openfing_id: gal1
   short_name: GAL 1
-  semester: 1
+  category: 'first_semester'
 '1071':
-  hidden_by_default: true
+  category: 'inactive'
 '1053':
-  hidden_by_default: true
+  category: 'inactive'
 '1031':
   eva_id: '270'
   openfing_id: gal2
   short_name: GAL 2
-  semester: 2
+  category: 'second_semester'
 '1058':
-  hidden_by_default: true
+  category: 'inactive'
 '1059':
-  hidden_by_default: true
+  category: 'inactive'
 '1049':
-  hidden_by_default: true
+  category: 'inactive'
 C461:
-  hidden_by_default: true
+  category: 'inactive'
 CP4:
-  hidden_by_default: true
+  category: 'inactive'
 '1027':
   eva_id: '394'
   openfing_id: logica19
-  semester: 3
+  category: 'third_semester'
 '1010':
-  hidden_by_default: true
+  category: 'inactive'
 '1023':
   eva_id: '323'
   openfing_id: md1
-  semester: 1
+  category: 'first_semester'
 '1026':
   eva_id: '267'
   openfing_id: md2
-  semester: 2
+  category: 'second_semester'
 '1028':
   eva_id: '342'
   openfing_id: ed
-  hidden_by_default: true
+  category: 'inactive'
 '1074':
-  hidden_by_default: true
+  category: 'inactive'
 '1025':
   eva_id: '54'
   openfing_id: pye18
-  semester: 3
+  category: 'third_semester'
 '1075':
-  hidden_by_default: true
+  category: 'inactive'
 '1043':
-  hidden_by_default: true
+  category: 'inactive'
 '1042':
   eva_id: '134'
-  hidden_by_default: true
+  category: 'inactive'
   short_name: Cód. Algebr. para Correc. de Err.
 '1046':
-  hidden_by_default: true
+  category: 'inactive'
 '1037':
-  hidden_by_default: true
+  category: 'inactive'
 '1034':
-  hidden_by_default: true
+  category: 'inactive'
 '1233':
-  hidden_by_default: true
+  category: 'inactive'
 GAL7:
-  hidden_by_default: true
+  category: 'revalid'
 MAT10:
-  hidden_by_default: true
+  category: 'revalid'
 MAT33:
-  hidden_by_default: true
+  category: 'revalid'
 MAT6:
-  hidden_by_default: true
+  category: 'revalid'
 MAT8:
-  hidden_by_default: true
+  category: 'revalid'
 MA10:
-  hidden_by_default: true
+  category: 'revalid'
 MA15:
-  hidden_by_default: true
+  category: 'revalid'
 MA16:
-  hidden_by_default: true
+  category: 'revalid'
 MA20:
-  hidden_by_default: true
+  category: 'revalid'
 MA24:
-  hidden_by_default: true
+  category: 'revalid'
 MA25:
-  hidden_by_default: true
+  category: 'revalid'
 MA29:
-  hidden_by_default: true
+  category: 'revalid'
 MA3:
-  hidden_by_default: true
+  category: 'revalid'
 MA5:
-  hidden_by_default: true
+  category: 'revalid'
 MA9:
-  hidden_by_default: true
+  category: 'revalid'
 MC13:
-  hidden_by_default: true
+  category: 'revalid'
 MC3:
-  hidden_by_default: true
+  category: 'revalid'
 MEC:
-  hidden_by_default: true
+  category: 'revalid'
 M1:
-  hidden_by_default: true
+  category: 'revalid'
 M12:
-  hidden_by_default: true
+  category: 'revalid'
 M24:
-  hidden_by_default: true
+  category: 'revalid'
 M9:
-  hidden_by_default: true
+  category: 'revalid'
 SRN26:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 SRN11:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 REF04:
-  hidden_by_default: true
+  category: 'inactive'
 MHC16:
-  hidden_by_default: true
+  category: 'inactive'
 MHC24:
-  hidden_by_default: true
+  category: 'inactive'
 MHC20:
-  hidden_by_default: true
+  category: 'inactive'
 M000:
-  hidden_by_default: true
+  category: 'inactive'
 203EU:
-  hidden_by_default: true
+  category: 'inactive'
 M001:
-  hidden_by_default: true
+  category: 'inactive'
 CE5:
-  hidden_by_default: true
+  category: 'revalid'
 CE10:
-  hidden_by_default: true
+  category: 'revalid'
 FA4:
-  hidden_by_default: true
+  category: 'revalid'
 CE12:
-  hidden_by_default: true
+  category: 'revalid'
 CP217:
-  hidden_by_default: true
+  category: 'inactive'
 CP26:
-  hidden_by_default: true
+  category: 'inactive'
 CP40:
-  hidden_by_default: true
+  category: 'inactive'
 CP3:
-  hidden_by_default: true
+  category: 'inactive'
 CP17:
-  hidden_by_default: true
+  category: 'inactive'
 CP8:
-  hidden_by_default: true
+  category: 'inactive'
 '1120':
-  hidden_by_default: true
+  category: 'inactive'
 '1170':
-  hidden_by_default: true
+  category: 'inactive'
 '1121':
-  hidden_by_default: true
+  category: 'inactive'
 '1172':
-  hidden_by_default: true
+  category: 'inactive'
 CP41:
-  hidden_by_default: true
+  category: 'inactive'
 CP42:
-  hidden_by_default: true
+  category: 'inactive'
 CP43:
-  hidden_by_default: true
+  category: 'inactive'
 '1151':
   eva_id: '87'
   openfing_id: f1-2018
-  semester: 3
+  category: 'third_semester'
 '1171':
-  hidden_by_default: true
+  category: 'inactive'
 '1077':
-  hidden_by_default: true
+  category: 'inactive'
 '1152':
   eva_id: '32'
   openfing_id: f2
@@ -281,306 +281,306 @@ CP43:
   eva_id: '32'
   openfing_id: f3
 '1173':
-  hidden_by_default: true
+  category: 'inactive'
 '1131':
   eva_id: '318'
   short_name: Intro. a la Física Moderna
 CEX28:
-  hidden_by_default: true
+  category: 'revalid'
 CE11:
-  hidden_by_default: true
+  category: 'revalid'
 CE2:
-  hidden_by_default: true
+  category: 'revalid'
 FA8:
-  hidden_by_default: true
+  category: 'revalid'
 FF10:
-  hidden_by_default: true
+  category: 'revalid'
 FG:
-  hidden_by_default: true
+  category: 'revalid'
 FG2:
-  hidden_by_default: true
+  category: 'revalid'
 FIS14:
-  hidden_by_default: true
+  category: 'revalid'
 FIS8:
-  hidden_by_default: true
+  category: 'revalid'
 FI10:
-  hidden_by_default: true
+  category: 'revalid'
 FL1:
-  hidden_by_default: true
+  category: 'revalid'
 FL2:
-  hidden_by_default: true
+  category: 'revalid'
 FL8:
-  hidden_by_default: true
+  category: 'revalid'
 F2:
-  hidden_by_default: true
+  category: 'revalid'
 F66:
-  hidden_by_default: true
+  category: 'revalid'
 SRN17:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 '1373':
-  hidden_by_default: true
+  category: 'inactive'
 1322T:
-  hidden_by_default: true
+  category: 'inactive'
 PR4:
-  hidden_by_default: true
+  category: 'revalid'
 PR10:
-  hidden_by_default: true
+  category: 'revalid'
 '1354':
   eva_id: '138'
-  semester: 7
+  category: 'seventh_semester'
 '1334':
-  hidden_by_default: true
+  category: 'inactive'
 CP380:
-  hidden_by_default: true
+  category: 'inactive'
 '1343':
-  hidden_by_default: true
+  category: 'inactive'
 '1351':
-  hidden_by_default: true
+  category: 'inactive'
 CP52:
-  hidden_by_default: true
+  category: 'inactive'
 CP24:
-  hidden_by_default: true
+  category: 'inactive'
 '1345':
-  hidden_by_default: true
+  category: 'inactive'
 '1331':
   eva_id: '789'
 CP36:
-  hidden_by_default: true
+  category: 'inactive'
 '1315':
-  hidden_by_default: true
+  category: 'inactive'
 '1316':
   eva_id: '205'
   short_name: Intro. a la Computación Gráfica
 '1332':
-  hidden_by_default: true
+  category: 'inactive'
 '1333':
   short_name: Programación Genérica
 '1338':
-  hidden_by_default: true
+  category: 'inactive'
 '1330':
-  hidden_by_default: true
+  category: 'inactive'
 '1341':
-  hidden_by_default: true
+  category: 'inactive'
 '1348':
-  hidden_by_default: true
+  category: 'inactive'
 CP32:
-  hidden_by_default: true
+  category: 'inactive'
 CP384:
-  hidden_by_default: true
+  category: 'inactive'
 '1350':
   eva_id: '965'
   short_name: Prog. Funcional Avanzada
 CP9:
-  hidden_by_default: true
+  category: 'inactive'
 CP37:
-  hidden_by_default: true
+  category: 'inactive'
 CP15:
-  hidden_by_default: true
+  category: 'inactive'
 CP38:
-  hidden_by_default: true
+  category: 'inactive'
 CP29:
-  hidden_by_default: true
+  category: 'inactive'
 CP374:
-  hidden_by_default: true
+  category: 'inactive'
 '1340':
   eva_id: '293'
   openfing_id: pl
-  semester: 7
+  category: 'seventh_semester'
 '1320':
-  hidden_by_default: true
+  category: 'inactive'
 '1322':
   eva_id: '58'
   openfing_id: p1
-  semester: 2
+  category: 'second_semester'
 '1372':
-  hidden_by_default: true
+  category: 'inactive'
 '1321':
   eva_id: '132'
   openfing_id: p2
-  semester: 3
+  category: 'third_semester'
 '1323':
   eva_id: '39'
   openfing_id: prog3-2018
-  semester: 4
+  category: 'fourth_semester'
 '1324':
   eva_id: '413'
   openfing_id: p4
-  semester: 5
+  category: 'fifth_semester'
 '1342':
-  hidden_by_default: true
+  category: 'inactive'
 '1314':
-  hidden_by_default: true
+  category: 'inactive'
 CP5:
-  hidden_by_default: true
+  category: 'inactive'
 CP10:
-  hidden_by_default: true
+  category: 'inactive'
 CP30:
-  hidden_by_default: true
+  category: 'inactive'
 CP382:
-  hidden_by_default: true
+  category: 'inactive'
 '1336':
   eva_id: '812'
 CP33:
-  hidden_by_default: true
+  category: 'inactive'
 '1325':
   eva_id: '687'
   openfing_id: tl
-  semester: 5
+  category: 'fifth_semester'
 CP365:
-  hidden_by_default: true
+  category: 'inactive'
 '1335':
-  hidden_by_default: true
+  category: 'inactive'
 '1339':
-  hidden_by_default: true
+  category: 'inactive'
 PA7:
-  hidden_by_default: true
+  category: 'revalid'
 PP6:
-  hidden_by_default: true
+  category: 'revalid'
 PR3:
-  hidden_by_default: true
+  category: 'revalid'
 PR6:
-  hidden_by_default: true
+  category: 'revalid'
 PR7:
-  hidden_by_default: true
+  category: 'revalid'
 PR8:
-  hidden_by_default: true
+  category: 'revalid'
 '1536':
-  hidden_by_default: true
+  category: 'inactive'
 GP6:
-  hidden_by_default: true
+  category: 'inactive'
 '1545':
   eva_id: '938'
 AR20:
-  hidden_by_default: true
+  category: 'revalid'
 '1454':
-  hidden_by_default: true
+  category: 'inactive'
 AR12:
-  hidden_by_default: true
+  category: 'revalid'
 AR015:
-  hidden_by_default: true
+  category: 'revalid'
 AR6:
-  hidden_by_default: true
+  category: 'revalid'
 '1453':
-  hidden_by_default: true
+  category: 'inactive'
 '1440':
   eva_id: '145'
   short_name: ADADR
 '1443':
   eva_id: '195'
   openfing_id: ac
-  semester: 4
+  category: 'fourth_semester'
 '1424':
-  hidden_by_default: true
+  category: 'inactive'
 '1425':
-  hidden_by_default: true
+  category: 'inactive'
 CP28:
-  hidden_by_default: true
+  category: 'inactive'
 CP383:
-  hidden_by_default: true
+  category: 'inactive'
 '1444':
   eva_id: '247'
   short_name: AARC
 '5813':
-  hidden_by_default: true
+  category: 'inactive'
 '1447':
   eva_id: '1076'
   short_name: GPGPU
 '1427':
-  hidden_by_default: true
+  category: 'inactive'
 '1415':
-  hidden_by_default: true
+  category: 'inactive'
 '1430':
-  hidden_by_default: true
+  category: 'inactive'
 '1434':
   eva_id: '1064'
   openfing_id: hpc
   short_name: Comp. de Alta Performance
 CP364:
-  hidden_by_default: true
+  category: 'inactive'
 '1441':
-  hidden_by_default: true
+  category: 'inactive'
 CP51:
-  hidden_by_default: true
+  category: 'inactive'
 1512C:
-  hidden_by_default: true
+  category: 'inactive'
 '1429':
-  hidden_by_default: true
+  category: 'inactive'
 '1412':
-  hidden_by_default: true
+  category: 'inactive'
 '1436':
-  hidden_by_default: true
+  category: 'inactive'
 '5915':
-  hidden_by_default: true
+  category: 'inactive'
 '5916':
   eva_id: '399'
   short_name: FSI
 '1403':
-  hidden_by_default: true
+  category: 'inactive'
 '1416':
-  hidden_by_default: true
+  category: 'inactive'
 '1431':
-  hidden_by_default: true
+  category: 'inactive'
 '1432':
   eva_id: '412'
   short_name: Intro. a la Teo. de la Info.
 1513C:
-  hidden_by_default: true
+  category: 'inactive'
 '1446':
   eva_id: '335'
   openfing_id: redes
-  semester: 6
+  category: 'sixth_semester'
 '1442':
   eva_id: '146'
 CP31:
-  hidden_by_default: true
+  category: 'inactive'
 '1511':
-  hidden_by_default: true
+  category: 'inactive'
 '1518':
-  hidden_by_default: true
+  category: 'inactive'
 '1532':
-  hidden_by_default: true
+  category: 'inactive'
 '1537':
   eva_id: '720'
-  semester: 5
+  category: 'fifth_semester'
 CP372:
-  hidden_by_default: true
+  category: 'inactive'
 '1445':
   short_name: Taller de Arqui. de Comp.
 '1439':
-  hidden_by_default: true
+  category: 'inactive'
 '1449':
   eva_id: '1136'
 '1437':
   eva_id: '324'
 '1535':
-  hidden_by_default: true
+  category: 'inactive'
 '1542':
   eva_id: '708'
   openfing_id: so
 '1426':
-  hidden_by_default: true
+  category: 'inactive'
 AA9:
-  hidden_by_default: true
+  category: 'revalid'
 AR15:
-  hidden_by_default: true
+  category: 'revalid'
 AR30:
-  hidden_by_default: true
+  category: 'revalid'
 AR8:
-  hidden_by_default: true
+  category: 'revalid'
 SRN30:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 '1866':
   eva_id: '43'
 '1820':
-  hidden_by_default: true
+  category: 'inactive'
 '1827':
-  hidden_by_default: true
+  category: 'inactive'
 '1849':
   eva_id: '312'
 '1832':
-  hidden_by_default: true
+  category: 'inactive'
 '1821':
-  hidden_by_default: true
+  category: 'inactive'
 '1835':
   eva_id: '654'
   openfing_id: gf
@@ -593,33 +593,33 @@ SRN30:
   eva_id: '186'
   short_name: Robótica Basada en Comp.
 '5912':
-  hidden_by_default: true
+  category: 'inactive'
 IAR6:
-  hidden_by_default: true
+  category: 'revalid'
 1937T:
-  hidden_by_default: true
+  category: 'inactive'
 GP1:
-  hidden_by_default: true
+  category: 'inactive'
 GP2:
-  hidden_by_default: true
+  category: 'inactive'
 '1949':
   eva_id: '947'
   short_name: BDNR
 '1948':
   eva_id: '61'
 BD15:
-  hidden_by_default: true
+  category: 'revalid'
 BD05:
-  hidden_by_default: true
+  category: 'revalid'
 BD015:
-  hidden_by_default: true
+  category: 'revalid'
 '1918':
   eva_id: '785'
   short_name: Admin. y Seguridad de Sist.
 CP362:
-  hidden_by_default: true
+  category: 'inactive'
 '1916':
-  hidden_by_default: true
+  category: 'inactive'
 '1939':
   eva_id: '648'
   short_name: Data Warehouse
@@ -627,7 +627,7 @@ CP362:
   eva_id: '330'
   openfing_id: fbd
   short_name: Bases de datos
-  semester: 6
+  category: 'sixth_semester'
 '1942':
   eva_id: '536'
   short_name: Web semántica
@@ -637,66 +637,66 @@ CP362:
 '1941':
   eva_id: '664'
 '1919':
-  hidden_by_default: true
+  category: 'inactive'
 '1934':
-  hidden_by_default: true
+  category: 'inactive'
 CP378:
-  hidden_by_default: true
+  category: 'inactive'
 '1938':
   eva_id: '821'
   short_name: Webir
 '1943':
-  hidden_by_default: true
+  category: 'inactive'
 '1931':
-  hidden_by_default: true
+  category: 'inactive'
 '1917':
-  hidden_by_default: true
+  category: 'inactive'
 '1933':
   eva_id: '105'
   short_name: TAGSI
 '1929':
-  hidden_by_default: true
+  category: 'inactive'
 BDSI6:
-  hidden_by_default: true
+  category: 'revalid'
 BD10:
-  hidden_by_default: true
+  category: 'revalid'
 BD5:
-  hidden_by_default: true
+  category: 'revalid'
 BD8:
-  hidden_by_default: true
+  category: 'revalid'
 BD9:
-  hidden_by_default: true
+  category: 'revalid'
 CN6:
-  hidden_by_default: true
+  category: 'revalid'
 '1040':
-  hidden_by_default: true
+  category: 'inactive'
 '5914':
   eva_id: '1143'
 '1054':
-  hidden_by_default: true
+  category: 'inactive'
 CP377:
-  hidden_by_default: true
+  category: 'inactive'
 CP379:
-  hidden_by_default: true
+  category: 'inactive'
 CP16:
-  hidden_by_default: true
+  category: 'inactive'
 CP376:
-  hidden_by_default: true
+  category: 'inactive'
 '1041':
-  hidden_by_default: true
+  category: 'inactive'
 '1055':
   eva_id: '24'
-  hidden_by_default: true
+  category: 'inactive'
 '1033':
   eva_id: '62'
   openfing_id: metn
-  semester: 4
+  category: 'fourth_semester'
 '1079':
-  hidden_by_default: true
+  category: 'inactive'
 '1048':
-  hidden_by_default: true
+  category: 'inactive'
 CN3:
-  hidden_by_default: true
+  category: 'revalid'
 '1779':
   eva_id: '38'
   short_name: Invest. Oper. y Gest. de Riesgos
@@ -704,16 +704,16 @@ CN3:
   eva_id: '1049'
   openfing_id: ae
 GP7:
-  hidden_by_default: true
+  category: 'inactive'
 '1635':
   eva_id: '38'
   short_name: MOR
 '1625':
-  hidden_by_default: true
+  category: 'inactive'
 '1435':
   eva_id: '1083'
 '1621':
-  hidden_by_default: true
+  category: 'inactive'
 '1631':
   eva_id: '269'
   short_name: Fund. de Prog. Entera
@@ -721,47 +721,47 @@ GP7:
   eva_id: '994'
   openfing_id: iio
   short_name: IIO
-  semester: 5
+  category: 'fifth_semester'
 '1629':
-  hidden_by_default: true
+  category: 'inactive'
 '1623':
-  hidden_by_default: true
+  category: 'inactive'
 CP27:
-  hidden_by_default: true
+  category: 'inactive'
 CP320:
-  hidden_by_default: true
+  category: 'inactive'
 CP373:
-  hidden_by_default: true
+  category: 'inactive'
 CP381:
-  hidden_by_default: true
+  category: 'inactive'
 CP385:
-  hidden_by_default: true
+  category: 'inactive'
 '1624':
   eva_id: '1070'
 '1626':
-  hidden_by_default: true
+  category: 'inactive'
 '1632':
   eva_id: '397'
   short_name: Opt. Bajo Incertidumbre
 '1627':
-  hidden_by_default: true
+  category: 'inactive'
 '1617':
   eva_id: '191'
 IO20:
-  hidden_by_default: true
+  category: 'revalid'
 IO8:
-  hidden_by_default: true
+  category: 'revalid'
 1758T:
-  hidden_by_default: true
+  category: 'inactive'
 '1732':
-  hidden_by_default: true
+  category: 'inactive'
 '1737':
-  hidden_by_default: true
+  category: 'inactive'
 '1716':
   eva_id: '613'
   openfing_id: iis19
   short_name: IIS
-  semester: 7
+  category: 'seventh_semester'
 '1749':
   eva_id: '1121'
   short_name: Inter. Persona Computadora
@@ -769,89 +769,89 @@ IO8:
   eva_id: '633'
   short_name: Proc. Pers. de Software
 '1728':
-  hidden_by_default: true
+  category: 'inactive'
 '1758':
   eva_id: '652'
   short_name: Relac. Pers. en IS
 '1750':
-  hidden_by_default: true
+  category: 'inactive'
 '1768':
   short_name: Taller de Inter. Pers. Comp.
 '1752':
-  hidden_by_default: true
+  category: 'inactive'
 '1742':
   eva_id: '722'
   short_name: Taller de Verificación de Sw
 CP366:
-  hidden_by_default: true
+  category: 'inactive'
 IS14:
-  hidden_by_default: true
+  category: 'revalid'
 SFW10:
-  hidden_by_default: true
+  category: 'revalid'
 BTI29:
-  hidden_by_default: true
+  category: 'revalid'
 BT31:
-  hidden_by_default: true
+  category: 'revalid'
 BTI33:
-  hidden_by_default: true
+  category: 'revalid'
 BTI23:
-  hidden_by_default: true
+  category: 'revalid'
 BTI31:
-  hidden_by_default: true
+  category: 'revalid'
 ATI3:
-  hidden_by_default: true
+  category: 'revalid'
 BTI38:
-  hidden_by_default: true
+  category: 'revalid'
 AA28:
-  hidden_by_default: true
+  category: 'revalid'
 A028:
-  hidden_by_default: true
+  category: 'revalid'
 AI10:
-  hidden_by_default: true
+  category: 'revalid'
 BT28:
-  hidden_by_default: true
+  category: 'revalid'
 A28:
-  hidden_by_default: true
+  category: 'revalid'
 AI28:
-  hidden_by_default: true
+  category: 'revalid'
 '1753':
-  hidden_by_default: true
+  category: 'extension_module'
 '1754':
-  hidden_by_default: true
+  category: 'extension_module'
 '1755':
-  hidden_by_default: true
+  category: 'extension_module'
 '1756':
-  hidden_by_default: true
+  category: 'extension_module'
 '1757':
-  hidden_by_default: true
+  category: 'extension_module'
 '1731':
   eva_id: '702'
   short_name: Pasantía
 '1730':
   eva_id: '627'
-  semester: 9
+  category: 'nineth_semester'
 '1721':
   eva_id: '573'
   short_name: PIS
-  semester: 8
+  category: 'eighth_semester'
 '5705':
   eva_id: '578'
   short_name: Semin. de Ing. Biomédica
 '1748':
-  hidden_by_default: true
+  category: 'inactive'
 '1733':
-  hidden_by_default: true
+  category: 'inactive'
 '1766':
   eva_id: '423'
   short_name: TBPM
 '1739':
-  hidden_by_default: true
+  category: 'inactive'
 '1327':
   eva_id: '315'
   openfing_id: tp
-  semester: 6
+  category: 'sixth_semester'
 '1925':
-  hidden_by_default: true
+  category: 'inactive'
 '1751':
   eva_id: '402'
   short_name: TSI 1
@@ -861,37 +861,37 @@ AI28:
 '1741':
   short_name: TSI 4
 '5823':
-  hidden_by_default: true
+  category: 'inactive'
 CP71:
-  hidden_by_default: true
+  category: 'inactive'
 CP363:
-  hidden_by_default: true
+  category: 'inactive'
 '1734':
-  hidden_by_default: true
+  category: 'inactive'
 '1735':
   eva_id: '485'
   short_name: TSI 2
 CP221:
-  hidden_by_default: true
+  category: 'inactive'
 AT10:
-  hidden_by_default: true
+  category: 'revalid'
 AT28:
-  hidden_by_default: true
+  category: 'revalid'
 AT3:
-  hidden_by_default: true
+  category: 'revalid'
 AT7:
-  hidden_by_default: true
+  category: 'revalid'
 TP25:
-  hidden_by_default: true
+  category: 'revalid'
 '1776':
   eva_id: '429'
   short_name: Taller de SIG
 '2401':
-  hidden_by_default: true
+  category: 'inactive'
 AT010:
-  hidden_by_default: true
+  category: 'inactive'
 GO10:
-  hidden_by_default: true
+  category: 'revalid'
 '1543':
   eva_id: '725'
   short_name: Int. al Negocio del SW
@@ -899,120 +899,120 @@ GO10:
   eva_id: '778'
   openfing_id: agpi
   short_name: AGPI
-  semester: 7
+  category: 'seventh_semester'
 '1510':
   eva_id: '49'
 '1901':
-  hidden_by_default: true
+  category: 'inactive'
 '1921':
-  hidden_by_default: true
+  category: 'inactive'
 '1940':
   eva_id: '156'
 '1507':
-  hidden_by_default: true
+  category: 'inactive'
 CP375:
-  hidden_by_default: true
+  category: 'inactive'
 '1930':
-  hidden_by_default: true
+  category: 'inactive'
 '1514':
-  hidden_by_default: true
+  category: 'inactive'
 '1945':
   eva_id: '779'
   short_name: PAI
-  semester: 8
+  category: 'eighth_semester'
 GA10:
-  hidden_by_default: true
+  category: 'revalid'
 GO6:
-  hidden_by_default: true
+  category: 'revalid'
 GO8:
-  hidden_by_default: true
+  category: 'revalid'
 GO9:
-  hidden_by_default: true
+  category: 'revalid'
 SRN13:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 FD1:
-  hidden_by_default: true
+  category: 'inactive'
 C216:
-  hidden_by_default: true
+  category: 'inactive'
 AT002:
-  hidden_by_default: true
+  category: 'inactive'
 558EU:
-  hidden_by_default: true
+  category: 'inactive'
 CHU10:
-  hidden_by_default: true
+  category: 'revalid'
 CHS10:
-  hidden_by_default: true
+  category: 'revalid'
 CH5:
-  hidden_by_default: true
+  category: 'revalid'
 GP3:
-  hidden_by_default: true
+  category: 'inactive'
 CH08:
-  hidden_by_default: true
+  category: 'revalid'
 CH3:
-  hidden_by_default: true
+  category: 'revalid'
 CH04:
-  hidden_by_default: true
+  category: 'revalid'
 '1229':
-  hidden_by_default: true
+  category: 'inactive'
 '1223':
   short_name: CTS
 '1230':
-  hidden_by_default: true
+  category: 'inactive'
 '1224':
   eva_id: '1093'
   openfing_id: eco
-  semester: 4
+  category: 'fourth_semester'
 '1221':
-  hidden_by_default: true
+  category: 'inactive'
 CP20:
-  hidden_by_default: true
+  category: 'inactive'
 CP174:
-  hidden_by_default: true
+  category: 'inactive'
 '1225':
   short_name: Politicas Científicas
-  semester: 8
+  category: 'eighth_semester'
 CP18:
-  hidden_by_default: true
+  category: 'inactive'
 CH1:
-  hidden_by_default: true
+  category: 'revalid'
 CH10:
-  hidden_by_default: true
+  category: 'revalid'
 CH4:
-  hidden_by_default: true
+  category: 'revalid'
 CH6:
-  hidden_by_default: true
+  category: 'revalid'
 CH8:
-  hidden_by_default: true
+  category: 'revalid'
 SRN22:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 SRN25:
-  hidden_by_default: true
+  category: 'outside_montevideo'
 736EU:
-  hidden_by_default: true
+  category: 'inactive'
 836EU:
-  hidden_by_default: true
+  category: 'inactive'
 AT023:
-  hidden_by_default: true
+  category: 'inactive'
 AT021:
-  hidden_by_default: true
+  category: 'inactive'
 816EU:
-  hidden_by_default: true
+  category: 'inactive'
 2107A:
-  hidden_by_default: true
+  category: 'inactive'
 AT003:
-  hidden_by_default: true
+  category: 'inactive'
 AT009:
-  hidden_by_default: true
+  category: 'inactive'
 MOP8:
-  hidden_by_default: true
+  category: 'revalid'
 '2216':
-  hidden_by_default: true
+  category: 'inactive'
 '1951':
-  hidden_by_default: true
+  category: 'inactive'
 GP4:
-  hidden_by_default: true
+  category: 'inactive'
 '2040':
-  hidden_by_default: true
+  category: 'inactive'
 '1438':
   eva_id: '20'
   short_name: ATIPI
@@ -1020,194 +1020,200 @@ GP4:
   eva_id: '589'
   short_name: Imágenes Médicas
 '1760':
-  hidden_by_default: true
+  category: 'extension_module'
 '1761':
-  hidden_by_default: true
+  category: 'extension_module'
 '1762':
-  hidden_by_default: true
+  category: 'extension_module'
 '1763':
-  hidden_by_default: true
+  category: 'extension_module'
 '2222':
-  hidden_by_default: true
+  category: 'inactive'
 MOP1:
-  hidden_by_default: true
+  category: 'revalid'
 MOP10:
-  hidden_by_default: true
+  category: 'revalid'
 MOP20:
-  hidden_by_default: true
+  category: 'revalid'
 MOP30:
-  hidden_by_default: true
+  category: 'revalid'
 '2241':
-  hidden_by_default: true
+  category: 'inactive'
 C350:
-  hidden_by_default: true
+  category: 'inactive'
 1025P:
-  hidden_by_default: true
+  category: 'revalid'
 1446P:
-  hidden_by_default: true
+  category: 'revalid'
 107L:
-  hidden_by_default: true
+  category: 'inactive'
 170Q:
-  hidden_by_default: true
+  category: 'inactive'
 M13:
-  hidden_by_default: true
+  category: 'revalid'
 1020P:
-  hidden_by_default: true
+  category: 'revalid'
 1061P:
-  hidden_by_default: true
+  category: 'revalid'
 1443P:
-  hidden_by_default: true
+  category: 'revalid'
 1322P:
-  hidden_by_default: true
+  category: 'revalid'
 1321P:
-  hidden_by_default: true
+  category: 'revalid'
 M14:
-  hidden_by_default: true
+  category: 'revalid'
 1063P:
-  hidden_by_default: true
+  category: 'revalid'
 1024P:
-  hidden_by_default: true
+  category: 'revalid'
 MA47:
-  hidden_by_default: true
+  category: 'revalid'
 172Q:
-  hidden_by_default: true
+  category: 'inactive'
 1062P:
-  hidden_by_default: true
+  category: 'revalid'
 CM14:
-  hidden_by_default: true
+  category: 'revalid'
 1030P:
-  hidden_by_default: true
+  category: 'revalid'
 171L:
-  hidden_by_default: true
+  category: 'inactive'
 171Q:
-  hidden_by_default: true
+  category: 'inactive'
 176Q:
-  hidden_by_default: true
+  category: 'inactive'
 MAT14:
-  hidden_by_default: true
+  category: 'revalid'
 MA51:
-  hidden_by_default: true
+  category: 'revalid'
 1020R:
-  hidden_by_default: true
+  category: 'revalid'
 1023P:
-  hidden_by_default: true
+  category: 'revalid'
 MA09:
-  hidden_by_default: true
+  category: 'revalid'
 1031P:
-  hidden_by_default: true
+  category: 'revalid'
 CP102:
-  hidden_by_default: true
+  category: 'inactive'
 1510R:
-  hidden_by_default: true
+  category: 'revalid'
 CQ3:
-  hidden_by_default: true
+  category: 'inactive'
 158Q:
-  hidden_by_default: true
+  category: 'inactive'
 FF12:
-  hidden_by_default: true
+  category: 'revalid'
 F10:
-  hidden_by_default: true
+  category: 'revalid'
 1120P:
-  hidden_by_default: true
+  category: 'revalid'
 1151P:
-  hidden_by_default: true
+  category: 'revalid'
 M1020:
-  hidden_by_default: true
+  category: 'revalid'
 1152P:
-  hidden_by_default: true
+  category: 'revalid'
 F7:
-  hidden_by_default: true
+  category: 'revalid'
 F8:
-  hidden_by_default: true
+  category: 'revalid'
 1153P:
-  hidden_by_default: true
+  category: 'revalid'
 CP13:
-  hidden_by_default: true
+  category: 'inactive'
 1036R:
-  hidden_by_default: true
+  category: 'revalid'
 '1036':
-  hidden_by_default: true
+  category: 'inactive'
 1911P:
-  hidden_by_default: true
+  category: 'revalid'
 '1906':
-  hidden_by_default: true
+  category: 'inactive'
 1716P:
-  hidden_by_default: true
+  category: 'revalid'
 CR10:
-  hidden_by_default: true
+  category: 'revalid'
 B11:
-  hidden_by_default: true
+  category: 'inactive'
 R101:
-  hidden_by_default: true
+  category: 'inactive'
 B101:
-  hidden_by_default: true
+  category: 'inactive'
 IN35:
-  hidden_by_default: true
+  category: 'inactive'
 PR27:
-  hidden_by_default: true
+  category: 'revalid'
 1758P:
-  hidden_by_default: true
+  category: 'revalid'
 1937P:
-  hidden_by_default: true
+  category: 'revalid'
 CP350:
-  hidden_by_default: true
+  category: 'inactive'
 1061I:
-  hidden_by_default: true
+  category: 'inactive'
 1061R:
-  hidden_by_default: true
+  category: 'inactive'
 108L:
-  hidden_by_default: true
+  category: 'inactive'
 1022P:
-  hidden_by_default: true
+  category: 'revalid'
 1022T:
-  hidden_by_default: true
+  category: 'inactive'
 CP144:
-  hidden_by_default: true
+  category: 'inactive'
 '1408':
-  hidden_by_default: true
+  category: 'inactive'
 '1411':
-  hidden_by_default: true
+  category: 'inactive'
 C402:
-  hidden_by_default: true
+  category: 'inactive'
 1224P:
-  hidden_by_default: true
+  category: 'revalid'
 1028M:
-  hidden_by_default: true
+  category: 'revalid'
 1028P:
-  hidden_by_default: true
+  category: 'revalid'
 FIS13:
-  hidden_by_default: true
+  category: 'revalid'
 FI13:
-  hidden_by_default: true
+  category: 'revalid'
 F1Y3:
-  hidden_by_default: true
+  category: 'revalid'
 F30:
-  hidden_by_default: true
+  category: 'revalid'
 117Q:
-  hidden_by_default: true
+  category: 'inactive'
 MA7:
-  hidden_by_default: true
+  category: 'revalid'
 1328P:
-  hidden_by_default: true
+  category: 'revalid'
 125L:
-  hidden_by_default: true
+  category: 'inactive'
 175Q:
-  hidden_by_default: true
+  category: 'inactive'
 1640P:
-  hidden_by_default: true
+  category: 'revalid'
 1945P:
-  hidden_by_default: true
+  category: 'revalid'
 1324P:
-  hidden_by_default: true
+  category: 'revalid'
 1721P:
-  hidden_by_default: true
+  category: 'revalid'
 1781P:
-  hidden_by_default: true
+  category: 'revalid'
 R100:
-  hidden_by_default: true
+  category: 'inactive'
 '1435':
-  hidden_by_default: true
+  category: 'inactive'
 '1628':
-  hidden_by_default: true
+  category: 'inactive'
 '1771':
-  hidden_by_default: true
+  category: 'inactive'
+'1906':
+  category: 'inactive'
+'1921':
+  category: 'inactive'
+'1940':
+  category: 'inactive'

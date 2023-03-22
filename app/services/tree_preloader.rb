@@ -1,7 +1,7 @@
 class TreePreloader
   def preload
     Subject
-      .ordered_by_semester_and_name
+      .ordered_by_category_and_name
       .includes(
         course: :prerequisite_tree,
         exam: :prerequisite_tree

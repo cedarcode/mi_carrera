@@ -24,7 +24,7 @@ class ApprovalsController < ApplicationController
     else
       @subjects = TreePreloader.new.preload.select do |subject|
         current_student.approved?(subject.course) ||
-          (!subject.hidden_by_default && current_student.available?(subject.course))
+          (!subject.hidden_by_default? && current_student.available?(subject.course))
       end
     end
 
