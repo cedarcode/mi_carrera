@@ -1,4 +1,6 @@
 task scraper: :environment do
+  require 'scraper/bedelias'
+
   Scraper::Bedelias.scrape
 end
 
