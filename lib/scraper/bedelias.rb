@@ -37,7 +37,7 @@ module Scraper
 
       File.write(Rails.root.join("db/data/scraped_subject_groups.yml"), groups.deep_stringify_keys.to_yaml)
       File.write(Rails.root.join("db/data/scraped_subjects.yml"), subjects.deep_stringify_keys.to_yaml)
-      File.write(Rails.root.join("db/data/scraped_prerequisites.yml"), { prerequisites: }.deep_stringify_keys.to_yaml)
+      File.write(Rails.root.join("db/data/scraped_prerequisites.yml"), prerequisites.map(&:deep_stringify_keys).to_yaml)
     rescue
       Rails.logger.info save_screenshot
       raise
