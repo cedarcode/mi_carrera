@@ -1,4 +1,10 @@
 ---
+SRN45:
+  code: SRN45
+  name: MATEMATICA INICIAL-OPTATIVA
+  credits: 4
+  has_exam: true
+  subject_group: '4083'
 CIM22:
   code: CIM22
   name: TOPOLOGÍA
@@ -2363,6 +2369,18 @@ IO8:
   credits: 8
   has_exam: true
   subject_group: '4815'
+O6221:
+  code: O6221
+  name: LABORATORIO DE ACCESIBILIDAD A LOS MEDIOS
+  credits: 10
+  has_exam: true
+  subject_group: '5082'
+O6311:
+  code: O6311
+  name: TALLER DE INTERACCIÓN
+  credits: 6
+  has_exam: true
+  subject_group: '5082'
 1758T:
   code: 1758T
   name: CREDITOS NO ACUM. CON RELACIONES PERS. EN ING. DE SOFT. Y GER. DE PROY.
@@ -2993,6 +3011,12 @@ A62:
   credits: 10
   has_exam: true
   subject_group: '4066'
+O6211:
+  code: O6211
+  name: TECNOLOGÍA DE MEDIOS AL SERVICIO DE LA PRESERVACIÓN DEL PATRIMONIO HISTÓRICO
+  credits: 8
+  has_exam: false
+  subject_group: '5265'
 SRN13:
   code: SRN13
   name: ECONOMÍA POLÍTICA

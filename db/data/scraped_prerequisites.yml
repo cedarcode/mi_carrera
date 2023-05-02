@@ -719,10 +719,17 @@ prerequisites:
   - type: logical
     logical_operator: or
     operands:
-    - type: subject
-      needs: course
-      subject_needed_code: '1023'
-      subject_needed_name: MATEMATICA DISCRETA 1
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1023'
+        subject_needed_name: MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: SRN14
+        subject_needed_name: MATEMÁTICA DISCRETA I
+        needs: exam
     - type: logical
       logical_operator: and
       operands:
@@ -757,6 +764,49 @@ prerequisites:
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: CP1
+      subject_needed_name: ANALISIS MATEMATICO I
+      needs: exam
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: '1020'
+      subject_needed_name: CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1070'
+      subject_needed_name: CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1052'
+      subject_needed_name: CALCULO 1 (ANUAL)
+      needs: exam
+    - type: subject
+      subject_needed_code: SRN02
+      subject_needed_name: CÁLCULO I
+      needs: exam
+    - type: subject
+      subject_needed_code: CAL10
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1020P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: 1322P
       subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
       needs: exam
@@ -775,6 +825,10 @@ prerequisites:
     - type: subject
       subject_needed_code: '1373'
       subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: SRN17
+      subject_needed_name: PROGRAMACIÓN I
       needs: exam
     - type: subject
       subject_needed_code: CP10
@@ -799,45 +853,6 @@ prerequisites:
       subject_needed_code: '1010'
       subject_needed_name: LOGICA Y COMPUTACION
       needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP1
-      subject_needed_name: ANALISIS MATEMATICO I
-      needs: exam
-    - type: subject
-      subject_needed_code: '1061'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-      needs: exam
-    - type: subject
-      subject_needed_code: '1020'
-      subject_needed_name: CALCULO 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1070'
-      subject_needed_name: CALCULO 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1052'
-      subject_needed_name: CALCULO 1 (ANUAL)
-      needs: exam
-    - type: subject
-      subject_needed_code: CAL10
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: 1020P
-      subject_needed_name: CREDITOS NO ACUM CALCULO 1
-      needs: exam
-    - type: subject
-      subject_needed_code: 1061P
-      subject_needed_name: CREDITOS NO ACUM CDIV
-      needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -9166,6 +9181,24 @@ prerequisites:
 - type: logical
   logical_operator: and
   operands:
+  - type: subject
+    needs: course
+    subject_needed_code: '1716'
+    subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+  subject_code: O6221
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: O6311
+    subject_needed_name: TALLER DE INTERACCIÓN
+  subject_code: O6221
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
   - type: credits
     credits: 250
   subject_code: '2401'
@@ -9209,6 +9242,10 @@ prerequisites:
   - type: logical
     logical_operator: or
     operands:
+    - type: subject
+      subject_needed_code: 1023P
+      subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+      needs: exam
     - type: subject
       subject_needed_code: '1023'
       subject_needed_name: MATEMATICA DISCRETA 1
@@ -9672,6 +9709,10 @@ prerequisites:
       subject_needed_name: CALCULO 1 (ANUAL)
       needs: all
     - type: subject
+      subject_needed_code: SRN02
+      subject_needed_name: CÁLCULO I
+      needs: all
+    - type: subject
       subject_needed_code: CAL10
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: all
@@ -9772,6 +9813,10 @@ prerequisites:
       subject_needed_name: CALCULO 1 (ANUAL)
       needs: all
     - type: subject
+      subject_needed_code: SRN02
+      subject_needed_name: CÁLCULO I
+      needs: all
+    - type: subject
       subject_needed_code: CAL10
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: all
@@ -9828,6 +9873,214 @@ prerequisites:
       subject_needed_name: CREDITOS NO ACUM CDIV
       needs: all
   subject_code: MI2
+  is_exam: true
+- type: logical
+  logical_operator: not
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP1
+      subject_needed_name: ANALISIS MATEMATICO I
+      needs: all
+    - type: subject
+      subject_needed_code: CP22
+      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
+      needs: all
+    - type: subject
+      subject_needed_code: CP44
+      subject_needed_name: ANALISIS MATEMATICO I (1ER.SEM.)
+      needs: all
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: all
+    - type: subject
+      subject_needed_code: '1020'
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: 107L
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: '1070'
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: 170Q
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: '1052'
+      subject_needed_name: CALCULO 1 (ANUAL)
+      needs: all
+    - type: subject
+      subject_needed_code: SRN02
+      subject_needed_name: CÁLCULO I
+      needs: all
+    - type: subject
+      subject_needed_code: CAL10
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: CAL12
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MAT14
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MA25
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MA47
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MA51
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MC13
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: M12
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: M13
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: M14
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: 1020R
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: 1020P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: all
+  subject_code: SRN45
+  is_exam: false
+- type: logical
+  logical_operator: not
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP1
+      subject_needed_name: ANALISIS MATEMATICO I
+      needs: all
+    - type: subject
+      subject_needed_code: CP22
+      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
+      needs: all
+    - type: subject
+      subject_needed_code: CP44
+      subject_needed_name: ANALISIS MATEMATICO I (1ER.SEM.)
+      needs: all
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: all
+    - type: subject
+      subject_needed_code: '1020'
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: 107L
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: '1070'
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: 170Q
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: '1052'
+      subject_needed_name: CALCULO 1 (ANUAL)
+      needs: all
+    - type: subject
+      subject_needed_code: SRN02
+      subject_needed_name: CÁLCULO I
+      needs: all
+    - type: subject
+      subject_needed_code: CAL10
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: CAL12
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MAT14
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MA25
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MA47
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MA51
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: MC13
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: M12
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: M13
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: M14
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: 1020R
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: 1020P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: all
+  subject_code: SRN45
   is_exam: true
 - type: logical
   logical_operator: and
@@ -11814,10 +12067,45 @@ prerequisites:
 - type: logical
   logical_operator: not
   operands:
-  - type: subject
-    needs: all
-    subject_needed_code: '1322'
-    subject_needed_name: PROGRAMACION 1
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP52
+      subject_needed_name: COMPUTACION
+      needs: exam
+    - type: subject
+      subject_needed_code: CP24
+      subject_needed_name: COMPUTACION (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: PR27
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: PR4
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: CP36
+      subject_needed_name: INT. A LA COMPUTACION
+      needs: exam
+    - type: subject
+      subject_needed_code: CP9
+      subject_needed_name: PROGRAMACION I
+      needs: exam
+    - type: subject
+      subject_needed_code: CP38
+      subject_needed_name: PROGRAMACION II (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: '1322'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: CP10
+      subject_needed_name: TALLER II
+      needs: course
   subject_code: '1373'
   is_exam: false
 - type: logical
@@ -11904,6 +12192,10 @@ prerequisites:
       subject_needed_name: PROGRAMACION 1
       needs: course
     - type: subject
+      subject_needed_code: SRN17
+      subject_needed_name: PROGRAMACIÓN I
+      needs: course
+    - type: subject
       subject_needed_code: CP10
       subject_needed_name: TALLER II
       needs: course
@@ -11935,17 +12227,6 @@ prerequisites:
       logical_operator: and
       operands:
       - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          subject_needed_code: CP6
-          subject_needed_name: ANALISIS MATEMATICO II
-          needs: exam
-        - type: subject
-          subject_needed_code: CP4
-          subject_needed_name: LOGICA
-          needs: exam
-      - type: logical
         logical_operator: and
         operands:
         - type: subject
@@ -11955,6 +12236,17 @@ prerequisites:
         - type: subject
           subject_needed_code: CP2
           subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+          needs: exam
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: CP6
+          subject_needed_name: ANALISIS MATEMATICO II
+          needs: exam
+        - type: subject
+          subject_needed_code: CP4
+          subject_needed_name: LOGICA
           needs: exam
     - type: logical
       logical_operator: or
@@ -11967,25 +12259,10 @@ prerequisites:
         subject_needed_code: '1023'
         subject_needed_name: MATEMATICA DISCRETA 1
         needs: all
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1321P
-      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
-      needs: exam
-    - type: subject
-      subject_needed_code: CP37
-      subject_needed_name: PROGRAMACION I (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: CP15
-      subject_needed_name: PROGRAMACION II
-      needs: exam
-    - type: subject
-      subject_needed_code: '1321'
-      subject_needed_name: PROGRAMACION 2
-      needs: course
+      - type: subject
+        subject_needed_code: SRN14
+        subject_needed_name: MATEMÁTICA DISCRETA I
+        needs: all
   - type: logical
     logical_operator: or
     operands:
@@ -12022,6 +12299,10 @@ prerequisites:
       subject_needed_name: PROGRAMACION 1
       needs: exam
     - type: subject
+      subject_needed_code: SRN17
+      subject_needed_name: PROGRAMACIÓN I
+      needs: exam
+    - type: subject
       subject_needed_code: CP10
       subject_needed_name: TALLER II
       needs: course
@@ -12040,6 +12321,29 @@ prerequisites:
       subject_needed_code: '1075'
       subject_needed_name: PROBABILIDAD Y ESTADISTICA
       needs: exam
+    - type: subject
+      subject_needed_code: CH201
+      subject_needed_name: PROBABILIDAD Y ESTADÍSTICA
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      needs: exam
+    - type: subject
+      subject_needed_code: CP37
+      subject_needed_name: PROGRAMACION I (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: CP15
+      subject_needed_name: PROGRAMACION II
+      needs: exam
+    - type: subject
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: course
   subject_code: '1323'
   is_exam: false
 - type: logical
@@ -13295,12 +13599,27 @@ prerequisites:
   operands:
   - type: subject
     needs: exam
-    subject_needed_code: '1443'
-    subject_needed_name: ARQUITECTURA DE COMPUTADORAS
-  - type: subject
-    needs: exam
     subject_needed_code: '1321'
     subject_needed_name: PROGRAMACION 2
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1443'
+      subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1424'
+      subject_needed_name: ARQUITECTURA DE COMPUTADORES 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 1443P
+      subject_needed_name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1403'
+      subject_needed_name: INT. A LA ARQUITECTURA DE COMPUTADORES
+      needs: exam
   subject_code: '1556'
   is_exam: false
 - type: logical
@@ -13765,6 +14084,24 @@ prerequisites:
       needs: course
   subject_code: '1768'
   is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: '1716'
+    subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+  subject_code: O6311
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: O6311
+    subject_needed_name: TALLER DE INTERACCIÓN
+  subject_code: O6311
+  is_exam: true
 - type: logical
   logical_operator: and
   operands:
@@ -14498,17 +14835,6 @@ prerequisites:
       logical_operator: and
       operands:
       - type: subject
-        subject_needed_code: CP71
-        subject_needed_name: TALLER III ( 2DO.SEM.)
-        needs: course
-      - type: subject
-        subject_needed_code: CP30
-        subject_needed_name: TALLER III (1ER.SEM.)
-        needs: course
-    - type: logical
-      logical_operator: and
-      operands:
-      - type: subject
         subject_needed_code: '1324'
         subject_needed_name: PROGRAMACION 4
         needs: exam
@@ -14516,10 +14842,28 @@ prerequisites:
         subject_needed_code: '1327'
         subject_needed_name: TALLER DE PROGRAMACION
         needs: course
-  - type: subject
-    needs: all
-    subject_needed_code: '1911'
-    subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+    - type: logical
+      logical_operator: and
+      operands:
+      - type: subject
+        subject_needed_code: CP71
+        subject_needed_name: TALLER III ( 2DO.SEM.)
+        needs: course
+      - type: subject
+        subject_needed_code: CP30
+        subject_needed_name: TALLER III (1ER.SEM.)
+        needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1911P
+      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1911'
+      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
   subject_code: '1775'
   is_exam: false
 - type: logical
