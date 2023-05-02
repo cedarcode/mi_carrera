@@ -72,7 +72,7 @@ module YmlLoader
   def prerequisite_tree(prerequisite)
     case prerequisite["type"]
     when 'logical'
-      operands_prerequisites = prerequisite["operands"].filter_map { |oeprand| prerequisite_tree(oeprand) }
+      operands_prerequisites = prerequisite["operands"].filter_map { |operand| prerequisite_tree(operand) }
 
       LogicalPrerequisite.new(
         logical_operator: prerequisite["logical_operator"],
