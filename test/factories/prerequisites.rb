@@ -3,6 +3,10 @@ FactoryBot.define do
     approvable_needed factory: :course
   end
 
+  factory :enrollment_prerequisite do
+    approvable_needed factory: :course
+  end
+
   factory :credits_prerequisite do
     credits_needed { 5 }
   end
