@@ -81,15 +81,15 @@ module YmlLoader
       ) if operands_prerequisites.present?
     when 'subject'
       subject = Subject.find_by!(code: prerequisite["subject_needed_code"])
-      approvable_needed = if prerequisite["needs"] == 'exam'
-                            subject.exam
-                          elsif prerequisite["needs"] == 'all'
-                            subject.exam || subject.course
-                          else
-                            subject.course
-                          end
 
-      SubjectPrerequisite.new(approvable_needed:)
+      case prerequisite["needs"]
+      when 'exam' then SubjectPrerequisite.new(subject.exam)
+      when 'course' then SubjectPrerequisite.new(subject.course)
+      when 'all' then SubjectPrerequisite.new(subject.exam || subject.course)
+      when 'enrollment' then EnrollmentPrerequisite.new(subject.course)
+      else raise "Unknown approvable needed: #{prerequisite["needs"]}"
+      end
+
     when 'credits'
       subject_group = prerequisite["group"] ? SubjectGroup.find_by(code: prerequisite["group"]) : nil
       CreditsPrerequisite.new(credits_needed: prerequisite["credits"], subject_group:)

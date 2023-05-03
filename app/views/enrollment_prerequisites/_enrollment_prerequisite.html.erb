@@ -1,0 +1,9 @@
+<%= link_to subject_path(enrollment_prerequisite.approvable_needed.subject), class: 'mdc-deprecated-list-item' do %>
+  <span class="mdc-deprecated-list-item__ripple"></span>
+  <span class="mdc-deprecated-list-item__text">
+    <%= negative ? "No estar" : "Estar" %>
+    <%= display_enrollment_prerequisite(enrollment_prerequisite) %>
+  </span>
+
+  <%= render 'prerequisites/met_checkmark', prerequisite: enrollment_prerequisite, negative: %>
+<% end %>

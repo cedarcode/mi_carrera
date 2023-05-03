@@ -26,4 +26,8 @@ module SubjectsHelper
     approvable = subject_prerequisite.approvable_needed
     "#{display_name(approvable.subject)} (#{approvable.is_exam ? "examen" : "curso"})"
   end
+
+  def display_enrollment_prerequisite(enrollment_prerequisite)
+    "inscripto a #{display_name(enrollment_prerequisite.approvable_needed.subject)}"
+  end
 end
