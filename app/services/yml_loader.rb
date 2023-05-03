@@ -82,7 +82,7 @@ module YmlLoader
     when 'subject'
       subject = Subject.find_by!(code: prerequisite["subject_needed_code"])
 
-      approvable_needed = 
+      approvable_needed =
         case prerequisite["needs"]
         when 'exam'
           subject.exam
@@ -95,7 +95,7 @@ module YmlLoader
         else
           raise "Unknown approvable needed: #{prerequisite["needs"]}"
         end
-      
+
       if prerequisite["needs"] == 'enrollment'
         EnrollmentPrerequisite.new(approvable_needed:)
       else
