@@ -1691,6 +1691,24 @@ AR8:
   credits: 8
   has_exam: false
   subject_group: '4428'
+'5852':
+  code: '5852'
+  name: FUNDAMENTOS DE APRENDIZAJE AUTOMATICO Y RECONOCIMIENTO DE PATRONES
+  credits: 8
+  has_exam: true
+  subject_group: '4882'
+'1887':
+  code: '1887'
+  name: REDES NEURONALES PARA LENGUAJE NATURAL
+  credits: 10
+  has_exam: false
+  subject_group: '4882'
+'5853':
+  code: '5853'
+  name: TALLER DE APRENDIZAJE AUTOMATICO
+  credits: 8
+  has_exam: false
+  subject_group: '4882'
 SRN30:
   code: SRN30
   name: TALLER DE ROBÓTICA
@@ -1713,7 +1731,7 @@ SRN30:
   code: '1866'
   name: APRENDIZAJE AUTOMATICO
   credits: 12
-  has_exam: false
+  has_exam: true
   subject_group: '4882'
 '5842':
   code: '5842'
@@ -2153,6 +2171,18 @@ CN3:
   credits: 3
   has_exam: false
   subject_group: '5020'
+'1641':
+  code: '1641'
+  name: ALGORTIMOS DE APROXIMACIÓN
+  credits: 10
+  has_exam: false
+  subject_group: '4815'
+'1650':
+  code: '1650'
+  name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+  credits: 10
+  has_exam: true
+  subject_group: '4815'
 '2398':
   code: '2398'
   name: TECNICAS DE DESCOMPOSICION EN PROGRAMACION MATEMATICA
@@ -3011,6 +3041,12 @@ A62:
   credits: 10
   has_exam: true
   subject_group: '4066'
+'1271':
+  code: '1271'
+  name: CIUDADANIA EN ENTORNOS DIGITALES
+  credits: 8
+  has_exam: false
+  subject_group: '5265'
 O6211:
   code: O6211
   name: TECNOLOGÍA DE MEDIOS AL SERVICIO DE LA PRESERVACIÓN DEL PATRIMONIO HISTÓRICO
@@ -3401,6 +3437,12 @@ C402:
   credits: 0
   has_exam: true
   subject_group:
+1610P:
+  code: 1610P
+  name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+  credits: 0
+  has_exam: true
+  subject_group:
 1446P:
   code: 1446P
   name: CREDITOS NO ACUM. CON REDES DE COMPUTADORAS
@@ -3719,6 +3761,12 @@ CP13:
   credits: 0
   has_exam: true
   subject_group:
+1324P:
+  code: 1324P
+  name: CREDITOS NO ACUM PROGRAMACION 4
+  credits: 0
+  has_exam: true
+  subject_group:
 MA7:
   code: MA7
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -3796,12 +3844,6 @@ PR27:
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 0
   has_exam: true
-  subject_group:
-1324P:
-  code: 1324P
-  name: CREDITOS NO ACUM PROGRAMACION 4
-  credits: 0
-  has_exam: false
   subject_group:
 1721P:
   code: 1721P

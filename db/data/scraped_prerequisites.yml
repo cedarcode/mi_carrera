@@ -264,6 +264,10 @@
       subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
+    - type: subject
       subject_needed_code: CP27
       subject_needed_name: INVESTIGACION OPERATIVA
       needs: exam
@@ -331,17 +335,6 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: '1610'
-      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
-      needs: exam
-    - type: subject
-      subject_needed_code: CP27
-      subject_needed_name: INVESTIGACION OPERATIVA
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
       subject_needed_code: CP6
       subject_needed_name: ANALISIS MATEMATICO II
       needs: exam
@@ -361,6 +354,21 @@
       subject_needed_code: '1075'
       subject_needed_name: PROBABILIDAD Y ESTADISTICA
       needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: CP27
+      subject_needed_name: INVESTIGACION OPERATIVA
+      needs: exam
   subject_code: '1637'
   is_exam: false
 - type: logical
@@ -370,8 +378,16 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1610P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
       subject_needed_code: '1610'
       subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: course
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
       needs: course
     - type: subject
       subject_needed_code: CP27
@@ -3204,6 +3220,13 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: credits
+    credits: 140
+  subject_code: '1271'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
   - type: logical
     logical_operator: not
     operands:
@@ -4258,6 +4281,10 @@
       subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
+    - type: subject
       subject_needed_code: CP27
       subject_needed_name: INVESTIGACION OPERATIVA
       needs: exam
@@ -4279,6 +4306,10 @@
     - type: subject
       subject_needed_code: '1610'
       subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -5728,6 +5759,67 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: '1026'
+    subject_needed_name: MATEMATICA DISCRETA 2
+  - type: subject
+    needs: exam
+    subject_needed_code: '1323'
+    subject_needed_name: PROGRAMACION 3
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1025P
+      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
+      needs: exam
+    - type: subject
+      subject_needed_code: '1025'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1075'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1027'
+      subject_needed_name: LOGICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1013'
+      subject_needed_name: LOGICA MODALIDAD AL REVES
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1911P
+      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1911'
+      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1324P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 4
+      needs: exam
+    - type: subject
+      subject_needed_code: '1324'
+      subject_needed_name: PROGRAMACION 4
+      needs: exam
+  subject_code: '5852'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
   - type: logical
     logical_operator: not
     operands:
@@ -5943,10 +6035,17 @@
       needs: course
       subject_needed_code: '1640'
       subject_needed_name: OPTIMIZACION CONTINUA Y APLICACIONES
-  - type: subject
-    needs: exam
-    subject_needed_code: '1610'
-    subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
   subject_code: '1871'
   is_exam: false
 - type: logical
@@ -5958,6 +6057,10 @@
     - type: subject
       subject_needed_code: '1610'
       subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -6763,14 +6866,21 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      needs: all
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+    - type: subject
+      needs: all
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
   - type: subject
     needs: all
     subject_needed_code: '1323'
     subject_needed_name: PROGRAMACION 3
-  - type: subject
-    needs: all
-    subject_needed_code: '1610'
-    subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
   subject_code: '3207'
   is_exam: false
 - type: logical
@@ -7596,6 +7706,262 @@
     subject_needed_code: '1610'
     subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
   subject_code: '1610'
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: CR10
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: IO8
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: 1610P
+        subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+        needs: exam
+      - type: subject
+        subject_needed_code: '1610'
+        subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+        needs: course
+      - type: subject
+        subject_needed_code: CP27
+        subject_needed_name: INVESTIGACION OPERATIVA
+        needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP6
+      subject_needed_name: ANALISIS MATEMATICO II
+      needs: exam
+    - type: subject
+      subject_needed_code: CP25
+      subject_needed_name: ANALISIS MATEMATICO II (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: 1025P
+      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
+      needs: exam
+    - type: subject
+      subject_needed_code: 1025T
+      subject_needed_name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1025'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1075'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP1
+      subject_needed_name: ANALISIS MATEMATICO I
+      needs: exam
+    - type: subject
+      subject_needed_code: CP22
+      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: '1062'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1022'
+      subject_needed_name: CALCULO 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1072'
+      subject_needed_name: CALCULO 2
+      needs: exam
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1062P
+      subject_needed_name: CREDITOS NO ACUM CDIVV
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP1
+      subject_needed_name: ANALISIS MATEMATICO I
+      needs: exam
+    - type: subject
+      subject_needed_code: CP22
+      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: '1020'
+      subject_needed_name: CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1070'
+      subject_needed_name: CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1052'
+      subject_needed_name: CALCULO 1 (ANUAL)
+      needs: exam
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1020P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1021'
+      subject_needed_name: ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: M9
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1031P
+      subject_needed_name: CREDITOS NO ACUM GAL2
+      needs: exam
+    - type: subject
+      subject_needed_code: CP2
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: CP23
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: '1031'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1058'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+      needs: exam
+    - type: subject
+      subject_needed_code: 158Q
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1021'
+      subject_needed_name: ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: CM14
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: M9
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1030P
+      subject_needed_name: CREDITOS NO ACUM GAL1
+      needs: exam
+    - type: subject
+      subject_needed_code: B11
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: CP2
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: R101
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: CP23
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: B101
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (ANUAL)
+      needs: exam
+    - type: subject
+      subject_needed_code: '1030'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1071'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 171Q
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1053'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+      needs: exam
+  subject_code: '1650'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1610P
+        subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+        needs: exam
+      - type: subject
+        subject_needed_code: '1610'
+        subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+        needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: course
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: course
+  subject_code: '1650'
   is_exam: true
 - type: logical
   logical_operator: and
@@ -9130,6 +9496,10 @@
       subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
+    - type: subject
       subject_needed_code: CP27
       subject_needed_name: INVESTIGACION OPERATIVA
       needs: exam
@@ -9149,8 +9519,16 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1610P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
       subject_needed_code: '1610'
       subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -9545,19 +9923,19 @@
     logical_operator: not
     operands:
     - type: logical
-      logical_operator: or
+      logical_operator: and
       operands:
       - type: subject
-        subject_needed_code: MA15
-        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        subject_needed_code: CP1
+        subject_needed_name: ANALISIS MATEMATICO I
         needs: exam
       - type: subject
-        subject_needed_code: M24
-        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        subject_needed_code: CP6
+        subject_needed_name: ANALISIS MATEMATICO II
         needs: exam
       - type: subject
-        subject_needed_code: M5
-        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        subject_needed_code: CP2
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
         needs: exam
   - type: logical
     logical_operator: not
@@ -9581,19 +9959,19 @@
     logical_operator: not
     operands:
     - type: logical
-      logical_operator: and
+      logical_operator: or
       operands:
       - type: subject
-        subject_needed_code: CP1
-        subject_needed_name: ANALISIS MATEMATICO I
+        subject_needed_code: MA15
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
       - type: subject
-        subject_needed_code: CP6
-        subject_needed_name: ANALISIS MATEMATICO II
+        subject_needed_code: M24
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
       - type: subject
-        subject_needed_code: CP2
-        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+        subject_needed_code: M5
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
   - type: logical
     logical_operator: or
@@ -9601,6 +9979,17 @@
     - type: logical
       logical_operator: and
       operands:
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: 1023P
+          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1023'
+          subject_needed_name: MATEMATICA DISCRETA 1
+          needs: course
       - type: logical
         logical_operator: or
         operands:
@@ -9648,17 +10037,6 @@
           subject_needed_code: '1053'
           subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
           needs: exam
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          subject_needed_code: 1023P
-          subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1023'
-          subject_needed_name: MATEMATICA DISCRETA 1
-          needs: course
     - type: subject
       needs: course
       subject_needed_code: '1026'
@@ -10137,6 +10515,21 @@
         subject_needed_name: ANALISIS MATEMATICO I
         needs: exam
       - type: subject
+        subject_needed_code: CP6
+        subject_needed_name: ANALISIS MATEMATICO II
+        needs: exam
+      - type: subject
+        subject_needed_code: CP2
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+        needs: exam
+    - type: logical
+      logical_operator: and
+      operands:
+      - type: subject
+        subject_needed_code: CP1
+        subject_needed_name: ANALISIS MATEMATICO I
+        needs: exam
+      - type: subject
         subject_needed_code: CP2
         subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
         needs: exam
@@ -10160,21 +10553,37 @@
         subject_needed_code: '1026'
         subject_needed_name: MATEMATICA DISCRETA 2
         needs: exam
-    - type: logical
-      logical_operator: and
-      operands:
-      - type: subject
-        subject_needed_code: CP1
-        subject_needed_name: ANALISIS MATEMATICO I
-        needs: exam
-      - type: subject
-        subject_needed_code: CP6
-        subject_needed_name: ANALISIS MATEMATICO II
-        needs: exam
-      - type: subject
-        subject_needed_code: CP2
-        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-        needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP1
+      subject_needed_name: ANALISIS MATEMATICO I
+      needs: exam
+    - type: subject
+      subject_needed_code: CP22
+      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: '1062'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1022'
+      subject_needed_name: CALCULO 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1072'
+      subject_needed_name: CALCULO 2
+      needs: exam
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1062P
+      subject_needed_name: CREDITOS NO ACUM CDIVV
+      needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -10226,48 +10635,6 @@
       subject_needed_name: ANALISIS MATEMATICO I (P. 74)
       needs: exam
     - type: subject
-      subject_needed_code: '1062'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-      needs: exam
-    - type: subject
-      subject_needed_code: '1022'
-      subject_needed_name: CALCULO 2
-      needs: exam
-    - type: subject
-      subject_needed_code: '1072'
-      subject_needed_name: CALCULO 2
-      needs: exam
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: 1062P
-      subject_needed_name: CREDITOS NO ACUM CDIVV
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP29
-      subject_needed_name: PROGRAMACION III
-      needs: exam
-    - type: subject
-      subject_needed_code: '1323'
-      subject_needed_name: PROGRAMACION 3
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP1
-      subject_needed_name: ANALISIS MATEMATICO I
-      needs: exam
-    - type: subject
-      subject_needed_code: CP22
-      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
-      needs: exam
-    - type: subject
       subject_needed_code: '1061'
       subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
       needs: exam
@@ -10303,12 +10670,12 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: '1610'
-      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      subject_needed_code: CP29
+      subject_needed_name: PROGRAMACION III
       needs: exam
     - type: subject
-      subject_needed_code: CP27
-      subject_needed_name: INVESTIGACION OPERATIVA
+      subject_needed_code: '1323'
+      subject_needed_name: PROGRAMACION 3
       needs: exam
   - type: logical
     logical_operator: or
@@ -10361,6 +10728,25 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1610P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: CP27
+      subject_needed_name: INVESTIGACION OPERATIVA
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: CP6
       subject_needed_name: ANALISIS MATEMATICO II
       needs: exam
@@ -10385,43 +10771,6 @@
 - type: logical
   logical_operator: and
   operands:
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      needs: all
-      subject_needed_code: '1026'
-      subject_needed_name: MATEMATICA DISCRETA 2
-    - type: logical
-      logical_operator: and
-      operands:
-      - type: subject
-        subject_needed_code: CP1
-        subject_needed_name: ANALISIS MATEMATICO I
-        needs: exam
-      - type: subject
-        subject_needed_code: CP2
-        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-        needs: exam
-      - type: subject
-        subject_needed_code: CP4
-        subject_needed_name: LOGICA
-        needs: exam
-    - type: logical
-      logical_operator: and
-      operands:
-      - type: subject
-        subject_needed_code: CP1
-        subject_needed_name: ANALISIS MATEMATICO I
-        needs: exam
-      - type: subject
-        subject_needed_code: CP6
-        subject_needed_name: ANALISIS MATEMATICO II
-        needs: exam
-      - type: subject
-        subject_needed_code: CP2
-        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-        needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -10463,13 +10812,39 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: '1610'
-      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
-      needs: exam
-    - type: subject
-      subject_needed_code: CP27
-      subject_needed_name: INVESTIGACION OPERATIVA
-      needs: exam
+      needs: all
+      subject_needed_code: '1026'
+      subject_needed_name: MATEMATICA DISCRETA 2
+    - type: logical
+      logical_operator: and
+      operands:
+      - type: subject
+        subject_needed_code: CP1
+        subject_needed_name: ANALISIS MATEMATICO I
+        needs: exam
+      - type: subject
+        subject_needed_code: CP2
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+        needs: exam
+      - type: subject
+        subject_needed_code: CP4
+        subject_needed_name: LOGICA
+        needs: exam
+    - type: logical
+      logical_operator: and
+      operands:
+      - type: subject
+        subject_needed_code: CP1
+        subject_needed_name: ANALISIS MATEMATICO I
+        needs: exam
+      - type: subject
+        subject_needed_code: CP6
+        subject_needed_name: ANALISIS MATEMATICO II
+        needs: exam
+      - type: subject
+        subject_needed_code: CP2
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+        needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -10480,6 +10855,21 @@
     - type: subject
       subject_needed_code: '1323'
       subject_needed_name: PROGRAMACION 3
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: CP27
+      subject_needed_name: INVESTIGACION OPERATIVA
       needs: exam
   subject_code: '1635'
   is_exam: false
@@ -10624,17 +11014,6 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: '1610'
-      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
-      needs: exam
-    - type: subject
-      subject_needed_code: CP27
-      subject_needed_name: INVESTIGACION OPERATIVA
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
       subject_needed_code: CP6
       subject_needed_name: ANALISIS MATEMATICO II
       needs: exam
@@ -10653,6 +11032,25 @@
     - type: subject
       subject_needed_code: '1075'
       subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1610P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: CP27
+      subject_needed_name: INVESTIGACION OPERATIVA
       needs: exam
   subject_code: '1057'
   is_exam: false
@@ -10958,6 +11356,10 @@
       subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
+    - type: subject
       subject_needed_code: CP27
       subject_needed_name: INVESTIGACION OPERATIVA
       needs: exam
@@ -10986,8 +11388,16 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1610P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
       subject_needed_code: '1610'
       subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11127,6 +11537,10 @@
       subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
+    - type: subject
       subject_needed_code: CP27
       subject_needed_name: INVESTIGACION OPERATIVA
       needs: exam
@@ -11142,10 +11556,21 @@
       needs: all
       subject_needed_code: 1640P
       subject_needed_name: CREDITOS NO ACUM. OPTIMIZACIÓN CONTINUA DE APLICACIONES
-  - type: subject
-    needs: all
-    subject_needed_code: '1610'
-    subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1610P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
   subject_code: '1640'
   is_exam: false
 - type: logical
@@ -11289,12 +11714,16 @@
   subject_code: '1767'
   is_exam: false
 - type: logical
-  logical_operator: and
+  logical_operator: or
   operands:
   - type: subject
     needs: all
     subject_needed_code: '1610'
     subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+  - type: subject
+    needs: all
+    subject_needed_code: '1650'
+    subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
   subject_code: '1639'
   is_exam: false
 - type: logical
@@ -12086,6 +12515,10 @@
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: exam
     - type: subject
+      subject_needed_code: 1322P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+      needs: exam
+    - type: subject
       subject_needed_code: CP36
       subject_needed_name: INT. A LA COMPUTACION
       needs: exam
@@ -12099,6 +12532,10 @@
       needs: exam
     - type: subject
       subject_needed_code: '1322'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 1322T
       subject_needed_name: PROGRAMACION 1
       needs: exam
     - type: subject
@@ -12547,41 +12984,17 @@
     - type: logical
       logical_operator: and
       operands:
-      - type: credits
-        credits: 330
-      - type: credits
-        credits: 60
-        group: 4580
-      - type: credits
-        credits: 8
-        group: 5020
-      - type: credits
-        credits: 10
-        group: 5265
-      - type: credits
-        credits: 30
-        group: 4428
-      - type: credits
-        credits: 10
-        group: 4066
-      - type: credits
-        credits: 10
-        group: 4647
-      - type: credits
-        credits: 10
-        group: 4815
-      - type: credits
-        credits: 10
-        group: 5082
-      - type: credits
-        credits: 70
-        group: 4083
-      - type: credits
-        credits: 15
-        group: 4756
-    - type: logical
-      logical_operator: and
-      operands:
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          needs: course
+          subject_needed_code: '1650'
+          subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+        - type: subject
+          needs: course
+          subject_needed_code: '1610'
+          subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       - type: logical
         logical_operator: or
         operands:
@@ -12626,8 +13039,8 @@
         credits: 365
       - type: subject
         needs: course
-        subject_needed_code: '1324'
-        subject_needed_name: PROGRAMACION 4
+        subject_needed_code: '1033'
+        subject_needed_name: METODOS NUMERICOS
       - type: subject
         needs: course
         subject_needed_code: '1721'
@@ -12638,8 +13051,16 @@
         subject_needed_name: TEORIA DE LENGUAJES
       - type: subject
         needs: course
-        subject_needed_code: '1033'
-        subject_needed_name: METODOS NUMERICOS
+        subject_needed_code: '1327'
+        subject_needed_name: TALLER DE PROGRAMACION
+      - type: subject
+        needs: course
+        subject_needed_code: '1324'
+        subject_needed_name: PROGRAMACION 4
+      - type: subject
+        needs: course
+        subject_needed_code: '1911'
+        subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
       - type: subject
         needs: course
         subject_needed_code: '1716'
@@ -12648,18 +13069,6 @@
         needs: course
         subject_needed_code: '1323'
         subject_needed_name: PROGRAMACION 3
-      - type: subject
-        needs: course
-        subject_needed_code: '1610'
-        subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
-      - type: subject
-        needs: course
-        subject_needed_code: '1911'
-        subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
-      - type: subject
-        needs: course
-        subject_needed_code: '1327'
-        subject_needed_name: TALLER DE PROGRAMACION
       - type: logical
         logical_operator: or
         operands:
@@ -12679,6 +13088,41 @@
           subject_needed_code: '1537'
           subject_needed_name: SISTEMAS OPERATIVOS
           needs: course
+    - type: logical
+      logical_operator: and
+      operands:
+      - type: credits
+        credits: 330
+      - type: credits
+        credits: 8
+        group: 5020
+      - type: credits
+        credits: 60
+        group: 4580
+      - type: credits
+        credits: 15
+        group: 4756
+      - type: credits
+        credits: 70
+        group: 4083
+      - type: credits
+        credits: 10
+        group: 5082
+      - type: credits
+        credits: 10
+        group: 4815
+      - type: credits
+        credits: 10
+        group: 4647
+      - type: credits
+        credits: 10
+        group: 4066
+      - type: credits
+        credits: 30
+        group: 4428
+      - type: credits
+        credits: 10
+        group: 5265
     - type: credits
       credits: 380
   subject_code: '1730'
@@ -12946,8 +13390,58 @@
   operands:
   - type: subject
     needs: exam
-    subject_needed_code: '1610'
-    subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+    subject_needed_code: '1323'
+    subject_needed_name: PROGRAMACION 3
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1025T
+      subject_needed_name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1025'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1075'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
+      subject_needed_code: CH201
+      subject_needed_name: PROBABILIDAD Y ESTADÍSTICA
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1820'
+      subject_needed_name: APRENDIZAJE AUTOMATICO
+      needs: course
+    - type: subject
+      subject_needed_code: '1827'
+      subject_needed_name: APRENDIZAJE AUTOMATICO
+      needs: course
+    - type: subject
+      subject_needed_code: '1866'
+      subject_needed_name: APRENDIZAJE AUTOMATICO
+      needs: exam
+  subject_code: '1887'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      needs: exam
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+    - type: subject
+      needs: exam
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
   - type: logical
     logical_operator: or
     operands:
@@ -13279,6 +13773,17 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: CP29
+      subject_needed_name: PROGRAMACION III
+      needs: exam
+    - type: subject
+      subject_needed_code: '1323'
+      subject_needed_name: PROGRAMACION 3
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: CP6
       subject_needed_name: ANALISIS MATEMATICO II
       needs: exam
@@ -13302,23 +13807,20 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1610P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
       subject_needed_code: '1610'
       subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
+    - type: subject
       subject_needed_code: CP27
       subject_needed_name: INVESTIGACION OPERATIVA
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP29
-      subject_needed_name: PROGRAMACION III
-      needs: exam
-    - type: subject
-      subject_needed_code: '1323'
-      subject_needed_name: PROGRAMACION 3
       needs: exam
   subject_code: '1617'
   is_exam: false
@@ -13831,6 +14333,31 @@
     credits: 200
   subject_code: S42
   is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1820'
+      subject_needed_name: APRENDIZAJE AUTOMATICO
+      needs: course
+    - type: subject
+      subject_needed_code: '1827'
+      subject_needed_name: APRENDIZAJE AUTOMATICO
+      needs: course
+    - type: subject
+      subject_needed_code: '1866'
+      subject_needed_name: APRENDIZAJE AUTOMATICO
+      needs: exam
+    - type: subject
+      subject_needed_code: '5852'
+      subject_needed_name: FUNDAMENTOS DE APRENDIZAJE AUTOMATICO Y RECONOCIMIENTO
+        DE PATRONES
+      needs: exam
+  subject_code: '5853'
+  is_exam: false
 - type: logical
   logical_operator: and
   operands:
