@@ -87,24 +87,28 @@ module Scraper
     def process_prerequisites(subjects)
       Thread.abort_on_exception = true
 
-      total_pages = /\(\d+ de (\d+)\)/.match(find(".ui-paginator-current").text).captures[0]
-      max_pages = MAX_PAGES || total_pages.to_i
+      find('.ui-paginator-last').click
+      has_selector?(".ui-paginator-last.ui-state-disabled")
+
+      total_pages = find(".ui-paginator-page.ui-state-active").text.to_i
+
+      max_pages = MAX_PAGES || total_pages
 
       1.upto(max_pages).each_slice((max_pages / THREADS).ceil).map do |slice|
         Thread.new do
           using_session(Capybara::Session.new(page.mode)) do
-            process_prerequisites_slice(subjects, slice, total_pages)
+            process_prerequisites_slice(subjects, slice)
           end
         end
       end.flat_map(&:value)
     end
 
-    def process_prerequisites_slice(subjects, slice, total_pages)
+    def process_prerequisites_slice(subjects, slice)
       go_to_groups_and_subjects_page
       go_to_prerequisites_page
 
       slice.flat_map do |page|
-        go_to_page(page, total_pages)
+        go_to_page(page)
 
         # Need to iterate over row ids (data-ri) rather than the row nodes
         # because each time we navigate to the details page for an approvable and
@@ -126,14 +130,14 @@ module Scraper
           click_on 'Volver'
           # Clicking on 'Volver' takes us to the first page so we have
           # to navigate to the page that we previously were.
-          go_to_page(page, total_pages)
+          go_to_page(page)
 
           prereq.merge(subject_code:, is_exam:)
         end
       end
     end
 
-    def go_to_page(page, total_pages)
+    def go_to_page(page)
       # Requested page is not visible in the pages list
       if page > all('.ui-paginator-page').last.text.to_i
         # Navigate to last page because as of 3/3/2023 there are only 16 pages,
@@ -145,11 +149,11 @@ module Scraper
         # an error if it can't find the requested page. We can implement a better
         # (and maybe slower) approach when/if this happens
         find('.ui-paginator-last').click
-        has_selector?(".ui-paginator-current", text: "(#{total_pages} de #{total_pages})")
+        has_selector?(".ui-paginator-last.ui-state-disabled")
       end
 
       find('.ui-paginator-page', text: page, match: :prefer_exact).click
-      has_selector?(".ui-paginator-current", text: "(#{page} de #{total_pages})")
+      has_selector?(".ui-paginator-page.ui-state-active", text: "#{page}")
     end
 
     def add_missing_exams_and_subjects(prerequisite_tree, subjects)
