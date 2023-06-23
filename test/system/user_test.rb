@@ -38,7 +38,7 @@ class UserTest < ApplicationSystemTestCase
 
     assert_current_path root_path
 
-    click_actions_menu
+    click_user_menu
     assert_text "alice@test.com"
   end
 
@@ -73,7 +73,7 @@ class UserTest < ApplicationSystemTestCase
     click_on "Restablecer contraseña"
     assert_text 'Tu contraseña fue modificada correctamente. Has iniciado sesión.'
 
-    click_actions_menu
+    click_user_menu
     click_on "Salir"
 
     visit new_user_session_path
@@ -83,7 +83,7 @@ class UserTest < ApplicationSystemTestCase
     click_on "Ingresar"
     assert_text "Iniciaste sesión correctamente"
 
-    click_actions_menu
+    click_user_menu
     assert_text user.email
   end
 
@@ -107,7 +107,7 @@ class UserTest < ApplicationSystemTestCase
 
     assert_current_path(root_path)
 
-    click_actions_menu
+    click_user_menu
     assert_text user.email
   end
 
@@ -120,7 +120,7 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Contraseña", with: user.password
     click_on "Ingresar"
 
-    click_actions_menu
+    click_user_menu
     click_on "Editar Perfil"
 
     fill_in "Contraseña actual", with: "wrong"
@@ -159,7 +159,7 @@ class UserTest < ApplicationSystemTestCase
     click_on "Guardar"
     assert_text "Actualizaste tu cuenta correctamente."
 
-    click_actions_menu
+    click_user_menu
     assert_text "new_#{user.email}"
   end
 end

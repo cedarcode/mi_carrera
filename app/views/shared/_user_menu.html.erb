@@ -1,0 +1,40 @@
+<div class="mdc-menu mdc-menu-surface" data-user-menu-target='menu'>
+  <ul class="mdc-deprecated-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+    <% if current_user %>
+      <div class="menu-user-info">
+        <span class="mdc-deprecated-list-item__text">
+          <%= current_user.email %>
+        </span>
+      </div>
+    <% else %>
+      <%= link_to new_user_session_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
+        <span class="mdc-deprecated-list-item__ripple"></span>
+        <span class="mdc-deprecated-list-item__text">
+          Ingresar
+        <span>
+      <% end %>
+    <% end %>
+    <li role="separator" class="mdc-deprecated-list-divider"></li>
+    <%= link_to profile_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
+      <span class="mdc-deprecated-list-item__ripple"></span>
+      <span class="mdc-deprecated-list-item__text">
+        Resumen por Grupo
+      </span>
+    <% end %>
+    <% if current_user %>
+      <li role="separator" class="mdc-deprecated-list-divider"></li>
+      <%= link_to edit_user_registration_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
+        <span class="mdc-deprecated-list-item__ripple"></span>
+        <span class="mdc-deprecated-list-item__text">
+          Editar Perfil
+        <span>
+      <% end %>
+      <%= link_to destroy_user_session_path, method: :delete, class: "mdc-deprecated-list-item", tabindex: 0 do %>
+        <span class="mdc-deprecated-list-item__ripple"></span>
+        <span class="mdc-deprecated-list-item__text">
+          Salir
+        </span>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
