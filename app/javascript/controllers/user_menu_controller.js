@@ -8,6 +8,17 @@ export default class extends Controller {
   connect() {
     this.menu = new MDCMenu(this.menuTarget);
     this.menu.setAnchorCorner(Corner.BOTTOM_START);
+
+    // If the JS takes some time to load, it is possible to click on the
+    // account circle button without the menu showing up. This is pronounced in
+    // the system tests, resulting in a lot of flakiness.
+    //
+    // This workaround help us to at least remove the flakiness of the tests.
+    // Basically, when the controller has finished connecting it adds a data
+    // attribute to the element which we will use in the CSS matcher for
+    // finding the button – that way capybara will only click on it when the
+    // controller it's connected.
+    this.triggerTarget.setAttribute('data-controller-connected', 'true');
   }
 
   open() {

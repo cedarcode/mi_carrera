@@ -18,6 +18,6 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   end
 
   def click_user_menu
-    click_on 'account_circle'
+    find(".mdc-icon-button[data-controller-connected='true']", text: 'account_circle').click
   end
 end
