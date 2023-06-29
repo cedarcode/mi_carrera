@@ -51,7 +51,7 @@
             </span>
             <%= yield :credits %>
             <div class="mdc-menu-surface--anchor" data-controller='user-menu'>
-              <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Open user menu" data-user-menu-target='trigger' data-action='click->user-menu#open'>
+              <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Open user menu" data-user-menu-target='trigger' data-action='user-menu#open'>
                 account_circle
               </button>
               <%= render 'shared/user_menu' %>
