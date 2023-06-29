@@ -50,6 +50,12 @@
               <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
             </span>
             <%= yield :credits %>
+            <div class="mdc-menu-surface--anchor" data-controller='user-menu'>
+              <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
+                account_circle
+              </button>
+              <%= render 'shared/user_menu' %>
+            </div>
           </section>
         </div>
       </header>

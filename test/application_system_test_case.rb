@@ -17,7 +17,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     assert_selector(:field, dom_id(approvable), **opts.merge(visible: false))
   end
 
-  def click_actions_menu
-    find(".mdc-icon-button", text: 'menu').click
+  def click_user_menu
+    find(".mdc-icon-button[data-controller-connected='true']", text: 'account_circle').click
   end
 end
