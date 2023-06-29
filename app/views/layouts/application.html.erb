@@ -51,8 +51,14 @@
             </span>
             <%= yield :credits %>
             <div class="mdc-menu-surface--anchor" data-controller='user-menu'>
-              <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
-                account_circle
+              <button id="user-menu" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
+                <% if current_user %>
+                  <div class='logged-in-account-circle'>
+                    <%= current_user.email.first.capitalize %>
+                  </div>
+                <% else %>
+                  account_circle
+                <% end %>
               </button>
               <%= render 'shared/user_menu' %>
             </div>
