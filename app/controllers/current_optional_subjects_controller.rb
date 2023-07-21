@@ -1,6 +1,6 @@
 class CurrentOptionalSubjectsController < ApplicationController
   def index
-    @subjects = Subject.where(current_optional_subject: true).order(:code)
+    @subjects = Subject.current_semester_optionals.order(:code)
 
     respond_to do |format|
       format.html

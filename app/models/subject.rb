@@ -31,6 +31,7 @@ class Subject < ApplicationRecord
 
   scope :ordered_by_category, -> { in_order_of(:category, CATEGORIES) }
   scope :ordered_by_category_and_name, -> { ordered_by_category.order(:name) }
+  scope :current_semester_optionals, -> { where(current_optional_subject: true) }
 
   def self.approved_credits(approved_approvable_ids)
     without_exam.where(course: { id: approved_approvable_ids }).or(
