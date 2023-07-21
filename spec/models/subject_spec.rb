@@ -84,4 +84,13 @@ RSpec.describe Subject, type: :model do
       expect(Subject.ordered_by_category_and_name).to eq([s1, s3, s2])
     end
   end
+
+  describe '#current_semester_optionals' do
+    let(:s1) { create :subject, current_optional_subject: true }
+    let(:s2) { create :subject, current_optional_subject: false }
+
+    it 'returns subjects that are current semester optionals' do
+      expect(Subject.current_semester_optionals).to eq([s1])
+    end
+  end
 end
