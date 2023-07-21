@@ -1,0 +1,15 @@
+<div class="mdc-deprecated-list">
+  <% subjects.each do |subject| %>
+    <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item" do %>
+      <span class="mdc-deprecated-list-item__ripple"></span>
+      <span class="mdc-deprecated-list-item__text">
+        <%= display_name(subject) %>
+      </span>
+      <% if current_student.approved?(subject) %>
+        <span class="mdc-deprecated-list-item__meta material-icons">done</span>
+      <% elsif !current_student.available?(subject) %>
+        <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
