@@ -254,7 +254,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.11.0)
+    selenium-webdriver (4.12.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -320,7 +320,7 @@ DEPENDENCIES
   rubocop-performance (~> 1.19)
   rubocop-rails (~> 2.20)
   sassc-rails (~> 2.1.2)
-  selenium-webdriver (~> 4.11)
+  selenium-webdriver (~> 4.12)
   serviceworker-rails (~> 0.6)
   stimulus-rails (~> 1.2)
   turbo-rails (~> 1.4)
