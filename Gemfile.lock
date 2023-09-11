@@ -285,7 +285,7 @@ GEM
     version_gem (1.1.1)
     warden (1.2.9)
       rack (>= 2.0.9)
-    web-console (4.2.0)
+    web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
@@ -324,7 +324,7 @@ DEPENDENCIES
   serviceworker-rails (~> 0.6)
   stimulus-rails (~> 1.2)
   turbo-rails (~> 1.4)
-  web-console (~> 4.0)
+  web-console (~> 4.2)
 
 RUBY VERSION
    ruby 3.2.2p53
