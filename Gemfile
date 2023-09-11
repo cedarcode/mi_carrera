@@ -29,7 +29,7 @@ group :development do
   gem 'rubocop', '~> 1.56'
   gem 'rubocop-performance', '~> 1.19', require: false
   gem 'rubocop-rails', '~> 2.20', require: false
-  gem 'web-console', '~> 4.0'
+  gem 'web-console', '~> 4.2'
 end
 
 group :test do
