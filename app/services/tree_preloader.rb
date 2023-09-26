@@ -1,5 +1,6 @@
 class TreePreloader
   def preload
+    # rubocop:disable Rails/FindEach
     Subject
       .ordered_by_category_and_name
       .includes(
@@ -9,6 +10,7 @@ class TreePreloader
       preload_prerequisite(subject.course.prerequisite_tree) if subject.course&.prerequisite_tree
       preload_prerequisite(subject.exam.prerequisite_tree) if subject.exam&.prerequisite_tree
     end
+    # rubocop:enable Rails/FindEach
   end
 
   private
