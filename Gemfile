@@ -17,7 +17,7 @@ gem 'puma', '~> 6.4'
 gem 'rollbar', '~> 3.4'
 gem 'sassc-rails', '~> 2.1.2'
 gem 'serviceworker-rails', '~> 0.6'
-gem 'stimulus-rails', '~> 1.2'
+gem 'stimulus-rails', '~> 1.3'
 gem 'turbo-rails', '~> 1.4'
 
 group :development, :test do
