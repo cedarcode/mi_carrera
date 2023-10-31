@@ -18,6 +18,7 @@ env:
 #     DB_HOST: 192.168.0.2
   secret:
     - RAILS_MASTER_KEY
+    - DATABASE_URL
 
 # Use a different ssh user than root
 ssh:
