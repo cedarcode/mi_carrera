@@ -107,9 +107,9 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: "https://fing.micarrera.uy" }
   config.action_mailer.smtp_settings = {
-    address: "smtp.sendgrid.net",
+    address: "live.smtp.mailtrap.io",
     port: 587,
-    user_name: 'apikey',
-    password: Rails.application.credentials.sendgrid_api_key
+    user_name: 'api',
+    password: Rails.application.credentials.mailtrap_api_key
   }
 end
