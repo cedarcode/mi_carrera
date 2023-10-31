@@ -9,6 +9,10 @@ servers:
       traefik.http.routers.micarrera_secure-web-staging.tls: true
       traefik.http.routers.micarrera_secure-web-staging.tls.certresolver: letsencrypt
 
+env:
+  clear:
+    ROLLBAR_ENV: staging
+
 accessories:
   db_staging:
     image: postgres:15.4

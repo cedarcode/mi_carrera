@@ -9,6 +9,10 @@ servers:
       traefik.http.routers.micarrera_secure-web-production.tls: true
       traefik.http.routers.micarrera_secure-web-production.tls.certresolver: letsencrypt
 
+env:
+  clear:
+    GOOGLE_ANALYTICS_MEASUREMENT_ID: G-76KC009E5F
+
 accessories:
   db_prod:
     image: postgres:15.4
