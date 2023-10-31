@@ -3,7 +3,7 @@ image: micarrera
 
 # Deploy to these servers.
 servers:
-  - 192.168.0.1
+  - 44.196.164.25
 
 # Credentials for your image host.
 registry:
