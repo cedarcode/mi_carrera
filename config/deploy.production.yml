@@ -1,0 +1,10 @@
+servers:
+  web:
+    hosts:
+      - 44.196.164.25
+    labels:
+      traefik.http.routers.micarrera-web-production.rule: Host(`micarrera.uy`)
+      traefik.http.routers.micarrera_secure-web-production.entrypoints: websecure
+      traefik.http.routers.micarrera_secure-web-production.rule: Host(`micarrera.uy`)
+      traefik.http.routers.micarrera_secure-web-production.tls: true
+      traefik.http.routers.micarrera_secure-web-production.tls.certresolver: letsencrypt

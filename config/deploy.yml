@@ -1,18 +1,6 @@
 service: micarrera
 image: micarrera
 
-# Deploy to these servers.
-servers:
-  web:
-    hosts:
-      - 44.196.164.25
-    labels:
-      traefik.http.routers.micarrera.rule: Host(`kamal.micarrera.uy`)
-      traefik.http.routers.micarrera_secure.entrypoints: websecure
-      traefik.http.routers.micarrera_secure.rule: Host(`kamal.micarrera.uy`)
-      traefik.http.routers.micarrera_secure.tls: true
-      traefik.http.routers.micarrera_secure.tls.certresolver: letsencrypt
-
 # Credentials for your image host.
 registry:
   server: 864100757851.dkr.ecr.us-east-1.amazonaws.com
