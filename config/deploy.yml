@@ -1,0 +1,35 @@
+service: micarrera
+image: micarrera
+
+registry:
+  server: 864100757851.dkr.ecr.us-east-1.amazonaws.com
+  username: AWS
+  password: <%= %x(aws ecr get-login-password) %>
+
+env:
+  secret:
+    - RAILS_MASTER_KEY
+    - DATABASE_URL
+
+ssh:
+  user: ubuntu
+
+builder:
+  multiarch: false
+
+traefik:
+  options:
+    publish:
+      - "443:443"
+    volume:
+      - "/home/ubuntu/letsencrypt/acme.json:/letsencrypt/acme.json"
+  args:
+    entryPoints.web.address: ":80"
+    entryPoints.websecure.address: ":443"
+    entryPoints.web.http.redirections.entryPoint.to: websecure
+    entryPoints.web.http.redirections.entryPoint.scheme: https
+    entryPoints.web.http.redirections.entrypoint.permanent: true
+    certificatesResolvers.letsencrypt.acme.email: "micarrera@cedarcode.com"
+    certificatesResolvers.letsencrypt.acme.storage: "/letsencrypt/acme.json"
+    certificatesResolvers.letsencrypt.acme.httpchallenge: true
+    certificatesResolvers.letsencrypt.acme.httpchallenge.entrypoint: web
