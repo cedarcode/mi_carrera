@@ -10,6 +10,7 @@ env:
   secret:
     - RAILS_MASTER_KEY
     - DATABASE_URL
+    - SECRET_KEY_BASE
 
 ssh:
   user: ubuntu
