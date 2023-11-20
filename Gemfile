@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby File.read(".ruby-version").strip
 
-gem 'rails', '~> 7.1.1'
+gem 'rails', '~> 7.1.2'
 
 gem 'bootsnap', '~> 1.17', require: false
 gem 'devise', '~> 4.9'
