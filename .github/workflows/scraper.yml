@@ -1,0 +1,25 @@
+name: Scraper
+on:
+  push:
+    branches:
+      - 'scraper'
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+    - name: Run scraper
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        bundle exec rake scraper
+        git add db/data
+        git commit -m 'chore: update scraped subjects data'
+        git push -f origin HEAD:scraper
+        gh pr create \
+            --title "Update scraped subjects data" \
+            --body "This PR runs `rails scraper` to update scraped subjects' data" \
+            --head scraper
