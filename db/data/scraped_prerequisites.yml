@@ -5140,12 +5140,12 @@
       subject_needed_name: FISICA 1
       needs: all
     - type: subject
-      subject_needed_code: REF04
-      subject_needed_name: FÍSICA 1
+      subject_needed_code: REF05
+      subject_needed_name: FÍSICA IA- LDI.CIOCT
       needs: all
     - type: subject
-      subject_needed_code: REF05
-      subject_needed_name: FÍSICA 1A- LDI.CIOCT
+      subject_needed_code: REF04
+      subject_needed_name: FÍSICA 1
       needs: all
     - type: subject
       subject_needed_code: CP26
@@ -5724,11 +5724,34 @@
 - type: logical
   logical_operator: and
   operands:
-  - type: subject
-    needs: course
-    subject_needed_code: REF04
-    subject_needed_name: FÍSICA 1
-  subject_code: REF04
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: SRN50
+      subject_needed_name: FISICA 1A CIOCT 2023
+      needs: course
+    - type: subject
+      subject_needed_code: REF05
+      subject_needed_name: FÍSICA IA- LDI.CIOCT
+      needs: course
+  subject_code: REF06
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: SRN50
+      subject_needed_name: FISICA 1A CIOCT 2023
+      needs: exam
+    - type: subject
+      subject_needed_code: REF05
+      subject_needed_name: FÍSICA IA- LDI.CIOCT
+      needs: exam
+  subject_code: REF06
   is_exam: true
 - type: logical
   logical_operator: not
@@ -5828,40 +5851,17 @@
   - type: subject
     needs: course
     subject_needed_code: REF05
-    subject_needed_name: FÍSICA 1A- LDI.CIOCT
+    subject_needed_name: FÍSICA IA- LDI.CIOCT
   subject_code: REF05
   is_exam: true
 - type: logical
   logical_operator: and
   operands:
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: SRN50
-      subject_needed_name: FISICA 1A CIOCT 2023
-      needs: course
-    - type: subject
-      subject_needed_code: REF05
-      subject_needed_name: FÍSICA 1A- LDI.CIOCT
-      needs: course
-  subject_code: REF06
-  is_exam: false
-- type: logical
-  logical_operator: and
-  operands:
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: SRN50
-      subject_needed_name: FISICA 1A CIOCT 2023
-      needs: exam
-    - type: subject
-      subject_needed_code: REF05
-      subject_needed_name: FÍSICA 1A- LDI.CIOCT
-      needs: exam
-  subject_code: REF06
+  - type: subject
+    needs: course
+    subject_needed_code: REF04
+    subject_needed_name: FÍSICA 1
+  subject_code: REF04
   is_exam: true
 - type: logical
   logical_operator: and

@@ -619,13 +619,13 @@ SRN50:
   subject_group: '4442'
 REF05:
   code: REF05
-  name: FÍSICA 1A- LDI.CIOCT
+  name: FÍSICA IA- LDI.CIOCT
   credits: 4
   has_exam: true
   subject_group: '4442'
 REF06:
   code: REF06
-  name: FÍSICA 1B
+  name: FÍSICA I B
   credits: 6
   has_exam: true
   subject_group: '4442'
