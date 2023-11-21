@@ -3,7 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
-  serialize :approvals, Array
+  serialize :approvals, type: Array
 
   def self.from_omniauth(auth, cookie)
     # check that user with same email exists
