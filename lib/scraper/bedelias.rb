@@ -9,9 +9,9 @@ module Scraper
     include Capybara::DSL
 
     # 5265 - CIENCIAS HUMANAS Y SOCIALES - min: 10 créditos
+    GROUP_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:min): (\d+)( créditos)?\z/
     # SRN14 - MATEMÁTICA DISCRETA I - créditos: 10
-    GROUP_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:min|créditos): (\d+)( créditos)?\z/
-    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:min|créditos): (\d+)(?: .*)?\z/
+    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
     MAX_PAGES = ENV["MAX_PAGES"]&.to_i
     THREADS = (ENV['THREADS'] || 6).to_f
 
