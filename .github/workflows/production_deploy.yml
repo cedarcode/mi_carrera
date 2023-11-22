@@ -1,0 +1,43 @@
+name: Production Deploy
+
+concurrency:
+  group: ${{ github.workflow }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: "Commit (SHA, tag, branch, etc)"
+        required: true
+        default: "master"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.commit }}
+
+      - name: Start the ssh-agent
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id    : ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region           : us-east-1
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+
+      - name: Install kamal
+        run: gem install kamal -v 1.2.0
+
+      - name: Run deploy command
+        run: kamal deploy -d production
