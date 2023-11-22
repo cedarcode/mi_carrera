@@ -1,4 +1,10 @@
 ---
+GAL1P:
+  code: GAL1P
+  name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+  credits: 9
+  has_exam: true
+  subject_group: '4083'
 SRN45:
   code: SRN45
   name: MATEMATICA INICIAL-OPTATIVA
@@ -291,7 +297,7 @@ CP46:
   code: CP46
   name: GEOMETRIA Y ALGEBRA LINEAL (1ER.SEM.)
   credits: 12
-  has_exam: false
+  has_exam: true
   subject_group: '4083'
 CP47:
   code: CP47
@@ -439,7 +445,7 @@ CP4:
   subject_group: '4083'
 '1042':
   code: '1042'
-  name: TEORIA DE COD. ALGEBR. PARA CORREC. DE ERRORES
+  name: TEORIA DE COD. ALGEB. PARA CORR. DE ERRORES
   credits: 7
   has_exam: false
   subject_group: '4083'
@@ -477,7 +483,7 @@ GAL7:
   code: GAL7
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 7
-  has_exam: false
+  has_exam: true
   subject_group: '4083'
 MAT10:
   code: MAT10
@@ -573,7 +579,7 @@ MC3:
   code: MC3
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 12
-  has_exam: false
+  has_exam: true
   subject_group: '4083'
 MEC:
   code: MEC
@@ -605,6 +611,24 @@ M9:
   credits: 9
   has_exam: true
   subject_group: '4083'
+SRN50:
+  code: SRN50
+  name: FISICA 1A CIOCT 2023
+  credits: 4
+  has_exam: true
+  subject_group: '4442'
+REF05:
+  code: REF05
+  name: FÍSICA IA- LDI.CIOCT
+  credits: 4
+  has_exam: true
+  subject_group: '4442'
+REF06:
+  code: REF06
+  name: FÍSICA I B
+  credits: 6
+  has_exam: true
+  subject_group: '4442'
 SRN26:
   code: SRN26
   name: FÍSICA 3
@@ -1307,6 +1331,12 @@ PR8:
   credits: 8
   has_exam: false
   subject_group: '4580'
+'1891':
+  code: '1891'
+  name: TALLER DE SEGURIDAD INFÓRMATICA
+  credits: 10
+  has_exam: false
+  subject_group: '4428'
 '1888':
   code: '1888'
   name: TALLER DE INICIACION A LOS SISTEMAS CIBER-FISICOS
@@ -1731,7 +1761,7 @@ SRN30:
   code: '1866'
   name: APRENDIZAJE AUTOMATICO
   credits: 12
-  has_exam: true
+  has_exam: false
   subject_group: '4882'
 '5842':
   code: '5842'
@@ -1835,6 +1865,12 @@ IAR6:
   credits: 6
   has_exam: false
   subject_group: '4882'
+'1890':
+  code: '1890'
+  name: CALIDAD DE DATOS E INFORMACIÓN
+  credits: 8
+  has_exam: false
+  subject_group: '4647'
 1937T:
   code: 1937T
   name: CREDITOS NO ACUM. CON SIST. DE INFORMACION EN SALUD
@@ -2173,7 +2209,7 @@ CN3:
   subject_group: '5020'
 '1641':
   code: '1641'
-  name: ALGORTIMOS DE APROXIMACIÓN
+  name: ALGORITMOS DE APROXIMACIÓN
   credits: 10
   has_exam: false
   subject_group: '4815'
@@ -2873,6 +2909,12 @@ TP25:
   credits: 10
   has_exam: false
   subject_group: '4756'
+O1145:
+  code: O1145
+  name: COMUNICACIÓN ESTRATÉGICA
+  credits: 9
+  has_exam: true
+  subject_group: '4066'
 '1954':
   code: '1954'
   name: GESTION DE CALIDAD
@@ -3041,6 +3083,24 @@ A62:
   credits: 10
   has_exam: true
   subject_group: '4066'
+O6521:
+  code: O6521
+  name: TEORÍAS Y PRÁCTICAS DE LA ACCESIBILIDAD EN LA COMUNICACIÓN - LIM
+  credits: 8
+  has_exam: false
+  subject_group: '5265'
+O2525:
+  code: O2525
+  name: COMUNICACIÓN E INTELIGENCIA ARTIFICIAL(PPP)
+  credits: 9
+  has_exam: false
+  subject_group: '5265'
+O7246:
+  code: O7246
+  name: TECNOLOGÍAS DE DIGITALIZACIÓN Y TRANSCODIFICACIÓN. IDENTIFICACIÓN Y PRESERVACIÓN
+  credits: 8
+  has_exam: true
+  subject_group: '5265'
 '1271':
   code: '1271'
   name: CIUDADANIA EN ENTORNOS DIGITALES
@@ -3215,6 +3275,12 @@ CH8:
   credits: 8
   has_exam: false
   subject_group: '5265'
+AT001:
+  code: AT001
+  name: SENSIBILIZACIÓN E INTERCAMBIO PARA LA EQUIDAD
+  credits: 2
+  has_exam: false
+  subject_group: '3582'
 SRN22:
   code: SRN22
   name: COMPRENSIÓN LECTORA DE INGLÉS
@@ -3771,7 +3837,7 @@ MA7:
   code: MA7
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 0
-  has_exam: false
+  has_exam: true
   subject_group:
 '1906':
   code: '1906'

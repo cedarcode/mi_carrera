@@ -9,8 +9,9 @@ module Scraper
     include Capybara::DSL
 
     # 5265 - CIENCIAS HUMANAS Y SOCIALES - min: 10 créditos
+    GROUP_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:min): (\d+)(?: créditos)\z/
     # SRN14 - MATEMÁTICA DISCRETA I - créditos: 10
-    CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:min|créditos): (\d+)( créditos)?\z/
+    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
     MAX_PAGES = ENV["MAX_PAGES"]&.to_i
     THREADS = (ENV['THREADS'] || 6).to_f
 
@@ -69,12 +70,12 @@ module Scraper
       group_nodes = all(selector, visible: false)
 
       group_nodes.each do |group_node|
-        group_code, name, credits = CODE_NAME_CREDITS_REGEX.match(group_node.text(:all)).captures
+        group_code, name, credits = GROUP_CODE_NAME_CREDITS_REGEX.match(group_node.text(:all)).captures
         groups[group_code] = { code: group_code, name:, min_credits: credits.to_i }
         subject_nodes_in_group = group_node.all(:xpath, '..//..//li[@data-nodetype="Materia"]/span', visible: false)
 
         subject_nodes_in_group.each do |subject_node|
-          code, name, credits = CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all)).captures
+          code, name, credits = SUBJECT_CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all)).captures
           subjects[code] = { code:, name:, credits: credits.to_i, has_exam: false, subject_group: group_code }
         end
       end
