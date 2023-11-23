@@ -6,8 +6,8 @@ on:
       - master
   workflow_dispatch:
     inputs:
-      branch_or_tag:
-        description: "Branch or tag to deploy"
+      commit:
+        description: "Commit (SHA, tag, branch, etc)"
         required: true
         default: "master"
 
