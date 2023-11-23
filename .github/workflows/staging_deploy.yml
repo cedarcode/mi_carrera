@@ -1,4 +1,4 @@
-name: cd
+name: Staging Deploy
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
         default: "master"
 
 jobs:
-  staging_deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
