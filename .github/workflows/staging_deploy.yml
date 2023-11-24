@@ -1,5 +1,8 @@
 name: Staging Deploy
 
+concurrency:
+  group: ${{ github.workflow }}
+
 on:
   push:
     branches:
