@@ -1,8 +1,7 @@
 name: Scraper
 on:
-  push:
-    branches:
-      - 'scraper'
+  schedule:
+    - cron:  '0 11 * * MON'
 jobs:
   scrape:
     runs-on: ubuntu-latest
