@@ -21,6 +21,7 @@ jobs:
         bundle exec rake scraper
         git config --global user.email "micarrera@cedarcode.com"
         git config --global user.name "MiCarrera"
+        sed -i -e 's/ $//' db/data/*.yml
         git add db/data
         git commit -m 'Scraper'
         git push -f origin HEAD:scraper
