@@ -2,7 +2,7 @@ name: Scraper
 on:
   push:
     branches:
-      - 'gh-action-scraper'
+      - 'scraper'
   schedule:
     - cron:  '0 8 * * MON'
   workflow_dispatch:
@@ -23,6 +23,6 @@ jobs:
         git config --global user.name "MiCarrera"
         sed -i -e 's/ $//' db/data/*.yml
         git add db/data
-        git commit -m 'Scraper'
-        git push -f origin HEAD:scraper
-        gh pr create --title "Scraper" --body "Scraper updates" --head scraper
+        git commit -m 'Test scraper'
+        git push -f origin HEAD:test-scraper
+        gh pr create --title "Test scraper" --body "Test scraper updates" --head test-scraper
