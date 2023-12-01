@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - 'gh-action-scraper'
+  schedule:
+    - cron:  '0 8 * * MON'
 jobs:
   test:
     runs-on: ubuntu-latest
