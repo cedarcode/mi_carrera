@@ -5,6 +5,7 @@ on:
       - 'gh-action-scraper'
   schedule:
     - cron:  '0 8 * * MON'
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
