@@ -16,6 +16,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         bundle exec rake scraper
+        sed -i -e 's/ $//' db/data/*.yml
         git add db/data
         git commit -m 'chore: update scraped subjects data'
         git push -f origin HEAD:scraper
