@@ -26,7 +26,7 @@ end
 group :development do
   gem 'kamal', '~> 1.2'
   gem "letter_opener", "~> 1.7"
-  gem 'rubocop', '~> 1.57'
+  gem 'rubocop', '~> 1.58'
   gem 'rubocop-performance', '~> 1.19', require: false
   gem 'rubocop-rails', '~> 2.22', require: false
   gem 'web-console', '~> 4.2'
