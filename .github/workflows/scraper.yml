@@ -27,7 +27,7 @@ jobs:
         then
             git commit -m 'Test scraper'
             git push -f origin HEAD:test-scraper
-            gh pr create --title "Test scraper" --body "Test scraper updates" --head test-scraper
+            gh pr view test-scraper && gh pr create --title "Test scraper" --body "Test scraper updates" --head test-scraper
         else
             echo "There were no changes. Nothing to do."
         fi
