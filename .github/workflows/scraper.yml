@@ -23,6 +23,11 @@ jobs:
         git config --global user.name "MiCarrera"
         sed -i -e 's/ $//' db/data/*.yml
         git add db/data
-        git commit -m 'Test scraper'
-        git push -f origin HEAD:test-scraper
-        gh pr create --title "Test scraper" --body "Test scraper updates" --head test-scraper
+        if git diff --cached --exit-code;
+        then
+            git commit -m 'Test scraper'
+            git push -f origin HEAD:test-scraper
+            gh pr create --title "Test scraper" --body "Test scraper updates" --head test-scraper
+        else
+            echo "There were no changes. Nothing to do."
+        fi
