@@ -40,7 +40,9 @@ module Scraper
       # Examen aprobado de la U.C.B: CENURLN - SRN03 - ALGEBRA LINEAL I
       when 'Examen aprobado de la U.C.B:' then subject_prerequisite(content, 'exam')
       # Inscripción a Curso de la U.C.B: 1445 - TALLER DE ARQUITECTURA DE COMPUTADORAS
-      when 'Inscripción a Curso de la U.C.B:' then subject_prerequisite(content, 'enrollment')
+      when 'Inscripción a Curso de la U.C.B:' then subject_prerequisite(content, 'course_enrollment')
+      # Inscripción a Examen de la U.C.B: GAL1P - GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+      when 'Inscripción a Examen de la U.C.B:' then subject_prerequisite(content, 'exam_enrollment')
       # U.C.B Aprobada: 1424 - ARQUITECTURA DE COMPUTADORES 1
       when 'U.C.B Aprobada:' then subject_prerequisite(content, 'all')
       else raise "Unknown node title: #{title}"

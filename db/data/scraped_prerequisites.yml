@@ -1038,7 +1038,7 @@
     logical_operator: not
     operands:
     - type: subject
-      needs: enrollment
+      needs: course_enrollment
       subject_needed_code: '1445'
       subject_needed_name: TALLER DE ARQUITECTURA DE COMPUTADORAS
   - type: logical
@@ -1437,7 +1437,7 @@
       logical_operator: not
       operands:
       - type: subject
-        needs: enrollment
+        needs: course_enrollment
         subject_needed_code: MI2
         subject_needed_name: MATEMATICA INICIAL
     - type: subject
@@ -1547,7 +1547,7 @@
     logical_operator: not
     operands:
     - type: subject
-      needs: enrollment
+      needs: course_enrollment
       subject_needed_code: MI2
       subject_needed_name: MATEMATICA INICIAL
   - type: logical
@@ -6596,85 +6596,95 @@
     logical_operator: not
     operands:
     - type: subject
-      needs: enrollment
+      needs: course_enrollment
       subject_needed_code: GAL1P
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
   subject_code: '1030'
   is_exam: false
 - type: logical
-  logical_operator: not
+  logical_operator: and
   operands:
   - type: logical
-    logical_operator: or
+    logical_operator: not
     operands:
     - type: subject
-      subject_needed_code: CM14
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: GAL7
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: MA51
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: MA7
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: MC3
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: M24
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: M9
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: 1030P
-      subject_needed_name: CREDITOS NO ACUM GAL1
-      needs: all
-    - type: subject
-      subject_needed_code: CP2
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-      needs: all
-    - type: subject
-      subject_needed_code: CP23
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
-      needs: all
-    - type: subject
-      subject_needed_code: CP46
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (1ER.SEM.)
-      needs: all
-    - type: subject
-      subject_needed_code: '1071'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: all
-    - type: subject
-      subject_needed_code: 171L
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: all
-    - type: subject
-      subject_needed_code: 171Q
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: all
-    - type: subject
-      subject_needed_code: '1053'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-      needs: all
-    - type: subject
+      needs: exam_enrollment
       subject_needed_code: GAL1P
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
-      needs: all
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: CM14
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: GAL7
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: MAT33
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: MA51
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: MA7
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: MC3
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: M24
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: M9
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: 1030P
+        subject_needed_name: CREDITOS NO ACUM GAL1
+        needs: exam
+      - type: subject
+        subject_needed_code: CP2
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+        needs: exam
+      - type: subject
+        subject_needed_code: CP23
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+        needs: exam
+      - type: subject
+        subject_needed_code: CP46
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (1ER.SEM.)
+        needs: exam
+      - type: subject
+        subject_needed_code: '1071'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: 171L
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: 171Q
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1053'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+        needs: exam
+      - type: subject
+        subject_needed_code: GAL1P
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+        needs: exam
   subject_code: '1030'
   is_exam: true
 - type: logical
@@ -6898,85 +6908,95 @@
     logical_operator: not
     operands:
     - type: subject
-      needs: enrollment
+      needs: course_enrollment
       subject_needed_code: '1030'
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
   subject_code: GAL1P
   is_exam: false
 - type: logical
-  logical_operator: not
+  logical_operator: and
   operands:
   - type: logical
-    logical_operator: or
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: CM14
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: GAL7
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: MAT33
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: MA51
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: MA7
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: MC3
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: M24
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: M9
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: 1030P
+        subject_needed_name: CREDITOS NO ACUM GAL1
+        needs: exam
+      - type: subject
+        subject_needed_code: CP2
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+        needs: exam
+      - type: subject
+        subject_needed_code: CP23
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+        needs: exam
+      - type: subject
+        subject_needed_code: CP46
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (1ER.SEM.)
+        needs: exam
+      - type: subject
+        subject_needed_code: '1030'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1071'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: 171L
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: 171Q
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1053'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+        needs: exam
+  - type: logical
+    logical_operator: not
     operands:
     - type: subject
-      subject_needed_code: CM14
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: GAL7
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: MA51
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: MA7
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: MC3
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: M24
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: M9
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: 1030P
-      subject_needed_name: CREDITOS NO ACUM GAL1
-      needs: all
-    - type: subject
-      subject_needed_code: CP2
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-      needs: all
-    - type: subject
-      subject_needed_code: CP23
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
-      needs: all
-    - type: subject
-      subject_needed_code: CP46
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (1ER.SEM.)
-      needs: all
-    - type: subject
+      needs: exam_enrollment
       subject_needed_code: '1030'
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: all
-    - type: subject
-      subject_needed_code: '1071'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: all
-    - type: subject
-      subject_needed_code: 171L
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: all
-    - type: subject
-      subject_needed_code: 171Q
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: all
-    - type: subject
-      subject_needed_code: '1053'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-      needs: all
   subject_code: GAL1P
   is_exam: true
 - type: logical
@@ -10114,7 +10134,7 @@
     logical_operator: not
     operands:
     - type: subject
-      needs: enrollment
+      needs: course_enrollment
       subject_needed_code: '1013'
       subject_needed_name: LOGICA MODALIDAD AL REVES
   - type: logical
@@ -10194,7 +10214,7 @@
     logical_operator: not
     operands:
     - type: subject
-      needs: enrollment
+      needs: course_enrollment
       subject_needed_code: '1027'
       subject_needed_name: LOGICA
   - type: subject
@@ -14904,7 +14924,7 @@
     logical_operator: not
     operands:
     - type: subject
-      needs: enrollment
+      needs: course_enrollment
       subject_needed_code: '1444'
       subject_needed_name: ASPECTOS AVANZ. DE ARQ.DE COMPUTADORAS
   - type: logical

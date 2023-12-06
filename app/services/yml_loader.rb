@@ -86,7 +86,8 @@ module YmlLoader
       when 'exam' then SubjectPrerequisite.new(approvable_needed: subject.exam)
       when 'course' then SubjectPrerequisite.new(approvable_needed: subject.course)
       when 'all' then SubjectPrerequisite.new(approvable_needed: subject.exam || subject.course)
-      when 'enrollment' then EnrollmentPrerequisite.new(approvable_needed: subject.course)
+      when 'course_enrollment' then EnrollmentPrerequisite.new(approvable_needed: subject.course)
+      when 'exam_enrollment' then EnrollmentPrerequisite.new(approvable_needed: subject.exam)
       else raise "Unknown approvable needed: #{prerequisite["needs"]}"
       end
 
