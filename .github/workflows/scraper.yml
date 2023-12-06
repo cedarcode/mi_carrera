@@ -18,9 +18,14 @@ jobs:
         bundle exec rake scraper
         sed -i -e 's/ $//' db/data/*.yml
         git add db/data
-        git commit -m 'chore: update scraped subjects data'
-        git push -f origin HEAD:scraper
-        gh pr create \
-            --title "Update scraped subjects data" \
-            --body "This PR runs `rails scraper` to update scraped subjects' data" \
-            --head scraper
+        if ! git diff --cached --quiet;
+        then
+            git commit -m 'chore: update scraped subjects data'
+            git push -f origin HEAD:scraper
+            gh pr create \
+                --title "Update scraped subjects data" \
+                --body "This PR runs `rails scraper` to update scraped subjects' data" \
+                --head scraper
+        else
+            echo "There were no changes. Nothing to do."
+        fi
