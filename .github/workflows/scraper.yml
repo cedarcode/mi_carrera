@@ -27,7 +27,12 @@ jobs:
         then
             git commit -m 'Test scraper'
             git push -f origin HEAD:test-scraper
-            gh pr view test-scraper && gh pr create --title "Test scraper" --body "Test scraper updates" --head test-scraper
+            if ! gh pr view test-scraper > /dev/null;
+            then
+                gh pr create --title "Test scraper" --body "Test scraper updates" --head test-scraper
+            else
+                echo "A PR already exists and was correctly updated."
+            fi
         else
             echo "There were no changes. Nothing to do."
         fi
