@@ -19,11 +19,11 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         bundle exec rake scraper
-        git config --global user.email "micarrera@cedarcode.com"
-        git config --global user.name "MiCarrera"
+        git config --global user.email "micarrera-bot@cedarcode.com"
+        git config --global user.name "micarrera-bot"
         sed -i -e 's/ $//' db/data/*.yml
         git add db/data
-        if git diff --cached --exit-code;
+        if ! git diff --cached --quiet;
         then
             git commit -m 'Test scraper'
             git push -f origin HEAD:test-scraper
