@@ -1,0 +1,36 @@
+name: Scraper
+on:
+  schedule:
+    - cron:  '0 11 * * MON'
+  workflow_dispatch:
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+    - name: Run scraper
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        bundle exec rake scraper
+        sed -i -e 's/ $//' db/data/*.yml
+        git add db/data
+        if ! git diff --cached --quiet;
+        then
+            git commit -m 'chore: update scraped subjects data'
+            git push -f origin HEAD:scraper
+            if ! gh pr view scraper > /dev/null;
+            then
+                gh pr create \
+                    --title "Update scraped subjects data" \
+                    --body "This PR runs `rails scraper` to update scraped subjects' data" \
+                    --head scraper
+            else
+                echo "A PR already exists and was correctly updated."
+            fi
+        else
+            echo "There were no changes. Nothing to do."
+        fi
