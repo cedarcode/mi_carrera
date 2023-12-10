@@ -6,7 +6,9 @@ class ApprovalsController < ApplicationController
 
     current_student.add(@approvable)
 
-    @graduated = current_student.total_credits >= 450 && previous_total_credits < 450
+    group_credits_met = SubjectGroup.all.all? { |group| current_student.group_credits_met?(group) }
+
+    @graduated = current_student.total_credits >= 450 && previous_total_credits < 450 && group_credits_met
 
     render_turbo_stream
   end
