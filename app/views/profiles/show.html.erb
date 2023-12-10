@@ -2,13 +2,20 @@
   <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5">Resumen por Grupo</h3>
   <ul class="mdc-deprecated-list growing-text-list">
     <li role="separator" class="mdc-deprecated-list-divider"></li>
+    <% all_group_credits_met = true %>
     <% @groups_and_credits.each do |group| %>
       <li class="mdc-deprecated-list-item">
         <%= link_to subject_group_path(group[:subject_group]), :class => "mdc-deprecated-list-item__text" do %>
           <%= group[:subject_group].name %>
         <% end %>
-        <span class="mdc-deprecated-list-item__meta">
-          <%= group[:credits] %>
+
+        <% 
+          credits_needed_reached = group[:credits] >= group[:subject_group].credits_needed 
+          all_group_credits_met = false unless credits_needed_reached
+          group_credits_class = "subject-group-credits-#{credits_needed_reached ? "met" : "unmet"}" 
+        %>
+        <span class="mdc-deprecated-list-item__meta <%= group_credits_class %>">
+          <%= group[:credits] %> / <%= group[:subject_group].credits_needed %>
         </span>
       </li>
       <li role="separator" class="mdc-deprecated-list-divider"></li>
@@ -17,8 +24,14 @@
       <span class="mdc-deprecated-list-item__text">
         Total
       </span>
-      <span class="mdc-deprecated-list-item__meta">
-        <%= @groups_and_credits.pluck(:credits).reduce :+ %>
+
+      <% 
+        total_credits = @groups_and_credits.pluck(:credits).reduce :+
+        all_group_credits_met = all_group_credits_met && total_credits >= 450
+        total_credits_class = "subject-group-credits-#{all_group_credits_met ? "met" : "unmet"}" 
+      %>
+      <span class="mdc-deprecated-list-item__meta <%= total_credits_class %>">
+        <%= total_credits %> / 450
       </span>
     </li>
   </ul>
