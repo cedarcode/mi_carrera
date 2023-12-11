@@ -3275,6 +3275,12 @@ CH8:
   credits: 8
   has_exam: false
   subject_group: '5265'
+'1236':
+  code: '1236'
+  name: SEMINARIO SOBRE ENCUENTROS ENTRE ARTE Y TECNOLOGIAS
+  credits: 4
+  has_exam: false
+  subject_group: '3582'
 AT001:
   code: AT001
   name: SENSIBILIZACIÓN E INTERCAMBIO PARA LA EQUIDAD
