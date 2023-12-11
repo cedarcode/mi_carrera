@@ -24,7 +24,7 @@ jobs:
             git config --global user.name "MiCarrera"
             git commit -m 'chore: update scraped subjects data'
             git push -f origin HEAD:scraper
-            if ! gh pr view scraper > /dev/null;
+            if [ $(gh pr list --head scraper --json title --jq 'length') == '0' ];
             then
                 gh pr create \
                     --title "Update scraped subjects data" \
