@@ -20,6 +20,8 @@ jobs:
         git add db/data
         if ! git diff --cached --quiet;
         then
+            git config --global user.email "micarrera@cedarcode.com"
+            git config --global user.name "MiCarrera"
             git commit -m 'chore: update scraped subjects data'
             git push -f origin HEAD:scraper
             if ! gh pr view scraper > /dev/null;
