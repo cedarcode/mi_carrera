@@ -9698,6 +9698,10 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: IS14
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
       subject_needed_code: '1716'
       subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
       needs: course
@@ -14320,6 +14324,13 @@
     subject_needed_code: '1327'
     subject_needed_name: TALLER DE PROGRAMACION
   subject_code: '5705'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: credits
+    credits: 90
+  subject_code: '1236'
   is_exam: false
 - type: logical
   logical_operator: and
