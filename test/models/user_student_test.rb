@@ -153,4 +153,17 @@ class UserStudentTest < ActiveSupport::TestCase
     user.approvals = [subject1.course.id, subject2.course.id]
     assert UserStudent.new(user).groups_credits_met?
   end
+
+  test "#graduated? returns true if total credits >= 450 and all groups credits met" do
+    group = create :subject_group, credits_needed: 10
+    subject1 = create :subject, credits: 440, group: group
+    subject2 = create :subject, credits: 10, group: group
+    user = create :user, approvals: []
+
+    assert_not UserStudent.new(user).graduated?
+    user.approvals = [subject1.course.id]
+    assert_not UserStudent.new(user).graduated?
+    user.approvals = [subject1.course.id, subject2.course.id]
+    assert UserStudent.new(user).graduated?
+  end
 end
