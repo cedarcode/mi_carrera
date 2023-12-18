@@ -28,7 +28,7 @@ group :development do
   gem "letter_opener", "~> 1.7"
   gem 'rubocop', '~> 1.59'
   gem 'rubocop-performance', '~> 1.20', require: false
-  gem 'rubocop-rails', '~> 2.22', require: false
+  gem 'rubocop-rails', '~> 2.23', require: false
   gem 'web-console', '~> 4.2'
 end
 
