@@ -139,4 +139,18 @@ class UserStudentTest < ActiveSupport::TestCase
     user.approvals = [subject1.course.id, subject2.course.id]
     assert UserStudent.new(user).group_credits_met?(group)
   end
+
+  test "#groups_credits_met? returns true if all groups credits met" do
+    group1 = create :subject_group, credits_needed: 10
+    group2 = create :subject_group, credits_needed: 10
+    subject1 = create :subject, credits: 10, group: group1
+    subject2 = create :subject, credits: 10, group: group2
+    user = create :user, approvals: []
+
+    assert_not UserStudent.new(user).groups_credits_met?
+    user.approvals = [subject1.course.id]
+    assert_not UserStudent.new(user).groups_credits_met?
+    user.approvals = [subject1.course.id, subject2.course.id]
+    assert UserStudent.new(user).groups_credits_met?
+  end
 end

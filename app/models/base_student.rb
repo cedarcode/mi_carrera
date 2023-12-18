@@ -27,6 +27,7 @@ class BaseStudent
   def welcome_banner_mark_as_viewed! = raise NotImplementedError
   def met?(prerequisite) = prerequisite.met?(ids)
   def group_credits_met?(group) = group_credits(group) >= group.credits_needed
+  def groups_credits_met? = SubjectGroup.all.all? { |group| group_credits_met?(group) }
 
   private
 
