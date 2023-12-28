@@ -14,6 +14,7 @@ module YmlLoader
     subject_groups.each do |code, yml_group|
       subject_group = SubjectGroup.find_or_initialize_by(code:)
       subject_group.name = format_name(yml_group["name"])
+      subject_group.credits_needed = yml_group["min_credits"]
       subject_group.save!
     end
   end

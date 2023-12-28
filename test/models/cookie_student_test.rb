@@ -130,4 +130,46 @@ class CookieStudentTest < ActiveSupport::TestCase
     assert_not build(:cookie_student, approved_approvable_ids: []).met?(prereq)
     assert build(:cookie_student, approved_approvable_ids: [subject1.course.id]).met?(prereq)
   end
+
+  test "#group_credits_met? returns true if group credits met" do
+    group = create :subject_group, credits_needed: 10
+    subject1 = create :subject, credits: 5, group: group
+    subject2 = create :subject, credits: 5, group: group
+    cookies = build(:cookie)
+    student = build(:cookie_student, cookies:)
+    student.add(subject1.course)
+
+    assert_not student.group_credits_met?(group)
+    student.add(subject2.course)
+    assert student.group_credits_met?(group)
+  end
+
+  test "#groups_credits_met? returns true if all groups credits met" do
+    group1 = create :subject_group, credits_needed: 10
+    group2 = create :subject_group, credits_needed: 10
+    subject1 = create :subject, credits: 10, group: group1
+    subject2 = create :subject, credits: 10, group: group2
+    cookies = build(:cookie)
+    student = build(:cookie_student, cookies:)
+
+    assert_not student.groups_credits_met?
+    student.add(subject1.course)
+    assert_not student.groups_credits_met?
+    student.add(subject2.course)
+    assert student.groups_credits_met?
+  end
+
+  test "#graduated? returns true if total credits >= 450 and all groups credits met" do
+    group = create :subject_group, credits_needed: 10
+    subject1 = create :subject, credits: 440, group: group
+    subject2 = create :subject, credits: 10, group: group
+    cookies = build(:cookie)
+    student = build(:cookie_student, cookies:)
+
+    assert_not student.graduated?
+    student.add(subject1.course)
+    assert_not student.graduated?
+    student.add(subject2.course)
+    assert student.graduated?
+  end
 end

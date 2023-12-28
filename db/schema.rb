@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_17_141005) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_10_213256) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_141005) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.string "code"
+    t.integer "credits_needed", default: 0, null: false
     t.index ["code"], name: "index_subject_groups_on_code", unique: true
   end
 
