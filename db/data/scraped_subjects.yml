@@ -2437,7 +2437,7 @@ IO8:
   subject_group: '4815'
 O6221:
   code: O6221
-  name: LABORATORIO DE ACCESIBILIDAD A LOS MEDIOS
+  name: LABORATORIO DE ACCESIBILIDAD A LOS MEDIOS (INV. - EXT.)
   credits: 10
   has_exam: true
   subject_group: '5082'
