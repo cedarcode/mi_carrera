@@ -3,7 +3,6 @@ const CACHE_NAME = CACHE_VERSION + ':sw-cache-';
 
 
 function onInstall(event) {
-  console.log('[Serviceworker]', "Installing!", event);
   event.waitUntil(
     caches.open(CACHE_NAME).then(function prefill(cache) {
       return cache.addAll([
@@ -22,7 +21,6 @@ function onInstall(event) {
 }
 
 function onActivate(event) {
-  console.log('[Serviceworker]', "Activating!", event);
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
@@ -52,7 +50,6 @@ function onFetch(event) {
         // if not found in cache, return default offline content for navigate requests
         if (event.request.mode === 'navigate' ||
           (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
-          console.log('[Serviceworker]', "Fetching offline content", event);
           return caches.match('/offline.html');
         }
       })
