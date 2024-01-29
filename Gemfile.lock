@@ -271,7 +271,7 @@ GEM
       railties (>= 5.2)
     rexml (3.2.6)
     rollbar (3.5.1)
-    rubocop (1.60.1)
+    rubocop (1.60.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
