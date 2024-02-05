@@ -4,7 +4,7 @@ ruby File.read(".ruby-version").strip
 
 gem 'rails', '~> 7.1.3'
 
-gem 'bootsnap', '~> 1.17', require: false
+gem 'bootsnap', '~> 1.18', require: false
 gem 'devise', '~> 4.9'
 gem 'factory_bot_rails', '~> 6.4'
 gem 'importmap-rails', '~> 2.0'
