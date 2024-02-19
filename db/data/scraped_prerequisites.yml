@@ -3225,6 +3225,15 @@
   subject_code: '1223'
   is_exam: true
 - type: logical
+  logical_operator: not
+  operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: '1223'
+    subject_needed_name: CIENCIA, TECNOLOGIA Y SOCIEDAD
+  subject_code: D78A
+  is_exam: false
+- type: logical
   logical_operator: and
   operands:
   - type: subject
@@ -3302,6 +3311,21 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1030P
+      subject_needed_name: CREDITOS NO ACUM GAL1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1030'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1053'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: '1062'
       subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
       needs: exam
@@ -3321,23 +3345,24 @@
       subject_needed_name: CREDITOS NO ACUM PROB Y EST.
       needs: exam
     - type: subject
+      subject_needed_code: 1025T
+      subject_needed_name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
       subject_needed_code: '1025'
       subject_needed_name: PROBABILIDAD Y ESTADISTICA
       needs: course
-  - type: logical
-    logical_operator: or
-    operands:
     - type: subject
-      subject_needed_code: 1030P
-      subject_needed_name: CREDITOS NO ACUM GAL1
+      subject_needed_code: '1075'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
       needs: exam
     - type: subject
-      subject_needed_code: '1030'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      subject_needed_code: 125L
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
       needs: exam
     - type: subject
-      subject_needed_code: '1053'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+      subject_needed_code: 175Q
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
       needs: exam
   subject_code: '2415'
   is_exam: false
