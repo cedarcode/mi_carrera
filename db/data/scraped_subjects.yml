@@ -3689,6 +3689,18 @@ CM14:
   credits: 0
   has_exam: true
   subject_group:
+125L:
+  code: 125L
+  name: PROBABILIDAD Y ESTADISTICA
+  credits: 0
+  has_exam: true
+  subject_group:
+175Q:
+  code: 175Q
+  name: PROBABILIDAD Y ESTADISTICA
+  credits: 0
+  has_exam: true
+  subject_group:
 CP102:
   code: CP102
   name: CONTROL DE CALIDAD
@@ -3886,18 +3898,6 @@ IN35:
   name: PROGRAMACION 1
   credits: 0
   has_exam: true
-  subject_group:
-125L:
-  code: 125L
-  name: PROBABILIDAD Y ESTADISTICA
-  credits: 0
-  has_exam: false
-  subject_group:
-175Q:
-  code: 175Q
-  name: PROBABILIDAD Y ESTADISTICA
-  credits: 0
-  has_exam: false
   subject_group:
 1640P:
   code: 1640P
