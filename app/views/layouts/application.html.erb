@@ -47,6 +47,15 @@
             <%= link_to 'MiCarrera', root_path, class: 'home-button'%>
           </section>
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+            <div id="searchbox" class="">
+              <%= form_with(url: all_subjects_path, method: :get, local: true) do |f| %>
+                <div class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mdc-text-field--no-label">
+                  <span class="mdc-text-field__ripple"></span>
+                  <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Search", autofocus: true %>
+                  <span class="mdc-line-ripple"></span>
+                </div>
+              <% end %>
+            </div>
             <span hidden>
               <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
             </span>

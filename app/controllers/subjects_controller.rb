@@ -13,7 +13,7 @@ class SubjectsController < ApplicationController
   end
 
   def all
-    @subjects = TreePreloader.new.preload
+    @subjects = TreePreloader.new.preload(name: params[:search])
   end
 
   private

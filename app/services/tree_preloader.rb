@@ -1,7 +1,8 @@
 class TreePreloader
-  def preload
+  def preload(**filters)
     # rubocop:disable Rails/FindEach
     Subject
+      .where("lower(name) LIKE ?", "%#{filters[:name]&.downcase}%")
       .ordered_by_category_and_name
       .includes(
         course: :prerequisite_tree,
