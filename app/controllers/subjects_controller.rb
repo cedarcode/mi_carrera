@@ -13,7 +13,15 @@ class SubjectsController < ApplicationController
   end
 
   def all
-    @subjects = TreePreloader.new.preload(name: params[:search])
+    @subjects =
+      begin
+        subjects =
+          if params[:search].present?
+            Subject.where("lower(unaccent(name)) LIKE ?", "%#{I18n.transliterate(params[:search].downcase)}%")
+          end
+
+        TreePreloader.new(subjects).preload
+      end
   end
 
   private

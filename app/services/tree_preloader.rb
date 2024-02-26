@@ -1,8 +1,11 @@
 class TreePreloader
-  def preload(**filters)
+  def initialize(subjects = nil)
+    @subjects = subjects || Subject.all
+  end
+
+  def preload
     # rubocop:disable Rails/FindEach
-    Subject
-      .where("lower(unaccent(name)) LIKE ?", "%#{I18n.transliterate(filters[:name]&.downcase)}%")
+    subjects
       .ordered_by_category_and_name
       .includes(
         course: :prerequisite_tree,
@@ -15,6 +18,8 @@ class TreePreloader
   end
 
   private
+
+  attr_reader :subjects
 
   def preload_prerequisite(prereq)
     case prereq
