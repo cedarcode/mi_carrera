@@ -11864,6 +11864,37 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1610P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
+  subject_code: '1897'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
   - type: subject
     needs: course
     subject_needed_code: SRN09

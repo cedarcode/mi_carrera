@@ -2207,6 +2207,12 @@ CN3:
   credits: 3
   has_exam: false
   subject_group: '5020'
+'1897':
+  code: '1897'
+  name: MÉTODOS EFICI. DE SIMUL. PARA LA ESTIM. DE CONFIA. DE REDES
+  credits: 4
+  has_exam: false
+  subject_group: '4815'
 '1641':
   code: '1641'
   name: ALGORITMOS DE APROXIMACIÓN
