@@ -19,6 +19,7 @@ class SubjectsTest < ApplicationSystemTestCase
     assert_text "GAL 2"
     assert_text "Taller"
 
+    click_search_trigger
     fill_in 'search', with: "Taller\n"
 
     assert_no_text "GAL 1"

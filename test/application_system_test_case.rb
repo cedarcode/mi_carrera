@@ -20,4 +20,8 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   def click_user_menu
     find("#user-menu[data-controller-connected='true']").click
   end
+
+  def click_search_trigger
+    find("#searchIcon").click
+  end
 end

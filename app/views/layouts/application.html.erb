@@ -39,23 +39,15 @@
   <body class="mdc-typography" data-controller='navigation-drawer'>
     <%= render 'shared/menu' %>
     <div class="mdc-drawer-app-content">
-      <header id='app-bar' class="mdc-top-app-bar">
-        <div class="mdc-top-app-bar__row">
+      <header id='app-bar' class="mdc-top-app-bar" data-controller='search'>
+        <div class="mdc-top-app-bar__row" data-search-target="appBar">
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
             <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" data-action='click->navigation-drawer#open'>menu</button>
             <%= yield :navigation_icon %>
             <%= link_to 'MiCarrera', root_path, class: 'home-button'%>
           </section>
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-            <div id="searchbox" class="">
-              <%= form_with(url: all_subjects_path, method: :get, local: true) do |f| %>
-                <div class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mdc-text-field--no-label">
-                  <span class="mdc-text-field__ripple"></span>
-                  <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Search", autofocus: true %>
-                  <span class="mdc-line-ripple"></span>
-                </div>
-              <% end %>
-            </div>
+            <button id="searchIcon" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-action="search#toggle">search</button>
             <span hidden>
               <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
             </span>
@@ -73,6 +65,16 @@
               <%= render 'shared/user_menu' %>
             </div>
           </section>
+        </div>
+        <div id="searchbar" class="mdc-top-app-bar__row d-none" data-search-target="searchbar">
+          <%= form_with(url: all_subjects_path, method: :get, local: true) do |f| %>
+            <div class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mdc-text-field--no-label mdc-text-field--with-trailing-icon">
+              <span class="mdc-text-field__ripple"></span>
+              <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Search", autofocus: true %>
+              <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" data-action="click->search#toggle" tabindex="0" role="button">close</i>
+              <span class="mdc-line-ripple"></span>
+            </div>
+          <% end %>
         </div>
       </header>
       <main class="mdc-top-app-bar--fixed-adjust main-content" id='main-content'>
