@@ -43,7 +43,7 @@ jobs:
 
     - name: Upload screenshots
       if: failure()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: system_test_screenshots
         path: ./tmp/screenshots
