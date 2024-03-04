@@ -7438,21 +7438,25 @@
 - type: logical
   logical_operator: and
   operands:
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      needs: all
-      subject_needed_code: '1610'
-      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
-    - type: subject
-      needs: all
-      subject_needed_code: '1610'
-      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
   - type: subject
     needs: all
     subject_needed_code: '1323'
     subject_needed_name: PROGRAMACION 3
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1610P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      needs: exam
   subject_code: '3207'
   is_exam: false
 - type: logical
