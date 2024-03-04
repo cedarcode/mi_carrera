@@ -31,6 +31,7 @@ class SubjectsTest < ApplicationSystemTestCase
     assert_no_text "GAL 1"
     assert_no_text "GAL 2"
     assert_no_text "Taller"
+    assert_text "No hay resultados"
 
     fill_in 'search', with: " \n"
 

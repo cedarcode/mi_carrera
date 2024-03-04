@@ -3,13 +3,20 @@
 <% end %>
 
 <div class="mdc-deprecated-list-group subjects-list">
-  <% @subjects.group_by(&:category).each do |category, subjects| %>
-    <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
-      <%= formatted_category(category) %>
-    </h3>
+  <% if @subjects.any? %>
+    <% @subjects.group_by(&:category).each do |category, subjects| %>
+      <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+        <%= formatted_category(category) %>
+      </h3>
 
-    <%= render partial: "subjects/subjects_list", locals: { subjects: subjects } %>
+      <%= render partial: "subjects/subjects_list", locals: { subjects: subjects } %>
 
-    <hr class="mdc-deprecated-list-divider">
+      <hr class="mdc-deprecated-list-divider">
+    <% end %>
+  <% else %>
+    <div class="search-no-results">
+      <i class="material-icons">search</i>
+      No hay resultados
+    </div>
   <% end %>
 </div>
