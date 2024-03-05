@@ -63,7 +63,7 @@ CP49:
   category: 'inactive'
 '1061':
   eva_id: '1024'
-  openfing_id: civ
+  openfing_id: cdiv-2022
   short_name: Cálculo DIV
   category: 'first_semester'
 '1020':
@@ -76,7 +76,7 @@ CP49:
   category: 'inactive'
 '1062':
   eva_id: '1131'
-  openfing_id: cdivv
+  openfing_id: cdivv-2022
   short_name: Cálculo DIVV
   category: 'second_semester'
 '1022':
@@ -106,7 +106,7 @@ CP47:
   category: 'inactive'
 '1030':
   eva_id: '256'
-  openfing_id: gal1
+  openfing_id: gal1-2022
   short_name: GAL 1
   category: 'second_semester'
 '1071':
@@ -115,7 +115,7 @@ CP47:
   category: 'inactive'
 '1031':
   eva_id: '270'
-  openfing_id: gal2
+  openfing_id: gal219
   short_name: GAL 2
   category: 'third_semester'
 '1058':
@@ -136,11 +136,11 @@ CP4:
   category: 'inactive'
 '1023':
   eva_id: '323'
-  openfing_id: md1
+  openfing_id: md1-2022
   category: 'first_semester'
 '1026':
   eva_id: '267'
-  openfing_id: md2
+  openfing_id: md2-2022
   category: 'third_semester'
 '1028':
   eva_id: '342'
@@ -150,7 +150,7 @@ CP4:
   category: 'inactive'
 '1025':
   eva_id: '54'
-  openfing_id: pye18
+  openfing_id: pye-2022
   category: 'third_semester'
 '1075':
   category: 'inactive'
@@ -394,11 +394,16 @@ CP374:
   category: 'inactive'
 '1321':
   eva_id: '132'
+<<<<<<< HEAD
   openfing_id: p2
   category: 'second_semester'
+=======
+  openfing_id: p2-2023
+  category: 'third_semester'
+>>>>>>> a20fb66 (chore: update old OpenFING links)
 '1323':
   eva_id: '39'
-  openfing_id: prog3-2018
+  openfing_id: prog3-2020
   category: 'fourth_semester'
 '1324':
   eva_id: '413'
@@ -422,7 +427,7 @@ CP33:
   category: 'inactive'
 '1325':
   eva_id: '687'
-  openfing_id: tl
+  openfing_id: teoleng
   category: 'fifth_semester'
 CP365:
   category: 'inactive'
@@ -465,7 +470,7 @@ AR6:
   short_name: ADADR
 '1443':
   eva_id: '195'
-  openfing_id: ac
+  openfing_id: arqcomp
   category: 'fourth_semester'
 '1424':
   category: 'inactive'
@@ -525,7 +530,7 @@ CP51:
   category: 'inactive'
 '1446':
   eva_id: '335'
-  openfing_id: redes
+  openfing_id: redes-2021
   category: 'sixth_semester'
 '1442':
   eva_id: '146'
@@ -539,6 +544,7 @@ CP31:
   category: 'inactive'
 '1537':
   eva_id: '720'
+  openfing_id: so21s1
   category: 'fifth_semester'
 CP372:
   category: 'inactive'
@@ -623,7 +629,7 @@ CP362:
   short_name: Data Warehouse
 '1911':
   eva_id: '330'
-  openfing_id: fbd
+  openfing_id: fbd-2021
   short_name: Bases de datos
   category: 'sixth_semester'
 '1942':
@@ -687,7 +693,7 @@ CP376:
   category: 'inactive'
 '1033':
   eva_id: '62'
-  openfing_id: metn
+  openfing_id: metn-2023
   category: 'fourth_semester'
 '1079':
   category: 'inactive'
@@ -717,7 +723,7 @@ GP7:
   short_name: Fund. de Prog. Entera
 '1610':
   eva_id: '994'
-  openfing_id: iio
+  openfing_id: iio-2024
   short_name: IIO
   category: 'fifth_semester'
 '1629':
@@ -846,7 +852,7 @@ AI28:
   category: 'inactive'
 '1327':
   eva_id: '315'
-  openfing_id: tp
+  openfing_id: tprog
   category: 'sixth_semester'
 '1925':
   category: 'inactive'
@@ -895,7 +901,6 @@ GO10:
   short_name: Int. al Negocio del SW
 '1944':
   eva_id: '778'
-  openfing_id: agpi
   short_name: AGPI
   category: 'seventh_semester'
 '1510':
