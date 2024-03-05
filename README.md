@@ -14,7 +14,7 @@ $ git clone https://github.com/cedarcode/mi_carrera.git
 $ cd mi_carrera/
 $ bundle install
 $ bin/rails db:setup
-$ bin/rails scrape:update_subjects
+$ bin/rails load_yml
 ```
 
 ### Levantar el servidor
