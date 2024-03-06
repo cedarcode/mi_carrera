@@ -114,6 +114,10 @@ body {
   font-size: larger;
 }
 
+.non-clickable-list-item {
+  pointer-events: none;
+}
+
 .mdc-deprecated-list-item__text {
   display: block;
   flex: 1;
