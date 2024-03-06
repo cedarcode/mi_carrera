@@ -26,6 +26,18 @@ class SubjectsTest < ApplicationSystemTestCase
     assert_no_text "GAL 2"
     assert_text "Taller"
 
+    fill_in 'search', with: " Taller\n"
+
+    assert_no_text "GAL 1"
+    assert_no_text "GAL 2"
+    assert_text "Taller"
+
+    fill_in 'search', with: "Taller \n"
+
+    assert_no_text "GAL 1"
+    assert_no_text "GAL 2"
+    assert_text "Taller"
+
     fill_in 'search', with: "This subject does not exist\n"
 
     assert_no_text "GAL 1"
