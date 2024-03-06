@@ -108,7 +108,7 @@ CP47:
   eva_id: '256'
   openfing_id: gal1
   short_name: GAL 1
-  category: 'first_semester'
+  category: 'second_semester'
 '1071':
   category: 'inactive'
 '1053':
@@ -117,7 +117,7 @@ CP47:
   eva_id: '270'
   openfing_id: gal2
   short_name: GAL 2
-  category: 'second_semester'
+  category: 'third_semester'
 '1058':
   category: 'inactive'
 '1059':
@@ -141,7 +141,7 @@ CP4:
 '1026':
   eva_id: '267'
   openfing_id: md2
-  category: 'second_semester'
+  category: 'third_semester'
 '1028':
   eva_id: '342'
   openfing_id: ed
@@ -267,7 +267,7 @@ CP43:
 '1151':
   eva_id: '87'
   openfing_id: f1-2018
-  category: 'third_semester'
+  category: 'second_semester'
 '1171':
   category: 'inactive'
 '1077':
@@ -389,13 +389,13 @@ CP374:
 '1322':
   eva_id: '58'
   openfing_id: p1
-  category: 'second_semester'
+  category: 'first_semester'
 '1372':
   category: 'inactive'
 '1321':
   eva_id: '132'
   openfing_id: p2
-  category: 'third_semester'
+  category: 'second_semester'
 '1323':
   eva_id: '39'
   openfing_id: prog3-2018
