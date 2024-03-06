@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_19_233429) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -20,6 +20,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
     t.boolean "is_exam", null: false
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+  end
+
+  create_table "planned_subjects", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_planned_subjects_on_subject_id"
+    t.index ["user_id"], name: "index_planned_subjects_on_user_id"
   end
 
   create_table "prerequisites", force: :cascade do |t|

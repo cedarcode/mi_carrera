@@ -23,6 +23,10 @@ class SubjectsController < ApplicationController
     @subjects = TreePreloader.new(subjects).preload
   end
 
+  def planner
+    @subjects = TreePreloader.new.preload
+  end
+
   private
 
   def subject

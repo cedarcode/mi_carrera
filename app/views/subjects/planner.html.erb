@@ -1,0 +1,15 @@
+<% content_for :credits do %>
+  <%= render 'shared/credits_counter' %>
+<% end %>
+
+<div class="mdc-deprecated-list-group subjects-list">
+  <% @subjects.group_by(&:category).each do |category, subjects| %>
+    <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+      <%= formatted_category(category) %>
+    </h3>
+
+    <%= render partial: "subjects/subjects_list", locals: { subjects: subjects } %>
+
+    <hr class="mdc-deprecated-list-divider">
+  <% end %>
+</div>
