@@ -394,13 +394,8 @@ CP374:
   category: 'inactive'
 '1321':
   eva_id: '132'
-<<<<<<< HEAD
-  openfing_id: p2
-  category: 'second_semester'
-=======
   openfing_id: p2-2023
-  category: 'third_semester'
->>>>>>> a20fb66 (chore: update old OpenFING links)
+  category: 'second_semester'
 '1323':
   eva_id: '39'
   openfing_id: prog3-2020
