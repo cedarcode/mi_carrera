@@ -115,7 +115,7 @@ body {
 }
 
 .non-clickable-list-item {
-  pointer-events: none;
+  cursor: default !important;
 }
 
 .mdc-deprecated-list-item__text {
