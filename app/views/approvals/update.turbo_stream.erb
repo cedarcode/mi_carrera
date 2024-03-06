@@ -2,6 +2,11 @@
   <%= turbo_stream.replace "approvables" do %>
     <%= render 'subjects/approvables' %>
   <% end %>
+  <%= turbo_stream.replace "exam-prerequisites" do %>
+      <div class="mdc-deprecated-list" id="exam-prerequisites">
+      <%= render @subject.exam.prerequisite_tree, negative: false %>
+    </div>
+  <% end %>
 <% else %>
   <%= turbo_stream.replace "credits" do %>
     <%= render 'shared/credits_counter' %>
