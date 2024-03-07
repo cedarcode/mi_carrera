@@ -15,7 +15,9 @@ class SubjectsController < ApplicationController
   def all
     subjects =
       if params[:search].present?
-        Subject.where("lower(unaccent(name)) LIKE lower(unaccent(?))", "%#{params[:search].strip}%")
+        Subject
+          .where("lower(unaccent(name)) LIKE lower(unaccent(?))", "%#{params[:search].strip}%")
+          .or(Subject.where("lower(unaccent(short_name)) LIKE lower(unaccent(?))", "%#{params[:search].strip}%"))
       end
 
     @subjects = TreePreloader.new(subjects).preload
