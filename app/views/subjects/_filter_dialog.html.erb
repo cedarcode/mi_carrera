@@ -1,0 +1,69 @@
+<div class="mdc-dialog" data-filter-target='dialog'>
+  <div class="mdc-dialog__container">
+    <div class="mdc-dialog__surface"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="my-dialog-title"
+      aria-describedby="my-dialog-content">
+      
+      <%= form_with(url: all_subjects_path, method: :get) do |f| %>
+
+        <h2 class="mdc-dialog__title" id="my-dialog-title">Cateogorías</h2>
+
+        <div class="mdc-dialog__content" id="my-dialog-content">
+          <% Subject::MAIN_CATEGORIES.map do |category| %>
+            <tr data-row-id="u0" class="mdc-data-table__row">
+              <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                  <%= f.check_box :categories, { multiple: true, class: "mdc-checkbox__native-control", checked: @categories.include?(category.to_s) }, category, nil %>
+                  <div class="mdc-checkbox__background">
+                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                    </svg>
+                    <div class="mdc-checkbox__mixedmark"></div>
+                  </div>
+                  <div class="mdc-checkbox__ripple"></div>
+                </div>
+              </td>
+              <th class="mdc-data-table__cell" scope="row" id="u0"><%= formatted_category(category.to_s) %></th>
+            </tr>
+          <% end %>
+        </div>
+
+        <h2 class="mdc-dialog__title" id="my-dialog-title">Grupos</h2>
+
+        <div class="mdc-dialog__content" id="my-dialog-content">
+          <% SubjectGroup.all.pluck(:name).each do |group| %>
+            <tr data-row-id="u0" class="mdc-data-table__row">
+              <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                <div class="mdc-checkbox mdc-data-table__row-checkbox">
+                  <%= f.check_box :groups, { multiple: true, class: "mdc-checkbox__native-control", checked: @groups.include?(group) }, group, nil %>
+                  <div class="mdc-checkbox__background">
+                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                    </svg>
+                    <div class="mdc-checkbox__mixedmark"></div>
+                  </div>
+                  <div class="mdc-checkbox__ripple"></div>
+                </div>
+              </td>
+              <th class="mdc-data-table__cell" scope="row" id="u0"><%= group %></th>
+            </tr>
+          <% end %>
+        </div>
+
+        <div class="mdc-dialog__actions">
+          <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">Cancel</span>
+          </button>
+          <%= f.button "submit-button", class: "mdc-button mdc-dialog__button", "data-mdc-dialog-action": "accept" do %>
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">OK</span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="mdc-dialog__scrim"></div>
+</div>
