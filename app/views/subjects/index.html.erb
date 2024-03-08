@@ -8,4 +8,15 @@
   <% end %>
 <% end %>
 
+<br>
+
+<div class="mdc-menu-surface--anchor" data-controller='filter'>
+  <button class="mdc-button mdc-button--outlined" id="filter" data-action='filter#open'>
+    <span class="mdc-button__ripple"></span>
+    <span class="mdc-button__label">Filtros</span>
+  </button>
+
+  <%= render "filter_dialog" %>
+</div>
+
 <%= render 'subjects_bulk_approve' %>

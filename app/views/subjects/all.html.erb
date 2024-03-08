@@ -2,6 +2,17 @@
   <%= render 'shared/credits_counter' %>
 <% end %>
 
+<br>
+
+<div class="mdc-menu-surface--anchor" data-controller='filter'>
+  <button class="mdc-button mdc-button--outlined" id="filter" data-action='filter#open'>
+    <span class="mdc-button__ripple"></span>
+    <span class="mdc-button__label">Filtros</span>
+  </button>
+
+  <%= render "filter_dialog" %>
+</div>
+
 <div class="mdc-deprecated-list-group subjects-list">
   <% if @subjects.any? %>
     <% @subjects.group_by(&:category).each do |category, subjects| %>
