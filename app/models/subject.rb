@@ -10,6 +10,13 @@ class Subject < ApplicationRecord
   scope :with_exam, -> { includes(:exam, :course).where.not(exam: { id: nil }) }
   scope :without_exam, -> { includes(:exam, :course).where(exam: { id: nil }) }
 
+  MAIN_CATEGORIES = %i[
+    optional
+    extension_module
+    outside_montevideo
+    inactive
+    revalid
+  ]
   CATEGORIES = %i[
     first_semester
     second_semester
@@ -20,12 +27,10 @@ class Subject < ApplicationRecord
     seventh_semester
     eighth_semester
     nineth_semester
-    optional
-    extension_module
-    outside_montevideo
-    inactive
-    revalid
-  ]
+    
+  ] + MAIN_CATEGORIES
+
+  
 
   enum category: CATEGORIES.index_with { |category| category.to_s }
 
