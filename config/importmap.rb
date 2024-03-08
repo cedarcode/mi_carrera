@@ -27,3 +27,7 @@ pin "@material/list/foundation", to: "https://ga.jspm.io/npm:@material/list@14.0
 pin "@material/menu-surface/component", to: "https://ga.jspm.io/npm:@material/menu-surface@14.0.0/component.js"
 pin "@material/menu-surface/constants", to: "https://ga.jspm.io/npm:@material/menu-surface@14.0.0/constants.js"
 pin "@material/menu-surface/foundation", to: "https://ga.jspm.io/npm:@material/menu-surface@14.0.0/foundation.js"
+pin "@material/dialog", to: "https://ga.jspm.io/npm:@material/dialog@14.0.0/dist/mdc.dialog.js"
+pin "@material/animation/animationframe", to: "https://ga.jspm.io/npm:@material/animation@14.0.0/animationframe.js"
+pin "@material/dom/events", to: "https://ga.jspm.io/npm:@material/dom@14.0.0/events.js"
+pin "@material/ripple/component", to: "https://ga.jspm.io/npm:@material/ripple@14.0.0/component.js"
