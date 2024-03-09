@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Subject, type: :model do
   describe '#approved_credits' do
-    let(:s1) { create :subject, credits: 10 }
-    let(:s2) { create :subject, credits: 11 }
-    let(:s3) { create :subject, :with_exam, credits: 12 }
+    let!(:s1) { create :subject, credits: 10 }
+    let!(:s2) { create :subject, credits: 11 }
+    let!(:s3) { create :subject, :with_exam, credits: 12 }
 
     it 'returns approved credits' do
       expect(Subject.approved_credits([])).to eq(0)
@@ -13,7 +13,9 @@ RSpec.describe Subject, type: :model do
       expect(Subject.approved_credits([s1.course.id, s2.course.id, s3.course.id])).to eq(21)
       expect(Subject.approved_credits([s1.course.id, s2.course.id, s3.course.id, s3.exam.id])).to eq(33)
     end
+  end
 
+  describe '#approved?' do
     context 'when exam not required and course approved' do
       let(:subject) { create :subject }
 
@@ -56,8 +58,8 @@ RSpec.describe Subject, type: :model do
   end
 
   describe '.with_exam' do
-    let(:s1) { create :subject }
-    let(:s2) { create :subject, :with_exam }
+    let!(:s1) { create :subject }
+    let!(:s2) { create :subject, :with_exam }
 
     it 'returns subjects that require exam' do
       expect(Subject.with_exam).to eq([s2])
@@ -65,8 +67,8 @@ RSpec.describe Subject, type: :model do
   end
 
   describe '.without_exam' do
-    let(:s1) { create :subject }
-    let(:s2) { create :subject, :with_exam }
+    let!(:s1) { create :subject }
+    let!(:s2) { create :subject, :with_exam }
 
     it 'returns subjects that do not require exam' do
       expect(Subject.without_exam).to eq([s1])
