@@ -13437,40 +13437,31 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: '1021'
-      subject_needed_name: ALGEBRA LINEAL
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
       needs: exam
     - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      subject_needed_code: CP15
+      subject_needed_name: PROGRAMACION II
       needs: exam
     - type: subject
-      subject_needed_code: M9
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1023P
+      subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
       needs: exam
     - type: subject
-      subject_needed_code: 1030P
-      subject_needed_name: CREDITOS NO ACUM GAL1
+      subject_needed_code: CP4
+      subject_needed_name: LOGICA
       needs: exam
     - type: subject
-      subject_needed_code: CP2
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-      needs: exam
-    - type: subject
-      subject_needed_code: CP23
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: '1030'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1071'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1053'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+      subject_needed_code: '1023'
+      subject_needed_name: MATEMATICA DISCRETA 1
       needs: exam
   - type: logical
     logical_operator: or
@@ -13515,27 +13506,40 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: 1023P
-      subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+      subject_needed_code: '1021'
+      subject_needed_name: ALGEBRA LINEAL
       needs: exam
     - type: subject
-      subject_needed_code: CP4
-      subject_needed_name: LOGICA
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: exam
     - type: subject
-      subject_needed_code: '1023'
-      subject_needed_name: MATEMATICA DISCRETA 1
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP15
-      subject_needed_name: PROGRAMACION II
+      subject_needed_code: M9
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: exam
     - type: subject
-      subject_needed_code: '1321'
-      subject_needed_name: PROGRAMACION 2
+      subject_needed_code: 1030P
+      subject_needed_name: CREDITOS NO ACUM GAL1
+      needs: exam
+    - type: subject
+      subject_needed_code: CP2
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: CP23
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: '1030'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1071'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1053'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
       needs: exam
   subject_code: '1324'
   is_exam: false
