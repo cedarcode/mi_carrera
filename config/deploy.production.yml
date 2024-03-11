@@ -2,6 +2,7 @@ servers:
   web:
     hosts:
       - 44.196.164.25
+      - 3.233.189.168
     labels:
       traefik.http.routers.micarrera-web-production.rule: Host(`micarrera.uy`) || Host(`fing.micarrera.uy`) || Host(`www.micarrera.uy`)
       traefik.http.routers.micarrera_secure-web-production.entrypoints: websecure

@@ -4,7 +4,7 @@
 
   <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Información general</h3>
   <div class="mdc-deprecated-list growing-text-list">
-    <label class="mdc-deprecated-list-item">
+    <label class="mdc-deprecated-list-item non-clickable-list-item">
       <span class="mdc-deprecated-list-item__text">
         Créditos: <%= @subject.credits %>
       </span>
@@ -63,7 +63,7 @@
     <span class="mdc-deprecated-list-group__subheader mdc-typography--subtitle1 prerequisite-type">
       Del examen:
     </span>
-    <div class="mdc-deprecated-list">
+    <div class="mdc-deprecated-list" id="exam-prerequisites">
       <%= render @subject.exam.prerequisite_tree, negative: false %>
     </div>
   <% end %>

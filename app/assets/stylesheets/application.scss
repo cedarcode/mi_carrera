@@ -114,6 +114,10 @@ body {
   font-size: larger;
 }
 
+.non-clickable-list-item {
+  cursor: default !important;
+}
+
 .mdc-deprecated-list-item__text {
   display: block;
   flex: 1;
@@ -212,4 +216,8 @@ body {
 
 .subject-group-credits-unmet {
   color: red !important;
+}
+
+#butInstall {
+  padding-left: 0px;
 }
