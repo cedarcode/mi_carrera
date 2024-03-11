@@ -21,6 +21,7 @@ gem 'turbo-rails', '~> 2.0'
 
 group :development, :test do
   gem 'byebug', '~> 11.0', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 6.1'
 end
 
 group :development do
