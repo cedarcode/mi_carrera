@@ -48,5 +48,9 @@ class Subject < ApplicationRecord
     revalid? || inactive? || outside_montevideo? || extension_module?
   end
 
+  def update_rating
+    update(average_rating: reviews.average(:rating))
+  end
+
   delegate :available?, to: :course
 end
