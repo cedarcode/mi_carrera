@@ -13564,6 +13564,65 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: course
+      subject_needed_code: '1447'
+      subject_needed_name: COMPUT.DE PR.GRAL.EN UNID.DE PROC.GRAF.
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: logical
+      logical_operator: and
+      operands:
+      - type: subject
+        subject_needed_code: '1443'
+        subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+        needs: course
+      - type: subject
+        subject_needed_code: '1537'
+        subject_needed_name: SISTEMAS OPERATIVOS
+        needs: course
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1537P
+        subject_needed_name: CREDITOS NO ACUM CON SISTEMAS OPERATIVOS
+        needs: exam
+      - type: subject
+        subject_needed_code: '1537'
+        subject_needed_name: SISTEMAS OPERATIVOS
+        needs: exam
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1443'
+        subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+        needs: exam
+      - type: subject
+        subject_needed_code: 1443P
+        subject_needed_name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
+        needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: exam
+  subject_code: '1898'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
   - type: credits
     credits: 200
   subject_code: 559EU
@@ -16464,6 +16523,37 @@
       HISTÓRICO
   subject_code: O7246
   is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: course
+      subject_needed_code: '1011'
+      subject_needed_name: TEORIA DE CODIGOS AVANZADO
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '2415'
+      subject_needed_name: CODIGOS PARA CORRECCION DE ERRORES
+      needs: course
+    - type: subject
+      subject_needed_code: '1042'
+      subject_needed_name: TEORIA DE COD. ALGEB. PARA CORR. DE ERRORES
+      needs: course
+    - type: subject
+      subject_needed_code: '1065'
+      subject_needed_name: TEORIA DE COD. ALGEB. PARA CORR. DE ERRORES
+      needs: course
+    - type: subject
+      subject_needed_code: '1046'
+      subject_needed_name: TEORIA DE CODIGOS
+      needs: course
+  subject_code: '1899'
+  is_exam: false
 - type: logical
   logical_operator: and
   operands:
