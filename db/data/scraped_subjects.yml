@@ -1,4 +1,10 @@
 ---
+'1899':
+  code: '1899'
+  name: TEMAS AVANZADOS EN CÓDIGOS PARA CORRECCIÓN DE ERRORES
+  credits: 7
+  has_exam: false
+  subject_group: '4083'
 GAL1P:
   code: GAL1P
   name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
@@ -1331,6 +1337,12 @@ PR8:
   credits: 8
   has_exam: false
   subject_group: '4580'
+'1898':
+  code: '1898'
+  name: PROGRAMACIÓN MASIVAMENTE PARALELA EN PROCESADORES GRÁFICOS (GPUS)
+  credits: 10
+  has_exam: false
+  subject_group: '4428'
 '1891':
   code: '1891'
   name: TALLER DE SEGURIDAD INFÓRMATICA
@@ -3926,6 +3938,12 @@ IN35:
 PR27:
   code: PR27
   name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+1537P:
+  code: 1537P
+  name: CREDITOS NO ACUM CON SISTEMAS OPERATIVOS
   credits: 0
   has_exam: true
   subject_group:
