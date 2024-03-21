@@ -36,9 +36,12 @@ module Scraper
         add_missing_exams_and_subjects(prerequisite_tree, subjects)
       end
 
+      optional_inco_subjects = load_this_semester_inco_subjects
+
       File.write(Rails.root.join("db/data/scraped_subject_groups.yml"), groups.deep_stringify_keys.to_yaml)
       File.write(Rails.root.join("db/data/scraped_subjects.yml"), subjects.deep_stringify_keys.to_yaml)
       File.write(Rails.root.join("db/data/scraped_prerequisites.yml"), prerequisites.map(&:deep_stringify_keys).to_yaml)
+      File.write(Rails.root.join("db/data/scraped_optional_subjects.yml"), optional_inco_subjects.to_yaml)
     rescue
       Rails.logger.info save_screenshot
       raise
@@ -174,6 +177,24 @@ module Scraper
         prerequisite_tree[:operands].each do |operand|
           add_missing_exams_and_subjects(operand, subjects)
         end
+      end
+    end
+
+    def load_this_semester_inco_subjects
+      visit "https://www.fing.edu.uy/es/node/43774"
+
+      find('table').all('tr').each_with_object([]) do |row, subjects|
+        cells = row.all('td')
+        next unless cells&.size == 6
+
+        name = cells[0]&.text&.strip
+        codigo = cells[1]&.text&.strip
+
+        next unless name && codigo
+        next if name == "Curso" # the first row is the header
+        next if codigo == "nueva" # there's one row with "nueva" as the code
+
+        subjects << codigo
       end
     end
   end

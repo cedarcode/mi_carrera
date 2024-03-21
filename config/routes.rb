@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   end
 
   resource :user_onboardings, only: :update
+
+  resources :current_optional_subjects, only: :index
 end

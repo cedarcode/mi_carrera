@@ -53,6 +53,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_22_002214) do
     t.string "eva_id"
     t.string "code"
     t.string "category", default: "optional"
+    t.boolean "current_optional_subject", default: false
     t.index ["code"], name: "index_subjects_on_code", unique: true
   end
 

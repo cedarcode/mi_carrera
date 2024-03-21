@@ -5,6 +5,7 @@ module YmlLoader
     load_subject_groups
     load_subjects
     load_prerequisites
+    load_current_optional_subjects
   end
 
   private
@@ -42,6 +43,16 @@ module YmlLoader
       new_subject.create_exam! if subject["has_exam"] && !new_subject.exam
     end
   end
+
+  # rubocop:disable Rails/SkipsModelValidations
+  def load_current_optional_subjects
+    optional_subject_codes = YAML.load_file(Rails.root.join("db/data/scraped_optional_subjects.yml"))
+    Subject.transaction do
+      Subject.where(code: optional_subject_codes).update_all(current_optional_subject: true)
+      Subject.where.not(code: optional_subject_codes).update_all(current_optional_subject: false)
+    end
+  end
+  # rubocop:enable Rails/SkipsModelValidations
 
   def load_prerequisites
     prerequisites = YAML.load_file(Rails.root.join("db/data/scraped_prerequisites.yml"))
