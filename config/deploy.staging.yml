@@ -1,7 +1,6 @@
 servers:
   web:
     hosts:
-      - 44.196.164.25
       - 3.233.189.168
     labels:
       traefik.http.routers.micarrera-web-staging.rule: Host(`staging.micarrera.uy`)
