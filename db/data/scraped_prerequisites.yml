@@ -6411,13 +6411,39 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: '1610'
-      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      subject_needed_code: 1031P
+      subject_needed_name: CREDITOS NO ACUM GAL2
       needs: exam
     - type: subject
-      subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_code: '1031'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
       needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1322P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1322'
+      subject_needed_name: PROGRAMACION 1
+      needs: course
+    - type: subject
+      subject_needed_code: '1373'
+      subject_needed_name: PROGRAMACION 1
+      needs: course
   subject_code: '1871'
   is_exam: false
 - type: logical
@@ -13437,31 +13463,44 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: 1321P
-      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      subject_needed_code: '1021'
+      subject_needed_name: ALGEBRA LINEAL
       needs: exam
     - type: subject
-      subject_needed_code: CP15
-      subject_needed_name: PROGRAMACION II
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: exam
     - type: subject
-      subject_needed_code: '1321'
-      subject_needed_name: PROGRAMACION 2
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1023P
-      subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+      subject_needed_code: M9
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: exam
     - type: subject
-      subject_needed_code: CP4
-      subject_needed_name: LOGICA
+      subject_needed_code: 1030P
+      subject_needed_name: CREDITOS NO ACUM GAL1
       needs: exam
     - type: subject
-      subject_needed_code: '1023'
-      subject_needed_name: MATEMATICA DISCRETA 1
+      subject_needed_code: CP2
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: CP23
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: '1030'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1071'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1053'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+      needs: exam
+    - type: subject
+      subject_needed_code: GAL1P
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
       needs: exam
   - type: logical
     logical_operator: or
@@ -13506,40 +13545,31 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: '1021'
-      subject_needed_name: ALGEBRA LINEAL
+      subject_needed_code: 1023P
+      subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
       needs: exam
     - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      subject_needed_code: CP4
+      subject_needed_name: LOGICA
       needs: exam
     - type: subject
-      subject_needed_code: M9
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      subject_needed_code: '1023'
+      subject_needed_name: MATEMATICA DISCRETA 1
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
       needs: exam
     - type: subject
-      subject_needed_code: 1030P
-      subject_needed_name: CREDITOS NO ACUM GAL1
+      subject_needed_code: CP15
+      subject_needed_name: PROGRAMACION II
       needs: exam
     - type: subject
-      subject_needed_code: CP2
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-      needs: exam
-    - type: subject
-      subject_needed_code: CP23
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: '1030'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1071'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1053'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
       needs: exam
   subject_code: '1324'
   is_exam: false
@@ -15028,6 +15058,42 @@
     credits: 200
   subject_code: S42
   is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: course
+      subject_needed_code: '5853'
+      subject_needed_name: TALLER DE APRENDIZAJE AUTOMATICO
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1820'
+      subject_needed_name: APRENDIZAJE AUTOMATICO
+      needs: course
+    - type: subject
+      subject_needed_code: '1827'
+      subject_needed_name: APRENDIZAJE AUTOMATICO
+      needs: course
+    - type: subject
+      subject_needed_code: '1866'
+      subject_needed_name: APRENDIZAJE AUTOMATICO
+      needs: course
+    - type: subject
+      subject_needed_code: '5852'
+      subject_needed_name: FUNDAMENTOS DE APRENDIZAJE AUTOMATICO Y RECONOCIMIENTO
+        DE PATRONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '5842'
+      subject_needed_name: RECONOCIMIENTO DE PATRONES
+      needs: course
+  subject_code: '5720'
+  is_exam: false
 - type: logical
   logical_operator: and
   operands:
