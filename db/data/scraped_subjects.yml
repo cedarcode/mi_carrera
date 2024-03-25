@@ -1733,6 +1733,12 @@ AR8:
   credits: 8
   has_exam: false
   subject_group: '4428'
+'5720':
+  code: '5720'
+  name: TALLER DE APRENDIZAJE AUTOMATICO
+  credits: 10
+  has_exam: false
+  subject_group: '4882'
 '5852':
   code: '5852'
   name: FUNDAMENTOS DE APRENDIZAJE AUTOMATICO Y RECONOCIMIENTO DE PATRONES
