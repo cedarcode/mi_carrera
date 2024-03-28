@@ -718,6 +718,11 @@ GP7:
   eva_id: '994'
   openfing_id: iio-2024
   short_name: IIO
+  category: 'inactive'
+'1650':
+  eva_id: '994'
+  openfing_id: iio-2024
+  short_name: IIO
   category: 'fifth_semester'
 '1629':
   category: 'inactive'
