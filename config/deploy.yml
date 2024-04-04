@@ -17,6 +17,8 @@ ssh:
 
 builder:
   multiarch: false
+  cache:
+    type: gha
 
 traefik:
   options:
