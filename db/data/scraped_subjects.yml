@@ -3983,12 +3983,6 @@ CP350:
   credits: 0
   has_exam: true
   subject_group:
-1061I:
-  code: 1061I
-  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-  credits: 0
-  has_exam: true
-  subject_group:
 108L:
   code: 108L
   name: CALCULO 2
@@ -4004,6 +3998,12 @@ CP350:
 1022T:
   code: 1022T
   name: CREDITOS POR CALCULO 2
+  credits: 0
+  has_exam: true
+  subject_group:
+1061I:
+  code: 1061I
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
   credits: 0
   has_exam: true
   subject_group:
