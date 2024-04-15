@@ -6434,20 +6434,20 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: '1061'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      subject_needed_code: '1062'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
       needs: exam
     - type: subject
-      subject_needed_code: '1020'
-      subject_needed_name: CALCULO 1
+      subject_needed_code: '1022'
+      subject_needed_name: CALCULO 2
       needs: exam
     - type: subject
-      subject_needed_code: 1020P
-      subject_needed_name: CREDITOS NO ACUM CALCULO 1
+      subject_needed_code: 1022P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 2
       needs: exam
     - type: subject
-      subject_needed_code: 1061P
-      subject_needed_name: CREDITOS NO ACUM CDIV
+      subject_needed_code: 1062P
+      subject_needed_name: CREDITOS NO ACUM CDIVV
       needs: exam
   - type: logical
     logical_operator: or

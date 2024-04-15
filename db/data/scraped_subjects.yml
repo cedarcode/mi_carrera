@@ -3881,6 +3881,12 @@ CP13:
   credits: 0
   has_exam: true
   subject_group:
+1022P:
+  code: 1022P
+  name: CREDITOS NO ACUM CALCULO 2
+  credits: 0
+  has_exam: true
+  subject_group:
 MA7:
   code: MA7
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -3986,12 +3992,6 @@ CP350:
 108L:
   code: 108L
   name: CALCULO 2
-  credits: 0
-  has_exam: true
-  subject_group:
-1022P:
-  code: 1022P
-  name: CREDITOS NO ACUM CALCULO 2
   credits: 0
   has_exam: true
   subject_group:
