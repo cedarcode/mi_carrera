@@ -8,6 +8,8 @@ servers:
       traefik.http.routers.micarrera_secure-web-staging.rule: Host(`staging.micarrera.uy`)
       traefik.http.routers.micarrera_secure-web-staging.tls: true
       traefik.http.routers.micarrera_secure-web-staging.tls.certresolver: letsencrypt
+    options:
+      memory: 120MiB
 
 env:
   clear:
