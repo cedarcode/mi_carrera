@@ -4,7 +4,7 @@
 if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
   ./bin/rails db:prepare
 
-  file="/rails/tmp/pids/server.pid"
+  file="./tmp/pids/server.pid"
   if [ -f "$file" ] ; then
     rm "$file"
   fi
