@@ -9,7 +9,7 @@ servers:
       traefik.http.routers.micarrera_secure-web-staging.tls: true
       traefik.http.routers.micarrera_secure-web-staging.tls.certresolver: letsencrypt
     options:
-      memory: 120MiB
+      memory: 250MiB
 
 env:
   clear:
