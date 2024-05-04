@@ -8,6 +8,8 @@ servers:
       traefik.http.routers.micarrera_secure-web-production.rule: Host(`micarrera.uy`) || Host(`fing.micarrera.uy`) || Host(`www.micarrera.uy`)
       traefik.http.routers.micarrera_secure-web-production.tls: true
       traefik.http.routers.micarrera_secure-web-production.tls.certresolver: letsencrypt
+    options:
+      memory: 500MiB
 
 env:
   clear:
