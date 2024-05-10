@@ -19,13 +19,16 @@ gem 'serviceworker-rails', '~> 0.6'
 gem 'stimulus-rails', '~> 1.3'
 gem 'turbo-rails', '~> 2.0'
 
+group :development, :deploy do
+  gem 'kamal', '~> 1.5'
+end
+
 group :development, :test do
   gem 'byebug', '~> 11.0', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 6.1'
 end
 
 group :development do
-  gem 'kamal', '~> 1.5'
   gem "letter_opener", "~> 1.10"
   gem 'rubocop', '~> 1.63'
   gem 'rubocop-performance', '~> 1.21', require: false
