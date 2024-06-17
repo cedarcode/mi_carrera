@@ -3305,6 +3305,18 @@ CH8:
   credits: 8
   has_exam: false
   subject_group: '5265'
+INFU1:
+  code: INFU1
+  name: INGLES PARA FINES UNIVERSITARIOS I
+  credits: 8
+  has_exam: true
+  subject_group: '3582'
+'5005':
+  code: '5005'
+  name: TUTORIAS ENTRE PARES ACADEMICAS PROGRESA/FING
+  credits: 8
+  has_exam: false
+  subject_group: '3582'
 '1236':
   code: '1236'
   name: SEMINARIO SOBRE ENCUENTROS ENTRE ARTE Y TECNOLOGIAS
@@ -3321,7 +3333,7 @@ SRN22:
   code: SRN22
   name: COMPRENSIÓN LECTORA DE INGLÉS
   credits: 8
-  has_exam: false
+  has_exam: true
   subject_group: '3582'
 SRN25:
   code: SRN25
@@ -3363,7 +3375,7 @@ AT021:
   code: 816EU
   name: INGLES CIENTÍFICO
   credits: 4
-  has_exam: false
+  has_exam: true
   subject_group: '3582'
 2107A:
   code: 2107A
@@ -3427,7 +3439,7 @@ GP4:
   subject_group: '3582'
 '1438':
   code: '1438'
-  name: APLICACION DE TEORIA DE LA INF.AL PROC.DE IMAG.
+  name: APLICACIONES DE TEORIA DE LA INFORMACION AL PROC. DE IMAG.
   credits: 6
   has_exam: false
   subject_group: '3582'
@@ -3551,6 +3563,12 @@ C402:
   credits: 0
   has_exam: true
   subject_group:
+1443P:
+  code: 1443P
+  name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
+  credits: 0
+  has_exam: true
+  subject_group:
 107L:
   code: 107L
   name: CALCULO 1
@@ -3596,12 +3614,6 @@ MA09:
 R101:
   code: R101
   name: GEOMETRIA Y ALGEBRA LINEAL
-  credits: 0
-  has_exam: true
-  subject_group:
-1443P:
-  code: 1443P
-  name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
   credits: 0
   has_exam: true
   subject_group:
