@@ -2,32 +2,25 @@ require 'rails_helper'
 
 RSpec.describe ActivityPrerequisite, type: :model do
   describe '#met?' do
-    context 'when approvable needed is an exam' do
-      context "when the course of the approvable needed's subject is approved" do
-        it 'returns true' do
-          subject_needed = create :subject, :with_exam
-          prerequisite = create :activity_prerequisite, approvable_needed: subject_needed.exam
+    context 'when the approvable needed is available' do
+      it 'returns true' do
+        subject_needed = create :subject, :with_exam
+        create :credits_prerequisite, approvable: subject_needed.exam, credits_needed: 5
 
-          expect(prerequisite.met?([subject_needed.course.id])).to be_truthy
-        end
-      end
+        prerequisite = create :activity_prerequisite, approvable_needed: subject_needed.exam
 
-      context "when the the course of the approvable needed's subject is not approved" do
-        it 'returns false' do
-          subject_needed = create :subject, :with_exam
-          prerequisite = create :activity_prerequisite, approvable_needed: subject_needed.exam
-
-          expect(prerequisite.met?([])).to be_falsey
-        end
+        expect(prerequisite.met?([create(:subject, credits: 5).course])).to be_truthy
       end
     end
 
-    context 'when approvable needed is a course' do
-      it 'returns true' do
-        subject_needed = create :subject
-        prerequisite = create :activity_prerequisite, approvable_needed: subject_needed.course
+    context 'when the approvable needed is not available' do
+      it 'returns false' do
+        subject_needed = create :subject, :with_exam
+        create :credits_prerequisite, approvable: subject_needed.exam, credits_needed: 5
 
-        expect(prerequisite.met?([])).to be_truthy
+        prerequisite = create :activity_prerequisite, approvable_needed: subject_needed.exam
+
+        expect(prerequisite.met?([])).to be_falsey
       end
     end
   end
