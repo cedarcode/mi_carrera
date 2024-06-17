@@ -45,6 +45,8 @@ module Scraper
       when 'Inscripción a Examen de la U.C.B:' then subject_prerequisite(content, 'exam_enrollment')
       # U.C.B Aprobada: 1424 - ARQUITECTURA DE COMPUTADORES 1
       when 'U.C.B Aprobada:' then subject_prerequisite(content, 'all')
+      # Actividad Examen aprobada/reprobada en la U.C.B: 1151 - FISICA 1
+      when 'Actividad Examen aprobada/reprobada en la U.C.B:' then subject_prerequisite(content, 'exam_activity')
       else raise "Unknown node title: #{title}"
       end
     end

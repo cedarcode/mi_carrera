@@ -30,4 +30,8 @@ FactoryBot.define do
       logical_operator { "at_least" }
     end
   end
+
+  factory :activity_prerequisite do
+    approvable_needed factory: :exam
+  end
 end

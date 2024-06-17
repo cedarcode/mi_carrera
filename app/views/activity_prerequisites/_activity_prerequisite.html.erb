@@ -1,0 +1,9 @@
+<%= link_to subject_path(activity_prerequisite.approvable_needed.subject), class: 'mdc-deprecated-list-item' do %>
+  <span class="mdc-deprecated-list-item__ripple"></span>
+  <span class="mdc-deprecated-list-item__text">
+    <%= negative ? "No haber" : "Haber" %>
+    <%= display_activity_prerequisite(activity_prerequisite) %>
+  </span>
+
+  <%= render 'prerequisites/met_checkmark', prerequisite: activity_prerequisite, negative: %>
+<% end %>
