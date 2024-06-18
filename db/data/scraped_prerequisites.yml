@@ -458,20 +458,8 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: CP6
-      subject_needed_name: ANALISIS MATEMATICO II
-      needs: exam
-    - type: subject
-      subject_needed_code: CP25
-      subject_needed_name: ANALISIS MATEMATICO II (P. 74)
-      needs: exam
-    - type: subject
       subject_needed_code: 1025P
       subject_needed_name: CREDITOS NO ACUM PROB Y EST.
-      needs: exam
-    - type: subject
-      subject_needed_code: 1025T
-      subject_needed_name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
       needs: exam
     - type: subject
       subject_needed_code: '1025'
@@ -480,6 +468,17 @@
     - type: subject
       subject_needed_code: '1075'
       subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1443'
+      subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+      needs: exam
+    - type: subject
+      subject_needed_code: 1443P
+      subject_needed_name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
       needs: exam
   subject_code: '1438'
   is_exam: false
@@ -7781,6 +7780,31 @@
       needs: course
   subject_code: '1773'
   is_exam: false
+- type: logical
+  logical_operator: not
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: SRN22
+      subject_needed_name: COMPRENSIÓN LECTORA DE INGLÉS
+      needs: exam
+    - type: subject
+      subject_needed_code: 816EU
+      subject_needed_name: INGLES CIENTÍFICO
+      needs: exam
+  subject_code: INFU1
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: INFU1
+    subject_needed_name: INGLES PARA FINES UNIVERSITARIOS I
+  subject_code: INFU1
+  is_exam: true
 - type: logical
   logical_operator: and
   operands:
@@ -17767,6 +17791,56 @@
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
       needs: all
   subject_code: '1233'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: all
+      subject_needed_code: '2217'
+      subject_needed_name: TUTORIAS ENTRE PARES 2
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: all
+      subject_needed_code: '2216'
+      subject_needed_name: TUTORIAS ENTRE PARES 1
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      needs: exam_activity
+      subject_needed_code: '1151'
+      subject_needed_name: FISICA 1
+    - type: logical
+      logical_operator: and
+      operands:
+      - type: subject
+        subject_needed_code: '1061'
+        subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+        needs: exam
+      - type: subject
+        subject_needed_code: '1062'
+        subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+        needs: course
+    - type: logical
+      logical_operator: and
+      operands:
+      - type: subject
+        subject_needed_code: '1030'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1031'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+        needs: course
+  - type: credits
+    credits: 55
+  subject_code: '5005'
   is_exam: false
 - type: logical
   logical_operator: and

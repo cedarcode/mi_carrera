@@ -32,6 +32,8 @@ class TreePreloader
       prereq.association(:approvable_needed).target = approvable_by_id[prereq.approvable_needed_id]
     when EnrollmentPrerequisite
       prereq.association(:approvable_needed).target = approvable_by_id[prereq.approvable_needed_id]
+    when ActivityPrerequisite
+      prereq.association(:approvable_needed).target = approvable_by_id[prereq.approvable_needed_id]
     else
       raise "Unknown prerequisite type: #{prereq.class}"
     end

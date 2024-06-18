@@ -30,4 +30,8 @@ module SubjectsHelper
   def display_enrollment_prerequisite(enrollment_prerequisite)
     "inscripto a #{display_name(enrollment_prerequisite.approvable_needed.subject)}"
   end
+
+  def display_activity_prerequisite(activity_prerequisite)
+    "aprobado/reprobado #{display_subject_prerequisite(activity_prerequisite)}"
+  end
 end
