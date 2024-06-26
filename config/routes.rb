@@ -29,4 +29,8 @@ Rails.application.routes.draw do
   resource :user_onboardings, only: :update
 
   resources :current_optional_subjects, only: :index
+
+  # Render dynamic PWA files from app/views/pwa/*
+  get "serviceworker" => "pwa#serviceworker", as: :pwa_serviceworker
+  get "manifest" => "pwa#manifest", as: :pwa_manifest
 end
