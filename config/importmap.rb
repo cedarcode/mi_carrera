@@ -2,6 +2,7 @@
 
 pin "application", preload: true
 pin "install", to: "install.js"
+pin "serviceworker-companion", to: "serviceworker-companion.js"
 pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
