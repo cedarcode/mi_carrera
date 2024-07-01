@@ -15,7 +15,6 @@ gem 'pg', '~> 1.5'
 gem 'puma', '~> 6.4'
 gem 'rollbar', '~> 3.5'
 gem 'sassc-rails', '~> 2.1.2'
-gem 'serviceworker-rails', '~> 0.6'
 gem 'stimulus-rails', '~> 1.3'
 gem 'turbo-rails', '~> 2.0'
 
