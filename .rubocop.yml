@@ -47,6 +47,10 @@ Rails:
 Security:
   Enabled: true
 
+Rails/BulkChangeTable:
+  Exclude:
+    - 'db/migrate/20190321140119_add_validations.rb'
+
 Rails/LexicallyScopedActionFilter:
   Enabled: false
 
