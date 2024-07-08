@@ -3817,6 +3817,26 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: '1325'
+    subject_needed_name: TEORIA DE LENGUAJES
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1324P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 4
+      needs: exam
+    - type: subject
+      subject_needed_code: '1324'
+      subject_needed_name: PROGRAMACION 4
+      needs: exam
+  subject_code: '1374'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
   - type: logical
     logical_operator: or
     operands:

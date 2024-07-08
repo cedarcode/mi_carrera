@@ -31,7 +31,7 @@ SRN14:
   subject_group: '4083'
 CIM11:
   code: CIM11
-  name: MATEMÁTICA DISCRETA 2
+  name: MATEMÁTICA DISCRETA 2- CIM-CIOCT
   credits: 10
   has_exam: true
   subject_group: '4083'
@@ -923,6 +923,12 @@ F66:
   credits: 66
   has_exam: false
   subject_group: '4442'
+'1374':
+  code: '1374'
+  name: CONCEPTOS DE LENGUAJES DE PROGRAMACIÓN
+  credits: 6
+  has_exam: false
+  subject_group: '4580'
 SRN17:
   code: SRN17
   name: PROGRAMACIÓN I
@@ -3743,6 +3749,12 @@ CM14:
   credits: 0
   has_exam: true
   subject_group:
+1324P:
+  code: 1324P
+  name: CREDITOS NO ACUM PROGRAMACION 4
+  credits: 0
+  has_exam: true
+  subject_group:
 CP102:
   code: CP102
   name: CONTROL DE CALIDAD
@@ -3884,12 +3896,6 @@ CP13:
 '1036':
   code: '1036'
   name: FUNCIONES DE VARIABLE COMPLEJA
-  credits: 0
-  has_exam: true
-  subject_group:
-1324P:
-  code: 1324P
-  name: CREDITOS NO ACUM PROGRAMACION 4
   credits: 0
   has_exam: true
   subject_group:
