@@ -4960,6 +4960,13 @@
 - type: logical
   logical_operator: not
   operands:
+  - type: credits
+    credits: 50
+  subject_code: M014
+  is_exam: false
+- type: logical
+  logical_operator: not
+  operands:
   - type: logical
     logical_operator: or
     operands:
