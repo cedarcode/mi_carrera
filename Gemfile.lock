@@ -276,7 +276,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.3.1)
+    rexml (3.3.2)
       strscan
     rollbar (3.5.2)
     rspec-core (3.13.0)
@@ -327,7 +327,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.22.0)
+    selenium-webdriver (4.23.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -372,7 +372,7 @@ GEM
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
     webrick (1.8.1)
-    websocket (1.2.10)
+    websocket (1.2.11)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -404,7 +404,7 @@ DEPENDENCIES
   rubocop-performance (~> 1.21)
   rubocop-rails (~> 2.25)
   sassc-rails (~> 2.1.2)
-  selenium-webdriver (~> 4.22)
+  selenium-webdriver (~> 4.23)
   stimulus-rails (~> 1.3)
   turbo-rails (~> 2.0)
   web-console (~> 4.2)
