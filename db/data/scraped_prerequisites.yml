@@ -842,7 +842,7 @@
       needs: exam
     - type: subject
       subject_needed_code: SRN17
-      subject_needed_name: PROGRAMACIÓN I
+      subject_needed_name: PROGRAMACIÓN I- CIO CT-LHRH
       needs: exam
     - type: subject
       subject_needed_code: CP10
@@ -13387,7 +13387,7 @@
       needs: course
     - type: subject
       subject_needed_code: SRN17
-      subject_needed_name: PROGRAMACIÓN I
+      subject_needed_name: PROGRAMACIÓN I- CIO CT-LHRH
       needs: course
     - type: subject
       subject_needed_code: CP10
@@ -13540,7 +13540,7 @@
       needs: exam
     - type: subject
       subject_needed_code: SRN17
-      subject_needed_name: PROGRAMACIÓN I
+      subject_needed_name: PROGRAMACIÓN I- CIO CT-LHRH
       needs: exam
     - type: subject
       subject_needed_code: CP10
@@ -13707,7 +13707,7 @@
   - type: subject
     needs: course
     subject_needed_code: SRN17
-    subject_needed_name: PROGRAMACIÓN I
+    subject_needed_name: PROGRAMACIÓN I- CIO CT-LHRH
   subject_code: SRN17
   is_exam: true
 - type: logical
@@ -13798,7 +13798,7 @@
   - type: subject
     needs: course
     subject_needed_code: I87
-    subject_needed_name: 'PROSPECTIVA: CONSTRUYENDO EL FUTURO'
+    subject_needed_name: 'PROSPECTIVA ESTRATÉGICA: CON LA MIRADA EN EL FUTURO'
   subject_code: I87
   is_exam: true
 - type: logical

@@ -931,7 +931,7 @@ F66:
   subject_group: '4580'
 SRN17:
   code: SRN17
-  name: PROGRAMACIÓN I
+  name: PROGRAMACIÓN I- CIO CT-LHRH
   credits: 10
   has_exam: true
   subject_group: '4580'
@@ -2971,7 +2971,7 @@ S42:
   subject_group: '4066'
 I87:
   code: I87
-  name: 'PROSPECTIVA: CONSTRUYENDO EL FUTURO'
+  name: 'PROSPECTIVA ESTRATÉGICA: CON LA MIRADA EN EL FUTURO'
   credits: 10
   has_exam: true
   subject_group: '4066'
