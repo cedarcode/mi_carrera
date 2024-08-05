@@ -900,6 +900,133 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1443'
+        subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+        needs: exam
+      - type: subject
+        subject_needed_code: 1443P
+        subject_needed_name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
+        needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1322P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1322'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1373'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1023P
+      subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1023'
+      subject_needed_name: MATEMATICA DISCRETA 1
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1027P
+      subject_needed_name: CREDITOS NO ACUM. CON LOGICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1027'
+      subject_needed_name: LOGICA
+      needs: course
+  subject_code: '1466'
+  is_exam: false
+- type: logical
+  logical_operator: or
+  operands:
+  - type: logical
+    logical_operator: and
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1322P
+        subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1322'
+        subject_needed_name: PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1373'
+        subject_needed_name: PROGRAMACION 1
+        needs: exam
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1321P
+        subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+        needs: exam
+      - type: subject
+        subject_needed_code: '1321'
+        subject_needed_name: PROGRAMACION 2
+        needs: course
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1023P
+        subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1023'
+        subject_needed_name: MATEMATICA DISCRETA 1
+        needs: course
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1027P
+        subject_needed_name: CREDITOS NO ACUM. CON LOGICA
+        needs: exam
+      - type: subject
+        subject_needed_code: '1027'
+        subject_needed_name: LOGICA
+        needs: course
+  - type: subject
+    needs: course
+    subject_needed_code: '1466'
+    subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+  subject_code: '1466'
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
   - type: subject
     needs: course
     subject_needed_code: '1424'
