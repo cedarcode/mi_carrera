@@ -1343,6 +1343,12 @@ PR8:
   credits: 8
   has_exam: false
   subject_group: '4580'
+'1466':
+  code: '1466'
+  name: ARQUITECTURA DE COMPUTADORAS
+  credits: 10
+  has_exam: true
+  subject_group: '4428'
 '1898':
   code: '1898'
   name: PROGRAMACIÓN MASIVAMENTE PARALELA EN PROCESADORES GRÁFICOS (GPUS)
@@ -3641,6 +3647,18 @@ R101:
   credits: 0
   has_exam: true
   subject_group:
+1023P:
+  code: 1023P
+  name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+  credits: 0
+  has_exam: true
+  subject_group:
+1027P:
+  code: 1027P
+  name: CREDITOS NO ACUM. CON LOGICA
+  credits: 0
+  has_exam: true
+  subject_group:
 1911P:
   code: 1911P
   name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
@@ -3734,12 +3752,6 @@ CM14:
 176Q:
   code: 176Q
   name: CALCULO 3
-  credits: 0
-  has_exam: true
-  subject_group:
-1023P:
-  code: 1023P
-  name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
   credits: 0
   has_exam: true
   subject_group:
