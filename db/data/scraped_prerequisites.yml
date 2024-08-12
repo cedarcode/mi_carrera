@@ -16369,13 +16369,6 @@
   - type: logical
     logical_operator: not
     operands:
-    - type: subject
-      needs: all
-      subject_needed_code: '1735'
-      subject_needed_name: TALLER SISTEMAS DE INFORMACION 2
-  - type: logical
-    logical_operator: not
-    operands:
     - type: logical
       logical_operator: or
       operands:
@@ -16404,19 +16397,15 @@
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
   - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: all
+      subject_needed_code: '1735'
+      subject_needed_name: TALLER SISTEMAS DE INFORMACION 2
+  - type: logical
     logical_operator: or
     operands:
-    - type: logical
-      logical_operator: and
-      operands:
-      - type: subject
-        subject_needed_code: '1324'
-        subject_needed_name: PROGRAMACION 4
-        needs: exam
-      - type: subject
-        subject_needed_code: '1327'
-        subject_needed_name: TALLER DE PROGRAMACION
-        needs: course
     - type: logical
       logical_operator: and
       operands:
@@ -16428,6 +16417,17 @@
         subject_needed_code: CP30
         subject_needed_name: TALLER III (1ER.SEM.)
         needs: course
+    - type: logical
+      logical_operator: and
+      operands:
+      - type: subject
+        subject_needed_code: '1324'
+        subject_needed_name: PROGRAMACION 4
+        needs: exam
+      - type: subject
+        subject_needed_code: '1327'
+        subject_needed_name: TALLER DE PROGRAMACION
+        needs: course
   - type: logical
     logical_operator: or
     operands:
@@ -16438,25 +16438,6 @@
     - type: subject
       subject_needed_code: '1911'
       subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1511'
-      subject_needed_name: SISTEMAS OPERATIVOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1518'
-      subject_needed_name: SISTEMAS OPERATIVOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1532'
-      subject_needed_name: SISTEMAS OPERATIVOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1537'
-      subject_needed_name: SISTEMAS OPERATIVOS
       needs: exam
   subject_code: '1775'
   is_exam: false
