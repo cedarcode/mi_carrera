@@ -1,0 +1,23 @@
+name: Staging Load YAML
+
+on:
+  workflow_dispatch:
+
+jobs:
+  load_yaml:
+    runs-on: ubuntu-latest
+
+    env:
+      BUNDLE_ONLY: 'deploy'
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Run load_yaml task
+        run: bundle exec kamal app exec 'bin/rails load_yml' -d staging
