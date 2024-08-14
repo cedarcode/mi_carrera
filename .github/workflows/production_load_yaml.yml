@@ -20,4 +20,4 @@ jobs:
           bundler-cache: true
 
       - name: Run load_yaml task
-        run: bundle exec kamal app exec 'bin/rails load_yml' -d production --reuse
+        run: bundle exec kamal app exec 'bin/rails load_yml' -d production --reuse --primary
