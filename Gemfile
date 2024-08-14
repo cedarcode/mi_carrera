@@ -8,8 +8,6 @@ gem 'bootsnap', '~> 1.18', require: false
 gem 'devise', '~> 4.9'
 gem 'factory_bot_rails', '~> 6.4'
 gem 'importmap-rails', '~> 2.0'
-# Needed until we update Ruby to 3.3.4 https://discuss.rubyonrails.org/t/rails-7-dockerfile-build-fails/86041/2
-gem 'net-pop', github: 'ruby/net-pop'
 gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.1'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
