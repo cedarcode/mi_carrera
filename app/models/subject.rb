@@ -27,7 +27,7 @@ class Subject < ApplicationRecord
     revalid
   ]
 
-  enum :category, CATEGORIES.index_with { |category| category.to_s }
+  enum :category, CATEGORIES.index_with(&:to_s)
 
   scope :ordered_by_category, -> { in_order_of(:category, CATEGORIES) }
   scope :ordered_by_category_and_name, -> { ordered_by_category.order(:name) }
