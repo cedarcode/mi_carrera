@@ -33,6 +33,21 @@ jobs:
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bin/importmap audit
 
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Lint code for consistent style
+        run: bin/rubocop -f github
+
   test:
     runs-on: ubuntu-latest
 
@@ -69,7 +84,7 @@ jobs:
         PGPORT: 5432
       run: |
         bundle exec rake db:create db:schema:load
-        bundle exec rake
+        bundle exec rake test test:system spec
 
     - name: Upload screenshots
       if: failure()
