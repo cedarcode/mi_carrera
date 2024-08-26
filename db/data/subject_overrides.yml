@@ -1218,3 +1218,11 @@ R100:
   category: 'inactive'
 '1940':
   category: 'inactive'
+'01':
+  name: FQ - Matemática 01 (Análisis I)
+  short_name: FQ - Mat. 01 (Análisis I)
+  credits: 14
+'101':
+  name: FQ - Matemática 101 (Análisis I)
+  short_name: FQ - Mat. 101 (Análisis I)
+  credits: 17
