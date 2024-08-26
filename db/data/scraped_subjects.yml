@@ -3965,6 +3965,18 @@ B101:
   credits: 0
   has_exam: false
   subject_group:
+'01':
+  code: '01'
+  name: MAT. 01 (ANÁLISIS I)
+  credits: 0
+  has_exam: true
+  subject_group:
+'101':
+  code: '101'
+  name: MATEMÁTICA 101 (ANÁLISIS I)
+  credits: 0
+  has_exam: true
+  subject_group:
 IN35:
   code: IN35
   name: PROGRAMACION 1
