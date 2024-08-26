@@ -180,8 +180,12 @@
   subject_code: SRN03
   is_exam: true
 - type: logical
-  logical_operator: and
+  logical_operator: or
   operands:
+  - type: subject
+    needs: course
+    subject_needed_code: '1030'
+    subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
   - type: subject
     needs: course
     subject_needed_code: SRN03
@@ -1679,15 +1683,12 @@
   - type: logical
     logical_operator: or
     operands:
-    - type: logical
-      logical_operator: not
-      operands:
-      - type: subject
-        needs: course
-        subject_needed_code: MI2
-        subject_needed_name: MATEMATICA INICIAL
     - type: subject
       needs: all
+      subject_needed_code: MI2
+      subject_needed_name: MATEMATICA INICIAL
+    - type: subject
+      needs: course
       subject_needed_code: MI2
       subject_needed_name: MATEMATICA INICIAL
   subject_code: '1061'
@@ -10941,6 +10942,10 @@
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
       - type: subject
+        subject_needed_code: MA11
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
         subject_needed_code: MA25
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
@@ -10968,6 +10973,18 @@
         subject_needed_code: 1020R
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
+      - type: subject
+        subject_needed_code: 1061P
+        subject_needed_name: CREDITOS NO ACUM CDIV
+        needs: exam
+      - type: subject
+        subject_needed_code: '01'
+        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        needs: exam
+      - type: subject
+        subject_needed_code: '101'
+        subject_needed_name: MATEMÁTICA 101 (ANÁLISIS I)
+        needs: exam
   - type: logical
     logical_operator: not
     operands:
@@ -10982,6 +10999,21 @@
         subject_needed_code: '1020'
         subject_needed_name: CALCULO 1
         needs: course
+      - type: subject
+        subject_needed_code: '01'
+        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        needs: course
+      - type: subject
+        subject_needed_code: '101'
+        subject_needed_name: MATEMÁTICA 101 (ANÁLISIS I)
+        needs: course
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: course_enrollment
+      subject_needed_code: '01'
+      subject_needed_name: MAT. 01 (ANÁLISIS I)
   subject_code: MI2
   is_exam: false
 - type: logical
@@ -11001,6 +11033,21 @@
         subject_needed_code: '1020'
         subject_needed_name: CALCULO 1
         needs: course
+      - type: subject
+        subject_needed_code: '01'
+        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        needs: course
+      - type: subject
+        subject_needed_code: '101'
+        subject_needed_name: MATEMÁTICA 101 (ANÁLISIS I)
+        needs: course
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: course_enrollment
+      subject_needed_code: '01'
+      subject_needed_name: MAT. 01 (ANÁLISIS I)
   - type: logical
     logical_operator: not
     operands:
@@ -11060,6 +11107,10 @@
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
       - type: subject
+        subject_needed_code: MA11
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
         subject_needed_code: MA25
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
@@ -11086,6 +11137,18 @@
       - type: subject
         subject_needed_code: 1020R
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: 1061P
+        subject_needed_name: CREDITOS NO ACUM CDIV
+        needs: exam
+      - type: subject
+        subject_needed_code: '01'
+        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        needs: exam
+      - type: subject
+        subject_needed_code: '101'
+        subject_needed_name: MATEMÁTICA 101 (ANÁLISIS I)
         needs: exam
   subject_code: MI2
   is_exam: true
@@ -14526,25 +14589,6 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: CP4
-      subject_needed_name: LOGICA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1027'
-      subject_needed_name: LOGICA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1013'
-      subject_needed_name: LOGICA MODALIDAD AL REVES
-      needs: exam
-    - type: subject
-      subject_needed_code: '1010'
-      subject_needed_name: LOGICA Y COMPUTACION
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
       subject_needed_code: 1120P
       subject_needed_name: CREDITOS NO ACUM. FISICA GENERAL 1
       needs: exam
@@ -14579,6 +14623,25 @@
     - type: subject
       subject_needed_code: CP17
       subject_needed_name: MECANICA I (TRANSICION)
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP4
+      subject_needed_name: LOGICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1027'
+      subject_needed_name: LOGICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1013'
+      subject_needed_name: LOGICA MODALIDAD AL REVES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1010'
+      subject_needed_name: LOGICA Y COMPUTACION
       needs: exam
   subject_code: '1848'
   is_exam: false
