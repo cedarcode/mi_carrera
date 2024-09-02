@@ -275,7 +275,7 @@ GEM
       railties (>= 5.2)
     rexml (3.3.6)
       strscan
-    rollbar (3.5.2)
+    rollbar (3.6.0)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.1)
@@ -398,7 +398,7 @@ DEPENDENCIES
   pg (~> 1.5)
   puma (~> 6.4)
   rails (~> 7.2.1)
-  rollbar (~> 3.5)
+  rollbar (~> 3.6)
   rspec-rails (~> 6.1)
   rubocop (~> 1.65)
   rubocop-performance (~> 1.21)
