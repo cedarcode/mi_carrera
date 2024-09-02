@@ -3647,15 +3647,15 @@ R101:
   credits: 0
   has_exam: true
   subject_group:
-1023P:
-  code: 1023P
-  name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-  credits: 0
-  has_exam: true
-  subject_group:
 1027P:
   code: 1027P
   name: CREDITOS NO ACUM. CON LOGICA
+  credits: 0
+  has_exam: true
+  subject_group:
+1023P:
+  code: 1023P
+  name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
   credits: 0
   has_exam: true
   subject_group:
