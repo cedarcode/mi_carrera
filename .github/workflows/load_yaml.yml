@@ -1,7 +1,15 @@
-name: Production Load YAML
+name: Load YAML
 
 on:
   workflow_dispatch:
+    inputs:
+      destination:
+        description: 'Destination (staging/production)'
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
 
 jobs:
   load_yaml:
@@ -32,4 +40,4 @@ jobs:
           bundler-cache: true
 
       - name: Run load_yaml task
-        run: bundle exec kamal app exec 'bin/rails load_yml' -d production --reuse --primary
+        run: bundle exec kamal app exec 'bin/rails load_yml' -d ${{ inputs.destination }} --reuse --primary
