@@ -3119,6 +3119,12 @@ A62:
   credits: 10
   has_exam: true
   subject_group: '4066'
+24CIA:
+  code: 24CIA
+  name: COMUNICACIÓN E INTELIGENCIA ARTIFICIAL (PPP)
+  credits: 9
+  has_exam: false
+  subject_group: '5265'
 D78A:
   code: D78A
   name: CIENCIA,TECNOLOGÍA, INNOVACIÓN, SOCIEDAD Y DESARROLLO
