@@ -21,7 +21,7 @@ Bundler.require(*Rails.groups)
 module MiCarrera
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+    config.load_defaults 7.2
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
@@ -43,5 +43,11 @@ module MiCarrera
     }
 
     config.session_store :cookie_store, key: "_mi_carrera_session", domain: :all
+
+    ###
+    # By default Rails 7.2 enables YJIT as of Ruby 3.3, to bring sizeable performance improvements.
+    # If you are deploying to a memory constrained environment you may want to set this to `false`.
+    #++
+    config.yjit = false
   end
 end
