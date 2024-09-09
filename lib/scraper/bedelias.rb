@@ -38,16 +38,20 @@ module Scraper
 
       optional_inco_subjects = load_this_semester_inco_subjects
 
-      File.write(Rails.root.join("db/data/scraped_subject_groups.yml"), groups.deep_stringify_keys.to_yaml)
-      File.write(Rails.root.join("db/data/scraped_subjects.yml"), subjects.deep_stringify_keys.to_yaml)
-      File.write(Rails.root.join("db/data/scraped_prerequisites.yml"), prerequisites.map(&:deep_stringify_keys).to_yaml)
-      File.write(Rails.root.join("db/data/scraped_optional_subjects.yml"), optional_inco_subjects.to_yaml)
+      write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
+      write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h)
+      write_yml("scraped_prerequisites", prerequisites.sort_by { |e| e[:subject_code] }.map(&:deep_stringify_keys))
+      write_yml("scraped_optional_subjects", optional_inco_subjects.sort)
     rescue
       Rails.logger.info save_screenshot
       raise
     end
 
     private
+
+    def write_yml(name, data)
+      File.write(Rails.root.join("db/data/#{name}.yml"), data.to_yaml)
+    end
 
     def go_to_groups_and_subjects_page
       visit "https://bedelias.udelar.edu.uy"
