@@ -43,5 +43,11 @@ module MiCarrera
     }
 
     config.session_store :cookie_store, key: "_mi_carrera_session", domain: :all
+
+    ###
+    # By default Rails 7.2 enables YJIT as of Ruby 3.3, to bring sizeable performance improvements.
+    # If you are deploying to a memory constrained environment you may want to set this to `false`.
+    #++
+    config.yjit = false
   end
 end
