@@ -5,7 +5,7 @@ on:
 
 jobs:
   load_yaml:
-    uses: ./.github/workflows/load_yml.yml
+    uses: ./.github/workflows/load_yaml.yml
     with:
       destination: production
     secrets:
