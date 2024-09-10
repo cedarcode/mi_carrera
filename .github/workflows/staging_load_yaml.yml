@@ -1,0 +1,14 @@
+name: Staging Load YAML
+
+on:
+  workflow_dispatch:
+
+jobs:
+  load_yaml:
+    uses: ./.github/workflows/load_yml.yml
+    with:
+      destination: staging
+    secrets:
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

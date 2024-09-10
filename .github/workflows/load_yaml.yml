@@ -1,15 +1,19 @@
 name: Load YAML
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       destination:
-        description: 'Destination (staging/production)'
+        description: "staging/production"
         required: true
-        type: choice
-        options:
-          - staging
-          - production
+        type: string
+    secrets:
+      SSH_PRIVATE_KEY:
+        required: true
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
 
 jobs:
   load_yaml:
