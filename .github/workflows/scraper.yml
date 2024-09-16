@@ -7,13 +7,19 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
+    - name: Generate a token
+      id: generate-token
+      uses: actions/create-github-app-token@v1
+      with:
+        app-id: ${{ secrets.SCRAPER_APP_ID }}
+        private-key: ${{ secrets.SCRAPER_APP_PRIVATE_KEY }}
     - uses: actions/checkout@v4
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
     - name: Run scraper
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ steps.generate-token.outputs.token }}
       run: |
         bundle exec rake scraper
         sed -i -e 's/ $//' db/data/*.yml
