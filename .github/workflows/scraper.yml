@@ -1,8 +1,13 @@
 name: Scraper
+
 on:
-  schedule:
-    - cron:  '0 5 * * MON'
-  workflow_dispatch:
+  # schedule:
+  #   - cron:  '0 5 * * MON'
+  # workflow_dispatch:
+  push:
+    branches:
+      - gh-app
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -13,10 +18,13 @@ jobs:
       with:
         app-id: ${{ secrets.SCRAPER_APP_ID }}
         private-key: ${{ secrets.SCRAPER_APP_PRIVATE_KEY }}
+
     - uses: actions/checkout@v4
+
     - uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
+
     - name: Run scraper
       env:
         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
@@ -29,13 +37,13 @@ jobs:
             git config --global user.email "micarrera@cedarcode.com"
             git config --global user.name "MiCarrera"
             git commit -m 'chore: update scraped subjects data'
-            git push -f origin HEAD:scraper
-            if [ $(gh pr list --head scraper --json title --jq 'length') == '0' ];
+            git push -f origin HEAD:scraper2
+            if [ $(gh pr list --head scraper2 --json title --jq 'length') == '0' ];
             then
                 gh pr create \
                     --title "Update scraped subjects data" \
                     --body "This PR runs `rails scraper` to update scraped subjects' data" \
-                    --head scraper
+                    --head scraper2
             else
                 echo "A PR already exists and was correctly updated."
             fi
