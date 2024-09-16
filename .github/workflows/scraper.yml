@@ -29,8 +29,7 @@ jobs:
       env:
         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
       run: |
-        bundle exec rake scraper
-        sed -i -e 's/ $//' db/data/*.yml
+        echo test > db/data/scraped_optional_subjects.yml
         git add db/data
         if ! git diff --cached --quiet;
         then
