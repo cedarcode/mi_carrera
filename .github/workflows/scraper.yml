@@ -20,6 +20,8 @@ jobs:
         private-key: ${{ secrets.SCRAPER_APP_PRIVATE_KEY }}
 
     - uses: actions/checkout@v4
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
 
     - uses: ruby/setup-ruby@v1
       with:
