@@ -36,11 +36,13 @@ module Scraper
         add_missing_exams_and_subjects(prerequisite_tree, subjects)
       end
 
+      scraped_prerequisites =
+        prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
       optional_inco_subjects = load_this_semester_inco_subjects
 
       write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
       write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h)
-      write_yml("scraped_prerequisites", prerequisites.sort_by { |e| e[:subject_code] }.map(&:deep_stringify_keys))
+      write_yml("scraped_prerequisites", scraped_prerequisites)
       write_yml("scraped_optional_subjects", optional_inco_subjects.sort)
     rescue
       Rails.logger.info save_screenshot
