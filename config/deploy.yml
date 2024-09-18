@@ -17,7 +17,7 @@ ssh:
 
 healthcheck:
   interval: 30s
-  max_attempts: 8
+  max_attempts: 14
 
 builder:
   multiarch: false
