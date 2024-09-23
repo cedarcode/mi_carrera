@@ -9,7 +9,7 @@ gem 'devise', '~> 4.9'
 gem 'factory_bot_rails', '~> 6.4'
 gem 'importmap-rails', '~> 2.0'
 gem "omniauth", "~> 2.1"
-gem "omniauth-google-oauth2", '~> 1.1'
+gem "omniauth-google-oauth2", '~> 1.2'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pg', '~> 1.5'
 gem 'puma', '~> 6.4'
@@ -31,12 +31,12 @@ end
 group :development do
   gem "letter_opener", "~> 1.10"
   gem 'rubocop', '~> 1.66'
-  gem 'rubocop-performance', '~> 1.21', require: false
+  gem 'rubocop-performance', '~> 1.22', require: false
   gem 'rubocop-rails', '~> 2.26', require: false
   gem 'web-console', '~> 4.2'
 end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.24'
+  gem 'selenium-webdriver', '~> 4.25'
 end
