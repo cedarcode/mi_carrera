@@ -14,17 +14,3 @@ servers:
 env:
   clear:
     GOOGLE_ANALYTICS_MEASUREMENT_ID: G-76KC009E5F
-
-accessories:
-  db_prod:
-    image: postgres:15.4
-    host: 54.145.40.246
-    port: 5432
-    env:
-      clear:
-        POSTGRES_USER: 'mi_carrera'
-        POSTGRES_DB: 'mi_carrera_production'
-      secret:
-        - POSTGRES_PASSWORD
-    directories:
-      - data:/var/lib/postgresql/data
