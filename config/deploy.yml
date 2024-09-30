@@ -16,6 +16,6 @@ ssh:
   user: ubuntu
 
 builder:
-  multiarch: false
+  arch: amd64
   cache:
     type: gha
