@@ -1,6 +1,5 @@
 proxy:
   host: micarrera.uy,fing.micarrera.uy,www.micarrera.uy
-  ssl: true
   app_port: 3000
 
 servers:
