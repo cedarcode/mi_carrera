@@ -18,6 +18,12 @@ on:
         required: true
       AWS_SECRET_ACCESS_KEY:
         required: true
+      RAILS_MASTER_KEY:
+        required: true
+      DATABASE_URL:
+        required: true
+      SECRET_KEY_BASE:
+        required: true
 
 jobs:
   deploy:
@@ -54,6 +60,14 @@ jobs:
 
       - name: Expose GitHub Runtime for cache
         uses: crazy-max/ghaction-github-runtime@v3
+
+      - name: Generate kamal secrets
+        run: |
+          cat <<EOT >> .kamal/secrets
+            RAILS_MASTER_KEY=${{secrets.RAILS_MASTER_KEY}}
+            DATABASE_URL=${{secrets.DATABASE_URL}}
+            SECRET_KEY_BASE=${{secrets.SECRET_KEY_BASE}}
+          EOT
 
       - name: Run deploy command
         run: bundle exec kamal deploy -d ${{ inputs.destination }}
