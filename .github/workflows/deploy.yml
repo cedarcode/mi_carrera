@@ -63,7 +63,7 @@ jobs:
 
       - name: Generate kamal secrets
         run: |
-          cat <<EOT >> .kamal/secrets
+          cat <<EOT >> .kamal/secrets.${{ inputs.destination }}
             RAILS_MASTER_KEY=${{secrets.RAILS_MASTER_KEY}}
             DATABASE_URL=${{secrets.DATABASE_URL}}
             SECRET_KEY_BASE=${{secrets.SECRET_KEY_BASE}}
