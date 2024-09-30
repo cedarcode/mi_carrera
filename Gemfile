@@ -19,7 +19,7 @@ gem 'stimulus-rails', '~> 1.3'
 gem 'turbo-rails', '~> 2.0'
 
 group :development, :deploy do
-  gem 'kamal', '~> 1.8'
+  gem 'kamal', '~> 1.9'
 end
 
 group :development, :test do

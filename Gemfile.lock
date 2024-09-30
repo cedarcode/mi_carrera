@@ -138,7 +138,7 @@ GEM
     json (2.7.2)
     jwt (2.9.0)
       base64
-    kamal (1.8.3)
+    kamal (1.9.1)
       activesupport (>= 7.0)
       base64 (~> 0.2)
       bcrypt_pbkdf (~> 1.0)
@@ -391,7 +391,7 @@ DEPENDENCIES
   devise (~> 4.9)
   factory_bot_rails (~> 6.4)
   importmap-rails (~> 2.0)
-  kamal (~> 1.8)
+  kamal (~> 1.9)
   letter_opener (~> 1.10)
   omniauth (~> 2.1)
   omniauth-google-oauth2 (~> 1.2)
