@@ -15,10 +15,6 @@ env:
 ssh:
   user: ubuntu
 
-healthcheck:
-  interval: 30s
-  max_attempts: 14
-
 builder:
   multiarch: false
   cache:
