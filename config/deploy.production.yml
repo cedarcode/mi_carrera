@@ -1,13 +1,11 @@
+proxy:
+  host: micarrera.uy,fing.micarrera.uy,www.micarrera.uy
+  app_port: 3000
+
 servers:
   web:
     hosts:
       - 3.233.189.168
-    labels:
-      traefik.http.routers.micarrera-web-production.rule: Host(`micarrera.uy`) || Host(`fing.micarrera.uy`) || Host(`www.micarrera.uy`)
-      traefik.http.routers.micarrera_secure-web-production.entrypoints: websecure
-      traefik.http.routers.micarrera_secure-web-production.rule: Host(`micarrera.uy`) || Host(`fing.micarrera.uy`) || Host(`www.micarrera.uy`)
-      traefik.http.routers.micarrera_secure-web-production.tls: true
-      traefik.http.routers.micarrera_secure-web-production.tls.certresolver: letsencrypt
     options:
       memory: 500MiB
 

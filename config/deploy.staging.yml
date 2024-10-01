@@ -1,13 +1,11 @@
+proxy:
+  host: staging.micarrera.uy
+  app_port: 3000
+
 servers:
   web:
     hosts:
       - 3.233.189.168
-    labels:
-      traefik.http.routers.micarrera-web-staging.rule: Host(`staging.micarrera.uy`)
-      traefik.http.routers.micarrera_secure-web-staging.entrypoints: websecure
-      traefik.http.routers.micarrera_secure-web-staging.rule: Host(`staging.micarrera.uy`)
-      traefik.http.routers.micarrera_secure-web-staging.tls: true
-      traefik.http.routers.micarrera_secure-web-staging.tls.certresolver: letsencrypt
     options:
       memory: 250MiB
 
