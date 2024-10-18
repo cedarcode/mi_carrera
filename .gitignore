@@ -11,8 +11,6 @@
 /.env*
 !/.env*.erb
 
-/.kamal/secrets*
-
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*

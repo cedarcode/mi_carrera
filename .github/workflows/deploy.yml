@@ -61,13 +61,9 @@ jobs:
       - name: Expose GitHub Runtime for cache
         uses: crazy-max/ghaction-github-runtime@v3
 
-      - name: Generate kamal secrets
-        run: |
-          cat <<EOT >> .kamal/secrets.${{ inputs.destination }}
-            RAILS_MASTER_KEY=${{secrets.RAILS_MASTER_KEY}}
-            DATABASE_URL=${{secrets.DATABASE_URL}}
-            SECRET_KEY_BASE=${{secrets.SECRET_KEY_BASE}}
-          EOT
-
       - name: Run deploy command
         run: bundle exec kamal deploy -d ${{ inputs.destination }}
+        env:
+          RAILS_MASTER_KEY: ${{secrets.RAILS_MASTER_KEY}}
+          DATABASE_URL: ${{secrets.DATABASE_URL}}
+          SECRET_KEY_BASE: ${{secrets.SECRET_KEY_BASE}}
