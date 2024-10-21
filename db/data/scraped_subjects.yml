@@ -2741,6 +2741,12 @@ CEX28:
   credits: 28
   has_exam: false
   subject_group: '4442'
+CH010:
+  code: CH010
+  name: CREDITOS ASIGNADOS POR REVALIDAS
+  credits: 10
+  has_exam: false
+  subject_group: '5265'
 CH04:
   code: CH04
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -3425,6 +3431,12 @@ FIS14:
   credits: 14
   has_exam: true
   subject_group: '4442'
+FIS40:
+  code: FIS40
+  name: CREDITOS ASIGNADOS POR REVALIDAS
+  credits: 40
+  has_exam: false
+  subject_group: '4442'
 FIS8:
   code: FIS8
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -3689,6 +3701,12 @@ MA16:
   credits: 16
   has_exam: true
   subject_group: '4083'
+MA18:
+  code: MA18
+  name: CREDITOS ASIGNADOS POR REVALIDAS
+  credits: 18
+  has_exam: false
+  subject_group: '4083'
 MA20:
   code: MA20
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -3849,6 +3867,12 @@ MOP30:
   code: MOP30
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 30
+  has_exam: false
+  subject_group: '3582'
+MOP4:
+  code: MOP4
+  name: CREDITOS ASIGNADOS POR REVALIDAS
+  credits: 4
   has_exam: false
   subject_group: '3582'
 MOP8:
