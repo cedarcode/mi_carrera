@@ -16430,6 +16430,15 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: '1446'
+    subject_needed_name: REDES DE COMPUTADORAS
+  subject_code: '5907'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
   - type: logical
     logical_operator: or
     operands:
