@@ -30,7 +30,7 @@ end
 
 group :development do
   gem "letter_opener", "~> 1.10"
-  gem 'rubocop', '~> 1.67'
+  gem 'rubocop', '~> 1.68'
   gem 'rubocop-performance', '~> 1.22', require: false
   gem 'rubocop-rails', '~> 2.27', require: false
   gem 'web-console', '~> 4.2'
@@ -38,5 +38,5 @@ end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.25'
+  gem 'selenium-webdriver', '~> 4.26'
 end
