@@ -6798,8 +6798,56 @@
   subject_code: '1323'
   is_exam: false
 - type: logical
-  logical_operator: and
+  logical_operator: or
   operands:
+  - type: logical
+    logical_operator: and
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1023P
+        subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1023'
+        subject_needed_name: MATEMATICA DISCRETA 1
+        needs: exam
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1321P
+        subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+        needs: exam
+      - type: subject
+        subject_needed_code: '1321'
+        subject_needed_name: PROGRAMACION 2
+        needs: course
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1322P
+        subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1322'
+        subject_needed_name: PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: 1322T
+        subject_needed_name: PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1373'
+        subject_needed_name: PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: SRN17
+        subject_needed_name: PROGRAMACIÓN I- CIO CT-LHRH
+        needs: exam
   - type: subject
     needs: course
     subject_needed_code: '1323'
