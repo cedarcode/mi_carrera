@@ -2459,6 +2459,12 @@ AI28:
   credits: 28
   has_exam: true
   subject_group: '4756'
+AL:
+  code: AL
+  name: GEOMETRÍA Y ÁLGEBRA LINEAL
+  credits: 9
+  has_exam: false
+  subject_group: '4083'
 AR015:
   code: AR015
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2711,6 +2717,24 @@ CAL12:
   credits: 12
   has_exam: true
   subject_group: '4083'
+CAL2:
+  code: CAL2
+  name: CÁLCULO 2
+  credits: 10
+  has_exam: false
+  subject_group: '4083'
+CCT10:
+  code: CCT10
+  name: FÍSICA I
+  credits: 14
+  has_exam: false
+  subject_group: '4083'
+CCT20:
+  code: CCT20
+  name: FÍSICA II
+  credits: 14
+  has_exam: false
+  subject_group: '4083'
 CE10:
   code: CE10
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2854,6 +2878,12 @@ CIM24:
   name: ECUACIONES DIFERENCIALES
   credits: 10
   has_exam: true
+  subject_group: '4083'
+CM:
+  code: CM
+  name: COMPLEMENTO DE MATEMÁTICA
+  credits: 6
+  has_exam: false
   subject_group: '4083'
 CM14:
   code: CM14
@@ -3328,6 +3358,54 @@ D87:
   name: TEORÍA DE JUEGOS
   credits: 6
   has_exam: true
+  subject_group: '4083'
+DMA01:
+  code: DMA01
+  name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+  credits: 12
+  has_exam: false
+  subject_group: '4083'
+DMA02:
+  code: DMA02
+  name: MATEMÁTICA DISCRETA
+  credits: 12
+  has_exam: false
+  subject_group: '4083'
+DMA03:
+  code: DMA03
+  name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
+  credits: 12
+  has_exam: false
+  subject_group: '4083'
+DMA04:
+  code: DMA04
+  name: GEOMETRÍA Y ALGEBRA LINEAL II
+  credits: 12
+  has_exam: false
+  subject_group: '4083'
+DMA05:
+  code: DMA05
+  name: MATEMÁTICA INICIAL
+  credits: 4
+  has_exam: false
+  subject_group: '4083'
+DMA06:
+  code: DMA06
+  name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+  credits: 13
+  has_exam: false
+  subject_group: '4083'
+ESII:
+  code: ESII
+  name: ESTADÍSTICA II
+  credits: 10
+  has_exam: false
+  subject_group: '4083'
+ESTAI:
+  code: ESTAI
+  name: ESTADÍSTICA I
+  credits: 10
+  has_exam: false
   subject_group: '4083'
 F10:
   code: F10
@@ -3809,6 +3887,12 @@ MAT8:
   credits: 8
   has_exam: false
   subject_group: '4083'
+MC10:
+  code: MC10
+  name: CÁLCULO I
+  credits: 10
+  has_exam: false
+  subject_group: '4083'
 MC13:
   code: MC13
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -4013,6 +4097,36 @@ REF06:
   credits: 6
   has_exam: true
   subject_group: '4442'
+RN115:
+  code: RN115
+  name: ESTADÍSTICA I 2022
+  credits: 10
+  has_exam: false
+  subject_group: '4083'
+RN252:
+  code: RN252
+  name: FISICA 1 BIOCIENCIAS 2017
+  credits: 12
+  has_exam: false
+  subject_group: '4083'
+RN253:
+  code: RN253
+  name: FISICA 2 BIOCIENCIAS 2017
+  credits: 12
+  has_exam: false
+  subject_group: '4083'
+RN404:
+  code: RN404
+  name: MATEMATICA I
+  credits: 11
+  has_exam: false
+  subject_group: '4083'
+RN407:
+  code: RN407
+  name: MATEMATICA II
+  credits: 12
+  has_exam: false
+  subject_group: '4083'
 S42:
   code: S42
   name: SOCIOLOGÍA DE LA EMPRESA Y MANAGEMENT
