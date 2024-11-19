@@ -18,6 +18,7 @@ class SubjectsController < ApplicationController
         Subject
           .where("lower(unaccent(name)) LIKE lower(unaccent(?))", "%#{params[:search].strip}%")
           .or(Subject.where("lower(unaccent(short_name)) LIKE lower(unaccent(?))", "%#{params[:search].strip}%"))
+          .or(Subject.where("lower(unaccent(code)) LIKE lower(unaccent(?))", "%#{params[:search].strip}%"))
       end
 
     @subjects = TreePreloader.new(subjects).preload
