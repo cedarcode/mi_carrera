@@ -1,9 +1,8 @@
-<div class="mdc-deprecated-list-item growing-text-list">
-  <span class="mdc-deprecated-list-item__ripple"></span>
-  <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item__text" do %>
+<div class="hover:bg-gray-100 flex relative items-center justify-start overflow-hidden p-0 pl-4 pr-4 h-12 cursor-pointer">
+  <%= link_to subject_path(subject), :class => "flex-grow w-24 text-inherit decoration-inherit text-ellipsis whitespace-nowrap overflow-hidden block flex-1" do %>
     <%= display_name(subject) %>
   <% end %>
-  <span class="mdc-deprecated-list-item__meta two-checkboxes">
+  <span class="pl-15 flex h-10 w-24">
     <%= render 'shared/checkbox_component', approvable: subject.course, subject_show: false %>
 
     <% if subject.exam %>
