@@ -16,8 +16,8 @@ gem 'puma', '~> 6.4'
 gem 'rollbar', '~> 3.6'
 gem 'sassc-rails', '~> 2.1.2'
 gem 'stimulus-rails', '~> 1.3'
-gem 'turbo-rails', '~> 2.0'
 gem "tailwindcss-rails", "~> 3.0"
+gem 'turbo-rails', '~> 2.0'
 
 group :development, :deploy do
   gem 'kamal'
