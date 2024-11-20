@@ -1,0 +1,33 @@
+<label class="mdc-deprecated-list-item">
+  Puntuación:
+  <div class="rating-container">
+    <div class="rating-item">
+      <button class="material-icons mdc-icon-button">star</button>
+      <%= @subject.average_rating.present? ? @subject.average_rating : "Sin calificar" %>
+    </div>
+    <% if current_user %>
+      <div class="rating-item">
+        <% for value in 1..5 %>
+          <% filled = @user_review.present? && @user_review.rating >= value %>
+          <% selected = @user_review.present? && @user_review.rating == value %>
+          <% url = selected || @user_review.present? ? review_path(@user_review) : reviews_path %>
+          <% method = selected ? :delete : (@user_review.present? ? :put : :post) %>
+          <%= form_with(url:, method:, local: true) do |f| %>
+            <%= f.hidden_field :subject_id, value: @subject.id %>
+            <%= f.hidden_field :rating, value: %>
+            <%= f.button filled ? 'star' : 'star_outline', class: "material-icons mdc-icon-button interactive-star" %>
+          <% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <div class="login-container">
+          Inicia sesión para calificar
+          <span class="material-symbols-outlined">
+            login
+          </span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</label>
