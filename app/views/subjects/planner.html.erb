@@ -3,13 +3,17 @@
 <% end %>
 
 <div class="mdc-deprecated-list-group subjects-list">
-  <% @subjects.group_by(&:category).each do |category, subjects| %>
-    <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
-      <%= formatted_category(category) %>
-    </h3>
+  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+    Planned subjects
+  </h3>
 
-    <%= render partial: "subjects/subjects_list", locals: { subjects: subjects } %>
+  <%= render partial: "subjects/subjects_list", locals: { subjects: @planned_subjects } %>
 
-    <hr class="mdc-deprecated-list-divider">
-  <% end %>
+  <hr class="mdc-deprecated-list-divider">
+
+  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+    Recommended subjects
+  </h3>
+
+  <%= render partial: "subjects/subjects_list", locals: { subjects: @not_planned_subjects } %>
 </div>
