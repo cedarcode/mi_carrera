@@ -4,7 +4,7 @@ Sistema de trackeo de materias realizadas para los estudiantes de Computación d
 
 ### Requisitos
 
-* Ruby 3.3.5
+* Ruby 3.3.6
 * PostgreSQL (preferentemente v14)
 
 ### Setup
