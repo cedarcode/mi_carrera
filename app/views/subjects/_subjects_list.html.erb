@@ -17,8 +17,10 @@
             model: subject,
             url: planned_subjects_path(subject_id: subject.id),
             method: :post,
+            data: { controller: "autosave-check" },
+            local: false
           ) do |form| %>
-            <button class="material-icons mdc-icon-button">add_circle_outline</button>
+            <button class="material-icons mdc-icon-button" data-action="click->autosave-check#update">add_circle_outline</button>
           <% end %>
         <% end %>
       </span>
