@@ -11,6 +11,7 @@
           url: planned_subjects_path(subject_id: subject.id),
           method: :post,
           data: { controller: "autosave-check" },
+          class: 'd-flex',
           local: false
         ) do |form| %>
           <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">add_circle_outline</button>
