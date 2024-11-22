@@ -5,25 +5,11 @@
       <span class="mdc-deprecated-list-item__text">
         <%= display_name(subject) %>
       </span>
-      <span class="mdc-deprecated-list-item__meta two-checkboxes">
-        <% if current_student.approved?(subject) %>
-          <span class="mdc-deprecated-list-item__meta material-icons">done</span>
-        <% elsif current_user.planned_subjects.any? { |planned_subject| planned_subject.subject_id == subject.id } %>
-          <% if !current_student.available?(subject) %>
-            <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
-          <% end %>
-        <% else %>
-          <%= form_with(
-            model: subject,
-            url: planned_subjects_path(subject_id: subject.id),
-            method: :post,
-            data: { controller: "autosave-check" },
-            local: false
-          ) do |form| %>
-            <button class="material-icons mdc-icon-button" data-action="click->autosave-check#update">add_circle_outline</button>
-          <% end %>
-        <% end %>
-      </span>
+      <% if current_student.approved?(subject) %>
+        <span class="mdc-deprecated-list-item__meta material-icons">done</span>
+      <% elsif !current_student.available?(subject) %>
+        <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
+      <% end %>
     <% end %>
   <% end %>
 </div>

@@ -2,4 +2,26 @@
   <%= render 'shared/credits_counter' %>
 <% end %>
 
-<%= render 'planner_list' %>
+<div class="mdc-deprecated-list-group subjects-list">
+  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+    Planned subjects
+  </h3>
+
+  <%= render partial: "subjects/planned_subjects_list", locals: { subjects: @planned_subjects } %>
+
+  <div class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+    <strong> Current credits:</strong> <%= current_student.total_credits %>
+  </div>
+
+  <div class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+    <strong> Total planned credits:</strong> <%= Subject.approved_credits(@planned_subjects.map { |subject| [subject.course.id, subject.exam&.id] }.flatten.compact) %>
+  </div>
+
+  <hr class="mdc-deprecated-list-divider">
+
+  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+    Recommended subjects
+  </h3>
+
+  <%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_subjects } %>
+</div>

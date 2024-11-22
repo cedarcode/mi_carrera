@@ -1,3 +1,2 @@
-<%= turbo_stream.replace "plannerList" do %>
-  <%= render 'subjects/planner_list' %>
-<% end %>
+<%= turbo_stream.replace "planned_subjects", partial: "subjects/planned_subjects_list", locals: { subjects: @planned_subjects } %>
+<%= turbo_stream.replace "not_planned_subjects", partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_subjects } %>
