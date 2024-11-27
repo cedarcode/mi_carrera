@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe ActivityPrerequisite, type: :model do
+  describe 'associations' do
+    it { should belong_to(:approvable_needed).class_name('Approvable') }
+  end
+
   describe '#met?' do
     context 'when the approvable needed is available' do
       it 'returns true' do
