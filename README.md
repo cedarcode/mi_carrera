@@ -12,9 +12,7 @@ Sistema de trackeo de materias realizadas para los estudiantes de Computación d
 ```
 $ git clone https://github.com/cedarcode/mi_carrera.git
 $ cd mi_carrera/
-$ bundle install
-$ bin/rails db:setup
-$ bin/rails load_yml
+$ bin/setup --skip-server
 ```
 
 ### Levantar el servidor
