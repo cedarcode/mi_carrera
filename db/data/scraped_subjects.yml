@@ -1915,7 +1915,7 @@
   subject_group: '4647'
 '1891':
   code: '1891'
-  name: TALLER DE SEGURIDAD INFÓRMATICA
+  name: TALLER DE SEGURIDAD INFORMÁTICA
   credits: 10
   has_exam: false
   subject_group: '4428'
@@ -2721,7 +2721,7 @@ CAL2:
   code: CAL2
   name: CÁLCULO 2
   credits: 10
-  has_exam: false
+  has_exam: true
   subject_group: '4083'
 CCT10:
   code: CCT10
@@ -2883,7 +2883,7 @@ CM:
   code: CM
   name: COMPLEMENTO DE MATEMÁTICA
   credits: 6
-  has_exam: false
+  has_exam: true
   subject_group: '4083'
 CM14:
   code: CM14
@@ -3395,6 +3395,12 @@ DMA06:
   credits: 13
   has_exam: false
   subject_group: '4083'
+EPCN:
+  code: EPCN
+  name: ELEMENTOS DE PROGRAM Y CÁLCULO NUMÉRICO
+  credits: 6
+  has_exam: false
+  subject_group: '5020'
 ESII:
   code: ESII
   name: ESTADÍSTICA II
@@ -3641,6 +3647,12 @@ IAR6:
   credits: 6
   has_exam: false
   subject_group: '4882'
+IE:
+  code: IE
+  name: INTRODUCCIÓN A LA ECONOMÍA
+  credits: 10
+  has_exam: false
+  subject_group: '5265'
 IN35:
   code: IN35
   name: PROGRAMACION 1
@@ -3891,7 +3903,7 @@ MC10:
   code: MC10
   name: CÁLCULO I
   credits: 10
-  has_exam: false
+  has_exam: true
   subject_group: '4083'
 MC13:
   code: MC13
@@ -4223,6 +4235,12 @@ SRN50:
   credits: 4
   has_exam: true
   subject_group: '4442'
+TIIO:
+  code: TIIO
+  name: TALLER INTR A LA INVEST DE OPERACIONES
+  credits: 8
+  has_exam: false
+  subject_group: '4815'
 TP25:
   code: TP25
   name: CREDITOS ASIGNADOS POR REVALIDA

@@ -16799,6 +16799,24 @@
   logical_operator: and
   operands:
   - type: subject
+    needs: course
+    subject_needed_code: MC10
+    subject_needed_name: CÁLCULO I
+  subject_code: CAL2
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: MC10
+    subject_needed_name: CÁLCULO I
+  subject_code: CAL2
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
     needs: exam
     subject_needed_code: SRN02
     subject_needed_name: CÁLCULO I
@@ -16998,6 +17016,32 @@
     subject_needed_code: SRN10
     subject_needed_name: ALGEBRA LINEAL II
   subject_code: CIM24
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: all
+    subject_needed_code: MC10
+    subject_needed_name: CÁLCULO I
+  - type: subject
+    needs: all
+    subject_needed_code: AL
+    subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL
+  subject_code: CM
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: all
+    subject_needed_code: AL
+    subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL
+  - type: subject
+    needs: all
+    subject_needed_code: MC10
+    subject_needed_name: CÁLCULO I
+  subject_code: CM
   is_exam: true
 - type: logical
   logical_operator: not
@@ -17082,6 +17126,26 @@
       needs: exam
   subject_code: D87
   is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: '1321'
+    subject_needed_name: PROGRAMACION 2
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: MC10
+      subject_needed_name: CÁLCULO I
+      needs: exam
+  subject_code: EPCN
+  is_exam: false
 - type: logical
   logical_operator: and
   operands:
@@ -18288,3 +18352,16 @@
     subject_needed_name: FISICA 1A CIOCT 2023
   subject_code: SRN50
   is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: all
+    subject_needed_code: MC10
+    subject_needed_name: CÁLCULO I
+  - type: subject
+    needs: all
+    subject_needed_code: AL
+    subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL
+  subject_code: TIIO
+  is_exam: false
