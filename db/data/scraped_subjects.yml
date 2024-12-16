@@ -2377,7 +2377,7 @@
   subject_group: '4066'
 736EU:
   code: 736EU
-  name: BIONFORMÁTICA
+  name: BIOINFORMÁTICA
   credits: 7
   has_exam: true
   subject_group: '3582'
@@ -2728,13 +2728,13 @@ CCT10:
   name: FÍSICA I
   credits: 14
   has_exam: false
-  subject_group: '4083'
+  subject_group: '4442'
 CCT20:
   code: CCT20
   name: FÍSICA II
   credits: 14
   has_exam: false
-  subject_group: '4083'
+  subject_group: '4442'
 CE10:
   code: CE10
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -4120,13 +4120,13 @@ RN252:
   name: FISICA 1 BIOCIENCIAS 2017
   credits: 12
   has_exam: false
-  subject_group: '4083'
+  subject_group: '4442'
 RN253:
   code: RN253
   name: FISICA 2 BIOCIENCIAS 2017
   credits: 12
   has_exam: false
-  subject_group: '4083'
+  subject_group: '4442'
 RN404:
   code: RN404
   name: MATEMATICA I
