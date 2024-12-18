@@ -8,8 +8,20 @@
         </span>
         <% if current_student.approved?(subject) %>
           <span class="mdc-deprecated-list-item__meta material-icons">done</span>
-        <% elsif !current_student.available?(subject) %>
-          <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
+        <% else %>
+          <%= form_with(
+            model: subject,
+            url: planned_subjects_path(subject_id: subject.id),
+            method: :delete,
+            data: { controller: "autosave-check" },
+            class: 'd-flex',
+            locale: false,
+          ) do |form| %>
+            <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">remove_circle_outline</span>
+          <% end %>
+          <% if !current_student.available?(subject) %>
+            <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
