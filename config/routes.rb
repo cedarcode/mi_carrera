@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   resources :subjects do
     collection do
       get :all
-      get :planner
     end
   end
 
@@ -31,5 +30,6 @@ Rails.application.routes.draw do
 
   resources :current_optional_subjects, only: :index
 
+  resources :planned_subjects, only: [:index]
   resource :planned_subjects, only: [:create, :destroy]
 end
