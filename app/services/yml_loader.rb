@@ -27,11 +27,12 @@ module YmlLoader
     subjects.each do |code, subject|
       new_subject = Subject.find_or_initialize_by(code:)
 
-      new_subject.name = format_name(subject["name"])
-      new_subject.credits = subject["credits"]
+      subject_overrides = subjects_overrides[code] || {}
+
+      new_subject.name = subject_overrides["name"] || format_name(subject["name"])
+      new_subject.credits = subject_overrides["credits"] || subject["credits"]
       new_subject.group = SubjectGroup.find_by(code: subject["subject_group"])
 
-      subject_overrides = subjects_overrides[code] || {}
       new_subject.eva_id = subject_overrides['eva_id']
       new_subject.openfing_id = subject_overrides['openfing_id']
       new_subject.short_name = subject_overrides['short_name']
