@@ -1,4 +1,6 @@
 class PlannedSubjectsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @planned_subjects = TreePreloader.new.preload.select do |subject|
       current_student.approved?(subject.course) ||
