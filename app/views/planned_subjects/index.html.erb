@@ -9,13 +9,7 @@
 
   <%= render partial: "subjects/planned_subjects_list", locals: { subjects: @planned_subjects } %>
 
-  <div class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
-    <strong> Current credits:</strong> <%= current_student.total_credits %>
-  </div>
-
-  <div class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
-    <strong> Total planned credits:</strong> <%= Subject.approved_credits(@planned_subjects.map { |subject| [subject.course.id, subject.exam&.id] }.flatten.compact) %>
-  </div>
+  <%= render partial: "credits_counter", locals: { planned_subjects: @planned_subjects } %>
 
   <hr class="mdc-deprecated-list-divider">
 
