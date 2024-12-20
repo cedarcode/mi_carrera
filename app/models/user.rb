@@ -31,4 +31,8 @@ class User < ApplicationRecord
   def oauth_user?
     provider.present?
   end
+
+  def planned?(subject)
+    planned_subjects.any? { |planned_subject| planned_subject.subject_id == subject.id }
+  end
 end

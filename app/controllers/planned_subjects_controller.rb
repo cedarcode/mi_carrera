@@ -3,8 +3,7 @@ class PlannedSubjectsController < ApplicationController
 
   def index
     @planned_subjects, @not_planned_subjects = TreePreloader.new.preload.partition do |subject|
-      current_student.approved?(subject.course) ||
-        current_user.planned_subjects.any? { |planned_subject| planned_subject.subject_id == subject.id }
+      current_student.approved?(subject.course) || current_user.planned?(subject)
     end
   end
 
@@ -12,8 +11,7 @@ class PlannedSubjectsController < ApplicationController
     current_user.planned_subjects.create(subject_id: params[:subject_id])
 
     @planned_subjects, @not_planned_subjects = TreePreloader.new.preload.partition do |subject|
-      current_student.approved?(subject.course) ||
-        current_user.planned_subjects.any? { |planned_subject| planned_subject.subject_id == subject.id }
+      current_student.approved?(subject.course) || current_user.planned?(subject)
     end
 
     render :create
@@ -24,8 +22,7 @@ class PlannedSubjectsController < ApplicationController
     planned_subject.destroy
 
     @planned_subjects, @not_planned_subjects = TreePreloader.new.preload.partition do |subject|
-      current_student.approved?(subject.course) ||
-        current_user.planned_subjects.any? { |planned_subject| planned_subject.subject_id == subject.id }
+      current_student.approved?(subject.course) || current_user.planned?(subject)
     end
 
     render :destroy
