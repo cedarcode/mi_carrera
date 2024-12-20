@@ -11,7 +11,7 @@
         <% else %>
           <%= form_with(
             model: subject,
-            url: planned_subjects_path(subject_id: subject.id),
+            url: planned_subject_path(subject_id: subject.id),
             method: :delete,
             data: { controller: "autosave-check" },
             class: 'd-flex',
