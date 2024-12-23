@@ -1,6 +1,9 @@
 require 'rails_helper'
+require 'support/planned_subjects_test_helper'
 
 RSpec.describe "PlannedSubjects", type: :system do
+  include PlannedSubjectsTestHelper
+
   it "can add and remove subjects to planner" do
     gal1 = create :subject, :with_exam, name: "GAL 1", credits: 9, code: "1030"
     create :subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course
@@ -22,7 +25,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     within "#planned_subjects" do
       expect(page).to have_no_text "GAL 1"
       expect(page).to have_no_text "GAL 2"
-      expect(page).to have_text "T1"
+      assert_approved_subject "T1"
     end
 
     expect(page).to have_text "Current credits: 11"
@@ -39,9 +42,9 @@ RSpec.describe "PlannedSubjects", type: :system do
     end
 
     within "#planned_subjects" do
-      expect(page).to have_text "GAL 1"
+      assert_available_subject "GAL 1"
       expect(page).to have_no_text "GAL 2"
-      expect(page).to have_text "T1"
+      assert_approved_subject "T1"
     end
 
     within "#not_planned_subjects" do
@@ -53,23 +56,36 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Current credits: 11"
     expect(page).to have_text "Total planned credits: 20"
 
-    within ".mdc-deprecated-list-item", text: "GAL 1" do
+    within ".mdc-deprecated-list-item", text: "GAL 2" do
+      find("span", text: "add_circle_outline").click
+    end
+
+    within "#planned_subjects" do
+      assert_available_subject "GAL 1"
+      assert_blocked_subject "GAL 2"
+      assert_approved_subject "T1"
+    end
+
+    expect(page).to have_text "Current credits: 11"
+    expect(page).to have_text "Total planned credits: 30"
+
+    within ".mdc-deprecated-list-item", text: "GAL 2" do
       find("span", text: "remove_circle_outline").click
     end
 
     within "#planned_subjects" do
-      expect(page).to have_no_text "GAL 1"
+      assert_available_subject "GAL 1"
       expect(page).to have_no_text "GAL 2"
-      expect(page).to have_text "T1"
+      assert_approved_subject "T1"
     end
 
     within "#not_planned_subjects" do
-      expect(page).to have_text "GAL 1"
+      expect(page).to have_no_text "GAL 1"
       expect(page).to have_text "GAL 2"
       expect(page).to have_no_text "T1"
     end
 
     expect(page).to have_text "Current credits: 11"
-    expect(page).to have_text "Total planned credits: 11"
+    expect(page).to have_text "Total planned credits: 20"
   end
 end
