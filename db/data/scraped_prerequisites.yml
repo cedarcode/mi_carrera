@@ -17735,7 +17735,7 @@
     needs: course
     subject_needed_code: O6211
     subject_needed_name: TECNOLOGÍA DE MEDIOS AL SERVICIO DE LA PRESERVACIÓN DEL PATRIMONIO
-      HISTÓRICO
+      HISTÓRICO DOC
   subject_code: O7246
   is_exam: false
 - type: logical
@@ -17745,7 +17745,7 @@
     needs: course
     subject_needed_code: O6211
     subject_needed_name: TECNOLOGÍA DE MEDIOS AL SERVICIO DE LA PRESERVACIÓN DEL PATRIMONIO
-      HISTÓRICO
+      HISTÓRICO DOC
   subject_code: O7246
   is_exam: true
 - type: logical
