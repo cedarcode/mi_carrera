@@ -8,21 +8,23 @@ class PlannedSubjectsController < ApplicationController
   def create
     current_user.planned_subjects.create(subject_id: params[:subject_id])
 
-    set_planned_and_not_planned_subjects
-
-    render :create
+    render_turbo_stream
   end
 
   def destroy
     planned_subject = current_user.planned_subjects.find_by!(subject_id: params[:subject_id])
     planned_subject.destroy
 
-    set_planned_and_not_planned_subjects
-
-    render :destroy
+    render_turbo_stream
   end
 
   private
+
+  def render_turbo_stream
+    set_planned_and_not_planned_subjects
+
+    render :update
+  end
 
   def set_planned_and_not_planned_subjects
     @planned_subjects, @not_planned_subjects = TreePreloader.new.preload.partition do |subject|
