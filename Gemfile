@@ -7,7 +7,7 @@ gem 'rails', '~> 8.0.0'
 gem 'bootsnap', '~> 1.18', require: false
 gem 'devise', '~> 4.9'
 gem 'factory_bot_rails', '~> 6.4'
-gem 'importmap-rails', '~> 2.0'
+gem 'importmap-rails', '~> 2.1'
 gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.2'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
