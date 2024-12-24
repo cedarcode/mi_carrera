@@ -38,13 +38,6 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-  config.before(:each, type: :system) do
-    driven_by :selenium, using: (ENV["TEST_BROWSER"] || :headless_chrome).to_sym, screen_size: [1200, 1200]
-  end
-
-  config.include Devise::Test::IntegrationHelpers, type: :request
-  config.include Devise::Test::IntegrationHelpers, type: :system
-  config.include Warden::Test::Helpers
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
