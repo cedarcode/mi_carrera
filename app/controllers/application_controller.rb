@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_student
+  rate_limit to: 20, within: 10.seconds
 
   private
 
