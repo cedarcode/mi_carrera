@@ -1,10 +1,8 @@
-<%= turbo_frame_tag "planned_credits_counter" do %>
-  <div class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
-    <strong> Current credits:</strong> <%= current_student.total_credits %>
-  </div>
+<div class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+  <strong> Current credits:</strong> <%= current_student.total_credits %>
+</div>
 
-  <div class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
-    <% planned_approvable_ids = planned_subjects.map { |subject| [subject.course.id, subject.exam&.id] }.flatten.compact %>
-    <strong> Total planned credits:</strong> <%= Subject.approved_credits(planned_approvable_ids) %>
-  </div>
-<% end %>
+<div class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+  <% planned_approvable_ids = planned_subjects.map { |subject| [subject.course.id, subject.exam&.id] }.flatten.compact %>
+  <strong> Total planned credits:</strong> <%= Subject.approved_credits(planned_approvable_ids) %>
+</div>

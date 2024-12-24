@@ -22,7 +22,7 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     visit planned_subjects_path
 
-    within "#planned_subjects" do
+    within_planned_subjects do
       expect(page).to have_no_text "GAL 1"
       expect(page).to have_no_text "GAL 2"
       assert_approved_subject "T1"
@@ -31,7 +31,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Current credits: 11"
     expect(page).to have_text "Total planned credits: 11"
 
-    within "#not_planned_subjects" do
+    within_not_planned_subjects do
       expect(page).to have_text "GAL 1"
       expect(page).to have_text "GAL 2"
       expect(page).to have_no_text "T1"
@@ -41,13 +41,13 @@ RSpec.describe "PlannedSubjects", type: :system do
       find("span", text: "add_circle_outline").click
     end
 
-    within "#planned_subjects" do
+    within_planned_subjects do
       assert_available_subject "GAL 1"
       expect(page).to have_no_text "GAL 2"
       assert_approved_subject "T1"
     end
 
-    within "#not_planned_subjects" do
+    within_not_planned_subjects do
       expect(page).to have_no_text "GAL 1"
       expect(page).to have_text "GAL 2"
       expect(page).to have_no_text "T1"
@@ -60,7 +60,7 @@ RSpec.describe "PlannedSubjects", type: :system do
       find("span", text: "add_circle_outline").click
     end
 
-    within "#planned_subjects" do
+    within_planned_subjects do
       assert_available_subject "GAL 1"
       assert_blocked_subject "GAL 2"
       assert_approved_subject "T1"
@@ -73,13 +73,13 @@ RSpec.describe "PlannedSubjects", type: :system do
       find("span", text: "remove_circle_outline").click
     end
 
-    within "#planned_subjects" do
+    within_planned_subjects do
       assert_available_subject "GAL 1"
       expect(page).to have_no_text "GAL 2"
       assert_approved_subject "T1"
     end
 
-    within "#not_planned_subjects" do
+    within_not_planned_subjects do
       expect(page).to have_no_text "GAL 1"
       expect(page).to have_text "GAL 2"
       expect(page).to have_no_text "T1"

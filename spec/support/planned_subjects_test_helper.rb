@@ -21,6 +21,14 @@ module PlannedSubjectsTestHelper
     end
   end
 
+  def within_planned_subjects(&block)
+    within(:xpath, "//h3[contains(text(), 'Planned subjects')]/following-sibling::*[1]", &block)
+  end
+
+  def within_not_planned_subjects(&block)
+    within(:xpath, "//h3[contains(text(), 'Recommended subjects')]/following-sibling::*[1]", &block)
+  end
+
   private
 
   def within_subject_row(subject_name, &block)

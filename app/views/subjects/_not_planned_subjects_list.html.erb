@@ -1,22 +1,20 @@
-<%= turbo_frame_tag "not_planned_subjects" do %>
-  <div class="mdc-deprecated-list">
-    <% subjects.each do |subject| %>
-      <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item" do %>
-        <span class="mdc-deprecated-list-item__ripple"></span>
-        <span class="mdc-deprecated-list-item__text">
-          <%= display_name(subject) %>
-        </span>
-        <%= form_with(
-          model: subject,
-          url: planned_subjects_path(subject_id: subject.id),
-          method: :post,
-          data: { controller: "autosave-check" },
-          class: 'd-flex',
-          local: false
-        ) do |form| %>
-          <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">add_circle_outline</button>
-        <% end %>
+<div class="mdc-deprecated-list">
+  <% subjects.each do |subject| %>
+    <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item" do %>
+      <span class="mdc-deprecated-list-item__ripple"></span>
+      <span class="mdc-deprecated-list-item__text">
+        <%= display_name(subject) %>
+      </span>
+      <%= form_with(
+        model: subject,
+        url: planned_subjects_path(subject_id: subject.id),
+        method: :post,
+        data: { controller: "autosave-check" },
+        class: 'd-flex',
+        local: false
+      ) do |form| %>
+        <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">add_circle_outline</button>
       <% end %>
     <% end %>
-  </div>
-<% end %>
+  <% end %>
+</div>
