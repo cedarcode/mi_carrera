@@ -1,8 +1,8 @@
 <div class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
-  <strong> Current credits:</strong> <%= current_student.total_credits %>
+  <strong> Créditos actuales:</strong> <%= current_student.total_credits %>
 </div>
 
 <div class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
   <% planned_approvable_ids = planned_subjects.map { |subject| [subject.course.id, subject.exam&.id] }.flatten.compact %>
-  <strong> Total planned credits:</strong> <%= Subject.approved_credits(planned_approvable_ids) %>
+  <strong> Créditos planeados:</strong> <%= Subject.approved_credits(planned_approvable_ids) %>
 </div>
