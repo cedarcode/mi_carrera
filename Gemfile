@@ -11,6 +11,7 @@ gem 'importmap-rails', '~> 2.0'
 gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.2'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
+gem 'pdf-reader'
 gem 'pg', '~> 1.5'
 gem 'puma', '~> 6.4'
 gem 'rollbar', '~> 3.6'
