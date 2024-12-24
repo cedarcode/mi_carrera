@@ -23,8 +23,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_233429) do
   end
 
   create_table "planned_subjects", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "subject_id"
+    t.bigint "user_id", null: false
+    t.bigint "subject_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_planned_subjects_on_subject_id"
