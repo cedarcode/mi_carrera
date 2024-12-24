@@ -18,6 +18,8 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     user = create(:user, approvals: [taller.course.id])
 
+    ENV['ENABLE_PLANNER'] = 'true'
+
     sign_in user
 
     visit planned_subjects_path

@@ -1,5 +1,6 @@
 class PlannedSubjectsController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_feature_enabled!
 
   def index
     set_planned_and_not_planned_subjects
@@ -23,6 +24,10 @@ class PlannedSubjectsController < ApplicationController
   end
 
   private
+
+  def ensure_feature_enabled!
+    redirect_to root_path, alert: 'Feature is not available' unless ENV['ENABLE_PLANNER'].present?
+  end
 
   def set_planned_and_not_planned_subjects
     @planned_subjects, @not_planned_subjects = TreePreloader.new.preload.partition do |subject|

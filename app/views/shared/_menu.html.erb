@@ -5,7 +5,7 @@
       <%= drawer_menu_navigation_item('Avance de Carrera', root_path) %>
       <%= drawer_menu_navigation_item('Todas las Materias', all_subjects_path) %>
       <%= drawer_menu_navigation_item('Materias INCO semestre actual', current_optional_subjects_path) %>
-      <% if current_user %>
+      <% if current_user && ENV['ENABLE_PLANNER'].present? %>
         <%= drawer_menu_navigation_item('Planificador', planned_subjects_path) %>
       <% end %>
       <li role="separator" class="mdc-deprecated-list-divider"></li>
