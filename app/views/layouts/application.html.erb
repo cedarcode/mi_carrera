@@ -74,7 +74,7 @@
           <%= form_with(url: all_subjects_path, method: :get, local: true) do |f| %>
             <div class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mdc-text-field--no-label mdc-text-field--with-trailing-icon">
               <span class="mdc-text-field__ripple"></span>
-              <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Buscar", autofocus: true, data: { 'search-target': "searchInput" } %>
+              <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { 'search-target': "searchInput" } %>
               <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" data-action="click->search#toggle" tabindex="0" role="button">close</i>
               <span class="mdc-line-ripple"></span>
             </div>
