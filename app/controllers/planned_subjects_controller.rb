@@ -26,7 +26,7 @@ class PlannedSubjectsController < ApplicationController
   private
 
   def ensure_feature_enabled!
-    redirect_to root_path, alert: 'Feature is not available' unless ENV['ENABLE_PLANNER'].present?
+    redirect_to root_path, alert: 'Feature is not available' if ENV['ENABLE_PLANNER'].blank?
   end
 
   def set_planned_and_not_planned_subjects
