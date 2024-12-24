@@ -24,6 +24,9 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     visit planned_subjects_path
 
+    expect(page).to have_text "Materias planeadas"
+    expect(page).to have_text "Materias recomendadas"
+
     within_planned_subjects do
       expect(page).to have_no_text "GAL 1"
       expect(page).to have_no_text "GAL 2"
