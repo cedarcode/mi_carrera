@@ -7,7 +7,7 @@ class PlannedSubjectsController < ApplicationController
   end
 
   def create
-    current_user.planned_subjects.create(subject_id: params[:subject_id])
+    current_user.planned_subjects.create(subject_id: params[:subject_id], semester: params[:semester])
 
     set_planned_and_not_planned_subjects
 
@@ -30,8 +30,9 @@ class PlannedSubjectsController < ApplicationController
   end
 
   def set_planned_and_not_planned_subjects
-    @planned_subjects, @not_planned_subjects = TreePreloader.new.preload.partition do |subject|
-      current_student.approved?(subject) || current_user.planned?(subject)
-    end
+    @planned_subjects = current_user.planned_subjects.includes(:subject).order(:semester)
+    @not_planned_approved_subjects, @not_planned_subjects = TreePreloader.new.preload.reject { |subject|
+      current_user.planned?(subject)
+    }.partition { |subject| current_student.approved?(subject) }
   end
 end
