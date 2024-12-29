@@ -13,6 +13,11 @@
         class: 'd-flex',
         local: false
       ) do |form| %>
+        <select name="semester" data-action="click->autosave-check#stopPropagation">
+          <% (1..10).each do |semester| %>
+            <option value="<%= semester %>"><%= semester_display_name(semester) %></option>
+          <% end %>
+        </select>
         <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">add_circle_outline</button>
       <% end %>
     <% end %>
