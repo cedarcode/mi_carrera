@@ -24,7 +24,7 @@
         <div class="mdc-text-field mdc-text-field--filled <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:email].any? %>" data-controller="textfield">
           <span class="mdc-text-field__ripple"></span>
           <%= f.label :email, "Correo electrónico", class: "mdc-floating-label" %>
-          <%= f.email_field :email, class: "mdc-text-field__input", required: true %>
+          <%= f.email_field :email, class: "mdc-text-field__input", required: true, autofocus: true %>
           <%= render 'shared/invalid_icon', resource: resource, field: :email %>
           <div class="mdc-line-ripple"></div>
         </div>
