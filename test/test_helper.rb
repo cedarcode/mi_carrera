@@ -2,6 +2,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 require 'minitest/mock'
+Dir[Rails.root.join("test/support/*")].each { |f| require f }
 
 class ActiveSupport::TestCase
   include FactoryBot::Syntax::Methods
