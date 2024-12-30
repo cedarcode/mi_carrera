@@ -31,7 +31,7 @@
         <%= render 'shared/info_and_errors', resource: resource, field: :email, text: '' %>
       </li>
       <li class="form-input-container">
-        <%= render 'shared/password_field', f: f, resource: resource %>
+        <%= render 'shared/password_field', f: f, resource: resource, field: :password, label_text: "Contraseña", autocomplete: "current-password", required: true %>
         <%= render 'shared/info_and_errors', resource: resource, field: :password, text: '' %>
       </li>
       <li class="form-input-container sign-in">
