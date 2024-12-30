@@ -31,8 +31,8 @@
         <%= render 'shared/info_and_errors', resource: resource, field: :email, text: '' %>
       </li>
       <li class="form-input-container">
-        <%= render 'shared/password_field', f: f, resource: resource %>
-        <%= render 'shared/info_and_errors', resource: resource, field: :password, text: '' %>
+        <%= render 'shared/password_field', f:, resource:, field: :password, label_text: "Contraseña", autocomplete: "current-password", required: true %>
+        <%= render 'shared/info_and_errors', resource:, field: :password, text: '' %>
       </li>
       <li class="form-input-container sign-in">
         <%= f.button class: "mdc-button mdc-button--raised" do %>
