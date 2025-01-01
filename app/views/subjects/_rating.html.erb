@@ -20,14 +20,11 @@
         <% end %>
       </div>
     <% else %>
-      <%= link_to new_user_session_path do %>
-        <div class="login-container">
-          Inicia sesión para calificar
-          <span class="material-symbols-outlined">
-            login
-          </span>
-        </div>
-      <% end %>
+      <div class="rating-item">
+        <% for value in 1..5 %>
+           <%= link_to('star_outline', new_user_session_path, class: "material-icons mdc-icon-button interactive-star") %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </label>
