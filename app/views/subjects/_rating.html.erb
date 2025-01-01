@@ -1,27 +1,27 @@
 <label class="mdc-deprecated-list-item">
   Puntuación:
   <div class="rating-container">
-    <div class="rating-item">
+    <div class="average-rating">
       <button class="material-icons mdc-icon-button">star</button>
       <%= @subject.average_rating || "Sin calificar" %>
     </div>
     <% if current_user %>
-      <div class="rating-item">
-        <% 1.upto(5).each |value| %>
+      <div class="rating-items">
+        <% 5.downto(1).each do |value| %>
           <% filled = @user_review.present? && @user_review.rating >= value %>
           <% selected = @user_review.present? && @user_review.rating == value %>
           <% url = selected ? review_path(@user_review) : upsert_reviews_path %>
           <% method = selected ? :delete : :post %>
-          <%= form_with(url:, method:, local: true) do |f| %>
+          <%= form_with(url:, method:, local: true, class: "interactive-star") do |f| %>
             <%= f.hidden_field :subject_id, value: @subject.id %>
             <%= f.hidden_field :rating, value: %>
-            <%= f.button filled ? 'star' : 'star_outline', class: "material-icons mdc-icon-button interactive-star" %>
+            <%= f.button filled ? 'star' : 'star_outline', class: "material-icons mdc-icon-button" %>
           <% end %>
         <% end %>
       </div>
     <% else %>
-      <div class="rating-item">
-        <% 1.upto(5).each |value| %>
+      <div class="rating-items">
+        <% 5.downto(1).each do %>
            <%= link_to('star_outline', new_user_session_path, class: "material-icons mdc-icon-button interactive-star") %>
         <% end %>
       </div>
