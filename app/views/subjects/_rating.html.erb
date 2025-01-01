@@ -10,8 +10,8 @@
         <% for value in 1..5 %>
           <% filled = @user_review.present? && @user_review.rating >= value %>
           <% selected = @user_review.present? && @user_review.rating == value %>
-          <% url = selected || @user_review.present? ? review_path(@user_review) : reviews_path %>
-          <% method = selected ? :delete : (@user_review.present? ? :put : :post) %>
+          <% url = selected ? review_path(@user_review) : upsert_reviews_path %>
+          <% method = selected ? :delete : :post %>
           <%= form_with(url:, method:, local: true) do |f| %>
             <%= f.hidden_field :subject_id, value: @subject.id %>
             <%= f.hidden_field :rating, value: %>
