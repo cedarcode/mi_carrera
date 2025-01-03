@@ -1,6 +1,32 @@
 require 'rails_helper'
 
 RSpec.describe Subject, type: :model do
+  describe 'associations' do
+    it { should belong_to(:group).class_name('SubjectGroup').optional }
+    it {
+      should have_one(:course)
+        .class_name('Approvable')
+        .conditions(is_exam: false)
+        .dependent(:destroy)
+        .inverse_of(:subject)
+    }
+    it {
+      should have_one(:exam)
+        .class_name('Approvable')
+        .conditions(is_exam: true)
+        .dependent(:destroy)
+        .inverse_of(:subject)
+    }
+  end
+
+  describe 'validations' do
+    subject { build :subject }
+
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:credits) }
+    it { should validate_uniqueness_of(:code) }
+  end
+
   describe '#approved_credits' do
     let!(:s1) { create :subject, credits: 10 }
     let!(:s2) { create :subject, credits: 11 }
