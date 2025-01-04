@@ -15,6 +15,11 @@ module Scraper
     MAX_PAGES = ENV["MAX_PAGES"]&.to_i
     THREADS = (ENV['THREADS'] || 6).to_f
 
+    CAREERS_MATRIX = [
+      { name: "INGENIERIA EN COMPUTACION", plan: "1997" },
+      { name: "INGENIERIA ELECTRICA", plan: "2023" },
+    ]
+
     def scrape
       Capybara.configure do |config|
         config.default_driver = ENV["HEADLESS"] == "false" ? :selenium_chrome : :selenium_chrome_headless
@@ -23,27 +28,29 @@ module Scraper
         config.threadsafe = true
       end
 
-      groups = {}
-      subjects = {}
+      CAREERS_MATRIX.each do |career|
+        groups = {}
+        subjects = {}
 
-      go_to_groups_and_subjects_page
-      process_groups_and_subjects(groups, subjects)
+        go_to_groups_and_subjects_page(career)
+        process_groups_and_subjects(groups, subjects)
 
-      go_to_prerequisites_page
-      prerequisites = process_prerequisites(subjects)
+        go_to_prerequisites_page
+        prerequisites = process_prerequisites(subjects, career)
 
-      prerequisites.each do |prerequisite_tree|
-        add_missing_exams_and_subjects(prerequisite_tree, subjects)
+        prerequisites.each do |prerequisite_tree|
+          add_missing_exams_and_subjects(prerequisite_tree, subjects)
+        end
+
+        scraped_prerequisites =
+          prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
+        optional_inco_subjects = load_this_semester_inco_subjects
+
+        write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h, career[:name])
+        write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h, career[:name])
+        write_yml("scraped_prerequisites", scraped_prerequisites, career[:name])
+        write_yml("scraped_optional_subjects", optional_inco_subjects.sort, career[:name])
       end
-
-      scraped_prerequisites =
-        prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
-      optional_inco_subjects = load_this_semester_inco_subjects
-
-      write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
-      write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h)
-      write_yml("scraped_prerequisites", scraped_prerequisites)
-      write_yml("scraped_optional_subjects", optional_inco_subjects.sort)
     rescue
       Rails.logger.info save_screenshot
       raise
@@ -51,11 +58,12 @@ module Scraper
 
     private
 
-    def write_yml(name, data)
-      File.write(Rails.root.join("db/data/#{name}.yml"), data.to_yaml)
+    def write_yml(name, data, career)
+      career_dir = career.underscore.tr(" ", "_")
+      File.write(Rails.root.join("db/data/#{career_dir}/#{name}.yml"), data.to_yaml)
     end
 
-    def go_to_groups_and_subjects_page
+    def go_to_groups_and_subjects_page(career)
       visit "https://bedelias.udelar.edu.uy"
       click_on "PLANES DE ESTUDIO"
       click_on "Planes de estudio / Previas"
@@ -71,11 +79,15 @@ module Scraper
 
       find('.ui-column-filter').set('INGENIERIA EN COMPUTACION')
 
-      within('tr', text: 'INGENIERIA EN COMPUTACION', match: :prefer_exact) do
-        find('.ui-row-toggler').click
+      all('tr', text: career[:name], match: :prefer_exact).each do |row|
+        if row.has_selector?('td', text: 'Grado', match: :prefer_exact)
+          row.find('.ui-row-toggler').click
+          break
+        end
       end
+
       within('.ui-expanded-row-content', text: 'Planes') do
-        find('tr', text: '1997').click_on "Ver más datos"
+        find('tr', text: career[:plan]).click_on "Ver más datos"
       end
     end
 
@@ -100,7 +112,7 @@ module Scraper
       click_on 'Sistema de previaturas'
     end
 
-    def process_prerequisites(subjects)
+    def process_prerequisites(subjects, career)
       Thread.abort_on_exception = true
 
       find('.ui-paginator-last').click
@@ -113,14 +125,14 @@ module Scraper
       1.upto(max_pages).each_slice((max_pages / THREADS).ceil).map do |slice|
         Thread.new do
           using_session(Capybara::Session.new(page.mode)) do
-            process_prerequisites_slice(subjects, slice)
+            process_prerequisites_slice(subjects, slice, career)
           end
         end
       end.flat_map(&:value)
     end
 
-    def process_prerequisites_slice(subjects, slice)
-      go_to_groups_and_subjects_page
+    def process_prerequisites_slice(subjects, slice, career)
+      go_to_groups_and_subjects_page(career)
       go_to_prerequisites_page
 
       slice.flat_map do |page|
