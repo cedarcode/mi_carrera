@@ -1,0 +1,34 @@
+---
+- name: "INGENIERIA EN COMPUTACION"
+  current_plan: "1997"
+  enabled: true
+- name: "INGENIERIA ELECTRICA"
+  current_plan: "2023"
+  enabled: false
+- name: "INGENIERIA CIVIL"
+  current_plan: "2021"
+  enabled: false
+- name: "INGENIERIA DE ALIMENTOS"
+  current_plan: "2003"
+  enabled: false
+- name: "INGENIERIA DE PRODUCCION"
+  current_plan: "2010"
+  enabled: false
+- name: "INGENIERÍA EN AGRIMENSURA"
+  current_plan: "2023"
+  enabled: false
+- name: "INGENIERIA EN SISTEMAS DE COMUNICACION"
+  current_plan: "2018"
+  enabled: false
+- name: "INGENIERIA FISICO-MATEMATICA"
+  current_plan: "2017"
+  enabled: false
+- name: "INGENIERIA INDUSTRIAL MECANICA"
+  current_plan: "1997"
+  enabled: false
+- name: "INGENIERIA NAVAL"
+  current_plan: "1997"
+  enabled: false
+- name: "INGENIERIA QUIMICA"
+  current_plan: "2021"
+  enabled: false

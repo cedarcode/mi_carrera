@@ -15,11 +15,6 @@ module Scraper
     MAX_PAGES = ENV["MAX_PAGES"]&.to_i
     THREADS = (ENV['THREADS'] || 6).to_f
 
-    CAREERS_MATRIX = [
-      { name: "INGENIERIA EN COMPUTACION", plan: "1997" },
-      { name: "INGENIERIA ELECTRICA", plan: "2023" },
-    ]
-
     def scrape
       Capybara.configure do |config|
         config.default_driver = ENV["HEADLESS"] == "false" ? :selenium_chrome : :selenium_chrome_headless
@@ -28,7 +23,13 @@ module Scraper
         config.threadsafe = true
       end
 
-      CAREERS_MATRIX.each do |career|
+      degrees = YAML.load_file(Rails.root.join("db/data/degrees.yml"))
+      degrees.each do |career|
+        if career["enabled"] == false
+          Rails.logger.info "Skipping disabled career: #{career["name"]}"
+          next
+        end
+
         groups = {}
         subjects = {}
 
@@ -46,10 +47,12 @@ module Scraper
           prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
         optional_inco_subjects = load_this_semester_inco_subjects
 
-        write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h, career[:name])
-        write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h, career[:name])
-        write_yml("scraped_prerequisites", scraped_prerequisites, career[:name])
-        write_yml("scraped_optional_subjects", optional_inco_subjects.sort, career[:name])
+        write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h, career["name"])
+        write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h, career["name"])
+        write_yml("scraped_prerequisites", scraped_prerequisites, career["name"])
+        if career["name"] == "INGENIERIA EN COMPUTACION"
+          write_yml("scraped_optional_subjects", optional_inco_subjects.sort, career["name"])
+        end
       end
     rescue
       Rails.logger.info save_screenshot
@@ -60,7 +63,11 @@ module Scraper
 
     def write_yml(name, data, career)
       career_dir = career.underscore.tr(" ", "_")
-      File.write(Rails.root.join("db/data/#{career_dir}/#{name}.yml"), data.to_yaml)
+      dir_path = Rails.root.join("db/data/#{career_dir}")
+
+      Dir.mkdir(dir_path) unless Dir.exist?(dir_path)
+
+      File.write(dir_path.join("#{name}.yml"), data.to_yaml)
     end
 
     def go_to_groups_and_subjects_page(career)
@@ -79,7 +86,7 @@ module Scraper
 
       find('.ui-column-filter').set('INGENIERIA EN COMPUTACION')
 
-      all('tr', text: career[:name], match: :prefer_exact).each do |row|
+      all('tr', text: career["name"], match: :prefer_exact).each do |row|
         if row.has_selector?('td', text: 'Grado', match: :prefer_exact)
           row.find('.ui-row-toggler').click
           break
@@ -87,7 +94,7 @@ module Scraper
       end
 
       within('.ui-expanded-row-content', text: 'Planes') do
-        find('tr', text: career[:plan]).click_on "Ver más datos"
+        find('tr', text: career["current_plan"]).click_on "Ver más datos"
       end
     end
 
