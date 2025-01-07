@@ -10099,6 +10099,33 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: '1443'
+      subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+      needs: course
+    - type: subject
+      subject_needed_code: '1466'
+      subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+      needs: course
+    - type: subject
+      subject_needed_code: '1424'
+      subject_needed_name: ARQUITECTURA DE COMPUTADORES 1
+      needs: course
+    - type: subject
+      subject_needed_code: CP28
+      subject_needed_name: ARQUITECTURA DE SISTEMAS
+      needs: exam
+    - type: subject
+      subject_needed_code: 1443P
+      subject_needed_name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1403'
+      subject_needed_name: INT. A LA ARQUITECTURA DE COMPUTADORES
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: '1021'
       subject_needed_name: ALGEBRA LINEAL
       needs: exam
@@ -10142,25 +10169,17 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: '1443'
-      subject_needed_name: ARQUITECTURA DE COMPUTADORAS
-      needs: course
-    - type: subject
-      subject_needed_code: '1424'
-      subject_needed_name: ARQUITECTURA DE COMPUTADORES 1
-      needs: course
-    - type: subject
-      subject_needed_code: CP28
-      subject_needed_name: ARQUITECTURA DE SISTEMAS
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
       needs: exam
     - type: subject
-      subject_needed_code: 1443P
-      subject_needed_name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
+      subject_needed_code: CP15
+      subject_needed_name: PROGRAMACION II
       needs: exam
     - type: subject
-      subject_needed_code: '1403'
-      subject_needed_name: INT. A LA ARQUITECTURA DE COMPUTADORES
-      needs: course
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -10195,21 +10214,6 @@
     - type: subject
       subject_needed_code: 1061P
       subject_needed_name: CREDITOS NO ACUM CDIV
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1321P
-      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
-      needs: exam
-    - type: subject
-      subject_needed_code: CP15
-      subject_needed_name: PROGRAMACION II
-      needs: exam
-    - type: subject
-      subject_needed_code: '1321'
-      subject_needed_name: PROGRAMACION 2
       needs: exam
   subject_code: '1537'
   is_exam: false
