@@ -59,7 +59,7 @@ module Scraper
     end
 
     def credits_prerequisite(content)
-      credits, type, group = /\A(\d+) créditos en el (Grupo|Plan): (\d+) - .*\z/.match(content).captures
+      credits, type, group = /\A(\d+) créditos en el (Grupo|Plan): (\w+) - .*\z/.match(content).captures
       { type: 'credits', credits: credits.to_i, group: (group.to_i if type == "Grupo") }.compact
     end
 
