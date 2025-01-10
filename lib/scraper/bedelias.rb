@@ -11,7 +11,9 @@ module Scraper
     # 5265 - CIENCIAS HUMANAS Y SOCIALES - min: 10 créditos
     GROUP_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:min): (\d+)(?: créditos)\z/
     # SRN14 - MATEMÁTICA DISCRETA I - créditos: 10
-    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
+    # FF1-7 - CREDITOS ASIGNADOS POR REVALIDA - créditos: 7
+    # FL2.6 - CREDITOS ASIGANDOS POR REVALIDA - créditos: 6
+    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A((?:\w|\.|\-)+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
     MAX_PAGES = ENV["MAX_PAGES"]&.to_i
     THREADS = (ENV['THREADS'] || 6).to_f
 
@@ -109,8 +111,13 @@ module Scraper
         subject_nodes_in_group = group_node.all(:xpath, '..//..//li[@data-nodetype="Materia"]', visible: false)
 
         subject_nodes_in_group.each do |subject_node|
-          code, name, credits = SUBJECT_CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all)).captures
-          subjects[code] = { code:, name:, credits: credits.to_i, has_exam: false, subject_group: group_code }
+          match = SUBJECT_CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all))
+          if match
+            code, name, credits = match.captures
+            subjects[code] = { code:, name:, credits: credits.to_i, has_exam: false, subject_group: group_code }
+          else
+            raise "Regex didn't match for subject: #{subject_node.text(:all)}"
+          end
         end
       end
     end
