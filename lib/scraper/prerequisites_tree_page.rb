@@ -47,6 +47,8 @@ module Scraper
       when 'U.C.B Aprobada:' then subject_prerequisite(content, 'all')
       # Actividad Examen aprobada/reprobada en la U.C.B: 1151 - FISICA 1
       when 'Actividad Examen aprobada/reprobada en la U.C.B:' then subject_prerequisite(content, 'exam_activity')
+      # Actividad Curso aprobada/reprobada en la U.C.B: 1030 - GEOMETRIA Y ALGEBRA LINEAL 1
+      when 'Actividad Curso aprobada/reprobada en la U.C.B:' then subject_prerequisite(content, 'course_activity')
       else raise "Unknown node title: #{title}"
       end
     end
