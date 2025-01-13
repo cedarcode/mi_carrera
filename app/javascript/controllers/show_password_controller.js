@@ -1,15 +1,15 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["password", "toggleButton"];
+  static targets = ["password", "icon"];
 
   toggle() {
     if (this.passwordTarget.type === "password") {
       this.passwordTarget.type = "text";
-      this.toggleButtonTarget.innerHTML = '<span class="material-icons">visibility_off</span>';
+      this.iconTarget.innerHTML = "visibility_off";
     } else {
       this.passwordTarget.type = "password";
-      this.toggleButtonTarget.innerHTML = '<span class="material-icons">visibility</span>';
+      this.iconTarget.innerHTML = "visibility";
     }
   }
 }
