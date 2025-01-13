@@ -9,16 +9,12 @@ class PlannedSubjectsController < ApplicationController
   def create
     current_user.planned_subjects.create(subject_id: params[:subject_id])
 
-    set_planned_and_not_planned_subjects
-
     redirect_to planned_subjects_path
   end
 
   def destroy
     planned_subject = current_user.planned_subjects.find_by!(subject_id: params[:subject_id])
-    planned_subject.destroy
-
-    set_planned_and_not_planned_subjects
+    planned_subject.destroy!
 
     redirect_to planned_subjects_path
   end
