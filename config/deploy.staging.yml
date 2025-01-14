@@ -13,3 +13,4 @@ servers:
 env:
   clear:
     ROLLBAR_ENV: staging
+    ENABLE_PLANNER: true
