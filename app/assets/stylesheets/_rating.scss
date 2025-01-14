@@ -1,0 +1,27 @@
+.rating-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.average-rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating-items {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.interactive-star {
+  transition: transform 0.25s ease;
+
+  &:hover,
+  &:hover ~ .interactive-star {
+    transform: scale(1.3);
+  }
+}
