@@ -1,0 +1,23 @@
+<div class="review-form">
+  <h1>Nueva Reseña partial</h1>
+
+  <%= form_with local: true do |f| %>
+    <div class="star-rating">
+      <% (1..5).each do |i| %>
+        <input type="radio" name="rating[stars]" value="<%= i %>" id="star<%= i %>" />
+        <label for="star<%= i %>">
+          <span class="material-symbols-outlined">star</span>
+        </label>
+      <% end %>
+    </div>
+
+    <div class="review-text">
+      <%= f.label :comentario %><br>
+      <%= f.text_area :content, class: "text-area" %>
+    </div>
+
+    <div>
+      <%= f.submit "Create review", class: "review-button"%>
+    </div>
+  <% end %>
+</div>
