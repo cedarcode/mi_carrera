@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_19_153425) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -31,6 +31,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
     t.integer "subject_group_id"
     t.integer "approvable_needed_id"
     t.integer "amount_of_subjects_needed"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "subject_groups", force: :cascade do |t|
@@ -72,4 +81,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "reviews", "users"
 end
