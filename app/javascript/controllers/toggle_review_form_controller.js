@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["form"];
+  static targets = ["form", "button"];
 
   initialize() {
     this.isOpen = false;
@@ -20,10 +20,14 @@ export default class extends Controller {
   }
 
   show() {
+    this.buttonTarget.style.backgroundColor = "#6804ec";
+    this.buttonTarget.style.color = "white";
     this.formTarget.style.display = "block";
   }
 
   hide() {
+    this.buttonTarget.style.backgroundColor = "white";
+    this.buttonTarget.style.color = "black";
     this.formTarget.style.display = "none";
   }
 }
