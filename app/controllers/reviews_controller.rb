@@ -1,22 +1,16 @@
 class ReviewsController < ApplicationController
-  def new
-    if !current_user && not_localhost
-      redirect_to new_user_session_path, alert: "Inicia sesión para dejar una reseña."
-    else
-      render :new  
-    end
-  end
-
-
   def create
-    @review = Review.new(review_params)
-    @review.user = current_user
-    if @review.save
-      redirect_to @review, notice: "Reseña añadida."
+    if !current_user && not_localhost
+      redirect_to new_user_session_path, alert: "Inicia sesión para dejar una reseña"
     else
-      render :new, alert: "Error añadiendo tu reseña."
+      puts 'review params are: ', review_params
+      @review = Review.new(review_params)
+      not_localhost ? @review.user = current_user : @review.user = nil
+      @review.save
+      redirect_to root_path, notice: "Reseña creada con éxito"
     end
   end
+
   private
 
   def review_params
