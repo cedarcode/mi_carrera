@@ -1,7 +1,6 @@
 <aside class="mdc-drawer mdc-drawer--modal" data-navigation-drawer-target='drawer'>
   <div class="mdc-drawer__content" data-controller="toggle-review-form">
     <div class="mdc-deprecated-list" data-action='click->navigation-drawer#close'>
-
       <%= drawer_menu_navigation_item('Avance de Carrera', root_path) %>
       <%= drawer_menu_navigation_item('Todas las Materias', all_subjects_path) %>
       <%= drawer_menu_navigation_item('Materias INCO semestre actual', current_optional_subjects_path) %>
@@ -16,7 +15,8 @@
           Colabora en Github
         </span>
       </a>
-      <div class='mdc-deprecated-list-item' data-action="click->toggle-review-form#toggle">
+    </div>
+    <div class='mdc-deprecated-list-item' data-action="click->toggle-review-form#toggle">
         <span class="mdc-deprecated-list-item__ripple"></span>
         <span class="material-symbols-outlined">
           rate_review
@@ -29,7 +29,6 @@
       <div data-toggle-review-form-target='form'>
         <%= render 'shared/review_form' %>
       </div>
-    </div>
   </div>
 </aside>
 <div class="mdc-drawer-scrim"></div>
