@@ -1,0 +1,25 @@
+<h1>Nueva Reseña</h1>
+
+<%= form_with local: true do |form| %>
+  <div class="star-rating">
+    <%= form.label :rating, "Rating" %>
+    <%= form.radio_button :rating, 1 %> <%= form.label :rating, "1 star", value: 1 %>
+    <%= form.radio_button :rating, 2 %> <%= form.label :rating, "2 stars", value: 2 %>
+    <%= form.radio_button :rating, 3 %> <%= form.label :rating, "3 stars", value: 3 %>
+    <%= form.radio_button :rating, 4 %> <%= form.label :rating, "4 stars", value: 4 %>
+    <%= form.radio_button :rating, 5 %> <%= form.label :rating, "5 stars", value: 5 %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Create Post" %>
+  </div>
+<% end %>
