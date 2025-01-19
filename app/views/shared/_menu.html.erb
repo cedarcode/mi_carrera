@@ -16,6 +16,16 @@
           Colabora en Github
         </span>
       </a>
+      <%= link_to new_review_path, class: 'mdc-deprecated-list-item', target: '_blank', tabindex: '0' do %>
+        <span class="mdc-deprecated-list-item__ripple"></span>
+        <span class="material-symbols-outlined">
+          rate_review
+        </span>
+        &nbsp;
+        <span class='mdc-deprecated-list-item__text'>
+          Da tu reseña
+        </span>
+      <% end %>
     </div>
   </div>
 </aside>
