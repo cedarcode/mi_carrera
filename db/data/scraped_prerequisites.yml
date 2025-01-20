@@ -17400,7 +17400,7 @@
   - type: subject
     needs: course
     subject_needed_code: M001
-    subject_needed_name: MM. CC. III - (MTDEO) - DISEÑO Y ANALISIS DE EXPERIMENTOS
+    subject_needed_name: DISEÑO Y ANALISIS DE EXPERIMENTOS (MTDEO)
   subject_code: M001
   is_exam: true
 - type: logical
