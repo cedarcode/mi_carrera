@@ -2,7 +2,7 @@
   Puntuación:
   <div class="rating-container">
     <div class="average-rating">
-      <button class="material-icons mdc-icon-button">star</button>
+      <span class="material-icons mdc-icon-button">star</span>
       <%= @subject.average_rating || "Sin calificar" %>
     </div>
     <div class="rating-items">
@@ -11,7 +11,7 @@
         <% selected = @user_review.present? && @user_review.rating == value %>
         <% url = selected ? review_path(@user_review) : reviews_path %>
         <% method = selected ? :delete : :post %>
-        <%= form_with(url:, method:, local: true, class: "interactive-star") do |f| %>
+        <%= form_with(url:, method:, class: "interactive-star") do |f| %>
           <%= f.hidden_field :subject_id, value: @subject.id %>
           <%= f.hidden_field :rating, value: %>
           <%= f.button filled ? 'star' : 'star_outline', class: "material-icons mdc-icon-button" %>
