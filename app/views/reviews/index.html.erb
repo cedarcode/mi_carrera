@@ -1,0 +1,34 @@
+<h1>Reseñas</h1>
+
+<% average_rating = Review.average(:rating).to_s %>
+<p>Promedio de reseña: <%= average_rating %></p>
+<hr class="solid">
+<ul>
+  <% if @reviews %>
+    <% @reviews.each do |review| %>
+      <li>
+        <p>Reseña: <%= review.content %> </p>
+        
+        <p>Calificación</p>
+        
+        <div class="index-stars">
+          <div class="index-star-rating--full">
+            <% review.rating.times do %>
+              <span class="material-symbols-outlined">star</span>
+            <% end %>
+          </div>
+          <div class="index-star-rating--empty">
+            <% (5 - review.rating).times do %>
+              <span class="material-symbols-outlined">star</span>
+            <% end %>
+          </div>
+        </div>
+        
+        <p><strong>Fecha:</strong> <%= review.created_at.to_date %></p>
+        <hr class="solid">
+      </li>
+    <% end %>
+  <% else %>
+    <p>No hay reseñas por ahora</p>
+  <% end %>
+</ul>
