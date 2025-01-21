@@ -7,6 +7,8 @@ es:
       timeout: "Tu sesión ha expirado. Inicia sesión nuevamente."
       unauthenticated: "Tienes que registrarte o iniciar sesión antes de continuar."
       unconfirmed: "Tienes que confirmar tu cuenta antes de continuar."
+      locked: "Tu cuenta está bloqueada por repetidos intentos de acceso fallidos. Luego de 1 hora podrás intentar nuevamente."
+      last_attempt: "Este es tu último intento de acceso antes de que tu cuenta sea bloqueada."
     mailer:
       reset_password_instructions:
         subject: "Instrucciones de cambio de contraseña"
