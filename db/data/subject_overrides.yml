@@ -464,7 +464,7 @@ AR6:
 '1443':
   eva_id: '195'
   openfing_id: arqcomp
-  category: 'fourth_semester'
+  category: 'inactive'
 '1424':
   category: 'inactive'
 '1425':
@@ -1218,3 +1218,7 @@ R100:
   category: 'inactive'
 '1940':
   category: 'inactive'
+'1466':
+  eva_id: '195'
+  openfing_id: arqcomp
+  category: 'fourth_semester'
