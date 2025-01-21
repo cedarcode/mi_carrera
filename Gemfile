@@ -32,12 +32,12 @@ group :development do
   gem "letter_opener", "~> 1.10"
   gem 'rubocop', '~> 1.70'
   gem 'rubocop-performance', '~> 1.23', require: false
-  gem 'rubocop-rails', '~> 2.28', require: false
+  gem 'rubocop-rails', '~> 2.29', require: false
   gem 'web-console', '~> 4.2'
 end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.27'
+  gem 'selenium-webdriver', '~> 4.28'
   gem 'shoulda-matchers', '~> 6.0'
 end
