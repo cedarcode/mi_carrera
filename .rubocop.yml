@@ -50,6 +50,7 @@ Security:
 Rails/BulkChangeTable:
   Exclude:
     - 'db/migrate/20190321140119_add_validations.rb'
+    - 'db/migrate/20250121233816_add_lockable_to_devise.rb'
 
 Rails/LexicallyScopedActionFilter:
   Enabled: false
