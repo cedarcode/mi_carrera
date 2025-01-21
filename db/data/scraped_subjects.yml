@@ -3691,7 +3691,7 @@ M000:
   subject_group: '4442'
 M001:
   code: M001
-  name: MM. CC. III - (MTDEO) - DISEÑO Y ANALISIS DE EXPERIMENTOS
+  name: DISEÑO Y ANALISIS DE EXPERIMENTOS (MTDEO)
   credits: 4
   has_exam: true
   subject_group: '4442'
@@ -3998,6 +3998,7 @@ O2525:
 O6211:
   code: O6211
   name: TECNOLOGÍA DE MEDIOS AL SERVICIO DE LA PRESERVACIÓN DEL PATRIMONIO HISTÓRICO
+    DOC
   credits: 8
   has_exam: false
   subject_group: '5265'
