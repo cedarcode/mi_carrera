@@ -239,7 +239,7 @@ body {
 }
 
 /* Star rating container */
-.star-rating {
+.review-form-star-rating {
   display: inline-flex;
   flex-direction: row-reverse; /* Reverse to make hover highlight work right-to-left */
   justify-content: center;
@@ -247,23 +247,23 @@ body {
 }
 
 /* Hide the radio buttons */
-.star-rating input[type="radio"] {
+.review-form-star-rating input[type="radio"] {
   display: none;
 }
 
 /* Style the labels (stars) */
-.star-rating label {
+.review-form-star-rating label {
   color: rgb(186, 159, 221); /* Default color for hollow stars */
   cursor: pointer; /* Makes the stars clickable */
 }
 
 /* Change to full star on hover */
-.star-rating label:hover ~ label .material-symbols-outlined {
+.review-form-star-rating label:hover ~ label .material-symbols-outlined {
   color: #6804ec; /* Lighter gold for hover effect */
 }
 
 /* Keep the full stars for the selected rating */
-.star-rating input[type="radio"]:checked ~ label .material-symbols-outlined {
+.review-form-star-rating input[type="radio"]:checked ~ label .material-symbols-outlined {
   color: #6804ec; /* Gold for selected stars */
 }
 
@@ -294,4 +294,21 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 3%;
+}
+
+.index-star-rating--full {
+  display: flex;
+  gap: 5px; /* Space between stars */
+  color: #6804ec
+}
+
+.index-star-rating--empty {
+  display: flex;
+  gap: 5px; /* Space between stars */
+  color: rgb(186, 159, 221);
+}
+
+.index-stars {
+  display: flex;
+  gap: 5px;
 }

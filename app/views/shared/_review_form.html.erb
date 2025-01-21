@@ -3,7 +3,7 @@
     <%= f.label :comentario %>
   </div>
   
-  <div class="star-rating">
+  <div class="review-form-star-rating">
     <% (1..5).each do |i| %>
       <input type="radio" name="review[rating]" value="<%= i %>" id="star<%= i %>" />
       <label for="star<%= i %>">
@@ -17,6 +17,10 @@
   </div>
 
   <div class="review-form-element">
-    <%= f.submit "Confirmar reseña", class: "review-button"%>
+    <%= f.submit "Confirmar", class: "review-button"%>
   </div>
 <% end %>
+
+<div class="review-form-element">
+  <%= link_to 'Ver todas las reseñas', reviews_path, class: 'review-button' %>
+</div>
