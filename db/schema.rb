@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_03_16_053425) do
+ActiveRecord::Schema[8.0].define(version: 2024_03_05_231624) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -65,7 +65,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_03_16_053425) do
     t.string "code"
     t.string "category", default: "optional"
     t.boolean "current_optional_subject", default: false
-    t.float "average_rating"
     t.index ["code"], name: "index_subjects_on_code", unique: true
   end
 
