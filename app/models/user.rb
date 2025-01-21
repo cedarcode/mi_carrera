@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
+         :recoverable, :rememberable, :validatable, :lockable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   serialize :approvals, type: Array, coder: YAML
