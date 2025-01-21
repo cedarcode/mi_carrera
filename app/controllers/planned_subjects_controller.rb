@@ -7,7 +7,7 @@ class PlannedSubjectsController < ApplicationController
   end
 
   def create
-    current_user.planned_subjects.create(subject_id: params[:subject_id])
+    current_user.planned_subjects.create!(subject_id: params[:subject_id])
 
     redirect_to planned_subjects_path
   end

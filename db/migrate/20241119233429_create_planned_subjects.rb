@@ -1,8 +1,8 @@
 class CreatePlannedSubjects < ActiveRecord::Migration[8.0]
   def change
     create_table :planned_subjects do |t|
-      t.belongs_to :user, null: false, index: false
-      t.belongs_to :subject, null: false, index: false
+      t.belongs_to :user, null: false, index: false, foreign_key: true
+      t.belongs_to :subject, null: false, index: false, foreign_key: true
 
       t.timestamps
     end
