@@ -48,5 +48,9 @@ class Subject < ApplicationRecord
     revalid? || inactive? || outside_montevideo? || extension_module?
   end
 
+  def average_rating
+    reviews.average(:rating).to_f.round(1) if reviews.any?
+  end
+
   delegate :available?, to: :course
 end
