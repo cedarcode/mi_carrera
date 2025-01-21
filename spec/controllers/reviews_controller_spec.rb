@@ -14,18 +14,18 @@ RSpec.describe ReviewsController, type: :request do
     sign_in user
   end
 
-  describe 'POST #upsert' do
+  describe 'POST #create' do
     context 'when no review exists for that user and subject' do
       it 'creates a new review' do
         expect {
-          post upsert_reviews_path, params: { subject_id: subject.id, rating: 5 }
+          post reviews_path, params: { subject_id: subject.id, rating: 5 }
         }.to change(Review, :count).by(1)
 
         expect(Review.last.rating).to eq(5)
       end
 
       it 'redirects to the subject page' do
-        post upsert_reviews_path, params: { subject_id: subject.id, rating: 5 }
+        post reviews_path, params: { subject_id: subject.id, rating: 5 }
 
         expect(response).to redirect_to(subject_path(subject))
       end
@@ -36,7 +36,7 @@ RSpec.describe ReviewsController, type: :request do
         review
 
         expect {
-          post upsert_reviews_path, params: { subject_id: subject.id, rating: 4 }
+          post reviews_path, params: { subject_id: subject.id, rating: 4 }
         }.to change { review.reload.rating }.from(3).to(4)
       end
 
@@ -44,12 +44,12 @@ RSpec.describe ReviewsController, type: :request do
         review
 
         expect {
-          post upsert_reviews_path, params: { subject_id: subject.id, rating: 4 }
+          post reviews_path, params: { subject_id: subject.id, rating: 4 }
         }.not_to change(Review, :count)
       end
 
       it 'redirects to the subject page' do
-        post upsert_reviews_path, params: { subject_id: subject.id, rating: 4 }
+        post reviews_path, params: { subject_id: subject.id, rating: 4 }
 
         expect(response).to redirect_to(subject_path(subject))
       end

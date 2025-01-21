@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_review, only: [:destroy]
 
-  def upsert
+  def create
     @review = current_user.reviews.find_or_initialize_by(subject_id: params[:subject_id])
     @review.update!(rating: params[:rating])
 

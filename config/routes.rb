@@ -29,9 +29,5 @@ Rails.application.routes.draw do
   resource :user_onboardings, only: :update
 
   resources :current_optional_subjects, only: :index
-  resources :reviews, only: [:destroy] do
-    collection do
-      post :upsert
-    end
-  end
+  resources :reviews, only: [:create, :destroy]
 end
