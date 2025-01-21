@@ -235,6 +235,7 @@ body {
   color: #333;
   width: 100%;
   box-sizing: border-box;
+  resize: none;
 }
 
 /* Star rating container */
@@ -285,4 +286,12 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
+.review-form-element {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3%;
 }
