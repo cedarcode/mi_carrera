@@ -1,4 +1,5 @@
 require 'simplecov'
+SimpleCov.command_name "Minitest"
 SimpleCov.start 'rails' do
   add_group 'Services', 'app/services'
 end
