@@ -92,8 +92,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_233429) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "reviews", "subjects"
-  add_foreign_key "reviews", "users"
   add_foreign_key "planned_subjects", "subjects"
   add_foreign_key "planned_subjects", "users"
+  add_foreign_key "reviews", "subjects"
+  add_foreign_key "reviews", "users"
 end
