@@ -61,7 +61,17 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  config.before(:each, type: :system) do
+    driven_by :selenium, using: :headless_chrome
+  end
+
+  config.include Devise::Test::IntegrationHelpers, type: :system
   config.include Devise::Test::IntegrationHelpers, type: :request
+
+  # TODO Remove when Devise fixes https://github.com/heartcombo/devise/issues/5705
+  config.before(:each, type: :system) do
+    Rails.application.reload_routes_unless_loaded
+  end
 end
 
 Shoulda::Matchers.configure do |config|
