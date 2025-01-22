@@ -47,9 +47,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_233429) do
     t.integer "rating", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subject_id"], name: "index_reviews_on_subject_id"
-    t.index ["user_id", "subject_id"], name: "index_reviews_on_user_id_and_subject_id", unique: true
-    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.index ["subject_id", "user_id"], name: "index_reviews_on_subject_id_and_user_id", unique: true
   end
 
   create_table "subject_groups", force: :cascade do |t|
