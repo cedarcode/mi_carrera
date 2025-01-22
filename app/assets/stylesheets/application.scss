@@ -312,3 +312,26 @@ body {
   display: flex;
   gap: 5px;
 }
+
+.divider {
+  border: 1px solid;
+  color: #6804ec;
+  width: 100%;
+}
+
+.average-rating-indicator {
+  display: flex;
+  font-size: xxx-large;
+}
+
+.review-comment-box {
+  width: 95%;
+  border: 2px solid #ba9fdd;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #333;
+  resize: none;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
