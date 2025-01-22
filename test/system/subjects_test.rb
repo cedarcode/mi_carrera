@@ -87,7 +87,7 @@ class SubjectsTest < ApplicationSystemTestCase
     click_button "Ingresar"
 
     visit subject_path(subject)
-    
+
     # Create a 5-star review
     all('button', text: 'star')[0].click
     Review.last.tap do |review|
