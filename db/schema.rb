@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_19_233429) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -22,6 +22,14 @@ ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
     t.datetime "updated_at", precision: nil, null: false
   end
 
+  create_table "planned_subjects", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "subject_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "subject_id"], name: "index_planned_subjects_on_user_id_and_subject_id", unique: true
+  end
+
   create_table "prerequisites", force: :cascade do |t|
     t.string "type", null: false
     t.integer "parent_prerequisite_id"
@@ -31,6 +39,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
     t.integer "subject_group_id"
     t.integer "approvable_needed_id"
     t.integer "amount_of_subjects_needed"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "subject_id", null: false
+    t.integer "rating", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id", "user_id"], name: "index_reviews_on_subject_id_and_user_id", unique: true
   end
 
   create_table "subject_groups", force: :cascade do |t|
@@ -72,4 +89,9 @@ ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "planned_subjects", "subjects"
+  add_foreign_key "planned_subjects", "users"
+  add_foreign_key "reviews", "subjects"
+  add_foreign_key "reviews", "users"
 end

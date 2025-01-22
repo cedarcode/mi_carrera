@@ -1,6 +1,32 @@
 require 'rails_helper'
 
 RSpec.describe Subject, type: :model do
+  describe 'associations' do
+    it { should belong_to(:group).class_name('SubjectGroup').optional }
+    it {
+      should have_one(:course)
+        .class_name('Approvable')
+        .conditions(is_exam: false)
+        .dependent(:destroy)
+        .inverse_of(:subject)
+    }
+    it {
+      should have_one(:exam)
+        .class_name('Approvable')
+        .conditions(is_exam: true)
+        .dependent(:destroy)
+        .inverse_of(:subject)
+    }
+  end
+
+  describe 'validations' do
+    subject { build :subject }
+
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:credits) }
+    it { should validate_uniqueness_of(:code) }
+  end
+
   describe '#approved_credits' do
     let!(:s1) { create :subject, credits: 10 }
     let!(:s2) { create :subject, credits: 11 }
@@ -32,6 +58,26 @@ RSpec.describe Subject, type: :model do
         expect(subject.approved?([])).to be false
         expect(subject.approved?([subject.course.id])).to be false
         expect(subject.approved?([subject.course.id, subject.exam.id])).to be true
+      end
+    end
+  end
+
+  describe '#average_rating' do
+    let(:subject) { create :subject }
+
+    context 'when there are no reviews' do
+      it 'returns nil' do
+        expect(subject.average_rating).to be_nil
+      end
+    end
+
+    context 'when there are reviews' do
+      let!(:first_review) { create :review, subject:, rating: 2 }
+      let!(:second_review) { create :review, subject:, rating: 4 }
+      let!(:third_review) { create :review, subject:, rating: 5 }
+
+      it 'returns the average rating' do
+        expect(subject.average_rating).to eq(3.7)
       end
     end
   end

@@ -5,6 +5,9 @@ class User < ApplicationRecord
 
   serialize :approvals, type: Array, coder: YAML
 
+  has_many :reviews, dependent: :destroy
+  has_many :planned_subjects, dependent: :destroy
+
   def self.from_omniauth(auth, cookie)
     # check that user with same email exists
     existing_user = User.find_by(email: auth.info.email)
@@ -28,5 +31,9 @@ class User < ApplicationRecord
 
   def oauth_user?
     provider.present?
+  end
+
+  def planned?(subject)
+    planned_subjects.any? { |planned_subject| planned_subject.subject_id == subject.id }
   end
 end

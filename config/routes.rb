@@ -29,4 +29,8 @@ Rails.application.routes.draw do
   resource :user_onboardings, only: :update
 
   resources :current_optional_subjects, only: :index
+
+  resources :reviews, only: [:create, :destroy]
+
+  resources :planned_subjects, only: [:index, :create, :destroy], param: :subject_id
 end

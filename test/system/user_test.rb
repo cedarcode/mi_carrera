@@ -1,7 +1,10 @@
 require "application_system_test_case"
 
+SimpleCov.command_name "Minitest:system"
+
 class UserTest < ApplicationSystemTestCase
   include ActionMailer::TestHelper
+  include PasswordHelpers
 
   test "can sign up" do
     user = create :user
@@ -34,6 +37,8 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: 'alice@test.com'
     fill_in "Nueva contraseña", with: 'alice123'
     fill_in "Confirma tu nueva contraseña", with: 'alice123'
+    password_visibility_toggle_test("Nueva contraseña")
+    password_visibility_toggle_test("Confirma tu nueva contraseña")
     click_on "Registrarte"
 
     assert_current_path root_path
@@ -70,6 +75,7 @@ class UserTest < ApplicationSystemTestCase
     visit edit_user_password_path(reset_password_token: user.send_reset_password_instructions)
 
     fill_in "Nueva contraseña", with: "new_password"
+    password_visibility_toggle_test("Nueva contraseña")
     click_on "Restablecer contraseña"
     assert_text 'Tu contraseña fue modificada correctamente. Has iniciado sesión.'
 
@@ -103,6 +109,7 @@ class UserTest < ApplicationSystemTestCase
 
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: user.password
+    password_visibility_toggle_test("Contraseña")
     click_on "Ingresar"
 
     assert_current_path(root_path)
@@ -155,6 +162,9 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Nueva contraseña", with: "new_password"
     fill_in "Confirma tu nueva contraseña", with: "new_password"
     fill_in "Contraseña actual", with: user.password
+    password_visibility_toggle_test("Nueva contraseña")
+    password_visibility_toggle_test("Confirma tu nueva contraseña")
+    password_visibility_toggle_test("Contraseña actual")
     fill_in "Correo electrónico", with: "new_#{user.email}"
     click_on "Guardar"
     assert_text "Actualizaste tu cuenta correctamente."
