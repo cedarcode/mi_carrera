@@ -65,12 +65,13 @@ RSpec.configure do |config|
     driven_by :selenium, using: :headless_chrome
   end
 
-  config.include Devise::Test::IntegrationHelpers, type: :system
-  config.include Devise::Test::IntegrationHelpers, type: :request
+  [:system, :request].each do |type|
+    config.include(Devise::Test::IntegrationHelpers, type:)
 
-  # TODO Remove when Devise fixes https://github.com/heartcombo/devise/issues/5705
-  config.before(:each, type: :system) do
-    Rails.application.reload_routes_unless_loaded
+    # TODO Remove when Devise fixes https://github.com/heartcombo/devise/issues/5705
+    config.before(:each, type:) do
+      Rails.application.reload_routes_unless_loaded
+    end
   end
 end
 

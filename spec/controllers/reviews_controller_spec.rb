@@ -6,11 +6,6 @@ RSpec.describe ReviewsController, type: :request do
   let(:review) { create(:review, user:, subject:) }
 
   before do
-    # https://github.com/heartcombo/devise/issues/5705
-    Rails.application.reload_routes_unless_loaded
-  end
-
-  before do
     sign_in user
   end
 
