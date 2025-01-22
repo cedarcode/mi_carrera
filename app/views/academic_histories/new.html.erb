@@ -1,0 +1,35 @@
+<h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5 sign-in mb-3">Resumen por Grupo</h3>
+<p class="mb-3">Carga tu escolaridad para marcar automaticamente las materias que ya cursaste.</p>
+<p>1) Entrar a <a href="https://bedelias.udelar.edu.uy/" target="_blank">Bedelias</a> e iniciar session</p>
+<p>2) Entrar a "Estudiante" -> "Escolaridad" -> "Solicitar Escolaridad"</p>
+<p>3) Seleccionar tu carrera y "No" en "Resultados Intermedios"</p>
+<%= form_with url: academic_histories_path, method: :post, local: true, html: { multipart: true } do |form| %>
+  <div class="sign-in my-6">
+    <%= form.label :file, "Upload PDF" %>
+    <%= form.file_field :file, accept: "application/pdf" %>
+
+    <%= form.button class: "mdc-button mdc-button--raised" do %>
+      <span class="mdc-button__ripple"></span>
+      <span class='mdc-button__label'>
+        Subir
+      </span>
+    <% end %>
+  </div>
+<% end %>
+<div class="sign-in">
+  <% if @successful_entries&.present? %>
+    <p class="color-green mb-2"><%= @successful_entries.length %> Materias marcadas correctamente</p>
+    <% @successful_entries.each do |entry| %>
+      <p><%= entry.code %> - <%= entry.name %></p>
+    <% end %>
+  <% end %>
+  <% if @failed_entries&.present? %>
+    <p class="color-red my-2"><%= @failed_entries.length %> Materias no encontradas</p>
+    <% @failed_entries.each do |entry| %>
+      <p><%= entry.name %></p>
+    <% end %>
+  <% end %>
+</div>
+<p class="subtle-text sign-in mt-3">
+La escolaridad no incluye codigos de materias, por lo que en caso de multiples candidatos con el mismo nombre, se marca la materia mas reciente y actualmente activa
+</p>

@@ -11,6 +11,12 @@ class BaseStudent
     end
   end
 
+  def force_add(subject)
+    ids << subject.exam.id if subject.exam
+    ids << subject.course.id if subject.course
+    save!
+  end
+
   def remove(approvable)
     ids.delete(approvable.id)
     if !approvable.is_exam? && approvable.subject.exam.present? && ids.include?(approvable.subject.exam.id)

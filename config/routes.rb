@@ -30,5 +30,7 @@ Rails.application.routes.draw do
 
   resources :current_optional_subjects, only: :index
 
+  resources :academic_histories, only: [:new, :create, :index]
+
   resources :planned_subjects, only: [:index, :create, :destroy], param: :subject_id
 end

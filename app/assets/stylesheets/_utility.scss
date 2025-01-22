@@ -6,6 +6,35 @@
   color: #19a819 !important;
 }
 
+.color-red {
+  color: #ff0000 !important;
+}
+
 .d-none {
   display: none !important;
 }
+
+@mixin generate-margin-classes($direction, $property) {
+  @for $i from 0 through 6 {
+    .m#{$direction}-#{$i} {
+      margin-#{$property}: #{$i * 0.5}rem !important;
+    }
+  }
+}
+
+@include generate-margin-classes(t, top);
+@include generate-margin-classes(r, right);
+@include generate-margin-classes(b, bottom);
+@include generate-margin-classes(l, left);
+
+@mixin generate-margin-axis-classes($axis, $property1, $property2) {
+  @for $i from 0 through 6 {
+    .m#{$axis}-#{$i} {
+      margin-#{$property1}: #{$i * 0.5}rem !important;
+      margin-#{$property2}: #{$i * 0.5}rem !important;
+    }
+  }
+}
+
+@include generate-margin-axis-classes(x, left, right);
+@include generate-margin-axis-classes(y, top, bottom);
