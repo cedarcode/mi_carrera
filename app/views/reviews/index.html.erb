@@ -1,13 +1,21 @@
 <h1>Reseñas</h1>
 
 <% average_rating = Review.average(:rating).to_s %>
-<p>Promedio de reseña: <%= average_rating %></p>
-<hr class="solid">
+
+<div class="average-rating-indicator">
+  <p><%= average_rating.to_f.round 1 %></p>
+  <div class="index-star-rating--full">
+    <span class="material-symbols-outlined">star</span>
+  </div>
+</div>
+
+<hr class="divider">
 <ul>
   <% if @reviews %>
     <% @reviews.each do |review| %>
       <li>
-        <p>Reseña: <%= review.content %> </p>
+        <p>Reseña:</p>
+        <input class="review-comment-box" type="text" readonly value="<%= review.content %>">
         
         <p>Calificación</p>
         
@@ -25,7 +33,7 @@
         </div>
         
         <p><strong>Fecha:</strong> <%= review.created_at.to_date %></p>
-        <hr class="solid">
+        <hr class="divider">
       </li>
     <% end %>
   <% else %>
