@@ -24,7 +24,7 @@ module ApplicationHelper
     link_to link, **link_options do
       tag.span(class: 'mdc-deprecated-list-item__ripple') +
         tag.span(text, class: 'mdc-deprecated-list-item__text') +
-          (icon ? tag.i(icon, class: 'material-icons mdc-deprecated-list-item__graphic') : ''.html_safe)
+        (icon ? tag.i(icon, class: 'material-icons mdc-deprecated-list-item__graphic') : ''.html_safe)
     end
   end
 
