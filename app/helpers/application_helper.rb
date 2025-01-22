@@ -11,7 +11,7 @@ module ApplicationHelper
     !user_signed_in? && !current_page?(new_user_session_path)
   end
 
-  def drawer_menu_navigation_item(text, link)
+  def drawer_menu_navigation_item(text, link, icon = nil)
     link_options = {}
     link_options[:tabindex] = 0
     link_options[:class] = "mdc-deprecated-list-item"
@@ -23,7 +23,8 @@ module ApplicationHelper
 
     link_to link, **link_options do
       tag.span(class: 'mdc-deprecated-list-item__ripple') +
-        tag.span(text, class: 'mdc-deprecated-list-item__text')
+        tag.span(text, class: 'mdc-deprecated-list-item__text') +
+          (icon ? tag.i(icon, class: 'material-icons mdc-deprecated-list-item__graphic') : ''.html_safe)
     end
   end
 
