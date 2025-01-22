@@ -62,6 +62,26 @@ RSpec.describe Subject, type: :model do
     end
   end
 
+  describe '#average_rating' do
+    let(:subject) { create :subject }
+
+    context 'when there are no reviews' do
+      it 'returns nil' do
+        expect(subject.average_rating).to be_nil
+      end
+    end
+
+    context 'when there are reviews' do
+      let!(:first_review) { create :review, subject:, rating: 2 }
+      let!(:second_review) { create :review, subject:, rating: 4 }
+      let!(:third_review) { create :review, subject:, rating: 5 }
+
+      it 'returns the average rating' do
+        expect(subject.average_rating).to eq(3.7)
+      end
+    end
+  end
+
   describe '#available?' do
     let(:subject) { create :subject }
     let(:course) { subject.course }

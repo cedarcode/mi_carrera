@@ -2,6 +2,7 @@ class Subject < ApplicationRecord
   has_one :course, -> { where is_exam: false }, class_name: 'Approvable', dependent: :destroy, inverse_of: :subject
   has_one :exam, -> { where is_exam: true }, class_name: 'Approvable', dependent: :destroy, inverse_of: :subject
   belongs_to :group, class_name: 'SubjectGroup', optional: true
+  has_many :reviews, dependent: :destroy
 
   validates :name, presence: true
   validates :credits, presence: true
@@ -45,6 +46,10 @@ class Subject < ApplicationRecord
 
   def hidden_by_default?
     revalid? || inactive? || outside_montevideo? || extension_module?
+  end
+
+  def average_rating
+    reviews.average(:rating).round(1) if reviews.any?
   end
 
   delegate :available?, to: :course

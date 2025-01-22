@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   serialize :approvals, type: Array, coder: YAML
 
+  has_many :reviews, dependent: :destroy
   has_many :planned_subjects, dependent: :destroy
 
   def self.from_omniauth(auth, cookie)
