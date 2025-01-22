@@ -1,5 +1,7 @@
 require "application_system_test_case"
 
+SimpleCov.command_name "Minitest:system"
+
 class UserTest < ApplicationSystemTestCase
   include ActionMailer::TestHelper
   include PasswordHelpers
