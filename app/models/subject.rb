@@ -49,7 +49,7 @@ class Subject < ApplicationRecord
   end
 
   def average_rating
-    reviews.average(:rating).to_f.round(1) if reviews.any?
+    reviews.average(:rating).round(1) if reviews.any?
   end
 
   delegate :available?, to: :course
