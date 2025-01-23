@@ -1,8 +1,8 @@
-<label class="mdc-deprecated-list-item">
+<div class="mdc-deprecated-list-item non-clickable-list-item">
   Puntuación:
   <div class="rating-container">
     <div class="average-rating">
-      <span class="material-icons mdc-icon-button">star</span>
+      <span class="material-icons">star</span>
       <%= @subject.average_rating || "Sin calificar" %>
     </div>
     <div class="rating-items">
@@ -19,4 +19,4 @@
       <% end %>
     </div>
   </div>
-</label>
+</div>
