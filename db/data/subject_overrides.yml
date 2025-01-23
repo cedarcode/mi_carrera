@@ -61,6 +61,7 @@ CP49:
   category: 'inactive'
 '1061':
   eva_id: '1024'
+  second_semester_eva_id: '1504'
   openfing_id: cdiv-2022
   short_name: Cálculo DIV
   category: 'first_semester'
@@ -73,7 +74,8 @@ CP49:
 '1052':
   category: 'inactive'
 '1062':
-  eva_id: '1131'
+  eva_id: '1594'
+  second_semester_eva_id: '1131'
   openfing_id: cdivv-2022
   short_name: Cálculo DIVV
   category: 'second_semester'
