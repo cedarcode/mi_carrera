@@ -10,11 +10,11 @@
       <% else %>
         <%= form_with(
           model: subject,
-          url: planned_subject_path(subject_id: subject.id),
+          url: subject_plan_path(subject_id: subject.id),
           method: :delete,
           data: { controller: "autosave-check" },
           class: 'd-flex',
-          locale: false,
+          local: false,
         ) do |form| %>
           <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">remove_circle_outline</span>
         <% end %>

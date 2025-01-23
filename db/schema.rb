@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_19_233429) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_23_031734) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -20,14 +20,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_233429) do
     t.boolean "is_exam", null: false
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
-  end
-
-  create_table "planned_subjects", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "subject_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "subject_id"], name: "index_planned_subjects_on_user_id_and_subject_id", unique: true
   end
 
   create_table "prerequisites", force: :cascade do |t|
@@ -57,6 +49,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_233429) do
     t.string "code"
     t.integer "credits_needed", default: 0, null: false
     t.index ["code"], name: "index_subject_groups_on_code", unique: true
+  end
+
+  create_table "subject_plans", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "subject_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "semester"
+    t.index ["user_id", "subject_id"], name: "index_subject_plans_on_user_id_and_subject_id", unique: true
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -90,8 +91,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_233429) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "planned_subjects", "subjects"
-  add_foreign_key "planned_subjects", "users"
   add_foreign_key "reviews", "subjects"
   add_foreign_key "reviews", "users"
+  add_foreign_key "subject_plans", "subjects"
+  add_foreign_key "subject_plans", "users"
 end
