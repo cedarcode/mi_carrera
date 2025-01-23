@@ -52,5 +52,9 @@ class Subject < ApplicationRecord
     reviews.average(:rating).round(1) if reviews.any?
   end
 
+  def multiple_eva_links?
+    second_semester_eva_id.present?
+  end
+
   delegate :available?, to: :course
 end
