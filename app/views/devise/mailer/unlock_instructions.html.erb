@@ -1,0 +1,62 @@
+<style>
+  .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .email-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .center {
+    text-align: center;
+    width: 100%;
+  }
+
+  .button-container {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .button {
+    background-color: #3869D4;
+    border: solid #3869D4;
+    border-width: 10px 18px;
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+    -webkit-text-size-adjust: none;
+    box-sizing: border-box;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+</style>
+
+<div class='content'>
+  <div class='email-text'>
+    <h4 class='center'>MiCarrera</h4>
+    <h2>Hola <%= @resource.email %>!</h2>
+
+
+    <p>Tu cuenta fue bloqueada por una cantidad excesiva de intentos acceso fallidos.</p>
+
+    <p>Clickeá en el link de abajo para desbloquear tu cuenta, o espera una hora.</p>
+
+    <div class='button-container'>
+      <p><%= link_to 'Desbloquear mi cuenta', unlock_url(@resource, unlock_token: @token), class: 'button' %></p>
+    </div>
+  </div>
+</div>
