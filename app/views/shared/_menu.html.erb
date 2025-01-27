@@ -26,8 +26,10 @@
         Opina de la app
       </span>
     </div>
-    <div data-toggle-review-form-target='form'>
-      <%= render 'shared/review_form' %>
+    <div data-controller="confirm-review-button">
+      <div data-toggle-review-form-target='form'>
+        <%= render 'shared/review_form' %>
+      </div>
     </div>
   </div>
 </aside>
