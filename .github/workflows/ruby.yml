@@ -95,6 +95,7 @@ jobs:
         retention-days: 2
 
     - uses: joshmfrankel/simplecov-check-action@main
+      if: github.actor != 'dependabot[bot]'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         minimum_suite_coverage: 40
