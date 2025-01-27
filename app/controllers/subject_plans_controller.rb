@@ -7,7 +7,7 @@ class SubjectPlansController < ApplicationController
   end
 
   def create
-    current_user.subject_plans.create!(subject_id: params[:subject_id])
+    current_user.subject_plans.create!(subject_plan_params)
 
     redirect_to subject_plans_path
   end
@@ -26,8 +26,13 @@ class SubjectPlansController < ApplicationController
   end
 
   def set_planned_and_not_planned_subjects
-    @planned_subjects, @not_planned_subjects = TreePreloader.new.preload.partition do |subject|
-      current_student.approved?(subject) || current_user.planned?(subject)
-    end
+    @subject_plans = current_user.subject_plans.includes(:subject).order(:semester)
+    @not_planned_approved_subjects, @not_planned_subjects = TreePreloader.new.preload.reject { |subject|
+      current_user.planned?(subject)
+    }.partition { |subject| current_student.approved?(subject) }
+  end
+
+  def subject_plan_params
+    params.require(:subject_plan).permit(:subject_id, :semester)
   end
 end
