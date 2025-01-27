@@ -16,21 +16,16 @@
         </span>
       </a>
     </div>
-    <div class='mdc-deprecated-list-item' data-action="click->toggle-review-form#toggle" data-toggle-review-form-target='button'>
+    <%= link_to new_review_path, class: 'mdc-deprecated-list-item' do %>
       <span class="mdc-deprecated-list-item__ripple"></span>
       <span class="material-symbols-outlined">
-        rate_review
+      rate_review
       </span>
       &nbsp;
       <span class='mdc-deprecated-list-item__text'>
-        Opina de la app
+      Opina de la app
       </span>
-    </div>
-    <div data-controller="confirm-review-button">
-      <div data-toggle-review-form-target='form'>
-        <%= render 'shared/review_form' %>
-      </div>
-    </div>
+    <% end %>
   </div>
 </aside>
 <div class="mdc-drawer-scrim"></div>
