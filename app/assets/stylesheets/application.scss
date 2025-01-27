@@ -238,6 +238,11 @@ body {
   resize: none;
 }
 
+.review-form {
+  display: flex;
+  margin-top: 3%;
+}
+
 /* Star rating container */
 .review-form-star-rating {
   display: inline-flex;

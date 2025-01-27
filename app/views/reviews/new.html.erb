@@ -1,23 +1,24 @@
-<div class="review-form">
-  <h1>Nueva Reseña</h1>
-
-  <%= form_with local: true do |f| %>
-    <div class="star-rating">
-      <% (1..5).each do |i| %>
-        <input type="radio" name="rating[stars]" value="<%= i %>" id="star<%= i %>" />
+<div>
+  <%= form_with model: Review.new, local: true, html: { class: 'review-form', id: 'review-form' } do |f| %>
+    <div>
+      <%= f.label :comentario %>
+    </div>
+    
+    <div class="review-form-star-rating" data-review-star-rating-target='stars' data-action='input->confirm-review-button#enable'>
+      <% (0..4).each do |i| %>
+        <input type="radio" name="review[rating]" value="<%= 5 - i %>" id="star<%= i %>" />
         <label for="star<%= i %>">
           <span class="material-symbols-outlined">star</span>
         </label>
       <% end %>
     </div>
 
-    <div class="review-text">
-      <%= f.label :comentario %><br>
-      <%= f.text_area :content, class: "text-area" %>
+    <div class="review-form-element" data-review-text-area-target='textarea' data-action='input->confirm-review-button#enable'>
+      <%= f.text_area :content, class: "text-area", id: "review-content" %>
     </div>
 
-    <div>
-      <%= f.submit "Create review", class: "review-button"%>
+    <div class="review-form-element" data-confirm-review-button-target='button'>
+      <%= f.submit "Confirmar", class: "review-button", id: "submit-button", disabled: true %>
     </div>
   <% end %>
 </div>
