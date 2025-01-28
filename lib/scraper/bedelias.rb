@@ -62,8 +62,10 @@ module Scraper
 
       execute_script("$.fx.off = true;") # Disable jQuery effects
 
-      find('h3', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
-      find('span', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
+      find('.ui-accordion-header', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
+      find('td', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
+
+      find('.ui-column-filter').set('INGENIERIA EN COMPUTACION')
 
       within('tr', text: 'INGENIERIA EN COMPUTACION', match: :prefer_exact) do
         find('.ui-row-toggler').click
@@ -81,7 +83,7 @@ module Scraper
       group_nodes.each do |group_node|
         group_code, name, credits = GROUP_CODE_NAME_CREDITS_REGEX.match(group_node.text(:all)).captures
         groups[group_code] = { code: group_code, name:, min_credits: credits.to_i }
-        subject_nodes_in_group = group_node.all(:xpath, '..//..//li[@data-nodetype="Materia"]/span', visible: false)
+        subject_nodes_in_group = group_node.all(:xpath, '..//..//li[@data-nodetype="Materia"]', visible: false)
 
         subject_nodes_in_group.each do |subject_node|
           code, name, credits = SUBJECT_CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all)).captures
