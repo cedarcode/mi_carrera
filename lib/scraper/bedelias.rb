@@ -11,7 +11,7 @@ module Scraper
     # 5265 - CIENCIAS HUMANAS Y SOCIALES - min: 10 créditos
     GROUP_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:min): (\d+)(?: créditos)\z/
     # SRN14 - MATEMÁTICA DISCRETA I - créditos: 10
-    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
+    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A((?:\w|\.|\-)+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
     MAX_PAGES = ENV["MAX_PAGES"]&.to_i
     THREADS = (ENV['THREADS'] || 6).to_f
 
@@ -23,27 +23,37 @@ module Scraper
         config.threadsafe = true
       end
 
-      groups = {}
-      subjects = {}
+      degrees = YAML.load_file(Rails.root.join("db/data/degrees.yml"))
+      degrees.each do |career|
+        if career["enabled"] == false
+          Rails.logger.info "Skipping disabled career: #{career["name"]}"
+          next
+        end
 
-      go_to_groups_and_subjects_page
-      process_groups_and_subjects(groups, subjects)
+        groups = {}
+        subjects = {}
 
-      go_to_prerequisites_page
-      prerequisites = process_prerequisites(subjects)
+        go_to_groups_and_subjects_page(career)
+        process_groups_and_subjects(groups, subjects)
 
-      prerequisites.each do |prerequisite_tree|
-        add_missing_exams_and_subjects(prerequisite_tree, subjects)
+        go_to_prerequisites_page
+        prerequisites = process_prerequisites(subjects, career)
+
+        prerequisites.each do |prerequisite_tree|
+          add_missing_exams_and_subjects(prerequisite_tree, subjects)
+        end
+
+        scraped_prerequisites =
+          prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
+        optional_inco_subjects = load_this_semester_inco_subjects
+
+        write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h, career["name"])
+        write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h, career["name"])
+        write_yml("scraped_prerequisites", scraped_prerequisites, career["name"])
+        if career["name"] == "INGENIERIA EN COMPUTACION"
+          write_yml("scraped_optional_subjects", optional_inco_subjects.sort, career["name"])
+        end
       end
-
-      scraped_prerequisites =
-        prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
-      optional_inco_subjects = load_this_semester_inco_subjects
-
-      write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
-      write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h)
-      write_yml("scraped_prerequisites", scraped_prerequisites)
-      write_yml("scraped_optional_subjects", optional_inco_subjects.sort)
     rescue
       Rails.logger.info save_screenshot
       raise
@@ -51,11 +61,16 @@ module Scraper
 
     private
 
-    def write_yml(name, data)
-      File.write(Rails.root.join("db/data/#{name}.yml"), data.to_yaml)
+    def write_yml(name, data, career)
+      career_dir = career.underscore.tr(" ", "_")
+      dir_path = Rails.root.join("db/data/#{career_dir}")
+
+      Dir.mkdir(dir_path) unless Dir.exist?(dir_path)
+
+      File.write(dir_path.join("#{name}.yml"), data.to_yaml)
     end
 
-    def go_to_groups_and_subjects_page
+    def go_to_groups_and_subjects_page(career)
       visit "https://bedelias.udelar.edu.uy"
       click_on "PLANES DE ESTUDIO"
       click_on "Planes de estudio / Previas"
@@ -65,11 +80,15 @@ module Scraper
       find('h3', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
       find('span', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
 
-      within('tr', text: 'INGENIERIA EN COMPUTACION', match: :prefer_exact) do
-        find('.ui-row-toggler').click
+      all('tr', text: career["name"], match: :prefer_exact).each do |row|
+        if row.has_selector?('td', text: 'Grado', match: :prefer_exact)
+          row.find('.ui-row-toggler').click
+          break
+        end
       end
+
       within('.ui-expanded-row-content', text: 'Planes') do
-        find('tr', text: '1997').click_on "Ver más datos"
+        find('tr', text: career["current_plan"]).click_on "Ver más datos"
       end
     end
 
@@ -84,8 +103,13 @@ module Scraper
         subject_nodes_in_group = group_node.all(:xpath, '..//..//li[@data-nodetype="Materia"]/span', visible: false)
 
         subject_nodes_in_group.each do |subject_node|
-          code, name, credits = SUBJECT_CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all)).captures
-          subjects[code] = { code:, name:, credits: credits.to_i, has_exam: false, subject_group: group_code }
+          match = SUBJECT_CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all))
+          if match
+            code, name, credits = match.captures
+            subjects[code] = { code:, name:, credits: credits.to_i, has_exam: false, subject_group: group_code }
+          else
+            raise "Regex didn't match for subject: #{subject_node.text(:all)}"
+          end
         end
       end
     end
@@ -94,7 +118,7 @@ module Scraper
       click_on 'Sistema de previaturas'
     end
 
-    def process_prerequisites(subjects)
+    def process_prerequisites(subjects, career)
       Thread.abort_on_exception = true
 
       find('.ui-paginator-last').click
@@ -107,14 +131,14 @@ module Scraper
       1.upto(max_pages).each_slice((max_pages / THREADS).ceil).map do |slice|
         Thread.new do
           using_session(Capybara::Session.new(page.mode)) do
-            process_prerequisites_slice(subjects, slice)
+            process_prerequisites_slice(subjects, slice, career)
           end
         end
       end.flat_map(&:value)
     end
 
-    def process_prerequisites_slice(subjects, slice)
-      go_to_groups_and_subjects_page
+    def process_prerequisites_slice(subjects, slice, career)
+      go_to_groups_and_subjects_page(career)
       go_to_prerequisites_page
 
       slice.flat_map do |page|
