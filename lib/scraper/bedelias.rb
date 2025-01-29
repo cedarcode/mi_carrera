@@ -74,7 +74,7 @@ module Scraper
       find('td', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
 
       within('th[aria-label="Nombre"]') do
-        find('.ui-column-filter', visible: false).set('INGENIERIA EN COMPUTACION')        
+        find('.ui-column-filter', visible: false).fill_in with: 'INGENIERIA EN COMPUTACION'
       end
 
       within('tr', text: 'INGENIERIA EN COMPUTACION', visible: false, match: :prefer_exact) do
