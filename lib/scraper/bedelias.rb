@@ -1,6 +1,7 @@
 require 'capybara'
 require 'capybara/dsl'
 require 'scraper/prerequisites_tree_page'
+require 'selenium-webdriver'
 
 module Scraper
   module Bedelias
@@ -21,6 +22,13 @@ module Scraper
         config.run_server = false
         config.save_path = "tmp/capybara"
         config.threadsafe = true
+      end
+
+      Capybara.register_driver :selenium_chrome_headless do |app|
+        options = Selenium::WebDriver::Chrome::Options.new
+        options.add_argument('--window-size=1200,1200')
+        options.add_argument('headless')
+        Capybara::Selenium::Driver.new(app, browser: :chrome, options:)
       end
 
       groups = {}
