@@ -75,8 +75,9 @@ module Scraper
 
       within('th[aria-label="Nombre"]') do
         puts "valor antes " + find('.ui-column-filter', visible: false).value
+        sleep 10
         find('.ui-column-filter', visible: false).fill_in with: 'INGENIERIA EN COMPUTACION'
-        puts "valor despues " + find('.ui-column-filter', visible: false).value
+        puts "valor despues   " + find('.ui-column-filter', visible: false).value
       end
 
 
