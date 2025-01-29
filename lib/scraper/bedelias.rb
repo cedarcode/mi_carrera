@@ -74,8 +74,12 @@ module Scraper
       find('td', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
 
       within('th[aria-label="Nombre"]') do
+        puts "valor antes " + find('.ui-column-filter', visible: false).value
         find('.ui-column-filter', visible: false).fill_in with: 'INGENIERIA EN COMPUTACION'
+        puts "valor despues " + find('.ui-column-filter', visible: false).value
       end
+
+
 
       within('tr', text: 'INGENIERIA EN COMPUTACION', visible: false, match: :prefer_exact) do
         find('.ui-row-toggler').click
