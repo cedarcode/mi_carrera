@@ -67,7 +67,7 @@ module Scraper
 
       find('.ui-column-filter').set('INGENIERIA EN COMPUTACION')
 
-      within('tr', text: 'INGENIERIA EN COMPUTACION', match: :prefer_exact) do
+      within('tr', text: 'INGENIERIA EN COMPUTACION', visible: false, match: :prefer_exact) do
         find('.ui-row-toggler').click
       end
       within('.ui-expanded-row-content', text: 'Planes') do
