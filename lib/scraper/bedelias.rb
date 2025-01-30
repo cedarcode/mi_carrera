@@ -65,6 +65,12 @@ module Scraper
       find('.ui-accordion-header', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
       find('td', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
 
+      find('span', text: 'Planes de estudio - FING')
+
+      if has_css?('.ui-widget-overlay')
+        assert_no_selector('.ui-widget-overlay')
+      end
+
       find('.ui-column-filter').set('INGENIERIA EN COMPUTACION')
 
       within('tr', text: 'INGENIERIA EN COMPUTACION', match: :prefer_exact) do
