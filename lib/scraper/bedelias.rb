@@ -65,7 +65,8 @@ module Scraper
       find('.ui-accordion-header', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
       find('td', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
 
-      find('.ui-column-filter').set('INGENIERIA EN COMPUTACION')
+      find('.ui-column-filter').click
+      find('.ui-column-filter.ui-state-focus', wait: 5).set('INGENIERIA EN COMPUTACION')
 
       within('tr', text: 'INGENIERIA EN COMPUTACION', match: :prefer_exact) do
         find('.ui-row-toggler').click
