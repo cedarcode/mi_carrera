@@ -49,3 +49,10 @@ jobs:
         else
             echo "There were no changes. Nothing to do."
         fi
+    - name: Upload screenshots
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: scraper_screenshot
+        path: ./tmp
+        retention-days: 2
