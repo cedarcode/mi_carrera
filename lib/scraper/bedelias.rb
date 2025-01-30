@@ -19,7 +19,7 @@ module Scraper
       Capybara.configure do |config|
         config.default_driver = ENV["HEADLESS"] == "false" ? :selenium_chrome : :selenium_chrome_headless
         config.run_server = false
-        config.save_path = "tmp"
+        config.save_path = "tmp/capybara"
         config.threadsafe = true
       end
 
