@@ -12,7 +12,7 @@ gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.2'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pg', '~> 1.5'
-gem 'puma', '~> 6.5'
+gem 'puma', '~> 6.6'
 gem 'rollbar', '~> 3.6'
 gem 'sassc-rails', '~> 2.1.2'
 gem 'stimulus-rails', '~> 1.3'
