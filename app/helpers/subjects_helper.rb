@@ -35,4 +35,16 @@ module SubjectsHelper
   def display_activity_prerequisite(activity_prerequisite)
     "aprobado/reprobado #{display_subject_prerequisite(activity_prerequisite)}"
   end
+
+  def display_eva_links(subject)
+    if subject.multiple_eva_links?
+      first_semester = render 'shared/eva_links_component', eva_id: subject.eva_id,
+                                                            text: "EVA - Primer semestre"
+      second_semester = render 'shared/eva_links_component', eva_id: subject.second_semester_eva_id,
+                                                             text: "EVA - Segundo semestre"
+      first_semester + second_semester
+    else
+      render 'shared/eva_links_component', eva_id: subject.eva_id, text: "EVA"
+    end
+  end
 end
