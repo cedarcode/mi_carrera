@@ -3,6 +3,7 @@
     <div>
       <%= f.label :comentario %>
     </div>
+
     <div class="app-review-form-star-rating" data-app-review-star-rating-target='stars' data-action='input->confirm-app-review-button#enable'>
       <% (0..4).each do |i| %>
         <input type="radio" name="app_review[rating]" value="<%= 5 - i %>" id="star<%= i %>" />
@@ -20,8 +21,4 @@
       <%= f.submit "Confirmar", class: "app-review-button", id: "submit-button", disabled: true %>
     </div>
   <% end %>
-
-  <div class="app-review-form-element">
-    <%= link_to 'Ver todas las reseñas', app_reviews_path, class: 'app-review-button' %>
-  </div>
 </div>

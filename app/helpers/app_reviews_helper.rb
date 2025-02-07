@@ -1,0 +1,2 @@
+module AppReviewsHelper
+end

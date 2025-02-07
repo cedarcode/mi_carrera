@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :subject_groups, only: :show
 
-  resources :reviews
+  resources :app_reviews
 
   resources :approvables, only: [] do
     resource :approval, only: [:create, :destroy]

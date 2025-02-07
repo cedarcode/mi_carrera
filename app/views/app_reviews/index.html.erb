@@ -1,6 +1,6 @@
 <h1>Reseñas</h1>
 
-<% average_rating = Review.average(:rating).to_s %>
+<% average_rating = AppReview.average(:rating).to_s %>
 
 <div class="average-rating-indicator">
   <p><%= average_rating.to_f.round 1 %></p>
@@ -11,28 +11,25 @@
 
 <hr class="divider">
 <ul>
-  <% if @reviews %>
-    <% @reviews.each do |review| %>
+  <% if @app_reviews %>
+    <% @app_reviews.each do |app_review| %>
       <li>
         <p>Reseña:</p>
-        <input class="review-comment-box" type="text" readonly value="<%= review.content %>">
-        
+        <input class="app-review-comment-box" type="text" readonly value="<%= app_review.content %>">
         <p>Calificación</p>
-        
         <div class="index-stars">
           <div class="index-star-rating--full">
-            <% review.rating.times do %>
+            <% app_review.rating.times do %>
               <span class="material-symbols-outlined">star</span>
             <% end %>
           </div>
           <div class="index-star-rating--empty">
-            <% (5 - review.rating).times do %>
+            <% (5 - app_review.rating).times do %>
               <span class="material-symbols-outlined">star</span>
             <% end %>
           </div>
         </div>
-        
-        <p><strong>Fecha:</strong> <%= review.created_at.to_date %></p>
+        <p><strong>Fecha:</strong> <%= app_review.created_at.to_date %></p>
         <hr class="divider">
       </li>
     <% end %>

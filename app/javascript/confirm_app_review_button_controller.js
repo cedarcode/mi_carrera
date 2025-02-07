@@ -25,6 +25,6 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log("confirm_review_button controller connected");
+    console.log("confirm_app_review_button controller connected");
   }
 }

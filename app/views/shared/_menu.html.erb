@@ -1,5 +1,5 @@
 <aside class="mdc-drawer mdc-drawer--modal" data-navigation-drawer-target='drawer'>
-  <div class="mdc-drawer__content" data-controller="toggle-review-form">
+  <div class="mdc-drawer__content" data-controller="toggle-app-review-form">
     <div class="mdc-deprecated-list" data-action='click->navigation-drawer#close'>
       <%= drawer_menu_navigation_item('Avance de Carrera', root_path) %>
       <%= drawer_menu_navigation_item('Todas las Materias', all_subjects_path) %>
@@ -16,7 +16,7 @@
         </span>
       </a>
     </div>
-    <%= link_to new_review_path, class: 'mdc-deprecated-list-item' do %>
+    <%= link_to new_app_review_path, class: 'mdc-deprecated-list-item' do %>
       <span class="mdc-deprecated-list-item__ripple"></span>
       <span class="material-symbols-outlined">
       rate_review

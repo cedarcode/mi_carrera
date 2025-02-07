@@ -9,12 +9,11 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log("toggle_review_form controller connected");
+    console.log("toggle_app_review_form controller connected");
   }
 
   toggle() {
-    console.log("toggling review formm");
-    
+    console.log("toggling app review formm");
     this.isOpen ? this.hide() : this.show();
     this.isOpen = !this.isOpen;
   }
