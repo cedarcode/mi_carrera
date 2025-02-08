@@ -1,25 +1,34 @@
 class TreePreloader
-  def initialize(subjects = nil)
-    @subjects = subjects || Subject.all
-  end
-
-  def preload
-    # rubocop:disable Rails/FindEach
+  def preload_subjects(subjects = nil)
+    subjects ||= Subject.all
     subjects
       .ordered_by_category_and_name
       .includes(
         course: :prerequisite_tree,
         exam: :prerequisite_tree
-      ).each do |subject|
-      preload_prerequisite(subject.course.prerequisite_tree) if subject.course&.prerequisite_tree
-      preload_prerequisite(subject.exam.prerequisite_tree) if subject.exam&.prerequisite_tree
+      ).map do |subject|
+        preload_approvables(subject)
+      end
+  end
+
+  def preload_subject_array(subjects)
+    ActiveRecord::Associations::Preloader.new(
+      records: subjects,
+      associations: [course: :prerequisite_tree, exam: :prerequisite_tree],
+    ).call
+
+    subjects.map do |subject|
+      preload_approvables(subject)
     end
-    # rubocop:enable Rails/FindEach
   end
 
   private
 
-  attr_reader :subjects
+  def preload_approvables(subject)
+    preload_prerequisite(subject.course.prerequisite_tree) if subject.course&.prerequisite_tree
+    preload_prerequisite(subject.exam.prerequisite_tree) if subject.exam&.prerequisite_tree
+    subject
+  end
 
   def preload_prerequisite(prereq)
     case prereq
