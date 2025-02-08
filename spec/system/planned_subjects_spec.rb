@@ -75,7 +75,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     end
 
     within ".mdc-deprecated-list-item", text: "GAL 2" do
-      select "Sem. 2", from: "semester"
+      select "Sem. 2", from: "subject_plan_semester"
       find("span", text: "add_circle_outline").click
     end
 
