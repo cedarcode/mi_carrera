@@ -7,7 +7,7 @@
       <%= render partial: "credits_counter", locals: { subject_plans: subject_plans } %>
     </div>
     <% subject_plans.each do |subject_plan| %>
-      <%= link_to subject_path(subject_plan.subject), :class => "mdc-deprecated-list-item" do %>
+      <%= link_to subject_path(subject_plan.subject), class: "mdc-deprecated-list-item" do %>
         <span class="mdc-deprecated-list-item__ripple"></span>
         <span class="mdc-deprecated-list-item__text">
           <%= display_name(subject_plan.subject) %>
