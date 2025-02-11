@@ -2,10 +2,13 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   test 'User.from_omniauth of a user that doesn\'t exist, should create a new user' do
-    auth = OpenStruct.new(
+    auth_info_klass = Struct.new(:email)
+    auth_klass = Struct.new(:provider, :uid, :info)
+
+    auth = auth_klass.new(
       provider: 'google',
       uid: '123456789',
-      info: OpenStruct.new(
+      info: auth_info_klass.new(
         email: 'user1@gmail.com'
       )
     )
@@ -21,10 +24,13 @@ class UserTest < ActiveSupport::TestCase
   test 'User.from_omniauth of a user that exists, should update the user' do
     user = create :user
 
-    auth = OpenStruct.new(
+    auth_info_klass = Struct.new(:email)
+    auth_klass = Struct.new(:provider, :uid, :info)
+
+    auth = auth_klass.new(
       provider: 'google',
       uid: '123456789',
-      info: OpenStruct.new(
+      info: auth_info_klass.new(
         email: user.email
       )
     )
