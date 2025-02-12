@@ -14,6 +14,7 @@ gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pg', '~> 1.5'
 gem 'puma', '~> 6.6'
 gem 'rollbar', '~> 3.6'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'stimulus-rails', '~> 1.3'
 gem 'turbo-rails', '~> 2.0'
 
