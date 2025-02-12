@@ -26,7 +26,7 @@ class SubjectPlansController < ApplicationController
   end
 
   def set_planned_and_not_planned_subjects
-    @planned_subjects, @not_planned_subjects = TreePreloader.new.preload.partition do |subject|
+    @planned_subjects, @not_planned_subjects = TreePreloader.new.preload_subjects.partition do |subject|
       current_student.approved?(subject) || current_user.planned?(subject)
     end
   end
