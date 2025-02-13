@@ -14,8 +14,8 @@ class AcademicHistoriesController < ApplicationController
     @successful_entries = []
 
     if file && file.content_type == 'application/pdf'
-      @academic_entries = AcademicHistory::PdfProcessor.process(file)
-      @academic_entries.each do |entry|
+      academic_entries = AcademicHistory::PdfProcessor.process(file)
+      academic_entries.each do |entry|
         save_academic_entry(entry) if entry.approved?
       end
     else

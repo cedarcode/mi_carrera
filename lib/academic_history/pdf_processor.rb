@@ -10,18 +10,17 @@ module AcademicHistory
     extend self
 
     def process(file)
-      reader = PDF::Reader.new(file.path)
-      academic_entries = []
+      Enumerator.new do |yielder|
+        reader = PDF::Reader.new(file.path)
 
-      reader.pages.each do |page|
-        page.text.split("\n").each do |line|
-          line.match(subject_regex) do |match|
-            academic_entries << AcademicEntry.new(match[1], match[2], match[3], match[4], match[5])
+        reader.pages.each do |page|
+          page.text.split("\n").each do |line|
+            line.match(subject_regex) do |match|
+              yielder << AcademicEntry.new(match[1], match[2], match[3], match[4], match[5])
+            end
           end
         end
       end
-
-      academic_entries
     end
 
     # SubjectName Credits NumberOfFailures DateOfCompletion Concept
