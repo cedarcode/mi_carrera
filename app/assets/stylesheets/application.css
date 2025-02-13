@@ -12,9 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require_tree ../../../vendor/assets/stylesheets
  */
 
-@import "reset";
 
 body {
   display: flex;
