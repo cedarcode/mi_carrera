@@ -7,10 +7,10 @@
     <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
       Materias planeadas
     </h3>
-    <%= render partial: "credits_counter", locals: { subject_plans: @subject_plans } %>
+    <%= render partial: "credits_counter", locals: { planned_subjects: @planned_subjects } %>
   </div>
 
-  <%= render partial: "subjects/planned_subjects_list", locals: { subject_plans: @subject_plans } %>
+  <%= render partial: "subjects/planned_subjects_list", locals: { planned_subjects: @planned_subjects } %>
 
   <hr class="mdc-deprecated-list-divider">
 
