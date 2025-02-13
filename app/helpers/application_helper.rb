@@ -23,7 +23,7 @@ module ApplicationHelper
 
     link_to link, **link_options do
       concat tag.span(class: 'mdc-deprecated-list-item__ripple')
-      concat  tag.span(text, class: 'mdc-deprecated-list-item__text')
+      concat tag.span(text, class: 'mdc-deprecated-list-item__text')
       concat tag.i(icon, class: 'material-icons mdc-deprecated-list-item__graphic') if icon
     end
   end
