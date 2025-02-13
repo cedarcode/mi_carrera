@@ -1,6 +1,6 @@
 class TreePreloader
   def preload_subjects(subjects = nil)
-    subjects ||= Subject.all.ordered_by_category_and_name
+    subjects ||= Subject.ordered_by_category_and_name
     preload_associations(subjects)
 
     subjects.map do |subject|
