@@ -1,28 +1,34 @@
 require 'rails_helper'
 
 RSpec.describe AcademicHistory::PdfProcessor, type: :lib do
-  let(:pdf_mock) {[
-    double('page', text: "  Test Subject 1                                                                10        0     20/02/2024 Aceptable"),
-    double('page', text: "  Test Subject 2                                                                 9        0     20/02/2024 Bueno"),
-    double('page', text: "  Test Subject 3                                                                 8        0     20/02/2024 Muy Bueno"),
-    double('page', text: "  Test Subject 4                                                                 7        0     20/02/2024 Excelente"),
-    double('page', text: "  Test Subject 5                                                                 6        0     20/02/2024 S/C"),
-    double('page', text: "  Failed Subject 1                                                               8        1     ********** ***")
-  ]}
+  # rubocop:disable Layout/LineLength
+  let(:pdf_mock) {
+    [
+      double('page', text: "  Test Subject 1                                                                10        0     20/02/2024 Aceptable"),
+      double('page', text: "  Test Subject 2                                                                 9        0     20/02/2024 Bueno"),
+      double('page', text: "  Test Subject 3                                                                 8        0     20/02/2024 Muy Bueno"),
+      double('page', text: "  Test Subject 4                                                                 7        0     20/02/2024 Excelente"),
+      double('page', text: "  Test Subject 5                                                                 6        0     20/02/2024 S/C"),
+      double('page', text: "  Failed Subject 1                                                               8        1     ********** ***")
+    ]
+  }
+  # rubocop:enable Layout/LineLength
 
   let(:academic_entries) { described_class::AcademicEntry }
 
   describe '.process' do
     let(:file) { double('file', path: 'path') }
     let(:reader) { double('reader') }
-    let(:academic_entries_list) {[
-      academic_entries.new('Test Subject 1', '10', '0', '20/02/2024', 'Aceptable'),
-      academic_entries.new('Test Subject 2', '9', '0', '20/02/2024', 'Bueno'),
-      academic_entries.new('Test Subject 3', '8', '0', '20/02/2024', 'Muy Bueno'),
-      academic_entries.new('Test Subject 4', '7', '0', '20/02/2024', 'Excelente'),
-      academic_entries.new('Test Subject 5', '6', '0', '20/02/2024', 'S/C'),
-      academic_entries.new('Failed Subject 1', '8', '1', '**********', '***')
-    ]}
+    let(:academic_entries_list) {
+      [
+        academic_entries.new('Test Subject 1', '10', '0', '20/02/2024', 'Aceptable'),
+        academic_entries.new('Test Subject 2', '9', '0', '20/02/2024', 'Bueno'),
+        academic_entries.new('Test Subject 3', '8', '0', '20/02/2024', 'Muy Bueno'),
+        academic_entries.new('Test Subject 4', '7', '0', '20/02/2024', 'Excelente'),
+        academic_entries.new('Test Subject 5', '6', '0', '20/02/2024', 'S/C'),
+        academic_entries.new('Failed Subject 1', '8', '1', '**********', '***')
+      ]
+    }
 
     before do
       allow(PDF::Reader).to receive(:new).with('path').and_return(reader)
