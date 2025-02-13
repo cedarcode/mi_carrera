@@ -7,7 +7,7 @@
       </span>
       <%= form_with(
         model: subject,
-        url: planned_subjects_path(subject_id: subject.id),
+        url: subject_plans_path(subject_id: subject.id),
         method: :post,
         data: { controller: "autosave-check" },
         class: 'd-flex',

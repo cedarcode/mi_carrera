@@ -33,3 +33,6 @@
 /public/packs-test
 
 tags
+
+# Ignore coverage reports
+/coverage

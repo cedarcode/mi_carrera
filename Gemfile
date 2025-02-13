@@ -12,7 +12,7 @@ gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.2'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pg', '~> 1.5'
-gem 'puma', '~> 6.5'
+gem 'puma', '~> 6.6'
 gem 'rollbar', '~> 3.6'
 gem 'sassc-rails', '~> 2.1.2'
 gem 'stimulus-rails', '~> 1.3'
@@ -30,7 +30,7 @@ end
 
 group :development do
   gem "letter_opener", "~> 1.10"
-  gem 'rubocop', '~> 1.70'
+  gem 'rubocop', '~> 1.71'
   gem 'rubocop-performance', '~> 1.23', require: false
   gem 'rubocop-rails', '~> 2.29', require: false
   gem 'web-console', '~> 4.2'
@@ -40,4 +40,5 @@ group :test do
   gem 'capybara', '~> 3.40'
   gem 'selenium-webdriver', '~> 4.28'
   gem 'shoulda-matchers', '~> 6.0'
+  gem 'simplecov', require: false
 end
