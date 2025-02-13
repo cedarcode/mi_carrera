@@ -27,18 +27,12 @@ class SubjectPlansController < ApplicationController
 
   def set_planned_and_not_planned_subjects
     @subject_plans = current_user.subject_plans.includes(:subject).order(:semester)
-    tree_preloader.preload_subject_array(@subject_plans.map(&:subject))
-
-    @not_planned_approved_subjects, @not_planned_subjects = tree_preloader.preload_subjects.reject { |subject|
+    @not_planned_approved_subjects, @not_planned_subjects = TreePreloader.new.preload.reject { |subject|
       current_user.planned?(subject)
     }.partition { |subject| current_student.approved?(subject) }
   end
 
   def subject_plan_params
     params.require(:subject_plan).permit(:subject_id, :semester)
-  end
-
-  def tree_preloader
-    @tree_preloader ||= TreePreloader.new
   end
 end
