@@ -11,7 +11,7 @@ class BaseStudent
     end
   end
 
-  def force_add(subject)
+  def force_add_subject(subject)
     ids << subject.exam.id if subject.exam
     ids << subject.course.id if subject.course
     save!
