@@ -70,14 +70,18 @@ class TreePreloaderTest < ActiveSupport::TestCase
     assert_equal ["c", "b", "a"], preloaded_subjects.map(&:name)
   end
 
-  test "#preload_subjects returns all subjects orderded by category and name by default" do
+  test "#preload_subjects returns all subjects without order by default" do
     create :subject, :with_exam, name: "z", category: "second_semester"
     create :subject, :with_exam, name: "a", category: "second_semester"
     create :subject, :with_exam, name: "c", category: "first_semester"
 
     preloaded_subjects = TreePreloader.new.preload_subjects
 
-    assert_equal ["c", "a", "z"], preloaded_subjects.map(&:name)
+    subject_names = preloaded_subjects.map(&:name)
+
+    assert_includes subject_names, "z"
+    assert_includes subject_names, "a"
+    assert_includes subject_names, "c"
   end
 
   test "#preload_subjects supports array of subjects" do
