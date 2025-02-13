@@ -22,6 +22,6 @@
 .interactive-star {
   transition: transform 0.25s ease;
 }
-.interactive-star:hover, .interactive-star:hover ~ .interactive-star {
+.interactive-star:hover ~ .interactive-star {
   transform: scale(1.3);
 }
