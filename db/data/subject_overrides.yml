@@ -61,9 +61,10 @@ CP49:
   category: 'inactive'
 '1061':
   eva_id: '1024'
+  second_semester_eva_id: '1504'
   openfing_id: cdiv-2022
   short_name: Cálculo DIV
-  category: 'first_semester'
+  category: 'second_semester'
 '1020':
   eva_id: '74'
   openfing_id: c1
@@ -73,10 +74,11 @@ CP49:
 '1052':
   category: 'inactive'
 '1062':
-  eva_id: '1131'
+  eva_id: '1594'
+  second_semester_eva_id: '1131'
   openfing_id: cdivv-2022
   short_name: Cálculo DIVV
-  category: 'second_semester'
+  category: 'third_semester'
 '1022':
   eva_id: '319'
   openfing_id: c2
@@ -106,7 +108,7 @@ CP47:
   eva_id: '256'
   openfing_id: gal1-2022
   short_name: GAL 1
-  category: 'second_semester'
+  category: 'first_semester'
 '1071':
   category: 'inactive'
 '1053':
@@ -115,7 +117,7 @@ CP47:
   eva_id: '270'
   openfing_id: gal219
   short_name: GAL 2
-  category: 'third_semester'
+  category: 'second_semester'
 '1058':
   category: 'inactive'
 '1059':
@@ -139,7 +141,7 @@ CP4:
 '1026':
   eva_id: '267'
   openfing_id: md2-2022
-  category: 'third_semester'
+  category: 'second_semester'
 '1028':
   eva_id: '342'
   openfing_id: ed
@@ -149,7 +151,7 @@ CP4:
 '1025':
   eva_id: '54'
   openfing_id: pye-2022
-  category: 'third_semester'
+  category: 'fourth_semester'
 '1075':
   category: 'inactive'
 '1043':
@@ -265,7 +267,7 @@ CP43:
 '1151':
   eva_id: '87'
   openfing_id: f1-2018
-  category: 'second_semester'
+  category: 'seventh_semester'
 '1171':
   category: 'inactive'
 '1077':
@@ -401,7 +403,7 @@ CP374:
 '1324':
   eva_id: '413'
   openfing_id: p4
-  category: 'fifth_semester'
+  category: 'third_semester'
 '1342':
   category: 'inactive'
 '1314':
@@ -900,7 +902,7 @@ GO10:
 '1944':
   eva_id: '778'
   short_name: AGPI
-  category: 'seventh_semester'
+  category: 'fifth_semester'
 '1510':
   eva_id: '49'
 '1901':
@@ -920,7 +922,7 @@ CP375:
 '1945':
   eva_id: '779'
   short_name: PAI
-  category: 'eighth_semester'
+  category: 'sixth_semester'
 GA10:
   category: 'revalid'
 GO6:
@@ -962,7 +964,7 @@ CH04:
 '1224':
   eva_id: '1093'
   openfing_id: eco
-  category: 'fourth_semester'
+  category: 'eighth_semester'
 '1221':
   category: 'inactive'
 CP20:

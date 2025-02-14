@@ -12,9 +12,9 @@ gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.2'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pg', '~> 1.5'
-gem 'puma', '~> 6.5'
+gem 'puma', '~> 6.6'
 gem 'rollbar', '~> 3.6'
-gem 'sassc-rails', '~> 2.1.2'
+gem 'sprockets-rails', '~> 3.5', require: 'sprockets/railtie'
 gem 'stimulus-rails', '~> 1.3'
 gem "tailwindcss-rails", "~> 3.0"
 gem 'turbo-rails', '~> 2.0'
@@ -31,7 +31,7 @@ end
 
 group :development do
   gem "letter_opener", "~> 1.10"
-  gem 'rubocop', '~> 1.70'
+  gem 'rubocop', '~> 1.71'
   gem 'rubocop-performance', '~> 1.23', require: false
   gem 'rubocop-rails', '~> 2.29', require: false
   gem 'web-console', '~> 4.2'

@@ -1,4 +1,4 @@
-class PlannedSubjectsController < ApplicationController
+class SubjectPlansController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_feature_enabled!
 
@@ -7,16 +7,16 @@ class PlannedSubjectsController < ApplicationController
   end
 
   def create
-    current_user.planned_subjects.create!(subject_id: params[:subject_id])
+    current_user.subject_plans.create!(subject_id: params[:subject_id])
 
-    redirect_to planned_subjects_path
+    redirect_to subject_plans_path
   end
 
   def destroy
-    planned_subject = current_user.planned_subjects.find_by!(subject_id: params[:subject_id])
-    planned_subject.destroy!
+    subject_plan = current_user.subject_plans.find_by!(subject_id: params[:subject_id])
+    subject_plan.destroy!
 
-    redirect_to planned_subjects_path
+    redirect_to subject_plans_path
   end
 
   private
