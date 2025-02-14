@@ -22,7 +22,7 @@ module PlannedSubjectsTestHelper
   end
 
   def within_planned_subjects(&block)
-    within(:xpath, "//div[@id='planned-subjects']/following-sibling::*[1]", &block)
+    within(:xpath, "//div[h3[contains(text(), 'Materias planeadas')]]/following-sibling::*[1]", &block)
   end
 
   def within_not_planned_approved_subjects(&block)
