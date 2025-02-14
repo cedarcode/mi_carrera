@@ -227,6 +227,11 @@ GEM
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
+    propshaft (1.1.0)
+      actionpack (>= 7.0.0)
+      activesupport (>= 7.0.0)
+      rack
+      railties (>= 7.0.0)
     psych (5.2.3)
       date
       stringio
@@ -344,13 +349,6 @@ GEM
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
-    sprockets (4.2.1)
-      concurrent-ruby (~> 1.0)
-      rack (>= 2.2.4, < 4)
-    sprockets-rails (3.5.2)
-      actionpack (>= 6.1)
-      activesupport (>= 6.1)
-      sprockets (>= 3.0.0)
     sshkit (1.24.0)
       base64
       logger
@@ -406,6 +404,7 @@ DEPENDENCIES
   omniauth-google-oauth2 (~> 1.2)
   omniauth-rails_csrf_protection (~> 1.0)
   pg (~> 1.5)
+  propshaft (~> 1.1)
   puma (~> 6.6)
   rails (~> 8.0.0)
   rollbar (~> 3.6)
@@ -416,7 +415,6 @@ DEPENDENCIES
   selenium-webdriver (~> 4.28)
   shoulda-matchers (~> 6.0)
   simplecov
-  sprockets-rails (~> 3.5)
   stimulus-rails (~> 1.3)
   turbo-rails (~> 2.0)
   web-console (~> 4.2)
