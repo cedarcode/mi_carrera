@@ -36,7 +36,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_23_031734) do
   create_table "reviews", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "subject_id", null: false
-    t.integer "rating", null: false
+    t.integer "rating"
+    t.integer "recommend"
+    t.integer "interest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id", "user_id"], name: "index_reviews_on_subject_id_and_user_id", unique: true

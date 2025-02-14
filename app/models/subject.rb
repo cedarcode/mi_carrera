@@ -49,7 +49,21 @@ class Subject < ApplicationRecord
   end
 
   def average_rating
-    reviews.average(:rating).round(1) if reviews.any?
+    if reviews.any? && reviews.where.not(rating: nil).any?
+      reviews.average(:rating).round(1) 
+    end
+  end
+
+  def average_recommend
+    if reviews.any? && reviews.where.not(recommend: nil).any?
+      reviews.average(:recommend).round(1)
+    end
+  end
+
+  def average_interest
+    if reviews.any? && reviews.where.not(interest: nil).any?
+      reviews.average(:interest).round(1) 
+    end
   end
 
   delegate :available?, to: :course

@@ -7,13 +7,63 @@
     </div>
     <div class="rating-items">
       <% 5.downto(1).each do |value| %>
-        <% filled = @user_review.present? && @user_review.rating >= value %>
-        <% selected = @user_review.present? && @user_review.rating == value %>
+        <% filled = @user_review.present? && @user_review.rating.present? && @user_review.rating >= value %>
+        <% selected = @user_review.present? && @user_review.rating.present? && @user_review.rating == value %>
         <% url = selected ? review_path(@user_review) : reviews_path %>
-        <% method = selected ? :delete : :post %>
+        <% method = selected ? :put : :post %>
         <%= form_with(url:, method:, class: "interactive-star") do |f| %>
           <%= f.hidden_field :subject_id, value: @subject.id %>
           <%= f.hidden_field :rating, value: %>
+          <%= f.hidden_field :recommend, value: @user_review&.recommend %>
+          <%= f.hidden_field :interest, value: @user_review&.interest %>
+          <%= f.button filled ? 'star' : 'star_outline', class: "material-icons mdc-icon-button" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="mdc-deprecated-list-item non-clickable-list-item">
+  Recomendación:
+  <div class="rating-container">
+    <div class="average-rating">
+      <span class="material-icons">star</span>
+      <%= @subject.average_recommend || "Sin calificar" %>
+    </div>
+    <div class="rating-items">
+      <% 5.downto(1).each do |value| %>
+        <% filled = @user_review.present? && @user_review.recommend.present? && @user_review.recommend >= value %>
+        <% selected = @user_review.present? && @user_review.recommend.present? && @user_review.recommend == value %>
+        <% url = selected ? review_path(@user_review) : reviews_path %>
+        <% method = selected ? :put : :post %>
+        <%= form_with(url:, method:, class: "interactive-star") do |f| %>
+          <%= f.hidden_field :subject_id, value: @subject.id %>
+          <%= f.hidden_field :rating, value: @user_review&.rating %>
+            <%= f.hidden_field :recommend, value: (selected ? nil : value) %>
+          <%= f.hidden_field :interest, value: @user_review&.interest %>
+          <%= f.button filled ? 'star' : 'star_outline', class: "material-icons mdc-icon-button" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="mdc-deprecated-list-item non-clickable-list-item">
+  Interesante:
+  <div class="rating-container">
+    <div class="average-rating">
+      <span class="material-icons">star</span>
+      <%= @subject.average_interest || "Sin calificar" %>
+    </div>
+    <div class="rating-items">
+      <% 5.downto(1).each do |value| %>
+        <% filled = @user_review.present? && @user_review.interest.present? && @user_review.interest >= value %>
+        <% selected = @user_review.present? && @user_review.interest.present? && @user_review.interest == value %>
+        <% url = selected ? review_path(@user_review) : reviews_path %>
+        <% method = selected ? :put : :post %>
+        <%= form_with(url:, method:, class: "interactive-star") do |f| %>
+          <%= f.hidden_field :subject_id, value: @subject.id %>
+          <%= f.hidden_field :rating, value: @user_review&.rating %>
+          <%= f.hidden_field :recommend, value: @user_review&.recommend %>
+          <%= f.hidden_field :interest, value: %>
           <%= f.button filled ? 'star' : 'star_outline', class: "material-icons mdc-icon-button" %>
         <% end %>
       <% end %>

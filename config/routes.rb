@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   resources :current_optional_subjects, only: :index
 
-  resources :reviews, only: [:create, :destroy]
+  resources :reviews, only: [:create, :update, :destroy]
 
   resources :subject_plans, only: [:index, :create, :destroy], param: :subject_id
 end

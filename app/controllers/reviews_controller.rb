@@ -4,7 +4,14 @@ class ReviewsController < ApplicationController
 
   def create
     @review = current_user.reviews.find_or_initialize_by(subject_id: params[:subject_id])
-    @review.update!(rating: params[:rating])
+    @review.update!(rating: params[:rating], recommend: params[:recommend], interest: params[:interest])
+
+    redirect_to subject_path(@review.subject)
+  end
+
+  def update
+    @review = current_user.reviews.find(params[:id])
+    @review.update!(rating: params[:rating], recommend: params[:recommend], interest: params[:interest])
 
     redirect_to subject_path(@review.subject)
   end
