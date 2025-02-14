@@ -16,7 +16,6 @@
           <span class="mdc-deprecated-list-item__meta material-icons">done</span>
         <% else %>
           <%= form_with(
-            model: subject.subject_plan,
             url: subject_plan_path(subject_id: subject.id),
             method: :delete,
             data: { controller: "autosave-check" },
