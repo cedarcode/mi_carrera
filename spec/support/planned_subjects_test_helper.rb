@@ -22,7 +22,11 @@ module PlannedSubjectsTestHelper
   end
 
   def within_planned_subjects(&block)
-    within(:xpath, "//h3[contains(text(), 'Materias planeadas')]/following-sibling::*[1]", &block)
+    within(:xpath, "//div[h3[contains(text(), 'Materias planeadas')]]/following-sibling::*[1]", &block)
+  end
+
+  def within_not_planned_approved_subjects(&block)
+    within(:xpath, "//h3[contains(text(), 'Materias aprobadas sin semestre asignado')]/following-sibling::*[1]", &block)
   end
 
   def within_not_planned_subjects(&block)

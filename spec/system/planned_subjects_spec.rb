@@ -25,16 +25,22 @@ RSpec.describe "PlannedSubjects", type: :system do
     visit subject_plans_path
 
     expect(page).to have_text "Materias planeadas"
+    expect(page).to have_text "Materias aprobadas sin semestre asignado"
     expect(page).to have_text "Materias recomendadas"
 
     within_planned_subjects do
       expect(page).to have_no_text "GAL 1"
       expect(page).to have_no_text "GAL 2"
-      assert_approved_subject "T1"
+      expect(page).to have_no_text "T1"
     end
 
-    expect(page).to have_text "Créditos actuales: 11"
-    expect(page).to have_text "Créditos planeados: 11"
+    within_not_planned_approved_subjects do
+      expect(page).to have_no_text "GAL 1"
+      expect(page).to have_no_text "GAL 2"
+      expect(page).to have_text "T1"
+    end
+
+    expect(page).to have_text "Créditos planeados: 0"
 
     within_not_planned_subjects do
       expect(page).to have_text "GAL 1"
@@ -42,36 +48,47 @@ RSpec.describe "PlannedSubjects", type: :system do
       expect(page).to have_no_text "T1"
     end
 
-    within ".mdc-deprecated-list-item", text: "GAL 1" do
+    within ".mdc-deprecated-list-item", text: "T1" do
       find("span", text: "add_circle_outline").click
     end
 
     within_planned_subjects do
-      assert_available_subject "GAL 1"
+      expect(page).to have_no_text "GAL 1"
       expect(page).to have_no_text "GAL 2"
+      expect(page).to have_text "Primer semestre"
+      expect(page).to have_text "Créditos planeados: 11"
       assert_approved_subject "T1"
     end
 
+    expect(page).to have_no_text "Materias aprobadas sin semestre asignado"
+
     within_not_planned_subjects do
-      expect(page).to have_no_text "GAL 1"
+      expect(page).to have_text "GAL 1"
       expect(page).to have_text "GAL 2"
       expect(page).to have_no_text "T1"
     end
 
-    expect(page).to have_text "Créditos actuales: 11"
-    expect(page).to have_text "Créditos planeados: 20"
+    expect(page).to have_text "Créditos planeados: 11"
+
+    within ".mdc-deprecated-list-item", text: "GAL 1" do
+      find("span", text: "add_circle_outline").click
+    end
 
     within ".mdc-deprecated-list-item", text: "GAL 2" do
+      select "Sem. 2", from: "subject_plan_semester"
       find("span", text: "add_circle_outline").click
     end
 
     within_planned_subjects do
       assert_available_subject "GAL 1"
-      assert_blocked_subject "GAL 2"
       assert_approved_subject "T1"
+      expect(page).to have_text "Primer semestre"
+      expect(page).to have_text "Créditos planeados: 20"
+      assert_blocked_subject "GAL 2"
+      expect(page).to have_text "Segundo semestre"
+      expect(page).to have_text "Créditos planeados: 10"
     end
 
-    expect(page).to have_text "Créditos actuales: 11"
     expect(page).to have_text "Créditos planeados: 30"
 
     within ".mdc-deprecated-list-item", text: "GAL 2" do
@@ -80,8 +97,12 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     within_planned_subjects do
       assert_available_subject "GAL 1"
-      expect(page).to have_no_text "GAL 2"
       assert_approved_subject "T1"
+      expect(page).to have_text "Primer semestre"
+      expect(page).to have_text "Créditos planeados: 20"
+      expect(page).to have_no_text "GAL 2"
+      expect(page).to have_no_text "Segundo semestre"
+      expect(page).to have_no_text "Créditos planeados: 10"
     end
 
     within_not_planned_subjects do
@@ -90,7 +111,6 @@ RSpec.describe "PlannedSubjects", type: :system do
       expect(page).to have_no_text "T1"
     end
 
-    expect(page).to have_text "Créditos actuales: 11"
     expect(page).to have_text "Créditos planeados: 20"
   end
 end
