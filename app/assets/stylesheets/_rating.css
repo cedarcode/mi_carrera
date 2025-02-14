@@ -1,20 +1,9 @@
-.rating-list-item {
-  @media (max-width: 450px) {
-    height: auto !important;
-    align-items: flex-start !important;
-  }
-}
-
 .rating-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   gap: 12px;
-
-  @media (max-width: 450px) {
-    flex-direction: column;
-  }
 }
 
 .average-rating {
@@ -28,12 +17,6 @@
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-
-  @media (max-width: 450px) {
-    .mdc-icon-button {
-      width: 40px;
-    }
-  }
 }
 
 .interactive-star {
