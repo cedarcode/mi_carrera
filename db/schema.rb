@@ -39,6 +39,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_26_183903) do
     t.integer "rating", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "recommended"
     t.index ["subject_id", "user_id"], name: "index_reviews_on_subject_id_and_user_id", unique: true
   end
 
