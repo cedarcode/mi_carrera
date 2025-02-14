@@ -1,23 +1,24 @@
 require 'pdf-reader'
 
 module AcademicHistory
-  module PdfProcessor
+  class PdfProcessor
+    include Enumerable
+
     AcademicEntry = Struct.new(:name, :credits, :number_of_failures, :date_of_completion, :grade) do
       def approved?
         grade != '***'
       end
     end
-    extend self
 
-    def process(file)
-      Enumerator.new do |yielder|
-        reader = PDF::Reader.new(file.path)
+    def initialize(file)
+      @reader = PDF::Reader.new(file.path)
+    end
 
-        reader.pages.each do |page|
-          page.text.split("\n").each do |line|
-            line.match(subject_regex) do |match|
-              yielder << AcademicEntry.new(match[1], match[2], match[3], match[4], match[5])
-            end
+    def each(&block)
+      reader.pages.each do |page|
+        page.text.split("\n").each do |line|
+          line.match(subject_regex) do |match|
+            block.call(AcademicEntry.new(match[1], match[2], match[3], match[4], match[5]))
           end
         end
       end
@@ -37,5 +38,9 @@ module AcademicHistory
     def concept_regex
       /Aceptable|Bueno|Muy Bueno|Excelente|S\/C|\*{3}/
     end
+
+    private
+
+    attr_reader :reader
   end
 end

@@ -36,11 +36,11 @@ RSpec.describe AcademicHistory::PdfProcessor, type: :lib do
     end
 
     it 'returns a list of academic entries' do
-      expect(described_class.process(file).to_a).to all(be_an(academic_entries))
+      expect(described_class.new(file).to_a).to all(be_an(academic_entries))
     end
 
     it 'parses the text from the pdf file' do
-      expect(described_class.process(file).to_a).to eq(academic_entries_list)
+      expect(described_class.new(file).to_a).to eq(academic_entries_list)
     end
   end
 
