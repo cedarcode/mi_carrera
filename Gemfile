@@ -16,6 +16,7 @@ gem 'puma', '~> 6.6'
 gem 'rollbar', '~> 3.6'
 gem 'sprockets-rails', '~> 3.5', require: 'sprockets/railtie'
 gem 'stimulus-rails', '~> 1.3'
+gem "tailwindcss-rails", "~> 3.0"
 gem 'turbo-rails', '~> 2.0'
 
 group :development, :deploy do
