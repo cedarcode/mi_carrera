@@ -32,5 +32,7 @@ Rails.application.routes.draw do
 
   resources :academic_histories, only: [:new, :create, :index]
 
-  resources :planned_subjects, only: [:index, :create, :destroy], param: :subject_id
+  resources :reviews, only: [:create, :destroy]
+
+  resources :subject_plans, only: [:index, :create, :destroy], param: :subject_id
 end

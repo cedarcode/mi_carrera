@@ -19,6 +19,8 @@
         Grupo: Desconocido
       <% end %>
     </label>
+
+    <%= render 'rating' %>
   </div>
   <hr class="mdc-deprecated-list-divider">
 
@@ -38,11 +40,9 @@
       <% end %>
 
       <% if @subject.eva_id %>
-        <a href="https://eva.fing.edu.uy/course/view.php?id=<%= @subject.eva_id%>" target="_blank" class="mdc-deprecated-list-item">
-          <span class="mdc-deprecated-list-item__ripple"></span>
-          <span class="mdc-deprecated-list-item__graphic material-icons">forum</span>
-          <span class="mdc-deprecated-list-item__text">EVA</span>
-        </a>
+        <% second_semester_eva_id = @subject.second_semester_eva_id %>
+        <%= render 'shared/eva_links_component', eva_id: @subject.eva_id, text: second_semester_eva_id ? "EVA - Primer semestre" : "EVA" %>
+        <%= render 'shared/eva_links_component', eva_id: second_semester_eva_id, text: "EVA - Segundo semestre" if second_semester_eva_id %>
       <% end %>
     </div>
     <hr class="mdc-deprecated-list-divider">

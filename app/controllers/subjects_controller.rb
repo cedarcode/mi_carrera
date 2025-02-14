@@ -7,6 +7,8 @@ class SubjectsController < ApplicationController
   end
 
   def show
+    @user_review = current_user.reviews.find_by(subject:) if current_user
+
     respond_to do |format|
       format.html { subject }
     end

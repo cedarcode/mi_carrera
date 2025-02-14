@@ -69,4 +69,43 @@ class SubjectsTest < ApplicationSystemTestCase
     assert_text "GAL 2"
     assert_text "T1"
   end
+
+  test "can review subjects" do
+    subject = create :subject
+    user = create :user
+
+    # Not logged
+    visit subject_path(subject)
+
+    assert_text "Sin calificar"
+    click_button("star_outline", match: :first)
+    assert_current_path new_user_session_path
+
+    # Logged
+    fill_in "Correo electrónico", with: user.email
+    fill_in "Contraseña", with: "secret"
+    click_button "Ingresar"
+
+    visit subject_path(subject)
+
+    # Create a 5-star review
+    all('button', text: 'star')[0].click
+    Review.last.tap do |review|
+      assert_equal(subject, review.subject)
+      assert_equal(user, review.user)
+      assert_equal(5, review.rating)
+    end
+
+    # Update review to 4 stars
+    all('button', text: 'star')[1].click
+    Review.last.tap do |review|
+      assert_equal(subject, review.subject)
+      assert_equal(user, review.user)
+      assert_equal(4, review.rating)
+    end
+
+    # Destroy review by clicking on the same star
+    all('button', text: 'star')[1].click
+    assert_equal(0, Review.count)
+  end
 end

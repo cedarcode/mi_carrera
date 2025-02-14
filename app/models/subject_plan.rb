@@ -1,4 +1,4 @@
-class PlannedSubject < ApplicationRecord
+class SubjectPlan < ApplicationRecord
   belongs_to :user
   belongs_to :subject
 

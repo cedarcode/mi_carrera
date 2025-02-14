@@ -22,7 +22,7 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     sign_in user
 
-    visit planned_subjects_path
+    visit subject_plans_path
 
     expect(page).to have_text "Materias planeadas"
     expect(page).to have_text "Materias recomendadas"
