@@ -3,10 +3,10 @@ class TreePreloader
     @subjects = subjects || Subject.all
   end
 
-  def preload
+  def preload(order = :ordered_by_category_and_name)
     # rubocop:disable Rails/FindEach
     subjects
-      .ordered_by_category_and_name
+      .public_send(order)
       .includes(
         course: :prerequisite_tree,
         exam: :prerequisite_tree

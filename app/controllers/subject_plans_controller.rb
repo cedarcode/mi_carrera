@@ -29,9 +29,10 @@ class SubjectPlansController < ApplicationController
     @planned_subjects =
       TreePreloader.new(current_user.planned_subjects.select('subjects.*', 'subject_plans.semester')
         .order('subject_plans.semester')).preload
-    @not_planned_approved_subjects, @not_planned_subjects = TreePreloader.new.preload.reject { |subject|
-      current_user.planned?(subject)
-    }.partition { |subject| current_student.approved?(subject) }
+    @not_planned_approved_subjects, @not_planned_subjects =
+      TreePreloader.new.preload(:ordered_by_name).reject { |subject|
+        current_user.planned?(subject)
+      }.partition { |subject| current_student.approved?(subject) }
   end
 
   def subject_plan_params
