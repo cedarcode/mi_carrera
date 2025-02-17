@@ -9163,6 +9163,20 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1466'
+        subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+        needs: course
+      - type: subject
+        subject_needed_code: '1466'
+        subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+        needs: exam
   - type: subject
     needs: course
     subject_needed_code: '1443'
