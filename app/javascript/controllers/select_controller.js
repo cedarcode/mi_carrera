@@ -12,5 +12,6 @@ export default class extends Controller {
 
   open(e) {
     e.preventDefault();
+    this.element.closest('.mdc-deprecated-list-item').style.zIndex = 99;
   }
 }
