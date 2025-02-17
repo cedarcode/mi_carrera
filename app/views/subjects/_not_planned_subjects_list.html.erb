@@ -1,6 +1,6 @@
 <div class="mdc-deprecated-list">
   <% subjects.each do |subject| %>
-    <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item" do %>
+    <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item overflow-visible" do %>
       <span class="mdc-deprecated-list-item__ripple"></span>
       <span class="mdc-deprecated-list-item__text">
         <%= display_name(subject) %>
