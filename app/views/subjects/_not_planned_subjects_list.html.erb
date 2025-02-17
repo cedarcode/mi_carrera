@@ -13,14 +13,7 @@
         class: 'd-flex',
         local: false
       ) do |form| %>
-        <%= 
-          form.select(
-            :semester, 
-            options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
-            {}, 
-            data: { action: "click->autosave-check#stopPropagation" }
-          )
-        %>
+      <%= render partial: 'select', locals: { form: form } %>
         <%= form.hidden_field :subject_id, value: subject.id %>
         <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">add_circle_outline</button>
       <% end %>

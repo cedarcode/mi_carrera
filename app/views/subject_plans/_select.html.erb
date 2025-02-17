@@ -1,0 +1,42 @@
+<div data-controller="select">
+  <div class="mdc-select mdc-select--outlined mdc-menu-surface--anchor" data-select-target="select" data-action='click->select#open change->select#change'>
+    <%= form.hidden_field :semester %>
+    <div class="mdc-select__anchor" role="button">
+      <span class="mdc-floating-label">Semestre</span>
+      <span class="mdc-select__selected-text-container">
+        <span class="mdc-select__selected-text"></span>
+      </span>
+      <span class="mdc-select__dropdown-icon">
+        <svg
+            class="mdc-select__dropdown-icon-graphic"
+            viewBox="7 10 10 5" focusable="false">
+          <polygon
+              class="mdc-select__dropdown-icon-inactive"
+              stroke="none"
+              fill-rule="evenodd"
+              points="7 10 12 15 17 10">
+          </polygon>
+          <polygon
+              class="mdc-select__dropdown-icon-active"
+              stroke="none"
+              fill-rule="evenodd"
+              points="7 15 12 10 17 15">
+          </polygon>
+        </svg>
+      </span>
+    </div>
+
+    <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth" data-select-target="menu">
+      <ul class="mdc-deprecated-list" role="listbox">
+        <% (1..10).each do |option| %>
+          <li class="mdc-deprecated-list-item" data-value="<%= option %>" role="option">
+            <span class="mdc-deprecated-list-item__ripple"></span>
+            <span class="mdc-deprecated-list-item__text">
+              <%= option %>
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
