@@ -9,4 +9,8 @@ export default class extends Controller {
     this.select = new MDCSelect(this.selectTarget);
     this.menu = new MDCMenu(this.menuTarget);
   }
+
+  open(e) {
+    e.preventDefault();
+  }
 }
