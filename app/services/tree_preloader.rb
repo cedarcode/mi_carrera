@@ -1,6 +1,6 @@
 class TreePreloader
-  def initialize(subjects = nil)
-    @subjects = subjects || Subject.all
+  def initialize(subjects)
+    @subjects = subjects
   end
 
   def preload

@@ -6,7 +6,7 @@ class TreePreloaderTest < ActiveSupport::TestCase
     s2 = create :subject, :with_exam, name: "s2"
     create :subject_prerequisite, approvable: s2.course, approvable_needed: s1.course
 
-    subjects = TreePreloader.new.preload.sort_by(&:name)
+    subjects = TreePreloader.new(Subject).preload.sort_by(&:name)
 
     Subject.destroy_all
     Approvable.destroy_all
@@ -48,7 +48,7 @@ class TreePreloaderTest < ActiveSupport::TestCase
 
     assert_equal 0, subjects.count
 
-    subjects = TreePreloader.new(nil).preload
+    subjects = TreePreloader.new(Subject).preload
 
     assert_equal 2, subjects.count
     assert_equal "s1", subjects.first.name
