@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   def index
-    @subjects = TreePreloader.new.preload.select do |subject|
+    @subjects = TreePreloader.new(Subject.ordered_by_category_and_name).preload.select do |subject|
       current_student.approved?(subject.course) ||
         (!subject.hidden_by_default? && current_student.available?(subject.course))
     end
@@ -21,7 +21,9 @@ class SubjectsController < ApplicationController
           .where("lower(unaccent(name)) LIKE lower(unaccent(?))", "%#{params[:search].strip}%")
           .or(Subject.where("lower(unaccent(short_name)) LIKE lower(unaccent(?))", "%#{params[:search].strip}%"))
           .or(Subject.where("lower(code) LIKE lower(?)", "%#{params[:search].strip}%"))
-      end
+      else
+        Subject
+      end.ordered_by_category_and_name
 
     @subjects = TreePreloader.new(subjects).preload
   end
