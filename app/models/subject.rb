@@ -31,6 +31,7 @@ class Subject < ApplicationRecord
   enum :category, CATEGORIES.index_with(&:to_s)
 
   scope :ordered_by_category, -> { in_order_of(:category, CATEGORIES) }
+  scope :ordered_by_name, -> { order(:name) }
   scope :ordered_by_category_and_name, -> { ordered_by_category.order(:name) }
   scope :current_semester_optionals, -> { where(current_optional_subject: true) }
 

@@ -37,6 +37,10 @@ module SubjectsHelper
     "#{subject.code} - #{subject.short_name || subject.name}"
   end
 
+  def display_planned_subject_name(subject)
+    "#{subject.short_name || subject.name} - #{subject.code}"
+  end
+
   def display_subject_prerequisite(subject_prerequisite)
     approvable = subject_prerequisite.approvable_needed
     "#{display_name(approvable.subject)} (#{approvable.is_exam ? "examen" : "curso"})"
