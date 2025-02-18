@@ -6,7 +6,6 @@ class TreePreloader
   def preload
     # rubocop:disable Rails/FindEach
     subjects
-      .ordered_by_category_and_name
       .includes(
         course: :prerequisite_tree,
         exam: :prerequisite_tree
