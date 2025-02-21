@@ -5,10 +5,10 @@
   </li>
 <% end %>
 <%- if controller_name != 'registrations' %>
-  <li class="form-input-container sign-in">
+  <p class="mt-10 text-center text-sm/6 text-gray-500">
     ¿No estás registrado?
-    <%= link_to 'Registrarte',new_registration_path(resource), class: "account-session" %>
-  </li>
+    <%= link_to 'Registrarte',new_registration_path(resource), class: "font-semibold text-indigo-600 hover:text-indigo-500" %>
+  </p>
 <% end %>
 <%- if controller_name != 'passwords' && controller_name != 'registrations' %>
   <li class="form-input-container sign-in">
