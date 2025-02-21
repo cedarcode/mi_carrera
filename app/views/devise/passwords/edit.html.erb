@@ -6,7 +6,7 @@
       <%= f.hidden_field :reset_password_token %>
 
       <li class="form-input-container">
-        <%= render 'shared/password_field', f:, resource:, field: :password, label_text: "Nueva contraseña", autocomplete: "new-password", required: false %>
+        <%= render 'shared/password_field', f:, resource:, field: :password, label_text: "Nueva contraseña", autocomplete: "new-password", required: false, with_forgot_password_link: false %>
         <%= render 'shared/info_and_errors', resource:, field: :password, text: "#{@minimum_password_length} caracteres mínimo" %>
       </li>
 
