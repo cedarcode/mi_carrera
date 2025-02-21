@@ -16,6 +16,7 @@ gem 'propshaft', '~> 1.1'
 gem 'puma', '~> 6.6'
 gem 'rollbar', '~> 3.6'
 gem 'stimulus-rails', '~> 1.3'
+gem 'tailwindcss-rails', '~> 4.1'
 gem 'turbo-rails', '~> 2.0'
 
 group :development, :deploy do
