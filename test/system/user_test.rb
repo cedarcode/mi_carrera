@@ -52,7 +52,7 @@ class UserTest < ApplicationSystemTestCase
 
     visit new_user_session_path
 
-    click_on "Restablecer contraseña"
+    click_on "¿Has olvidado tu contraseña?"
     fill_in "Correo electrónico", with: "non-existent@test.com"
 
     assert_no_emails do
