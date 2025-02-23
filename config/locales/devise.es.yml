@@ -16,6 +16,8 @@ es:
         subject: "Email modificado"
       password_change:
         subject: "Contraseña modificada"
+      unlock_instructions:
+        subject: "Instrucciones para desbloquear"
     omniauth_callbacks:
       failure: 'No pudimos autentificar tu cuenta de %{kind} por la siguiente razón: "%{reason}".'
       success: "Te autentificaste correctamente con tu cuenta de %{kind}."
