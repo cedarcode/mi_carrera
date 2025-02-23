@@ -1,3 +1,5 @@
 <% if resource.errors[field].any? %>
-  <i aria-hidden="true" class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing">error</i>
+  <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-red-700">
+    <span class="material-icons">error</span>
+  </span>
 <% end %>

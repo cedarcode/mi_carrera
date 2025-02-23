@@ -5,13 +5,23 @@
   <div class="sm:mx-auto sm:w-full sm:max-w-sm space-y-4 text-indigo-900">
     <%= form_with(model: resource, url: registration_path(resource_name), class: "space-y-4", local: true) do |f| %>
       <div>
-        <%= f.label :email, "Correo electrónico", class: "block text-sm/6 font-medium" %>
-        <%= f.email_field :email, class: "block w-full rounded-md bg-white px-3 py-1.5 text-base outline-1 -outline-offset-1 outline-indigo-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-700 sm:text-sm/6", required: true, autofocus: true %>
+        <%= f.label :email, "Correo electrónico", class: "block text-sm/6 font-medium #{resource.errors[:email].any? ? 'text-red-600' : 'text-indigo-900'}" %>
+        <div class="relative w-full">
+          <%= f.email_field :email, class: "block w-full rounded-md bg-white px-3 py-1.5 outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 sm:text-sm/6 #{resource.errors[:email].any? ? 'outline-red-600 focus:outline-2 focus:outline-red-600' : 'outline-indigo-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-700'}", required: true, autofocus: true %>
+          <%= render 'shared/invalid_icon', resource: resource, field: :email %>
+        </div>
+        <%= render 'shared/info_and_errors', resource: resource, field: :email, text: '' %>
       </div>
 
-      <%= render 'shared/password_field', f:, resource:, field: :password, label_text: "Nueva contraseña", autocomplete: "new-password", required: true, with_forgot_password_link: false %>
+      <div>
+        <%= render 'shared/password_field', f:, resource:, field: :password, label_text: "Nueva contraseña", autocomplete: "new-password", required: true, with_forgot_password_link: false %>
+        <%= render 'shared/info_and_errors', resource: resource, field: :password, text: 'Debe contener al menos 6 caracteres' %>
+      </div>
 
-      <%= render 'shared/password_field', f:, resource:, field: :password_confirmation, label_text: "Confirma tu nueva contraseña", autocomplete: "new-password", required: true, with_forgot_password_link: false %>
+      <div>
+        <%= render 'shared/password_field', f:, resource:, field: :password_confirmation, label_text: "Confirma tu nueva contraseña", autocomplete: "new-password", required: true, with_forgot_password_link: false %>
+        <%= render 'shared/info_and_errors', resource: resource, field: :password_confirmation, text: '' %>
+      </div>
 
       <%= f.button "Registrarse", class: "flex w-full justify-center rounded-md bg-indigo-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700 cursor-pointer" %>
     <% end %>

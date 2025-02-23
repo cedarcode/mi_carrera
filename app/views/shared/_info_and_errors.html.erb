@@ -1,11 +1,7 @@
-<div class='mdc-text-field-helper-line'>
-  <div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">
-    <% if resource.errors[field].any? %>
-      <span class='mdc-text-field-helper-text--validation-msg' role='alert'>
-        <%= resource.errors[field].to_sentence.capitalize %>
-      </span>
-    <% elsif text %>
-      <span><%= text %></span>
-    <% end %>
-  </div>
+<div class="mt-1 h-2 text-sm text-gray-600">
+  <% if resource.errors[field].any? %>
+    <span class="text-red-600" role="alert">
+      <%= resource.errors[field].to_sentence.capitalize %>
+    </span>
+  <% end %>
 </div>
