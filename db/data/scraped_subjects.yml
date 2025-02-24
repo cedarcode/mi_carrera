@@ -155,6 +155,12 @@
   credits: 0
   has_exam: false
   subject_group:
+102EU:
+  code: 102EU
+  name: QCA. GENERAL I (PLAN 2000)
+  credits: 7
+  has_exam: false
+  subject_group: '4442'
 '1030':
   code: '1030'
   name: GEOMETRIA Y ALGEBRA LINEAL 1
@@ -209,6 +215,12 @@
   credits: 7
   has_exam: false
   subject_group: '4083'
+103EU:
+  code: 103EU
+  name: INT. A LAS C. BIOLÓGICAS I
+  credits: 5
+  has_exam: false
+  subject_group: '4442'
 '1040':
   code: '1040'
   name: ALGEBRA LINEAL NUMERICA
@@ -4248,3 +4260,9 @@ TP25:
   credits: 25
   has_exam: true
   subject_group: '4756'
+V2110:
+  code: V2110
+  name: TALLER DE ÉTICA
+  credits: 2
+  has_exam: false
+  subject_group: '5265'
