@@ -19,7 +19,7 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: 'alice@test.com'
     fill_in "Nueva contraseña", with: 'alice123'
     fill_in "Confirma tu nueva contraseña", with: 'alice321'
-    click_on "Registrarte"
+    click_on "Registrarse"
 
     within('.form-input-container', text: 'Confirma tu nueva contraseña') do
       assert_text "No coincide"
@@ -28,7 +28,7 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: user.email
     fill_in "Nueva contraseña", with: 'bob321'
     fill_in "Confirma tu nueva contraseña", with: 'bob321'
-    click_on "Registrarte"
+    click_on "Registrarse"
 
     within('.form-input-container', text: 'Correo electrónico') do
       assert_text "Ya está en uso"
@@ -39,7 +39,7 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Confirma tu nueva contraseña", with: 'alice123'
     password_visibility_toggle_test("Nueva contraseña")
     password_visibility_toggle_test("Confirma tu nueva contraseña")
-    click_on "Registrarte"
+    click_on "Registrarse"
 
     assert_current_path root_path
 
