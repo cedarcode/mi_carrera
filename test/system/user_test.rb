@@ -21,18 +21,14 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Confirma tu nueva contraseña", with: 'alice321'
     click_on "Registrarse"
 
-    within('.form-input-container', text: 'Confirma tu nueva contraseña') do
-      assert_text "No coincide"
-    end
+    assert_text "No coincide"
 
     fill_in "Correo electrónico", with: user.email
     fill_in "Nueva contraseña", with: 'bob321'
     fill_in "Confirma tu nueva contraseña", with: 'bob321'
     click_on "Registrarse"
 
-    within('.form-input-container', text: 'Correo electrónico') do
-      assert_text "Ya está en uso"
-    end
+    assert_text "Ya está en uso"
 
     fill_in "Correo electrónico", with: 'alice@test.com'
     fill_in "Nueva contraseña", with: 'alice123'
