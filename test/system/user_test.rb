@@ -109,7 +109,7 @@ class UserTest < ApplicationSystemTestCase
 
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: user.password
-    password_visibility_toggle_test("Contraseña")
+    password_visibility_toggle_test_tailwind("Contraseña")
     click_on "Ingresar"
 
     assert_current_path(root_path)
