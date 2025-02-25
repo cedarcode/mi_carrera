@@ -1,50 +1,51 @@
-<div class="mdc-deprecated-list-group">
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5 sign-in">Ingreso</h3>
-  <ul class="mdc-deprecated-list growing-text-list">
+<div class="flex flex-col justify-center px-6 py-12 space-y-10">
+  <h2 class="text-center text-3xl/9 text-indigo-800 font-bold">Iniciar sesión</h2>
 
-    <li class="form-input-container google-button-container">
-
-      <%- resource_class.omniauth_providers.each do |provider| %>
-        <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, local: true do |f| %>
-          <%= f.button class: 'google-sign-in-button' do %>
-            <%= image_tag asset_path('google-icon.png'), class: 'google-icon' %>
-            <span class='google-sign-in-text'>Continuar con Google</span>
-          <% end %>
-        <% end %>
-      <% end %>
-    </li>
-
-    <li role="separator" class="mdc-deprecated-list-divider"></li>
-
-    <%= form_with(model: resource, url: session_path(resource_name), local: true) do |f| %>
-      <li class="form-input-container sign-in">
-        Ingresar con tu correo electrónico
-      </li>
-      <li class="form-input-container">
-        <div class="mdc-text-field mdc-text-field--filled <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:email].any? %>" data-controller="textfield">
-          <span class="mdc-text-field__ripple"></span>
-          <%= f.label :email, "Correo electrónico", class: "mdc-floating-label" %>
-          <%= f.email_field :email, class: "mdc-text-field__input", required: true, autofocus: true %>
-          <%= render 'shared/invalid_icon', resource: resource, field: :email %>
-          <div class="mdc-line-ripple"></div>
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm space-y-6">
+    <%= form_with(model: resource, url: session_path(resource_name), class: "space-y-6", local: true) do |f| %>
+      <div>
+        <%= f.label :email, "Correo electrónico", class: "text-sm/6 font-medium text-indigo-700" %>
+        <div class="relative w-full">
+          <%= f.email_field :email, class: "w-full pr-16 rounded-md bg-white px-3 py-1.5 outline-1 focus:outline-2 outline-indigo-600 focus:outline-indigo-700", required: true, autofocus: true %>
         </div>
-        <%= render 'shared/info_and_errors', resource: resource, field: :email, text: '' %>
-      </li>
-      <li class="form-input-container">
-        <%= render 'shared/password_field', f:, resource:, field: :password, label_text: "Contraseña", autocomplete: "current-password", required: true %>
-        <%= render 'shared/info_and_errors', resource:, field: :password, text: '' %>
-      </li>
-      <li class="form-input-container sign-in">
-        <%= f.button class: "mdc-button mdc-button--raised" do %>
-          <span class="mdc-button__ripple"></span>
-          <span class='mdc-button__label'>
-            Ingresar
-          </span>
-        <% end %>
-      </li>
+      </div>
+
+      <div data-controller="textfield show-password">
+        <div class="flex items-center justify-between">
+          <%= f.label :password, "Contraseña", class: "text-sm/6 font-medium text-indigo-700" %>
+
+          <%= link_to '¿Has olvidado tu contraseña?', new_password_path(resource), class: "font-semibold text-indigo-700 hover:text-indigo-600 text-sm/6" %>
+        </div>
+
+        <div class="relative w-full">
+          <%= f.password_field :password, class: "w-full pr-16 rounded-md bg-white px-3 py-1.5 outline-1 focus:outline-2 outline-indigo-600 focus:outline-indigo-700", required: true, autofocus: true, autocomplete: false, data: { show_password_target: "password" } %>
+
+          <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-indigo-700 hover:text-indigo-600" data-action="show-password#toggle">
+            <span class="material-icons" data-show-password-target="icon">visibility</span>
+          </button>
+        </div>
+      </div>
+
+      <%= f.button "Ingresar", class: "w-full rounded-md bg-indigo-700 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-600 cursor-pointer" %>
     <% end %>
 
-    <li role="separator" class="mdc-deprecated-list-divider"></li>
-    <%= render "devise/shared/links" %>
-  </ul>
+    <p class="text-center text-sm/6 text-indigo-500">
+      ¿No estás registrado?
+
+      <%= link_to 'Registrarte',new_registration_path(resource), class: "font-semibold text-indigo-700 hover:text-indigo-600" %>
+    </p>
+  </div>
+
+  <div class="my-4 py-3 flex items-center text-sm text-indigo-600 before:flex-1 before:border-t before:border-indigo-200 before:me-6 after:flex-1 after:border-t after:border-indigo-200 after:ms-6">Continua con</div>
+
+  <div class="google-button-container">
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, local: true do |f| %>
+        <%= f.button class: 'google-sign-in-button' do %>
+          <%= image_tag asset_path('google-icon.png'), class: 'google-icon' %>
+          <span class='google-sign-in-text'>Continuar con Google</span>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
