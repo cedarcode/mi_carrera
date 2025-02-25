@@ -52,7 +52,7 @@ class UserTest < ApplicationSystemTestCase
 
     visit new_user_session_path
 
-    click_on "Restablecer contraseña"
+    click_on "¿Has olvidado tu contraseña?"
     fill_in "Correo electrónico", with: "non-existent@test.com"
 
     assert_no_emails do
@@ -98,7 +98,7 @@ class UserTest < ApplicationSystemTestCase
 
     visit new_user_session_path
 
-    assert_text "Ingreso"
+    assert_text "Iniciar sesión"
     assert_text "Continuar con Google"
 
     fill_in "Correo electrónico", with: user.email
@@ -109,7 +109,7 @@ class UserTest < ApplicationSystemTestCase
 
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: user.password
-    password_visibility_toggle_test("Contraseña")
+    password_visibility_toggle_test_tailwind("Contraseña")
     click_on "Ingresar"
 
     assert_current_path(root_path)
