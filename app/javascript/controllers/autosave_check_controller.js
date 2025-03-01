@@ -1,9 +1,13 @@
-import { Controller } from "@hotwired/stimulus"
-import { Turbo } from "@hotwired/turbo-rails"
+import { Controller } from "@hotwired/stimulus";
+import { Turbo } from "@hotwired/turbo-rails";
 
 export default class extends Controller {
   update(e) {
     e.preventDefault();
-    Turbo.navigator.submitForm(this.element)
+    Turbo.navigator.submitForm(this.element);
+  }
+
+  stopPropagation(e) {
+    e.preventDefault();
   }
 }

@@ -33,6 +33,7 @@ module YmlLoader
 
       subject_overrides = subjects_overrides[code] || {}
       new_subject.eva_id = subject_overrides['eva_id']
+      new_subject.second_semester_eva_id = subject_overrides['second_semester_eva_id']
       new_subject.openfing_id = subject_overrides['openfing_id']
       new_subject.short_name = subject_overrides['short_name']
       new_subject.category = subject_overrides['category'] || 'optional'

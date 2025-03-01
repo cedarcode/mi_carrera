@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_23_031734) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_26_183903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -56,6 +56,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_23_031734) do
     t.bigint "subject_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "semester", null: false
     t.index ["user_id", "subject_id"], name: "index_subject_plans_on_user_id_and_subject_id", unique: true
   end
 
@@ -71,6 +72,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_23_031734) do
     t.string "code"
     t.string "category", default: "optional"
     t.boolean "current_optional_subject", default: false
+    t.string "second_semester_eva_id"
     t.index ["code"], name: "index_subjects_on_code", unique: true
   end
 
@@ -86,8 +88,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_23_031734) do
     t.datetime "updated_at", null: false
     t.text "approvals"
     t.boolean "welcome_banner_viewed", default: false
+    t.integer "failed_attempts", default: 0, null: false
+    t.datetime "locked_at"
+    t.string "unlock_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
   add_foreign_key "reviews", "subjects"
