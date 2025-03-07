@@ -36,16 +36,5 @@
     </p>
   </div>
 
-  <div class="my-4 py-3 flex items-center text-sm text-indigo-600 before:flex-1 before:border-t before:border-indigo-200 before:me-6 after:flex-1 after:border-t after:border-indigo-200 after:ms-6">Continua con</div>
-
-  <div class="google-button-container">
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, local: true do |f| %>
-        <%= f.button class: 'google-sign-in-button' do %>
-          <%= image_tag asset_path('google-icon.png'), class: 'google-icon' %>
-          <span class='google-sign-in-text'>Continuar con Google</span>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
+  <%= render "devise/shared/sso_buttons" %>
 </div>
