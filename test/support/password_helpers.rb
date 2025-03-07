@@ -11,7 +11,7 @@ module PasswordHelpers
   end
 
   def password_visibility_toggle_test_tailwind(label_text)
-    container = find(:xpath, "//div[@data-controller='textfield show-password'][.//label[text()='#{label_text}']]")
+    container = find(:xpath, "//div[@data-controller='show-password'][.//label[text()='#{label_text}']]")
 
     within(container) do
       find("button[data-action='show-password#toggle']").click
