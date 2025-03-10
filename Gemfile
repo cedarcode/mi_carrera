@@ -30,7 +30,7 @@ end
 
 group :development do
   gem "letter_opener", "~> 1.10"
-  gem 'rubocop', '~> 1.72'
+  gem 'rubocop', '~> 1.73'
   gem 'rubocop-performance', '~> 1.24', require: false
   gem 'rubocop-rails', '~> 2.30', require: false
   gem 'web-console', '~> 4.2'
