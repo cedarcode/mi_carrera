@@ -6131,6 +6131,85 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1031P
+      subject_needed_name: CREDITOS NO ACUM GAL2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1031'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1058'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+      needs: exam
+    - type: subject
+      subject_needed_code: 158Q
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1062'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1022'
+      subject_needed_name: CALCULO 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1072'
+      subject_needed_name: CALCULO 2
+      needs: exam
+    - type: subject
+      subject_needed_code: 1022P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 2
+      needs: exam
+    - type: subject
+      subject_needed_code: 1062P
+      subject_needed_name: CREDITOS NO ACUM CDIVV
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1025P
+      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
+      needs: exam
+    - type: subject
+      subject_needed_code: 1025T
+      subject_needed_name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1025'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1075'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
+      subject_needed_code: 125L
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+  subject_code: '1158'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: '1158'
+    subject_needed_name: PROCESAMIENTO CUÁNTICO DE LA INFORMACIÓN
+  subject_code: '1158'
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
   - type: credits
     credits: 100
   subject_code: '1213'
@@ -13298,6 +13377,51 @@
   - type: logical
     logical_operator: not
     operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1716P
+        subject_needed_name: CREDITOS NO ACUM INT. A LA ING. DE SOFTWARE
+        needs: exam
+      - type: subject
+        subject_needed_code: '1716'
+        subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+        needs: exam
+  - type: subject
+    needs: course
+    subject_needed_code: '1327'
+    subject_needed_name: TALLER DE PROGRAMACION
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1324P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 4
+      needs: exam
+    - type: subject
+      subject_needed_code: '1324'
+      subject_needed_name: PROGRAMACION 4
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1911P
+      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1911'
+      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      needs: course
+  subject_code: '1783'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
     - type: subject
       needs: all
       subject_needed_code: '1935'
@@ -14622,6 +14746,32 @@
     logical_operator: or
     operands:
     - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1443'
+        subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+        needs: exam
+      - type: subject
+        subject_needed_code: '1466'
+        subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+        needs: exam
+      - type: subject
+        subject_needed_code: 1443P
+        subject_needed_name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
+        needs: exam
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1466'
+        subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+        needs: course
+      - type: subject
+        subject_needed_code: '1537'
+        subject_needed_name: SISTEMAS OPERATIVOS
+        needs: course
+    - type: logical
       logical_operator: and
       operands:
       - type: subject
@@ -14632,17 +14782,6 @@
         subject_needed_code: '1537'
         subject_needed_name: SISTEMAS OPERATIVOS
         needs: course
-    - type: logical
-      logical_operator: or
-      operands:
-      - type: subject
-        subject_needed_code: '1443'
-        subject_needed_name: ARQUITECTURA DE COMPUTADORAS
-        needs: exam
-      - type: subject
-        subject_needed_code: 1443P
-        subject_needed_name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
-        needs: exam
     - type: logical
       logical_operator: or
       operands:
@@ -17430,6 +17569,13 @@
   - type: logical
     logical_operator: not
     operands:
+    - type: subject
+      needs: course_enrollment
+      subject_needed_code: '01'
+      subject_needed_name: MAT. 01 (ANÁLISIS I)
+  - type: logical
+    logical_operator: not
+    operands:
     - type: logical
       logical_operator: or
       operands:
@@ -17454,8 +17600,8 @@
     operands:
     - type: subject
       needs: course_enrollment
-      subject_needed_code: '01'
-      subject_needed_name: MAT. 01 (ANÁLISIS I)
+      subject_needed_code: '1275'
+      subject_needed_name: TALLER (TBEO) Y MATEMATICA INICIAL
   - type: logical
     logical_operator: not
     operands:
