@@ -130,6 +130,7 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: user.password
     click_on "Ingresar"
+    assert_text "Iniciaste sesión correctamente"
 
     click_user_menu
     click_on "Editar Perfil"
