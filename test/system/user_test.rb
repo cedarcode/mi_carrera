@@ -82,7 +82,11 @@ class UserTest < ApplicationSystemTestCase
     click_user_menu
     click_on "Salir"
 
-    visit new_user_session_path
+    assert_text "Cerraste sesión correctamente"
+
+    click_user_menu
+    click_on "Ingresar"
+
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: "new_password"
 
