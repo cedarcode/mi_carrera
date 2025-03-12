@@ -63,8 +63,8 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: user.email
     assert_emails(1) do
       click_on "Restablecer contraseña"
+      assert_text "Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos."
     end
-    assert_text "Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos."
 
     visit edit_user_password_path(t: "invalid")
 
