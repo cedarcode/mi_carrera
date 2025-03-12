@@ -41,7 +41,7 @@ class UserTest < ApplicationSystemTestCase
     password_visibility_toggle_test("Confirma tu nueva contraseña")
     click_on "Registrarte"
 
-    assert_current_path root_path
+    assert_text "Bienvenido! Te has registrado correctamente."
 
     click_user_menu
     assert_text "alice@test.com"
