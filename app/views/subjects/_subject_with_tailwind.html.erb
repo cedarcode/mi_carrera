@@ -1,0 +1,12 @@
+<li class="flex gap-x-4 px-3 py-5 justify-between items-center">
+  <div class="min-w-0">
+    <p class="text-sm/6 text-gray-900"><%= display_name(subject) %></p>
+  </div>
+  <span class='flex two-checkboxes min-w-[100px] ms-[15px]'>
+    <%= render 'shared/checkbox_component', approvable: subject.course, subject_show: false %>
+
+    <% if subject.exam %>
+      <%= render 'shared/checkbox_component', approvable: subject.exam, subject_show: false %>
+    <% end %>
+  </span>
+</li>
