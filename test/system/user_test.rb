@@ -41,7 +41,7 @@ class UserTest < ApplicationSystemTestCase
     password_visibility_toggle_test("Confirma tu nueva contraseña")
     click_on "Registrarte"
 
-    assert_current_path root_path
+    assert_text "Bienvenido! Te has registrado correctamente."
 
     click_user_menu
     assert_text "alice@test.com"
@@ -63,8 +63,8 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: user.email
     assert_emails(1) do
       click_on "Restablecer contraseña"
+      assert_text "Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos."
     end
-    assert_text "Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos."
 
     visit edit_user_password_path(t: "invalid")
 
@@ -82,7 +82,11 @@ class UserTest < ApplicationSystemTestCase
     click_user_menu
     click_on "Salir"
 
-    visit new_user_session_path
+    assert_text "Cerraste sesión correctamente"
+
+    click_user_menu
+    click_on "Ingresar"
+
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: "new_password"
 
@@ -126,6 +130,7 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: user.password
     click_on "Ingresar"
+    assert_text "Iniciaste sesión correctamente"
 
     click_user_menu
     click_on "Editar Perfil"
