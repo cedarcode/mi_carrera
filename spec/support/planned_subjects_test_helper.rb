@@ -21,6 +21,21 @@ module PlannedSubjectsTestHelper
     end
   end
 
+  def assert_planned_subject(subject_name)
+    expect(page).to have_text subject_name
+    within_subject_row(subject_name) do
+      expect(page).to have_selector("span", text: "remove_circle_outline")
+    end
+  end
+
+  def assert_not_planned_subject(subject_name)
+    expect(page).to have_text subject_name
+    within_subject_row(subject_name) do
+      expect(page).to have_selector("span", text: "add_circle_outline")
+      expect(page).to have_selector("select", text: 'Sem. 1')
+    end
+  end
+
   def within_planned_subjects(&block)
     within(:xpath, "//div[h3[contains(text(), 'Materias planeadas')]]/following-sibling::*[1]", &block)
   end

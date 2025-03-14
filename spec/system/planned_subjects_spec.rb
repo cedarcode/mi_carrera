@@ -37,14 +37,14 @@ RSpec.describe "PlannedSubjects", type: :system do
     within_not_planned_approved_subjects do
       expect(page).to have_no_text "GAL 1"
       expect(page).to have_no_text "GAL 2"
-      expect(page).to have_text "T1"
+      assert_not_planned_subject "T1"
     end
 
     expect(page).to have_text "Créditos planeados: 0"
 
     within_not_planned_subjects do
-      expect(page).to have_text "GAL 1"
-      expect(page).to have_text "GAL 2"
+      assert_not_planned_subject "GAL 1"
+      assert_not_planned_subject "GAL 2"
       expect(page).to have_no_text "T1"
     end
 
@@ -58,13 +58,14 @@ RSpec.describe "PlannedSubjects", type: :system do
       expect(page).to have_text "Primer semestre"
       expect(page).to have_text "Créditos planeados: 11"
       assert_approved_subject "T1"
+      assert_planned_subject "T1"
     end
 
     expect(page).to have_no_text "Materias aprobadas sin semestre asignado"
 
     within_not_planned_subjects do
-      expect(page).to have_text "GAL 1"
-      expect(page).to have_text "GAL 2"
+      assert_not_planned_subject "GAL 1"
+      assert_not_planned_subject "GAL 2"
       expect(page).to have_no_text "T1"
     end
 
@@ -81,10 +82,13 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     within_planned_subjects do
       assert_available_subject "GAL 1"
+      assert_planned_subject "GAL 1"
       assert_approved_subject "T1"
+      assert_planned_subject "T1"
       expect(page).to have_text "Primer semestre"
       expect(page).to have_text "Créditos planeados: 20"
       assert_blocked_subject "GAL 2"
+      assert_planned_subject "GAL 2"
       expect(page).to have_text "Segundo semestre"
       expect(page).to have_text "Créditos planeados: 10"
     end
@@ -97,7 +101,9 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     within_planned_subjects do
       assert_available_subject "GAL 1"
+      assert_planned_subject "GAL 1"
       assert_approved_subject "T1"
+      assert_planned_subject "T1"
       expect(page).to have_text "Primer semestre"
       expect(page).to have_text "Créditos planeados: 20"
       expect(page).to have_no_text "GAL 2"
@@ -107,7 +113,7 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     within_not_planned_subjects do
       expect(page).to have_no_text "GAL 1"
-      expect(page).to have_text "GAL 2"
+      assert_not_planned_subject "GAL 2"
       expect(page).to have_no_text "T1"
     end
 
