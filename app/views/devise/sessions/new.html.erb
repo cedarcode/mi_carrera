@@ -1,38 +1,38 @@
 <div class="flex flex-col justify-center px-6 py-12 space-y-10">
-  <h2 class="text-center text-3xl/9 text-indigo-800 font-bold">Iniciar sesión</h2>
+  <h2 class="text-center text-3xl/9 text-neutral-800 font-bold">Iniciar sesión</h2>
 
   <div class="sm:mx-auto sm:w-full sm:max-w-sm space-y-6">
     <%= form_with(model: resource, url: session_path(resource_name), class: "space-y-6", local: true) do |f| %>
       <div>
-        <%= f.label :email, "Correo electrónico", class: "text-sm/6 font-medium text-indigo-700" %>
+        <%= f.label :email, "Correo electrónico", class: "text-sm/6 font-medium text-neutral-800" %>
         <div class="relative w-full">
-          <%= f.email_field :email, class: "w-full pr-16 rounded-md bg-white px-3 py-1.5 outline-1 focus:outline-2 outline-indigo-600 focus:outline-indigo-700", required: true, autofocus: true %>
+          <%= f.email_field :email, class: "w-full pr-16 rounded-md bg-white px-3 py-1.5 outline-1 focus:outline-2 outline-neutral-600 focus:outline-indigo-700", required: true, autofocus: true %>
         </div>
       </div>
 
       <div data-controller="show-password">
         <div class="flex items-center justify-between">
-          <%= f.label :password, "Contraseña", class: "text-sm/6 font-medium text-indigo-700" %>
+          <%= f.label :password, "Contraseña", class: "text-sm/6 font-medium text-neutral-700" %>
 
-          <%= link_to '¿Has olvidado tu contraseña?', new_password_path(resource), class: "font-semibold text-indigo-700 hover:text-indigo-600 text-sm/6" %>
+          <%= link_to '¿Has olvidado tu contraseña?', new_password_path(resource), class: "font-semibold text-neutral-700 hover:text-indigo-700 text-sm/6" %>
         </div>
 
         <div class="relative w-full">
-          <%= f.password_field :password, class: "w-full pr-16 rounded-md bg-white px-3 py-1.5 outline-1 focus:outline-2 outline-indigo-600 focus:outline-indigo-700", required: true, autofocus: true, autocomplete: false, data: { show_password_target: "password" } %>
+          <%= f.password_field :password, class: "w-full pr-16 rounded-md bg-white px-3 py-1.5 outline-1 focus:outline-2 outline-neutral-600 focus:outline-indigo-700", required: true, autofocus: true, autocomplete: false, data: { show_password_target: "password" } %>
 
-          <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-indigo-700 hover:text-indigo-600" data-action="show-password#toggle">
+          <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-neutral-700 hover:text-indigo-700" data-action="show-password#toggle">
             <span class="material-icons" data-show-password-target="icon">visibility</span>
           </button>
         </div>
       </div>
 
-      <%= f.button "Ingresar", class: "w-full rounded-md bg-indigo-700 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-600 cursor-pointer" %>
+      <%= f.button "Ingresar", class: "w-full rounded-md bg-indigo-700 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-700 cursor-pointer" %>
     <% end %>
 
-    <p class="text-center text-sm/6 text-indigo-500">
+    <p class="text-center text-sm/6 text-neutral-500">
       ¿No estás registrado?
 
-      <%= link_to 'Registrarte',new_registration_path(resource), class: "font-semibold text-indigo-700 hover:text-indigo-600" %>
+      <%= link_to 'Registrarte',new_registration_path(resource), class: "font-semibold text-neutral-700 hover:text-indigo-700" %>
     </p>
   </div>
 

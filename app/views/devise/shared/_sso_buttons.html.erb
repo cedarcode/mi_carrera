@@ -1,6 +1,6 @@
 <%- resource_class.omniauth_providers.each do |provider| %>
   <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, local: true, class: 'flex justify-center' do |f| %>
-    <%= f.button class: 'text-indigo-600 bg-white-700 hover:bg-white-600 font-medium rounded-lg text-sm px-5 py-2 inline-flex items-center cursor-pointer outline-1 outline-indigo-600 gap-2' do %>
+    <%= f.button class: 'text-neutral-600 bg-white-700 font-medium rounded-lg text-sm px-5 py-2 inline-flex items-center cursor-pointer outline-1 outline-neutral-600 hover:outline-indigo-700 hover:text-indigo-700 gap-2' do %>
       <%= image_tag asset_path('google-icon.png'), class: 'w-6 h-6' %>
       Continuar con Google
     <% end %>
