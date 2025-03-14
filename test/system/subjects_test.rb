@@ -86,10 +86,16 @@ class SubjectsTest < ApplicationSystemTestCase
     fill_in "Contraseña", with: "secret"
     click_button "Ingresar"
 
+    assert_text "Iniciaste sesión correctamente"
     visit subject_path(subject)
+
+    assert_text "Sin calificar"
 
     # Create a 5-star review
     all('button', text: 'star')[0].click
+
+    assert_text "Puntuación: 5.0"
+
     Review.last.tap do |review|
       assert_equal(subject, review.subject)
       assert_equal(user, review.user)
@@ -98,6 +104,9 @@ class SubjectsTest < ApplicationSystemTestCase
 
     # Update review to 4 stars
     all('button', text: 'star')[1].click
+
+    assert_text "Puntuación: 4.0"
+
     Review.last.tap do |review|
       assert_equal(subject, review.subject)
       assert_equal(user, review.user)
@@ -106,6 +115,9 @@ class SubjectsTest < ApplicationSystemTestCase
 
     # Destroy review by clicking on the same star
     all('button', text: 'star')[1].click
+
+    assert_text "Sin calificar"
+
     assert_equal(0, Review.count)
   end
 end
