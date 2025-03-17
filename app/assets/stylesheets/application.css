@@ -124,6 +124,20 @@ body {
   margin: auto;
 }
 
+.not-planned-subjects-select {
+  max-width: 200px;
+}
+
+.new-planned-subjects {
+  align-items: center;
+  padding: 24px 16px;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+
 .button-container button {
   margin: 3px;
 }
