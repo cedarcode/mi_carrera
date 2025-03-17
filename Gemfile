@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby file: ".ruby-version"
 
-gem 'rails', '~> 8.0.0'
+gem 'rails', '~> 8.0.2'
 
 gem 'bootsnap', '~> 1.18', require: false
 gem 'devise', '~> 4.9'
