@@ -37,7 +37,7 @@ module SubjectsHelper
     "#{subject.code} - #{subject.short_name || subject.name}"
   end
 
-  def display_planned_subject_name(subject)
+  def display_planned_subject_name_and_code(subject)
     "#{subject.short_name || subject.name} - #{subject.code}"
   end
 
