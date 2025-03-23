@@ -1,29 +1,24 @@
-<div class="mdc-deprecated-list">
-  <% subjects.each do |subject| %>
-    <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item" do %>
-      <span class="mdc-deprecated-list-item__ripple"></span>
-      <span class="mdc-deprecated-list-item__text">
-        <%= display_name(subject) %>
-      </span>
-      <%= form_with(
-        model: SubjectPlan.new,
-        url: subject_plans_path,
-        method: :post,
-        data: { controller: "autosave-check" },
-        class: 'd-flex',
-        local: false
-      ) do |form| %>
-        <%= 
-          form.select(
-            :semester, 
-            options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
-            {}, 
-            data: { action: "click->autosave-check#stopPropagation" }
-          )
-        %>
-        <%= form.hidden_field :subject_id, value: subject.id %>
-        <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">add_circle_outline</button>
+<%# Only render if there are subjects %>
+<% if subjects.any? %>
+  <div class="subject-group" id="not-planned-approved-subjects-section" data-controller="subject-plan">
+    <div class="planner-subject-group-header">
+      <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+        Materias aprobadas sin semestre asignado
+      </h3>
+    </div>
+
+    <div class="semester-list" data-subject-plan-target="semesterList" data-semester="unassigned">
+      <% subjects.each do |subject| %>
+        <div class="mdc-deprecated-list-item" data-subject-id="new-<%= subject.id %>">
+          <span class="mdc-deprecated-list-item__ripple"></span>
+          <span class="mdc-deprecated-list-item__text">
+            <%= link_to display_name(subject), subject_path(subject) %>
+          </span>
+          <div class="mdc-deprecated-list-item__meta">
+            <span class="material-icons status-icon">done</span>
+          </div>
+        </div>
       <% end %>
-    <% end %>
-  <% end %>
-</div>
+    </div>
+  </div>
+<% end %>

@@ -1,31 +1,42 @@
-<div class="mdc-deprecated-list">
-  <% @planned_subjects.group_by(&:semester).each do |semester, planned_subjects| %>
-    <div class="subject-group-header">
-      <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
-        <%= semester_display_name(semester) %>
-      </h3>
-      <%= render partial: "credits_counter", locals: { planned_subjects: planned_subjects } %>
-    </div>
-    <% planned_subjects.each do |subject| %>
-      <%= link_to subject_path(subject), class: "mdc-deprecated-list-item" do %>
-        <span class="mdc-deprecated-list-item__ripple"></span>
-        <span class="mdc-deprecated-list-item__text">
-          <%= display_name(subject) %>
-        </span>
-        <% if current_student.approved?(subject) %>
-          <span class="mdc-deprecated-list-item__meta material-icons">done</span>
-        <% elsif !current_student.available?(subject) %>
-          <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
-        <% end %>
-        <%= form_with(
-            url: subject_plan_path(subject_id: subject.id),
-            method: :delete,
-            data: { controller: "autosave-check" },
-            class: 'd-flex',
-          ) do |form| %>
-            <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">remove_circle_outline</span>
+<div class="mdc-deprecated-list" data-controller="subject-plan" id="planned-subjects">
+  <% planned_by_semester = @planned_subjects.group_by(&:semester) %>
+  <% (1..10).each do |semester| %>
+    <div class="subject-group">
+      <div class="planner-subject-group-header">
+        <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+          <%= semester_display_name(semester) %>
+        </h3>
+        <div id="semester-<%= semester %>-credits">
+          <%= render partial: "subject_plans/credits_counter", locals: { planned_subjects: planned_by_semester[semester] || [] } %>
+        </div>
+      </div>
+      <div class="semester-list" data-subject-plan-target="semesterList" data-semester="<%= semester %>">
+        <% if planned_by_semester[semester].present? %>
+          <% planned_by_semester[semester].each do |subject| %>
+            <% subject_plan = current_user.subject_plans.find_by(subject: subject) %>
+            <div class="mdc-deprecated-list-item" data-subject-id="<%= subject_plan.id %>">
+              <span class="mdc-deprecated-list-item__ripple"></span>
+              <span class="mdc-deprecated-list-item__text">
+                <%= link_to display_name(subject), subject_path(subject) %>
+              </span>
+              <% if current_student.approved?(subject) %>
+                <span class="mdc-deprecated-list-item__meta material-icons">done</span>
+              <% elsif !current_student.available?(subject) %>
+                <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
+              <% end %>
+              <%= button_to subject_plan_path(id: subject_plan.id),
+                    method: :delete,
+                    form: {
+                      data: { turbo: true },
+                      class: 'd-flex'
+                    },
+                    class: 'mdc-deprecated-list-item__meta material-icons remove-button' do %>
+                remove_circle_outline
+              <% end %>
+            </div>
           <% end %>
-      <% end %>
-    <% end %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>

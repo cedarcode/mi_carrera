@@ -1,32 +1,43 @@
-<div class="d-flex new-planned-subjects">
-  <span class="mdc-deprecated-list-item__text">
-    Planificar materia:
-  </span>
+<div class="subject-group">
+  <div class="planner-subject-group-header">
+    <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+      Materias disponibles para planificar
+    </h3>
+  </div>
+
   <%= form_with(
     model: SubjectPlan.new,
-    url: subject_plans_path,
-    method: :post,
-    data: { controller: "autosave-check" },
-    class: 'new-planned-subject-form d-flex',
-    local: false
-  ) do |form| %>
-    <%= 
-      form.select(
-        :subject_id, 
-        options_for_select(subjects.map{|s| [display_planned_subject_name_and_code(s), s.id]}),
-        {}, 
-        { class: 'not-planned-subjects-select', data: { action: "click->autosave-check#stopPropagation" } }
-      )
-    %>
-    <%= 
-      form.select(
-        :semester, 
-        options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
-        {}, 
-        data: { action: "click->autosave-check#stopPropagation" },
-        class: 'margin-left-15'
-      )
-    %>
-    <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">add_circle_outline</button>
+    class: 'new-planned-subject-form',
+    data: {
+      controller: "autosave-check",
+      turbo: true
+    }
+  ) do |f| %>
+    <div class="form-selects-container">
+      <%= f.select :subject_id,
+        subjects.map { |s| [display_name(s), s.id] },
+        { prompt: "Seleccionar materia" },
+        {
+          class: 'form-select',
+          data: {
+            autosave_check_target: "subjectSelect",
+            action: "change->autosave-check#toggleSemesterSelect"
+          }
+        }
+      %>
+
+      <%= f.select :semester,
+        (1..12).map { |n| [semester_display_name(n), n] },
+        { prompt: "Seleccionar semestre" },
+        {
+          class: 'form-select',
+          disabled: true,
+          data: {
+            autosave_check_target: "semesterSelect",
+            action: "change->autosave-check#submitIfSubjectSelected"
+          }
+        }
+      %>
+    </div>
   <% end %>
 </div>
