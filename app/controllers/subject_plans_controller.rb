@@ -89,7 +89,7 @@ class SubjectPlansController < ApplicationController
     @not_planned_approved_subjects, @not_planned_subjects =
       TreePreloader.new(Subject.ordered_by_name).preload
                    .reject { |subject| current_user.planned?(subject) }
-                   .partition { |subject| current_user.approved?(subject) }
+                   .partition { |subject| current_student.approved?(subject) }
   end
 
   def build_planner_streams(semester)
