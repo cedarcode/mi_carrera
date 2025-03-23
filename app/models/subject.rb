@@ -3,6 +3,7 @@ class Subject < ApplicationRecord
   has_one :exam, -> { where is_exam: true }, class_name: 'Approvable', dependent: :destroy, inverse_of: :subject
   belongs_to :group, class_name: 'SubjectGroup', optional: true
   has_many :reviews, dependent: :destroy
+  has_many :subject_plans, dependent: :destroy
 
   validates :name, presence: true
   validates :credits, presence: true
