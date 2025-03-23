@@ -6,7 +6,7 @@ pin "serviceworker-companion", to: "serviceworker-companion.js"
 pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
-pin "@rails/ujs", to: "https://ga.jspm.io/npm:@rails/ujs@7.0.4/lib/assets/compiled/rails-ujs.js"
+pin "@rails/ujs", to: "https://ga.jspm.io/npm:@rails/ujs@7.0.1/lib/assets/compiled/rails-ujs.js"
 pin "@material/drawer", to: "https://ga.jspm.io/npm:@material/drawer@14.0.0/dist/mdc.drawer.js"
 pin "@material/textfield", to: "https://ga.jspm.io/npm:@material/textfield@14.0.0/dist/mdc.textfield.js"
 pin "@material/snackbar", to: "https://ga.jspm.io/npm:@material/snackbar@14.0.0/dist/mdc.snackbar.js"
@@ -27,3 +27,5 @@ pin "@material/list/foundation", to: "https://ga.jspm.io/npm:@material/list@14.0
 pin "@material/menu-surface/component", to: "https://ga.jspm.io/npm:@material/menu-surface@14.0.0/component.js"
 pin "@material/menu-surface/constants", to: "https://ga.jspm.io/npm:@material/menu-surface@14.0.0/constants.js"
 pin "@material/menu-surface/foundation", to: "https://ga.jspm.io/npm:@material/menu-surface@14.0.0/foundation.js"
+pin "controllers", preload: true
+pin "sortablejs", to: "https://ga.jspm.io/npm:sortablejs@1.15.2/modular/sortable.esm.js"
