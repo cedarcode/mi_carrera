@@ -32,5 +32,9 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:create, :destroy]
 
-  resources :subject_plans, only: [:index, :create, :destroy], param: :subject_id
+  resources :subject_plans, only: [:index, :create, :destroy] do
+    member do
+      patch :update_semester
+    end
+  end
 end
