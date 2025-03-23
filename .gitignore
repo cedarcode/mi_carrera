@@ -36,3 +36,5 @@ tags
 
 # Ignore coverage reports
 /coverage
+
+/node_modules
