@@ -1,0 +1,31 @@
+<div class="mdc-deprecated-list">
+  <% @planned_subjects.group_by(&:semester).each do |semester, planned_subjects| %>
+    <div class="subject-group-header">
+      <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+        <%= semester_display_name(semester) %>
+      </h3>
+      <%= render partial: "credits_counter", locals: { planned_subjects: planned_subjects } %>
+    </div>
+    <% planned_subjects.each do |subject| %>
+      <%= link_to subject_path(subject), class: "mdc-deprecated-list-item" do %>
+        <span class="mdc-deprecated-list-item__ripple"></span>
+        <span class="mdc-deprecated-list-item__text">
+          <%= display_name(subject) %>
+        </span>
+        <% if current_student.approved?(subject) %>
+          <span class="mdc-deprecated-list-item__meta material-icons">done</span>
+        <% elsif !current_student.available?(subject) %>
+          <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
+        <% end %>
+        <%= form_with(
+            url: subject_plan_path(subject_id: subject.id),
+            method: :delete,
+            data: { controller: "autosave-check" },
+            class: 'd-flex',
+          ) do |form| %>
+            <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">remove_circle_outline</span>
+          <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

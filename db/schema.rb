@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_26_183903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -33,6 +33,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
     t.integer "amount_of_subjects_needed"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "subject_id", null: false
+    t.integer "rating", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id", "user_id"], name: "index_reviews_on_subject_id_and_user_id", unique: true
+  end
+
   create_table "subject_groups", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: nil, null: false
@@ -40,6 +49,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
     t.string "code"
     t.integer "credits_needed", default: 0, null: false
     t.index ["code"], name: "index_subject_groups_on_code", unique: true
+  end
+
+  create_table "subject_plans", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "subject_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "semester", null: false
+    t.index ["user_id", "subject_id"], name: "index_subject_plans_on_user_id_and_subject_id", unique: true
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -54,6 +72,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
     t.string "code"
     t.string "category", default: "optional"
     t.boolean "current_optional_subject", default: false
+    t.string "second_semester_eva_id"
     t.index ["code"], name: "index_subjects_on_code", unique: true
   end
 
@@ -69,7 +88,16 @@ ActiveRecord::Schema[8.0].define(version: 2024_02_22_002214) do
     t.datetime "updated_at", null: false
     t.text "approvals"
     t.boolean "welcome_banner_viewed", default: false
+    t.integer "failed_attempts", default: 0, null: false
+    t.datetime "locked_at"
+    t.string "unlock_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
+
+  add_foreign_key "reviews", "subjects"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "subject_plans", "subjects"
+  add_foreign_key "subject_plans", "users"
 end

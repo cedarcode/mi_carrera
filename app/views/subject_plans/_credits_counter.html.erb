@@ -1,0 +1,4 @@
+<div class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+  <% planned_approvable_ids = planned_subjects.map { |subject| [subject.course.id, subject.exam&.id] }.flatten.compact %>
+  <strong> Créditos planeados:</strong> <%= Subject.approved_credits(planned_approvable_ids) %>
+</div>

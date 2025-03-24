@@ -7,6 +7,8 @@ es:
       timeout: "Tu sesión ha expirado. Inicia sesión nuevamente."
       unauthenticated: "Tienes que registrarte o iniciar sesión antes de continuar."
       unconfirmed: "Tienes que confirmar tu cuenta antes de continuar."
+      locked: "Tu cuenta fue bloqueada por demasiados intentos de acceso fallidos. Sigue las instrucciones en el email que te enviamos, o espera 1 hora."
+      last_attempt: "Tienes un intento más antes de que tu cuenta sea bloqueada."
     mailer:
       reset_password_instructions:
         subject: "Instrucciones de cambio de contraseña"
@@ -14,6 +16,8 @@ es:
         subject: "Email modificado"
       password_change:
         subject: "Contraseña modificada"
+      unlock_instructions:
+        subject: "Instrucciones para desbloquear"
     omniauth_callbacks:
       failure: 'No pudimos autentificar tu cuenta de %{kind} por la siguiente razón: "%{reason}".'
       success: "Te autentificaste correctamente con tu cuenta de %{kind}."
@@ -36,6 +40,8 @@ es:
       signed_in: "Iniciaste sesión correctamente."
       signed_out: "Cerraste sesión correctamente."
       already_signed_out: "Se cerró sesión correctamente."
+    unlocks:
+      unlocked: "Tu cuenta ha sido desbloqueada. Ya puedes iniciar sesión."
   errors:
     messages:
       already_confirmed: "ya fue confirmada. Intenta ingresar."

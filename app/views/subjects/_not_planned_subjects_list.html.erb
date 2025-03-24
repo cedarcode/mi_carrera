@@ -1,0 +1,29 @@
+<div class="mdc-deprecated-list">
+  <% subjects.each do |subject| %>
+    <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item" do %>
+      <span class="mdc-deprecated-list-item__ripple"></span>
+      <span class="mdc-deprecated-list-item__text">
+        <%= display_name(subject) %>
+      </span>
+      <%= form_with(
+        model: SubjectPlan.new,
+        url: subject_plans_path,
+        method: :post,
+        data: { controller: "autosave-check" },
+        class: 'd-flex',
+        local: false
+      ) do |form| %>
+        <%= 
+          form.select(
+            :semester, 
+            options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
+            {}, 
+            data: { action: "click->autosave-check#stopPropagation" }
+          )
+        %>
+        <%= form.hidden_field :subject_id, value: subject.id %>
+        <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">add_circle_outline</button>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

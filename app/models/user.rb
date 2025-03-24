@@ -1,9 +1,13 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
+         :recoverable, :rememberable, :validatable, :lockable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   serialize :approvals, type: Array, coder: YAML
+
+  has_many :reviews, dependent: :destroy
+  has_many :subject_plans, dependent: :destroy
+  has_many :planned_subjects, through: :subject_plans, source: :subject
 
   def self.from_omniauth(auth, cookie)
     # check that user with same email exists
@@ -28,5 +32,9 @@ class User < ApplicationRecord
 
   def oauth_user?
     provider.present?
+  end
+
+  def planned?(subject)
+    subject_plans.any? { |subject_plan| subject_plan.subject_id == subject.id }
   end
 end

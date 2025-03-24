@@ -18,6 +18,21 @@ module SubjectsHelper
     end
   end
 
+  def semester_display_name(semester)
+    case semester
+    when 1 then 'Primer semestre'
+    when 2 then 'Segundo semestre'
+    when 3 then 'Tercer semestre'
+    when 4 then 'Cuarto semestre'
+    when 5 then 'Quinto semestre'
+    when 6 then 'Sexto semestre'
+    when 7 then 'Séptimo semestre'
+    when 8 then 'Octavo semestre'
+    when 9 then 'Noveno semestre'
+    when 10 then 'Décimo semestre'
+    end
+  end
+
   def display_name(subject)
     "#{subject.code} - #{subject.short_name || subject.name}"
   end
@@ -28,7 +43,8 @@ module SubjectsHelper
   end
 
   def display_enrollment_prerequisite(enrollment_prerequisite)
-    "inscripto a #{display_name(enrollment_prerequisite.approvable_needed.subject)}"
+    approvable = enrollment_prerequisite.approvable_needed
+    "inscripto a #{approvable.is_exam ? "examen" : "curso"} de #{display_name(approvable.subject)}"
   end
 
   def display_activity_prerequisite(activity_prerequisite)

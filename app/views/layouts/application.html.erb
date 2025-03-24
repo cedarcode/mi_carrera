@@ -10,7 +10,8 @@
     <link rel="icon" type="image/png" href="/icon-128.png" sizes="128x128">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag :reset, "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0' %>
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700' %>
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/icon?family=Material+Icons' %>
@@ -33,6 +34,11 @@
     <meta property="og:image" content="https://micarrera.uy/icon-512.png">
     <meta property="og:image:width" content="512">
 
+    <%= turbo_refresh_scroll_tag :preserve %>
+
+    <%# For supporting legacy browsers that do not support import maps %>
+    <%# See: https://github.com/rails/importmap-rails/tree/v2.0.3?tab=readme-ov-file#supporting-legacy-browsers-such-as-safari-on-ios-15 %>
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.2/dist/es-module-shims.js" data-turbo-track="reload"></script>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -71,7 +77,7 @@
           <%= form_with(url: all_subjects_path, method: :get, local: true) do |f| %>
             <div class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mdc-text-field--no-label mdc-text-field--with-trailing-icon">
               <span class="mdc-text-field__ripple"></span>
-              <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Buscar", autofocus: true, data: { 'search-target': "searchInput" } %>
+              <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { 'search-target': "searchInput" } %>
               <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" data-action="click->search#toggle" tabindex="0" role="button">close</i>
               <span class="mdc-line-ripple"></span>
             </div>

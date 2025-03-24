@@ -1,7 +1,10 @@
 require "application_system_test_case"
 
+SimpleCov.command_name "Minitest:system"
+
 class UserTest < ApplicationSystemTestCase
   include ActionMailer::TestHelper
+  include PasswordHelpers
 
   test "can sign up" do
     user = create :user
@@ -34,9 +37,11 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: 'alice@test.com'
     fill_in "Nueva contraseña", with: 'alice123'
     fill_in "Confirma tu nueva contraseña", with: 'alice123'
+    password_visibility_toggle_test("Nueva contraseña")
+    password_visibility_toggle_test("Confirma tu nueva contraseña")
     click_on "Registrarte"
 
-    assert_current_path root_path
+    assert_text "Bienvenido! Te has registrado correctamente."
 
     click_user_menu
     assert_text "alice@test.com"
@@ -58,8 +63,8 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: user.email
     assert_emails(1) do
       click_on "Restablecer contraseña"
+      assert_text "Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos."
     end
-    assert_text "Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos."
 
     visit edit_user_password_path(t: "invalid")
 
@@ -70,13 +75,18 @@ class UserTest < ApplicationSystemTestCase
     visit edit_user_password_path(reset_password_token: user.send_reset_password_instructions)
 
     fill_in "Nueva contraseña", with: "new_password"
+    password_visibility_toggle_test("Nueva contraseña")
     click_on "Restablecer contraseña"
     assert_text 'Tu contraseña fue modificada correctamente. Has iniciado sesión.'
 
     click_user_menu
     click_on "Salir"
 
-    visit new_user_session_path
+    assert_text "Cerraste sesión correctamente"
+
+    click_user_menu
+    click_on "Ingresar"
+
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: "new_password"
 
@@ -103,6 +113,7 @@ class UserTest < ApplicationSystemTestCase
 
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: user.password
+    password_visibility_toggle_test("Contraseña")
     click_on "Ingresar"
 
     assert_current_path(root_path)
@@ -119,6 +130,7 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: user.password
     click_on "Ingresar"
+    assert_text "Iniciaste sesión correctamente"
 
     click_user_menu
     click_on "Editar Perfil"
@@ -155,6 +167,9 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Nueva contraseña", with: "new_password"
     fill_in "Confirma tu nueva contraseña", with: "new_password"
     fill_in "Contraseña actual", with: user.password
+    password_visibility_toggle_test("Nueva contraseña")
+    password_visibility_toggle_test("Confirma tu nueva contraseña")
+    password_visibility_toggle_test("Contraseña actual")
     fill_in "Correo electrónico", with: "new_#{user.email}"
     click_on "Guardar"
     assert_text "Actualizaste tu cuenta correctamente."

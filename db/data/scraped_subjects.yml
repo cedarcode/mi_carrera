@@ -155,6 +155,12 @@
   credits: 0
   has_exam: false
   subject_group:
+102EU:
+  code: 102EU
+  name: QCA. GENERAL I (PLAN 2000)
+  credits: 7
+  has_exam: false
+  subject_group: '4442'
 '1030':
   code: '1030'
   name: GEOMETRIA Y ALGEBRA LINEAL 1
@@ -209,6 +215,12 @@
   credits: 7
   has_exam: false
   subject_group: '4083'
+103EU:
+  code: 103EU
+  name: INT. A LAS C. BIOLÓGICAS I
+  credits: 5
+  has_exam: false
+  subject_group: '4442'
 '1040':
   code: '1040'
   name: ALGEBRA LINEAL NUMERICA
@@ -485,6 +497,12 @@
   credits: 0
   has_exam: true
   subject_group:
+'1158':
+  code: '1158'
+  name: PROCESAMIENTO CUÁNTICO DE LA INFORMACIÓN
+  credits: 10
+  has_exam: true
+  subject_group: '4083'
 '1170':
   code: '1170'
   name: FISICA GENERAL 1
@@ -599,6 +617,12 @@
   credits: 8
   has_exam: false
   subject_group: '5265'
+'1275':
+  code: '1275'
+  name: TALLER (TBEO) Y MATEMATICA INICIAL
+  credits: 3
+  has_exam: false
+  subject_group: '3582'
 '1304':
   code: '1304'
   name: TECNOLOGIAS INTERACTIVAS Y VIDEOJUEGOS
@@ -1757,6 +1781,12 @@
   credits: 5
   has_exam: false
   subject_group: '5082'
+'1783':
+  code: '1783'
+  name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+  credits: 10
+  has_exam: false
+  subject_group: '5082'
 '1802':
   code: '1802'
   name: CALIDAD DE DATOS E INFORMACION
@@ -1915,7 +1945,7 @@
   subject_group: '4647'
 '1891':
   code: '1891'
-  name: TALLER DE SEGURIDAD INFÓRMATICA
+  name: TALLER DE SEGURIDAD INFORMÁTICA
   credits: 10
   has_exam: false
   subject_group: '4428'
@@ -2377,7 +2407,7 @@
   subject_group: '4066'
 736EU:
   code: 736EU
-  name: BIONFORMÁTICA
+  name: BIOINFORMÁTICA
   credits: 7
   has_exam: true
   subject_group: '3582'
@@ -2426,7 +2456,7 @@ A65:
 A66:
   code: A66
   name: GESTIÓN DE PROYECTOS
-  credits: 10
+  credits: 5
   has_exam: true
   subject_group: '5082'
 A83:
@@ -2721,20 +2751,20 @@ CAL2:
   code: CAL2
   name: CÁLCULO 2
   credits: 10
-  has_exam: false
+  has_exam: true
   subject_group: '4083'
 CCT10:
   code: CCT10
   name: FÍSICA I
   credits: 14
   has_exam: false
-  subject_group: '4083'
+  subject_group: '4442'
 CCT20:
   code: CCT20
   name: FÍSICA II
   credits: 14
   has_exam: false
-  subject_group: '4083'
+  subject_group: '4442'
 CE10:
   code: CE10
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2883,7 +2913,7 @@ CM:
   code: CM
   name: COMPLEMENTO DE MATEMÁTICA
   credits: 6
-  has_exam: false
+  has_exam: true
   subject_group: '4083'
 CM14:
   code: CM14
@@ -3395,6 +3425,12 @@ DMA06:
   credits: 13
   has_exam: false
   subject_group: '4083'
+EPCN:
+  code: EPCN
+  name: ELEMENTOS DE PROGRAM Y CÁLCULO NUMÉRICO
+  credits: 6
+  has_exam: false
+  subject_group: '5020'
 ESII:
   code: ESII
   name: ESTADÍSTICA II
@@ -3641,6 +3677,12 @@ IAR6:
   credits: 6
   has_exam: false
   subject_group: '4882'
+IE:
+  code: IE
+  name: INTRODUCCIÓN A LA ECONOMÍA
+  credits: 10
+  has_exam: false
+  subject_group: '5265'
 IN35:
   code: IN35
   name: PROGRAMACION 1
@@ -3679,7 +3721,7 @@ M000:
   subject_group: '4442'
 M001:
   code: M001
-  name: MM. CC. III - (MTDEO) - DISEÑO Y ANALISIS DE EXPERIMENTOS
+  name: DISEÑO Y ANALISIS DE EXPERIMENTOS (MTDEO)
   credits: 4
   has_exam: true
   subject_group: '4442'
@@ -3891,7 +3933,7 @@ MC10:
   code: MC10
   name: CÁLCULO I
   credits: 10
-  has_exam: false
+  has_exam: true
   subject_group: '4083'
 MC13:
   code: MC13
@@ -3986,6 +4028,7 @@ O2525:
 O6211:
   code: O6211
   name: TECNOLOGÍA DE MEDIOS AL SERVICIO DE LA PRESERVACIÓN DEL PATRIMONIO HISTÓRICO
+    DOC
   credits: 8
   has_exam: false
   subject_group: '5265'
@@ -4108,13 +4151,13 @@ RN252:
   name: FISICA 1 BIOCIENCIAS 2017
   credits: 12
   has_exam: false
-  subject_group: '4083'
+  subject_group: '4442'
 RN253:
   code: RN253
   name: FISICA 2 BIOCIENCIAS 2017
   credits: 12
   has_exam: false
-  subject_group: '4083'
+  subject_group: '4442'
 RN404:
   code: RN404
   name: MATEMATICA I
@@ -4223,9 +4266,21 @@ SRN50:
   credits: 4
   has_exam: true
   subject_group: '4442'
+TIIO:
+  code: TIIO
+  name: TALLER INTR A LA INVEST DE OPERACIONES
+  credits: 8
+  has_exam: false
+  subject_group: '4815'
 TP25:
   code: TP25
   name: CREDITOS ASIGNADOS POR REVALIDA
   credits: 25
   has_exam: true
   subject_group: '4756'
+V2110:
+  code: V2110
+  name: TALLER DE ÉTICA
+  credits: 2
+  has_exam: false
+  subject_group: '5265'
