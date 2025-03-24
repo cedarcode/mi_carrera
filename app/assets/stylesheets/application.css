@@ -207,3 +207,11 @@ body {
 .show-password-button {
   margin-right: -20px;
 }
+
+input {
+  &:-webkit-autofill {
+    transition: background-color 0s 0s, color 0s 0s;
+    transition-delay: calc(infinity * 1s);
+  }
+}
+
