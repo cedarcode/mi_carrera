@@ -67,9 +67,7 @@ module Scraper
 
       find('span', text: 'Planes de estudio - FING')
 
-      if has_css?('.ui-widget-overlay')
-        assert_no_selector('.ui-widget-overlay')
-      end
+      wait_for_loading_widget_to_disappear
 
       find('.ui-column-filter').set('INGENIERIA EN COMPUTACION')
 
@@ -143,6 +141,8 @@ module Scraper
 
           approvable_row.click_on "Ver más"
 
+          wait_for_loading_widget_to_disappear
+
           prereq = Scraper::PrerequisitesTreePage.prerequisite_tree(find("[data-rowkey='root']"))
 
           click_on 'Volver'
@@ -209,6 +209,12 @@ module Scraper
         next if codigo == "nueva" # there's one row with "nueva" as the code
 
         subjects << codigo
+      end
+    end
+
+    def wait_for_loading_widget_to_disappear
+      if has_css?('.ui-widget-overlay')
+        assert_no_selector('.ui-widget-overlay')
       end
     end
   end
