@@ -29,14 +29,15 @@ module Scraper
       end
     end
 
-    attr_reader :career
+    attr_reader :career, :logger
 
     def initialize(career)
       @career = career
+      @logger = Rails.logger.tagged("Scraper - #{career["name"]}")
     end
 
     def scrape
-      Rails.logger.info "Scraping career: #{career["name"]}"
+      logger.info "Starting to scrape degree"
       groups = {}
       subjects = {}
 
@@ -162,7 +163,7 @@ module Scraper
         all('[data-ri]').map { |node| node['data-ri'] }.map do |row_id|
           approvable_row = find("[data-ri='#{row_id}']")
           name, type = approvable_row.all('td')[0..1]
-          Rails.logger.info "#{name.text} (#{type.text})"
+          logger.info "#{name.text} (#{type.text})"
 
           subject_code = /\A(\w+) - .*\z/.match(name.text).captures[0]
           is_exam = type.text == "Examen"
