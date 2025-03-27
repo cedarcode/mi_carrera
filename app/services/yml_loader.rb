@@ -1,7 +1,21 @@
-module YmlLoader
-  extend self
+class YmlLoader
+  def self.load
+    degrees = YAML.load_file(Rails.root.join("db/data/degrees.yml"))
+    degrees.each do |degree|
+      degree_name_formatted = degree["name"].underscore.tr(" ", "_")
+      new(degree_name_formatted).load if degree["enabled"]
+    end
+  end
+
+  attr_reader :degree_dir
+
+  def initialize(degree_name)
+    @degree_dir = Rails.root.join("db/data/#{degree_name}/")
+  end
 
   def load
+    # TODO: it's still necessary to decide how the different degrees' data will be loaded in the DB
+    # for example by using multi tenancy
     load_subject_groups
     load_subjects
     load_prerequisites
@@ -11,7 +25,7 @@ module YmlLoader
   private
 
   def load_subject_groups
-    subject_groups = YAML.load_file(Rails.root.join("db/data/scraped_subject_groups.yml"))
+    subject_groups = YAML.load_file(degree_dir.join("scraped_subject_groups.yml"))
     subject_groups.each do |code, yml_group|
       subject_group = SubjectGroup.find_or_initialize_by(code:)
       subject_group.name = format_name(yml_group["name"])
@@ -21,8 +35,8 @@ module YmlLoader
   end
 
   def load_subjects
-    subjects = YAML.load_file(Rails.root.join("db/data/scraped_subjects.yml"))
-    subjects_overrides = YAML.load_file(Rails.root.join("db/data/subject_overrides.yml"))
+    subjects = YAML.load_file(degree_dir.join("scraped_subjects.yml"))
+    subjects_overrides = YAML.load_file(degree_dir.join("subject_overrides.yml"))
 
     subjects.each do |code, subject|
       new_subject = Subject.find_or_initialize_by(code:)
@@ -47,7 +61,7 @@ module YmlLoader
 
   # rubocop:disable Rails/SkipsModelValidations
   def load_current_optional_subjects
-    optional_subject_codes = YAML.load_file(Rails.root.join("db/data/scraped_optional_subjects.yml"))
+    optional_subject_codes = YAML.load_file(degree_dir.join("scraped_optional_subjects.yml"))
     Subject.transaction do
       Subject.where(code: optional_subject_codes).update_all(current_optional_subject: true)
       Subject.where.not(code: optional_subject_codes).update_all(current_optional_subject: false)
@@ -56,7 +70,7 @@ module YmlLoader
   # rubocop:enable Rails/SkipsModelValidations
 
   def load_prerequisites
-    prerequisites = YAML.load_file(Rails.root.join("db/data/scraped_prerequisites.yml"))
+    prerequisites = YAML.load_file(degree_dir.join("scraped_prerequisites.yml"))
 
     Prerequisite.destroy_all
 
@@ -102,6 +116,7 @@ module YmlLoader
       when 'course_enrollment' then EnrollmentPrerequisite.new(approvable_needed: subject.course)
       when 'exam_enrollment' then EnrollmentPrerequisite.new(approvable_needed: subject.exam)
       when 'exam_activity' then ActivityPrerequisite.new(approvable_needed: subject.exam)
+      when 'course_activity' then ActivityPrerequisite.new(approvable_needed: subject.course)
       else raise "Unknown approvable needed: #{prerequisite["needs"]}"
       end
 
