@@ -24,16 +24,16 @@ module Scraper
       end
 
       degrees = YAML.load_file(Rails.root.join("db/data/degrees.yml"))
-      degrees.each do |career|
-        new(career).scrape if career["enabled"]
+      degrees.each do |degree|
+        new(degree).scrape if degree["enabled"]
       end
     end
 
-    attr_reader :career, :logger
+    attr_reader :degree, :logger
 
-    def initialize(career)
-      @career = career
-      @logger = Rails.logger.tagged("Scraper - #{career["name"]}")
+    def initialize(degree)
+      @degree = degree
+      @logger = Rails.logger.tagged("Scraper - #{degree["name"]}")
     end
 
     def scrape
@@ -58,7 +58,7 @@ module Scraper
       write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
       write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h)
       write_yml("scraped_prerequisites", scraped_prerequisites)
-      if career["name"] == "INGENIERIA EN COMPUTACION"
+      if degree["name"] == "INGENIERIA EN COMPUTACION"
         write_yml("scraped_optional_subjects", optional_inco_subjects.sort)
       end
     rescue
@@ -69,8 +69,8 @@ module Scraper
     private
 
     def write_yml(name, data)
-      career_dir = career["name"].underscore.tr(" ", "_")
-      dir_path = Rails.root.join("db/data/#{career_dir}")
+      degree_dir = degree["name"].underscore.tr(" ", "_")
+      dir_path = Rails.root.join("db/data/#{degree_dir}")
 
       Dir.mkdir(dir_path) unless Dir.exist?(dir_path)
 
@@ -91,9 +91,9 @@ module Scraper
 
       wait_for_loading_widget_to_disappear
 
-      find('.ui-column-filter').set('INGENIERIA EN COMPUTACION')
+      find('.ui-column-filter').set(degree["name"])
 
-      all('tr', text: career["name"], match: :prefer_exact).each do |row|
+      all('tr', text: degree["name"], match: :prefer_exact).each do |row|
         if row.has_selector?('td', text: 'Grado', match: :prefer_exact)
           row.find('.ui-row-toggler').click
           break
@@ -101,7 +101,7 @@ module Scraper
       end
 
       within('.ui-expanded-row-content', text: 'Planes') do
-        find('tr', text: career["current_plan"]).click_on "Ver más datos"
+        find('tr', text: degree["current_plan"]).click_on "Ver más datos"
       end
     end
 
