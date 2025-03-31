@@ -24,13 +24,13 @@ end
 
 group :development, :test do
   gem "brakeman", "~> 7.0"
-  gem 'byebug', '~> 11.0', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', '~> 12.0', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 7.1'
 end
 
 group :development do
   gem "letter_opener", "~> 1.10"
-  gem 'rubocop', '~> 1.74'
+  gem 'rubocop', '~> 1.75'
   gem 'rubocop-performance', '~> 1.24', require: false
   gem 'rubocop-rails', '~> 2.30', require: false
   gem 'web-console', '~> 4.2'
