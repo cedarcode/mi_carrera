@@ -1,14 +1,13 @@
 class YmlLoader
   def self.load
-    degrees = YAML.load_file(Rails.root.join("db/data/degrees.yml"))
+    degrees = Rails.configuration.degrees
     degrees.each do |degree|
-      degree_name_formatted = degree["name"].underscore.tr(" ", "_")
-      new(degree_name_formatted).load if degree["enabled"]
+      new(degree[:key]).load
     end
   end
 
-  def initialize(degree_name)
-    @degree_dir = Rails.root.join("db/data/#{degree_name}/")
+  def initialize(degree_key)
+    @degree_dir = Rails.root.join("db/data/#{degree_key}/")
   end
 
   def load
