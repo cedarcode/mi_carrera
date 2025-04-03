@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   def index
-    @subjects = TreePreloader.new(Subject.ordered_by_category_and_name).preload.select do |subject|
+    @subjects = TreePreloader.new.preload_subjects(Subject.ordered_by_category_and_name).select do |subject|
       current_student.approved?(subject.course) ||
         (!subject.hidden_by_default? && current_student.available?(subject.course))
     end
@@ -25,7 +25,7 @@ class SubjectsController < ApplicationController
         Subject
       end.ordered_by_category_and_name
 
-    @subjects = TreePreloader.new(subjects).preload
+    @subjects = TreePreloader.new.preload_subjects(subjects)
   end
 
   private
