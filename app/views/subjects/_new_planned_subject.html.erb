@@ -13,15 +13,15 @@
     <%= 
       form.select(
         :subject_id, 
-        options_for_select(subjects.map{|s| [display_planned_subject_name_and_code(s), s.id]}),
+        subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
         {}, 
-        { class: 'not-planned-subjects-select', data: { action: "click->autosave-check#stopPropagation" } }
+        class: 'not-planned-subjects-select', data: { action: "click->autosave-check#stopPropagation" }
       )
     %>
     <%= 
       form.select(
         :semester, 
-        options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
+        (1..10).map { |i| ["Sem. #{i}", i] },
         {}, 
         data: { action: "click->autosave-check#stopPropagation" },
         class: 'margin-left-15'
