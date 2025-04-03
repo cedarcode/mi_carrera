@@ -1,0 +1,6 @@
+---
+shared:
+- name: "INGENIERIA EN COMPUTACION"
+  key: "computacion"
+  current_plan: "1997"
+  include_inco_subjects: true
