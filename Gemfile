@@ -31,14 +31,14 @@ end
 group :development do
   gem "letter_opener", "~> 1.10"
   gem 'rubocop', '~> 1.75'
-  gem 'rubocop-performance', '~> 1.24', require: false
-  gem 'rubocop-rails', '~> 2.30', require: false
+  gem 'rubocop-performance', '~> 1.25', require: false
+  gem 'rubocop-rails', '~> 2.31', require: false
   gem 'web-console', '~> 4.2'
 end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.30'
+  gem 'selenium-webdriver', '~> 4.31'
   gem 'shoulda-matchers', '~> 6.0'
   gem 'simplecov', require: false
 end
