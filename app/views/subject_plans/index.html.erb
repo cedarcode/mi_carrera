@@ -22,9 +22,5 @@
   
   <hr class="mdc-deprecated-list-divider">
 
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
-    Materias recomendadas
-  </h3>
-
-  <%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_subjects } %>
+  <%= render "subjects/new_planned_subject", subjects: @not_planned_subjects %>
 </div>
