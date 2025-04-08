@@ -56,3 +56,29 @@ jobs:
         name: scraper_screenshot
         path: ./tmp/capybara
         retention-days: 5
+    - name: Send Slack notification
+      if: failure()
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      run: |
+        RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+
+        curl -X POST -H 'Content-type: application/json' --data "{
+          \"blocks\": [
+            {
+              \"type\": \"section\",
+              \"text\": {
+                \"type\": \"mrkdwn\",
+                \"text\": \"El *Scraper* de *MiCarrera* falló :blob-sad:\"
+              },
+              \"accessory\": {
+                \"type\": \"button\",
+                \"text\": {
+                  \"type\": \"plain_text\",
+                  \"text\": \"Ver logs\"
+                },
+                \"url\": \"${RUN_URL}\"
+              }
+            }
+          ]
+        }" "$SLACK_WEBHOOK_URL"
