@@ -153,6 +153,9 @@ module Scraper
           prereq.merge(subject_code:, is_exam:)
         end
       end
+    rescue
+      Rails.logger.info save_screenshot
+      raise
     end
 
     def go_to_page(page)
