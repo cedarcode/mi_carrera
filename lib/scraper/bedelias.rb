@@ -29,8 +29,6 @@ module Scraper
       end
     end
 
-    attr_reader :degree, :logger
-
     def initialize(degree)
       @degree = degree
       @logger = Rails.logger.tagged("Scraper - #{degree[:name]}")
@@ -67,6 +65,8 @@ module Scraper
     end
 
     private
+
+    attr_reader :degree, :logger
 
     def write_yml(name, data)
       dir_path = Rails.root.join("db/data/#{degree[:key]}")
