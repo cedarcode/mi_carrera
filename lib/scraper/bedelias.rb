@@ -78,7 +78,7 @@ module Scraper
 
     def go_to_groups_and_subjects_page
       visit "https://bedelias.udelar.edu.uy"
-      click_on "PLANES DE ESTUDIO"
+      click_on "PLANES DE ESTUDIOasd"
       click_on "Planes de estudio / Previas"
 
       execute_script("$.fx.off = true;") # Disable jQuery effects
