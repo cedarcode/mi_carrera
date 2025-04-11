@@ -6,6 +6,7 @@ gem 'rails', '~> 8.0.2'
 
 gem 'bootsnap', '~> 1.18', require: false
 gem 'bootstrap', '~> 5.3'
+gem 'dartsass-rails', '~> 0.5'
 gem 'devise', '~> 4.9'
 gem 'factory_bot_rails', '~> 6.4'
 gem 'importmap-rails', '~> 2.1'
