@@ -58,8 +58,6 @@ jobs:
         retention-days: 5
     - name: Send Slack notification
       if: failure()
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       run: |
         RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
 
@@ -81,4 +79,4 @@ jobs:
               }
             }
           ]
-        }" "$SLACK_WEBHOOK_URL"
+        }" "${{ secrets.SLACK_WEBHOOK_URL }}"
