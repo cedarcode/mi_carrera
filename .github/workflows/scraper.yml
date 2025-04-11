@@ -61,22 +61,14 @@ jobs:
       env:
         RUN_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
       run: |
-        curl -X POST -H 'Content-type: application/json' --data "{
-          \"blocks\": [
+        curl -X POST -H 'Content-type: application/json' --data '{
+          "blocks": [
             {
-              \"type\": \"section\",
-              \"text\": {
-                \"type\": \"mrkdwn\",
-                \"text\": \"El *Scraper* de *MiCarrera* falló :blob-sad:\"
-              },
-              \"accessory\": {
-                \"type\": \"button\",
-                \"text\": {
-                  \"type\": \"plain_text\",
-                  \"text\": \"Ver logs\"
-                },
-                \"url\": \"${RUN_URL}\"
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "El Scraper de MiCarrera falló - <'"$RUN_URL"'|logs>"
               }
             }
           ]
-        }" "${{ secrets.SLACK_WEBHOOK_URL }}"
+        }' "${{ secrets.SLACK_WEBHOOK_URL }}"
