@@ -27,3 +27,5 @@ pin "@material/list/foundation", to: "https://ga.jspm.io/npm:@material/list@14.0
 pin "@material/menu-surface/component", to: "https://ga.jspm.io/npm:@material/menu-surface@14.0.0/component.js"
 pin "@material/menu-surface/constants", to: "https://ga.jspm.io/npm:@material/menu-surface@14.0.0/constants.js"
 pin "@material/menu-surface/foundation", to: "https://ga.jspm.io/npm:@material/menu-surface@14.0.0/foundation.js"
+pin "bootstrap", to: "bootstrap.min.js", preload: true
+pin "@popperjs/core", to: "popper.js", preload: true
