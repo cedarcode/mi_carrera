@@ -58,7 +58,6 @@
             <span hidden>
               <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
             </span>
-            <%= yield :credits %>
             <div class="mdc-menu-surface--anchor" data-controller='user-menu'>
               <button id="user-menu" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
                 <% if current_user %>
@@ -98,13 +97,10 @@
         <div class='content'>
           <%= yield %>
         </div>
-      </main>
-      <footer class="footer mdc-theme--text-primary-on-light">
-        <span class="mdc-theme--text-secondary-on-light">
-          Built by&nbsp;
-        </span>
-        <a class="mdc-theme--text-primary-on-light" href="https://cedarcode.com" target="_blank" >Cedarcode</a>
+        <footer class="footer mdc-theme--text-primary-on-light">
+        <%= yield :credits %>
       </footer>
+      </main>
     </div>
   </body>
 </html>
