@@ -1063,6 +1063,45 @@
       subject_needed_name: ANALISIS MATEMATICO I (P. 74)
       needs: exam
     - type: subject
+      subject_needed_code: '1062'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+      needs: course
+    - type: subject
+      subject_needed_code: '1022'
+      subject_needed_name: CALCULO 2
+      needs: course
+    - type: subject
+      subject_needed_code: '1072'
+      subject_needed_name: CALCULO 2
+      needs: exam
+    - type: subject
+      subject_needed_code: 172Q
+      subject_needed_name: CALCULO 2
+      needs: exam
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: MA47
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1062P
+      subject_needed_name: CREDITOS NO ACUM CDIVV
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP1
+      subject_needed_name: ANALISIS MATEMATICO I
+      needs: exam
+    - type: subject
+      subject_needed_code: CP22
+      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
+      needs: exam
+    - type: subject
       subject_needed_code: '1061'
       subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
       needs: exam
@@ -1168,45 +1207,6 @@
     - type: subject
       subject_needed_code: GAL1P
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP1
-      subject_needed_name: ANALISIS MATEMATICO I
-      needs: exam
-    - type: subject
-      subject_needed_code: CP22
-      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: '1062'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-      needs: course
-    - type: subject
-      subject_needed_code: '1022'
-      subject_needed_name: CALCULO 2
-      needs: course
-    - type: subject
-      subject_needed_code: '1072'
-      subject_needed_name: CALCULO 2
-      needs: exam
-    - type: subject
-      subject_needed_code: 172Q
-      subject_needed_name: CALCULO 2
-      needs: exam
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: MA47
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: 1062P
-      subject_needed_name: CREDITOS NO ACUM CDIVV
       needs: exam
   subject_code: '1025'
   is_exam: false
