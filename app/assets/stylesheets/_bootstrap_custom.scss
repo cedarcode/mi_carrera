@@ -1,0 +1,10 @@
+$h7-font-size: $font-size-base * 0.875;
+$h8-font-size: $font-size-base * 0.75;
+
+$custom-sizes: (
+  7: $h7-font-size,
+  8: $h8-font-size,
+);
+
+
+$font-sizes: map-merge($font-sizes, $custom-sizes);

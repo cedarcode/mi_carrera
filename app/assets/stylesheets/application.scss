@@ -1,3 +1,8 @@
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap_custom";
+@import "bootstrap";
+
 body {
   display: flex;
   justify-content: start;
@@ -45,8 +50,15 @@ body {
   display: flex;
   height: 40px;
   width: 100px;
+
   form {
     margin: 0 5px;
+    width: 40px;
+  }
+
+  .form-check-input {
+    width: 14px;
+    height: 14px;
   }
 }
 
@@ -228,4 +240,3 @@ input {
     transition-delay: calc(infinity * 1s);
   }
 }
-

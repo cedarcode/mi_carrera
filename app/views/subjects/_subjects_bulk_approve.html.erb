@@ -1,16 +1,16 @@
-<div class="mdc-deprecated-list-group subjects-list" data-controller="bedel loading <%= "confetti" if @graduated %>" id="subjects" >
+<div class="list-group-flush subjects-list" data-controller="bedel loading <%= "confetti" if @graduated %>" id="subjects" >
   <%= render "approvals/spinner_template" %>
 
   <% @subjects.group_by(&:category).each do |category, subjects| %>
-    <div class='mdc-deprecated-list-group__subheader subject-group-header'>
-      <h3 class="mdc-typography--subtitle2"><%= formatted_category(category) %></h3>
-      <div class='mdc-typography--subtitle2 d-flex'>
+    <div class='mx-3 my-2 subject-group-header'>
+      <h3 class="fs-7 lh-base fw-medium"><%= formatted_category(category) %></h3>
+      <div class='fs-7 lh-base fw-medium d-flex'>
         <h3 class='checkbox-header'>Curso</h3>
         <h3 class='checkbox-header'>Examen</h3>
       </div>
     </div>
-    <div class="mdc-deprecated-list">
-      <%= render subjects %>
+    <div class="fs-6 fw-normal lh-base m-0">
+      <%= render partial: "subjects/subject_with_bootstrap", collection: subjects, as: :subject %>
     </div>
     <hr class="mdc-deprecated-list-divider">
   <% end %>
