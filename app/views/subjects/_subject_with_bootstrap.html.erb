@@ -3,10 +3,10 @@
     <%= display_name(subject) %>
   </span>
   <span class="fs-8 lh-sm fw-normal mx-0 ms-3 two-checkboxes">
-    <%= render 'shared/checkbox_component', approvable: subject.course, subject_show: false %>
+    <%= render 'shared/bootstrap_checkbox_component', approvable: subject.course, subject_show: false %>
 
     <% if subject.exam %>
-      <%= render 'shared/checkbox_component', approvable: subject.exam, subject_show: false %>
+      <%= render 'shared/bootstrap_checkbox_component', approvable: subject.exam, subject_show: false %>
     <% end %>
   </span>
 <% end %>

@@ -1,0 +1,19 @@
+<%= form_with(
+  model: approvable,
+  url: approvable_approval_path(approvable, subject_show:),
+  class: "d-flex align-items-center justify-content-center",
+  data: { controller: "autosave-check" },
+  method: current_student.approved?(approvable) ? :delete : :post,
+  local: false,
+) do |form| %>
+  <%= form.check_box(
+    :approved,
+    {
+      id: dom_id(approvable),
+      class: "form-check-input m-0",
+      checked: current_student.approved?(approvable),
+      disabled: !current_student.available?(approvable) && !current_student.approved?(approvable),
+      data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
+    },
+  ) %>
+<% end %>

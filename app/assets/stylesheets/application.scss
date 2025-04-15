@@ -50,8 +50,15 @@ body {
   display: flex;
   height: 40px;
   width: 100px;
+
   form {
     margin: 0 5px;
+    width: 40px;
+  }
+
+  .form-check-input {
+    width: 14px;
+    height: 14px;
   }
 }
 
