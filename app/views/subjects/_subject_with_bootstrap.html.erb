@@ -1,0 +1,12 @@
+<%= link_to subject_path(subject), class: "list-group-item list-group-item-action growing-text-list d-flex align-items-center justify-content-start p-0 px-3 overflow-hidden position-relative" do %>
+  <span class="flex-grow-1 flex-shrink-1 text-truncate d-block">
+    <%= display_name(subject) %>
+  </span>
+  <span class="fs-8 lh-sm fw-normal mx-0 ms-3 two-checkboxes">
+    <%= render 'shared/checkbox_component', approvable: subject.course, subject_show: false %>
+
+    <% if subject.exam %>
+      <%= render 'shared/checkbox_component', approvable: subject.exam, subject_show: false %>
+    <% end %>
+  </span>
+<% end %>
