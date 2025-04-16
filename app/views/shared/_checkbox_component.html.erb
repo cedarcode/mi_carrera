@@ -6,22 +6,13 @@
   local: false,
 ) do |form| %>
   <div class="mdc-checkbox">
-    <%= form.check_box(
-      :approved,
-      {
-        id: dom_id(approvable),
-        class: "mdc-checkbox__native-control",
-        checked: current_student.approved?(approvable),
-        disabled: !current_student.available?(approvable) && !current_student.approved?(approvable),
-        data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
-      },
+    <%= render(CheckboxInputComponent.new(
+      'approvable[approved]',
+      id: dom_id(approvable),
+      checked: current_student.approved?(approvable),
+      disabled: !current_student.available?(approvable) && !current_student.approved?(approvable),
+      data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
+      )
     ) %>
-    <div class="mdc-checkbox__background">
-      <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-      </svg>
-
-      <div class="mdc-checkbox__mixedmark"></div>
-    </div>
   </div>
 <% end %>
