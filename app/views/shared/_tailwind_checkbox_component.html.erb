@@ -6,14 +6,15 @@
   local: false,
 ) do |form| %>
   <div class="flex h-6 shrink-0 items-center w-[40px] justify-center mx-[5px]">
-    <%= render(CheckboxComponent.new(
+    <%= component(
+      :checkbox,
       form: form,
       object_name: :approved,
       id: dom_id(approvable),
       checked: current_student.approved?(approvable),
       disabled: !current_student.available?(approvable) && !current_student.approved?(approvable),
       data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
-    ))
+    )
     %>
   </div>
 <% end %>

@@ -12,7 +12,7 @@
       </div>
       <ul role="list">
         <% subjects.each do |subject| %>
-          <%= render ListItemComponent.new(text: display_name(subject), link: subject_path(subject)) do |component| %>
+          <%= component :list_item, text: display_name(subject), link: subject_path(subject) do |component| %>
             <% component.with_trailing_icon do %>
               <span class="flex min-w-[90px] ms-[15px]">
                 <%= render 'shared/tailwind_checkbox_component', approvable: subject.course, subject_show: false %>
