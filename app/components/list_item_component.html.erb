@@ -1,0 +1,14 @@
+<% content = capture do %>
+  <li class="flex gap-x-4 px-3 py-5 justify-between items-center">
+    <div class="min-w-0">
+      <p class="text-sm/6 text-gray-900"><%= text %></p>
+    </div>
+    <%= trailing_icon %>
+  </li>
+<% end %>
+
+<% if link.present? %>
+  <%= link_to content, link, class: "min-w-0" %>
+<% else %>
+  <%= content %>
+<% end %>
