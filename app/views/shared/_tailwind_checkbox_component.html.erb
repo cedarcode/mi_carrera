@@ -6,23 +6,14 @@
   local: false,
 ) do |form| %>
   <div class="flex h-6 shrink-0 items-center w-[40px] justify-center mx-[5px]">
-    <div class="group grid size-4 grid-cols-1">
-      <%= form.check_box(
-        :approved,
-        {
-          id: dom_id(approvable),
-          class: "col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto",
-          checked: current_student.approved?(approvable),
-          disabled: !current_student.available?(approvable) && !current_student.approved?(approvable),
-          data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
-        },
-      ) %>
-      <svg fill="none" viewBox="0 0 14 14" class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-white/25">
-        <path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-checked:opacity-100">
-        </path>
-        <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-indeterminate:opacity-100">
-        </path>
-      </svg>
-    </div>
+    <%= render(CheckboxComponent.new(
+      form: form,
+      object_name: :approved,
+      id: dom_id(approvable),
+      checked: current_student.approved?(approvable),
+      disabled: !current_student.available?(approvable) && !current_student.approved?(approvable),
+      data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
+    ))
+    %>
   </div>
 <% end %>

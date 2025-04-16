@@ -9,4 +9,6 @@ class CheckboxComponent < ViewComponent::Base
     @disabled = disabled
     @data = data
   end
+
+  attr_reader :form, :id, :object_name, :checked, :disabled, :data
 end
