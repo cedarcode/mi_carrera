@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_19_145745) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_21_184824) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -32,6 +32,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_19_145745) do
     t.datetime "updated_at", null: false
     t.index ["external_id"], name: "index_passkeys_on_external_id", unique: true
     t.index ["user_id"], name: "index_passkeys_on_user_id"
+  end
+
+  create_table "degrees", force: :cascade do |t|
+    t.string "name"
+    t.string "key", null: false
+    t.string "current_plan"
+    t.boolean "include_inco_subjects"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["key"], name: "index_degrees_on_key", unique: true
   end
 
   create_table "prerequisites", force: :cascade do |t|
