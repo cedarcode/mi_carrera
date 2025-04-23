@@ -1,16 +1,18 @@
 class YmlLoader
   def self.load
     degrees = Rails.configuration.degrees
-    degrees.each do |degree|
-      new(degree[:key]).load
+    degrees.each do |degree_hash|
+      new(degree_hash).load
     end
   end
 
-  def initialize(degree_key)
-    @degree_dir = Rails.root.join("db/data/#{degree_key}/")
+  def initialize(degree_hash)
+    @degree_hash = degree_hash
+    @degree_dir = Rails.root.join("db/data/#{degree_hash[:key]}/")
   end
 
   def load
+    load_degree
     load_subject_groups
     load_subjects
     load_prerequisites
@@ -19,7 +21,16 @@ class YmlLoader
 
   private
 
+  attr_reader :degree_hash
   attr_reader :degree_dir
+
+  def load_degree
+    degree = Degree.find_or_initialize_by(key: degree_hash[:key])
+    degree.name = degree_hash[:name]
+    degree.current_plan = degree_hash[:current_plan]
+    degree.include_inco_subjects = degree_hash[:include_inco_subjects]
+    degree.save!
+  end
 
   def load_subject_groups
     subject_groups = YAML.load_file(degree_dir.join("scraped_subject_groups.yml"))
