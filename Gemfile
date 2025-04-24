@@ -4,6 +4,7 @@ ruby file: ".ruby-version"
 
 gem 'rails', '~> 8.0.2'
 
+gem 'acts_as_tenant', '~> 1.0'
 gem 'appsignal', '~> 4.5'
 gem 'bootsnap', '~> 1.18', require: false
 gem 'devise', '~> 4.9'
