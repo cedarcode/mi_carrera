@@ -4,3 +4,7 @@ shared:
   key: "computacion"
   current_plan: "1997"
   include_inco_subjects: true
+- name: "INGENIERIA ELECTRICA"
+  key: "electrica"
+  current_plan: "2023"
+  include_inco_subjects: false
