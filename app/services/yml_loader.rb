@@ -18,7 +18,7 @@ class YmlLoader
     load_subject_groups
     load_subjects
     load_prerequisites
-    load_current_optional_subjects
+    load_current_optional_subjects if degree_hash[:include_inco_subjects]
   end
 
   private
