@@ -32,6 +32,7 @@ end
 
 group :development do
   gem "letter_opener", "~> 1.10"
+  gem "lookbook", "~> 2.3"
   gem 'rubocop', '~> 1.75'
   gem 'rubocop-performance', '~> 1.25', require: false
   gem 'rubocop-rails', '~> 2.31', require: false
