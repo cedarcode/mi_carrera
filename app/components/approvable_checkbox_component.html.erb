@@ -1,0 +1,18 @@
+<%= form_with(
+  model: @approvable,
+  url: approvable_approval_path(@approvable, subject_show: @subject_show),
+  data: { controller: "autosave-check" },
+  method: @current_student.approved?(@approvable) ? :delete : :post,
+  local: false,
+) do |form| %>
+  <div class="box-content w-[18px] h-[18px] p-3">
+    <%= render(CheckboxInputComponent.new(
+      'approvable[approved]',
+      id: dom_id(@approvable),
+      checked: @current_student.approved?(@approvable),
+      disabled: !@current_student.available?(@approvable) && !@current_student.approved?(@approvable),
+      data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
+      )
+    ) %>
+  </div>
+<% end %>
