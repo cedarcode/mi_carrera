@@ -5,10 +5,23 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  devise_for :users, controllers: {
+  devise_for :users, path: "usuarios", skip: :passwords, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
+  }, path_names: {
+    sign_in: 'iniciar_sesion',
+    sign_out: 'cerrar_sesion',
+    sign_up: 'registrarse',
+    edit: 'editar'
   }
+
+  as :user do
+    get 'usuarios/contraseña/nueva', to: 'devise/passwords#new', as: :new_user_password
+    get 'usuarios/contraseña/editar', to: 'devise/passwords#edit', as: :edit_user_password
+    patch 'usuarios/contraseña', to: 'devise/passwords#update', as: :user_password
+    put 'usuarios/contraseña', to: 'devise/passwords#update'
+    post 'usuarios/contraseña', to: 'devise/passwords#create'
+  end
 
   root to: "subjects#index"
 
