@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe ApprovableCheckboxComponent, type: :component do
   context 'when subject is already approved' do
-    it "renders the checbox with checked status" do
+    it "renders the checkbox with checked status" do
       approvable = FactoryBot.build_stubbed(:course)
       student = UserStudent.new(FactoryBot.build_stubbed(:user, approvals: [approvable.id]))
 
@@ -18,7 +18,7 @@ RSpec.describe ApprovableCheckboxComponent, type: :component do
   end
 
   context 'when subject is available' do
-    it "renders the checbox with unchecked status" do
+    it "renders the checkbox with unchecked status" do
       approvable = FactoryBot.build_stubbed(:course)
       student = UserStudent.new(FactoryBot.build_stubbed(:user))
 
@@ -31,7 +31,7 @@ RSpec.describe ApprovableCheckboxComponent, type: :component do
   end
 
   context 'when subject is not available' do
-    it "renders the checbox with disabled status" do
+    it "renders the checkbox with disabled status" do
       approvable = FactoryBot.build_stubbed(:course, :with_prerequisites)
       student = UserStudent.new(FactoryBot.build_stubbed(:user))
 
