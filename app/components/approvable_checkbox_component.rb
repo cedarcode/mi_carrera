@@ -12,4 +12,6 @@ class ApprovableCheckboxComponent < ViewComponent::Base
   private
 
   def checked? = current_student.approved?(approvable)
+
+  def disabled? = !current_student.available?(approvable) && !current_student.approved?(approvable)
 end
