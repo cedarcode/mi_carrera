@@ -8,4 +8,8 @@ class ApprovableCheckboxComponent < ViewComponent::Base
     @subject_show = subject_show
     @current_student = current_student
   end
+
+  private
+
+  def checked? = current_student.approved?(approvable)
 end
