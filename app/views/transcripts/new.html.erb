@@ -3,7 +3,7 @@
 <p>1) Entrar a <a href="https://bedelias.udelar.edu.uy/" target="_blank">Bedelias</a> e iniciar session</p>
 <p>2) Entrar a "Estudiante" -> "Escolaridad" -> "Solicitar Escolaridad"</p>
 <p>3) Seleccionar tu carrera y "No" en "Resultados Intermedios"</p>
-<%= form_with url: academic_histories_path, method: :post, local: true, html: { multipart: true } do |form| %>
+<%= form_with url: transcripts_path, method: :post, local: true, html: { multipart: true } do |form| %>
   <div class="sign-in my-6">
     <%= form.label :file, "Upload PDF" %>
     <%= form.file_field :file, accept: "application/pdf", required: true %>

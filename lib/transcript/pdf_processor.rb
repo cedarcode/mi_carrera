@@ -1,6 +1,6 @@
 require 'pdf-reader'
 
-module AcademicHistory
+module Transcript
   class PdfProcessor
     include Enumerable
 

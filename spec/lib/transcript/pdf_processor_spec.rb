@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe AcademicHistory::PdfProcessor, type: :lib do
+RSpec.describe Transcript::PdfProcessor, type: :lib do
   # rubocop:disable Layout/LineLength
   let(:pdf_mock) {
     [

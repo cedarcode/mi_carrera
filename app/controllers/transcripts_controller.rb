@@ -1,4 +1,4 @@
-class AcademicHistoriesController < ApplicationController
+class TranscriptsController < ApplicationController
   def new
   end
 
@@ -7,7 +7,7 @@ class AcademicHistoriesController < ApplicationController
     @failed_entries = []
     @successful_entries = []
 
-    AcademicHistory::PdfProcessor.new(file).each do |entry|
+    Transcript::PdfProcessor.new(file).each do |entry|
       save_academic_entry(entry) if entry.approved?
     end
     render :new
