@@ -1,14 +1,9 @@
 require 'pdf-reader'
+require_relative 'academic_entry'
 
 module Transcript
-  class PdfProcessor
+  class PdfParser
     include Enumerable
-
-    AcademicEntry = Struct.new(:name, :credits, :number_of_failures, :date_of_completion, :grade) do
-      def approved?
-        grade != '***'
-      end
-    end
 
     def initialize(file)
       @reader = PDF::Reader.new(file.path)
@@ -18,7 +13,13 @@ module Transcript
       reader.pages.each do |page|
         page.text.each_line do |line|
           line.match(subject_regex) do |match|
-            yield AcademicEntry.new(match[1], match[2], match[3], match[4], match[5])
+            yield AcademicEntry.new(
+              name: match[1],
+              credits: match[2].to_i,
+              number_of_failures: match[3].to_i,
+              date_of_completion: match[4],
+              grade: match[5]
+            )
           end
         end
       end
