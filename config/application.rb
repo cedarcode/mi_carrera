@@ -51,5 +51,8 @@ module MiCarrera
     config.yjit = false
 
     config.degrees = config_for(:degrees)
+
+    config.view_component.preview_paths << "#{Rails.root.join("spec/components/previews")}"
+    config.view_component.default_preview_layout = "component_preview"
   end
 end

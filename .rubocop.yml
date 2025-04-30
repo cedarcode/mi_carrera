@@ -27,6 +27,10 @@ Layout:
 Lint:
   Enabled: true
 
+Lint/MissingSuper:
+  Exclude:
+    - "app/components/*"
+
 Layout/LineLength:
   Max: 120
   Exclude:
