@@ -21,12 +21,39 @@ module PlannedSubjectsTestHelper
     end
   end
 
+  def assert_planned_subject(subject_name)
+    expect(page).to have_text subject_name
+    within_subject_row(subject_name) do
+      expect(page).to have_selector("span", text: "remove_circle_outline")
+    end
+  end
+
+  def assert_not_planned_subject(subject_name)
+    expect(page).to have_text subject_name
+    within_subject_row(subject_name) do
+      expect(page).to have_selector("span", text: "add_circle_outline")
+      expect(page).to have_selector("select", text: 'Sem. 1')
+    end
+  end
+
+  def assert_subject_in_selector(subject_name_with_code)
+    expect(page).to have_select('subject_plan_subject_id', with_options: [subject_name_with_code])
+  end
+
+  def assert_subject_not_in_selector(subject_name_with_code)
+    expect(page).to have_no_select('subject_plan_subject_id', with_options: [subject_name_with_code])
+  end
+
   def within_planned_subjects(&block)
-    within(:xpath, "//h3[contains(text(), 'Materias planeadas')]/following-sibling::*[1]", &block)
+    within(:xpath, "//div[h3[contains(text(), 'Materias planeadas')]]/following-sibling::*[1]", &block)
+  end
+
+  def within_not_planned_approved_subjects(&block)
+    within(:xpath, "//h3[contains(text(), 'Materias aprobadas sin semestre asignado')]/following-sibling::*[1]", &block)
   end
 
   def within_not_planned_subjects(&block)
-    within(:xpath, "//h3[contains(text(), 'Materias recomendadas')]/following-sibling::*[1]", &block)
+    within(".new-planned-subjects", &block)
   end
 
   private

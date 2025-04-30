@@ -1,21 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require reset
- *= require_tree .
- *= require_self
- */
-
-
 body {
   display: flex;
   justify-content: start;
@@ -123,10 +105,6 @@ body {
   flex: 1;
 }
 
-.mdc-deprecated-list-item__meta {
-  padding-left: 15px;
-}
-
 #menu-background {
   position: fixed;
   top: 0;
@@ -140,6 +118,20 @@ body {
   justify-content: flex-end;
   width: 300px;
   margin: auto;
+}
+
+.not-planned-subjects-select {
+  max-width: 200px;
+}
+
+.new-planned-subjects {
+  align-items: center;
+  padding: 24px 16px;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
 }
 
 .button-container button {
@@ -230,3 +222,11 @@ body {
 .show-password-button {
   margin-right: -20px;
 }
+
+input {
+  &:-webkit-autofill {
+    transition: background-color 0s 0s, color 0s 0s;
+    transition-delay: calc(infinity * 1s);
+  }
+}
+

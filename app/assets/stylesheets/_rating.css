@@ -1,22 +1,13 @@
-.rating-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 12px;
-}
-
-.average-rating {
-  display: flex;
-  align-items: center;
-  margin-left: 4px;
-  gap: 4px;
-}
-
 .rating-items {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
+
+  @media (max-width: 450px) {
+    .mdc-icon-button {
+      width: 32px;
+    }
+  }
 }
 
 .interactive-star {

@@ -49,5 +49,7 @@ module MiCarrera
     # If you are deploying to a memory constrained environment you may want to set this to `false`.
     #++
     config.yjit = false
+
+    config.degrees = config_for(:degrees)
   end
 end

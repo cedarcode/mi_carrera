@@ -16,18 +16,20 @@ class UserTest < ApplicationSystemTestCase
 
     assert_text "Continuar con Google"
 
+    password = Devise.friendly_token
     fill_in "Correo electrónico", with: 'alice@test.com'
-    fill_in "Nueva contraseña", with: 'alice123'
-    fill_in "Confirma tu nueva contraseña", with: 'alice321'
+    fill_in "Nueva contraseña", with: password
+    fill_in "Confirma tu nueva contraseña", with: "incorrect#{password}"
     click_on "Registrarte"
 
     within('.form-input-container', text: 'Confirma tu nueva contraseña') do
       assert_text "No coincide"
     end
 
+    password = Devise.friendly_token
     fill_in "Correo electrónico", with: user.email
-    fill_in "Nueva contraseña", with: 'bob321'
-    fill_in "Confirma tu nueva contraseña", with: 'bob321'
+    fill_in "Nueva contraseña", with: password
+    fill_in "Confirma tu nueva contraseña", with: password
     click_on "Registrarte"
 
     within('.form-input-container', text: 'Correo electrónico') do
@@ -35,13 +37,14 @@ class UserTest < ApplicationSystemTestCase
     end
 
     fill_in "Correo electrónico", with: 'alice@test.com'
-    fill_in "Nueva contraseña", with: 'alice123'
-    fill_in "Confirma tu nueva contraseña", with: 'alice123'
+    password = Devise.friendly_token
+    fill_in "Nueva contraseña", with: password
+    fill_in "Confirma tu nueva contraseña", with: password
     password_visibility_toggle_test("Nueva contraseña")
     password_visibility_toggle_test("Confirma tu nueva contraseña")
     click_on "Registrarte"
 
-    assert_current_path root_path
+    assert_text "Bienvenido! Te has registrado correctamente."
 
     click_user_menu
     assert_text "alice@test.com"
@@ -63,8 +66,8 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: user.email
     assert_emails(1) do
       click_on "Restablecer contraseña"
+      assert_text "Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos."
     end
-    assert_text "Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos."
 
     visit edit_user_password_path(t: "invalid")
 
@@ -74,7 +77,8 @@ class UserTest < ApplicationSystemTestCase
 
     visit edit_user_password_path(reset_password_token: user.send_reset_password_instructions)
 
-    fill_in "Nueva contraseña", with: "new_password"
+    password = Devise.friendly_token
+    fill_in "Nueva contraseña", with: password
     password_visibility_toggle_test("Nueva contraseña")
     click_on "Restablecer contraseña"
     assert_text 'Tu contraseña fue modificada correctamente. Has iniciado sesión.'
@@ -82,9 +86,13 @@ class UserTest < ApplicationSystemTestCase
     click_user_menu
     click_on "Salir"
 
-    visit new_user_session_path
+    assert_text "Cerraste sesión correctamente"
+
+    click_user_menu
+    click_on "Ingresar"
+
     fill_in "Correo electrónico", with: user.email
-    fill_in "Contraseña", with: "new_password"
+    fill_in "Contraseña", with: password
 
     click_on "Ingresar"
     assert_text "Iniciaste sesión correctamente"
@@ -102,7 +110,7 @@ class UserTest < ApplicationSystemTestCase
     assert_text "Continuar con Google"
 
     fill_in "Correo electrónico", with: user.email
-    fill_in "Contraseña", with: 'incorrect'
+    fill_in "Contraseña", with: "incorrect#{user.password}"
     click_on "Ingresar"
 
     assert_text "Email y/o contraseña inválidos."
@@ -126,26 +134,29 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: user.password
     click_on "Ingresar"
+    assert_text "Iniciaste sesión correctamente"
 
     click_user_menu
     click_on "Editar Perfil"
 
-    fill_in "Contraseña actual", with: "wrong"
+    fill_in "Contraseña actual", with: "incorrect#{user.password}"
     click_on "Guardar"
     within('.form-input-container', text: 'Contraseña actual') do
       assert_text "No es válido"
     end
 
     fill_in "Contraseña actual", with: user.password
-    fill_in "Nueva contraseña", with: "123"
-    fill_in "Confirma tu nueva contraseña", with: "123"
+    three_char_long_password = Devise.friendly_token.first(3)
+    fill_in "Nueva contraseña", with: three_char_long_password
+    fill_in "Confirma tu nueva contraseña", with: three_char_long_password
     click_on "Guardar"
     within('.form-input-container', text: 'Nueva contraseña') do
       assert_text "Es demasiado corto (6 caracteres mínimo)"
     end
 
-    fill_in "Nueva contraseña", with: "123"
-    fill_in "Confirma tu nueva contraseña", with: "321"
+    password = Devise.friendly_token
+    fill_in "Nueva contraseña", with: password
+    fill_in "Confirma tu nueva contraseña", with: "incorrect#{password}"
     fill_in "Contraseña actual", with: user.password
     click_on "Guardar"
     within('.form-input-container', text: 'Confirma tu nueva contraseña') do
@@ -159,8 +170,9 @@ class UserTest < ApplicationSystemTestCase
       assert_text "Ya está en uso"
     end
 
-    fill_in "Nueva contraseña", with: "new_password"
-    fill_in "Confirma tu nueva contraseña", with: "new_password"
+    new_password = Devise.friendly_token
+    fill_in "Nueva contraseña", with: new_password
+    fill_in "Confirma tu nueva contraseña", with: new_password
     fill_in "Contraseña actual", with: user.password
     password_visibility_toggle_test("Nueva contraseña")
     password_visibility_toggle_test("Confirma tu nueva contraseña")

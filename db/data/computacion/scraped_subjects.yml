@@ -155,6 +155,12 @@
   credits: 0
   has_exam: false
   subject_group:
+102EU:
+  code: 102EU
+  name: QUÍMICA GENERAL I
+  credits: 7
+  has_exam: false
+  subject_group: '4442'
 '1030':
   code: '1030'
   name: GEOMETRIA Y ALGEBRA LINEAL 1
@@ -209,6 +215,12 @@
   credits: 7
   has_exam: false
   subject_group: '4083'
+103EU:
+  code: 103EU
+  name: INT. A LAS C. BIOLÓGICAS I
+  credits: 5
+  has_exam: false
+  subject_group: '4442'
 '1040':
   code: '1040'
   name: ALGEBRA LINEAL NUMERICA
@@ -485,6 +497,12 @@
   credits: 0
   has_exam: true
   subject_group:
+'1158':
+  code: '1158'
+  name: PROCESAMIENTO CUÁNTICO DE LA INFORMACIÓN
+  credits: 10
+  has_exam: true
+  subject_group: '4083'
 '1170':
   code: '1170'
   name: FISICA GENERAL 1
@@ -599,6 +617,12 @@
   credits: 8
   has_exam: false
   subject_group: '5265'
+'1275':
+  code: '1275'
+  name: TALLER (TBEO)
+  credits: 3
+  has_exam: false
+  subject_group: '3582'
 '1304':
   code: '1304'
   name: TECNOLOGIAS INTERACTIVAS Y VIDEOJUEGOS
@@ -1757,6 +1781,12 @@
   credits: 5
   has_exam: false
   subject_group: '5082'
+'1783':
+  code: '1783'
+  name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+  credits: 10
+  has_exam: false
+  subject_group: '5082'
 '1802':
   code: '1802'
   name: CALIDAD DE DATOS E INFORMACION
@@ -1921,7 +1951,7 @@
   subject_group: '4428'
 '1897':
   code: '1897'
-  name: MÉTODOS EFICI. DE SIMUL. PARA LA ESTIM. DE CONFIA. DE REDES
+  name: METODOS EFICI. DE SIMUL. PARA LA ESTIM. DE CONFIA. DE REDES
   credits: 4
   has_exam: false
   subject_group: '4815'
@@ -2426,7 +2456,7 @@ A65:
 A66:
   code: A66
   name: GESTIÓN DE PROYECTOS
-  credits: 10
+  credits: 5
   has_exam: true
   subject_group: '5082'
 A83:
@@ -2733,7 +2763,7 @@ CCT20:
   code: CCT20
   name: FÍSICA II
   credits: 14
-  has_exam: false
+  has_exam: true
   subject_group: '4442'
 CE10:
   code: CE10
@@ -3941,6 +3971,12 @@ MHC24:
   credits: 14
   has_exam: false
   subject_group: '4442'
+MHC39:
+  code: MHC39
+  name: BIOQUÍMICA I
+  credits: 11
+  has_exam: true
+  subject_group: '4442'
 MI2:
   code: MI2
   name: MATEMATICA INICIAL
@@ -4152,6 +4188,12 @@ SFW10:
   credits: 10
   has_exam: false
   subject_group: '5082'
+SO001:
+  code: SO001
+  name: INTRODUCCIÓN A LA VIDA UNIVERSITARIA (IVU)
+  credits: 1
+  has_exam: false
+  subject_group: '3582'
 SRN02:
   code: SRN02
   name: CÁLCULO I
@@ -4248,3 +4290,9 @@ TP25:
   credits: 25
   has_exam: true
   subject_group: '4756'
+V2110:
+  code: V2110
+  name: TALLER DE ÉTICA
+  credits: 2
+  has_exam: false
+  subject_group: '5265'
