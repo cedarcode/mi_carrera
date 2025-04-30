@@ -12,29 +12,29 @@ Rails.application.routes.draw do
 
   root to: "subjects#index"
 
-  resource :profile, only: :show
+  resource :profile, path: "perfil", only: :show
 
-  resources :subject_groups, only: :show
+  resources :subject_groups, path: "grupos", only: :show
 
   resources :approvables, only: [] do
     resource :approval, only: [:create, :destroy]
   end
 
-  resources :subjects do
+  resources :subjects, path: "materias" do
     collection do
-      get :all
+      get :all, path: "todas"
     end
   end
 
   resource :user_onboardings, only: :update
 
-  resources :current_optional_subjects, only: :index
+  resources :current_optional_subjects, path: "materias_inco_semestre_actual", only: :index
 
-  resources :transcripts, only: [:new, :create]
+  resources :transcripts, path: "escolaridades", only: [:new, :create], path_names: { new: "nueva" }
 
   resources :reviews, only: [:create, :destroy]
 
-  resources :subject_plans, only: [:index, :create, :destroy], param: :subject_id
+  resources :subject_plans, path: "materias_planeadas", only: [:index, :create, :destroy], param: :subject_id
 
   if Rails.env.development?
     mount Lookbook::Engine, at: "/lookbook"
