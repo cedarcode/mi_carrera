@@ -15,16 +15,25 @@ module Transcript
     end
 
     def save_to_user(user)
+      subject = subject_from_name(name)
+
+      return false if subject.blank?
+
+      user.force_add_subject(subject)
+      subject
+    end
+
+    private
+
+    def subject_from_name(name)
       subject_match = Subject.where("lower(unaccent(name)) = lower(unaccent(?))", name)
       subject_match = subject_match.select { |subject| subject.credits == credits.to_i }
+
+      return subject_match.first if subject_match.length == 1
+
       active_subjects = subject_match.select { |subject| !subject.inactive? }
-      if subject_match.length == 1
-        user.force_add_subject(subject_match.first)
-        return subject_match.first
-      elsif active_subjects.length == 1
-        user.force_add_subject(active_subjects.first)
-        return active_subjects.first
-      end
+
+      active_subjects.first if active_subjects.length == 1
     end
   end
 end

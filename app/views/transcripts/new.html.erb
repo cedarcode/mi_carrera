@@ -17,10 +17,10 @@
   </div>
 <% end %>
 <div class="sign-in">
-  <% if @successful_entries&.present? %>
-    <p class="color-green mb-2"><%= @successful_entries.length %> Materias marcadas correctamente</p>
-    <% @successful_entries.each do |entry| %>
-      <p><%= entry.code %> - <%= entry.name %></p>
+  <% if @successful_subjects&.present? %>
+    <p class="color-green mb-2"><%= @successful_subjects.length %> Materias marcadas correctamente</p>
+    <% @successful_subjects.each do |subject| %>
+      <p><%= subject.code %> - <%= subject.name %></p>
     <% end %>
   <% end %>
   <% if @failed_entries&.present? %>
