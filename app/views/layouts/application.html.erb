@@ -58,18 +58,7 @@
               <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
             </span>
             <%= yield :credits %>
-            <div class="mdc-menu-surface--anchor" data-controller='user-menu'>
-              <button id="user-menu" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
-                <% if current_user %>
-                  <div class='logged-in-account-circle'>
-                    <%= current_user.email.first.capitalize %>
-                  </div>
-                <% else %>
-                  account_circle
-                <% end %>
-              </button>
-              <%= render 'shared/user_menu' %>
-            </div>
+            <%= render UserMenuComponent.new(current_user: current_user) %>
           </section>
         </div>
         <div id="searchbar" class="mdc-top-app-bar__row <%= show_search_bar ? '' : 'd-none' %>" data-search-target="searchbar">
