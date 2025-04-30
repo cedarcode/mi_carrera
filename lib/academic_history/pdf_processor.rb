@@ -16,7 +16,7 @@ module AcademicHistory
 
     def each
       reader.pages.each do |page|
-        page.text.split("\n").each do |line|
+        page.text.each_line do |line|
           line.match(subject_regex) do |match|
             yield AcademicEntry.new(match[1], match[2], match[3], match[4], match[5])
           end
@@ -31,7 +31,7 @@ module AcademicHistory
 
     # The date can be either a date in the format DD/MM/YYYY or **********
     def date_regex
-      /\*{10}|\d\d\/\d\d\/\d\d\d\d/
+      /\*{10}|\d{2}\/\d{2}\/\d{4}/
     end
 
     # The concept can be either a number from 0 to 12, S/N or ***

@@ -1,24 +1,14 @@
-require 'pdf-reader'
-
 class AcademicHistoriesController < ApplicationController
-  def index
-    redirect_to new_academic_history_path
-  end
-
   def new
   end
 
   def create
-    file = params[:file]
+    file = params.require(:file)
     @failed_entries = []
     @successful_entries = []
 
-    if file && file.content_type == 'application/pdf'
-      AcademicHistory::PdfProcessor.new(file).each do |entry|
-        save_academic_entry(entry) if entry.approved?
-      end
-    else
-      flash[:error] = 'Please upload a valid PDF file'
+    AcademicHistory::PdfProcessor.new(file).each do |entry|
+      save_academic_entry(entry) if entry.approved?
     end
     render :new
   end
