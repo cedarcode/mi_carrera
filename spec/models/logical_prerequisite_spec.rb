@@ -64,5 +64,11 @@ RSpec.describe LogicalPrerequisite, type: :model do
 
       expect(prerequisite).not_to be_valid
     end
+
+    it 'validates that logical_operator is included in the allowed values' do
+      should validate_inclusion_of(:logical_operator)
+        .in_array(["and", "or", "not", "at_least"])
+        .with_message("#{Shoulda::Matchers::ExampleClass} is not a valid logical operator")
+    end
   end
 end
