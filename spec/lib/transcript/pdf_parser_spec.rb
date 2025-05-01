@@ -14,27 +14,17 @@ RSpec.describe Transcript::PdfParser, type: :lib do
   }
   # rubocop:enable Layout/LineLength
 
-  def academic_entry(name, credits, number_of_failures, date_of_completion, grade)
-    Transcript::AcademicEntry.new(
-      name: name,
-      credits: credits,
-      number_of_failures: number_of_failures,
-      date_of_completion: date_of_completion,
-      grade: grade
-    )
-  end
-
   describe '.process' do
     let(:file) { double('file', path: 'path') }
     let(:reader) { double('reader') }
     let(:academic_entries_list) {
       [
-        academic_entry('Test Subject 1', '10', '0', '20/02/2024', 'Aceptable'),
-        academic_entry('Test Subject 2', '9', '0', '20/02/2024', 'Bueno'),
-        academic_entry('Test Subject 3', '8', '0', '20/02/2024', 'Muy Bueno'),
-        academic_entry('Test Subject 4', '7', '0', '20/02/2024', 'Excelente'),
-        academic_entry('Test Subject 5', '6', '0', '20/02/2024', 'S/C'),
-        academic_entry('Failed Subject 1', '8', '1', '**********', '***')
+        build(:academic_entry, name: 'Test Subject 1', credits: '10', date_of_completion: '20/02/2024', grade: 'Aceptable'),
+        build(:academic_entry, name: 'Test Subject 2', credits: '9', date_of_completion: '20/02/2024', grade: 'Bueno'),
+        build(:academic_entry, name: 'Test Subject 3', credits: '8', date_of_completion: '20/02/2024', grade: 'Muy Bueno'),
+        build(:academic_entry, name: 'Test Subject 4', credits: '7', date_of_completion: '20/02/2024', grade: 'Excelente'),
+        build(:academic_entry, name: 'Test Subject 5', credits: '6', date_of_completion: '20/02/2024', grade: 'S/C'),
+        build(:academic_entry, :failed, name: 'Failed Subject 1', credits: '8')
       ]
     }
 
