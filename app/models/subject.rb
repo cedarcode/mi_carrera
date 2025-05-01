@@ -53,5 +53,9 @@ class Subject < ApplicationRecord
     reviews.average(:rating).round(1) if reviews.any?
   end
 
+  def recommended_percentage
+    reviews.where(recommended: true).count / reviews.count.to_f * 100 if reviews.any?
+  end
+
   delegate :available?, to: :course
 end

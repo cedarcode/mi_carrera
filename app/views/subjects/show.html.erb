@@ -22,9 +22,9 @@
   </div>
 
   <div class="flex gap-2 overflow-x-auto">
-    <%= render(ReviewComponent.new(review_name: "Puntuación", rating: @subject.average_rating, subject_id: @subject.id, column_name: :rating, user_review: @user_review)) %>
-    <%= render(ReviewComponent.new(review_name: "Puntuación", rating: @subject.average_rating, subject_id: @subject.id, column_name: :rating, user_review: @user_review)) %>
-    <%= render(ReviewComponent.new(review_name: "Puntuación", rating: @subject.average_rating, subject_id: @subject.id, column_name: :rating, user_review: @user_review)) %>
+    <%= render(FiveStarReviewComponent.new(review_name: "Puntuación", rating: @subject.average_rating, subject_id: @subject.id, column_name: :rating, user_review: @user_review)) %>
+    <%= render(BooleanReviewComponent.new(review_name: "Recomendado", value: @subject.recommended_percentage, subject_id: @subject.id, column_name: :recommended, user_review: @user_review)) %>
+    <%= render(FiveStarReviewComponent.new(review_name: "Puntuación", rating: @subject.average_rating, subject_id: @subject.id, column_name: :rating, user_review: @user_review)) %>
   </div>
 
   <hr class="mdc-deprecated-list-divider">

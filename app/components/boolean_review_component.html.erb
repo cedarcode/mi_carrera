@@ -1,0 +1,26 @@
+<div class="inline-flex flex-col items-center bg-white rounded-lg border border-purple-500 px-1 py-4 mb-4 text-center">
+  <h3 class="text-m font-semibold text-gray-800 mb-1"><%= review_name %></h3>
+
+  <div class="flex items-center justify-center mb-3 min-w-[11rem]">
+    <span class="text-2xl font-extrabold text-indigo-900"><%= value.nil? ? '?' : "#{value ? 100 : 0}%" %></span>
+  </div>
+
+  <div>
+    <h4 class="text-xs font-semibold text-indigo-900 mb-1"><%= 'Tu puntuación' %></h4>
+    <div class="flex items-center justify-center gap-2">
+      <% [false, true].each do |val| %>
+        <% filled = user_review.present? && user_review.send(column_name) == val %>
+        <% selected = user_review.present? && user_review.send(column_name) == val %>
+        <% url = selected ? review_path(user_review) : reviews_path %>
+        <% method = selected ? :delete : :post %>
+        <%= form_with url: url, method: method, class: "transition-transform duration-[250ms] ease-[ease] hover:scale-[1.3]" do |f| %>
+          <%= f.hidden_field :subject_id, value: subject_id %>
+          <%= f.hidden_field column_name, value: val %>
+          <% button_icon = val ? 'thumb_up' : 'thumb_down' %>
+          <% button_color = filled ? (val ? 'text-green-400' : 'text-red-400') : 'text-gray-400' %>
+          <%= f.button button_icon, class: 'material-icons !text-xl ' + button_color %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div> 
