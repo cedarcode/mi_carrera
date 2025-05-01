@@ -2,7 +2,7 @@
   <h3 class="text-m font-semibold text-gray-800 mb-1"><%= review_name %></h3>
 
   <div class="flex items-center justify-center mb-3 min-w-[11rem]">
-    <span class="text-2xl font-extrabold text-indigo-900"><%= value.nil? ? '?' : "#{value.round(0)}%" %></span>
+    <span class="text-xl font-extrabold text-indigo-900"><%= value.nil? ? '?' : "#{value.round(0)}%" %></span>
   </div>
 
   <div>
@@ -17,7 +17,7 @@
           <%= f.hidden_field :subject_id, value: subject_id %>
           <%= f.hidden_field column_name, value: selected ? nil : val %>
           <% button_icon = selected ? (val ? 'thumb_up' : 'thumb_down') : (val ? 'thumb_up_off_alt' : 'thumb_down_off_alt') %>
-          <% button_color = 'text-gray-400' %>
+          <% button_color = selected ? 'text-violet-400' : 'text-gray-400' %>
           <%= f.button button_icon, class: 'material-icons !text-xl ' + button_color %>
         <% end %>
       <% end %>
