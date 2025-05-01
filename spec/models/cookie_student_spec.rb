@@ -82,7 +82,8 @@ RSpec.describe CookieStudent, type: :model do
       expect(build(:cookie_student, approved_approvable_ids: []).approved?(subject1)).to be false
       expect(build(:cookie_student, approved_approvable_ids: []).approved?(subject1.course)).to be false
       expect(build(:cookie_student, approved_approvable_ids: [subject1.course.id]).approved?(subject1)).to be true
-      expect(build(:cookie_student, approved_approvable_ids: [subject1.course.id]).approved?(subject1.course)).to be true
+      expect(build(:cookie_student, approved_approvable_ids: [subject1.course.id])
+                  .approved?(subject1.course)).to be true
       expect(build(:cookie_student, approved_approvable_ids: []).approved?(subject2)).to be false
       expect(build(:cookie_student, approved_approvable_ids: []).approved?(subject2.course)).to be false
       expect(build(:cookie_student, approved_approvable_ids: []).approved?(subject2.exam)).to be false
