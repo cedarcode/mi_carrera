@@ -4,10 +4,10 @@
     <%= display_name(subject) %>
   <% end %>
   <span class="mdc-deprecated-list-item__meta two-checkboxes">
-    <%= render(ApprovableCheckboxComponent.new(approvable: subject.course, subject_show: false, current_student: current_student)) %>
+    <%= component(:approvable_checkbox, approvable: subject.course, subject_show: false, current_student: current_student) %>
 
     <% if subject.exam %>
-      <%= render(ApprovableCheckboxComponent.new(approvable: subject.exam, subject_show: false, current_student: current_student)) %>
+      <%= component(:approvable_checkbox, approvable: subject.exam, subject_show: false, current_student: current_student) %>
     <% end %>
   </span>
 </div>
