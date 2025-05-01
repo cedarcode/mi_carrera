@@ -1,0 +1,52 @@
+<div class="relative mx-4" data-controller='user-menu'>
+  <button 
+    id="user-menu" 
+    class="flex cursor-pointer" 
+    data-user-menu-target='trigger' 
+    data-action="user-menu#toggle"
+  >
+    <% if current_user %>
+      <div class="flex items-center justify-center w-6 h-6 rounded-full bg-teal-700">
+        <%= current_user.email.first.capitalize %>
+      </div>
+    <% else %>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="size-6">
+        <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" />
+      </svg>
+    <% end %>
+  </button>
+    <div
+      class="absolute right-0 mt-2 min-w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50 hidden"
+      data-user-menu-target="menu"
+    >
+    <ul class="py-2 text-m text-gray-800" role="menu" tabindex="-1">
+      <% if current_user %>
+        <div class="px-4 pb-1">
+          <%= @current_user.email %>
+        </div>
+      <% else %>
+        <%= link_to new_user_session_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
+          Ingresar
+        <% end %>
+      <% end %>
+
+      <li class="border-t border-gray-100 my-1"></li>
+
+      <%= link_to profile_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
+        Resumen por Grupo
+      <% end %>
+
+      <% if @current_user %>
+        <li class="border-t border-gray-100 my-1"></li>
+
+        <%= link_to edit_user_registration_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
+          Editar Perfil
+        <% end %>
+
+        <%= link_to destroy_user_session_path, method: :delete, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
+          Salir
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
