@@ -185,4 +185,33 @@ RSpec.describe UserStudent, type: :model do
       expect(described_class.new(user)).to be_graduated
     end
   end
+
+  describe '#force_add_subject' do
+    it 'adds both course and exam ids to approvals' do
+      subject = create :subject, :with_exam
+      user = create :user, approvals: []
+      student = described_class.new(user)
+
+      student.force_add_subject(subject)
+      expect(user.reload.approvals).to contain_exactly(subject.course.id, subject.exam.id)
+    end
+
+    it 'adds only course id when subject has no exam' do
+      subject = create :subject
+      user = create :user, approvals: []
+      student = described_class.new(user)
+
+      student.force_add_subject(subject)
+      expect(user.reload.approvals).to contain_exactly(subject.course.id)
+    end
+
+    it 'adds ids even if they already exist' do
+      subject = create :subject, :with_exam
+      user = create :user, approvals: [subject.course.id]
+      student = described_class.new(user)
+
+      student.force_add_subject(subject)
+      expect(user.reload.approvals).to contain_exactly(subject.course.id, subject.exam.id)
+    end
+  end
 end

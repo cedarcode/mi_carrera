@@ -14,12 +14,12 @@ module Transcript
       grade != '***'
     end
 
-    def save_to_user(user)
+    def save_to_user(student)
       subject = subject_from_name(name)
 
       return false if subject.blank?
 
-      user.force_add_subject(subject)
+      student.force_add_subject(subject)
       subject
     end
 
