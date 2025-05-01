@@ -65,12 +65,12 @@ RSpec.describe CookieStudent, type: :model do
       subject1 = create :subject, :with_exam
       create(:subject_prerequisite, approvable: subject1.exam, approvable_needed: subject1.course)
 
-      expect(build(:cookie_student, approved_approvable_ids: [])).to be_available(subject1)
-      expect(build(:cookie_student, approved_approvable_ids: [])).to be_available(subject1.course)
-      expect(build(:cookie_student, approved_approvable_ids: [])).not_to be_available(subject1.exam)
+      expect(build(:cookie_student, approved_approvable_ids: []).available?(subject1)).to be true
+      expect(build(:cookie_student, approved_approvable_ids: []).available?(subject1.course)).to be true
+      expect(build(:cookie_student, approved_approvable_ids: []).available?(subject1.exam)).to be false
 
       cookies = build(:cookie, approved_approvable_ids: [subject1.course.id])
-      expect(build(:cookie_student, cookies:)).to be_available(subject1.exam)
+      expect(build(:cookie_student, cookies:).available?(subject1)).to be true
     end
   end
 
@@ -79,17 +79,17 @@ RSpec.describe CookieStudent, type: :model do
       subject1 = create :subject
       subject2 = create :subject, :with_exam
 
-      expect(build(:cookie_student, approved_approvable_ids: [])).not_to be_approved(subject1)
-      expect(build(:cookie_student, approved_approvable_ids: [])).not_to be_approved(subject1.course)
-      expect(build(:cookie_student, approved_approvable_ids: [subject1.course.id])).to be_approved(subject1)
-      expect(build(:cookie_student, approved_approvable_ids: [subject1.course.id])).to be_approved(subject1.course)
-      expect(build(:cookie_student, approved_approvable_ids: [])).not_to be_approved(subject2)
-      expect(build(:cookie_student, approved_approvable_ids: [])).not_to be_approved(subject2.course)
-      expect(build(:cookie_student, approved_approvable_ids: [])).not_to be_approved(subject2.exam)
-      expect(build(:cookie_student, approved_approvable_ids: [subject2.course.id])).not_to be_approved(subject2)
-      expect(build(:cookie_student, approved_approvable_ids: [subject2.exam.id])).to be_approved(subject2)
-      expect(build(:cookie_student, approved_approvable_ids: [subject2.exam.id])).not_to be_approved(subject2.course)
-      expect(build(:cookie_student, approved_approvable_ids: [subject2.exam.id])).to be_approved(subject2.exam)
+      expect(build(:cookie_student, approved_approvable_ids: []).approved?(subject1)).to be false
+      expect(build(:cookie_student, approved_approvable_ids: []).approved?(subject1.course)).to be false
+      expect(build(:cookie_student, approved_approvable_ids: [subject1.course.id]).approved?(subject1)).to be true
+      expect(build(:cookie_student, approved_approvable_ids: [subject1.course.id]).approved?(subject1.course)).to be true
+      expect(build(:cookie_student, approved_approvable_ids: []).approved?(subject2)).to be false
+      expect(build(:cookie_student, approved_approvable_ids: []).approved?(subject2.course)).to be false
+      expect(build(:cookie_student, approved_approvable_ids: []).approved?(subject2.exam)).to be false
+      expect(build(:cookie_student, approved_approvable_ids: [subject2.course.id]).approved?(subject2)).to be false
+      expect(build(:cookie_student, approved_approvable_ids: [subject2.exam.id]).approved?(subject2)).to be true
+      expect(build(:cookie_student, approved_approvable_ids: [subject2.exam.id]).approved?(subject2.course)).to be false
+      expect(build(:cookie_student, approved_approvable_ids: [subject2.exam.id]).approved?(subject2.exam)).to be true
     end
   end
 
@@ -154,9 +154,9 @@ RSpec.describe CookieStudent, type: :model do
       student = build(:cookie_student, cookies:)
       student.add(subject1.course)
 
-      expect(student).not_to be_group_credits_met(group)
+      expect(student.group_credits_met?(group)).to be false
       student.add(subject2.course)
-      expect(student).to be_group_credits_met(group)
+      expect(student.group_credits_met?(group)).to be true
     end
   end
 
