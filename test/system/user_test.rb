@@ -18,18 +18,18 @@ class UserTest < ApplicationSystemTestCase
 
     password = Devise.friendly_token
     fill_in "Correo electrónico", with: 'alice@test.com'
-    fill_in "Nueva contraseña", with: password
-    fill_in "Confirma tu nueva contraseña", with: "incorrect#{password}"
+    fill_in "Contraseña", with: password
+    fill_in "Confirma tu contraseña", with: "incorrect#{password}"
     click_on "Registrarte"
 
-    within('.form-input-container', text: 'Confirma tu nueva contraseña') do
+    within('.form-input-container', text: 'Confirma tu contraseña') do
       assert_text "No coincide"
     end
 
     password = Devise.friendly_token
     fill_in "Correo electrónico", with: user.email
-    fill_in "Nueva contraseña", with: password
-    fill_in "Confirma tu nueva contraseña", with: password
+    fill_in "Contraseña", with: password
+    fill_in "Confirma tu contraseña", with: password
     click_on "Registrarte"
 
     within('.form-input-container', text: 'Correo electrónico') do
@@ -38,10 +38,10 @@ class UserTest < ApplicationSystemTestCase
 
     fill_in "Correo electrónico", with: 'alice@test.com'
     password = Devise.friendly_token
-    fill_in "Nueva contraseña", with: password
-    fill_in "Confirma tu nueva contraseña", with: password
-    password_visibility_toggle_test("Nueva contraseña")
-    password_visibility_toggle_test("Confirma tu nueva contraseña")
+    fill_in "Contraseña", with: password
+    fill_in "Confirma tu contraseña", with: password
+    password_visibility_toggle_test("Contraseña")
+    password_visibility_toggle_test("Confirma tu contraseña")
     click_on "Registrarte"
 
     assert_text "Bienvenido! Te has registrado correctamente."
