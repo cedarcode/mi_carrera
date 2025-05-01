@@ -20,24 +20,17 @@
         Registrarte con tu correo electrónico
       </li>
 
-      <li class="form-input-container">
-        <div class="mdc-text-field mdc-text-field--filled <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:email].any? %>" data-controller="textfield">
-          <span class="mdc-text-field__ripple"></span>
-          <%= f.label :email, "Correo electrónico", class: "mdc-floating-label" %>
-          <%= f.email_field :email, class: "mdc-text-field__input", required: true, autofocus: true %>
-          <%= render 'shared/invalid_icon', resource: resource, field: :email %>
-          <div class="mdc-line-ripple"></div>
-        </div>
-        <%= render 'shared/info_and_errors', resource: resource, field: :email, text: '' %>
-      </li>
-      <li class="form-input-container">
-        <%= render 'shared/password_field', f:, resource:, field: :password, label_text: "Nueva contraseña", autocomplete: "new-password", required: true %>
-        <%= render 'shared/info_and_errors', resource:, field: :password, text: "#{@minimum_password_length} caracteres mínimo." %>
-      </li>
-      <li class="form-input-container">
-        <%= render 'shared/password_field', f:, resource:, field: :password_confirmation, label_text: "Confirma tu nueva contraseña", autocomplete: "new-password", required: true %>
-        <%= render 'shared/info_and_errors', resource:, field: :password_confirmation, text: '' %>
-      </li>
+      <div class="space-y-6">
+        <%= render InputFieldComponent.new( form: f, attribute: :email, label: "Correo electrónico", type: :email, required: true) %>
+
+        <%= render InputFieldComponent.new( form: f, attribute: :password, label: "Contraseña", type: :password, required: true) do %>
+          <span class="text-xs text-gray-500">
+            La contraseña debe tener al menos 6 caracteres
+          </span>
+        <% end %>
+
+        <%= render InputFieldComponent.new( form: f, attribute: :password_confirmation, label: "Confirma tu contraseña", type: :password, required: true) %>
+      </div>
 
       <li class="form-input-container sign-in">
         <%= f.button class: "mdc-button mdc-button--raised" do %>

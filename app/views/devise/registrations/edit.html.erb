@@ -2,32 +2,23 @@
   <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5 sign-in">Editar Usuario</h3>
   <ul class="mdc-deprecated-list growing-text-list">
 
-    <%= form_with(model: resource, url: registration_path(resource_name), method: :put, local: true) do |f| %>
+    <%= form_with(model: resource, url: registration_path(resource_name), method: :put, local: true, class: "space-y-6") do |f| %>
 
-      <li class="form-input-container">
-        <div class="mdc-text-field mdc-text-field--filled <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:email].any? %>" data-controller="textfield">
-          <span class="mdc-text-field__ripple"></span>
-          <%= f.label :email, "Correo electrónico", class: "mdc-floating-label" %>
-          <%= f.email_field :email, class: "mdc-text-field__input", required: true, autofocus: true, autocomplete: "email" %>
-          <%= render 'shared/invalid_icon', resource: resource, field: :email %>
-          <div class="mdc-line-ripple"></div>
-        </div>
-        <%= render 'shared/info_and_errors', resource: resource, field: :email, text:  current_user.oauth_user? ?
-            "Si cambias tu correo electrónico, perderás el acceso con Google" :
-            "" %>
-      </li>
-      <li class="form-input-container">
-        <%= render 'shared/password_field', f:, resource:, field: :password, label_text: "Nueva contraseña", autocomplete: "new-password", required: false %>
-        <%= render 'shared/info_and_errors', resource:, field: :password, text: "#{@minimum_password_length} caracteres mínimo. Dejar en blanco si no lo quieres cambiar." %>
-      </li>
-      <li class="form-input-container">
-        <%= render 'shared/password_field', f:, resource:, field: :password_confirmation, label_text: "Confirma tu nueva contraseña", autocomplete: "new-password", required: false %>
-        <%= render 'shared/info_and_errors', resource:, field: :password_confirmation, text: '' %>
-      </li>
-      <li class="form-input-container">
-        <%= render 'shared/password_field', f:, resource:, field: :current_password, label_text: "Contraseña actual", autocomplete: "current-password", required: true %>
-        <%= render 'shared/info_and_errors', resource:, field: :current_password, text: 'Necesitamos tu contraseña actual para validar los cambios' %>
-      </li>
+      <%= render InputFieldComponent.new( form: f, attribute: :email, label: "Correo electrónico", type: :email) %>
+
+      <%= render InputFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña", type: :password) do %>
+        <span class="text-xs text-gray-500">
+          La contraseña debe tener al menos 6 caracteres
+        </span>
+      <% end %>
+
+      <%= render InputFieldComponent.new( form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña", type: :password) %>
+
+      <%= render InputFieldComponent.new( form: f, attribute: :current_password, label: "Contraseña actual", type: :password, required: true) do %>
+        <span class="text-xs text-gray-500">
+          Necesitamos tu contraseña actual para validar los cambios
+        </span>
+      <% end %>
 
       <li class="form-input-container sign-in">
         <%= f.button class: "mdc-button mdc-button--raised" do %>
