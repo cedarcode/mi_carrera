@@ -15,8 +15,8 @@ module Transcript
           line.match(subject_regex) do |match|
             yield AcademicEntry.new(
               name: match[1],
-              credits: match[2].to_i,
-              number_of_failures: match[3].to_i,
+              credits: match[2],
+              number_of_failures: match[3],
               date_of_completion: match[4],
               grade: match[5]
             )
