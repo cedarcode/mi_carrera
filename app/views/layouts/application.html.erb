@@ -6,9 +6,6 @@
     <title>MiCarrera</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <link rel="icon" type="image/png" href="/icon-128.png" sizes="128x128">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0' %>
@@ -16,14 +13,16 @@
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/icon?family=Material+Icons' %>
     <%= stylesheet_link_tag    'https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css' %>
 
+    <%= favicon_link_tag "/icon-200-dark.png", type: 'image/png', size: "200x200", href: "/icon-200-dark.png", media: "(prefers-color-scheme: light)"  %>
+    <%= favicon_link_tag "/icon-200-light.png", type: 'image/png', size: "200x200", href: "/icon-200-light.png", media: "(prefers-color-scheme: dark)" %>
+    <%= favicon_link_tag "/apple-touch-icon.png", type: 'image/png', size: "400x400", href: "/apple-touch-icon.png", rel: 'apple-touch-icon' %>
+    <%= favicon_link_tag "/apple-touch-icon-precomposed.png", type: 'image/png', size: "400x400", href: "/apple-touch-icon-precomposed.png", rel: 'apple-touch-icon-precomposed' %>
+
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="MiCarrera PWA">
-    <link rel="apple-touch-icon-precomposed" sizes="180×180" href="/apple-touch-icon-precomposed.png">
-    <link rel="apple-touch-icon" sizes="180×180" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#6200ee"/>
-
     <meta name="description" content="Sistema de trackeo de previaturas de materias realizadas por estudiantes en la FING">
     <meta property="og:title" content="MiCarrera"/>
     <meta property="og:description" content="Sistema de trackeo de previaturas de materias realizadas por estudiantes en la FING"/>
