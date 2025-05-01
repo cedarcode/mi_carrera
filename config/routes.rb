@@ -35,4 +35,8 @@ Rails.application.routes.draw do
   resources :reviews, only: [:create, :destroy]
 
   resources :subject_plans, only: [:index, :create, :destroy], param: :subject_id
+
+  if Rails.env.development?
+    mount Lookbook::Engine, at: "/lookbook"
+  end
 end

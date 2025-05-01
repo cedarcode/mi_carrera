@@ -1,11 +1,14 @@
 FactoryBot.define do
-  factory :course, class: "Approvable" do
+  factory :approvable, aliases: [:course] do
     is_exam { false }
     subject
-  end
 
-  factory :exam, class: "Approvable" do
-    is_exam { true }
-    subject
+    trait :with_prerequisites do
+      prerequisite_tree { association(:subject_prerequisite) }
+    end
+
+    factory :exam do
+      is_exam { true }
+    end
   end
 end
