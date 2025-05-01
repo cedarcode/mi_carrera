@@ -26,7 +26,7 @@ RSpec.describe CookieStudent, type: :model do
       expect(approvable_ids_in_cookie(cookies)).to eq([subject1.course.id, subject2.course.id])
     end
 
-    it 'adds subject.exam adds subject.course as well' do
+    it 'for a subject.exam adds subject.course as well' do
       subject = create :subject, :with_exam
       cookies = build(:cookie)
       student = build(:cookie_student, cookies:)
