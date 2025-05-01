@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   resources :current_optional_subjects, only: :index
 
-  resources :transcripts, only: [:new, :create, :index]
+  resources :transcripts, only: [:new, :create]
 
   resources :reviews, only: [:create, :destroy]
 
