@@ -35,7 +35,8 @@ module Transcript
       /\*{10}|\d{2}\/\d{2}\/\d{4}/
     end
 
-    # The concept can be either a number from 0 to 12, S/N or ***
+    # The concept can be either a string from the following list:
+    # Aceptable, Bueno, Muy Bueno, Excelente, S/C or ***
     def concept_regex
       /Aceptable|Bueno|Muy Bueno|Excelente|S\/C|\*{3}/
     end
