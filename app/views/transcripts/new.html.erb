@@ -18,18 +18,18 @@
 <% end %>
 <div class="sign-in">
   <% if @successful_subjects&.present? %>
-    <p class="color-green mb-2"><%= @successful_subjects.length %> Materias marcadas correctamente</p>
+    <p class="text-green-500 mb-2"><%= @successful_subjects.length %> Materias marcadas correctamente</p>
     <% @successful_subjects.each do |subject| %>
       <p><%= subject.code %> - <%= subject.name %></p>
     <% end %>
   <% end %>
   <% if @failed_entries&.present? %>
-    <p class="color-red my-2"><%= @failed_entries.length %> Materias no encontradas</p>
+    <p class="text-red-600 my-2"><%= @failed_entries&.length %> Materias no encontradas</p>
     <% @failed_entries.each do |entry| %>
       <p><%= entry.name %></p>
     <% end %>
   <% end %>
 </div>
-<p class="subtle-text sign-in mt-3">
+<p class="text-gray-500 text-xs sign-in mt-3">
 La escolaridad no incluye codigos de materias, por lo que en caso de multiples candidatos con el mismo nombre, se marca la materia mas reciente y actualmente activa
 </p>
