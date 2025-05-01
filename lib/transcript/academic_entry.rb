@@ -1,6 +1,6 @@
 module Transcript
   class AcademicEntry
-    attr_reader :name, :credits, :number_of_failures, :date_of_completion, :grade
+    attr_accessor :name, :credits, :number_of_failures, :date_of_completion, :grade
 
     def initialize(name: nil, credits: nil, number_of_failures: nil, date_of_completion: nil, grade: nil)
       @name = name
