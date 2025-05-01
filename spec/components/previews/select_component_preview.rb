@@ -2,7 +2,9 @@ class SelectComponentPreview < ViewComponent::Preview
   # @!group States
 
   def with_options
-    form = ActionView::Helpers::FormBuilder.new(:model, nil, ActionView::Base.new(ActionView::LookupContext.new([]), {}, nil), {})
+    form = ActionView::Helpers::FormBuilder.new(
+      :model, nil, ActionView::Base.new(ActionView::LookupContext.new([]), {}, nil), {}
+    )
     options = [
       ["Option 1", 1],
       ["Option 2", 2],
@@ -13,33 +15,41 @@ class SelectComponentPreview < ViewComponent::Preview
   end
 
   def with_custom_classes
-    form = ActionView::Helpers::FormBuilder.new(:model, nil, ActionView::Base.new(ActionView::LookupContext.new([]), {}, nil), {})
+    form = ActionView::Helpers::FormBuilder.new(
+      :model, nil, ActionView::Base.new(ActionView::LookupContext.new([]), {}, nil), {}
+    )
     options = [
       ["Option 1", 1],
       ["Option 2", 2]
     ]
 
-    render(SelectComponent.new(
-      form: form,
-      field: :field_name,
-      options: options,
-      html_options: { class: "w-64" }
-    ))
+    render(
+      SelectComponent.new(
+        form: form,
+        field: :field_name,
+        options: options,
+        html_options: { class: "w-64" }
+      )
+    )
   end
 
   def with_data_attributes
-    form = ActionView::Helpers::FormBuilder.new(:model, nil, ActionView::Base.new(ActionView::LookupContext.new([]), {}, nil), {})
+    form = ActionView::Helpers::FormBuilder.new(
+      :model, nil, ActionView::Base.new(ActionView::LookupContext.new([]), {}, nil), {}
+    )
     options = [
       ["Option 1", 1],
       ["Option 2", 2]
     ]
 
-    render(SelectComponent.new(
-      form: form,
-      field: :field_name,
-      options: options,
-      html_options: { data: { controller: "example" } }
-    ))
+    render(
+      SelectComponent.new(
+        form: form,
+        field: :field_name,
+        options: options,
+        html_options: { data: { controller: "example" } }
+      )
+    )
   end
 
   # @!endgroup

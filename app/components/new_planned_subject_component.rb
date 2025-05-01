@@ -7,7 +7,5 @@ class NewPlannedSubjectComponent < ViewComponent::Base
     @subjects = subjects
   end
 
-  private
-
   include SubjectsHelper
 end
