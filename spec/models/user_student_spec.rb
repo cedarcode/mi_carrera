@@ -58,12 +58,12 @@ RSpec.describe UserStudent, type: :model do
       create :subject_prerequisite, approvable: subject1.exam, approvable_needed: subject1.course
 
       user = create :user
-      expect(described_class.new(user)).to be_available(subject1)
-      expect(described_class.new(user)).to be_available(subject1.course)
-      expect(described_class.new(user)).not_to be_available(subject1.exam)
+      expect(described_class.new(user).available?(subject1)).to be true
+      expect(described_class.new(user).available?(subject1.course)).to be true
+      expect(described_class.new(user).available?(subject1.exam)).to be false
 
       user.approvals = [subject1.course.id]
-      expect(described_class.new(user)).to be_available(subject1.exam)
+      expect(described_class.new(user).available?(subject1.exam)).to be true
     end
   end
 
@@ -72,19 +72,19 @@ RSpec.describe UserStudent, type: :model do
       subject1 = create :subject
       subject2 = create :subject, :with_exam
 
-      expect(described_class.new(create :user, approvals: [])).not_to be_approved(subject1)
-      expect(described_class.new(create :user, approvals: [])).not_to be_approved(subject1.course)
-      expect(described_class.new(create :user, approvals: [subject1.course.id])).to be_approved(subject1)
-      expect(described_class.new(create :user, approvals: [subject1.course.id])).to be_approved(subject1.course)
+      expect(described_class.new(create :user, approvals: []).approved?(subject1)).to be true
+      expect(described_class.new(create :user, approvals: []).approved?(subject1.course)).to be false
+      expect(described_class.new(create :user, approvals: [subject1.course.id]).approved?(subject1)).to be true
+      expect(described_class.new(create :user, approvals: [subject1.course.id]).approved?(subject1.course)).to be true
 
-      expect(described_class.new(create :user, approvals: [])).not_to be_approved(subject2)
-      expect(described_class.new(create :user, approvals: [])).not_to be_approved(subject2.course)
-      expect(described_class.new(create :user, approvals: [])).not_to be_approved(subject2.exam)
-      expect(described_class.new(create :user, approvals: [subject2.course.id])).not_to be_approved(subject2)
+      expect(described_class.new(create :user, approvals: []).approved?(subject2)).to be true
+      expect(described_class.new(create :user, approvals: []).approved?(subject2.course)).to be false
+      expect(described_class.new(create :user, approvals: []).approved?(subject2.exam)).to be false
+      expect(described_class.new(create :user, approvals: [subject2.course.id]).approved?(subject2)).to be true
 
-      expect(described_class.new(create :user, approvals: [subject2.exam.id])).to be_approved(subject2)
-      expect(described_class.new(create :user, approvals: [subject2.exam.id])).not_to be_approved(subject2.course)
-      expect(described_class.new(create :user, approvals: [subject2.exam.id])).to be_approved(subject2.exam)
+      expect(described_class.new(create :user, approvals: [subject2.exam.id]).approved?(subject2)).to be true
+      expect(described_class.new(create :user, approvals: [subject2.exam.id]).approved?(subject2.course)).to be false
+      expect(described_class.new(create :user, approvals: [subject2.exam.id]).approved?(subject2.exam)).to be true
     end
   end
 
@@ -137,8 +137,8 @@ RSpec.describe UserStudent, type: :model do
       subject1 = create :subject, :with_exam
       prereq = create(:subject_prerequisite, approvable: subject1.exam, approvable_needed: subject1.course)
 
-      expect(described_class.new(create :user, approvals: [])).not_to be_met(prereq)
-      expect(described_class.new(create :user, approvals: [subject1.course.id])).to be_met(prereq)
+      expect(described_class.new(create :user, approvals: []).met?(prereq)).to be false
+      expect(described_class.new(create :user, approvals: [subject1.course.id]).met?(prereq)).to be true
     end
   end
 
@@ -149,9 +149,9 @@ RSpec.describe UserStudent, type: :model do
       subject2 = create :subject, credits: 5, group: group
       user = create :user, approvals: [subject1.course.id]
 
-      expect(described_class.new(user)).not_to be_group_credits_met(group)
+      expect(described_class.new(user).group_credits_met?(group)).to be false
       user.approvals = [subject1.course.id, subject2.course.id]
-      expect(described_class.new(user)).to be_group_credits_met(group)
+      expect(described_class.new(user).group_credits_met?(group)).to be true
     end
   end
 
@@ -163,11 +163,11 @@ RSpec.describe UserStudent, type: :model do
       subject2 = create :subject, credits: 10, group: group2
       user = create :user, approvals: []
 
-      expect(described_class.new(user)).not_to be_groups_credits_met
+      expect(described_class.new(user).groups_credits_met?).to be false
       user.approvals = [subject1.course.id]
-      expect(described_class.new(user)).not_to be_groups_credits_met
+      expect(described_class.new(user).groups_credits_met?).to be false
       user.approvals = [subject1.course.id, subject2.course.id]
-      expect(described_class.new(user)).to be_groups_credits_met
+      expect(described_class.new(user).groups_credits_met?).to be true
     end
   end
 

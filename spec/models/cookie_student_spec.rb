@@ -169,11 +169,11 @@ RSpec.describe CookieStudent, type: :model do
       cookies = build(:cookie)
       student = build(:cookie_student, cookies:)
 
-      expect(student).not_to be_groups_credits_met
+      expect(student.groups_credits_met?).to be false
       student.add(subject1.course)
-      expect(student).not_to be_groups_credits_met
+      expect(student.groups_credits_met?).to be false
       student.add(subject2.course)
-      expect(student).to be_groups_credits_met
+      expect(student.groups_credits_met?).to be true
     end
   end
 
