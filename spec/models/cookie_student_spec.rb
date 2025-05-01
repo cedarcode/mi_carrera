@@ -60,6 +60,35 @@ RSpec.describe CookieStudent, type: :model do
     end
   end
 
+  describe '#force_add_subject' do
+    it 'adds both course and exam ids to approvals' do
+      subject = create :subject, :with_exam
+      cookies = build(:cookie)
+      student = build(:cookie_student, cookies:)
+
+      student.force_add_subject(subject)
+      expect(approvable_ids_in_cookie(cookies)).to contain_exactly(subject.course.id, subject.exam.id)
+    end
+
+    it 'adds only course id when subject has no exam' do
+      subject = create :subject
+      cookies = build(:cookie)
+      student = build(:cookie_student, cookies:)
+
+      student.force_add_subject(subject)
+      expect(approvable_ids_in_cookie(cookies)).to eq([subject.course.id])
+    end
+
+    it 'adds ids even if they already exist' do
+      subject = create :subject, :with_exam
+      cookies = build(:cookie, approved_approvable_ids: [subject.course.id])
+      student = build(:cookie_student, cookies:)
+
+      student.force_add_subject(subject)
+      expect(approvable_ids_in_cookie(cookies)).to eq([subject.course.id, subject.exam.id])
+    end
+  end
+
   describe '#available?' do
     it 'returns true if subject_or_approvable is available' do
       subject1 = create :subject, :with_exam

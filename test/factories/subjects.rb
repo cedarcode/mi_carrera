@@ -10,5 +10,9 @@ FactoryBot.define do
     trait :with_exam do
       exam { association :exam, subject: instance }
     end
+
+    trait :inactive do
+      category { 'inactive' }
+    end
   end
 end
