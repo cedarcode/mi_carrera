@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe CookieStudent, type: :model do
   def approvable_ids_in_cookie(cookie)
-    JSON.parse(cookie[:approved_approvable_ids] || "[]")
     value = cookie[:approved_approvable_ids]
     value.present? ? JSON.parse(value) : nil
   end
