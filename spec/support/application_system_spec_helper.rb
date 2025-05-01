@@ -1,8 +1,4 @@
-require "test_helper"
-
-class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  driven_by :selenium, using: (ENV["TEST_BROWSER"] || :headless_chrome).to_sym, screen_size: [1200, 1200]
-
+module ApplicationSystemSpecHelper
   def check_approvable(approvable)
     check dom_id(approvable), visible: false
     assert_approvable_checkbox(approvable, checked: true)

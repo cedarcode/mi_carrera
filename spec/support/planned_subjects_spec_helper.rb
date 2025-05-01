@@ -1,4 +1,4 @@
-module PlannedSubjectsTestHelper
+module PlannedSubjectsSpecHelper
   def assert_approved_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
