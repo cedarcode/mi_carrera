@@ -2,20 +2,24 @@ require 'rails_helper'
 
 RSpec.describe Transcript::AcademicEntry, type: :lib do
   describe 'academic entry' do
-    let(:entry) { described_class.new(
-       name: 'Test Subject',
-       credits: '10',
-       number_of_failures: '0',
-       date_of_completion: '20/02/2024',
-       grade: 'Aceptable'
-    ) }
-    let(:failed_entry) { described_class.new(
-       name: 'Failed Subject',
-       credits: '10',
-       number_of_failures: '1',
-       date_of_completion: '**********',
-       grade: '***'
-    ) }
+    let(:entry) {
+      described_class.new(
+        name: 'Test Subject',
+        credits: '10',
+        number_of_failures: '0',
+        date_of_completion: '20/02/2024',
+        grade: 'Aceptable'
+      )
+    }
+    let(:failed_entry) {
+      described_class.new(
+        name: 'Failed Subject',
+        credits: '10',
+        number_of_failures: '1',
+        date_of_completion: '**********',
+        grade: '***'
+      )
+    }
 
     it 'has a name' do
       expect(entry.name).to eq('Test Subject')
