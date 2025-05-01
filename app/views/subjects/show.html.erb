@@ -19,9 +19,14 @@
         Grupo: Desconocido
       <% end %>
     </label>
-
-    <%= render 'rating' %>
   </div>
+
+  <div class="flex gap-2 overflow-x-auto">
+    <%= render(ReviewComponent.new(review_name: "Puntuación", rating: @subject.average_rating, subject_id: @subject.id, column_name: :rating, user_review: @user_review)) %>
+    <%= render(ReviewComponent.new(review_name: "Puntuación", rating: @subject.average_rating, subject_id: @subject.id, column_name: :rating, user_review: @user_review)) %>
+    <%= render(ReviewComponent.new(review_name: "Puntuación", rating: @subject.average_rating, subject_id: @subject.id, column_name: :rating, user_review: @user_review)) %>
+  </div>
+
   <hr class="mdc-deprecated-list-divider">
 
   <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Aprobación</h3>
