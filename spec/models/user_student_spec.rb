@@ -72,15 +72,15 @@ RSpec.describe UserStudent, type: :model do
       subject1 = create :subject
       subject2 = create :subject, :with_exam
 
-      expect(described_class.new(create :user, approvals: []).approved?(subject1)).to be true
+      expect(described_class.new(create :user, approvals: []).approved?(subject1)).to be false
       expect(described_class.new(create :user, approvals: []).approved?(subject1.course)).to be false
       expect(described_class.new(create :user, approvals: [subject1.course.id]).approved?(subject1)).to be true
       expect(described_class.new(create :user, approvals: [subject1.course.id]).approved?(subject1.course)).to be true
 
-      expect(described_class.new(create :user, approvals: []).approved?(subject2)).to be true
+      expect(described_class.new(create :user, approvals: []).approved?(subject2)).to be false
       expect(described_class.new(create :user, approvals: []).approved?(subject2.course)).to be false
       expect(described_class.new(create :user, approvals: []).approved?(subject2.exam)).to be false
-      expect(described_class.new(create :user, approvals: [subject2.course.id]).approved?(subject2)).to be true
+      expect(described_class.new(create :user, approvals: [subject2.course.id]).approved?(subject2)).to be false
 
       expect(described_class.new(create :user, approvals: [subject2.exam.id]).approved?(subject2)).to be true
       expect(described_class.new(create :user, approvals: [subject2.exam.id]).approved?(subject2.course)).to be false
