@@ -1,0 +1,35 @@
+<div class="flex items-center gap-4 px-4 py-6">
+  <span class="text-gray-700 whitespace-nowrap">
+    Planificar materia:
+  </span>
+  <%= form_with(
+    model: SubjectPlan.new,
+    url: subject_plans_path,
+    method: :post,
+    data: { controller: "autosave-check" },
+    class: 'flex items-center gap-4 flex-1',
+    local: false
+  ) do |form| %>
+    <div class="flex-1 min-w-0">
+      <%= render(
+        SelectComponent.new(
+          form: form,
+          field: :subject_id,
+          options: subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
+          html_options: { data: { action: "click->autosave-check#stopPropagation" } }
+        )
+      ) %>
+    </div>
+    <div class="w-32">
+      <%= render(
+        SelectComponent.new(
+          form: form,
+          field: :semester,
+          options: (1..10).map { |i| ["Sem. #{i}", i] },
+          html_options: { data: { action: "click->autosave-check#stopPropagation" } }
+        )
+      ) %>
+    </div>
+    <span class="material-icons text-gray-500" data-action="click->autosave-check#update">add_circle_outline</span>
+  <% end %>
+</div>
