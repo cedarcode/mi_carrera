@@ -19,11 +19,16 @@ RSpec.describe Transcript::PdfParser, type: :lib do
     let(:reader) { double('reader') }
     let(:academic_entries_list) {
       [
-        build(:academic_entry, name: 'Test Subject 1', credits: '10', date_of_completion: '20/02/2024', grade: 'Aceptable'),
-        build(:academic_entry, name: 'Test Subject 2', credits: '9', date_of_completion: '20/02/2024', grade: 'Bueno'),
-        build(:academic_entry, name: 'Test Subject 3', credits: '8', date_of_completion: '20/02/2024', grade: 'Muy Bueno'),
-        build(:academic_entry, name: 'Test Subject 4', credits: '7', date_of_completion: '20/02/2024', grade: 'Excelente'),
-        build(:academic_entry, name: 'Test Subject 5', credits: '6', date_of_completion: '20/02/2024', grade: 'S/C'),
+        build(:academic_entry, name: 'Test Subject 1', credits: '10',
+                               date_of_completion: '20/02/2024', grade: 'Aceptable'),
+        build(:academic_entry, name: 'Test Subject 2', credits: '9',
+                               date_of_completion: '20/02/2024', grade: 'Bueno'),
+        build(:academic_entry, name: 'Test Subject 3', credits: '8',
+                               date_of_completion: '20/02/2024', grade: 'Muy Bueno'),
+        build(:academic_entry, name: 'Test Subject 4', credits: '7',
+                               date_of_completion: '20/02/2024', grade: 'Excelente'),
+        build(:academic_entry, name: 'Test Subject 5', credits: '6',
+                               date_of_completion: '20/02/2024', grade: 'S/C'),
         build(:academic_entry, :failed, name: 'Failed Subject 1', credits: '8')
       ]
     }
