@@ -14,9 +14,6 @@ class ApprovableCheckboxComponent < ViewComponent::Base
       checked:border-primary
       checked:bg-primary
 
-      indeterminate:border-primary
-      indeterminate:bg-primary
-
       focus-visible:outline-2
       focus-visible:outline-offset-0
       focus-visible:outline-primary
