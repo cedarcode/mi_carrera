@@ -27,6 +27,16 @@ class ApprovableCheckboxComponent < ViewComponent::Base
 
       forced-colors:appearance-auto
     ],
+    svg: %w[
+      pointer-events-none
+      col-start-1
+      row-start-1
+      size-3.5
+      self-center
+      justify-self-center
+      stroke-white
+      group-has-disabled:stroke-white/25
+    ],
   }
 
   attr_reader :approvable, :subject_show, :current_student
