@@ -11,15 +11,15 @@ class ApprovableCheckboxComponent < ViewComponent::Base
       border-gray-300
       bg-white
 
-      checked:border-indigo-600
-      checked:bg-indigo-600
+      checked:border-primary
+      checked:bg-primary
 
-      indeterminate:border-indigo-600
-      indeterminate:bg-indigo-600
+      indeterminate:border-primary
+      indeterminate:bg-primary
 
       focus-visible:outline-2
       focus-visible:outline-offset-0
-      focus-visible:outline-indigo-600
+      focus-visible:outline-primary
 
       disabled:border-gray-300
       disabled:bg-gray-100
