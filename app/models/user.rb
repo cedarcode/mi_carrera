@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :subject_plans, dependent: :destroy
   has_many :planned_subjects, through: :subject_plans, source: :subject
+  belongs_to :degree
 
   def self.from_omniauth(auth, cookie)
     # check that user with same email exists
