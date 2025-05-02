@@ -12,11 +12,11 @@
         id: dom_id(approvable),
         checked: checked?,
         disabled: disabled?,
-        class: STYLES[:checkbox].join(' '),
+        class: class_names(STYLES[:checkbox]),
         data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
       ) %>
 
-    <svg fill="none" viewBox="0 0 14 14" class="<%= STYLES[:svg].join(' ') %>">
+    <svg fill="none" viewBox="0 0 14 14" class="<%= class_names(STYLES[:svg]) %>">
         <path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-checked:opacity-100">
         </path>
         <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-indeterminate:opacity-100">
