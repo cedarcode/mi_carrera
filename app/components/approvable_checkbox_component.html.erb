@@ -12,7 +12,7 @@
         id: dom_id(approvable),
         checked: checked?,
         disabled: disabled?,
-        class: class_names(STYLES[:checkbox]),
+        class: STYLES[:checkbox],
         data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
       ) %>
 
