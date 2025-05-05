@@ -6,8 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def switch_tenant
-    subdomain = request.subdomain
-    Apartment::Tenant.switch!(subdomain) if subdomain.present?
+    Apartment::Tenant.switch!(current_student.degree_key)
   end
 
   def current_student

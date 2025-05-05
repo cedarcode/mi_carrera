@@ -15,6 +15,17 @@ class CookieStudent < BaseStudent
     }
   end
 
+  def change_degree(degree_key)
+    cookie[:degree] = {
+      value: degree_key,
+      domain: :all
+    }
+  end
+
+  def degree_key
+    cookie[:degree]
+  end
+
   private
 
   attr_reader :cookie
