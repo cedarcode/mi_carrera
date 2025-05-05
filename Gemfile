@@ -17,7 +17,7 @@ gem 'propshaft', '~> 1.1'
 gem 'puma', '~> 6.6'
 gem 'rollbar', '~> 3.6'
 gem 'stimulus-rails', '~> 1.3'
-gem 'tailwindcss-rails', '~> 4.1'
+gem 'tailwindcss-rails', '~> 4.2'
 gem 'turbo-rails', '~> 2.0'
 gem "view_component", "~> 3.22"
 
@@ -28,7 +28,7 @@ end
 group :development, :test do
   gem "brakeman", "~> 7.0"
   gem 'byebug', '~> 12.0', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 7.1'
+  gem 'rspec-rails', '~> 8.0'
 end
 
 group :development do
@@ -42,7 +42,7 @@ end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.31'
+  gem 'selenium-webdriver', '~> 4.32'
   gem 'shoulda-matchers', '~> 6.5'
   gem 'simplecov', require: false
 end
