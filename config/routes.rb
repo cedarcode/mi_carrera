@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   resource :user_onboardings, only: :update
 
+  resource :student_degrees, only: :update
+
   resources :current_optional_subjects, only: :index
 
   resources :transcripts, only: [:new, :create]
