@@ -40,4 +40,8 @@ module ApplicationHelper
       raise "Unexpected logical operator: #{prerequisite.logical_operator}"
     end
   end
+
+  def prompt_for_degree_selection?
+    current_student.degree_key.blank? && ['subjects', 'profiles'].include?(controller_path)
+  end
 end
