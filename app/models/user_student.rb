@@ -12,6 +12,10 @@ class UserStudent < BaseStudent
     user.update!(welcome_banner_viewed: true)
   end
 
+  def degree_key
+    user.degree.key
+  end
+
   private
 
   attr_reader :user
