@@ -6,9 +6,11 @@
   </div>
 
   <div class="relative w-full">
-    <%= form.send("#{type}_field", attribute,
-                   class: "w-full pr-16 rounded-md bg-white px-3 py-1.5 outline-1 focus:outline-2 outline-gray-300 focus:outline-indigo-600 #{"outline-red-500 focus:outline-red-600" if errors?}",
+    <%= form.text_field(
+          attribute,
+          class: "w-full pr-16 rounded-md bg-white px-3 py-1.5 outline-1 focus:outline-2 outline-gray-300 focus:outline-indigo-600 #{"outline-red-500 focus:outline-red-600" if errors?}",
           required: required,
+          type: type,
           data: password? ? { show_password_target: "password" } : {}
         ) %>
 
