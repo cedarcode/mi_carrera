@@ -1,5 +1,6 @@
 class InputFieldComponent < ViewComponent::Base
   renders_one :trailing_icon
+  renders_one :corner_hint
 
   attr_reader :attribute, :form, :label, :required, :type
 

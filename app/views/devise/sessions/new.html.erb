@@ -28,7 +28,9 @@
           <%= render "shared/password_visibility_button" %>
         <% end %>
 
-        <%= link_to '¿Has olvidado tu contraseña?', new_password_path(resource), class: "font-semibold text-gray-700 hover:text-indigo-700 text-sm/6" %>
+        <%= component.with_corner_hint do %>
+          <%= link_to '¿Has olvidado tu contraseña?', new_password_path(resource), class: "font-semibold text-gray-700 hover:text-indigo-700 text-sm/6" %>
+        <% end %>
       <% end %>
 
       <li class="form-input-container sign-in">

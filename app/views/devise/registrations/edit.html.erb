@@ -11,9 +11,11 @@
           <%= render "shared/password_visibility_button" %>
         <% end %>
 
-        <span class="text-xs text-gray-500">
-          La contraseña debe tener al menos 6 caracteres
-        </span>
+        <% component.with_corner_hint do %>
+          <span class="text-xs text-gray-500">
+            La contraseña debe tener al menos 6 caracteres
+          </span>
+        <% end %>
       <% end %>
 
       <%= render InputFieldComponent.new( form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña", type: :password) do |component| %>
@@ -27,9 +29,11 @@
           <%= render "shared/password_visibility_button" %>
         <% end %>
 
-        <span class="text-xs text-gray-500">
-          Necesitamos tu contraseña actual para validar los cambios
-        </span>
+        <% component.with_corner_hint do %>
+          <span class="text-xs text-gray-500">
+            Necesitamos tu contraseña actual para validar los cambios
+          </span>
+        <% end %>
       <% end %>
 
       <li class="form-input-container sign-in">
