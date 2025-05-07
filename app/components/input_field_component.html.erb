@@ -14,13 +14,7 @@
           data: password? ? { show_password_target: "password" } : {}
         ) %>
 
-    <% if password? %>
-      <button type="button"
-              class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer hover:text-indigo-700 <%= "text-red-600 hover:text-red-700" if errors? %>"
-              data-action="show-password#toggle">
-        <span class="material-icons" data-show-password-target="icon">visibility</span>
-      </button>
-    <% end %>
+    <%= trailing_icon %>
   </div>
   <% if errors? %>
     <div class="text-red-600 text-sm/6">

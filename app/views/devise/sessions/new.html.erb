@@ -23,7 +23,15 @@
 
       <%= render InputFieldComponent.new( form: f, attribute: :email, label: "Correo electrónico", type: :email, required: true) %>
 
-      <%= render InputFieldComponent.new( form: f, attribute: :password, label: "Contraseña", type: :password, required: true) do %>
+      <%= render InputFieldComponent.new( form: f, attribute: :password, label: "Contraseña", type: :password, required: true) do |component| %>
+        <% component.with_trailing_icon do %>
+          <button type="button"
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer hover:text-indigo-700"
+                  data-action="show-password#toggle">
+            <span class="material-icons" data-show-password-target="icon">visibility</span>
+          </button>
+        <% end %>
+
         <%= link_to '¿Has olvidado tu contraseña?', new_password_path(resource), class: "font-semibold text-gray-700 hover:text-indigo-700 text-sm/6" %>
       <% end %>
 

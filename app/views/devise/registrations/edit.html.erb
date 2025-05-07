@@ -6,15 +6,39 @@
 
       <%= render InputFieldComponent.new( form: f, attribute: :email, label: "Correo electrónico", type: :email) %>
 
-      <%= render InputFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña", type: :password) do %>
+      <%= render InputFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña", type: :password) do |component| %>
+        <% component.with_trailing_icon do %>
+          <button type="button"
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer hover:text-indigo-700"
+                  data-action="show-password#toggle">
+            <span class="material-icons" data-show-password-target="icon">visibility</span>
+          </button>
+        <% end %>
+
         <span class="text-xs text-gray-500">
           La contraseña debe tener al menos 6 caracteres
         </span>
       <% end %>
 
-      <%= render InputFieldComponent.new( form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña", type: :password) %>
+      <%= render InputFieldComponent.new( form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña", type: :password) do |component| %>
+        <% component.with_trailing_icon do %>
+          <button type="button"
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer hover:text-indigo-700"
+                  data-action="show-password#toggle">
+            <span class="material-icons" data-show-password-target="icon">visibility</span>
+          </button>
+        <% end %>
+      <% end %>
 
-      <%= render InputFieldComponent.new( form: f, attribute: :current_password, label: "Contraseña actual", type: :password, required: true) do %>
+      <%= render InputFieldComponent.new( form: f, attribute: :current_password, label: "Contraseña actual", type: :password, required: true) do |component| %>
+        <% component.with_trailing_icon do %>
+          <button type="button"
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer hover:text-indigo-700"
+                  data-action="show-password#toggle">
+            <span class="material-icons" data-show-password-target="icon">visibility</span>
+          </button>
+        <% end %>
+
         <span class="text-xs text-gray-500">
           Necesitamos tu contraseña actual para validar los cambios
         </span>

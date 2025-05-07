@@ -1,4 +1,6 @@
 class InputFieldComponent < ViewComponent::Base
+  renders_one :trailing_icon
+
   attr_reader :attribute, :form, :label, :required, :type
 
   def initialize(form:, attribute:, label:, type: :text, required: false)

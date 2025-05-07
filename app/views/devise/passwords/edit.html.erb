@@ -5,7 +5,15 @@
     <%= form_with(model: resource, url: password_path(resource_name), method: :put, local: true, class: "space-y-6") do |f| %>
       <%= f.hidden_field :reset_password_token %>
 
-      <%= render InputFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña", type: :password, required: true) do %>
+      <%= render InputFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña", type: :password, required: true) do |component| %>
+        <% component.with_trailing_icon do %>
+          <button type="button"
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer hover:text-indigo-700"
+                  data-action="show-password#toggle">
+            <span class="material-icons" data-show-password-target="icon">visibility</span>
+          </button>
+        <% end %>
+
         <span class="text-xs text-gray-500">
           La contraseña debe tener al menos 6 caracteres
         </span>
