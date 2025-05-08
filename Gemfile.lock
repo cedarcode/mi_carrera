@@ -76,6 +76,9 @@ GEM
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     afm (0.2.2)
+    appsignal (4.5.10)
+      logger
+      rack (>= 2.0.0)
     ast (2.4.3)
     base64 (0.2.0)
     bcrypt (3.1.20)
@@ -438,6 +441,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  appsignal (~> 4.5)
   bootsnap (~> 1.18)
   brakeman (~> 7.0)
   byebug (~> 12.0)
