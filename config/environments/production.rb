@@ -33,6 +33,7 @@ Rails.application.configure do
   # Log to AppSignal with the current request id as a default log tag.
   config.log_tags = [ :request_id ]
   appsignal_logger = Appsignal::Logger.new("rails")
+  appsignal_logger.broadcast_to(ActiveSupport::TaggedLogging.logger(STDOUT))
   config.logger = ActiveSupport::TaggedLogging.new(appsignal_logger)
 
   # Change to "debug" to log everything (including potentially personally-identifiable information!)
