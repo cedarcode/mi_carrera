@@ -1,0 +1,11 @@
+<div class="flex items-center justify-between">
+  <%= link_to subject_path(@subject), :class => "grow w-full" do %>
+    <%= display_name(@subject) %>
+  <% end %>
+  <span class="flex h-10 w-24">
+    <%= render(ApprovableCheckboxComponent.new(approvable: @subject.course, subject_show: false, current_student: @current_student)) %>
+    <% if @subject.exam %>
+      <%= render(ApprovableCheckboxComponent.new(approvable: @subject.exam, subject_show: false, current_student: @current_student)) %>
+    <% end %>
+  </span>
+</div>
