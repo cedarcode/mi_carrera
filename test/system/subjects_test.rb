@@ -83,7 +83,7 @@ class SubjectsTest < ApplicationSystemTestCase
 
     # Logged
     fill_in "Correo electrónico", with: user.email
-    fill_in "Contraseña", with: "secret"
+    fill_in "Contraseña", with: user.password
     click_button "Ingresar"
 
     assert_text "Iniciaste sesión correctamente"

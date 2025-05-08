@@ -157,7 +157,7 @@
   subject_group:
 102EU:
   code: 102EU
-  name: QCA. GENERAL I (PLAN 2000)
+  name: QUÍMICA GENERAL I
   credits: 7
   has_exam: false
   subject_group: '4442'
@@ -2763,7 +2763,7 @@ CCT20:
   code: CCT20
   name: FÍSICA II
   credits: 14
-  has_exam: false
+  has_exam: true
   subject_group: '4442'
 CE10:
   code: CE10
@@ -3971,6 +3971,12 @@ MHC24:
   credits: 14
   has_exam: false
   subject_group: '4442'
+MHC39:
+  code: MHC39
+  name: BIOQUÍMICA I
+  credits: 11
+  has_exam: true
+  subject_group: '4442'
 MI2:
   code: MI2
   name: MATEMATICA INICIAL
@@ -4182,6 +4188,12 @@ SFW10:
   credits: 10
   has_exam: false
   subject_group: '5082'
+SO001:
+  code: SO001
+  name: INTRODUCCIÓN A LA VIDA UNIVERSITARIA (IVU)
+  credits: 1
+  has_exam: false
+  subject_group: '3582'
 SRN02:
   code: SRN02
   name: CÁLCULO I

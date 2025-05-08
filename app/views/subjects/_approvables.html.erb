@@ -8,7 +8,7 @@
     </span>
 
     <span class="mdc-deprecated-list-item__meta">
-      <%= render 'shared/checkbox_component', approvable: @subject.course, subject_show: true %>
+      <%= render(ApprovableCheckboxComponent.new(approvable: @subject.course, subject_show: true, current_student: current_student)) %>
     </span>
   </label>
 
@@ -20,7 +20,7 @@
       </span>
 
       <span class="mdc-deprecated-list-item__meta">
-        <%= render 'shared/checkbox_component', approvable: @subject.exam, subject_show: true %>
+        <%= render(ApprovableCheckboxComponent.new(approvable: @subject.exam, subject_show: true, current_student: current_student)) %>
       </span>
     </label>
   <% end %>

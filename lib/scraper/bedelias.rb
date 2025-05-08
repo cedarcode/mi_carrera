@@ -3,19 +3,19 @@ require 'capybara/dsl'
 require 'scraper/prerequisites_tree_page'
 
 module Scraper
-  module Bedelias
-    extend self
-
+  class Bedelias
     include Capybara::DSL
 
     # 5265 - CIENCIAS HUMANAS Y SOCIALES - min: 10 créditos
     GROUP_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:min): (\d+)(?: créditos)\z/
     # SRN14 - MATEMÁTICA DISCRETA I - créditos: 10
-    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
+    # FF1-7 - CREDITOS ASIGNADOS POR REVALIDA - créditos: 7
+    # FL2.6 - CREDITOS ASIGANDOS POR REVALIDA - créditos: 6
+    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A((?:\w|\.|\-)+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
     MAX_PAGES = ENV["MAX_PAGES"]&.to_i
     THREADS = (ENV['THREADS'] || 6).to_f
 
-    def scrape
+    def self.scrape
       Capybara.configure do |config|
         config.default_driver = ENV["HEADLESS"] == "false" ? :selenium_chrome : :selenium_chrome_headless
         config.run_server = false
@@ -23,6 +23,19 @@ module Scraper
         config.threadsafe = true
       end
 
+      degrees = Rails.configuration.degrees
+      degrees.each do |degree|
+        new(degree).scrape
+      end
+    end
+
+    def initialize(degree)
+      @degree = degree
+      @logger = Rails.logger.tagged("Scraper - #{degree[:name]}")
+    end
+
+    def scrape
+      logger.info "Starting to scrape degree"
       groups = {}
       subjects = {}
 
@@ -38,12 +51,14 @@ module Scraper
 
       scraped_prerequisites =
         prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
-      optional_inco_subjects = load_this_semester_inco_subjects
+      if degree[:include_inco_subjects].present?
+        optional_inco_subjects = load_this_semester_inco_subjects
+        write_yml("scraped_optional_subjects", optional_inco_subjects.sort)
+      end
 
       write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
       write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h)
       write_yml("scraped_prerequisites", scraped_prerequisites)
-      write_yml("scraped_optional_subjects", optional_inco_subjects.sort)
     rescue
       Rails.logger.info save_screenshot
       raise
@@ -51,8 +66,14 @@ module Scraper
 
     private
 
+    attr_reader :degree, :logger
+
     def write_yml(name, data)
-      File.write(Rails.root.join("db/data/#{name}.yml"), data.to_yaml)
+      dir_path = Rails.root.join("db/data/#{degree[:key]}")
+
+      Dir.mkdir(dir_path) unless Dir.exist?(dir_path)
+
+      File.write(dir_path.join("#{name}.yml"), data.to_yaml)
     end
 
     def go_to_groups_and_subjects_page
@@ -69,13 +90,17 @@ module Scraper
 
       wait_for_loading_widget_to_disappear
 
-      find('.ui-column-filter').set('INGENIERIA EN COMPUTACION')
+      find('.ui-column-filter').set(degree[:name])
 
-      within('tr', text: 'INGENIERIA EN COMPUTACION', match: :prefer_exact) do
-        find('.ui-row-toggler').click
+      all('tr', text: degree[:name], match: :prefer_exact).each do |row|
+        if row.has_selector?('td', text: 'Grado', match: :prefer_exact)
+          row.find('.ui-row-toggler').click
+          break
+        end
       end
+
       within('.ui-expanded-row-content', text: 'Planes') do
-        find('tr', text: '1997').click_on "Ver más datos"
+        find('tr', text: degree[:current_plan]).click_on "Ver más datos"
       end
     end
 
@@ -90,8 +115,13 @@ module Scraper
         subject_nodes_in_group = group_node.all(:xpath, '..//..//li[@data-nodetype="Materia"]', visible: false)
 
         subject_nodes_in_group.each do |subject_node|
-          code, name, credits = SUBJECT_CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all)).captures
-          subjects[code] = { code:, name:, credits: credits.to_i, has_exam: false, subject_group: group_code }
+          match = SUBJECT_CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all))
+          if match
+            code, name, credits = match.captures
+            subjects[code] = { code:, name:, credits: credits.to_i, has_exam: false, subject_group: group_code }
+          else
+            raise "Regex didn't match for subject: #{subject_node.text(:all)}"
+          end
         end
       end
     end
@@ -132,7 +162,7 @@ module Scraper
         all('[data-ri]').map { |node| node['data-ri'] }.map do |row_id|
           approvable_row = find("[data-ri='#{row_id}']")
           name, type = approvable_row.all('td')[0..1]
-          Rails.logger.info "#{name.text} (#{type.text})"
+          logger.info "#{name.text} (#{type.text})"
 
           subject_code = /\A(\w+) - .*\z/.match(name.text).captures[0]
           is_exam = type.text == "Examen"
@@ -153,6 +183,9 @@ module Scraper
           prereq.merge(subject_code:, is_exam:)
         end
       end
+    rescue
+      Rails.logger.info save_screenshot
+      raise
     end
 
     def go_to_page(page)
