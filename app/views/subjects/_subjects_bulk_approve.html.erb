@@ -1,8 +1,8 @@
 <div data-controller="bedel loading <%= "confetti" if @graduated %>" id="subjects" >
   <%= render "approvals/spinner_template" %>
-  <% @subjects.group_by(&:category).each do |category, subjects| %>
-    <div class="relative">
-      <div class="flex items-center justify-between sticky top-0 border-y border-t-gray-100 border-b-gray-200 bg-gray-50 px-3 py-1.5 text-sm/6 font-semibold text-gray-900">
+  <div class="flex flex-col relative gap-3">
+    <% @subjects.group_by(&:category).each do |category, subjects| %>
+      <div class="flex items-center justify-between border-y border-t-gray-100 border-b-gray-200 bg-gray-50 px-3 py-2 text-sm/6 font-semibold text-gray-900">
         <h3><%= formatted_category(category) %></h3>
         <div class='flex'>
           <h3 class='checkbox-header'>Curso</h3>
@@ -12,6 +12,6 @@
       <ul role="list">
         <%= render SubjectWithCheckboxesComponent.with_collection(subjects, current_student:) %>
       </ul>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
