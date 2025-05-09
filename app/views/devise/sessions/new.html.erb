@@ -21,9 +21,9 @@
         Ingresar con tu correo electrónico
       </li>
 
-      <%= render TextFieldComponent.new( form: f, attribute: :email, label: "Correo electrónico", type: :email, required: true) %>
+      <%= render TextFieldComponent.new( form: f, attribute: :email, label: "Correo electrónico", type: :email, input_options: { required: true }) %>
 
-      <%= render TextFieldComponent.new( form: f, attribute: :password, label: "Contraseña", type: :password, required: true) do |component| %>
+      <%= render TextFieldComponent.new( form: f, attribute: :password, label: "Contraseña", type: :password, input_options: { required: true, data: { show_password_target: "password" } }, container_options: { data: { controller: "show-password" } }) do |component| %>
         <% component.with_trailing_icon do %>
           <%= render "shared/password_visibility_button" %>
         <% end %>

@@ -1,13 +1,13 @@
-<div class="space-y-2" data-controller="<%= 'show-password' if password? %>">
+<%= content_tag :div, container_options.merge(class: "space-y-2") do %>
   <%= form.label attribute, label, class: "text-sm/6 font-medium text-gray-700 #{"text-red-600" if errors?}" %>
 
   <div class="relative w-full">
     <%= form.text_field(
           attribute,
-          class: "w-full pr-16 rounded-md bg-white px-3 py-1.5 outline-1 focus:outline-2 outline-gray-300 focus:outline-indigo-600 #{"outline-red-500 focus:outline-red-600" if errors?}",
-          required: required,
-          type: type,
-          data: password? ? { show_password_target: "password" } : {}
+          input_options.merge(
+            class: "w-full pr-16 rounded-md bg-white px-3 py-1.5 outline-1 focus:outline-2 outline-gray-300 focus:outline-indigo-600 #{"outline-red-500 focus:outline-red-600" if errors?}",
+            type: type,
+          )
         ) %>
 
     <%= trailing_icon %>
@@ -20,4 +20,4 @@
   <% else %>
     <%= hint %>
   <% end %>
-</div>
+<% end %>

@@ -5,7 +5,7 @@
     <%= form_with(model: resource, url: password_path(resource_name), method: :put, local: true, class: "space-y-6") do |f| %>
       <%= f.hidden_field :reset_password_token %>
 
-      <%= render TextFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña", type: :password, required: true) do |component| %>
+      <%= render TextFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña", type: :password, input_options: { required: true, data: { show_password_target: "password" } }, container_options: { data: { controller: "show-password" } }) do |component| %>
         <% component.with_trailing_icon do %>
           <%= render "shared/password_visibility_button" %>
         <% end %>
