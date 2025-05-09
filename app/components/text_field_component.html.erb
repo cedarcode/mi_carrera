@@ -1,9 +1,5 @@
 <div class="space-y-2" data-controller="<%= 'show-password' if password? %>">
-  <div class="flex items-center justify-between">
-    <%= form.label attribute, label, class: "text-sm/6 font-medium text-gray-700 #{"text-red-600" if errors?}" %>
-
-    <%= corner_hint %>
-  </div>
+  <%= form.label attribute, label, class: "text-sm/6 font-medium text-gray-700 #{"text-red-600" if errors?}" %>
 
   <div class="relative w-full">
     <%= form.text_field(
@@ -16,9 +12,12 @@
 
     <%= trailing_icon %>
   </div>
+
   <% if errors? %>
     <div class="text-red-600 text-sm/6">
       <%= error_messages %>
     </div>
+  <% else %>
+    <%= hint %>
   <% end %>
 </div>
