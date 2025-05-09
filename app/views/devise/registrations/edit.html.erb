@@ -4,9 +4,9 @@
 
     <%= form_with(model: resource, url: registration_path(resource_name), method: :put, local: true, class: "space-y-6") do |f| %>
 
-      <%= render InputFieldComponent.new( form: f, attribute: :email, label: "Correo electrónico", type: :email) %>
+      <%= render TextFieldComponent.new( form: f, attribute: :email, label: "Correo electrónico", type: :email) %>
 
-      <%= render InputFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña", type: :password) do |component| %>
+      <%= render TextFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña", type: :password) do |component| %>
         <% component.with_trailing_icon do %>
           <%= render "shared/password_visibility_button" %>
         <% end %>
@@ -18,13 +18,13 @@
         <% end %>
       <% end %>
 
-      <%= render InputFieldComponent.new( form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña", type: :password) do |component| %>
+      <%= render TextFieldComponent.new( form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña", type: :password) do |component| %>
         <% component.with_trailing_icon do %>
           <%= render "shared/password_visibility_button" %>
         <% end %>
       <% end %>
 
-      <%= render InputFieldComponent.new( form: f, attribute: :current_password, label: "Contraseña actual", type: :password, required: true) do |component| %>
+      <%= render TextFieldComponent.new( form: f, attribute: :current_password, label: "Contraseña actual", type: :password, required: true) do |component| %>
         <% component.with_trailing_icon do %>
           <%= render "shared/password_visibility_button" %>
         <% end %>

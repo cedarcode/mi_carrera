@@ -1,4 +1,4 @@
-class InputFieldComponent < ViewComponent::Base
+class TextFieldComponent < ViewComponent::Base
   renders_one :trailing_icon
   renders_one :corner_hint
 
