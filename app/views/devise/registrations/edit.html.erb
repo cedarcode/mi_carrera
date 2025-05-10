@@ -6,29 +6,17 @@
 
       <%= render TextFieldComponent.new( form: f, attribute: :email, label: "Correo electrónico", type: :email) %>
 
-      <%= render TextFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña", type: :password, input_options: { data: { show_password_target: "password" } }, container_options: { data: { controller: "show-password" } }) do |component| %>
-        <% component.with_trailing_icon do %>
-          <%= render "shared/password_visibility_button" %>
-        <% end %>
-
-        <% component.with_hint do %>
+      <%= render PasswordFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña") do |component| %>
+        <%= component.with_hint do %>
           <span class="text-xs text-gray-500">
             La contraseña debe tener al menos 6 caracteres
           </span>
         <% end %>
       <% end %>
 
-      <%= render TextFieldComponent.new( form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña", type: :password, input_options: { data: { show_password_target: "password" } }, container_options: { data: { controller: "show-password" } }) do |component| %>
-        <% component.with_trailing_icon do %>
-          <%= render "shared/password_visibility_button" %>
-        <% end %>
-      <% end %>
+      <%= render PasswordFieldComponent.new( form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña") %>
 
-      <%= render TextFieldComponent.new( form: f, attribute: :current_password, label: "Contraseña actual", type: :password, input_options: { required: true, data: { show_password_target: "password" } }, container_options: { data: { controller: "show-password" } }) do |component| %>
-        <% component.with_trailing_icon do %>
-          <%= render "shared/password_visibility_button" %>
-        <% end %>
-
+      <%= render PasswordFieldComponent.new( form: f, attribute: :current_password, label: "Contraseña actual", input_options: { required: true }) do |component| %>
         <% component.with_hint do %>
           <span class="text-xs text-gray-500">
             Necesitamos tu contraseña actual para validar los cambios
