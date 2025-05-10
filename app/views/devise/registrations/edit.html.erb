@@ -4,9 +4,9 @@
 
     <%= form_with(model: resource, url: registration_path(resource_name), method: :put, local: true, class: "space-y-6") do |f| %>
 
-      <%= render TextFieldComponent.new( form: f, attribute: :email, label: "Correo electrónico", type: :email) %>
+      <%= render TextFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", type: :email) %>
 
-      <%= render PasswordFieldComponent.new( form: f, attribute: :password, label: "Nueva contraseña") do |component| %>
+      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña") do |component| %>
         <%= component.with_hint do %>
           <span class="text-xs text-gray-500">
             La contraseña debe tener al menos 6 caracteres
@@ -14,9 +14,9 @@
         <% end %>
       <% end %>
 
-      <%= render PasswordFieldComponent.new( form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña") %>
+      <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña") %>
 
-      <%= render PasswordFieldComponent.new( form: f, attribute: :current_password, label: "Contraseña actual", input_options: { required: true }) do |component| %>
+      <%= render PasswordFieldComponent.new(form: f, attribute: :current_password, label: "Contraseña actual", input_options: { required: true }) do |component| %>
         <% component.with_hint do %>
           <span class="text-xs text-gray-500">
             Necesitamos tu contraseña actual para validar los cambios

@@ -21,9 +21,9 @@
       </li>
 
       <div class="space-y-6">
-        <%= render TextFieldComponent.new( form: f, attribute: :email, label: "Correo electrónico", type: :email, input_options: { required: true }) %>
+        <%= render TextFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", type: :email, input_options: { required: true }) %>
 
-        <%= render PasswordFieldComponent.new( form: f, attribute: :password, label: "Contraseña", input_options: { required: true }) do |component| %>
+        <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true }) do |component| %>
           <%= component.with_hint do %>
             <span class="text-xs text-gray-500">
               La contraseña debe tener al menos 6 caracteres
@@ -31,7 +31,7 @@
           <% end %>
         <% end %>
 
-        <%= render PasswordFieldComponent.new( form: f, attribute: :password_confirmation, label: "Confirma tu contraseña", input_options: { required: true }) %>
+        <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu contraseña", input_options: { required: true }) %>
       </div>
 
       <li class="form-input-container sign-in">
