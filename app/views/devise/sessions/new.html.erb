@@ -1,25 +1,10 @@
-<div class="mdc-deprecated-list-group">
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5 sign-in">Ingreso</h3>
-  <ul class="mdc-deprecated-list growing-text-list">
+<div class="flex flex-col justify-center items-center p-6 space-y-4">
+  <%= image_tag "icon.png", class: "w-16 rounded-full" %>
 
-    <li class="form-input-container google-button-container">
+  <h2 class="text-3xl/9 text-neutral-800">Iniciar sesión</h2>
 
-      <%- resource_class.omniauth_providers.each do |provider| %>
-        <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, local: true do |f| %>
-          <%= f.button class: 'google-sign-in-button' do %>
-            <%= image_tag asset_path('google-icon.png'), class: 'google-icon' %>
-            <span class='google-sign-in-text'>Continuar con Google</span>
-          <% end %>
-        <% end %>
-      <% end %>
-    </li>
-
-    <li role="separator" class="mdc-deprecated-list-divider"></li>
-
-    <%= form_with(model: resource, url: session_path(resource_name), local: true) do |f| %>
-      <li class="form-input-container sign-in">
-        Ingresar con tu correo electrónico
-      </li>
+  <div class="w-full max-w-sm space-y-6 py-6">
+    <%= form_with(model: resource, url: session_path(resource_name), local: true, class: "bg-neutral-100 p-6 border-1 border-neutral-200 rounded-lg shadow-sm") do |f| %>
 
       <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true }) %>
 
@@ -35,7 +20,27 @@
       </li>
     <% end %>
 
-    <li role="separator" class="mdc-deprecated-list-divider"></li>
-    <%= render "devise/shared/links" %>
-  </ul>
+    <p class="text-center text-sm/6 text-neutral-500">
+      ¿No estás registrado?
+
+      <%= link_to "Registrarte",new_registration_path(resource), class: "font-semibold text-neutral-700 hover:text-indigo-700" %>
+    </p>
+
+    <p class="text-center text-sm/6 text-neutral-500">
+      ¿Has olvidado tu contraseña?
+
+      <%= link_to "Restablecer contraseña", new_password_path(resource), class: "font-semibold text-neutral-700 hover:text-indigo-700" %>
+    </p>
+
+    <hr class="border-neutral-200" />
+
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, local: true do |f| %>
+        <%= f.button class: "w-full flex items-center justify-center p-2 rounded-lg border-1 border-neutral-300 cursor-pointer" do %>
+          <%= image_tag asset_path("google-icon.png"), class: "w-6 h-6" %>
+          <span class="text-neutral-700 font-semibold text-sm">Continuar con Google</span>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
