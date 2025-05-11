@@ -13,7 +13,7 @@ class UserTest < ApplicationSystemTestCase
     visit new_user_session_path
 
     click_on "Registrarte"
-    assert_text "Registro"
+    assert_text "Registrarse"
 
     assert_text "Continuar con Google"
 
@@ -107,7 +107,7 @@ class UserTest < ApplicationSystemTestCase
 
     visit new_user_session_path
 
-    assert_text "Ingreso"
+    assert_text "Iniciar sesión"
     assert_text "Continuar con Google"
 
     fill_in "Correo electrónico", with: user.email
