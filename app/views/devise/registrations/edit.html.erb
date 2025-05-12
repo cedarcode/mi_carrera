@@ -6,7 +6,7 @@
 
       <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { autofocus: true }) %>
 
-      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña", hint: "La contraseña debe tener al menos 6 caracteres") %>
+      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña", hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña") %>
 
