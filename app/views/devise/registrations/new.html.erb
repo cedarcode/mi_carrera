@@ -21,7 +21,7 @@
       </li>
 
       <div class="space-y-6">
-        <%= render TextFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", type: :email, input_options: { required: true }) %>
+        <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true }) %>
 
         <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true }) do |component| %>
           <%= component.with_hint do %>
