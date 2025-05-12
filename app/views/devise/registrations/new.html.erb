@@ -30,11 +30,6 @@
         </div>
         <%= render 'shared/info_and_errors', resource: resource, field: :email, text: '' %>
       </li>
-      <li class="form-input-container mb-4">
-        <%= f.select :degree_id,
-                     Degree.all.pluck(:name, :id),
-                     { class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm" } %>
-      </li>
       <li class="form-input-container">
         <%= render 'shared/password_field', f:, resource:, field: :password, label_text: "Nueva contraseña", autocomplete: "new-password", required: true %>
         <%= render 'shared/info_and_errors', resource:, field: :password, text: "#{@minimum_password_length} caracteres mínimo." %>
@@ -42,6 +37,14 @@
       <li class="form-input-container">
         <%= render 'shared/password_field', f:, resource:, field: :password_confirmation, label_text: "Confirma tu nueva contraseña", autocomplete: "new-password", required: true %>
         <%= render 'shared/info_and_errors', resource:, field: :password_confirmation, text: '' %>
+      </li>
+      <li class="form-input-container">
+        <p class="text-sm text-gray-500">Para continuar, por favor seleccioná una carrera:</p>
+        <%= render partial: 'shared/select_field', locals: {
+          f: f,
+          field_name: :degree_id,
+          collection: Degree.all.pluck(:name, :id),
+        } %>
       </li>
 
       <li class="form-input-container sign-in">
