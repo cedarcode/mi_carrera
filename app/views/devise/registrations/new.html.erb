@@ -21,7 +21,7 @@
       </li>
 
       <div class="space-y-6">
-        <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true }) %>
+        <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true }) %>
 
         <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true }, hint: "La contraseña debe tener al menos 6 caracteres") %>
 

@@ -4,7 +4,7 @@
 
     <%= form_with(model: resource, url: registration_path(resource_name), method: :put, local: true, class: "space-y-6") do |f| %>
 
-      <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico") %>
+      <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { autofocus: true }) %>
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña", hint: "La contraseña debe tener al menos 6 caracteres") %>
 
