@@ -6,23 +6,11 @@
 
       <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico") %>
 
-      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña") do |component| %>
-        <%= component.with_hint do %>
-          <span class="text-xs text-gray-500">
-            La contraseña debe tener al menos 6 caracteres
-          </span>
-        <% end %>
-      <% end %>
+      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña", hint: "La contraseña debe tener al menos 6 caracteres") %>
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña") %>
 
-      <%= render PasswordFieldComponent.new(form: f, attribute: :current_password, label: "Contraseña actual", input_options: { required: true }) do |component| %>
-        <% component.with_hint do %>
-          <span class="text-xs text-gray-500">
-            Necesitamos tu contraseña actual para validar los cambios
-          </span>
-        <% end %>
-      <% end %>
+      <%= render PasswordFieldComponent.new(form: f, attribute: :current_password, label: "Contraseña actual", input_options: { required: true }, hint: "Necesitamos tu contraseña actual para validar los cambios") %>
 
       <li class="form-input-container sign-in">
         <%= f.button class: "mdc-button mdc-button--raised" do %>
