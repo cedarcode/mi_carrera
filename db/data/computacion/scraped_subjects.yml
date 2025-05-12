@@ -3955,7 +3955,7 @@ MEC:
   subject_group: '4083'
 MHC16:
   code: MHC16
-  name: BIOQUÍMICA 1 (2020-
+  name: BIOQUÍMICA 1 (2020-2024)
   credits: 13
   has_exam: false
   subject_group: '4442'
@@ -3973,7 +3973,7 @@ MHC24:
   subject_group: '4442'
 MHC39:
   code: MHC39
-  name: BIOQUÍMICA I
+  name: BIOQUÍMICA I (2025-
   credits: 11
   has_exam: true
   subject_group: '4442'
