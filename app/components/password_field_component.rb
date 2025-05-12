@@ -30,8 +30,6 @@ class PasswordFieldComponent < ViewComponent::Base
     ]
   }
 
-  attr_reader :form, :attribute, :label, :hint, :input_options
-
   def initialize(form:, attribute:, label: nil, hint: nil, input_options: {})
     @form = form
     @attribute = attribute
@@ -39,6 +37,10 @@ class PasswordFieldComponent < ViewComponent::Base
     @hint = hint
     @input_options = input_options.merge(class: STYLES[:input], data: { show_password_target: "password" })
   end
+
+  private
+
+  attr_reader :form, :attribute, :label, :hint, :input_options
 
   def error_messages
     return unless form.object.errors[attribute].any?

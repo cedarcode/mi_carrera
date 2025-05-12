@@ -18,14 +18,16 @@ class EmailFieldComponent < ViewComponent::Base
     ]
   }
 
-  attr_reader :attribute, :form, :label, :input_options
-
   def initialize(form:, attribute:, label: nil, input_options: {})
     @form = form
     @attribute = attribute
     @label = label
     @input_options = input_options.merge(class: STYLES[:input])
   end
+
+  private
+
+  attr_reader :attribute, :form, :label, :input_options
 
   def error_messages
     return unless form.object.errors[attribute].any?
