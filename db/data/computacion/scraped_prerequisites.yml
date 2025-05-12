@@ -17661,11 +17661,11 @@
     operands:
     - type: subject
       subject_needed_code: MHC39
-      subject_needed_name: BIOQUÍMICA I
+      subject_needed_name: BIOQUÍMICA I (2025-
       needs: course
     - type: subject
       subject_needed_code: MHC16
-      subject_needed_name: BIOQUÍMICA 1 (2020-
+      subject_needed_name: BIOQUÍMICA 1 (2020-2024)
       needs: course
   subject_code: MHC39
   is_exam: true
