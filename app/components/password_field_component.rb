@@ -35,7 +35,7 @@ class PasswordFieldComponent < ViewComponent::Base
   def initialize(form:, attribute:, label: nil, hint: nil, input_options: {})
     @form = form
     @attribute = attribute
-    @label = label || attribute.to_s.humanize
+    @label = label
     @hint = hint
     @input_options = input_options.merge(class: STYLES[:input], data: { show_password_target: "password" })
   end
