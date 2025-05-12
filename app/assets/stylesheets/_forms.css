@@ -3,11 +3,6 @@
   align-items: center;
 }
 
-.field_with_errors {
-  display: flex;
-  flex-direction: column;
-}
-
 .form-input-container {
   padding: 16px;
   display: flex;
