@@ -4,16 +4,16 @@
   <h2 class="text-center text-3xl/9 text-neutral-700">Registrarse</h2>
 
   <div class="w-full max-w-sm space-y-6 py-6">
-    <%= form_with(model: resource, url: registration_path(resource_name), local: true, class: "flex flex-col bg-neutral-100 p-6 border-1 border-neutral-200 rounded-lg shadow-sm") do |f| %>
+    <%= form_with(model: resource, url: registration_path(resource_name), local: true, class: "flex flex-col bg-neutral-100 p-6 border-1 border-neutral-200 rounded-lg shadow-sm space-y-6") do |f| %>
       <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true, autocomplete: "email" }) %>
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true, autocomplete: "new-password" }) %>
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu contraseña", input_options: { required: true, autocomplete: "new-password" }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
 
-      <%= f.button "Registrarte", class: "mdc-button mdc-button--raised my-2 self-center" %>
+      <%= f.button "Registrarte", class: "mdc-button mdc-button--raised self-center" %>
 
-      <div class="relative flex py-5 items-center">
+      <div class="relative flex items-center">
         <div class="flex-grow border-t border-neutral-500"></div>
         <span class="flex-shrink mx-2 text-neutral-500">O continuar con</span>
         <div class="flex-grow border-t border-neutral-500"></div>
