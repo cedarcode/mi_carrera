@@ -4,20 +4,13 @@
   <h2 class="text-3xl/9 text-neutral-800">Iniciar sesión</h2>
 
   <div class="w-full max-w-sm space-y-6 py-6">
-    <%= form_with(model: resource, url: session_path(resource_name), local: true, class: "bg-neutral-100 p-6 border-1 border-neutral-200 rounded-lg shadow-sm") do |f| %>
+    <%= form_with(model: resource, url: session_path(resource_name), local: true, class: "flex flex-col bg-neutral-100 p-6 border-1 border-neutral-200 rounded-lg shadow-sm") do |f| %>
 
       <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true }) %>
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true, autocomplete: "current-password" }) %>
 
-      <li class="form-input-container sign-in">
-        <%= f.button class: "mdc-button mdc-button--raised" do %>
-          <span class="mdc-button__ripple"></span>
-          <span class='mdc-button__label'>
-            Ingresar
-          </span>
-        <% end %>
-      </li>
+      <%= f.button "Ingresar", class: "mdc-button mdc-button--raised my-2 self-center" %>
     <% end %>
 
     <%= render "devise/shared/links" %>
