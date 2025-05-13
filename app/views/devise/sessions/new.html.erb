@@ -20,17 +20,7 @@
       </li>
     <% end %>
 
-    <p class="text-center text-sm/6 text-neutral-500">
-      ¿No estás registrado?
-
-      <%= link_to "Registrarte",new_registration_path(resource), class: "font-semibold text-neutral-700 hover:text-indigo-700" %>
-    </p>
-
-    <p class="text-center text-sm/6 text-neutral-500">
-      ¿Has olvidado tu contraseña?
-
-      <%= link_to "Restablecer contraseña", new_password_path(resource), class: "font-semibold text-neutral-700 hover:text-indigo-700" %>
-    </p>
+    <%= render "devise/shared/links" %>
 
     <hr class="border-neutral-200" />
 

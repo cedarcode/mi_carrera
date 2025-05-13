@@ -21,11 +21,7 @@
       </li>
     <% end %>
 
-    <p class="text-center text-sm/6 text-neutral-500">
-      ¿Ya estás registrado?
-
-      <%= link_to "Ingresar", new_session_path(resource), class: "font-semibold text-neutral-700 hover:text-indigo-700" %>
-    </p>
+    <%= render "devise/shared/links" %>
 
     <hr class="border-neutral-200" />
 
