@@ -11,6 +11,13 @@
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu contraseña", input_options: { required: true, autocomplete: "new-password" }) %>
 
+      <p class="text-sm text-gray-500">Para continuar, por favor seleccioná una carrera:</p>
+      <%= render partial: 'shared/select_field', locals: {
+        f: f,
+        field_name: :degree_id,
+        collection: Degree.all.pluck(:name, :id),
+      } %>
+
       <%= f.button "Registrarte", class: "mdc-button mdc-button--raised self-center" %>
     <% end %>
 
