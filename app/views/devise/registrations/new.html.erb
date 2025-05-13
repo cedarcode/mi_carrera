@@ -21,11 +21,11 @@
       </li>
 
       <div class="space-y-6">
-        <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true }) %>
+        <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true, autocomplete: "email" }) %>
 
-        <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
+        <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true, autocomplete: "new-password" }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
 
-        <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu contraseña", input_options: { required: true }) %>
+        <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu contraseña", input_options: { required: true, autocomplete: "new-password" }) %>
       </div>
 
       <li class="form-input-container sign-in">

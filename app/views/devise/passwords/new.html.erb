@@ -4,7 +4,7 @@
 
     <%= form_with(model: resource, url: password_path(resource_name), method: :post, local: true, class: "space-y-6") do |f| %>
 
-      <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true }) %>
+      <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autocomplete: "email", autofocus: true }) %>
 
       <li class="form-input-container sign-in">
         <%= f.button class: "mdc-button mdc-button--raised" do %>

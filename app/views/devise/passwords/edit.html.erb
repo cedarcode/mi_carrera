@@ -5,7 +5,7 @@
     <%= form_with(model: resource, url: password_path(resource_name), method: :put, local: true, class: "space-y-6") do |f| %>
       <%= f.hidden_field :reset_password_token %>
 
-      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña", input_options: { required: true, autofocus: true }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
+      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña", input_options: { required: true, autocomplete: "new-password", autofocus: true }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
 
       <li class="form-input-container sign-in">
         <%= f.button class: "mdc-button mdc-button--raised" do %>

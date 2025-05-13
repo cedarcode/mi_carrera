@@ -23,7 +23,7 @@
 
       <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true }) %>
 
-      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true }) %>
+      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true, autocomplete: "current-password" }) %>
 
       <li class="form-input-container sign-in">
         <%= f.button class: "mdc-button mdc-button--raised" do %>
