@@ -1,16 +1,15 @@
-<div class="flex flex-col justify-center items-center p-6 space-y-4">
+<div class="flex flex-col justify-center items-center p-6 space-y-6">
   <%= image_tag "icon-512.png", class: "w-16 rounded-full" %>
 
-  <h2 class="text-3xl/9 text-neutral-800">Iniciar sesión</h2>
+  <h2 class="text-3xl/9 text-neutral-700">Iniciar sesión</h2>
 
-  <div class="w-full max-w-sm space-y-6 py-6">
-    <%= form_with(model: resource, url: session_path(resource_name), local: true, class: "flex flex-col bg-neutral-100 p-6 border-1 border-neutral-200 rounded-lg shadow-sm space-y-6") do |f| %>
-
+  <div class="w-full max-w-md space-y-6">
+    <%= form_with(model: resource, url: session_path(resource_name), local: true, class: "flex flex-col space-y-6") do |f| %>
       <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true }) %>
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true, autocomplete: "current-password" }) %>
 
-      <%= f.button "Ingresar", class: "mdc-button mdc-button--raised self-center grow" %>
+      <%= f.button "Ingresar", class: "mdc-button mdc-button--raised self-center" %>
 
       <div class="relative flex items-center">
         <div class="flex-grow border-t border-neutral-500"></div>
