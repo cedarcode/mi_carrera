@@ -1,0 +1,9 @@
+<%= 
+  button_tag(
+    content, 
+    type: @type, 
+    disabled: @disabled, 
+    class: "#{@disabled ? 'cursor-not-allowed bg-gray-400' : 'bg-primary hover:bg-violet-700 hover:shadow-md active:shadow-xl active:bg-violet-400 shadow-sm transition-shadow duration-150'}
+      rounded-sm px-4 py-2 text-sm font-medium text-white uppercase tracking-wider"
+  )
+%>
