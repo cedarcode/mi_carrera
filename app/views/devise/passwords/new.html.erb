@@ -2,7 +2,7 @@
   <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5 sign-in">¿Has olvidado tu contraseña?</h3>
   <ul class="mdc-deprecated-list growing-text-list">
 
-    <%= form_with(model: resource, url: password_path(resource_name), method: :post, local: true, class: "space-y-6") do |f| %>
+    <%= form_with(model: resource, url: password_path(resource_name), method: :post, local: true) do |f| %>
 
       <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autocomplete: "email", autofocus: true }) %>
 

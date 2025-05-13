@@ -6,6 +6,7 @@ class EmailFieldComponent < ViewComponent::Base
       rounded-md
       px-3
       py-1.5
+      my-1
 
       outline-1
       outline-gray-300
