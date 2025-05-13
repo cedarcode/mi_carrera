@@ -11,16 +11,16 @@
       <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true, autocomplete: "current-password" }) %>
 
       <%= f.button "Ingresar", class: "mdc-button mdc-button--raised my-2 self-center" %>
+
+      <div class="relative flex py-5 items-center">
+        <div class="flex-grow border-t border-neutral-500"></div>
+        <span class="flex-shrink mx-2 text-neutral-500">O continuar con</span>
+        <div class="flex-grow border-t border-neutral-500"></div>
+      </div>
+
+      <%= render "shared/sso_buttons" %>
     <% end %>
 
     <%= render "devise/shared/links" %>
-
-    <div class="relative flex py-5 items-center">
-      <div class="flex-grow border-t border-neutral-500"></div>
-      <span class="flex-shrink mx-2 text-neutral-500">O continuar con</span>
-      <div class="flex-grow border-t border-neutral-500"></div>
-    </div>
-
-    <%= render "shared/sso_buttons" %>
   </div>
 </div>
