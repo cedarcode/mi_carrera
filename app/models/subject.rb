@@ -1,4 +1,6 @@
 class Subject < ApplicationRecord
+  acts_as_tenant :degree
+
   has_one :course, -> { where is_exam: false }, class_name: 'Approvable', dependent: :destroy, inverse_of: :subject
   has_one :exam, -> { where is_exam: true }, class_name: 'Approvable', dependent: :destroy, inverse_of: :subject
   belongs_to :group, class_name: 'SubjectGroup', optional: true
@@ -6,7 +8,7 @@ class Subject < ApplicationRecord
 
   validates :name, presence: true
   validates :credits, presence: true
-  validates :code, uniqueness: true
+  validates_uniqueness_to_tenant :code
 
   scope :with_exam, -> { includes(:exam, :course).where.not(exam: { id: nil }) }
   scope :without_exam, -> { includes(:exam, :course).where(exam: { id: nil }) }

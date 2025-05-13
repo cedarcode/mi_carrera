@@ -1,4 +1,6 @@
 class SubjectPlan < ApplicationRecord
+  acts_as_tenant :degree
+
   belongs_to :user
   belongs_to :subject
 

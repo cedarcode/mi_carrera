@@ -20,6 +20,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_13_184859) do
     t.boolean "is_exam", null: false
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.integer "degree_id"
+    t.index ["degree_id"], name: "index_approvables_on_degree_id"
   end
 
   create_table "degrees", force: :cascade do |t|
@@ -41,6 +43,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_13_184859) do
     t.integer "subject_group_id"
     t.integer "approvable_needed_id"
     t.integer "amount_of_subjects_needed"
+    t.integer "degree_id"
+    t.index ["degree_id"], name: "index_prerequisites_on_degree_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -49,6 +53,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_13_184859) do
     t.integer "rating", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "degree_id"
+    t.index ["degree_id"], name: "index_reviews_on_degree_id"
     t.index ["subject_id", "user_id"], name: "index_reviews_on_subject_id_and_user_id", unique: true
   end
 
@@ -58,7 +64,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_13_184859) do
     t.datetime "updated_at", precision: nil, null: false
     t.string "code"
     t.integer "credits_needed", default: 0, null: false
-    t.index ["code"], name: "index_subject_groups_on_code", unique: true
+    t.integer "degree_id"
+    t.index ["code"], name: "index_subject_groups_on_code"
+    t.index ["degree_id"], name: "index_subject_groups_on_degree_id"
   end
 
   create_table "subject_plans", force: :cascade do |t|
@@ -67,6 +75,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_13_184859) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "semester", null: false
+    t.integer "degree_id"
+    t.index ["degree_id"], name: "index_subject_plans_on_degree_id"
     t.index ["user_id", "subject_id"], name: "index_subject_plans_on_user_id_and_subject_id", unique: true
   end
 
@@ -83,7 +93,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_13_184859) do
     t.string "category", default: "optional"
     t.boolean "current_optional_subject", default: false
     t.string "second_semester_eva_id"
-    t.index ["code"], name: "index_subjects_on_code", unique: true
+    t.integer "degree_id"
+    t.index ["code"], name: "index_subjects_on_code"
+    t.index ["degree_id"], name: "index_subjects_on_degree_id"
   end
 
   create_table "users", force: :cascade do |t|
