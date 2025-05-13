@@ -1,12 +1,10 @@
 module PasswordHelpers
   def password_visibility_toggle_test(label_text)
-    container = find("li", text: label_text, match: :prefer_exact)
+    toggle = find_field(label_text).sibling("button[data-action='show-password#toggle']")
 
-    within(container) do
-      find(".show-password-button").click
-      assert_selector "input[type='text']"
-      find(".show-password-button").click
-      assert_selector "input[type='password']"
-    end
+    toggle.click
+    assert has_field?(label_text, type: 'text')
+    toggle.click
+    assert has_field?(label_text, type: 'password')
   end
 end

@@ -4,16 +4,8 @@
 
     <%= form_with(model: resource, url: password_path(resource_name), method: :post, local: true) do |f| %>
 
-      <li class="form-input-container">
-        <div class="mdc-text-field mdc-text-field--filled <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:email].any? %>" data-controller="textfield">
-          <span class="mdc-text-field__ripple"></span>
-          <%= f.label :email, "Correo electrónico", class: "mdc-floating-label" %>
-          <%= f.email_field :email, class: "mdc-text-field__input", autofocus: true %>
-          <%= render 'shared/invalid_icon', resource: resource, field: :email %>
-          <div class="mdc-line-ripple"></div>
-        </div>
-        <%= render 'shared/info_and_errors', resource: resource, field: :email, text: '' %>
-      </li>
+      <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autocomplete: "email", autofocus: true }) %>
+
       <li class="form-input-container sign-in">
         <%= f.button class: "mdc-button mdc-button--raised" do %>
           <span class="mdc-button__ripple"></span>

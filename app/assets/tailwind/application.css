@@ -3,3 +3,5 @@
 @theme {
   --color-primary: #6200ee;
 }
+
+@custom-variant with-error (.field_with_errors &);
