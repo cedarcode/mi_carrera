@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
     resource :user_onboardings, only: :update
 
+    resource :student_degrees, only: :update
+
     resources :current_optional_subjects, path: "materias_inco_semestre_actual", only: :index
 
     resources :transcripts, path: "escolaridades", only: [:new, :create]
