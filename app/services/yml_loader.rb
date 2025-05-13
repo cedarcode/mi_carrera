@@ -8,11 +8,13 @@ class YmlLoader
 
   def initialize(degree_hash)
     @degree_hash = degree_hash
-    @degree_dir = Rails.root.join("db/data/#{degree_hash[:key]}/")
+    @degree_key = degree_hash[:key]
+    @degree_dir = Rails.root.join("db/data/#{@degree_key}/")
   end
 
   def load
     load_degree
+    switch_tenant
     load_subject_groups
     load_subjects
     load_prerequisites
@@ -22,14 +24,19 @@ class YmlLoader
   private
 
   attr_reader :degree_hash
+  attr_reader :degree_key
   attr_reader :degree_dir
 
   def load_degree
-    degree = Degree.find_or_initialize_by(key: degree_hash[:key])
-    degree.name = degree_hash[:name]
-    degree.current_plan = degree_hash[:current_plan]
-    degree.include_inco_subjects = degree_hash[:include_inco_subjects]
-    degree.save!
+    @degree = Degree.find_or_initialize_by(key: degree_key)
+    @degree.name = degree_hash[:name]
+    @degree.current_plan = degree_hash[:current_plan]
+    @degree.include_inco_subjects = degree_hash[:include_inco_subjects]
+    @degree.save!
+  end
+
+  def switch_tenant
+    ActsAsTenant.current_tenant = @degree
   end
 
   def load_subject_groups
