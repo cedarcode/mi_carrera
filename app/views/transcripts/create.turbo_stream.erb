@@ -1,0 +1,3 @@
+<%= turbo_stream.append_all "body" do %>
+  <%= render 'modal', successful_subjects: @successful_subjects, failed_entries: @failed_entries %>
+<% end %>

@@ -19,6 +19,6 @@ class TranscriptsController < ApplicationController
       end
     end
 
-    render :new
+    render :create
   end
 end
