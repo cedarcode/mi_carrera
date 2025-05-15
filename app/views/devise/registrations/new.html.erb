@@ -12,15 +12,15 @@
       <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu contraseña", input_options: { required: true, autocomplete: "new-password" }) %>
 
       <%= f.button "Registrarte", class: "mdc-button mdc-button--raised self-center" %>
-
-      <div class="relative flex items-center">
-        <div class="flex-grow border-t border-neutral-500"></div>
-        <span class="flex-shrink mx-2 text-neutral-500">O continuar con</span>
-        <div class="flex-grow border-t border-neutral-500"></div>
-      </div>
-
-      <%= render "shared/google_sso" %>
     <% end %>
+
+    <div class="relative flex items-center">
+      <div class="flex-grow border-t border-neutral-500"></div>
+      <span class="flex-shrink mx-2 text-neutral-500">O continuar con</span>
+      <div class="flex-grow border-t border-neutral-500"></div>
+    </div>
+
+    <%= render "shared/google_sso" %>
 
     <%= render "devise/shared/links" %>
   </div>
