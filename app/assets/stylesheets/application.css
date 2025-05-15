@@ -225,20 +225,3 @@ input {
   }
 }
 
-footer.mdc-theme--text-primary-on-light {
-  justify-content: center;
-}
-
-aside.mdc-drawer .footer.mdc-theme--text-primary-on-light {
-  margin-bottom: 5px;
-  padding-bottom: 0;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-left: 2px;
-}
-
-aside.mdc-drawer .footer.mdc-theme--text-primary-on-light a.mdc-theme--text-primary-on-light {
-  text-decoration: none;
-}
-
