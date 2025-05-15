@@ -13,9 +13,9 @@ class UserTest < ApplicationSystemTestCase
     visit new_user_session_path
 
     click_on "Registrarte"
-    assert_text "Registro"
+    assert_text "Registrarse"
 
-    assert_text "Continuar con Google"
+    assert_text "Google"
 
     password = Devise.friendly_token
     fill_in "Correo electrónico", with: 'alice@test.com'
@@ -107,8 +107,8 @@ class UserTest < ApplicationSystemTestCase
 
     visit new_user_session_path
 
-    assert_text "Ingreso"
-    assert_text "Continuar con Google"
+    assert_text "Iniciar sesión"
+    assert_text "Google"
 
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: "incorrect#{user.password}"

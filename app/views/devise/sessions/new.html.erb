@@ -1,41 +1,25 @@
-<div class="mdc-deprecated-list-group">
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5 sign-in">Ingreso</h3>
-  <ul class="mdc-deprecated-list growing-text-list">
+<div class="flex flex-col justify-center items-center p-6 space-y-6">
+  <%= image_tag "icon.png", class: "w-20 rounded-full" %>
 
-    <li class="form-input-container google-button-container">
+  <h2 class="text-3xl/9 text-neutral-700">Iniciar sesión</h2>
 
-      <%- resource_class.omniauth_providers.each do |provider| %>
-        <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, local: true do |f| %>
-          <%= f.button class: 'google-sign-in-button' do %>
-            <%= image_tag asset_path('google-icon.png'), class: 'google-icon' %>
-            <span class='google-sign-in-text'>Continuar con Google</span>
-          <% end %>
-        <% end %>
-      <% end %>
-    </li>
-
-    <li role="separator" class="mdc-deprecated-list-divider"></li>
-
-    <%= form_with(model: resource, url: session_path(resource_name), local: true) do |f| %>
-      <li class="form-input-container sign-in">
-        Ingresar con tu correo electrónico
-      </li>
-
+  <div class="w-full max-w-md space-y-6">
+    <%= form_with(model: resource, url: session_path(resource_name), local: true, class: "flex flex-col space-y-6") do |f| %>
       <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true }) %>
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true, autocomplete: "current-password" }) %>
 
-      <li class="form-input-container sign-in">
-        <%= f.button class: "mdc-button mdc-button--raised" do %>
-          <span class="mdc-button__ripple"></span>
-          <span class='mdc-button__label'>
-            Ingresar
-          </span>
-        <% end %>
-      </li>
+      <%= f.button "Ingresar", class: "mdc-button mdc-button--raised self-center" %>
+
+      <div class="relative flex items-center">
+        <div class="flex-grow border-t border-neutral-500"></div>
+        <span class="flex-shrink mx-2 text-neutral-500">O continuar con</span>
+        <div class="flex-grow border-t border-neutral-500"></div>
+      </div>
+
+      <%= render "shared/google_sso" %>
     <% end %>
 
-    <li role="separator" class="mdc-deprecated-list-divider"></li>
     <%= render "devise/shared/links" %>
-  </ul>
+  </div>
 </div>
