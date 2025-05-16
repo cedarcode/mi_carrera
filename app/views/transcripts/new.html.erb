@@ -3,7 +3,7 @@
 <p>1) Entrar a <a href="https://bedelias.udelar.edu.uy/" target="_blank" class="text-blue-600 hover:text-blue-800">Bedelias</a> e iniciar session</p>
 <p>2) Entrar a "Estudiante" -> "Escolaridad" -> "Solicitar Escolaridad"</p>
 <p>3) Seleccionar tu carrera y "No" en "Resultados Intermedios"</p>
-<%= form_with url: transcripts_path, method: :post, local: true, html: { multipart: true } do |form| %>
+<%= form_with url: transcripts_path, method: :post, local: false, data: { controller: "autosave-check" }, html: { multipart: true } do |form| %>
   <div class="my-6">
     <%= form.label :file, "Upload PDF", class: "block text-gray-700 mb-2" %>
     <%= form.file_field :file, accept: "application/pdf", required: true, class: "block w-full text-sm text-gray-500
@@ -13,25 +13,11 @@
       file:bg-blue-50 file:text-blue-700
       hover:file:bg-blue-100" %>
 
-    <%= form.button class: "mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" do %>
+    <%= form.button class: "mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2", data: { action: "click->autosave-check#update" } do %>
       Subir
     <% end %>
   </div>
 <% end %>
-<div>
-  <% if @successful_subjects.present? %>
-    <p class="text-green-600 mb-2"><%= @successful_subjects.length %> Materias marcadas correctamente</p>
-    <% @successful_subjects.each do |subject| %>
-      <p class="text-gray-700"><%= subject.code %> - <%= subject.name %></p>
-    <% end %>
-  <% end %>
-  <% if @failed_entries.present? %>
-    <p class="text-red-600 my-2"><%= @failed_entries.length %> Materias no encontradas</p>
-    <% @failed_entries.each do |entry| %>
-      <p class="text-gray-700"><%= entry.name %></p>
-    <% end %>
-  <% end %>
-</div>
 <p class="text-gray-500 text-xs mt-3">
 La escolaridad no incluye códigos de materias, por lo que en caso de multiples candidatos con el mismo nombre, se marca la materia más reciente y actualmente activa
 </p>
