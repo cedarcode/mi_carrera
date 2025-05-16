@@ -1,17 +1,17 @@
-<div class="mdc-deprecated-list-group subjects-list" data-controller="bedel loading <%= "confetti" if @graduated %>" id="subjects" >
+<div data-controller="bedel loading <%= "confetti" if @graduated %>" id="subjects" >
   <%= render "approvals/spinner_template" %>
-
-  <% @subjects.group_by(&:category).each do |category, subjects| %>
-    <div class='mdc-deprecated-list-group__subheader subject-group-header'>
-      <h3 class="mdc-typography--subtitle2"><%= formatted_category(category) %></h3>
-      <div class='mdc-typography--subtitle2 d-flex'>
-        <h3 class='checkbox-header'>Curso</h3>
-        <h3 class='checkbox-header'>Examen</h3>
+  <div class="flex flex-col relative gap-3">
+    <% @subjects.group_by(&:category).each do |category, subjects| %>
+      <div class="flex items-center justify-between border-y border-t-gray-100 border-b-gray-200 bg-gray-50 px-3 py-2 text-sm/6 font-semibold text-gray-900">
+        <h3><%= formatted_category(category) %></h3>
+        <div class='flex'>
+          <h3 class='checkbox-header'>Curso</h3>
+          <h3 class='checkbox-header'>Examen</h3>
+        </div>
       </div>
-    </div>
-    <div class="mdc-deprecated-list">
-      <%= render subjects %>
-    </div>
-    <hr class="mdc-deprecated-list-divider">
-  <% end %>
+      <ul role="list">
+        <%= render SubjectWithCheckboxesComponent.with_collection(subjects, current_student:) %>
+      </ul>
+    <% end %>
+  </div>
 </div>
