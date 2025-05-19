@@ -97,11 +97,9 @@
           <%= yield %>
         </div>
       </main>
-      <footer class="footer mdc-theme--text-primary-on-light">
-        <span class="mdc-theme--text-secondary-on-light">
-          Built by&nbsp;
-        </span>
-        <a class="mdc-theme--text-primary-on-light" href="https://cedarcode.com" target="_blank" >Cedarcode</a>
+      <footer class="fixed bottom-0 w-full flex text-neutral-600 bg-neutral-100 p-2 justify-center sm:justify-start">
+        Built by&nbsp;
+        <%= link_to 'Cedarcode', 'https://cedarcode.com', class: 'font-bold hover:text-neutral-700 hover:underline' %>
       </footer>
     </div>
   </body>
