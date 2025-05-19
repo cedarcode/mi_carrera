@@ -743,6 +743,12 @@
   credits: 12
   has_exam: false
   subject_group: '4580'
+1331P:
+  code: 1331P
+  name: CREDITOS NO ACUM. CON DISEÑO DE COMPILADORES
+  credits: 0
+  has_exam: true
+  subject_group:
 '1332':
   code: '1332'
   name: INT. A LA PROGR.PARA DISEÑO GRAFICO
@@ -1877,6 +1883,12 @@
   credits: 12
   has_exam: false
   subject_group: '4882'
+1866P:
+  code: 1866P
+  name: CRÉDITOS NO ACUM. CON APRENDIZAJE AUTOMÁTICO
+  credits: 0
+  has_exam: true
+  subject_group:
 '1867':
   code: '1867'
   name: INTEGRACION DE DATOS
@@ -2363,6 +2375,12 @@
   credits: 8
   has_exam: true
   subject_group: '4882'
+5852P:
+  code: 5852P
+  name: CREDITOS NO ACUM FUNDAMENTOS DE APRENDIZAJE AUT. Y REC. DE PATRO
+  credits: 0
+  has_exam: false
+  subject_group:
 '5853':
   code: '5853'
   name: TALLER DE APRENDIZAJE AUTOMATICO
