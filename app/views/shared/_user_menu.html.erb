@@ -1,45 +1,31 @@
-<div class="mdc-menu mdc-menu-surface" data-user-menu-target='menu'>
-  <ul class="mdc-deprecated-list" role="menu" tabindex="-1">
+<div
+    class="absolute right-0 mt-2 min-w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50 hidden"
+    data-user-menu-target="menu"
+  >
+  <ul class="py-2 text-m text-gray-800" role="menu" tabindex="-1">
     <% if current_user %>
-      <div class="menu-user-info">
-        <span class="mdc-deprecated-list-item__text">
-          <%= current_user.email %>
-        </span>
+      <div class="px-4 pb-1">
+        <%= current_user.email %>
       </div>
     <% else %>
-      <%= link_to new_user_session_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
-        <span class="mdc-deprecated-list-item__ripple"></span>
-        <span class="mdc-deprecated-list-item__text">
-          Ingresar
-        <span>
+      <%= link_to new_user_session_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
+        Ingresar
       <% end %>
     <% end %>
-    <li role="separator" class="mdc-deprecated-list-divider"></li>
-    <%= link_to profile_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
-      <span class="mdc-deprecated-list-item__ripple"></span>
-      <span class="mdc-deprecated-list-item__text">
-        Resumen por Grupo
-      </span>
+    <li class="border-t border-gray-100 my-1"></li>
+    <%= link_to profile_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
+      Resumen por Grupo
     <% end %>
     <% if current_user %>
-      <li role="separator" class="mdc-deprecated-list-divider"></li>
-      <%= link_to edit_user_registration_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
-        <span class="mdc-deprecated-list-item__ripple"></span>
-        <span class="mdc-deprecated-list-item__text">
-          Editar Perfil
-        <span>
+      <li class="border-t border-gray-100 my-1"></li>
+      <%= link_to edit_user_registration_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
+        Editar Perfil
       <% end %>
-      <%= link_to new_transcript_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
-        <span class="mdc-deprecated-list-item__ripple"></span>
-        <span class="mdc-deprecated-list-item__text">
-          Importar Materias
-        <span>
+      <%= link_to new_transcript_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
+        Importar Materias
       <% end %>
-      <%= link_to destroy_user_session_path, method: :delete, class: "mdc-deprecated-list-item", tabindex: 0 do %>
-        <span class="mdc-deprecated-list-item__ripple"></span>
-        <span class="mdc-deprecated-list-item__text">
-          Salir
-        </span>
+      <%= link_to destroy_user_session_path, method: :delete, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
+        Salir
       <% end %>
     <% end %>
   </ul>
