@@ -4,8 +4,9 @@ FactoryBot.define do
     sequence(:name) { |n| "Subject #{n}" }
     credits { 5 }
     category { 'first_semester' }
-    group
-    course { association :course, subject: instance }
+    degree
+    group { association :group, degree: degree }
+    course { association :course, subject: instance, degree: degree }
 
     trait :with_exam do
       exam { association :exam, subject: instance }

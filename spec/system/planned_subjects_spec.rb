@@ -5,6 +5,9 @@ RSpec.describe "PlannedSubjects", type: :system do
   include PlannedSubjectsTestHelper
 
   it "can add and remove subjects to planner" do
+    degree = create :degree, name: "Ing. comp", key: "computacion"
+    ActsAsTenant.current_tenant = degree
+
     gal1 = create :subject, :with_exam, name: "GAL 1", credits: 9, code: "1030"
     create :subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course
 
@@ -16,7 +19,7 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     taller = create :subject, name: "Taller 1", short_name: 'T1', credits: 11
 
-    user = create(:user, approvals: [taller.course.id])
+    user = create(:user, approvals: [taller.course.id], degree:)
 
     ENV['ENABLE_PLANNER'] = 'true'
 

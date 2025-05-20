@@ -2,6 +2,9 @@ require "application_system_test_case"
 
 class SubjectsTest < ApplicationSystemTestCase
   test "can search for subjects" do
+    degree = create :degree, name: "Ing. comp", key: "computacion"
+    ActsAsTenant.current_tenant = degree
+
     gal1 = create :subject, :with_exam, name: "GAL 1", credits: 9, code: "1030"
     create :subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course
 
@@ -12,6 +15,11 @@ class SubjectsTest < ApplicationSystemTestCase
     ]
 
     create :subject, name: "Taller 1", short_name: 'T1', credits: 11, code: "1040"
+
+    visit root_path
+    assert_text "Ing. comp"
+    click_on 'Seleccionar'
+    assert_current_path root_path
 
     visit all_subjects_path
 
@@ -71,10 +79,18 @@ class SubjectsTest < ApplicationSystemTestCase
   end
 
   test "can review subjects" do
+    degree = create :degree, name: "Ing. comp", key: "computacion"
+    ActsAsTenant.current_tenant = degree
+
     subject = create :subject
-    user = create :user
+    user = create :user, degree: degree
 
     # Not logged
+    visit root_path
+    assert_text "Ing. comp"
+    click_on 'Seleccionar'
+    assert_current_path root_path
+
     visit subject_path(subject)
 
     assert_text "Sin calificar"
