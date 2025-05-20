@@ -3,9 +3,11 @@
   <div class="text-sm/6 text-gray-600">
     <p>Carga tu escolaridad para marcar automaticamente las materias que ya cursaste.</p>
     <p class="mt-2">Si no tenés tu escolaridad, podés conseguirla siguiendo los pasos a continuación:</p>
-    <p>1) Entrar a <a href="https://bedelias.udelar.edu.uy/" target="_blank" class="text-blue-600 hover:text-blue-800">Bedelias</a> e iniciar session</p>
-    <p>2) Entrar a "Estudiante" -> "Escolaridad" -> "Solicitar Escolaridad"</p>
-    <p>3) Seleccionar tu carrera y "No" en "Resultados Intermedios"</p>
+    <ol class="list-decimal list-inside">
+      <li>Entrar a <a href="https://bedelias.udelar.edu.uy/" target="_blank" class="text-blue-600 hover:text-blue-800">Bedelias</a> e iniciar sesión</li>
+      <li>Entrar a "Estudiante" -> "Escolaridad" -> "Solicitar Escolaridad"</li>
+      <li>Seleccionar tu carrera y "No" en "Resultados Intermedios"</li>
+    </ol>
   </div>
   <%= form_with url: transcripts_path, method: :post, data: { turbo: true }, html: { multipart: true } do |form| %>
     <div class="my-6">
