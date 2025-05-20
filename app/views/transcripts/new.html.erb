@@ -1,23 +1,25 @@
-<h3 class="text-xl font-semibold text-gray-800 my-3">Importar Materias</h3>
-<p class="mb-3">Carga tu escolaridad para marcar automaticamente las materias que ya cursaste.</p>
-<p>1) Entrar a <a href="https://bedelias.udelar.edu.uy/" target="_blank" class="text-blue-600 hover:text-blue-800">Bedelias</a> e iniciar session</p>
-<p>2) Entrar a "Estudiante" -> "Escolaridad" -> "Solicitar Escolaridad"</p>
-<p>3) Seleccionar tu carrera y "No" en "Resultados Intermedios"</p>
-<%= form_with url: transcripts_path, method: :post, data: { turbo: true }, html: { multipart: true } do |form| %>
-  <div class="my-6">
-    <%= form.label :file, "Upload PDF", class: "block text-gray-700 mb-2" %>
-    <%= form.file_field :file, accept: "application/pdf", required: true, class: "block w-full text-sm text-gray-500
-      file:mr-4 file:py-2 file:px-4
-      file:rounded-full file:border-0
-      file:text-sm file:font-semibold
-      file:bg-blue-50 file:text-blue-700
-      hover:file:bg-blue-100" %>
+<div class="py-6 px-3 sm:px-6 space-y-6">
+  <h3 class="text-xl font-semibold text-gray-800 my-3">Importar Materias</h3>
+  <p class="mb-3">Carga tu escolaridad para marcar automaticamente las materias que ya cursaste.</p>
+  <p>1) Entrar a <a href="https://bedelias.udelar.edu.uy/" target="_blank" class="text-blue-600 hover:text-blue-800">Bedelias</a> e iniciar session</p>
+  <p>2) Entrar a "Estudiante" -> "Escolaridad" -> "Solicitar Escolaridad"</p>
+  <p>3) Seleccionar tu carrera y "No" en "Resultados Intermedios"</p>
+  <%= form_with url: transcripts_path, method: :post, data: { turbo: true }, html: { multipart: true } do |form| %>
+    <div class="my-6">
+      <%= form.label :file, "Upload PDF", class: "block text-gray-700 mb-2" %>
+      <%= form.file_field :file, accept: "application/pdf", required: true, class: "block w-full text-sm text-gray-500
+        file:mr-4 file:py-2 file:px-4
+        file:rounded-full file:border-0
+        file:text-sm file:font-semibold
+        file:bg-blue-50 file:text-blue-700
+        hover:file:bg-blue-100" %>
 
-    <%= form.button class: "mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" do %>
-      Subir
-    <% end %>
-  </div>
-<% end %>
-<p class="text-gray-500 text-xs mt-3">
-La escolaridad no incluye códigos de materias, por lo que en caso de multiples candidatos con el mismo nombre, se marca la materia más reciente y actualmente activa
-</p>
+      <%= form.button class: "mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" do %>
+        Subir
+      <% end %>
+    </div>
+   <% end %>
+  <p class="text-gray-500 text-xs mt-3">
+  La escolaridad no incluye códigos de materias, por lo que en caso de multiples candidatos con el mismo nombre, se marca la materia más reciente y actualmente activa
+  </p>
+</div>
