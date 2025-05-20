@@ -1,9 +1,11 @@
 <div class="py-6 px-3 sm:px-6 space-y-6">
   <h2 class="text-3xl/9 text-center text-neutral-700">Importar Materias</h2>
-  <p class="mb-3">Carga tu escolaridad para marcar automaticamente las materias que ya cursaste.</p>
-  <p>1) Entrar a <a href="https://bedelias.udelar.edu.uy/" target="_blank" class="text-blue-600 hover:text-blue-800">Bedelias</a> e iniciar session</p>
-  <p>2) Entrar a "Estudiante" -> "Escolaridad" -> "Solicitar Escolaridad"</p>
-  <p>3) Seleccionar tu carrera y "No" en "Resultados Intermedios"</p>
+  <div class="text-sm/6 text-gray-600">
+    <p class="mb-3">Carga tu escolaridad para marcar automaticamente las materias que ya cursaste.</p>
+    <p>1) Entrar a <a href="https://bedelias.udelar.edu.uy/" target="_blank" class="text-blue-600 hover:text-blue-800">Bedelias</a> e iniciar session</p>
+    <p>2) Entrar a "Estudiante" -> "Escolaridad" -> "Solicitar Escolaridad"</p>
+    <p>3) Seleccionar tu carrera y "No" en "Resultados Intermedios"</p>
+  </div>
   <%= form_with url: transcripts_path, method: :post, data: { turbo: true }, html: { multipart: true } do |form| %>
     <div class="my-6">
       <%= form.label :file, "Upload PDF", class: "block text-gray-700 mb-2" %>
