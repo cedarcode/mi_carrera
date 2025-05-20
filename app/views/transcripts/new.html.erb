@@ -11,7 +11,7 @@
   </div>
   <%= form_with url: transcripts_path, method: :post, data: { turbo: true }, html: { multipart: true } do |form| %>
     <div class="my-6">
-      <%= form.label :file, "Upload PDF", class: "block text-gray-700 mb-2" %>
+      <%= form.label :file, "Subí la escolaridad", class: "block text-gray-700 mb-2" %>
       <%= form.file_field :file, accept: "application/pdf", required: true, class: "block w-full text-sm text-gray-500
         file:mr-4 file:py-2 file:px-4
         file:rounded-full file:border-0
