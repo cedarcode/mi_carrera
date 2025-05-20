@@ -9,7 +9,7 @@
       <li>Seleccionar tu carrera y "No" en "Resultados Intermedios"</li>
     </ol>
   </div>
-  <%= form_with url: transcripts_path, method: :post, data: { turbo: true }, html: { multipart: true } do |form| %>
+  <%= form_with url: transcripts_path, method: :post, data: { turbo: true }, html: { multipart: true }, class: 'flex flex-col' do |form| %>
     <%= form.label :file, "Subí la escolaridad", class: "block text-sm/6 font-medium text-gray-900 mb-1" %>
     <%= form.file_field :file, accept: "application/pdf", required: true, class: "relative flex w-full border
       overflow-hidden border-gray-200
@@ -19,9 +19,7 @@
       file:bg-gray-100 file:text-nowrap
       focus:border-primary" %>
 
-    <%= form.button class: "mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" do %>
-      Subir
-    <% end %>
+    <%= form.button "Subir", class: "mdc-button mdc-button--raised self-center mt-6" %>
   <% end %>
   <p class="text-gray-500 text-xs mt-3">
   La escolaridad no incluye códigos de materias, por lo que en caso de multiples candidatos con el mismo nombre, se marca la materia más reciente y actualmente activa
