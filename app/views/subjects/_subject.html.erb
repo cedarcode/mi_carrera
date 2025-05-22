@@ -1,13 +1,15 @@
-<div class="flex items-center justify-between h-12 px-4 hover:bg-gray-100">
-  <span class="flex items-center h-full w-full">
-    <%= link_to subject_path(subject), :class => "grow w-full" do %>
-      <%= display_name(subject) %>
-    <% end %>
-  </span>
-  <span class="flex items-center h-full w-24">
+<li class="flex gap-x-4 p-3 justify-between items-center hover:bg-gray-100 cursor-pointer">
+  <div class="min-w-0">
+    <p class="text-sm/6 text-gray-900">
+      <%= link_to subject_path(subject), :class => "grow w-full" do %>
+        <%= display_name(subject) %>
+      <% end %>
+    </p>
+  </div>
+  <span class='flex two-checkboxes min-w-[100px] ms-[15px]'>
     <%= render(ApprovableCheckboxComponent.new(approvable: subject.course, subject_show: false, current_student: current_student)) %>
     <% if subject.exam %>
       <%= render(ApprovableCheckboxComponent.new(approvable: subject.exam, subject_show: false, current_student: current_student)) %>
     <% end %>
   </span>
-</div>
+</li>
