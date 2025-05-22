@@ -1,0 +1,89 @@
+---
+'011':
+  code: '011'
+  name: MATEMATICA
+  min_credits: 75
+'012':
+  code: '012'
+  name: FISICA
+  min_credits: 50
+'013':
+  code: '013'
+  name: OTRAS AREAS DE FORMACION BASICA
+  min_credits: 0
+'021':
+  code: '021'
+  name: FUNDAMENTOS DE INGENIERIA ELECTRICA
+  min_credits: 20
+'022':
+  code: '022'
+  name: FUNDAMENTOS DE SISTEMAS DIGITALES
+  min_credits: 5
+'023':
+  code: '023'
+  name: FUNDAMENTOS DE ELECTRONICA
+  min_credits: 5
+'024':
+  code: '024'
+  name: FUNDAMENTOS DE COMUNICACION Y SEÑALES
+  min_credits: 5
+'025':
+  code: '025'
+  name: FUNDAMENTOS DE CONVERTIDORES ELECTROMAGNETICOS DE ENERGIA
+  min_credits: 5
+'026':
+  code: '026'
+  name: FUNDAMENTOS DE COMPUTACION
+  min_credits: 5
+'030':
+  code: '030'
+  name: PROCESAMIENTO DE LA INFORMACION
+  min_credits: 0
+'031':
+  code: '031'
+  name: CONTROL
+  min_credits: 5
+'032':
+  code: '032'
+  name: CONVERTIDORES ELECTROMAGNETICOS DE ENERGIA
+  min_credits: 0
+'033':
+  code: '033'
+  name: COMPUTACION
+  min_credits: 5
+'034':
+  code: '034'
+  name: INSTALACIONES Y SISTEMAS ELECTRICOS DE POTENCIA
+  min_credits: 5
+'035':
+  code: '035'
+  name: ELECTRONICA
+  min_credits: 0
+'036':
+  code: '036'
+  name: SISTEMAS DIGITALES
+  min_credits: 5
+'037':
+  code: '037'
+  name: TRANSMISION DE LA INFORMACION
+  min_credits: 5
+'038':
+  code: '038'
+  name: INGENIERIA EN MEDICINA Y BIOLOGIA
+  min_credits: 0
+'039':
+  code: '039'
+  name: PRACTICA DE INGENIERIA ELECTRICA
+  min_credits: 35
+'041':
+  code: '041'
+  name: INGENIERIA INDUSTRIAL
+  min_credits: 5
+'042':
+  code: '042'
+  name: INGENIERIA Y SOCIEDAD
+  min_credits: 5
+'043':
+  code: '043'
+  name: OTRAS AREAS DE FORMACION COMPLEMENTARIA
+  min_credits: 5

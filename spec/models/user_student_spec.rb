@@ -214,4 +214,25 @@ RSpec.describe UserStudent, type: :model do
       expect(user.reload.approvals).to contain_exactly(subject.course.id, subject.exam.id)
     end
   end
+
+  describe '#change_degree' do
+    let(:user) { create :user }
+    let(:degree) { create :degree }
+    let(:student) { described_class.new(user) }
+
+    it 'updates the user degree' do
+      student.change_degree(degree.id)
+      expect(user.reload.degree_id).to eq(degree.id)
+    end
+  end
+
+  describe '#degree' do
+    let(:degree) { create :degree }
+    let(:user) { create :user, degree: }
+    let(:student) { described_class.new(user) }
+
+    it 'delegates #degree to user' do
+      expect(student.degree).to eq(user.degree)
+    end
+  end
 end

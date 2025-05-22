@@ -1,4 +1,6 @@
 class Approvable < ApplicationRecord
+  acts_as_tenant :degree
+
   belongs_to :subject
   has_one :prerequisite_tree, class_name: "Prerequisite", dependent: :destroy
 

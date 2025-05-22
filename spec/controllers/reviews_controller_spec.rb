@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe ReviewsController, type: :request do
-  let(:user) { create(:user) }
-  let(:subject) { create(:subject) }
-  let(:review) { create(:review, user:, subject:) }
+  let(:degree) { create :degree }
+  let(:user) { create :user, degree: }
+  let(:subject) { create :subject, degree: }
+  let(:review) { create :review, user:, subject:, degree: }
 
   before do
     sign_in user

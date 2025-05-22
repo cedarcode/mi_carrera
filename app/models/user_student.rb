@@ -12,6 +12,12 @@ class UserStudent < BaseStudent
     user.update!(welcome_banner_viewed: true)
   end
 
+  def change_degree(degree_id)
+    user.update!(degree_id:)
+  end
+
+  delegate :degree, to: :user
+
   private
 
   attr_reader :user

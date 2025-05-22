@@ -89,7 +89,6 @@ class UserTest < ApplicationSystemTestCase
 
     assert_text "Cerraste sesión correctamente"
 
-    click_user_menu
     click_on "Ingresar"
 
     fill_in "Correo electrónico", with: user.email

@@ -2,6 +2,9 @@ require "application_system_test_case"
 
 class ApprovalsTest < ApplicationSystemTestCase
   test "can check and uncheck approvables from index and show page" do
+    degree = create :degree, name: "Ing. comp", key: "computacion"
+    ActsAsTenant.current_tenant = degree
+
     gal1 = create :subject, :with_exam, name: "GAL 1", credits: 9, code: "1030"
     create :subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course
 
@@ -14,6 +17,9 @@ class ApprovalsTest < ApplicationSystemTestCase
     taller = create :subject, name: "Taller", credits: 11
 
     visit root_path
+    assert_text "Ing. comp"
+    click_on 'Seleccionar'
+    assert_current_path root_path
 
     assert_text "GAL 1"
     assert_no_text "GAL 2"

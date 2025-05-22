@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :approvable, aliases: [:course] do
     is_exam { false }
     subject
+    degree
 
     trait :with_prerequisites do
       prerequisite_tree { association(:subject_prerequisite) }

@@ -222,4 +222,37 @@ RSpec.describe CookieStudent, type: :model do
       expect(student).to be_graduated
     end
   end
+
+  describe '#change_degree' do
+    let(:degree) { create :degree }
+    let(:cookies) { build :cookie }
+    let(:student) { build :cookie_student, cookies: }
+
+    it 'sets the degree cookie with the correct value and domain' do
+      student.change_degree(degree.id)
+
+      expect(cookies[:degree]).to eq(degree.id)
+    end
+  end
+
+  describe '#degree' do
+    let(:degree) { create :degree }
+    let(:student) { build :cookie_student, cookies: }
+
+    context 'when a degree is set' do
+      let(:cookies) { build :cookie, degree: degree.id }
+
+      it 'returns the correct degree' do
+        expect(student.degree).to eq(degree)
+      end
+    end
+
+    context 'when no degree is set' do
+      let(:cookies) { build :cookie }
+
+      it 'returns nil when cookie is not set' do
+        expect(student.degree).to eq(nil)
+      end
+    end
+  end
 end
