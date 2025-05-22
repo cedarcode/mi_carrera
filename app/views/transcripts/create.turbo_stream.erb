@@ -1,0 +1,44 @@
+<%= turbo_stream.append_all "body" do %>
+  <dialog data-controller="modal" class="justify-self-center self-center relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
+    <div>
+      <% if @successful_subjects.present? %>
+        <div class="sm:flex sm:items-start">
+          <div class="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:size-10">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="size-6 text-green-600">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
+          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+            <h3 class="text-base font-semibold text-gray-900"><%= @successful_subjects.length %> materias marcadas correctamente</h3>
+            <div class="text-left overflow-y-auto max-h-35 bg-gray-50 p-2 mt-2">
+              <% @successful_subjects.each do |subject| %>
+                <p class="text-gray-700"><%= subject.code %> - <%= subject.name %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @failed_entries.present? %>
+        <div class="sm:flex sm:items-start mt-5">
+          <div class="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-yellow-100 sm:mx-0 sm:size-10">
+            <svg class="size-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+            </svg>
+          </div>
+          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+            <h3 class="text-base font-semibold text-gray-900">Materias no encontradas</h3>
+            <div class="text-left overflow-y-auto max-h-35 bg-gray-50 p-2 mt-2">
+              <% @failed_entries.each do |entry| %>
+                <p class="text-gray-700"><%= entry.name %></p>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+    <div class="mt-5 sm:mt-6">
+      <%= link_to "Ir al inicio", root_path, class: "inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2" %>
+    </div>
+  </dialog>
+<% end %>
