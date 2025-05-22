@@ -1,14 +1,10 @@
 import { Controller } from "@hotwired/stimulus";
-import { MDCMenu } from '@material/menu';
-import { Corner } from '@material/menu-surface/constants';
 
 export default class extends Controller {
   static targets = ["menu", "trigger"];
+  static values = { hiddenClass: { type: String, default: "hidden" } };
 
   connect() {
-    this.menu = new MDCMenu(this.menuTarget);
-    this.menu.setAnchorCorner(Corner.BOTTOM_START);
-
     // If the JS takes some time to load, it is possible to click on the
     // account circle button without the menu showing up. This is pronounced in
     // the system tests, resulting in a lot of flakiness.
@@ -21,16 +17,28 @@ export default class extends Controller {
     this.triggerTarget.setAttribute('data-controller-connected', 'true');
   }
 
-  open() {
-    this.menu.open = true;
+  toggle() {
+    if (this.menuTarget.classList.contains(this.hiddenClassValue)) {
+      this.open();
+    } else {
+      this.close();
+    }
+  }
 
-    // When the menu is open and the toggle is clicked to close it, the menu closes and then rapidly reopens again.
-    // This piece of code serves as workaround to fix that for the moment.
-    // Extracted from https://github.com/material-components/material-components-web/issues/6188
-    document.body.addEventListener('click', (event) => {
-      if (this.triggerTarget.contains(event.target)) {
-        event.stopPropagation()
-      }
-    }, { capture: true, once: true })
+  open() {
+    this.menuTarget.classList.remove(this.hiddenClassValue);
+  }
+
+  close() {
+    this.menuTarget.classList.add(this.hiddenClassValue);
+  }
+
+  onClickOutside(event) {
+    if (
+      !this.menuTarget.classList.contains(this.hiddenClassValue) &&
+      !this.element.contains(event.target)
+    ) {
+      this.close();
+    }
   }
 }
