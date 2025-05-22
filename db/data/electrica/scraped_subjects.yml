@@ -1,0 +1,2996 @@
+---
+'01':
+  code: '01'
+  name: MAT. 01 (ANÁLISIS I)
+  credits: 0
+  has_exam: true
+  subject_group:
+'1001':
+  code: '1001'
+  name: ELECTRONICA II
+  credits: 0
+  has_exam: true
+  subject_group:
+'101':
+  code: '101'
+  name: MATEMÁTICA 101 (ANÁLISIS I)
+  credits: 0
+  has_exam: true
+  subject_group:
+'1011':
+  code: '1011'
+  name: TEORIA DE CODIGOS AVANZADO
+  credits: 0
+  has_exam: false
+  subject_group:
+'102':
+  code: '102'
+  name: QUÍMICA GENERAL I
+  credits: 7
+  has_exam: true
+  subject_group: '013'
+'1020':
+  code: '1020'
+  name: CALCULO 1
+  credits: 0
+  has_exam: true
+  subject_group:
+1020P:
+  code: 1020P
+  name: CREDITOS NO ACUM CALCULO 1
+  credits: 0
+  has_exam: true
+  subject_group:
+1020R:
+  code: 1020R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1021':
+  code: '1021'
+  name: ALGEBRA LINEAL
+  credits: 0
+  has_exam: true
+  subject_group:
+'1022':
+  code: '1022'
+  name: CALCULO 2
+  credits: 0
+  has_exam: true
+  subject_group:
+1022P:
+  code: 1022P
+  name: CREDITOS NO ACUM CALCULO 2
+  credits: 0
+  has_exam: true
+  subject_group:
+1022T:
+  code: 1022T
+  name: CREDITOS POR CALCULO 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1023':
+  code: '1023'
+  name: MATEMATICA DISCRETA 1
+  credits: 9
+  has_exam: true
+  subject_group: '011'
+1023P:
+  code: 1023P
+  name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1024':
+  code: '1024'
+  name: CALCULO 3
+  credits: 0
+  has_exam: true
+  subject_group:
+1024P:
+  code: 1024P
+  name: CREDITOS NO ACUM CALCULO 3
+  credits: 0
+  has_exam: true
+  subject_group:
+'1025':
+  code: '1025'
+  name: PROBABILIDAD Y ESTADISTICA
+  credits: 10
+  has_exam: true
+  subject_group: '011'
+1025P:
+  code: 1025P
+  name: CREDITOS NO ACUM PROB Y EST.
+  credits: 0
+  has_exam: true
+  subject_group:
+1025T:
+  code: 1025T
+  name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1027':
+  code: '1027'
+  name: LOGICA
+  credits: 12
+  has_exam: true
+  subject_group: '033'
+'1028':
+  code: '1028'
+  name: ECUACIONES DIFERENCIALES
+  credits: 0
+  has_exam: true
+  subject_group:
+1028M:
+  code: 1028M
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+1028P:
+  code: 1028P
+  name: CREDITOS NO ACUM EC. DIFERENCIALES
+  credits: 0
+  has_exam: true
+  subject_group:
+1028R:
+  code: 1028R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1029':
+  code: '1029'
+  name: FUNCIONES DE VARIABLE COMPLEJA
+  credits: 0
+  has_exam: true
+  subject_group:
+102R:
+  code: 102R
+  name: QCA. GENERAL I (PLAN 2000)
+  credits: 0
+  has_exam: true
+  subject_group:
+'1030':
+  code: '1030'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  credits: 9
+  has_exam: true
+  subject_group: '011'
+1030P:
+  code: 1030P
+  name: CREDITOS NO ACUM GAL1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1031':
+  code: '1031'
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  credits: 9
+  has_exam: true
+  subject_group: '011'
+1031P:
+  code: 1031P
+  name: CREDITOS NO ACUM GAL2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1033':
+  code: '1033'
+  name: METODOS NUMERICOS
+  credits: 8
+  has_exam: true
+  subject_group: '011'
+'1036':
+  code: '1036'
+  name: FUNCIONES DE VARIABLE COMPLEJA
+  credits: 0
+  has_exam: true
+  subject_group:
+1036R:
+  code: 1036R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1042':
+  code: '1042'
+  name: TEORIA DE COD. ALGEB. PARA CORR. DE ERRORES
+  credits: 0
+  has_exam: false
+  subject_group:
+'1046':
+  code: '1046'
+  name: TEORIA DE CODIGOS
+  credits: 0
+  has_exam: false
+  subject_group:
+'1052':
+  code: '1052'
+  name: CALCULO 1 (ANUAL)
+  credits: 0
+  has_exam: true
+  subject_group:
+'1053':
+  code: '1053'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+  credits: 0
+  has_exam: true
+  subject_group:
+'1058':
+  code: '1058'
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1061':
+  code: '1061'
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  credits: 13
+  has_exam: true
+  subject_group: '011'
+1061I:
+  code: 1061I
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  credits: 0
+  has_exam: true
+  subject_group:
+1061P:
+  code: 1061P
+  name: CREDITOS NO ACUM CDIV
+  credits: 0
+  has_exam: true
+  subject_group:
+1061R:
+  code: 1061R
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  credits: 0
+  has_exam: true
+  subject_group:
+'1062':
+  code: '1062'
+  name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+  credits: 13
+  has_exam: true
+  subject_group: '011'
+1062P:
+  code: 1062P
+  name: CREDITOS NO ACUM CDIVV
+  credits: 0
+  has_exam: true
+  subject_group:
+'1063':
+  code: '1063'
+  name: CALCULO VECTORIAL
+  credits: 10
+  has_exam: true
+  subject_group: '011'
+1063P:
+  code: 1063P
+  name: CREDITOS NO ACUM CAL. VECTORIAL
+  credits: 0
+  has_exam: true
+  subject_group:
+'1064':
+  code: '1064'
+  name: INT. A LAS ECUACIONES DIFERENCIALES
+  credits: 10
+  has_exam: true
+  subject_group: '011'
+1064P:
+  code: 1064P
+  name: CREDITOS NO ACUM INT. A LAS ECUACIONES DIFERENCIALES
+  credits: 0
+  has_exam: true
+  subject_group:
+'1065':
+  code: '1065'
+  name: TEORIA DE COD. ALGEB. PARA CORR. DE ERRORES
+  credits: 0
+  has_exam: false
+  subject_group:
+'1066':
+  code: '1066'
+  name: FUNCIONES DE VARIABLE COMPLEJA
+  credits: 5
+  has_exam: true
+  subject_group: '011'
+1066P:
+  code: 1066P
+  name: CREDITOS NO ACUM FUNCIONES DE VAR. COMP.
+  credits: 0
+  has_exam: true
+  subject_group:
+'1070':
+  code: '1070'
+  name: CALCULO 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1071':
+  code: '1071'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1072':
+  code: '1072'
+  name: CALCULO 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1073':
+  code: '1073'
+  name: FISICA TERMICA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1074':
+  code: '1074'
+  name: ECUACIONES DIFERENCIALES
+  credits: 0
+  has_exam: true
+  subject_group:
+'1075':
+  code: '1075'
+  name: PROBABILIDAD Y ESTADISTICA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1076':
+  code: '1076'
+  name: CALCULO 3
+  credits: 0
+  has_exam: true
+  subject_group:
+'1077':
+  code: '1077'
+  name: FISICA 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1078':
+  code: '1078'
+  name: MECANICA NEWTONIANA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1079':
+  code: '1079'
+  name: METODOS NUMERICOS
+  credits: 0
+  has_exam: false
+  subject_group:
+107L:
+  code: 107L
+  name: CALCULO 1
+  credits: 0
+  has_exam: true
+  subject_group:
+108L:
+  code: 108L
+  name: CALCULO 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1103':
+  code: '1103'
+  name: MUESTREO Y PROCESAMIENTO DIGITAL
+  credits: 0
+  has_exam: true
+  subject_group:
+'1104':
+  code: '1104'
+  name: INT. A LA MODULACION
+  credits: 0
+  has_exam: true
+  subject_group:
+'1120':
+  code: '1120'
+  name: FISICA GENERAL 1
+  credits: 0
+  has_exam: true
+  subject_group:
+1120P:
+  code: 1120P
+  name: CREDITOS NO ACUM. FISICA GENERAL 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1121':
+  code: '1121'
+  name: FISICA GENERAL 2
+  credits: 0
+  has_exam: true
+  subject_group:
+1121P:
+  code: 1121P
+  name: CREDITOS NO ACUM FISICA GRAL. 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1122':
+  code: '1122'
+  name: MECANICA NEWTONIANA
+  credits: 10
+  has_exam: true
+  subject_group: '012'
+1122P:
+  code: 1122P
+  name: CREDITOS NO ACUM MEC NEWTONIANA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1123':
+  code: '1123'
+  name: FISICA TERMICA
+  credits: 10
+  has_exam: true
+  subject_group: '012'
+1123P:
+  code: 1123P
+  name: CREDITOS NO ACUM FIS TERMICA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1124':
+  code: '1124'
+  name: LABORATORIO 1
+  credits: 0
+  has_exam: false
+  subject_group:
+'1126':
+  code: '1126'
+  name: MEC.DE SIST.Y FENOMENOS ONDULATORIOS
+  credits: 0
+  has_exam: true
+  subject_group:
+'1127':
+  code: '1127'
+  name: LABORATORIO 2
+  credits: 0
+  has_exam: false
+  subject_group:
+'1128':
+  code: '1128'
+  name: ELECTROMAGNETISMO
+  credits: 10
+  has_exam: true
+  subject_group: '012'
+1128P:
+  code: 1128P
+  name: CREDITOS NO ACUM ELECTROMAGNETISMO
+  credits: 0
+  has_exam: true
+  subject_group:
+'1129':
+  code: '1129'
+  name: OPTICA
+  credits: 10
+  has_exam: true
+  subject_group: '012'
+'1131':
+  code: '1131'
+  name: INT. A LA FISICA MODERNA
+  credits: 10
+  has_exam: true
+  subject_group: '012'
+1131I:
+  code: 1131I
+  name: INT. A LA FISICA MODERNA
+  credits: 0
+  has_exam: true
+  subject_group:
+1131P:
+  code: 1131P
+  name: CREDITOS NO ACUM INT. A LA FISICA MODERNA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1138':
+  code: '1138'
+  name: INT. A LA FISICA MODERNA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1139':
+  code: '1139'
+  name: MODULO DE ACUSTICA
+  credits: 4
+  has_exam: false
+  subject_group: '012'
+'1140':
+  code: '1140'
+  name: LABORATORIO 3
+  credits: 0
+  has_exam: false
+  subject_group:
+'1144':
+  code: '1144'
+  name: VIBRACIONES Y ONDAS
+  credits: 10
+  has_exam: true
+  subject_group: '012'
+1144P:
+  code: 1144P
+  name: CREDITOS NO ACUM VIBRACIONES Y ONDAS
+  credits: 0
+  has_exam: true
+  subject_group:
+'1151':
+  code: '1151'
+  name: FISICA 1
+  credits: 10
+  has_exam: true
+  subject_group: '012'
+1151P:
+  code: 1151P
+  name: CREDITOS NO ACUM FISICA 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1152':
+  code: '1152'
+  name: FISICA 2
+  credits: 10
+  has_exam: true
+  subject_group: '012'
+1152P:
+  code: 1152P
+  name: CREDITOS NO ACUM FISICA 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1153':
+  code: '1153'
+  name: FISICA 3
+  credits: 10
+  has_exam: true
+  subject_group: '012'
+1153P:
+  code: 1153P
+  name: CREDITOS NO ACUM FISICA 3
+  credits: 0
+  has_exam: true
+  subject_group:
+'1154':
+  code: '1154'
+  name: FISICA EXPERIMENTAL 1
+  credits: 5
+  has_exam: false
+  subject_group: '012'
+1154I:
+  code: 1154I
+  name: FISICA EXPERIMENTAL 1
+  credits: 0
+  has_exam: true
+  subject_group:
+1154P:
+  code: 1154P
+  name: CREDITOS NO ACUM FISICA EXPERIMENTAL 1
+  credits: 0
+  has_exam: true
+  subject_group:
+1154R:
+  code: 1154R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1155':
+  code: '1155'
+  name: FISICA EXPERIMENTAL 2
+  credits: 5
+  has_exam: false
+  subject_group: '012'
+1155I:
+  code: 1155I
+  name: FISICA EXPERIMENTAL 2
+  credits: 0
+  has_exam: false
+  subject_group:
+1155P:
+  code: 1155P
+  name: CREDITOS NO ACUM FISICA EXPERIMENTAL 2
+  credits: 0
+  has_exam: false
+  subject_group:
+'1156':
+  code: '1156'
+  name: FISICA EXPERIMENTAL 3
+  credits: 6
+  has_exam: false
+  subject_group: '012'
+'1158':
+  code: '1158'
+  name: PROCESAMIENTO CUÁNTICO DE LA INFORMACIÓN
+  credits: 10
+  has_exam: true
+  subject_group: '012'
+'1170':
+  code: '1170'
+  name: FISICA GENERAL 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1171':
+  code: '1171'
+  name: FISICA 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1172':
+  code: '1172'
+  name: FISICA GENERAL 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1173':
+  code: '1173'
+  name: FISICA 3
+  credits: 0
+  has_exam: true
+  subject_group:
+'1178':
+  code: '1178'
+  name: ELECTROMAGNETISMO
+  credits: 0
+  has_exam: true
+  subject_group:
+117Q:
+  code: 117Q
+  name: FISICA GENERAL 1
+  credits: 0
+  has_exam: false
+  subject_group:
+119Q:
+  code: 119Q
+  name: FISICA 3
+  credits: 0
+  has_exam: true
+  subject_group:
+'1208':
+  code: '1208'
+  name: MODULO DE EXTENSION 2
+  credits: 2
+  has_exam: false
+  subject_group: '042'
+'1209':
+  code: '1209'
+  name: MODULO DE EXTENSION 4
+  credits: 4
+  has_exam: false
+  subject_group: '042'
+'1220':
+  code: '1220'
+  name: TALLER DE DISEÑO, COM. Y REPRES. GRAFICA
+  credits: 0
+  has_exam: false
+  subject_group:
+1220P:
+  code: 1220P
+  name: CREDITOS NO ACUM TALLER DE DISEÑO, COM. Y REP. GRAFICA
+  credits: 0
+  has_exam: false
+  subject_group:
+'1221':
+  code: '1221'
+  name: ECONOMIA
+  credits: 0
+  has_exam: false
+  subject_group:
+'1223':
+  code: '1223'
+  name: CIENCIA, TECNOLOGIA Y SOCIEDAD
+  credits: 8
+  has_exam: true
+  subject_group: '042'
+'1224':
+  code: '1224'
+  name: ECONOMIA
+  credits: 7
+  has_exam: true
+  subject_group: '042'
+1224P:
+  code: 1224P
+  name: CREDITOS NO ACUM ECONOMIA
+  credits: 0
+  has_exam: false
+  subject_group:
+'1233':
+  code: '1233'
+  name: TUTORIA EN MATEMATICA
+  credits: 4
+  has_exam: false
+  subject_group: '043'
+'1235':
+  code: '1235'
+  name: FUNDAMENTOS CELULARES DE CIRCUITOS NEURALES
+  credits: 10
+  has_exam: false
+  subject_group: '013'
+'1236':
+  code: '1236'
+  name: SEMINARIO SOBRE ENCUENTROS ENTRE ARTE Y TECNOLOGIAS
+  credits: 4
+  has_exam: false
+  subject_group: '043'
+125L:
+  code: 125L
+  name: PROBABILIDAD Y ESTADISTICA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1266':
+  code: '1266'
+  name: TALLER DE REPRESENTACION Y COMUNICACION GRAFICA_MODULO A
+  credits: 4
+  has_exam: false
+  subject_group: '043'
+'1275':
+  code: '1275'
+  name: TALLER BASICO DE ESTRATEGIAS Y ORIENTACION (TBEO)
+  credits: 3
+  has_exam: false
+  subject_group: '043'
+'1306':
+  code: '1306'
+  name: PROGRAMACION ORIENTADA A OBJETOS
+  credits: 0
+  has_exam: false
+  subject_group:
+'1307':
+  code: '1307'
+  name: PROGRAMACION PARA INGENIERIA ELECTRICA
+  credits: 7
+  has_exam: false
+  subject_group: '033'
+'1320':
+  code: '1320'
+  name: PROGRAMACION 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1321':
+  code: '1321'
+  name: PROGRAMACION 2
+  credits: 12
+  has_exam: true
+  subject_group: '033'
+1321P:
+  code: 1321P
+  name: CREDITOS NO ACUM PROGRAMACION 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1322':
+  code: '1322'
+  name: PROGRAMACION 1
+  credits: 0
+  has_exam: true
+  subject_group:
+1322P:
+  code: 1322P
+  name: CREDITOS NO ACUM PROGRAMACION 1
+  credits: 0
+  has_exam: true
+  subject_group:
+1322T:
+  code: 1322T
+  name: PROGRAMACION 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1323':
+  code: '1323'
+  name: PROGRAMACION 3
+  credits: 15
+  has_exam: true
+  subject_group: '033'
+'1324':
+  code: '1324'
+  name: PROGRAMACION 4
+  credits: 15
+  has_exam: true
+  subject_group: '033'
+'1326':
+  code: '1326'
+  name: DESARROLLO DE SOFTWARE PARA ING.ELECT.
+  credits: 0
+  has_exam: false
+  subject_group:
+'1373':
+  code: '1373'
+  name: PROGRAMACION 1
+  credits: 10
+  has_exam: true
+  subject_group: '026'
+'1401':
+  code: '1401'
+  name: SISTEMAS LINEALES 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1407':
+  code: '1407'
+  name: SISTEMAS LINEALES 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1409':
+  code: '1409'
+  name: MUESTREO Y PROCESAMIENTO DIGITAL
+  credits: 0
+  has_exam: true
+  subject_group:
+'1410':
+  code: '1410'
+  name: MEDIDAS ELECTRICAS
+  credits: 0
+  has_exam: true
+  subject_group:
+'1413':
+  code: '1413'
+  name: MONOGRAFIA EN MEDIDAS ELECTRICAS
+  credits: 2
+  has_exam: false
+  subject_group: '021'
+'1423':
+  code: '1423'
+  name: SISTEMAS LINEALES 1
+  credits: 0
+  has_exam: true
+  subject_group:
+1423P:
+  code: 1423P
+  name: CREDITOS NO ACUM SISTEMAS LINEALES 1
+  credits: 0
+  has_exam: false
+  subject_group:
+'1438':
+  code: '1438'
+  name: APLICACIONES DE TEORIA DE LA INFORMACION AL PROC. DE IMAG.
+  credits: 6
+  has_exam: false
+  subject_group: '030'
+'1442':
+  code: '1442'
+  name: ROBOTICA EMBEBIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+'1450':
+  code: '1450'
+  name: INT. A LA TEORIA DE LA INFORMACION
+  credits: 4
+  has_exam: false
+  subject_group: '037'
+'1451':
+  code: '1451'
+  name: MEDIDAS ELECTRICAS
+  credits: 0
+  has_exam: true
+  subject_group:
+'1456':
+  code: '1456'
+  name: TEORIA DE CIRCUITOS
+  credits: 8
+  has_exam: true
+  subject_group: '021'
+1456P:
+  code: 1456P
+  name: CREDITOS NO ACUM TEORIA DE CIRCUITOS
+  credits: 0
+  has_exam: false
+  subject_group:
+1456R:
+  code: 1456R
+  name: CREDITOS NO ACUM TEORIA DE CIRCUITOS
+  credits: 0
+  has_exam: false
+  subject_group:
+'1457':
+  code: '1457'
+  name: SEÑALES Y SISTEMAS
+  credits: 7
+  has_exam: true
+  subject_group: '021'
+1457P:
+  code: 1457P
+  name: CREDITOS NO ACUM SEÑALES Y SISTEMAS
+  credits: 0
+  has_exam: true
+  subject_group:
+'1459':
+  code: '1459'
+  name: TALLER FOURIER
+  credits: 8
+  has_exam: false
+  subject_group: '021'
+'1460':
+  code: '1460'
+  name: SEÑALES ALEATORIAS Y MODULACION
+  credits: 3
+  has_exam: true
+  subject_group: '030'
+'1461':
+  code: '1461'
+  name: MEDIDAS ELECTRICAS
+  credits: 10
+  has_exam: true
+  subject_group: '021'
+1461P:
+  code: 1461P
+  name: CREDITOS NO ACUM MEDIDAS ELECTRICAS
+  credits: 0
+  has_exam: true
+  subject_group:
+'1462':
+  code: '1462'
+  name: COMUNICACIONES DIGITALES
+  credits: 11
+  has_exam: true
+  subject_group: '037'
+'1463':
+  code: '1463'
+  name: APRENDIZAJE PROFUNDO PARA VISION ARTIFICIAL
+  credits: 6
+  has_exam: false
+  subject_group: '030'
+'1510':
+  code: '1510'
+  name: CONTROL DE CALIDAD
+  credits: 8
+  has_exam: true
+  subject_group: '041'
+1510P:
+  code: 1510P
+  name: CREDITOS NO ACUM CONTROL DE CALIDAD
+  credits: 0
+  has_exam: true
+  subject_group:
+1510R:
+  code: 1510R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1511':
+  code: '1511'
+  name: SISTEMAS OPERATIVOS
+  credits: 0
+  has_exam: true
+  subject_group:
+'1512':
+  code: '1512'
+  name: DISEÑO LOGICO
+  credits: 12
+  has_exam: true
+  subject_group: '022'
+1512P:
+  code: 1512P
+  name: CREDITOS NO ACUM DISEÑO LOGICO
+  credits: 0
+  has_exam: false
+  subject_group:
+'1513':
+  code: '1513'
+  name: INT. A LOS MICROPROCESADORES
+  credits: 11
+  has_exam: true
+  subject_group: '036'
+'1516':
+  code: '1516'
+  name: DISEÑO LOGICO 2
+  credits: 0
+  has_exam: false
+  subject_group:
+'1518':
+  code: '1518'
+  name: SISTEMAS OPERATIVOS
+  credits: 0
+  has_exam: true
+  subject_group:
+'1519':
+  code: '1519'
+  name: INT. A LA ADMINISTRACION PARA INGENIEROS
+  credits: 0
+  has_exam: false
+  subject_group:
+'1532':
+  code: '1532'
+  name: SISTEMAS OPERATIVOS
+  credits: 0
+  has_exam: true
+  subject_group:
+'1534':
+  code: '1534'
+  name: DISEÑO LOGICO 2
+  credits: 8
+  has_exam: false
+  subject_group: '036'
+1534P:
+  code: 1534P
+  name: CREDITOS NO ACUM DISEÑO LOGICO 2
+  credits: 0
+  has_exam: false
+  subject_group:
+'1536':
+  code: '1536'
+  name: SISTEMAS EMBEBIDOS PARA TIEMPO REAL
+  credits: 0
+  has_exam: false
+  subject_group:
+'1537':
+  code: '1537'
+  name: SISTEMAS OPERATIVOS
+  credits: 12
+  has_exam: true
+  subject_group: '033'
+'1538':
+  code: '1538'
+  name: REDES DE SENSORES INALAMBRICOS
+  credits: 8
+  has_exam: false
+  subject_group: '036'
+'1544':
+  code: '1544'
+  name: INT. A LA COMPUTACION CIENTIFICA
+  credits: 4
+  has_exam: false
+  subject_group: '033'
+'1556':
+  code: '1556'
+  name: SISTEMAS EMBEBIDOS PARA TIEMPO REAL
+  credits: 10
+  has_exam: false
+  subject_group: '036'
+158Q:
+  code: 158Q
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'1610':
+  code: '1610'
+  name: INT. A LA INVESTIGACION DE OPERACIONES
+  credits: 0
+  has_exam: true
+  subject_group:
+1610P:
+  code: 1610P
+  name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+  credits: 0
+  has_exam: true
+  subject_group:
+'1620':
+  code: '1620'
+  name: PRINCIPIOS DE QUIMICA GENERAL
+  credits: 8
+  has_exam: true
+  subject_group: '013'
+'1650':
+  code: '1650'
+  name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+  credits: 5
+  has_exam: true
+  subject_group: '041'
+'1701':
+  code: '1701'
+  name: INT. A LA CIENCIA DE MATERIALES
+  credits: 0
+  has_exam: true
+  subject_group:
+170Q:
+  code: 170Q
+  name: CALCULO 1
+  credits: 0
+  has_exam: true
+  subject_group:
+171L:
+  code: 171L
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  credits: 0
+  has_exam: true
+  subject_group:
+171Q:
+  code: 171Q
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'1723':
+  code: '1723'
+  name: INT. A LA CIENCIA DE MATERIALES
+  credits: 4
+  has_exam: true
+  subject_group: '013'
+1723R:
+  code: 1723R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+172Q:
+  code: 172Q
+  name: CALCULO 2
+  credits: 0
+  has_exam: true
+  subject_group:
+174Q:
+  code: 174Q
+  name: ECUACIONES DIFERENCIALES
+  credits: 0
+  has_exam: true
+  subject_group:
+175Q:
+  code: 175Q
+  name: PROBABILIDAD Y ESTADISTICA
+  credits: 0
+  has_exam: false
+  subject_group:
+176Q:
+  code: 176Q
+  name: CALCULO 3
+  credits: 0
+  has_exam: true
+  subject_group:
+'1788':
+  code: '1788'
+  name: FUNDAMENTOS DE ROBOTICA INDUSTRIAL
+  credits: 8
+  has_exam: false
+  subject_group: '031'
+'181':
+  code: '181'
+  name: QCA. GENERAL I (SEMESTRAL 1980)
+  credits: 0
+  has_exam: false
+  subject_group:
+'183':
+  code: '183'
+  name: QCA. ANALÍTICA CUALITATIVA I (SEM. 1980)
+  credits: 0
+  has_exam: false
+  subject_group:
+'1848':
+  code: '1848'
+  name: ROBOTICA BASADA EN COMPORTAMIENTOS
+  credits: 15
+  has_exam: false
+  subject_group: '031'
+'1849':
+  code: '1849'
+  name: 'BUTIA: ROBOTICA EDUCATIVA'
+  credits: 8
+  has_exam: false
+  subject_group: '036'
+'1857':
+  code: '1857'
+  name: FUNDAMENTOS DE LA ROBOTICA AUTONOMA
+  credits: 7
+  has_exam: false
+  subject_group: '036'
+'186':
+  code: '186'
+  name: QCA. GENERAL II (SEMESTRAL 1980)
+  credits: 0
+  has_exam: false
+  subject_group:
+'1868':
+  code: '1868'
+  name: MODELOS ESTADISTICOS PARA CLASIF. Y REGRESION
+  credits: 6
+  has_exam: false
+  subject_group: '011'
+'1869':
+  code: '1869'
+  name: MODELOS PROBABILISTICOS EN INGENIERIA
+  credits: 6
+  has_exam: false
+  subject_group: '011'
+'1871':
+  code: '1871'
+  name: FUNDAMENTOS DE OPTIMIZACION
+  credits: 6
+  has_exam: false
+  subject_group: '011'
+'1872':
+  code: '1872'
+  name: APLICACIONES DEL ALGEBRA LINEAL
+  credits: 9
+  has_exam: true
+  subject_group: '011'
+'188':
+  code: '188'
+  name: QCA. GENERAL (ANUAL 1986)
+  credits: 0
+  has_exam: false
+  subject_group:
+'1886':
+  code: '1886'
+  name: TOPOLOGIA Y ANALISIS REAL
+  credits: 10
+  has_exam: false
+  subject_group: '011'
+188R:
+  code: 188R
+  name: QCA. GENERAL (ANUAL 1986)
+  credits: 0
+  has_exam: true
+  subject_group:
+'189':
+  code: '189'
+  name: QCA. ANALÍTICA CUALITATIVA (ANUAL 1986)
+  credits: 0
+  has_exam: false
+  subject_group:
+'1892':
+  code: '1892'
+  name: BASES DE DATOS PARA INGENIERÍA
+  credits: 10
+  has_exam: true
+  subject_group: '033'
+'1899':
+  code: '1899'
+  name: TEMAS AVANZADOS EN CÓDIGOS PARA CORRECCIÓN DE ERRORES
+  credits: 7
+  has_exam: false
+  subject_group: '030'
+189R:
+  code: 189R
+  name: QCA. ANALÍTICA CUALITATIVA (ANUAL 1986)
+  credits: 0
+  has_exam: true
+  subject_group:
+'1901':
+  code: '1901'
+  name: CONTROL DE CALIDAD
+  credits: 0
+  has_exam: true
+  subject_group:
+'1902':
+  code: '1902'
+  name: INT. A LA INGENIERIA INDUSTRIAL
+  credits: 0
+  has_exam: false
+  subject_group:
+'1903':
+  code: '1903'
+  name: COSTOS PARA INGENIERIA
+  credits: 0
+  has_exam: true
+  subject_group:
+'1911':
+  code: '1911'
+  name: FUNDAMENTOS DE BASES DE DATOS
+  credits: 15
+  has_exam: true
+  subject_group: '033'
+'1912':
+  code: '1912'
+  name: INT. A LA INGENIERIA INDUSTRIAL
+  credits: 8
+  has_exam: true
+  subject_group: '041'
+'1920':
+  code: '1920'
+  name: GESTION DE MANTENIMIENTO
+  credits: 8
+  has_exam: true
+  subject_group: '041'
+'1922':
+  code: '1922'
+  name: COSTOS PARA INGENIERIA
+  credits: 8
+  has_exam: true
+  subject_group: '041'
+'1930':
+  code: '1930'
+  name: ORGANIZACIONES PARA INGENIEROS
+  credits: 0
+  has_exam: false
+  subject_group:
+'1944':
+  code: '1944'
+  name: ADMINISTRACION GENERAL PARA INGENIEROS
+  credits: 5
+  has_exam: true
+  subject_group: '041'
+'1945':
+  code: '1945'
+  name: PRACTICA DE ADMINISTRACION PARA INGENIEROS
+  credits: 5
+  has_exam: true
+  subject_group: '041'
+'1951':
+  code: '1951'
+  name: 'TALLER: HERRAMIENTAS PARA LA INNOVACION'
+  credits: 4
+  has_exam: false
+  subject_group: '043'
+'2011':
+  code: '2011'
+  name: PASANTIA (ELECTRICA)
+  credits: 10
+  has_exam: false
+  subject_group: '039'
+2011P:
+  code: 2011P
+  name: CREDITOS NO ACUM PASANTIA
+  credits: 0
+  has_exam: false
+  subject_group:
+'2013':
+  code: '2013'
+  name: PROYECTO (ING.ELEC.)
+  credits: 35
+  has_exam: true
+  subject_group: '039'
+'2018':
+  code: '2018'
+  name: MODULO DE TALLER 1
+  credits: 4
+  has_exam: false
+  subject_group: '043'
+'2020':
+  code: '2020'
+  name: MODULO DE TALLER 2
+  credits: 4
+  has_exam: false
+  subject_group: '043'
+'2021':
+  code: '2021'
+  name: MODULO DE TALLER 3
+  credits: 4
+  has_exam: false
+  subject_group: '043'
+'2022':
+  code: '2022'
+  name: MODULO DE TALLER 4
+  credits: 2
+  has_exam: false
+  subject_group: '043'
+'2040':
+  code: '2040'
+  name: INICIACION A LA PROD. AUDIOVIS. Y MULTIMEDIA
+  credits: 6
+  has_exam: false
+  subject_group: '043'
+'2216':
+  code: '2216'
+  name: TUTORIAS ENTRE PARES 1
+  credits: 4
+  has_exam: false
+  subject_group: '043'
+'2217':
+  code: '2217'
+  name: TUTORIAS ENTRE PARES 2
+  credits: 4
+  has_exam: false
+  subject_group: '043'
+'2241':
+  code: '2241'
+  name: ADMINISTRACION DE EMPRESAS
+  credits: 0
+  has_exam: false
+  subject_group:
+'2243':
+  code: '2243'
+  name: HIGIENE Y SEGURIDAD INDUSTRIAL
+  credits: 8
+  has_exam: false
+  subject_group: '041'
+'2314':
+  code: '2314'
+  name: ESTABILIDAD DE LOS SIST.ELEC.DE POTENCIA
+  credits: 10
+  has_exam: false
+  subject_group: '034'
+'2401':
+  code: '2401'
+  name: LEGISLACION Y RELACIONES INDUSTRIALES
+  credits: 6
+  has_exam: false
+  subject_group: '041'
+'2413':
+  code: '2413'
+  name: INT. A BASES DE DATOS
+  credits: 8
+  has_exam: false
+  subject_group: '033'
+'2415':
+  code: '2415'
+  name: CODIGOS PARA CORRECCION DE ERRORES
+  credits: 8
+  has_exam: false
+  subject_group: '030'
+'2422':
+  code: '2422'
+  name: INT. A BASES DE DATOS
+  credits: 8
+  has_exam: false
+  subject_group: '033'
+24CIA:
+  code: 24CIA
+  name: COMUNICACIÓN E INTELIGENCIA ARTIFICIAL (PPP)
+  credits: 9
+  has_exam: false
+  subject_group: '042'
+'2704':
+  code: '2704'
+  name: INSTRUMENTACION INDUSTRIAL
+  credits: 0
+  has_exam: true
+  subject_group:
+'2706':
+  code: '2706'
+  name: INSTRUMENTACION INDUSTRIAL
+  credits: 8
+  has_exam: true
+  subject_group: '031'
+'284':
+  code: '284'
+  name: QCA. ANALÍTICA CUALITATIVA II (SEM.1980)
+  credits: 0
+  has_exam: false
+  subject_group:
+'2907':
+  code: '2907'
+  name: SEMINARIO DE INICIACION A LA INVESTIGACION
+  credits: 4
+  has_exam: false
+  subject_group: '043'
+'3333':
+  code: '3333'
+  name: FUNDAMENTOS DE ING. DE SOFT. PARA PROD. IND.
+  credits: 0
+  has_exam: false
+  subject_group:
+'3334':
+  code: '3334'
+  name: FUNDAMENTOS DE INGENIERIA DE SOFTWARE
+  credits: 8
+  has_exam: false
+  subject_group: '033'
+'5005':
+  code: '5005'
+  name: TUTORIAS ENTRE PARES ACADEMICAS PROGRESA/FING
+  credits: 8
+  has_exam: false
+  subject_group: '043'
+'5501':
+  code: '5501'
+  name: REDES ELECTRICAS 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'5502':
+  code: '5502'
+  name: REDES ELECTRICAS 2
+  credits: 0
+  has_exam: true
+  subject_group:
+'5503':
+  code: '5503'
+  name: INSTALACIONES ELECTRICAS
+  credits: 0
+  has_exam: true
+  subject_group:
+'5504':
+  code: '5504'
+  name: PROYECTO DE INSTALACIONES ELECTRICAS
+  credits: 8
+  has_exam: false
+  subject_group: '034'
+'5507':
+  code: '5507'
+  name: INSTALACIONES ELECTRICAS
+  credits: 8
+  has_exam: true
+  subject_group: '034'
+'5508':
+  code: '5508'
+  name: REDES ELECTRICAS
+  credits: 10
+  has_exam: true
+  subject_group: '034'
+'5510':
+  code: '5510'
+  name: TEMAS DE SUBESTACIONES DE MEDIA TENSION
+  credits: 4
+  has_exam: false
+  subject_group: '034'
+'5511':
+  code: '5511'
+  name: PROYECTO DE INSTALACIONES ELECTRICAS DE BAJA Y MEDIA TENSION
+  credits: 10
+  has_exam: false
+  subject_group: '034'
+'5513':
+  code: '5513'
+  name: TRANSPORTE DE ENERGIA ELECTRICA
+  credits: 0
+  has_exam: false
+  subject_group:
+'5514':
+  code: '5514'
+  name: SUBESTACIONES EN MEDIA TENSION
+  credits: 8
+  has_exam: true
+  subject_group: '034'
+'5515':
+  code: '5515'
+  name: COMPLEM. TEMAS DE SUBEST.EN MEDIA TENS.
+  credits: 4
+  has_exam: false
+  subject_group: '034'
+'5517':
+  code: '5517'
+  name: SIMULACION DE SIST.DE ENERGIA ELECTRICA
+  credits: 8
+  has_exam: false
+  subject_group: '034'
+'5518':
+  code: '5518'
+  name: INT. A LOS SIST. DE PROT. DE SIST. ELECT. DE POT.
+  credits: 9
+  has_exam: true
+  subject_group: '034'
+'5519':
+  code: '5519'
+  name: ENSAYOS ELECTRICOS Y EQUIPOS DE MEDIA TENSION
+  credits: 9
+  has_exam: true
+  subject_group: '034'
+'5520':
+  code: '5520'
+  name: TRANSPORTE DE ENERGIA ELECTRICA
+  credits: 8
+  has_exam: true
+  subject_group: '034'
+'5601':
+  code: '5601'
+  name: INT. A LA ELECTROTECNICA
+  credits: 0
+  has_exam: true
+  subject_group:
+'5602':
+  code: '5602'
+  name: MAQUINAS ELECTRICAS
+  credits: 10
+  has_exam: true
+  subject_group: '032'
+'5603':
+  code: '5603'
+  name: TALLER DE MAQUINAS ELECTRICAS
+  credits: 4
+  has_exam: false
+  subject_group: '032'
+'5604':
+  code: '5604'
+  name: 'TALLER LAB. ELECT. DE POTENCIA: RECT. E INVER.'
+  credits: 2
+  has_exam: false
+  subject_group: '032'
+'5607':
+  code: '5607'
+  name: ELECTRONICA DE POTENCIA 1
+  credits: 0
+  has_exam: false
+  subject_group:
+'5608':
+  code: '5608'
+  name: INT. A LA ELECTROTECNICA
+  credits: 0
+  has_exam: true
+  subject_group:
+'5609':
+  code: '5609'
+  name: ELECTRONICA DE POTENCIA
+  credits: 10
+  has_exam: true
+  subject_group: '032'
+5609P:
+  code: 5609P
+  name: CREDITOS NO ACUM ELECTRONICA DE POTENCIA
+  credits: 0
+  has_exam: true
+  subject_group:
+'5610':
+  code: '5610'
+  name: TALLER LAB. ELECT. DE POTENCIA
+  credits: 4
+  has_exam: false
+  subject_group: '032'
+5610P:
+  code: 5610P
+  name: CREDITOS NO ACUM TALLER LAB. ELECT. DE POT.
+  credits: 0
+  has_exam: false
+  subject_group:
+'5630':
+  code: '5630'
+  name: GENERACION DE ENERGIA ELECTRICA
+  credits: 6
+  has_exam: true
+  subject_group: '032'
+'5701':
+  code: '5701'
+  name: ELECTRONICA 1
+  credits: 0
+  has_exam: true
+  subject_group:
+'5703':
+  code: '5703'
+  name: INGENIERIA BIOMEDICA
+  credits: 0
+  has_exam: false
+  subject_group:
+'5705':
+  code: '5705'
+  name: SEMINARIO DE INGENIERIA BIOMEDICA
+  credits: 4
+  has_exam: false
+  subject_group: '038'
+'5707':
+  code: '5707'
+  name: 'IMAGENES MEDICAS: ADQUISICION, INSTRUMENTACION Y GESTION'
+  credits: 8
+  has_exam: false
+  subject_group: '038'
+'5708':
+  code: '5708'
+  name: DISEÑO DE CIRCUITOS INTEGRADOS
+  credits: 9
+  has_exam: false
+  subject_group: '035'
+'5710':
+  code: '5710'
+  name: INGENIERIA BIOMEDICA
+  credits: 8
+  has_exam: false
+  subject_group: '038'
+'5712':
+  code: '5712'
+  name: INTERNADO DE INGENIERIA BIOMEDICA
+  credits: 18
+  has_exam: false
+  subject_group: '039'
+'5713':
+  code: '5713'
+  name: CIRCUITOS DE RADIOFRECUENCIA
+  credits: 8
+  has_exam: false
+  subject_group: '035'
+'5714':
+  code: '5714'
+  name: DISEÑO DE SISTEMAS MEDICOS IMPLANTABLES ACTIVOS
+  credits: 0
+  has_exam: false
+  subject_group:
+'5715':
+  code: '5715'
+  name: ELECTRONICA FUNDAMENTAL
+  credits: 11
+  has_exam: true
+  subject_group: '023'
+'5716':
+  code: '5716'
+  name: ELECTRONICA AVANZADA 1
+  credits: 10
+  has_exam: true
+  subject_group: '035'
+'5717':
+  code: '5717'
+  name: ELECTRONICA AVANZADA 2
+  credits: 8
+  has_exam: true
+  subject_group: '035'
+'5718':
+  code: '5718'
+  name: INGENIERIA CLINICA
+  credits: 8
+  has_exam: false
+  subject_group: '038'
+'5719':
+  code: '5719'
+  name: APRENDIZAJE PROFUNDO PARA EL ANALISIS DE IMAGENES BIOMEDICAS
+  credits: 7
+  has_exam: false
+  subject_group: '030'
+'5720':
+  code: '5720'
+  name: TALLER DE APRENDIZAJE AUTOMATICO
+  credits: 10
+  has_exam: false
+  subject_group: '030'
+'5724':
+  code: '5724'
+  name: DISEÑO DE SISTEMAS MEDICOS IMPLANTABLES ACTIVOS
+  credits: 8
+  has_exam: false
+  subject_group: '035'
+'5801':
+  code: '5801'
+  name: SISTEMAS DE COMUNICACION
+  credits: 0
+  has_exam: true
+  subject_group:
+'5803':
+  code: '5803'
+  name: ANTENAS Y PROPAGACION
+  credits: 0
+  has_exam: true
+  subject_group:
+'5805':
+  code: '5805'
+  name: REDES DE DATOS
+  credits: 0
+  has_exam: true
+  subject_group:
+5805P:
+  code: 5805P
+  name: CREDITOS NO ACUM REDES DE DATOS
+  credits: 0
+  has_exam: false
+  subject_group:
+'5808':
+  code: '5808'
+  name: SISTEMAS DE COMUNICACION
+  credits: 0
+  has_exam: true
+  subject_group:
+'5811':
+  code: '5811'
+  name: TRATAMIENTO DE IMAGENES POR COMPUTADORA
+  credits: 0
+  has_exam: false
+  subject_group:
+'5817':
+  code: '5817'
+  name: ANTENAS Y PROPAGACION
+  credits: 10
+  has_exam: true
+  subject_group: '037'
+5817P:
+  code: 5817P
+  name: CREDITOS NO ACUM ANTENAS Y PROPAGACION
+  credits: 0
+  has_exam: false
+  subject_group:
+'5821':
+  code: '5821'
+  name: PROPAGACION EN ENTORNOS URBANOS
+  credits: 4
+  has_exam: false
+  subject_group: '037'
+'5824':
+  code: '5824'
+  name: REDES DE DATOS 1
+  credits: 8
+  has_exam: true
+  subject_group: '037'
+5824P:
+  code: 5824P
+  name: CREDITOS NO ACUM REDES DE DATOS 1
+  credits: 0
+  has_exam: false
+  subject_group:
+'5828':
+  code: '5828'
+  name: TRATAMIENTO DE IMAGENES POR COMPUTADORA
+  credits: 10
+  has_exam: false
+  subject_group: '030'
+5828P:
+  code: 5828P
+  name: CREDITOS NO ACUM TRATAMIENTO DE IMAG POR COMP
+  credits: 0
+  has_exam: false
+  subject_group:
+'5830':
+  code: '5830'
+  name: INT. A LA ELECTROTECNICA
+  credits: 0
+  has_exam: true
+  subject_group:
+'5833':
+  code: '5833'
+  name: REDES DE ACCESO
+  credits: 6
+  has_exam: true
+  subject_group: '037'
+'5834':
+  code: '5834'
+  name: NUCLEO DE RED EN TELECOMUNICACIONES
+  credits: 0
+  has_exam: true
+  subject_group:
+'5835':
+  code: '5835'
+  name: MODELADO Y ANALISIS DE REDES DE TELECOM.
+  credits: 12
+  has_exam: false
+  subject_group: '037'
+'5839':
+  code: '5839'
+  name: PROCESAMIENTO DIGITAL DE SEÑALES DE AUDIO
+  credits: 8
+  has_exam: false
+  subject_group: '030'
+'5840':
+  code: '5840'
+  name: TRATAMIENTO ESTADISTICO DE SEÑALES
+  credits: 0
+  has_exam: false
+  subject_group:
+'5842':
+  code: '5842'
+  name: RECONOCIMIENTO DE PATRONES
+  credits: 0
+  has_exam: false
+  subject_group:
+'5844':
+  code: '5844'
+  name: TALLER DE TELECOMUNICACIONES
+  credits: 4
+  has_exam: false
+  subject_group: '037'
+'5846':
+  code: '5846'
+  name: TECNOLOGIAS DE RED EN INTERNET
+  credits: 7
+  has_exam: false
+  subject_group: '037'
+'5847':
+  code: '5847'
+  name: PROCESAMIENTO DE IMAGENES PARA BIOLOGIA Y MEDICINA
+  credits: 10
+  has_exam: false
+  subject_group: '038'
+'5848':
+  code: '5848'
+  name: COMUNICACIONES INALAMBRICAS
+  credits: 8
+  has_exam: false
+  subject_group: '037'
+'5849':
+  code: '5849'
+  name: ESTIMACION Y PREDICCION EN SERIES TEMPORALES
+  credits: 10
+  has_exam: false
+  subject_group: '030'
+'5850':
+  code: '5850'
+  name: ELECTROTECNICA
+  credits: 10
+  has_exam: true
+  subject_group: '025'
+5850P:
+  code: 5850P
+  name: CREDITOS NO ACUM ELECTROTECNICA
+  credits: 0
+  has_exam: false
+  subject_group:
+'5852':
+  code: '5852'
+  name: FUNDAMENTOS DE APRENDIZAJE AUTOMATICO Y RECONOCIMIENTO DE PATRONES
+  credits: 8
+  has_exam: true
+  subject_group: '030'
+'5853':
+  code: '5853'
+  name: TALLER DE APRENDIZAJE AUTOMATICO
+  credits: 0
+  has_exam: false
+  subject_group:
+'5855':
+  code: '5855'
+  name: REDES DE DATOS 2
+  credits: 10
+  has_exam: true
+  subject_group: '037'
+'5856':
+  code: '5856'
+  name: TECNOLOGIAS DE REDES Y SERVICIOS DE TELECOMUNICACIONES
+  credits: 0
+  has_exam: true
+  subject_group:
+'5860':
+  code: '5860'
+  name: TEMAS AVANZADOS EN SISTEMAS INALAMBRICOS
+  credits: 6
+  has_exam: false
+  subject_group: '037'
+'5863':
+  code: '5863'
+  name: DISTRIBUCION Y APLICACIONES MULTIMEDIA
+  credits: 8
+  has_exam: false
+  subject_group: '037'
+'5864':
+  code: '5864'
+  name: DIGITALIZACION Y CODIFICACION MULTIMEDIA
+  credits: 8
+  has_exam: false
+  subject_group: '030'
+'5866':
+  code: '5866'
+  name: TECNOLOGIAS DE REDES Y SERVICIOS DE TELECOMUNICACIONES
+  credits: 8
+  has_exam: true
+  subject_group: '037'
+'5900':
+  code: '5900'
+  name: INT. A LA TEORIA DE CONTROL
+  credits: 0
+  has_exam: true
+  subject_group:
+'5904':
+  code: '5904'
+  name: TALLER DE INTRODUCCION A LA ING. ELECTRICA
+  credits: 10
+  has_exam: false
+  subject_group: '043'
+'5905':
+  code: '5905'
+  name: SISTEMAS Y CONTROL
+  credits: 8
+  has_exam: true
+  subject_group: '031'
+'5906':
+  code: '5906'
+  name: SISTEMAS DE CONTROL EN TIEMPO DISCRETO
+  credits: 8
+  has_exam: false
+  subject_group: '031'
+'5907':
+  code: '5907'
+  name: REDES OPTICAS
+  credits: 10
+  has_exam: false
+  subject_group: '037'
+'5908':
+  code: '5908'
+  name: HERRAMIENTAS DE REPRESENTACION TIEMPO-FRECUENCIA
+  credits: 7
+  has_exam: false
+  subject_group: '030'
+'5910':
+  code: '5910'
+  name: INT. A LOS PLC
+  credits: 0
+  has_exam: false
+  subject_group:
+'5913':
+  code: '5913'
+  name: ANALISIS Y CONTROL DE SISTEMAS NO LINEALES
+  credits: 10
+  has_exam: false
+  subject_group: '031'
+'5920':
+  code: '5920'
+  name: CONTROLADORES LOGICOS PROGRAMABLES
+  credits: 5
+  has_exam: false
+  subject_group: '031'
+'600':
+  code: '600'
+  name: QCA. GENERAL E INORGÁNICA (PLAN 1992)
+  credits: 0
+  has_exam: false
+  subject_group:
+'601':
+  code: '601'
+  name: LABORATORIO GENERAL (PLAN 1992)
+  credits: 0
+  has_exam: false
+  subject_group:
+ACT5:
+  code: ACT5
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+AL:
+  code: AL
+  name: GEOMETRÍA Y ÁLGEBRA LINEAL
+  credits: 9
+  has_exam: false
+  subject_group: '011'
+AT001:
+  code: AT001
+  name: SENSIBILIZACIÓN E INTERCAMBIO PARA LA EQUIDAD
+  credits: 2
+  has_exam: false
+  subject_group: '042'
+BG827:
+  code: BG827
+  name: BIOFÍSICA (2020-
+  credits: 14
+  has_exam: true
+  subject_group: '013'
+C50:
+  code: C50
+  name: HISTORIA DEL URUGUAY CONTEMPORÁNEO
+  credits: 8
+  has_exam: false
+  subject_group: '042'
+CAL10:
+  code: CAL10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+CAL12:
+  code: CAL12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+CAL2:
+  code: CAL2
+  name: CÁLCULO 2
+  credits: 10
+  has_exam: false
+  subject_group: '011'
+CCT10:
+  code: CCT10
+  name: FÍSICA I
+  credits: 14
+  has_exam: false
+  subject_group: '012'
+CCT20:
+  code: CCT20
+  name: FÍSICA II
+  credits: 14
+  has_exam: true
+  subject_group: '012'
+CH201:
+  code: CH201
+  name: PROBABILIDAD Y ESTADÍSTICA
+  credits: 10
+  has_exam: false
+  subject_group: '011'
+CIM10:
+  code: CIM10
+  name: CÁLCULO VECTORIAL
+  credits: 12
+  has_exam: false
+  subject_group: '011'
+CIM18:
+  code: CIM18
+  name: FÍSICA EXPERIMENTAL 1 (FE1)
+  credits: 5
+  has_exam: false
+  subject_group: '012'
+CIM24:
+  code: CIM24
+  name: ECUACIONES DIFERENCIALES
+  credits: 10
+  has_exam: false
+  subject_group: '011'
+CIM26:
+  code: CIM26
+  name: FÍSICA TÉRMICA
+  credits: 10
+  has_exam: false
+  subject_group: '012'
+CIM28:
+  code: CIM28
+  name: MECÁNICA CLÁSICA
+  credits: 10
+  has_exam: false
+  subject_group: '012'
+CIM29:
+  code: CIM29
+  name: FÍSICA EXPERIMENTAL 2 (FE2)
+  credits: 5
+  has_exam: false
+  subject_group: '012'
+CIM40:
+  code: CIM40
+  name: ELECTROMAGNETÍSMO CIM
+  credits: 10
+  has_exam: false
+  subject_group: '012'
+CM:
+  code: CM
+  name: COMPLEMENTO DE MATEMÁTICA
+  credits: 6
+  has_exam: false
+  subject_group: '011'
+CM14:
+  code: CM14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+CON12:
+  code: CON12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+CON20:
+  code: CON20
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+CP02:
+  code: CP02
+  name: CRÉDITOS POR QUÍMICA GENERAL
+  credits: 0
+  has_exam: true
+  subject_group:
+CP03:
+  code: CP03
+  name: CRÉDITOS POR QCA. ANAL. CUALITATIVA
+  credits: 0
+  has_exam: true
+  subject_group:
+CP04:
+  code: CP04
+  name: CRÉDITOS POR FÍSICA I
+  credits: 0
+  has_exam: false
+  subject_group:
+CP1:
+  code: CP1
+  name: ANALISIS MATEMATICO I
+  credits: 0
+  has_exam: true
+  subject_group:
+CP10:
+  code: CP10
+  name: TALLER II
+  credits: 0
+  has_exam: false
+  subject_group:
+CP102:
+  code: CP102
+  name: CONTROL DE CALIDAD
+  credits: 0
+  has_exam: true
+  subject_group:
+CP119:
+  code: CP119
+  name: QUIMICA TECNICA
+  credits: 0
+  has_exam: false
+  subject_group:
+CP12:
+  code: CP12
+  name: TERMODINAMICA
+  credits: 0
+  has_exam: true
+  subject_group:
+CP120:
+  code: CP120
+  name: QUIMICA
+  credits: 0
+  has_exam: false
+  subject_group:
+CP13:
+  code: CP13
+  name: ELECTROMAGNETISMO
+  credits: 0
+  has_exam: true
+  subject_group:
+CP14:
+  code: CP14
+  name: TALLER LABORATORIO II (MODULO DE FISICA)
+  credits: 0
+  has_exam: false
+  subject_group:
+CP148:
+  code: CP148
+  name: INSTALACIONES ELECTRICAS
+  credits: 0
+  has_exam: true
+  subject_group:
+CP16:
+  code: CP16
+  name: CALCULO NUMERICO
+  credits: 0
+  has_exam: false
+  subject_group:
+CP17:
+  code: CP17
+  name: MECANICA I (TRANSICION)
+  credits: 0
+  has_exam: false
+  subject_group:
+CP18:
+  code: CP18
+  name: TECNOLOGIA Y SOCIEDAD
+  credits: 0
+  has_exam: false
+  subject_group:
+CP2:
+  code: CP2
+  name: GEOMETRIA Y ALGEBRA LINEAL
+  credits: 0
+  has_exam: true
+  subject_group:
+CP20:
+  code: CP20
+  name: ECONOMIA POLITICA
+  credits: 0
+  has_exam: false
+  subject_group:
+CP22:
+  code: CP22
+  name: ANALISIS MATEMATICO I (P. 74)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP23:
+  code: CP23
+  name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP24:
+  code: CP24
+  name: COMPUTACION (P. 74)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP25:
+  code: CP25
+  name: ANALISIS MATEMATICO II (P. 74)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP26:
+  code: CP26
+  name: MECANICA GENERAL I (P. 74)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP27:
+  code: CP27
+  name: INVESTIGACION OPERATIVA
+  credits: 0
+  has_exam: true
+  subject_group:
+CP29:
+  code: CP29
+  name: PROGRAMACION III
+  credits: 0
+  has_exam: true
+  subject_group:
+CP3:
+  code: CP3
+  name: MECANICA I
+  credits: 0
+  has_exam: false
+  subject_group:
+CP38:
+  code: CP38
+  name: PROGRAMACION II (P. 74)
+  credits: 0
+  has_exam: false
+  subject_group:
+CP4:
+  code: CP4
+  name: LOGICA
+  credits: 0
+  has_exam: false
+  subject_group:
+CP41:
+  code: CP41
+  name: FISICA I (P. 74)
+  credits: 0
+  has_exam: false
+  subject_group:
+CP42:
+  code: CP42
+  name: FISICA II (P. 74)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP43:
+  code: CP43
+  name: FISICA III (P. 74)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP44:
+  code: CP44
+  name: ANALISIS MATEMATICO I (1ER.SEM.)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP45:
+  code: CP45
+  name: ANALISIS MATEMATICO I (2DO.SEM.)
+  credits: 0
+  has_exam: false
+  subject_group:
+CP46:
+  code: CP46
+  name: GEOMETRIA Y ALGEBRA LINEAL (1ER.SEM.)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP47:
+  code: CP47
+  name: GEOMETRIA Y ALGEBRA LINEAL (2DO.SEM.)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP48:
+  code: CP48
+  name: ANALISIS MATEMATICO II (1ER.SEM.)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP49:
+  code: CP49
+  name: ANALISIS MATEMATICO II (2DO.SEM.)
+  credits: 0
+  has_exam: true
+  subject_group:
+CP51:
+  code: CP51
+  name: DISEÑO LOGICO
+  credits: 0
+  has_exam: true
+  subject_group:
+CP52:
+  code: CP52
+  name: COMPUTACION
+  credits: 0
+  has_exam: true
+  subject_group:
+CP55:
+  code: CP55
+  name: TALLER LABORATORIO I (MODULO DE DIBUJO)
+  credits: 0
+  has_exam: false
+  subject_group:
+CP59:
+  code: CP59
+  name: MEDIDAS ELECTRICAS
+  credits: 0
+  has_exam: false
+  subject_group:
+CP6:
+  code: CP6
+  name: ANALISIS MATEMATICO II
+  credits: 0
+  has_exam: true
+  subject_group:
+CP7:
+  code: CP7
+  name: ANALISIS COMPLEJO
+  credits: 0
+  has_exam: true
+  subject_group:
+CP74:
+  code: CP74
+  name: REDES ELECTRICAS I
+  credits: 0
+  has_exam: true
+  subject_group:
+CP8:
+  code: CP8
+  name: MECANICA II
+  credits: 0
+  has_exam: true
+  subject_group:
+CP9:
+  code: CP9
+  name: PROGRAMACION I
+  credits: 0
+  has_exam: true
+  subject_group:
+DMA01:
+  code: DMA01
+  name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+  credits: 12
+  has_exam: false
+  subject_group: '011'
+DMA02:
+  code: DMA02
+  name: MATEMÁTICA DISCRETA
+  credits: 12
+  has_exam: false
+  subject_group: '011'
+DMA03:
+  code: DMA03
+  name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
+  credits: 12
+  has_exam: false
+  subject_group: '011'
+DMA04:
+  code: DMA04
+  name: GEOMETRÍA Y ALGEBRA LINEAL II
+  credits: 12
+  has_exam: false
+  subject_group: '011'
+DMA05:
+  code: DMA05
+  name: MATEMÁTICA INICIAL
+  credits: 4
+  has_exam: false
+  subject_group: '011'
+DMA06:
+  code: DMA06
+  name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+  credits: 13
+  has_exam: false
+  subject_group: '011'
+EL31:
+  code: EL31
+  name: ÉTICA
+  credits: 8
+  has_exam: false
+  subject_group: '042'
+ESII:
+  code: ESII
+  name: ESTADÍSTICA II
+  credits: 10
+  has_exam: false
+  subject_group: '011'
+ESTAI:
+  code: ESTAI
+  name: ESTADÍSTICA I
+  credits: 10
+  has_exam: false
+  subject_group: '011'
+ETSON:
+  code: ETSON
+  name: 'TÉCNICAS DE SONOMONTAJE: EDICIÓN Y PROC. AUDIO'
+  credits: 4
+  has_exam: true
+  subject_group: '037'
+F10:
+  code: F10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+F1Y3:
+  code: F1Y3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+F30:
+  code: F30
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+F7:
+  code: F7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+F8:
+  code: F8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+FF12:
+  code: FF12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+FG:
+  code: FG
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+FG2:
+  code: FG2
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+FI10:
+  code: FI10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+FI13:
+  code: FI13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+FI15:
+  code: FI15
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+FIS13:
+  code: FIS13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+FIS14:
+  code: FIS14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+FIS45:
+  code: FIS45
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+FUN12:
+  code: FUN12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+GAL1P:
+  code: GAL1P
+  name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+  credits: 9
+  has_exam: true
+  subject_group: '011'
+GAL7:
+  code: GAL7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+IDUCS:
+  code: IDUCS
+  name: INTROD. A LAS DINAMICAS UNIVERSITARIAS
+  credits: 3
+  has_exam: false
+  subject_group: '043'
+INF20:
+  code: INF20
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+INF6:
+  code: INF6
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+INS18:
+  code: INS18
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+IYS12:
+  code: IYS12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+IYS14:
+  code: IYS14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+LG103:
+  code: LG103
+  name: HERRAMIENTAS PARA EL TRABAJO COLECTIVO
+  credits: 5
+  has_exam: false
+  subject_group: '043'
+LG12:
+  code: LG12
+  name: ANÁLISIS DE LAS INTERACCIONES ECONÓMICAS
+  credits: 10
+  has_exam: false
+  subject_group: '042'
+LIB10:
+  code: LIB10
+  name: TALLER DE INGENIERÍA BIOLÓGICA II
+  credits: 8
+  has_exam: true
+  subject_group: '038'
+LIB36:
+  code: LIB36
+  name: INFORMÁTICA EN BIOLOGÍA Y MEDICINA
+  credits: 10
+  has_exam: true
+  subject_group: '033'
+LIB38:
+  code: LIB38
+  name: FISIOLOGÍA CUANTITATIVA
+  credits: 10
+  has_exam: true
+  subject_group: '013'
+M12:
+  code: M12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+M13:
+  code: M13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+M14:
+  code: M14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+M24:
+  code: M24
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+M9:
+  code: M9
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MA01:
+  code: MA01
+  name: CALCULO DIFERENCIAL E INTEGRAL I
+  credits: 0
+  has_exam: false
+  subject_group:
+MA09:
+  code: MA09
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MA10:
+  code: MA10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MA11:
+  code: MA11
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MA13:
+  code: MA13
+  name: CÁLCULO DIFERENCIAL E INTEGRAL I (F)
+  credits: 0
+  has_exam: false
+  subject_group:
+MA15:
+  code: MA15
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+MA25:
+  code: MA25
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MA29:
+  code: MA29
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+MA47:
+  code: MA47
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MA5:
+  code: MA5
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MA51:
+  code: MA51
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MA7:
+  code: MA7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MAT14:
+  code: MAT14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MAT18:
+  code: MAT18
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MAT33:
+  code: MAT33
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MC13:
+  code: MC13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MC3:
+  code: MC3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: true
+  subject_group:
+MI2:
+  code: MI2
+  name: MATEMATICA INICIAL
+  credits: 4
+  has_exam: true
+  subject_group: '011'
+O2525:
+  code: O2525
+  name: COMUNICACIÓN E INTELIGENCIA ARTIFICIAL(PPP)
+  credits: 9
+  has_exam: false
+  subject_group: '042'
+O6211:
+  code: O6211
+  name: TECNOLOGÍA DE MEDIOS AL SERVICIO DE LA PRESERVACIÓN DEL PATRIMONIO HISTÓRICO
+    DOC
+  credits: 8
+  has_exam: false
+  subject_group: '043'
+O6221:
+  code: O6221
+  name: LABORATORIO DE ACCESIBILIDAD A LOS MEDIOS (INV. - EXT.)
+  credits: 10
+  has_exam: false
+  subject_group: '043'
+O6311:
+  code: O6311
+  name: TALLER DE INTERACCIÓN
+  credits: 6
+  has_exam: false
+  subject_group: '043'
+O6521:
+  code: O6521
+  name: TEORÍAS Y PRÁCTICAS DE LA ACCESIBILIDAD EN LA COMUNICACIÓN - LIM
+  credits: 8
+  has_exam: false
+  subject_group: '043'
+O7245:
+  code: O7245
+  name: INTRODUCCIÓN A LA PROGRAMACIÓN Y ANÁLISIS DE TEXTO CON R (LIM)
+  credits: 4
+  has_exam: false
+  subject_group: '033'
+O7246:
+  code: O7246
+  name: TECNOLOGÍAS DE DIGITALIZACIÓN Y TRANSCODIFICACIÓN. IDENTIFICACIÓN Y PRESERVACIÓN
+  credits: 8
+  has_exam: false
+  subject_group: '043'
+PQIF:
+  code: PQIF
+  name: PRINCIPIOS DE QUÍMICA PARA ING. FORESTAL
+  credits: 10
+  has_exam: false
+  subject_group: '013'
+Q16:
+  code: Q16
+  name: INT. A LA PREVENCION DE RIESGOS LABORALES
+  credits: 6
+  has_exam: true
+  subject_group: '041'
+Q47:
+  code: Q47
+  name: BATERIAS RECARGABLES Y CELDAS DE COMBUSTIBLE
+  credits: 8
+  has_exam: false
+  subject_group: '032'
+Q58:
+  code: Q58
+  name: INT. A LA PREVENCION DE RIESGOS LABORALES
+  credits: 0
+  has_exam: false
+  subject_group:
+R100:
+  code: R100
+  name: ANALISIS MATEMATICO I
+  credits: 0
+  has_exam: false
+  subject_group:
+R101:
+  code: R101
+  name: GEOMETRIA Y ALGEBRA LINEAL
+  credits: 0
+  has_exam: false
+  subject_group:
+REF04:
+  code: REF04
+  name: FÍSICA 1
+  credits: 10
+  has_exam: false
+  subject_group: '012'
+RN04:
+  code: RN04
+  name: CONCEPTOS DE ECONOMIA Y DESARROLLO LOCAL
+  credits: 10
+  has_exam: false
+  subject_group: '042'
+RN102:
+  code: RN102
+  name: EVALUACIÓN DE RECURSOS NATURALES
+  credits: 7
+  has_exam: false
+  subject_group: '042'
+RN115:
+  code: RN115
+  name: ESTADÍSTICA I 2022
+  credits: 10
+  has_exam: false
+  subject_group: '011'
+RN252:
+  code: RN252
+  name: FISICA 1 BIOCIENCIAS 2017
+  credits: 12
+  has_exam: false
+  subject_group: '012'
+RN253:
+  code: RN253
+  name: FISICA 2 BIOCIENCIAS 2017
+  credits: 12
+  has_exam: false
+  subject_group: '012'
+RN404:
+  code: RN404
+  name: MATEMATICA I
+  credits: 11
+  has_exam: false
+  subject_group: '011'
+RN407:
+  code: RN407
+  name: MATEMATICA II
+  credits: 12
+  has_exam: false
+  subject_group: '011'
+SD10:
+  code: SD10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+SIS10:
+  code: SIS10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+SO001:
+  code: SO001
+  name: INTRODUCCIÓN A LA VIDA UNIVERSITARIA (IVU)
+  credits: 1
+  has_exam: false
+  subject_group: '043'
+SRN02:
+  code: SRN02
+  name: CÁLCULO I
+  credits: 16
+  has_exam: false
+  subject_group: '011'
+SRN03:
+  code: SRN03
+  name: ALGEBRA LINEAL I
+  credits: 12
+  has_exam: false
+  subject_group: '011'
+SRN06:
+  code: SRN06
+  name: TALLER DE DISEÑO
+  credits: 6
+  has_exam: false
+  subject_group: '043'
+SRN09:
+  code: SRN09
+  name: CÁLCULO II
+  credits: 16
+  has_exam: false
+  subject_group: '011'
+SRN10:
+  code: SRN10
+  name: ALGEBRA LINEAL II
+  credits: 12
+  has_exam: false
+  subject_group: '011'
+SRN11:
+  code: SRN11
+  name: FÍSICA 2
+  credits: 10
+  has_exam: false
+  subject_group: '012'
+SRN14:
+  code: SRN14
+  name: MATEMÁTICA DISCRETA I
+  credits: 10
+  has_exam: false
+  subject_group: '011'
+SRN17:
+  code: SRN17
+  name: PROGRAMACIÓN I- CIO CT-LHRH
+  credits: 0
+  has_exam: true
+  subject_group:
+SRN26:
+  code: SRN26
+  name: FÍSICA 3
+  credits: 10
+  has_exam: false
+  subject_group: '012'
+SRN30:
+  code: SRN30
+  name: TALLER DE ROBÓTICA-CIO CT- INGBIOL
+  credits: 2
+  has_exam: false
+  subject_group: '043'
+SRN47:
+  code: SRN47
+  name: PRINCIPIOS DE QUÍMICA GENERAL - CIOCT-RH-AGR
+  credits: 10
+  has_exam: false
+  subject_group: '013'
+TD6:
+  code: TD6
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+TELE8:
+  code: TELE8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
+TTR13:
+  code: TTR13
+  name: TALLER DE GESTION DE REDES
+  credits: 11
+  has_exam: false
+  subject_group: '037'
+TTR6:
+  code: TTR6
+  name: PROGRAMACION I
+  credits: 10
+  has_exam: false
+  subject_group: '026'
