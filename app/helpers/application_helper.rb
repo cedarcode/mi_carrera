@@ -11,21 +11,19 @@ module ApplicationHelper
     !user_signed_in? && !current_page?(new_user_session_path)
   end
 
-  def drawer_menu_navigation_item(text, link, icon = nil)
+  def drawer_menu_navigation_item(text, link)
     link_options = {}
     link_options[:tabindex] = 0
-    link_options[:class] = "mdc-deprecated-list-item"
+
     if current_page?(link)
       link_options[:aria] = { current: 'page' }
 
-      link_options[:class] += " mdc-deprecated-list-item--activated"
+      link_options[:class] = "flex p-2 rounded-sm text-primary bg-purple-200"
+    else
+      link_options[:class] = "flex p-2 rounded-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100"
     end
 
-    link_to link, **link_options do
-      concat tag.span(class: 'mdc-deprecated-list-item__ripple')
-      concat tag.span(text, class: 'mdc-deprecated-list-item__text')
-      concat tag.i(icon, class: 'material-icons mdc-deprecated-list-item__graphic') if icon
-    end
+    link_to text, link, **link_options
   end
 
   def logical_prerequisite_description(prerequisite, negative)

@@ -1,18 +1,10 @@
-import { Controller } from "@hotwired/stimulus";
-import { MDCDrawer } from "@material/drawer";
+import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["drawer"];
+  static targets = ["drawer", "overlay"]
 
-  connect() {
-    this.drawer = MDCDrawer.attachTo(this.drawerTarget);
-  }
-
-  open() {
-    this.drawer.open = true;
-  }
-
-  close() {
-    this.drawer.open = false;
+  toggle() {
+    this.drawerTarget.classList.toggle("-translate-x-full")
+    this.overlayTarget.classList.toggle("hidden")
   }
 }
