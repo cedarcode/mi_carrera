@@ -2,6 +2,7 @@
 import { Turbo } from "@hotwired/turbo-rails"
 import "controllers"
 import "messenger"
+import "credential"
 import Rails from "@rails/ujs";
 import "install";
 import "serviceworker-companion";
