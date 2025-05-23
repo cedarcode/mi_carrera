@@ -1,0 +1,52 @@
+module Users
+  class PasskeysController < ApplicationController
+    def index
+    end
+
+    def create
+      create_options = WebAuthn::Credential.options_for_create(
+        user: {
+          id: current_user.webauthn_id,
+          name: current_user.email.split('@').first
+        },
+        exclude: current_user.passkeys.pluck(:external_id),
+        authenticator_selection: { user_verification: "required" }
+      )
+      session[:current_registration_challenge] = { challenge: create_options.challenge }
+
+      render json: create_options
+    end
+
+    def callback
+      webauthn_passkey = WebAuthn::Credential.from_create(params)
+
+      begin
+        webauthn_passkey.verify(session[:current_registration_challenge]["challenge"], user_verification: true)
+
+        passkey = current_user.passkeys.find_or_initialize_by(
+          external_id: Base64.strict_encode64(webauthn_passkey.raw_id)
+        )
+
+        if passkey.update(
+          name: params[:credential_name],
+          public_key: webauthn_passkey.public_key,
+          sign_count: webauthn_passkey.sign_count
+        )
+          render json: { status: "ok" }, status: :ok
+        else
+          render json: "Couldn't add your Security Key", status: :unprocessable_entity
+        end
+      rescue WebAuthn::Error => e
+        render json: "Verification failed: #{e.message}", status: :unprocessable_entity
+      ensure
+        session.delete(:current_registration_challenge)
+      end
+    end
+
+    def destroy
+      current_user.passkeys.destroy(params[:id])
+
+      redirect_to user_passkeys_path
+    end
+  end
+end
