@@ -7,8 +7,6 @@ pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
 pin "@rails/ujs", to: "https://ga.jspm.io/npm:@rails/ujs@7.0.4/lib/assets/compiled/rails-ujs.js"
-pin "@material/drawer", to: "https://ga.jspm.io/npm:@material/drawer@14.0.0/dist/mdc.drawer.js"
-pin "@material/textfield", to: "https://ga.jspm.io/npm:@material/textfield@14.0.0/dist/mdc.textfield.js"
 pin "@material/snackbar", to: "https://ga.jspm.io/npm:@material/snackbar@14.0.0/dist/mdc.snackbar.js"
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "@material/banner", to: "https://ga.jspm.io/npm:@material/banner@14.0.0/index.js"

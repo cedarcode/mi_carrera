@@ -1,31 +1,30 @@
-<aside class="mdc-drawer mdc-drawer--modal" data-navigation-drawer-target='drawer'>
-  <div class="mdc-drawer__content">
-    <div class="mdc-deprecated-list" data-action='click->navigation-drawer#close'>
+<div data-navigation-drawer-target="drawer" class="fixed inset-y-0 w-64 bg-white transform -translate-x-full transition-transform duration-300 z-50 space-y-2 font-semibold text-sm px-3" >
+  <%= image_tag "icon.png", class: "size-12 mb-4 mt-2" %>
 
-      <%= drawer_menu_navigation_item('Avance de Carrera', root_path) %>
-      <%= drawer_menu_navigation_item('Todas las Materias', all_subjects_path) %>
-      <%= drawer_menu_navigation_item('Materias INCO semestre actual', current_optional_subjects_path) %>
-      <% if current_user && ENV['ENABLE_PLANNER'].present? %>
-        <%= drawer_menu_navigation_item('Planificador', subject_plans_path, 'new_releases') %>
-      <% end %>
-      <li role="separator" class="mdc-deprecated-list-divider"></li>
-      <a class='mdc-deprecated-list-item' href="https://github.com/cedarcode/mi_carrera" target='_blank' tabindex='0'>
-        <span class="mdc-deprecated-list-item__ripple"></span>
-        <span class="material-symbols-outlined">
-          open_in_new
-        </span>
-        &nbsp;
-        <span class='mdc-deprecated-list-item__text'>
-          Colabora en Github
-        </span>
-      </a>
-      <div class="absolute bottom-0 pl-4 mb-1">
-        <span class="text-gray-500">
-          Built by&nbsp;
-        </span>
-        <a href="https://cedarcode.com" target="_blank">Cedarcode</a>
-      </div>
-    </div>
+  <%= drawer_menu_navigation_item "Avance de Carrera", root_path %>
+
+  <%= drawer_menu_navigation_item "Todas las Materias", all_subjects_path %>
+
+  <%= drawer_menu_navigation_item "Materias INCO semestre actual", current_optional_subjects_path %>
+
+  <% if current_user && ENV['ENABLE_PLANNER'].present? %>
+    <%= drawer_menu_navigation_item "Planificador", subject_plans_path %>
+  <% end %>
+
+  <hr class="text-gray-200"/>
+
+  <%= link_to "https://github.com/cedarcode/mi_carrera", target: "_blank", class: "flex items-center p-2 rounded-sm hover:bg-gray-100 text-gray-600 hover:text-gray-800" do %>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 me-2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+    </svg>
+    Colabora en Github
+  <% end %>
+  <div class="absolute bottom-0 p-2">
+    <span class="text-gray-600">
+      Built by&nbsp;
+    </span>
+    <a href="https://cedarcode.com" target="_blank" class="text-gray-700 hover:text-gray-800">Cedarcode</a>
   </div>
-</aside>
-<div class="mdc-drawer-scrim"></div>
+</div>
+
+<div data-navigation-drawer-target="overlay" data-action="click->navigation-drawer#toggle" class="fixed inset-0 bg-black/30 hidden z-40"></div>

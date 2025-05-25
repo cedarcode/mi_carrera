@@ -765,7 +765,7 @@ IO8:
   eva_id: '613'
   openfing_id: iis19
   short_name: IIS
-  category: 'seventh_semester'
+  category: 'inactive'
 '1749':
   eva_id: '1121'
   short_name: Inter. Persona Computadora
@@ -1224,3 +1224,14 @@ R100:
   eva_id: '195'
   openfing_id: arqcomp
   category: 'fourth_semester'
+'1783':
+  eva_id: '613'
+  openfing_id: iis19
+  short_name: TIIS
+  category: 'seventh_semester'
+1331P:
+  category: 'revalid'
+1866P:
+  category: 'revalid'
+5852P:
+  category: 'revalid'

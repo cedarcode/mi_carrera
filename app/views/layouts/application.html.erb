@@ -42,63 +42,66 @@
 
   <body class="mdc-typography" data-controller='navigation-drawer'>
     <%= render 'shared/menu' %>
-    <div class="mdc-drawer-app-content">
-      <header id='app-bar' class="mdc-top-app-bar" data-controller='search'>
-        <% show_search_bar = params[:search].present? %>
-        <div class="mdc-top-app-bar__row <%= show_search_bar ? 'd-none' : '' %>" data-search-target="appBar">
-          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" data-action='click->navigation-drawer#open'>menu</button>
-            <%= yield :navigation_icon %>
-            <%= link_to 'MiCarrera', root_path, class: 'home-button'%>
-          </section>
-          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-            <button id="searchIcon" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-action="search#toggle">search</button>
-            <span hidden>
-              <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
-            </span>
-            <div class="mdc-menu-surface--anchor" data-controller='user-menu'>
-              <button id="user-menu" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
-                <% if current_user %>
-                  <div class='logged-in-account-circle'>
-                    <%= current_user.email.first.capitalize %>
-                  </div>
-                <% else %>
-                  account_circle
-                <% end %>
-              </button>
-              <%= render 'shared/user_menu' %>
-            </div>
-          </section>
-        </div>
-        <div id="searchbar" class="mdc-top-app-bar__row <%= show_search_bar ? '' : 'd-none' %>" data-search-target="searchbar">
-          <%= form_with(url: all_subjects_path, method: :get, local: true) do |f| %>
-            <div class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mdc-text-field--no-label mdc-text-field--with-trailing-icon">
-              <span class="mdc-text-field__ripple"></span>
-              <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { 'search-target': "searchInput" } %>
-              <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" data-action="click->search#toggle" tabindex="0" role="button">close</i>
-              <span class="mdc-line-ripple"></span>
-            </div>
+
+    <header id='app-bar' class="mdc-top-app-bar" data-controller='search'>
+      <% show_search_bar = params[:search].present? %>
+      <div class="mdc-top-app-bar__row <%= show_search_bar ? 'd-none' : '' %>" data-search-target="appBar">
+        <div class="flex flex-row justify-center items-center space-x-4 ms-4">
+          <%= button_tag type: "button", class: "size-6 cursor-pointer", data: { action: "click->navigation-drawer#toggle" } do %>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
           <% end %>
+          <%= link_to 'MiCarrera', root_path, class: 'home-button'%>
         </div>
-      </header>
-      <main class="mdc-top-app-bar--fixed-adjust main-content" id='main-content'>
-        <% if flash[:notice] %>
-          <%= render 'shared/snackbar', message: flash[:notice]%>
-        <% end %>
-        <% if flash[:error] %>
-          <%= render 'shared/snackbar', message: flash[:error]%>
-        <% end %>
-        <% if flash[:alert] %>
-          <%= render 'shared/snackbar', message: flash[:alert]%>
-        <% end %>
-        <%= yield :welcome_banner %>
-        <div class='content'>
-          <%= yield %>
-        </div>
-        <footer class="flex justify-center items-center py-3">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+          <button id="searchIcon" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-action="search#toggle">search</button>
+          <span hidden>
+            <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
+          </span>
           <%= yield :credits %>
-        </footer>
-      </main>
-    </div>
+          <div class="mdc-menu-surface--anchor" data-controller='user-menu'>
+            <button id="user-menu" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
+              <% if current_user %>
+                <div class='logged-in-account-circle'>
+                  <%= current_user.email.first.capitalize %>
+                </div>
+              <% else %>
+                account_circle
+              <% end %>
+            </button>
+            <%= render 'shared/user_menu' %>
+          </div>
+        </section>
+      </div>
+      <div id="searchbar" class="mdc-top-app-bar__row <%= show_search_bar ? '' : 'd-none' %>" data-search-target="searchbar">
+        <%= form_with(url: all_subjects_path, method: :get, local: true) do |f| %>
+          <div class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mdc-text-field--no-label mdc-text-field--with-trailing-icon">
+            <span class="mdc-text-field__ripple"></span>
+            <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { 'search-target': "searchInput" } %>
+            <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" data-action="click->search#toggle" tabindex="0" role="button">close</i>
+            <span class="mdc-line-ripple"></span>
+          </div>
+        <% end %>
+      </div>
+    </header>
+    <main class="mdc-top-app-bar--fixed-adjust main-content" id='main-content'>
+      <% if flash[:notice] %>
+        <%= render 'shared/snackbar', message: flash[:notice]%>
+      <% end %>
+      <% if flash[:error] %>
+        <%= render 'shared/snackbar', message: flash[:error]%>
+      <% end %>
+      <% if flash[:alert] %>
+        <%= render 'shared/snackbar', message: flash[:alert]%>
+      <% end %>
+      <%= yield :welcome_banner %>
+      <div class='content'>
+        <%= yield %>
+      </div>
+      <footer class="flex justify-center items-center py-3">
+        <%= yield :credits %>
+      </footer>
+    </main>
   </body>
 </html>
