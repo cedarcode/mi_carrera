@@ -27,6 +27,10 @@ class FiveStarReviewComponent < ViewComponent::Base
     end
   end
 
+  def hidden_field_value(value)
+    selected?(value) ? nil : value
+  end
+
   private
 
   def filled?(value)
@@ -35,9 +39,5 @@ class FiveStarReviewComponent < ViewComponent::Base
 
   def selected?(value)
     user_review&.send(column_name).present? && user_review.send(column_name) == value
-  end
-
-  def hidden_field_value(value)
-    selected?(value) ? nil : value
   end
 end

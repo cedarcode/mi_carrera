@@ -26,6 +26,10 @@ class BooleanReviewComponent < ViewComponent::Base
     end
   end
 
+  def hidden_field_value(val)
+    selected?(val) ? nil : val
+  end
+
   private
 
   def selected?(val)
@@ -42,9 +46,5 @@ class BooleanReviewComponent < ViewComponent::Base
 
   def button_color(val)
     selected?(val) ? 'text-violet-400' : 'text-gray-400'
-  end
-
-  def hidden_field_value(val)
-    selected?(val) ? nil : val
   end
 end
