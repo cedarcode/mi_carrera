@@ -20,11 +20,8 @@ class BooleanReviewComponent < ViewComponent::Base
       {
         value: val,
         selected: selected?(val),
-        should_destroy: should_destroy?(val),
         button_icon: button_icon(val),
-        button_color: button_color(val),
-        form_url: form_url(val),
-        form_method: form_method(val)
+        button_color: button_color(val)
       }
     end
   end
@@ -33,10 +30,6 @@ class BooleanReviewComponent < ViewComponent::Base
 
   def selected?(val)
     !user_review&.send(column_name).nil? && user_review.send(column_name) == val
-  end
-
-  def should_destroy?(val)
-    selected?(val) && user_review.all_review_fields_blank?(except: [column_name])
   end
 
   def button_icon(val)
@@ -51,15 +44,7 @@ class BooleanReviewComponent < ViewComponent::Base
     selected?(val) ? 'text-violet-400' : 'text-gray-400'
   end
 
-  def form_url(val)
-    should_destroy?(val) ? review_path(user_review) : reviews_path
-  end
-
-  def form_method(val)
-    should_destroy?(val) ? :delete : :post
-  end
-
   def hidden_field_value(val)
     selected?(val) ? nil : val
   end
-end 
+end

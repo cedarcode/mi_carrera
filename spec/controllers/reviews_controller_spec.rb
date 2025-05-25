@@ -49,21 +49,21 @@ RSpec.describe ReviewsController, type: :request do
         expect(response).to redirect_to(subject_path(subject))
       end
     end
-  end
 
-  describe 'DELETE #destroy' do
-    it 'deletes the review' do
-      review
+    context 'when updating would make all fields blank (smart delete)' do
+      let!(:review_with_only_rating) { create(:review, user:, subject:, rating: 4, recommended: nil) }
 
-      expect {
-        delete review_path(review)
-      }.to change(Review, :count).by(-1)
-    end
+      it 'deletes the review when setting rating to nil' do
+        expect {
+          post reviews_path, params: { subject_id: subject.id, rating: nil }
+        }.to change(Review, :count).by(-1)
+      end
 
-    it 'redirects to the subject page' do
-      delete review_path(review)
+      it 'redirects to the subject page' do
+        post reviews_path, params: { subject_id: subject.id, rating: nil }
 
-      expect(response).to redirect_to(subject_path(review.subject))
+        expect(response).to redirect_to(subject_path(subject))
+      end
     end
   end
 end

@@ -9,7 +9,7 @@
     <h4 class="text-xs font-semibold text-indigo-900 mb-1"><%= 'Tu puntuación' %></h4>
     <div class="flex items-center justify-center gap-2">
       <% vote_options.each do |option| %>
-        <%= form_with url: option[:form_url], method: option[:form_method], class: "transition-transform duration-[250ms] ease-[ease] hover:scale-[1.3]" do |f| %>
+        <%= form_with url: reviews_path, method: :post, class: "transition-transform duration-[250ms] ease-[ease] hover:scale-[1.3]" do |f| %>
           <%= f.hidden_field :subject_id, value: subject_id %>
           <%= f.hidden_field column_name, value: hidden_field_value(option[:value]) %>
           <%= f.button option[:button_icon], class: 'material-icons !text-xl ' + option[:button_color] %>

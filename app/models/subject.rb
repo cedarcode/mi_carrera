@@ -54,7 +54,11 @@ class Subject < ApplicationRecord
   end
 
   def recommended_percentage
-    reviews.where(recommended: true).count / reviews.where.not(recommended: nil).count.to_f * 100 if reviews.where.not(recommended: nil).any?
+    return unless reviews.where.not(recommended: nil).any?
+
+    recommended_count = reviews.where(recommended: true).count
+    total_count = reviews.where.not(recommended: nil).count.to_f
+    recommended_count / total_count * 100
   end
 
   delegate :available?, to: :course
