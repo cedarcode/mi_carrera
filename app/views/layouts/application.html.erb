@@ -59,7 +59,6 @@
           <span hidden>
             <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
           </span>
-          <%= yield :credits %>
           <div class="mdc-menu-surface--anchor" data-controller='user-menu'>
             <button id="user-menu" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
               <% if current_user %>
@@ -100,7 +99,13 @@
         <%= yield %>
       </div>
       <footer class="flex justify-center items-center py-3">
-        <%= yield :credits %>
+        <%= yield :credits if content_for?(:credits) %>
+        <% unless content_for?(:credits) %>
+          <span class="text-gray-600">
+            Built by&nbsp;
+          </span>
+          <a href="https://cedarcode.com" target="_blank" class="text-gray-700 hover:text-gray-800">Cedarcode</a>
+        <% end %>
       </footer>
     </main>
   </body>
