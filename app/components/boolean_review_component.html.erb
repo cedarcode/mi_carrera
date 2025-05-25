@@ -2,23 +2,17 @@
   <h3 class="text-m font-semibold text-gray-800 mb-1"><%= review_name %></h3>
 
   <div class="flex items-center justify-center mb-3 min-w-[11rem]">
-    <span class="text-xl font-extrabold text-indigo-900"><%= value.nil? ? '?' : "#{value.round(0)}%" %></span>
+    <span class="text-xl font-extrabold text-indigo-900"><%= display_value %></span>
   </div>
 
   <div>
     <h4 class="text-xs font-semibold text-indigo-900 mb-1"><%= 'Tu puntuación' %></h4>
     <div class="flex items-center justify-center gap-2">
-      <% [false, true].each do |val| %>
-        <% selected = !user_review&.send(column_name).nil? && user_review.send(column_name) == val %>
-        <% should_destroy = selected && user_review.all_review_fields_blank?(except: [column_name]) %>
-        <% url = should_destroy ? review_path(user_review) : reviews_path %>
-        <% method = should_destroy ? :delete : :post %>
-        <%= form_with url: url, method: method, class: "transition-transform duration-[250ms] ease-[ease] hover:scale-[1.3]" do |f| %>
+      <% vote_options.each do |option| %>
+        <%= form_with url: option[:form_url], method: option[:form_method], class: "transition-transform duration-[250ms] ease-[ease] hover:scale-[1.3]" do |f| %>
           <%= f.hidden_field :subject_id, value: subject_id %>
-          <%= f.hidden_field column_name, value: selected ? nil : val %>
-          <% button_icon = selected ? (val ? 'thumb_up' : 'thumb_down') : (val ? 'thumb_up_off_alt' : 'thumb_down_off_alt') %>
-          <% button_color = selected ? 'text-violet-400' : 'text-gray-400' %>
-          <%= f.button button_icon, class: 'material-icons !text-xl ' + button_color %>
+          <%= f.hidden_field column_name, value: hidden_field_value(option[:value]) %>
+          <%= f.button option[:button_icon], class: 'material-icons !text-xl ' + option[:button_color] %>
         <% end %>
       <% end %>
     </div>
