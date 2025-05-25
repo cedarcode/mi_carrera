@@ -27,55 +27,48 @@ RSpec.describe Review, type: :model do
     end
   end
 
-  describe '#would_be_blank_without?' do
+  describe '#all_review_fields_blank?' do
     let(:review) { build(:review, rating: 4, recommended: true) }
 
-    it 'returns false when other fields have values' do
-      expect(review.would_be_blank_without?([:rating])).to be false
+    it 'returns false when fields have values' do
+      expect(review.all_review_fields_blank?).to be false
     end
 
-    it 'returns true when all other fields would be nil' do
+    it 'returns true when all fields are nil' do
+      review.rating = nil
       review.recommended = nil
-      expect(review.would_be_blank_without?([:rating])).to be true
-    end
-
-    it 'returns false when no fields are excluded and review has values' do
-      expect(review.would_be_blank_without?).to be false
+      expect(review.all_review_fields_blank?).to be true
     end
   end
 
-  describe '#smart_update!' do
+  describe 'after_save callback: destroy_if_all_fields_blank' do
     let(:user) { create(:user) }
     let(:subject) { create(:subject) }
     let(:review) { create(:review, user: user, subject: subject, rating: 4, recommended: true) }
 
     context 'when updating to valid values' do
-      it 'updates the review successfully' do
-        review.smart_update!(rating: 5)
-
+      it 'keeps the review' do
+        review.update!(rating: 5)
+        
         expect(review.reload.rating).to eq(5)
-        expect(review.destroyed?).to be false
         expect(Review.exists?(review.id)).to be true
       end
     end
 
-    context 'when updating would make all fields blank' do
-      it 'destroys the review' do
+    context 'when updating makes all fields blank' do
+      it 'automatically destroys the review' do
         review_id = review.id
-        review.smart_update!(rating: nil, recommended: nil)
-
-        expect(review.destroyed?).to be true
+        review.update!(rating: nil, recommended: nil)
+        
         expect(Review.exists?(review_id)).to be false
       end
     end
 
-    context 'when update fails validation' do
-      it 'raises ActiveRecord::RecordInvalid' do
+    context 'when creating a review with all blank fields' do
+      it 'fails validation before the callback runs' do
         expect {
-          review.smart_update!(rating: 10) # Invalid rating
+          Review.create!(user: user, subject: subject, rating: nil, recommended: nil)
         }.to raise_error(ActiveRecord::RecordInvalid)
-
-        expect(review.reload.rating).to eq(4) # Unchanged
       end
     end
   end

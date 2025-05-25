@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
   def create
     review = current_user.reviews.find_or_initialize_by(subject_id: params[:subject_id])
-    review.smart_update!(permitted_params)
+    review.update!(permitted_params)
     redirect_to subject_path(review.subject)
   end
 
