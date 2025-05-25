@@ -1,0 +1,29 @@
+<div class="inline-flex flex-col items-center bg-white rounded-lg border border-purple-500 px-1 py-4 mb-4 text-center">
+  <h3 class="text-m font-semibold text-gray-800 mb-1"><%= review_name %></h3>
+
+  <div class="flex items-center justify-center mb-3 min-w-[11rem]">
+    <% if rating.present? %>
+      <span class="text-xl font-extrabold text-indigo-900"><%= sprintf('%.1f', rating) %></span>
+    <% else %>
+      <span class="text-xl font-extrabold text-indigo-900">-.-</span>
+    <% end %>
+  </div>
+
+  <div>
+    <h4 class="text-xs font-semibold text-indigo-900 mb-1"><%= 'Tu puntuación' %></h4>
+    <div class="flex items-center flex-row-reverse gap-2">
+      <% 5.downto(1).each do |value| %>
+        <% filled = user_review&.send(column_name).present? && user_review.send(column_name) >= value %>
+        <% selected = user_review&.send(column_name).present? && user_review.send(column_name) == value %>
+        <% should_destroy = selected && user_review.all_review_fields_blank?(except: [column_name]) %>
+        <% url = should_destroy ? review_path(user_review) : reviews_path %>
+        <% method = should_destroy ? :delete : :post %>
+        <%= form_with url: url, method: method, class: "transition-transform duration-[250ms] ease-[ease] hover:scale-[1.3] [&:hover~&]:scale-[1.3]" do |f| %>
+          <%= f.hidden_field :subject_id, value: subject_id %>
+          <%= f.hidden_field column_name, value: selected ? nil : value %>
+          <%= f.button filled ? 'star' : 'star_outline', class: "material-icons !text-xl #{filled ? 'text-violet-400' : 'text-gray-400'}" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div> 
