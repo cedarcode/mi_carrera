@@ -86,10 +86,6 @@
       </div>
     </header>
     <main class="mdc-top-app-bar--fixed-adjust main-content" id='main-content' data-controller="notification">
-      <% flash.each do |type, message| %>
-        <%= render 'shared/notification', message:, type: %>
-      <% end %>
-
       <%= yield :welcome_banner %>
       <div class='content'>
         <%= yield %>
