@@ -619,7 +619,7 @@
   subject_group: '5265'
 '1275':
   code: '1275'
-  name: TALLER (TBEO)
+  name: TALLER BASICO DE ESTRATEGIAS Y ORIENTACION (TBEO)
   credits: 3
   has_exam: false
   subject_group: '3582'
@@ -3979,7 +3979,7 @@ MHC16:
   subject_group: '4442'
 MHC20:
   code: MHC20
-  name: GENÓMICA
+  name: GENÓMICA (2021-2024)
   credits: 10
   has_exam: false
   subject_group: '4442'
