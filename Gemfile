@@ -20,7 +20,7 @@ gem 'rollbar', '~> 3.6'
 gem 'stimulus-rails', '~> 1.3'
 gem 'tailwindcss-rails', '~> 4.2'
 gem 'turbo-rails', '~> 2.0'
-gem "view_component", "~> 3.22"
+gem "view_component", "~> 3.23"
 
 group :development, :deploy do
   gem 'kamal'
@@ -43,7 +43,7 @@ end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.32'
+  gem 'selenium-webdriver', '~> 4.33'
   gem 'shoulda-matchers', '~> 6.5'
   gem 'simplecov', require: false
 end
