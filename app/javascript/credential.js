@@ -26,7 +26,7 @@ function callback(url, body) {
     } else if (response.status < 500) {
       response.text().then(showMessage);
     } else {
-      showMessage("Sorry, something wrong happened.");
+      showMessage("Ocurrió un problema al registrar tu passkey");
     }
   });
 }
@@ -34,8 +34,14 @@ function callback(url, body) {
 function create(callbackUrl, credentialOptions) {
   WebAuthnJSON.create({ "publicKey": credentialOptions }).then(function(credential) {
     callback(callbackUrl, credential);
-  }).catch(function(error) {
-    showMessage(error);
+  }).catch(error => {
+    if (error.name === "NotAllowedError") {
+      alert("No seleccionaste el autenticador o cancelaste la operación.");
+    } else if (error.name === "InvalidStateError") {
+      alert("Ya registraste esta passkey con tu cuenta.");
+    } else {
+      alert(error.message || error);
+    }
   });
 
   console.log("Creating new public key credential...");
