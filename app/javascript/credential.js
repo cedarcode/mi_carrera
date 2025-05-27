@@ -1,5 +1,4 @@
 import * as WebAuthnJSON from "@github/webauthn-json"
-import { showMessage } from "messenger";
 
 function getCSRFToken() {
   var CSRFSelector = document.querySelector('meta[name="csrf-token"]')
@@ -24,9 +23,9 @@ function callback(url, body) {
     if (response.ok) {
       window.location.replace("/usuarios/passkeys")
     } else if (response.status < 500) {
-      response.text().then(showMessage);
+      response.text().then(text => alert(text));
     } else {
-      showMessage("Ocurrió un problema al registrar tu passkey");
+      alert("Ocurrió un problema al registrar tu passkey");
     }
   });
 }
@@ -50,8 +49,8 @@ function create(callbackUrl, credentialOptions) {
 function get(credentialOptions) {
   WebAuthnJSON.get({ "publicKey": credentialOptions }).then(function(credential) {
     callback("/session/callback", credential);
-  }).catch(function(error) {
-    showMessage(error);
+  }).catch(error => {
+      alert(error);
   });
 
   console.log("Getting public key credential...");
