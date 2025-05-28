@@ -96,10 +96,6 @@ body {
   flex: 1;
 }
 
-.not-planned-subjects-select {
-  max-width: 200px;
-}
-
 .new-planned-subjects {
   align-items: center;
   padding: 24px 16px;
