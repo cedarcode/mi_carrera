@@ -11,7 +11,7 @@
       </div>
     <% end %>
 
-    <%= render 'shared/alert', message: flash[:alert] if flash[:alert] %>
+    <%= render 'shared/alert' if flash[:alert] %>
 
     <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true, autocomplete: "email" }) %>
 

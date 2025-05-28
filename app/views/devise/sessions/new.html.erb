@@ -5,7 +5,7 @@
 
   <div class="w-full max-w-md space-y-6">
     <%= form_with(model: resource, url: session_path(resource_name), local: true, class: "flex flex-col space-y-6") do |f| %>
-      <%= render 'shared/alert', message: flash[:alert] if flash[:alert] %>
+      <%= render 'shared/alert' if flash[:alert] %>
 
       <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true }) %>
 
