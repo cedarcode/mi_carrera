@@ -14,7 +14,9 @@ RSpec.describe 'Manage passkeys' do
         .and_return(fixed_challenge)
 
       sign_in user
-      visit user_passkeys_path
+      visit edit_user_registration_path
+
+      click_on "Administrar Passkeys"
 
       stub_create(fake_credentials)
 
