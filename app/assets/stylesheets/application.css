@@ -120,10 +120,6 @@ body {
   margin: auto;
 }
 
-.not-planned-subjects-select {
-  max-width: 200px;
-}
-
 .new-planned-subjects {
   align-items: center;
   padding: 24px 16px;
@@ -224,4 +220,3 @@ input {
     transition-delay: calc(infinity * 1s);
   }
 }
-
