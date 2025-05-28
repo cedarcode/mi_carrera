@@ -32,11 +32,11 @@
         }
       ) %>
     </div>
-    <button class="text-gray-500 hover:text-indigo-600 cursor-pointer" data-action="click->autosave-check#update">
+    <%= form.button type: :submit, class: "text-gray-500 hover:text-indigo-600 cursor-pointer", data: { action: "click->autosave-check#update" } do %>
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m-4-4h8"></path>
       </svg>
-    </button>
+    <% end %>
   <% end %>
 </div>

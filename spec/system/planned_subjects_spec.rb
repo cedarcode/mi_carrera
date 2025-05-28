@@ -73,10 +73,10 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     within_not_planned_subjects do
       select 'GAL 1 - 1030', from: "subject_plan_subject_id"
-      find("button[data-action='click->autosave-check#update']").click
+      find("button").click
       select 'GAL 2 - 1031', from: "subject_plan_subject_id"
       select "Sem. 2", from: "subject_plan_semester"
-      find("button[data-action='click->autosave-check#update']").click
+      find("button").click
     end
 
     within_planned_subjects do
