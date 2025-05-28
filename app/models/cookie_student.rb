@@ -15,6 +15,10 @@ class CookieStudent < BaseStudent
     }
   end
 
+  def degree
+    Degree.find_by(key: "computacion")
+  end
+
   private
 
   attr_reader :cookie
