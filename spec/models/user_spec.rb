@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  describe 'associations' do
+    it { should have_many(:reviews).dependent(:destroy) }
+    it { should have_many(:subject_plans).dependent(:destroy) }
+    it { should have_many(:planned_subjects).through(:subject_plans).source(:subject) }
+    it { should belong_to(:degree).optional }
+  end
+
   describe '.from_omniauth' do
     context 'when user does not exist' do
       it 'creates a new user' do
