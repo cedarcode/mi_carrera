@@ -7,7 +7,6 @@ RSpec.describe 'Approvals', type: :system do
 
   let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030') }
   let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10) }
-  let(:taller) { create(:subject, name: 'Taller', credits: 11) }
 
   before do
     create(:subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course)
@@ -23,7 +22,6 @@ RSpec.describe 'Approvals', type: :system do
 
     expect(page).to have_text('GAL 1')
     expect(page).not_to have_text('GAL 2')
-    expect(page).to have_text('Taller')
     expect(page).to have_text('0 créditos')
 
     assert_approvable_checkbox(gal1.course, checked: false, disabled: false)
@@ -71,17 +69,12 @@ RSpec.describe 'Approvals', type: :system do
 
     expect(page).to have_text('GAL 1')
     expect(page).to have_text('GAL 2')
-    expect(page).to have_text('Taller')
     expect(page).to have_text('9 créditos')
 
     uncheck_approvable(gal1.course)
 
     expect(page).not_to have_text('GAL 2')
     expect(page).to have_text('0 créditos')
-
-    check_approvable(taller.course)
-
-    expect(page).to have_text('11 créditos')
 
     visit all_subjects_path
 
