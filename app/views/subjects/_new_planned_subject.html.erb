@@ -1,1 +1,42 @@
-<%= render(NewPlannedSubjectComponent.new(subjects: subjects)) %>
+<div class="flex gap-4 new-planned-subjects">
+  <span class="text-gray-700 whitespace-nowrap">
+    Planificar materia:
+  </span>
+  <%= form_with(
+    model: SubjectPlan.new,
+    url: subject_plans_path,
+    method: :post,
+    data: { controller: "autosave-check" },
+    class: 'flex items-center gap-4 flex-1',
+    local: false
+  ) do |form| %>
+    <div class="flex-1 min-w-0">
+      <%= form.select(
+        :subject_id,
+        subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
+        {},
+        {
+          class: 'w-full rounded-md shadow-sm border border-gray-300 truncate cursor-pointer',
+          data: { action: "click->autosave-check#stopPropagation" }
+        }
+      ) %>
+    </div>
+    <div class="w-32">
+      <%= form.select(
+        :semester,
+        (1..10).map { |i| ["Sem. #{i}", i] },
+        {},
+        {
+          class: 'w-full rounded-md shadow-sm border border-gray-300 truncate cursor-pointer',
+          data: { action: "click->autosave-check#stopPropagation" }
+        }
+      ) %>
+    </div>
+    <button class="text-gray-500 hover:text-indigo-600 cursor-pointer" data-action="click->autosave-check#update">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m-4-4h8"></path>
+      </svg>
+    </button>
+  <% end %>
+</div>
