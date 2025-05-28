@@ -57,8 +57,8 @@
               <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
             </span>
             <%= yield :credits %>
-            <div class="relative mx-3" data-controller='user-menu' data-action="click@document->user-menu#onClickOutside">
-              <%= button_tag type: "button", id: "user-menu", class: "flex cursor-pointer", data: { user_menu_target: 'trigger', action: 'click->user-menu#toggle' } do %>
+            <div class="relative mx-3" data-controller='user-menu' data-action="click@document->user-menu#onClick">
+              <%= button_tag type: "button", id: "user-menu", class: "flex cursor-pointer", data: { user_menu_target: 'trigger', action: 'click->user-menu#toggle:stop' } do %>
                 <% if current_user %>
                   <div class="flex items-center justify-center w-6 h-6 rounded-full bg-sky-500">
                     <%= current_user.email.first.capitalize %>

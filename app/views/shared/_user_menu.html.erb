@@ -8,25 +8,15 @@
         <%= current_user.email %>
       </div>
     <% else %>
-      <%= link_to new_user_session_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
-        Ingresar
-      <% end %>
+      <%= link_to "Ingresar", new_user_session_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
     <% end %>
     <li class="border-t border-gray-100 my-1"></li>
-    <%= link_to profile_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
-      Resumen por Grupo
-    <% end %>
+    <%= link_to "Resumen por Grupo", profile_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
     <% if current_user %>
       <li class="border-t border-gray-100 my-1"></li>
-      <%= link_to edit_user_registration_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
-        Editar Perfil
-      <% end %>
-      <%= link_to new_transcript_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
-        Importar Materias
-      <% end %>
-      <%= link_to destroy_user_session_path, method: :delete, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
-        Salir
-      <% end %>
+      <%= link_to "Editar Perfil", edit_user_registration_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
+      <%= link_to "Importar Materias", new_transcript_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
+      <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
     <% end %>
   </ul>
 </div>

@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static targets = ["menu", "trigger"];
-  static values = { hiddenClass: { type: String, default: "hidden" } };
+  static hiddenClass = "hidden";
 
   connect() {
     // If the JS takes some time to load, it is possible to click on the
@@ -18,7 +18,7 @@ export default class extends Controller {
   }
 
   toggle() {
-    if (this.menuTarget.classList.contains(this.hiddenClassValue)) {
+    if (this.menuTarget.classList.contains(this.constructor.hiddenClass)) {
       this.open();
     } else {
       this.close();
@@ -26,19 +26,16 @@ export default class extends Controller {
   }
 
   open() {
-    this.menuTarget.classList.remove(this.hiddenClassValue);
+    this.menuTarget.classList.remove(this.constructor.hiddenClass);
   }
 
   close() {
-    this.menuTarget.classList.add(this.hiddenClassValue);
+    this.menuTarget.classList.add(this.constructor.hiddenClass);
   }
 
-  onClickOutside(event) {
-    if (
-      !this.menuTarget.classList.contains(this.hiddenClassValue) &&
-      !this.element.contains(event.target)
-    ) {
-      this.close();
+  onClick() {
+    if (!this.menuTarget.classList.contains(this.constructor.hiddenClass)) {
+      this.menuTarget.classList.add(this.constructor.hiddenClass);
     }
   }
 }
