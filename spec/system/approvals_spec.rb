@@ -5,18 +5,20 @@ RSpec.describe 'Approvals', type: :system do
   include ActionView::RecordIdentifier
   include ApplicationSystemSpecHelper
 
-  it 'can check and uncheck approvables from index and show page' do
-    gal1 = create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030')
+  let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030') }
+  let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10) }
+  let(:taller) { create(:subject, name: 'Taller', credits: 11) }
+
+  before do
     create(:subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course)
 
-    gal2 = create(:subject, :with_exam, name: 'GAL 2', credits: 10)
     create(:and_prerequisite, approvable: gal2.course, operands_prerequisites: [
       create(:subject_prerequisite, approvable_needed: gal1.course),
       create(:subject_prerequisite, approvable_needed: gal1.exam),
     ])
+  end
 
-    taller = create(:subject, name: 'Taller', credits: 11)
-
+  it 'can check and uncheck approvables from index and show page' do
     visit root_path
 
     expect(page).to have_text('GAL 1')
