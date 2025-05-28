@@ -6,6 +6,7 @@ FactoryBot.define do
     category { 'first_semester' }
     group
     course { association :course, subject: instance }
+    degree
 
     trait :with_exam do
       exam { association :exam, subject: instance }
