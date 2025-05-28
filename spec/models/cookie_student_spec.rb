@@ -220,4 +220,22 @@ RSpec.describe CookieStudent, type: :model do
       expect(student).to be_graduated
     end
   end
+
+  describe '#degree' do
+    let(:student) { build :cookie_student }
+
+    context 'when computacion exits' do
+      let!(:degree) { create :degree, key: "computacion" }
+
+      it 'returns the correct degree' do
+        expect(student.degree).to eq(degree)
+      end
+    end
+
+    context 'when computacion does not exist' do
+      it 'returns nil' do
+        expect(student.degree).to eq(nil)
+      end
+    end
+  end
 end
