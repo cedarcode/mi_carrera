@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def drawer_menu_navigation_item(text, link, new_badge: false)
     link_options = {}
     link_options[:tabindex] = 0
