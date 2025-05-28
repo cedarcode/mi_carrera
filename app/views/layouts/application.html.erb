@@ -6,9 +6,6 @@
     <title>MiCarrera</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <link rel="icon" type="image/png" href="/icon-128.png" sizes="128x128">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0' %>
@@ -16,14 +13,16 @@
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/icon?family=Material+Icons' %>
     <%= stylesheet_link_tag    'https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css' %>
 
+    <%= favicon_link_tag "/icon-200-dark.png", type: 'image/png', size: "200x200", href: "/icon-200-dark.png", media: "(prefers-color-scheme: light)"  %>
+    <%= favicon_link_tag "/icon-200-light.png", type: 'image/png', size: "200x200", href: "/icon-200-light.png", media: "(prefers-color-scheme: dark)" %>
+    <%= favicon_link_tag "/apple-touch-icon.png", type: 'image/png', size: "400x400", href: "/apple-touch-icon.png", rel: 'apple-touch-icon' %>
+    <%= favicon_link_tag "/apple-touch-icon-precomposed.png", type: 'image/png', size: "400x400", href: "/apple-touch-icon-precomposed.png", rel: 'apple-touch-icon-precomposed' %>
+
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="MiCarrera PWA">
-    <link rel="apple-touch-icon-precomposed" sizes="180×180" href="/apple-touch-icon-precomposed.png">
-    <link rel="apple-touch-icon" sizes="180×180" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#6200ee"/>
-
     <meta name="description" content="Sistema de trackeo de previaturas de materias realizadas por estudiantes en la FING">
     <meta property="og:title" content="MiCarrera"/>
     <meta property="og:description" content="Sistema de trackeo de previaturas de materias realizadas por estudiantes en la FING"/>
@@ -43,67 +42,69 @@
 
   <body class="mdc-typography" data-controller='navigation-drawer'>
     <%= render 'shared/menu' %>
-    <div class="mdc-drawer-app-content">
-      <header id='app-bar' class="mdc-top-app-bar" data-controller='search'>
-        <% show_search_bar = params[:search].present? %>
-        <div class="mdc-top-app-bar__row <%= show_search_bar ? 'd-none' : '' %>" data-search-target="appBar">
-          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" data-action='click->navigation-drawer#open'>menu</button>
-            <%= yield :navigation_icon %>
-            <%= link_to 'MiCarrera', root_path, class: 'home-button'%>
-          </section>
-          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-            <button id="searchIcon" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-action="search#toggle">search</button>
-            <span hidden>
-              <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
-            </span>
-            <%= yield :credits %>
-            <div class="mdc-menu-surface--anchor" data-controller='user-menu'>
-              <button id="user-menu" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
-                <% if current_user %>
-                  <div class='logged-in-account-circle'>
-                    <%= current_user.email.first.capitalize %>
-                  </div>
-                <% else %>
-                  account_circle
-                <% end %>
-              </button>
-              <%= render 'shared/user_menu' %>
-            </div>
-          </section>
-        </div>
-        <div id="searchbar" class="mdc-top-app-bar__row <%= show_search_bar ? '' : 'd-none' %>" data-search-target="searchbar">
-          <%= form_with(url: all_subjects_path, method: :get, local: true) do |f| %>
-            <div class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mdc-text-field--no-label mdc-text-field--with-trailing-icon">
-              <span class="mdc-text-field__ripple"></span>
-              <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { 'search-target': "searchInput" } %>
-              <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" data-action="click->search#toggle" tabindex="0" role="button">close</i>
-              <span class="mdc-line-ripple"></span>
-            </div>
+
+    <header id='app-bar' class="mdc-top-app-bar" data-controller='search'>
+      <% show_search_bar = params[:search].present? %>
+      <div class="mdc-top-app-bar__row <%= show_search_bar ? 'd-none' : '' %>" data-search-target="appBar">
+        <div class="flex flex-row justify-center items-center space-x-4 ms-4">
+          <%= button_tag type: "button", class: "size-6 cursor-pointer", data: { action: "click->navigation-drawer#toggle" } do %>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
           <% end %>
+          <%= link_to 'MiCarrera', root_path, class: 'home-button'%>
         </div>
-      </header>
-      <main class="mdc-top-app-bar--fixed-adjust main-content" id='main-content'>
-        <% if flash[:notice] %>
-          <%= render 'shared/snackbar', message: flash[:notice]%>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+          <button id="searchIcon" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-action="search#toggle">search</button>
+          <span hidden>
+            <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
+          </span>
+          <%= yield :credits %>
+          <div class="mdc-menu-surface--anchor" data-controller='user-menu'>
+            <button id="user-menu" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
+              <% if current_user %>
+                <div class='logged-in-account-circle'>
+                  <%= current_user.email.first.capitalize %>
+                </div>
+              <% else %>
+                account_circle
+              <% end %>
+            </button>
+            <%= render 'shared/user_menu' %>
+          </div>
+        </section>
+      </div>
+      <div id="searchbar" class="mdc-top-app-bar__row <%= show_search_bar ? '' : 'd-none' %>" data-search-target="searchbar">
+        <%= form_with(url: all_subjects_path, method: :get, local: true) do |f| %>
+          <div class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mdc-text-field--no-label mdc-text-field--with-trailing-icon">
+            <span class="mdc-text-field__ripple"></span>
+            <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { 'search-target': "searchInput" } %>
+            <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" data-action="click->search#toggle" tabindex="0" role="button">close</i>
+            <span class="mdc-line-ripple"></span>
+          </div>
         <% end %>
-        <% if flash[:error] %>
-          <%= render 'shared/snackbar', message: flash[:error]%>
-        <% end %>
-        <% if flash[:alert] %>
-          <%= render 'shared/snackbar', message: flash[:alert]%>
-        <% end %>
-        <%= yield :welcome_banner %>
-        <div class='content'>
-          <%= yield %>
-        </div>
-      </main>
-      <footer class="footer mdc-theme--text-primary-on-light">
-        <span class="mdc-theme--text-secondary-on-light">
-          Built by&nbsp;
-        </span>
-        <a class="mdc-theme--text-primary-on-light" href="https://cedarcode.com" target="_blank" >Cedarcode</a>
-      </footer>
-    </div>
+      </div>
+    </header>
+    <main class="mdc-top-app-bar--fixed-adjust main-content" id='main-content'>
+      <% if flash[:notice] %>
+        <%= render 'shared/snackbar', message: flash[:notice]%>
+      <% end %>
+      <% if flash[:error] %>
+        <%= render 'shared/snackbar', message: flash[:error]%>
+      <% end %>
+      <% if flash[:alert] %>
+        <%= render 'shared/snackbar', message: flash[:alert]%>
+      <% end %>
+      <%= yield :welcome_banner %>
+      <div class='content'>
+        <%= yield %>
+      </div>
+    </main>
+    <footer class="footer mdc-theme--text-primary-on-light">
+      <span class="mdc-theme--text-secondary-on-light">
+        Built by&nbsp;
+      </span>
+      <a class="mdc-theme--text-primary-on-light" href="https://cedarcode.com" target="_blank" >Cedarcode</a>
+    </footer>
   </body>
 </html>

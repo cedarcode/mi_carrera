@@ -36,11 +36,6 @@ body {
   white-space: nowrap;
 }
 
-.handle-account {
-  color: white;
-  padding: 16px;
-}
-
 .two-checkboxes {
   display: flex;
   height: 40px;
@@ -105,21 +100,6 @@ body {
   flex: 1;
 }
 
-#menu-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.button-container {
-  display: flex;
-  justify-content: flex-end;
-  width: 300px;
-  margin: auto;
-}
-
 .new-planned-subjects {
   align-items: center;
   padding: 24px 16px;
@@ -130,39 +110,8 @@ body {
   }
 }
 
-.button-container button {
-  margin: 3px;
-}
-
-.links-container {
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
-  margin: auto;
-  margin-top: 10px;
-}
-
-.invalid-feedback {
-  color: red;
-}
-
-.is-invalid {
-  border-color: red;
-}
-
 .menu-user-info {
   padding: 0 16px;
-}
-
-.mdc-text-field-helper-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-}
-
-.mdc-text-field-helper-text::before {
-  height: 5px;
 }
 
 .subject-group-header {

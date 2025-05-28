@@ -29,6 +29,12 @@
           Editar Perfil
         <span>
       <% end %>
+      <%= link_to new_transcript_path, class: "mdc-deprecated-list-item", tabindex: 0 do %>
+        <span class="mdc-deprecated-list-item__ripple"></span>
+        <span class="mdc-deprecated-list-item__text">
+          Importar Materias
+        <span>
+      <% end %>
       <%= link_to destroy_user_session_path, method: :delete, class: "mdc-deprecated-list-item", tabindex: 0 do %>
         <span class="mdc-deprecated-list-item__ripple"></span>
         <span class="mdc-deprecated-list-item__text">
