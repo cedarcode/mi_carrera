@@ -5,6 +5,7 @@ SimpleCov.command_name "Minitest:system"
 class UserTest < ApplicationSystemTestCase
   include ActionMailer::TestHelper
   include PasswordHelpers
+  include FormFieldHelpers
 
   test "can sign up" do
     user = create :user
@@ -12,36 +13,36 @@ class UserTest < ApplicationSystemTestCase
     visit new_user_session_path
 
     click_on "Registrarte"
-    assert_text "Registro"
+    assert_text "Registrarse"
 
-    assert_text "Continuar con Google"
+    assert_text "Google"
 
     password = Devise.friendly_token
     fill_in "Correo electrónico", with: 'alice@test.com'
-    fill_in "Nueva contraseña", with: password
-    fill_in "Confirma tu nueva contraseña", with: "incorrect#{password}"
+    fill_in "Contraseña", with: password
+    fill_in "Confirma tu contraseña", with: "incorrect#{password}"
     click_on "Registrarte"
 
-    within('.form-input-container', text: 'Confirma tu nueva contraseña') do
+    within_form_field('Confirma tu contraseña') do
       assert_text "No coincide"
     end
 
     password = Devise.friendly_token
     fill_in "Correo electrónico", with: user.email
-    fill_in "Nueva contraseña", with: password
-    fill_in "Confirma tu nueva contraseña", with: password
+    fill_in "Contraseña", with: password
+    fill_in "Confirma tu contraseña", with: password
     click_on "Registrarte"
 
-    within('.form-input-container', text: 'Correo electrónico') do
+    within_form_field('Correo electrónico') do
       assert_text "Ya está en uso"
     end
 
     fill_in "Correo electrónico", with: 'alice@test.com'
     password = Devise.friendly_token
-    fill_in "Nueva contraseña", with: password
-    fill_in "Confirma tu nueva contraseña", with: password
-    password_visibility_toggle_test("Nueva contraseña")
-    password_visibility_toggle_test("Confirma tu nueva contraseña")
+    fill_in "Contraseña", with: password
+    fill_in "Confirma tu contraseña", with: password
+    password_visibility_toggle_test("Contraseña")
+    password_visibility_toggle_test("Confirma tu contraseña")
     click_on "Registrarte"
 
     assert_text "Bienvenido! Te has registrado correctamente."
@@ -106,8 +107,8 @@ class UserTest < ApplicationSystemTestCase
 
     visit new_user_session_path
 
-    assert_text "Ingreso"
-    assert_text "Continuar con Google"
+    assert_text "Iniciar sesión"
+    assert_text "Google"
 
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: "incorrect#{user.password}"
@@ -141,7 +142,7 @@ class UserTest < ApplicationSystemTestCase
 
     fill_in "Contraseña actual", with: "incorrect#{user.password}"
     click_on "Guardar"
-    within('.form-input-container', text: 'Contraseña actual') do
+    within_form_field('Contraseña actual') do
       assert_text "No es válido"
     end
 
@@ -150,7 +151,7 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Nueva contraseña", with: three_char_long_password
     fill_in "Confirma tu nueva contraseña", with: three_char_long_password
     click_on "Guardar"
-    within('.form-input-container', text: 'Nueva contraseña') do
+    within_form_field('Nueva contraseña') do
       assert_text "Es demasiado corto (6 caracteres mínimo)"
     end
 
@@ -159,14 +160,14 @@ class UserTest < ApplicationSystemTestCase
     fill_in "Confirma tu nueva contraseña", with: "incorrect#{password}"
     fill_in "Contraseña actual", with: user.password
     click_on "Guardar"
-    within('.form-input-container', text: 'Confirma tu nueva contraseña') do
+    within_form_field('Confirma tu nueva contraseña') do
       assert_text "No coincide"
     end
 
     fill_in 'Correo electrónico', with: user2.email
     fill_in 'Contraseña actual', with: user.password
     click_on 'Guardar'
-    within('.form-input-container', text: 'Correo electrónico') do
+    within_form_field('Correo electrónico') do
       assert_text "Ya está en uso"
     end
 

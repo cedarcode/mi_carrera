@@ -7519,6 +7519,13 @@
   logical_operator: and
   operands:
   - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: exam
+      subject_needed_code: 1331P
+      subject_needed_name: CREDITOS NO ACUM. CON DISEÑO DE COMPILADORES
+  - type: logical
     logical_operator: or
     operands:
     - type: logical
@@ -7547,23 +7554,23 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: CP29
-      subject_needed_name: PROGRAMACION III
-      needs: exam
-    - type: subject
-      subject_needed_code: '1323'
-      subject_needed_name: PROGRAMACION 3
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
       subject_needed_code: CP33
       subject_needed_name: TEORIA DE LA PROGRAMACION I
       needs: exam
     - type: subject
       subject_needed_code: '1325'
       subject_needed_name: TEORIA DE LENGUAJES
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP29
+      subject_needed_name: PROGRAMACION III
+      needs: exam
+    - type: subject
+      subject_needed_code: '1323'
+      subject_needed_name: PROGRAMACION 3
       needs: exam
   subject_code: '1331'
   is_exam: false
@@ -14102,42 +14109,28 @@
   - type: logical
     logical_operator: not
     operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1820'
+        subject_needed_name: APRENDIZAJE AUTOMATICO
+        needs: course
+      - type: subject
+        subject_needed_code: '1827'
+        subject_needed_name: APRENDIZAJE AUTOMATICO
+        needs: course
+      - type: subject
+        subject_needed_code: 1866P
+        subject_needed_name: CRÉDITOS NO ACUM. CON APRENDIZAJE AUTOMÁTICO
+        needs: exam
+  - type: logical
+    logical_operator: not
+    operands:
     - type: subject
       needs: all
       subject_needed_code: '1834'
       subject_needed_name: METODOS DE APRENDIZAJE AUTOMATICO
-  - type: logical
-    logical_operator: not
-    operands:
-    - type: subject
-      needs: all
-      subject_needed_code: '1827'
-      subject_needed_name: APRENDIZAJE AUTOMATICO
-  - type: logical
-    logical_operator: not
-    operands:
-    - type: subject
-      needs: all
-      subject_needed_code: '1820'
-      subject_needed_name: APRENDIZAJE AUTOMATICO
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      needs: exam
-      subject_needed_code: '1324'
-      subject_needed_name: PROGRAMACION 4
-    - type: logical
-      logical_operator: and
-      operands:
-      - type: subject
-        subject_needed_code: CP71
-        subject_needed_name: TALLER III ( 2DO.SEM.)
-        needs: course
-      - type: subject
-        subject_needed_code: CP30
-        subject_needed_name: TALLER III (1ER.SEM.)
-        needs: course
   - type: logical
     logical_operator: or
     operands:
@@ -14175,6 +14168,24 @@
         subject_needed_code: CP2
         subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
         needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      needs: exam
+      subject_needed_code: '1324'
+      subject_needed_name: PROGRAMACION 4
+    - type: logical
+      logical_operator: and
+      operands:
+      - type: subject
+        subject_needed_code: CP71
+        subject_needed_name: TALLER III ( 2DO.SEM.)
+        needs: course
+      - type: subject
+        subject_needed_code: CP30
+        subject_needed_name: TALLER III (1ER.SEM.)
+        needs: course
   - type: subject
     needs: all
     subject_needed_code: '1323'
@@ -14183,21 +14194,6 @@
     needs: all
     subject_needed_code: '1911'
     subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1025P
-      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
-      needs: exam
-    - type: subject
-      subject_needed_code: '1025'
-      subject_needed_name: PROBABILIDAD Y ESTADISTICA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1075'
-      subject_needed_name: PROBABILIDAD Y ESTADISTICA
-      needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -14216,6 +14212,21 @@
     - type: subject
       subject_needed_code: '1010'
       subject_needed_name: LOGICA Y COMPUTACION
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1025P
+      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
+      needs: exam
+    - type: subject
+      subject_needed_code: '1025'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1075'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
       needs: exam
   subject_code: '1866'
   is_exam: false
@@ -16645,39 +16656,32 @@
 - type: logical
   logical_operator: and
   operands:
-  - type: subject
-    needs: exam
-    subject_needed_code: '1323'
-    subject_needed_name: PROGRAMACION 3
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: course
+      subject_needed_code: 5852P
+      subject_needed_name: CREDITOS NO ACUM FUNDAMENTOS DE APRENDIZAJE AUT. Y REC.
+        DE PATRO
   - type: subject
     needs: exam
     subject_needed_code: '1026'
     subject_needed_name: MATEMATICA DISCRETA 2
+  - type: subject
+    needs: exam
+    subject_needed_code: '1323'
+    subject_needed_name: PROGRAMACION 3
   - type: logical
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: 1025P
-      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
+      subject_needed_code: 1324P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 4
       needs: exam
     - type: subject
-      subject_needed_code: '1025'
-      subject_needed_name: PROBABILIDAD Y ESTADISTICA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1075'
-      subject_needed_name: PROBABILIDAD Y ESTADISTICA
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1911P
-      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1911'
-      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      subject_needed_code: '1324'
+      subject_needed_name: PROGRAMACION 4
       needs: exam
   - type: logical
     logical_operator: or
@@ -16694,12 +16698,27 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: 1324P
-      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 4
+      subject_needed_code: 1911P
+      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
       needs: exam
     - type: subject
-      subject_needed_code: '1324'
-      subject_needed_name: PROGRAMACION 4
+      subject_needed_code: '1911'
+      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1025P
+      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
+      needs: exam
+    - type: subject
+      subject_needed_code: '1025'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1075'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
       needs: exam
   subject_code: '5852'
   is_exam: false
@@ -17661,11 +17680,11 @@
     operands:
     - type: subject
       subject_needed_code: MHC39
-      subject_needed_name: BIOQUÍMICA I
+      subject_needed_name: BIOQUÍMICA I (2025-
       needs: course
     - type: subject
       subject_needed_code: MHC16
-      subject_needed_name: BIOQUÍMICA 1 (2020-
+      subject_needed_name: BIOQUÍMICA 1 (2020-2024)
       needs: course
   subject_code: MHC39
   is_exam: true

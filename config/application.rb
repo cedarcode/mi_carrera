@@ -38,10 +38,6 @@ module MiCarrera
 
     config.i18n.default_locale = :es
 
-    config.action_view.field_error_proc = Proc.new { |html_tag, _instance|
-      html_tag
-    }
-
     config.session_store :cookie_store, key: "_mi_carrera_session", domain: :all
 
     ###
