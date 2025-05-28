@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :subject_plans, dependent: :destroy
   has_many :planned_subjects, through: :subject_plans, source: :subject
+  belongs_to :degree, optional: true
   has_many :passkeys, dependent: :destroy
 
   after_initialize do
