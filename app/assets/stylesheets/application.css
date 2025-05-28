@@ -41,15 +41,6 @@ body {
   padding: 16px;
 }
 
-.two-checkboxes {
-  display: flex;
-  height: 40px;
-  width: 100px;
-  form {
-    margin: 0 5px;
-  }
-}
-
 .toggle-collapse {
   cursor: pointer;
 }
@@ -175,14 +166,6 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 40px;
-}
-
-.checkbox-header {
-  height: 40px;
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .d-flex {
