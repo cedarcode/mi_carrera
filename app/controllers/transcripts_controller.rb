@@ -18,7 +18,5 @@ class TranscriptsController < ApplicationController
         @failed_entries << entry
       end
     end
-
-    render :new
   end
 end
