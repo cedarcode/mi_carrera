@@ -1,9 +1,9 @@
 require 'rails_helper'
-require 'support/application_system_spec_helper'
+require 'support/checkboxes_spec_helper'
 
 RSpec.describe 'Approvals', type: :system do
   include ActionView::RecordIdentifier
-  include ApplicationSystemSpecHelper
+  include CheckboxesSpecHelper
 
   let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030') }
   let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10) }

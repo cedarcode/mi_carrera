@@ -1,4 +1,4 @@
-module ApplicationSystemSpecHelper
+module CheckboxesSpecHelper
   def check_approvable(approvable)
     check dom_id(approvable), visible: false
     assert_approvable_checkbox(approvable, checked: true)
