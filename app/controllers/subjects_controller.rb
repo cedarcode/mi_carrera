@@ -22,7 +22,8 @@ class SubjectsController < ApplicationController
         degree_subjects
       end.ordered_by_category_and_name
 
-    @subjects = TreePreloader.preload(subjects)
+    @pagy, paginated_subjects = pagy(subjects)
+    @subjects = TreePreloader.preload(paginated_subjects)
   end
 
   private
