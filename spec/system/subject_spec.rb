@@ -32,7 +32,7 @@ RSpec.describe "Subject", type: :system do
     expect(page).to have_text('GAL 2')
     expect(page).to have_text('T1')
 
-    find("#searchIcon").click
+    click_on "search"
 
     fill_in 'search', with: "Taller\n"
 
