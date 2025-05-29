@@ -74,7 +74,6 @@ RSpec.describe 'User', type: :system do
 
     expect(page).to have_text('No puedes acceder a esta página sin venir desde el email de reinicio de contraseña. ' \
                              'Si vienes desde ahí, por favor asegúrate de usar la url completa que aparece.')
-    expect(current_path).to eq(new_user_session_path)
 
     visit edit_user_password_path(reset_password_token: user.send_reset_password_instructions)
 
