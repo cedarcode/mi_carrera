@@ -119,6 +119,7 @@ RSpec.describe 'User', type: :system do
     fill_in 'Contraseña', with: user.password
     password_visibility_toggle_test('Contraseña')
     click_on 'Ingresar'
+    expect(page).to have_text('Iniciaste sesión correctamente')
 
     click_user_menu
     expect(page).to have_text(user.email)
