@@ -58,17 +58,17 @@ RSpec.describe 'User', type: :system do
     click_on 'Restablecer contraseña'
     fill_in 'Correo electrónico', with: 'non-existent@test.com'
 
-    expect {
+    expect do
       click_on 'Restablecer contraseña'
-    }.not_to(change { ActionMailer::Base.deliveries.count })
+    end.not_to send_email(to: 'non-existent@test.com')
 
     expect(page).to have_text('No encontrado')
 
     fill_in 'Correo electrónico', with: user.email
-    expect {
+    expect do
       click_on 'Restablecer contraseña'
       expect(page).to have_text('Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos.')
-    }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    end.to send_email(to: user.email)
 
     visit edit_user_password_path(t: 'invalid')
 
