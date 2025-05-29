@@ -1,4 +1,4 @@
-module CheckboxesSpecHelper
+module CheckboxesHelper
   include ActionView::RecordIdentifier
 
   def check_approvable(approvable)
