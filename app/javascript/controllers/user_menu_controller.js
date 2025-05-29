@@ -35,7 +35,7 @@ export default class extends Controller {
 
   onClick() {
     if (!this.menuTarget.classList.contains(this.constructor.hiddenClass)) {
-      this.menuTarget.classList.add(this.constructor.hiddenClass);
+      this.close();
     }
   }
 }
