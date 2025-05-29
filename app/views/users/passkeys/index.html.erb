@@ -1,6 +1,6 @@
 <div class="flex flex-col justify-center items-center p-6 space-y-6">
   <h2 class="text-3xl/9 text-neutral-700">Administra tus Passkeys</h2>
-  <ul class="divide-y divide-gray-200 list-none py-4 w-full">
+  <ul class="divide-y divide-gray-200 list-none py-4 w-full max-w-md">
     <% current_user.passkeys.each do |passkey| %>
       <li class="py-2 px-4 hover:bg-gray-50">
         <div class="flex justify-between">
@@ -20,14 +20,13 @@
     <% end %>
   </ul>
 
-  <div class="w-full" data-controller="add-passkey">
-    <%= form_with scope: :credential, url: user_passkeys_path, local: false, data: { action: "ajax:success->add-passkey#create" } do |f| %>
+  <div class="flex w-full justify-center items-center max-w-md" data-controller="add-passkey">
+    <%= form_with scope: :credential, url: user_passkeys_path, local: false, class: "flex flex-col w-full space-y-6", data: { action: "ajax:success->add-passkey#create" } do |f| %>
       <%= f.label :name, "Nombre", class: "text-sm/6 font-medium text-gray-700 with-error:text-red-600" %>
       <%= f.text_field :name, class: "bg-white w-full rounded-md px-3 py-1.5 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600", required: true %>
 
-      <div class='flex justify-center mt-5 py-2'>
-        <%= f.submit "Agregar Passkey", class: "mdc-button mdc-button--raised self-center" %>
-      </div>
+
+      <%= render ButtonComponent.new(form: f, label: "Agregar Passkey") %>
     <% end %>
   </div>
 </div>

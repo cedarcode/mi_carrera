@@ -22,9 +22,9 @@
     <%= render ButtonComponent.new(form: f, label: "Guardar") %>
   <% end %>
 
-  <hr class="w-80 border-neutral-500">
+  <hr class="w-80 border-gray-300">
 
-  <div class="flex items-center space-y-6">
-    <%=link_to "Administrar Passkeys", user_passkeys_path, class: "mdc-button mdc-button--raised self-center" %>
+  <div class="flex max-w-md w-70 space-y-6">
+    <%=link_to "Administrar Passkeys", user_passkeys_path, class: "bg-primary grow text-center text-white font-bold shadow-sm cursor-pointer p-2 rounded-md"%>
   </div>
 </div>
