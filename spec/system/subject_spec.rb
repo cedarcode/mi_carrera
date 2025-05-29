@@ -89,14 +89,14 @@ RSpec.describe "Subject", type: :system do
 
     visit subject_path(gal1)
 
-    assert_text 'Sin calificar'
+    expect(page).to have_text('Sin calificar')
     click_button('star_outline', match: :first)
-    assert_text 'Iniciar sesión'
+    expect(page).to have_text('Iniciar sesión')
 
     fill_in "Correo electrónico", with: user.email
     fill_in "Contraseña", with: user.password
     click_button "Ingresar"
-    assert_text 'Iniciaste sesión correctamente.'
+    expect(page).to have_text('Iniciaste sesión correctamente.')
 
     visit subject_path(gal1)
 
