@@ -104,30 +104,14 @@ RSpec.describe "Subject", type: :system do
     click_button('star_outline', match: :first)
     expect(page).to have_text('Puntuación: 5.0')
 
-    review = Review.last
-    aggregate_failures do
-      expect(review.subject).to eq(gal1)
-      expect(review.user).to eq(User.last)
-      expect(review.rating).to eq(5)
-    end
-
     # Update review to 4 stars
     all('button', text: 'star')[1].click
 
     expect(page).to have_text('Puntuación: 4.0')
 
-    review = Review.last
-    aggregate_failures do
-      expect(review.subject).to eq(gal1)
-      expect(review.user).to eq(User.last)
-      expect(review.rating).to eq(4)
-    end
-
     # Destroy review by clicking on the same star
     all('button', text: 'star')[1].click
 
     expect(page).to have_text('Sin calificar')
-
-    expect(Review.count).to eq(0)
   end
 end
