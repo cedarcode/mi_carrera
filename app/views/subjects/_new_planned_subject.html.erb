@@ -1,4 +1,4 @@
-<div class="flex gap-4 new-planned-subjects">
+<div id="new-planned-subject" class="flex gap-4 items-center py-6 px-4 max-[500px]:flex-col max-[500px]:gap-3 max-[500px]:items-start">
   <span class="text-gray-700 whitespace-nowrap">
     Planificar materia:
   </span>
@@ -16,7 +16,7 @@
         subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
         {},
         {
-          class: 'w-full rounded-md shadow-sm border border-gray-300 truncate cursor-pointer',
+          class: 'w-full rounded-md text-sm shadow-sm border border-gray-300 truncate cursor-pointer',
           data: { action: "click->autosave-check#stopPropagation" }
         }
       ) %>
@@ -27,16 +27,13 @@
         (1..10).map { |i| ["Sem. #{i}", i] },
         {},
         {
-          class: 'w-full rounded-md shadow-sm border border-gray-300 truncate cursor-pointer',
+          class: 'w-full rounded-md text-sm shadow-sm border border-gray-300 truncate cursor-pointer',
           data: { action: "click->autosave-check#stopPropagation" }
         }
       ) %>
     </div>
     <%= form.button type: :submit, class: "text-gray-500 hover:text-indigo-600 cursor-pointer", data: { action: "click->autosave-check#update" } do %>
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m-4-4h8"></path>
-      </svg>
+      <%= image_tag "add_circle.svg" %>
     <% end %>
   <% end %>
 </div>

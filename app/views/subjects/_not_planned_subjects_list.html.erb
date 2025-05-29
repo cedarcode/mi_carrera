@@ -1,29 +1,38 @@
-<div class="mdc-deprecated-list">
+<div class="space-y-2">
   <% subjects.each do |subject| %>
-    <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item" do %>
-      <span class="mdc-deprecated-list-item__ripple"></span>
-      <span class="mdc-deprecated-list-item__text">
-        <%= display_name(subject) %>
-      </span>
+    <div class="flex items-center gap-4 p-4 hover:bg-gray-100 transition-colors">
+      <%= link_to subject_path(subject), class: "flex-1 min-w-0 text-gray-700 hover:text-indigo-600 transition-colors" do %>
+        <span class="truncate">
+          <%= display_name(subject) %>
+        </span>
+      <% end %>
+      
       <%= form_with(
         model: SubjectPlan.new,
         url: subject_plans_path,
         method: :post,
         data: { controller: "autosave-check" },
-        class: 'd-flex',
+        class: 'flex items-center gap-2',
         local: false
       ) do |form| %>
-        <%= 
-          form.select(
-            :semester, 
-            options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
-            {}, 
-            data: { action: "click->autosave-check#stopPropagation" }
-          )
-        %>
+        <div class="w-32 mr-1">
+          <%= 
+            form.select(
+              :semester, 
+              options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
+              {}, 
+              {
+                class: 'w-full rounded-md text-sm shadow-sm border border-gray-300 truncate cursor-pointer',
+                data: { action: "click->autosave-check#stopPropagation" }
+              }
+            )
+          %>
+        </div>
         <%= form.hidden_field :subject_id, value: subject.id %>
-        <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">add_circle_outline</button>
+        <%= form.button type: :submit, class: "text-gray-500 hover:text-indigo-600 cursor-pointer transition-colors", data: { action: "click->autosave-check#update" } do %>
+          <%= image_tag "add_circle.svg" %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
 </div>
