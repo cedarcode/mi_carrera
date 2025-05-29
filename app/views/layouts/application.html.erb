@@ -86,15 +86,8 @@
       </div>
     </header>
     <main class="mdc-top-app-bar--fixed-adjust main-content" id='main-content'>
-      <% if flash[:notice] %>
-        <%= render 'shared/snackbar', message: flash[:notice]%>
-      <% end %>
-      <% if flash[:error] %>
-        <%= render 'shared/snackbar', message: flash[:error]%>
-      <% end %>
-      <% if flash[:alert] %>
-        <%= render 'shared/snackbar', message: flash[:alert]%>
-      <% end %>
+      <%= render 'shared/notice' if flash[:notice] %>
+
       <%= yield :welcome_banner %>
       <div class='content'>
         <%= yield %>
