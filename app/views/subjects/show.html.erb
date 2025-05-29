@@ -20,8 +20,32 @@
       <% end %>
     </label>
 
-    <%= render 'rating' %>
+  <div class="overflow-x-auto">
+    <div class="flex justify-center gap-2 min-w-max p-2">
+      <%= render(BooleanReviewComponent.new(
+            review_name: "Recomendado",
+            rating_value: @subject.recommended_percentage,
+            subject_id: @subject.id,
+            column_name: :recommended,
+            user_review: @user_review
+          )) %>
+      <%= render(FiveStarReviewComponent.new(
+            review_name: "Interesante",
+            rating_value: @subject.average_interesting,
+            subject_id: @subject.id,
+            column_name: :interesting,
+            user_review: @user_review
+          )) %>
+      <%= render(FiveStarReviewComponent.new(
+            review_name: "Créditos / Dificultad",
+            rating_value: @subject.average_credits_to_difficulty_ratio,
+            subject_id: @subject.id,
+            column_name: :credits_to_difficulty_ratio,
+            user_review: @user_review
+          )) %>
+    </div>
   </div>
+
   <hr class="mdc-deprecated-list-divider">
 
   <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Aprobación</h3>

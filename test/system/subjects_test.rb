@@ -77,7 +77,12 @@ class SubjectsTest < ApplicationSystemTestCase
     # Not logged
     visit subject_path(subject)
 
-    assert_text "Sin calificar"
+    assert_text "Recomendado"
+    assert_text "Interesante"
+    assert_text "Créditos / Dificultad"
+    assert_text "?"
+    assert_text "-.-"
+
     click_button("star_outline", match: :first)
     assert_current_path new_user_session_path
 
@@ -89,35 +94,26 @@ class SubjectsTest < ApplicationSystemTestCase
     assert_text "Iniciaste sesión correctamente"
     visit subject_path(subject)
 
-    assert_text "Sin calificar"
-
     # Create a 5-star review
     all('button', text: 'star')[0].click
 
-    assert_text "Puntuación: 5.0"
+    assert_text "5.0"
 
     Review.last.tap do |review|
       assert_equal(subject, review.subject)
       assert_equal(user, review.user)
-      assert_equal(5, review.rating)
+      assert_equal(5, review.interesting)
     end
 
-    # Update review to 4 stars
-    all('button', text: 'star')[1].click
+    # Remove review
+    all('button', text: 'star')[0].click
 
-    assert_text "Puntuación: 4.0"
+    assert_no_text "5.0"
 
     Review.last.tap do |review|
       assert_equal(subject, review.subject)
       assert_equal(user, review.user)
-      assert_equal(4, review.rating)
+      assert_equal(nil, review.interesting)
     end
-
-    # Destroy review by clicking on the same star
-    all('button', text: 'star')[1].click
-
-    assert_text "Sin calificar"
-
-    assert_equal(0, Review.count)
   end
 end
