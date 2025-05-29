@@ -14,8 +14,4 @@ module CheckboxesHelper
   def assert_approvable_checkbox(approvable, **opts)
     assert_selector(:field, dom_id(approvable), **opts.merge(visible: false))
   end
-
-  def click_search_trigger
-    find("#searchIcon").click
-  end
 end

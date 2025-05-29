@@ -1,9 +1,6 @@
 require 'rails_helper'
-require 'support/checkboxes_helper'
 
 RSpec.describe "Subject", type: :system do
-  include CheckboxesHelper
-
   let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030') }
   let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10, code: '1031') }
 
@@ -35,7 +32,8 @@ RSpec.describe "Subject", type: :system do
     expect(page).to have_text('GAL 2')
     expect(page).to have_text('T1')
 
-    click_search_trigger
+    find("#searchIcon").click
+
     fill_in 'search', with: "Taller\n"
 
     expect(page).not_to have_text('GAL 1')
