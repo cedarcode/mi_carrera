@@ -1,4 +1,4 @@
-module PasswordHelpers
+module PasswordHelper
   def password_visibility_toggle_test(label_text)
     toggle = find_field(label_text).sibling("button[data-action='show-password#toggle']")
 
