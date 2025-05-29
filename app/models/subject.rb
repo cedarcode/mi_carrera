@@ -49,8 +49,20 @@ class Subject < ApplicationRecord
     revalid? || inactive? || outside_montevideo? || extension_module?
   end
 
-  def average_rating
-    reviews.average(:rating).round(1) if reviews.any?
+  def recommended_percentage
+    return unless reviews.where.not(recommended: nil).any?
+
+    recommended_count = reviews.where(recommended: true).count.to_f
+    total_count = reviews.where.not(recommended: nil).count.to_f
+    (recommended_count / total_count * 100).round(1)
+  end
+
+  def average_interesting
+    reviews.where.not(interesting: nil).average(:interesting)&.round(1)
+  end
+
+  def average_credits_to_difficulty_ratio
+    reviews.where.not(credits_to_difficulty_ratio: nil).average(:credits_to_difficulty_ratio)&.round(1)
   end
 
   delegate :available?, to: :course

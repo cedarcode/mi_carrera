@@ -62,22 +62,85 @@ RSpec.describe Subject, type: :model do
     end
   end
 
-  describe '#average_rating' do
-    let(:subject) { create :subject }
+  describe '#recommended_percentage' do
+    let(:subject_record) { create :subject }
 
     context 'when there are no reviews' do
       it 'returns nil' do
-        expect(subject.average_rating).to be_nil
+        expect(subject_record.recommended_percentage).to be_nil
       end
     end
 
-    context 'when there are reviews' do
-      let!(:first_review) { create :review, subject:, rating: 2 }
-      let!(:second_review) { create :review, subject:, rating: 4 }
-      let!(:third_review) { create :review, subject:, rating: 5 }
+    context 'when there are reviews without recommended rating' do
+      let!(:review) { create :review, subject: subject_record }
 
-      it 'returns the average rating' do
-        expect(subject.average_rating).to eq(3.7)
+      it 'returns nil' do
+        expect(subject_record.recommended_percentage).to be_nil
+      end
+    end
+
+    context 'when there are reviews with recommended rating' do
+      let!(:first_review) { create :review, subject: subject_record, recommended: true }
+      let!(:second_review) { create :review, subject: subject_record, recommended: false }
+
+      it 'returns the recommended percentage' do
+        expect(subject_record.recommended_percentage).to eq(50.0)
+      end
+    end
+  end
+
+  describe '#average_interesting' do
+    let(:subject_record) { create :subject }
+
+    context 'when there are no reviews' do
+      it 'returns nil' do
+        expect(subject_record.average_interesting).to be_nil
+      end
+    end
+
+    context 'when there are reviews without interesting rating' do
+      let!(:review) { create :review, subject: subject_record }
+
+      it 'returns nil' do
+        expect(subject_record.average_interesting).to be_nil
+      end
+    end
+
+    context 'when there are reviews with interesting rating' do
+      let!(:first_review) { create :review, subject: subject_record, interesting: 2 }
+      let!(:second_review) { create :review, subject: subject_record, interesting: 4 }
+      let!(:third_review) { create :review, subject: subject_record, interesting: 5 }
+
+      it 'returns the average interesting rating' do
+        expect(subject_record.average_interesting).to eq(3.7)
+      end
+    end
+  end
+
+  describe '#average_credits_to_difficulty_ratio' do
+    let(:subject_record) { create :subject }
+
+    context 'when there are no reviews' do
+      it 'returns nil' do
+        expect(subject_record.average_credits_to_difficulty_ratio).to be_nil
+      end
+    end
+
+    context 'when there are reviews without credits_to_difficulty_ratio rating' do
+      let!(:review) { create :review, subject: subject_record }
+
+      it 'returns nil' do
+        expect(subject_record.average_credits_to_difficulty_ratio).to be_nil
+      end
+    end
+
+    context 'when there are reviews with credits_to_difficulty_ratio rating' do
+      let!(:first_review) { create :review, subject: subject_record, credits_to_difficulty_ratio: 2 }
+      let!(:second_review) { create :review, subject: subject_record, credits_to_difficulty_ratio: 4 }
+      let!(:third_review) { create :review, subject: subject_record, credits_to_difficulty_ratio: 5 }
+
+      it 'returns the average credits_to_difficulty_ratio rating' do
+        expect(subject_record.average_credits_to_difficulty_ratio).to eq(3.7)
       end
     end
   end
