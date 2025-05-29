@@ -7,7 +7,7 @@ class ButtonComponent < ViewComponent::Base
   end
 
   def call
-    klass = 'bg-primary text-white font-bold shadow-sm cursor-pointer p-2 rounded-md hover:shadow-md'
+    klass = 'bg-primary text-white font-bold shadow-sm cursor-pointer p-2 rounded-md'
 
     @form.button @label, class: klass
   end
