@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def nav_icon(name, path)
     link_to(name, path, class: "material-icons mdc-top-app-bar__navigation-icon mdc-icon-button")
   end
