@@ -1,15 +1,17 @@
-<div class="mdc-deprecated-list">
-  <% subjects.each do |subject| %>
-    <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item" do %>
-      <span class="mdc-deprecated-list-item__ripple"></span>
-      <span class="mdc-deprecated-list-item__text">
-        <%= display_name(subject) %>
-      </span>
-      <% if current_student.approved?(subject) %>
-        <span class="mdc-deprecated-list-item__meta material-icons">done</span>
-      <% elsif !current_student.available?(subject) %>
-        <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
-      <% end %>
+<% subjects.each do |subject| %>
+  <li class="flex gap-x-4 p-3 justify-between items-center hover:bg-gray-100">
+    <p class="text-sm/6 text-gray-900 cursor-pointer">
+      <%= link_to display_name(subject), subject_path(subject), class: "grow w-full" %>
+    </p>
+    <% if current_student.approved?(subject) %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 inline-block" fill="none" viewBox="0 0 20 20" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l4 4 6-8" />
+      </svg>
+    <% elsif !current_student.available?(subject) %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 inline-block" fill="none" viewBox="0 0 20 20" stroke="currentColor" stroke-width="2">
+        <rect x="5" y="9" width="10" height="7" rx="2" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M7 9V7a3 3 0 1 1 6 0v2" />
+      </svg>
     <% end %>
-  <% end %>
-</div>
+  </li>
+<% end %>
