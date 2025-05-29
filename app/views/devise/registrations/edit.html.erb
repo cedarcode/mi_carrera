@@ -19,6 +19,6 @@
 
     <%= render PasswordFieldComponent.new(form: f, attribute: :current_password, label: "Contraseña actual", input_options: { required: true, autocomplete: "current-password" }, hint: "Necesitamos tu contraseña actual para validar los cambios") %>
 
-    <%= f.button "Guardar", class: "mdc-button mdc-button--raised self-center" %>
+    <%= render ButtonComponent.new(form: f, label: "Guardar") %>
   <% end %>
 </div>

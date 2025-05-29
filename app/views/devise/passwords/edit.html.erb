@@ -8,6 +8,6 @@
 
     <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña", input_options: { required: true, autocomplete: "new-password", autofocus: true }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
 
-    <%= f.button "Restablecer contraseña", class: "mdc-button mdc-button--raised self-center" %>
+    <%= render ButtonComponent.new(form: f, label: "Restablecer contraseña") %>
   <% end %>
 </div>

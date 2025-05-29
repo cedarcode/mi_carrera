@@ -11,7 +11,7 @@
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu contraseña", input_options: { required: true, autocomplete: "new-password" }) %>
 
-      <%= f.button "Registrarte", class: "mdc-button mdc-button--raised self-center" %>
+      <%= render ButtonComponent.new(form: f, label: "Registrarte") %>
     <% end %>
 
     <div class="relative flex items-center">
