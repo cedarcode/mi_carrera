@@ -32,6 +32,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :subject_by_category, only: :index, controller: "subjects_by_category"
+
     resource :user_onboardings, only: :update
 
     resources :current_optional_subjects, path: "materias_inco_semestre_actual", only: :index

@@ -3,20 +3,14 @@
 <% end %>
 
 <div class="mdc-deprecated-list-group subjects-list">
-  <% if @subjects.any? %>
-    <% @subjects.group_by(&:category).each do |category, subjects| %>
-      <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
-        <%= formatted_category(category) %>
-      </h3>
+   <% Subject::CATEGORIES.each do |category| %>
+    <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+      <%= formatted_category(category.to_s) %>
+    </h3>
+    <hr class="mdc-deprecated-list-divider">
 
-      <%= render partial: "subjects/subjects_list", locals: { subjects: subjects } %>
-
-      <hr class="mdc-deprecated-list-divider">
+    <%= turbo_frame_tag category, src: subject_by_category_index_path(category:, search: @search), loading: :lazy, target: :_top do %>
+      <%= render "shared/spinner" %>
     <% end %>
-  <% else %>
-    <div class="search-no-results">
-      <i class="material-icons">search</i>
-      No hay resultados
-    </div>
   <% end %>
 </div>
