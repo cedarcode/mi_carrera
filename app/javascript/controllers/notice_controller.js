@@ -12,7 +12,7 @@ export default class extends Controller {
       toast.classList.remove("mr-4")
 
       toast.addEventListener("transitionend", () => {
-        toast.classList.add("hidden")
+        toast.remove()
       }, { once: true })
     }, 5000)
   }
