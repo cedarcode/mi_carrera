@@ -15,10 +15,6 @@ module CheckboxesHelper
     assert_selector(:field, dom_id(approvable), **opts.merge(visible: false))
   end
 
-  def click_user_menu
-    find("#user-menu[data-controller-connected='true']").click
-  end
-
   def click_search_trigger
     find("#searchIcon").click
   end
