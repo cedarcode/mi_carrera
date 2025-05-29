@@ -63,7 +63,12 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.before(:each, type: :system) do
-    driven_by :selenium, using: :headless_chrome
+    driven_by :selenium, using: :headless_chrome do |options|
+      # Normally, Chrome will treat a 'foreground' tab instead as backgrounded if
+      # the surrounding window is occluded (aka visually covered) by another window.
+      # This flag disables that.
+      options.add_argument 'disable-backgrounding-occluded-windows'
+    end
   end
 
   [:system, :request].each do |type|
