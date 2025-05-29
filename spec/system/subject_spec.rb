@@ -1,8 +1,8 @@
 require 'rails_helper'
-require 'support/checkboxes_spec_helper'
+require 'support/checkboxes_helper'
 
 RSpec.describe "Subject", type: :system do
-  include CheckboxesSpecHelper
+  include CheckboxesHelper
 
   let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030') }
   let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10, code: '1031') }
