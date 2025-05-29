@@ -22,9 +22,9 @@
 
       <%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
     </div>
+  <hr class="border-gray-200 mx-4">
   <% end %>
   
-  <hr class="border-gray-200 mx-4">
 
   <%= render "subjects/new_planned_subject", subjects: @not_planned_subjects %>
 </div>
