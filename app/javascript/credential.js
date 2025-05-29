@@ -42,18 +42,6 @@ function create(callbackUrl, credentialOptions) {
       alert(error.message || error);
     }
   });
-
-  console.log("Creating new public key credential...");
 }
 
-function get(credentialOptions) {
-  WebAuthnJSON.get({ "publicKey": credentialOptions }).then(function(credential) {
-    callback("/session/callback", credential);
-  }).catch(error => {
-      alert(error);
-  });
-
-  console.log("Getting public key credential...");
-}
-
-export { create, get }
+export { create }
