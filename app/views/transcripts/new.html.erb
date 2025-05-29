@@ -11,7 +11,7 @@
   </div>
   <%= form_with url: transcripts_path, method: :post, data: { turbo: true }, html: { multipart: true }, class: 'flex flex-col' do |form| %>
     <%= form.label :file, "Subí la escolaridad", class: "block text-sm/6 font-medium text-gray-900 mb-1" %>
-    <%= form.file_field :file, accept: "application/pdf", required: true, class: "relative flex w-full border
+    <%= form.file_field :file, accept: "application/pdf", required: true, class: "relative flex w-full border mb-4
       overflow-hidden border-gray-200
       shadow-2xs rounded-lg text-sm
       focus:outline-hidden focus:z-10
@@ -19,7 +19,7 @@
       file:bg-gray-100 file:text-nowrap
       focus:border-primary" %>
 
-    <%= form.button "Subir", class: "mdc-button mdc-button--raised self-center mt-6" %>
+    <%= render ButtonComponent.new(form: form, label: "Subir") %>
   <% end %>
   <p class="text-gray-500 text-xs mt-3">
   La escolaridad no incluye códigos de materias, por lo que en caso de multiples candidatos con el mismo nombre, se marca la materia más reciente y actualmente activa

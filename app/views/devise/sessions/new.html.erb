@@ -9,7 +9,7 @@
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true, autocomplete: "current-password" }) %>
 
-      <%= f.button "Ingresar", class: "mdc-button mdc-button--raised self-center" %>
+      <%= render ButtonComponent.new(form: f, label: "Ingresar") %>
     <% end %>
 
     <div class="relative flex items-center">
