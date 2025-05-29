@@ -59,6 +59,6 @@ module PlannedSubjectsTestHelper
   private
 
   def within_subject_row(subject_name, &block)
-    within(".flex.items-center", text: subject_name, &block)
+    within("li, div.flex.items-center", text: subject_name, &block)
   end
 end

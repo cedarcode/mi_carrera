@@ -7,9 +7,9 @@
         </h3>
         <%= render partial: "credits_counter", locals: { planned_subjects: planned_subjects } %>
       </div>
-      <div class="space-y-1">
+      <ul class="space-y-1">
         <% planned_subjects.each do |subject| %>
-          <div class="flex items-center gap-4 px-4 py-2 hover:bg-gray-100 transition-colors">
+          <li class="flex items-center gap-4 px-4 py-2 hover:bg-gray-100 transition-colors">
             <%= link_to subject_path(subject), class: "flex-1 min-w-0 text-gray-700 hover:text-indigo-600 transition-colors" do %>
               <span class="truncate">
                 <%= display_name(subject) %>
@@ -34,9 +34,9 @@
                   <% end %>
               <% end %>
             </div>
-          </div>
+          </li>
         <% end %>
-      </div>
+      </ul>
     </div>
   <% end %>
 </div>
