@@ -1,9 +1,9 @@
 require 'rails_helper'
-require 'support/form_fields_helpers'
+require 'support/form_field_helper'
 require 'support/password_helper'
 
 RSpec.describe 'User', type: :system do
-  include FormFieldHelpers
+  include FormFieldHelper
   include PasswordHelper
 
   it 'can sign up' do
