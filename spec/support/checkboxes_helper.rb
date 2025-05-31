@@ -1,7 +1,5 @@
-require "test_helper"
-
-class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  driven_by :selenium, using: (ENV["TEST_BROWSER"] || :headless_chrome).to_sym, screen_size: [1200, 1200]
+module CheckboxesHelper
+  include ActionView::RecordIdentifier
 
   def check_approvable(approvable)
     check dom_id(approvable), visible: false
@@ -15,13 +13,5 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
   def assert_approvable_checkbox(approvable, **opts)
     assert_selector(:field, dom_id(approvable), **opts.merge(visible: false))
-  end
-
-  def click_user_menu
-    find("#user-menu[data-controller-connected='true']").click
-  end
-
-  def click_search_trigger
-    find("#searchIcon").click
   end
 end

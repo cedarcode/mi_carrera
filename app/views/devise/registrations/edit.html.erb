@@ -11,6 +11,8 @@
       </div>
     <% end %>
 
+    <%= render 'shared/alert' if flash[:alert] %>
+
     <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true, autocomplete: "email" }) %>
 
     <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña", input_options: { autocomplete: "new-password" }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
@@ -19,6 +21,6 @@
 
     <%= render PasswordFieldComponent.new(form: f, attribute: :current_password, label: "Contraseña actual", input_options: { required: true, autocomplete: "current-password" }, hint: "Necesitamos tu contraseña actual para validar los cambios") %>
 
-    <%= f.button "Guardar", class: "mdc-button mdc-button--raised self-center" %>
+    <%= render ButtonComponent.new(form: f, label: "Guardar") %>
   <% end %>
 </div>

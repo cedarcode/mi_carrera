@@ -5,13 +5,15 @@
 
   <div class="w-full max-w-md space-y-6">
     <%= form_with(model: resource, url: registration_path(resource_name), local: true, class: "flex flex-col space-y-6") do |f| %>
+      <%= render 'shared/alert' if flash[:alert] %>
+
       <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true, autocomplete: "email" }) %>
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true, autocomplete: "new-password" }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
 
       <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu contraseña", input_options: { required: true, autocomplete: "new-password" }) %>
 
-      <%= f.button "Registrarte", class: "mdc-button mdc-button--raised self-center" %>
+      <%= render ButtonComponent.new(form: f, label: "Registrarte") %>
     <% end %>
 
     <div class="relative flex items-center">

@@ -1,8 +1,8 @@
 require 'rails_helper'
-require 'support/planned_subjects_test_helper'
+require 'support/planned_subjects_helper'
 
 RSpec.describe "PlannedSubjects", type: :system do
-  include PlannedSubjectsTestHelper
+  include PlannedSubjectsHelper
 
   it "can add and remove subjects to planner" do
     gal1 = create :subject, :with_exam, name: "GAL 1", credits: 9, code: "1030"
