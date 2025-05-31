@@ -96,26 +96,8 @@ body {
   flex: 1;
 }
 
-.new-planned-subjects {
-  align-items: center;
-  padding: 24px 16px;
-  @media (max-width: 500px) {
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-  }
-}
-
 .menu-user-info {
   padding: 0 16px;
-}
-
-.subject-group-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 40px;
 }
 
 .d-flex {
