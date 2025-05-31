@@ -1,40 +1,80 @@
 <div class="space-y-4">
-  <% @planned_subjects.group_by(&:semester).each do |semester, planned_subjects| %>
-    <div class="space-y-1">
+  <% (1..10).each do |semester| %>
+    <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
+    <div class="bg-white rounded-lg border border-gray-100 py-4 shadow-sm">
       <div class="flex items-center justify-between h-10">
         <h3 class="text-sm font-bold ml-4">
           <%= semester_display_name(semester) %>
         </h3>
         <%= render partial: "credits_counter", locals: { planned_subjects: planned_subjects } %>
       </div>
-      <ul class="space-y-1">
-        <% planned_subjects.each do |subject| %>
-          <li class="flex items-center gap-4 px-4 py-2 hover:bg-gray-100 transition-colors">
-            <%= link_to subject_path(subject), class: "flex-1 text-sm/6 text-gray-900 transition-colors" do %>
-              <%= display_name(subject) %>
-            <% end %>
-            
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <% if current_student.approved?(subject) %>
-                <%= image_tag "check.svg", class: "w-5 h-5" %>
-              <% elsif !current_student.available?(subject) %>
-                <%= image_tag "lock.svg", class: "w-5 h-5" %>
+      
+      <% if planned_subjects.any? %>
+        <ul class="space-y-1 mb-4">
+          <% planned_subjects.each do |subject| %>
+            <li class="flex items-center gap-4 px-4 py-2 hover:bg-gray-100 transition-colors">
+              <%= link_to subject_path(subject), class: "flex-1 text-sm/6 text-gray-900 transition-colors" do %>
+                <%= display_name(subject) %>
               <% end %>
               
-              <%= form_with(
-                  url: subject_plan_path(subject_id: subject.id),
-                  method: :delete,
-                  data: { controller: "autosave-check" },
-                  class: 'inline-flex',
-                ) do |form| %>
-                  <%= form.button type: :submit, class: "cursor-pointer", data: { action: "click->autosave-check#update" } do %>
-                    <%= image_tag "remove_circle.svg", class: "w-5 h-5" %>
-                  <% end %>
-              <% end %>
+              <div class="flex items-center gap-2">
+                <% if current_student.approved?(subject) %>
+                  <%= image_tag "check.svg", class: "w-5 h-5" %>
+                <% elsif !current_student.available?(subject) %>
+                  <%= image_tag "lock.svg", class: "w-5 h-5" %>
+                <% end %>
+                
+                <%= form_with(
+                    url: subject_plan_path(subject_id: subject.id),
+                    method: :delete,
+                    data: { controller: "autosave-check" },
+                    class: 'inline-flex',
+                  ) do |form| %>
+                    <%= form.button type: :submit, class: "cursor-pointer", data: { action: "click->autosave-check#update" } do %>
+                      <%= image_tag "remove_circle.svg", class: "w-5 h-5" %>
+                    <% end %>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <div class="text-sm/6 text-gray-900 px-4 py-3 mb-4 italic">
+          No hay materias planificadas para este semestre
+        </div>
+      <% end %>
+      
+      <div class="border-t border-gray-100 pt-3">
+        <div class="flex justify-between items-center px-4">
+          <span class="whitespace-nowrap text-sm/6 text-gray-900">
+            Planificar:
+          </span>
+          <%= form_with(
+            model: SubjectPlan.new,
+            url: subject_plans_path,
+            method: :post,
+            data: { controller: "autosave-check" },
+            class: 'flex items-center gap-3',
+            local: false
+          ) do |form| %>
+            <div class="w-24">
+              <%= form.select(
+                :subject_id,
+                @not_planned_subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
+                { prompt: 'Materia' },
+                {
+                  class: 'w-full h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
+                  data: { action: "click->autosave-check#stopPropagation" }
+                }
+              ) %>
             </div>
-          </li>
-        <% end %>
-      </ul>
+            <%= form.hidden_field :semester, value: semester %>
+            <%= form.button type: :submit, class: "cursor-pointer", data: { action: "click->autosave-check#update" } do %>
+              <%= image_tag "add_circle.svg", class: "w-5 h-5" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

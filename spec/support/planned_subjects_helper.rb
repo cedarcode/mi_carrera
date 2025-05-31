@@ -45,15 +45,19 @@ module PlannedSubjectsHelper
   end
 
   def within_planned_subjects(&block)
-    within(:xpath, "//div[h3[contains(text(), 'Materias planeadas')]]/following-sibling::*[1]", &block)
+    within(:xpath, "//div[h3[contains(text(), 'Materias planificadas')]]/following-sibling::*[1]", &block)
   end
 
   def within_not_planned_approved_subjects(&block)
-    within(:xpath, "//h3[contains(text(), 'Materias aprobadas sin semestre asignado')]/following-sibling::*[1]", &block)
+    within(:xpath, "//h3[contains(text(), 'Materias aprobadas sin planificar')]/following-sibling::*[1]", &block)
   end
 
-  def within_not_planned_subjects(&block)
-    within(:xpath, "//div[span[contains(text(), 'Planificar materia')]]", &block)
+  def within_semester_section(semester, &block)
+    within(:xpath, "//h3[contains(text(), '#{semester}')]/../..", &block)
+  end
+
+  def within_subject_planning_form(&block)
+    within(:xpath, ".//form[.//select[@name='subject_plan[subject_id]']]", &block)
   end
 
   private
