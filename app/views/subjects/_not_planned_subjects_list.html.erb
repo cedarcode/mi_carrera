@@ -1,10 +1,8 @@
 <ul class="space-y-1">
   <% subjects.each do |subject| %>
     <li class="flex items-center gap-4 px-4 py-2 hover:bg-gray-100 transition-colors">
-      <%= link_to subject_path(subject), class: "flex-1 min-w-0 text-gray-700 hover:text-indigo-600 transition-colors" do %>
-        <span class="truncate">
-          <%= display_name(subject) %>
-        </span>
+      <%= link_to subject_path(subject), class: "flex-1 text-gray-700 hover:text-indigo-600 transition-colors" do %>
+        <%= display_name(subject) %>
       <% end %>
       
       <%= form_with(
@@ -15,7 +13,7 @@
         class: 'flex items-center gap-2',
         local: false
       ) do |form| %>
-        <div class="w-32 mr-1">
+        <div class="w-20 mr-1">
           <%= 
             form.select(
               :semester, 

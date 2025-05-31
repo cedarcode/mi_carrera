@@ -10,13 +10,11 @@
       <ul class="space-y-1">
         <% planned_subjects.each do |subject| %>
           <li class="flex items-center gap-4 px-4 py-2 hover:bg-gray-100 transition-colors">
-            <%= link_to subject_path(subject), class: "flex-1 min-w-0 text-gray-700 hover:text-indigo-600 transition-colors" do %>
-              <span class="truncate">
-                <%= display_name(subject) %>
-              </span>
+            <%= link_to subject_path(subject), class: "flex-1 text-gray-700 hover:text-indigo-600 transition-colors" do %>
+              <%= display_name(subject) %>
             <% end %>
             
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 flex-shrink-0">
               <% if current_student.approved?(subject) %>
                 <%= image_tag "check.svg", class: "w-5 h-5" %>
               <% elsif !current_student.available?(subject) %>
