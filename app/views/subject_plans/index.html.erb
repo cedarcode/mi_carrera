@@ -2,29 +2,19 @@
   <%= render 'shared/credits_counter' %>
 <% end %>
 
-<div class="space-y-2">
-  <div class="space-y-1">
+<div class="space-y-2 mb-4">
+  <div class="space-y-1 mb-4 mt-4">
+    <% if @not_planned_approved_subjects.any? %>
+      <%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
+    <% end %>
+
     <div class="flex items-center justify-between h-10">
       <h3 class="text-sm font-bold ml-4">
-        Materias planeadas
+        Materias planificadas
       </h3>
       <%= render partial: "credits_counter", locals: { planned_subjects: @planned_subjects } %>
     </div>
 
     <%= render partial: "subjects/planned_subjects_list", locals: { planned_subjects: @planned_subjects } %>
   </div>
-
-  <hr class="border-gray-200 mx-4">
-
-  <% if @not_planned_approved_subjects.any? %> 
-    <div class="space-y-1">
-      <h3 class="text-sm font-bold ml-4 h-10 flex items-center">Materias aprobadas sin semestre asignado</h3>
-
-      <%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
-    </div>
-  <hr class="border-gray-200 mx-4">
-  <% end %>
-  
-
-  <%= render "subjects/new_planned_subject", subjects: @not_planned_subjects %>
 </div>
