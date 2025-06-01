@@ -53,7 +53,7 @@ module PlannedSubjectsHelper
   end
 
   def within_not_planned_subjects(&block)
-    within("#new-planned-subject", &block)
+    within(:xpath, "//div[span[contains(text(), 'Planificar materia')]]", &block)
   end
 
   private
