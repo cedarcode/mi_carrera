@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-3 items-start py-6 px-4 sm:flex-row sm:gap-4 sm:items-center">
-  <span class="text-gray-700 whitespace-nowrap">
+  <span class="text-sm/6 text-gray-900 font-bold whitespace-nowrap">
     Planificar materia:
   </span>
   <%= form_with(
@@ -27,12 +27,12 @@
         (1..10).map { |i| ["Sem. #{i}", i] },
         {},
         {
-          class: 'w-full rounded-md text-sm shadow-sm border border-gray-300 truncate cursor-pointer',
+          class: 'w-full rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
           data: { action: "click->autosave-check#stopPropagation" }
         }
       ) %>
     </div>
-    <%= form.button type: :submit, class: "text-gray-500 cursor-pointer", data: { action: "click->autosave-check#update" } do %>
+    <%= form.button type: :submit, class: "cursor-pointer", data: { action: "click->autosave-check#update" } do %>
       <%= image_tag "add_circle.svg" %>
     <% end %>
   <% end %>

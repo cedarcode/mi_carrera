@@ -10,7 +10,7 @@
       <ul class="space-y-1">
         <% planned_subjects.each do |subject| %>
           <li class="flex items-center gap-4 px-4 py-2 hover:bg-gray-100 transition-colors">
-            <%= link_to subject_path(subject), class: "flex-1 text-gray-700 transition-colors" do %>
+            <%= link_to subject_path(subject), class: "flex-1 text-sm/6 text-gray-900 transition-colors" do %>
               <%= display_name(subject) %>
             <% end %>
             
@@ -27,7 +27,7 @@
                   data: { controller: "autosave-check" },
                   class: 'inline-flex',
                 ) do |form| %>
-                  <%= form.button type: :submit, class: "text-gray-500 hover:text-red-600 cursor-pointer transition-colors", data: { action: "click->autosave-check#update" } do %>
+                  <%= form.button type: :submit, class: "cursor-pointer", data: { action: "click->autosave-check#update" } do %>
                     <%= image_tag "remove_circle.svg", class: "w-5 h-5" %>
                   <% end %>
               <% end %>
