@@ -99,8 +99,9 @@
         <%= yield %>
       </div>
       <footer class="flex justify-center items-center py-3">
-        <%= yield :credits if content_for?(:credits) %>
-        <% unless content_for?(:credits) %>
+        <% if content_for?(:credits) %>
+          <%= yield :credits %>
+        <% else %>
           <span class="text-gray-600">
             Built by&nbsp;
           </span>
