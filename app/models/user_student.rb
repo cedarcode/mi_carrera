@@ -12,7 +12,7 @@ class UserStudent < BaseStudent
     user.update!(welcome_banner_viewed: true)
   end
 
-  delegate :degree, to: :user
+  delegate :degree_subjects, :degree_subject_groups, to: :user
 
   private
 

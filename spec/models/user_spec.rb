@@ -6,6 +6,8 @@ RSpec.describe User, type: :model do
     it { should have_many(:subject_plans).dependent(:destroy) }
     it { should have_many(:planned_subjects).through(:subject_plans).source(:subject) }
     it { should belong_to(:degree).optional }
+    it { should have_many(:degree_subjects).through(:degree).source(:subjects) }
+    it { should have_many(:degree_subject_groups).through(:degree).source(:subject_groups) }
   end
 
   describe '.from_omniauth' do
@@ -47,6 +49,48 @@ RSpec.describe User, type: :model do
         expect(existing_user.email).to eq(auth.info.email)
         expect(existing_user.provider).to eq(auth.provider)
         expect(existing_user.uid).to eq(auth.uid)
+      end
+    end
+  end
+
+  describe '#degree_subjects' do
+    let(:user) { create(:user, degree:) }
+
+    context 'when user has a degree' do
+      let(:degree) { create(:degree) }
+      let(:subject1) { create(:subject, degree:) }
+      let(:subject2) { create(:subject) }
+
+      it 'returns the associated degree_subjects' do
+        expect(user.degree_subjects).to eq([subject1])
+      end
+    end
+
+    context 'when user has no degree' do
+      let(:degree) { nil }
+      it 'returns the Subject model' do
+        expect(user.degree_subjects).to eq(Subject)
+      end
+    end
+  end
+
+  describe '#degree_subject_groups' do
+    let(:user) { create(:user, degree:) }
+
+    context 'when user has a degree' do
+      let(:degree) { create(:degree) }
+      let(:subject_group1) { create(:subject_group, degree:) }
+      let(:subject_group2) { create(:subject_group) }
+
+      it 'returns the associated degree_subject_groups' do
+        expect(user.degree_subject_groups).to eq([subject_group1])
+      end
+    end
+
+    context 'when user has no degree' do
+      let(:degree) { nil }
+      it 'returns the SubjectGroup model' do
+        expect(user.degree_subject_groups).to eq(SubjectGroup)
       end
     end
   end
