@@ -1,0 +1,5 @@
+This project has been created by Cedarcode to be of benefit to the students of our local state universtity.
+It has been open sourced by Cedarcode for educational use only, and for anybody in the local community to contribute
+back and come close to learn from this project.
+
+Commercial direct or indirect use is not permitted without Cedarcode's prior authorization.
