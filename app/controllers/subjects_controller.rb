@@ -17,11 +17,7 @@ class SubjectsController < ApplicationController
   def all
     subjects =
       if params[:search].present?
-        degree_subjects
-          .where("lower(unaccent(name)) LIKE lower(unaccent(?))", "%#{params[:search].strip}%")
-          .or(degree_subjects.where("lower(unaccent(short_name)) LIKE lower(unaccent(?))",
-                                    "%#{params[:search].strip}%"))
-          .or(degree_subjects.where("lower(code) LIKE lower(?)", "%#{params[:search].strip}%"))
+        degree_subjects.search(params[:search])
       else
         degree_subjects
       end.ordered_by_category_and_name
