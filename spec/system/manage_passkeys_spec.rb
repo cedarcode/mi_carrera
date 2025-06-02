@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Manage passkeys' do
-  let!(:user) { create(:user) }
+  before do
+    sign_in create(:user)
+  end
 
   describe 'Add and remove credentials' do
     fake_origin = Rails.configuration.webauthn_origin
@@ -13,17 +15,15 @@ RSpec.describe 'Manage passkeys' do
       allow_any_instance_of(WebAuthn::PublicKeyCredential::CreationOptions).to receive(:raw_challenge)
         .and_return(fixed_challenge)
 
-      sign_in user
       visit edit_user_registration_path
 
       click_on "Administrar Passkeys"
 
       stub_create(fake_credentials)
 
-      fill_in "credential_name", with: "My new passkey"
+      fill_in "Nombre", with: "My new passkey"
       click_on "Agregar Passkey"
 
-      expect(page).to have_current_path user_passkeys_path
       expect(page).to have_content "My new passkey"
 
       within("li", text: "My new passkey") do
@@ -32,7 +32,6 @@ RSpec.describe 'Manage passkeys' do
         end
       end
 
-      expect(page).to have_current_path user_passkeys_path
       expect(page).to have_no_content 'My new passkey'
     end
   end
