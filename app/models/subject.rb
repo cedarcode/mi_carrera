@@ -11,6 +11,11 @@ class Subject < ApplicationRecord
 
   scope :with_exam, -> { includes(:exam, :course).where.not(exam: { id: nil }) }
   scope :without_exam, -> { includes(:exam, :course).where(exam: { id: nil }) }
+  scope :search, ->(term) {
+    where("lower(unaccent(name)) LIKE lower(unaccent(?))", "%#{term.strip}%")
+      .or(where("lower(unaccent(short_name)) LIKE lower(unaccent(?))", "%#{term.strip}%"))
+      .or(where("lower(code) LIKE lower(?)", "%#{term.strip}%"))
+  }
 
   CATEGORIES = %i[
     first_semester
