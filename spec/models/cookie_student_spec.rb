@@ -221,21 +221,21 @@ RSpec.describe CookieStudent, type: :model do
     end
   end
 
-  describe '#degree' do
+  describe '#degree_subjects' do
+    let!(:degree) { create :degree, name: "computacion" }
     let(:student) { build :cookie_student }
 
-    context 'when computacion exits' do
-      let!(:degree) { create :degree, key: "computacion" }
-
-      it 'returns the correct degree' do
-        expect(student.degree).to eq(degree)
-      end
+    it 'delegates #degree_subjects to degree' do
+      expect(student.degree_subjects).to eq(degree.subjects)
     end
+  end
 
-    context 'when computacion does not exist' do
-      it 'returns nil' do
-        expect(student.degree).to eq(nil)
-      end
+  describe '#degree_subject_groups' do
+    let!(:degree) { create :degree, name: "computacion" }
+    let(:student) { build :cookie_student }
+
+    it 'delegates #degree_subject_groups to degree' do
+      expect(student.degree_subject_groups).to eq(degree.subject_groups)
     end
   end
 end

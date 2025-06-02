@@ -215,13 +215,23 @@ RSpec.describe UserStudent, type: :model do
     end
   end
 
-  describe '#degree' do
+  describe '#degree_subjects' do
     let(:degree) { create :degree }
     let(:user) { create :user, degree: }
     let(:student) { described_class.new(user) }
 
-    it 'delegates #degree to user' do
-      expect(student.degree).to eq(user.degree)
+    it 'delegates #degree_subjects to user' do
+      expect(student.degree_subjects).to eq(user.degree_subjects)
+    end
+  end
+
+  describe '#degree_subject_groups' do
+    let(:degree) { create :degree }
+    let(:user) { create :user, degree: }
+    let(:student) { described_class.new(user) }
+
+    it 'delegates #degree_subject_groups to user' do
+      expect(student.degree_subject_groups).to eq(user.degree_subject_groups)
     end
   end
 end

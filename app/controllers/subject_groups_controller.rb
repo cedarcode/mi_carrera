@@ -9,6 +9,6 @@ class SubjectGroupsController < ApplicationController
   private
 
   def degree_subject_groups
-    current_student.degree&.subject_groups || SubjectGroup
+    current_student.degree_subject_groups
   end
 end

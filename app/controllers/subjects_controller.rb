@@ -36,6 +36,6 @@ class SubjectsController < ApplicationController
   end
 
   def degree_subjects
-    current_student.degree&.subjects || Subject
+    current_student.degree_subjects
   end
 end

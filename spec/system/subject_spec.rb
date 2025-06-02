@@ -86,7 +86,7 @@ RSpec.describe "Subject", type: :system do
   end
 
   it "can review subjects" do
-    user = create(:user)
+    user = create(:user, degree:)
 
     visit subject_path(gal1)
 
