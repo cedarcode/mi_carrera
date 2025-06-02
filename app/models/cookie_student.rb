@@ -15,9 +15,7 @@ class CookieStudent < BaseStudent
     }
   end
 
-  def degree
-    Degree.find_by(key: "computacion")
-  end
+  delegate :subjects, :subject_groups, to: :degree, prefix: true
 
   private
 
@@ -28,5 +26,9 @@ class CookieStudent < BaseStudent
       value: approved_approvable_ids.to_json,
       domain: :all
     }
+  end
+
+  def degree
+    Degree.default
   end
 end

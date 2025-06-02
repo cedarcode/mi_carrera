@@ -6,6 +6,8 @@ RSpec.describe User, type: :model do
     it { should have_many(:subject_plans).dependent(:destroy) }
     it { should have_many(:planned_subjects).through(:subject_plans).source(:subject) }
     it { should belong_to(:degree).optional }
+    it { should have_many(:degree_subjects).through(:degree).source(:subjects) }
+    it { should have_many(:degree_subject_groups).through(:degree).source(:subject_groups) }
   end
 
   describe '.from_omniauth' do

@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :subject_plans, dependent: :destroy
   has_many :planned_subjects, through: :subject_plans, source: :subject
   belongs_to :degree, optional: true
+  has_many :degree_subjects, through: :degree, source: :subjects
+  has_many :degree_subject_groups, through: :degree, source: :subject_groups
   has_many :passkeys, dependent: :destroy
 
   after_initialize do
