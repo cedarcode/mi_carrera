@@ -13,19 +13,17 @@
         class: 'flex items-center gap-2',
         local: false
       ) do |form| %>
-        <div class="w-20 mr-1">
-          <%= 
-            form.select(
-              :semester, 
-              options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
-              {}, 
-              {
-                class: 'w-full rounded-md px-1 text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
-                data: { action: "click->autosave-check#stopPropagation" }
-              }
-            )
-          %>
-        </div>
+        <%= 
+          form.select(
+            :semester, 
+            options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
+            {}, 
+            {
+              class: 'mr-1 w-20 rounded-md px-1 text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
+              data: { action: "click->autosave-check#stopPropagation" }
+            }
+          )
+        %>
         <%= form.hidden_field :subject_id, value: subject.id %>
         <%= form.button type: :submit, class: "cursor-pointer", data: { action: "click->autosave-check#update" } do %>
           <%= image_tag "add_circle.svg" %>

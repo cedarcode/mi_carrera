@@ -10,28 +10,24 @@
     class: 'flex items-center gap-4 flex-1',
     local: false
   ) do |form| %>
-    <div class="flex-1 min-w-0">
-      <%= form.select(
-        :subject_id,
-        subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
-        {},
-        {
-          class: 'w-full rounded-md text-sm shadow-sm border border-gray-300 truncate cursor-pointer',
-          data: { action: "click->autosave-check#stopPropagation" }
-        }
-      ) %>
-    </div>
-    <div class="w-20">
-      <%= form.select(
-        :semester,
-        (1..10).map { |i| ["Sem. #{i}", i] },
-        {},
-        {
-          class: 'w-full rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
-          data: { action: "click->autosave-check#stopPropagation" }
-        }
-      ) %>
-    </div>
+    <%= form.select(
+      :subject_id,
+      subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
+      {},
+      {
+        class: 'flex-1 w-full rounded-md text-sm shadow-sm border border-gray-300 truncate cursor-pointer',
+        data: { action: "click->autosave-check#stopPropagation" }
+      }
+    ) %>
+    <%= form.select(
+      :semester,
+      (1..10).map { |i| ["Sem. #{i}", i] },
+      {},
+      {
+        class: 'w-20 rounded-md px-1 text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
+        data: { action: "click->autosave-check#stopPropagation" }
+      }
+    ) %>
     <%= form.button type: :submit, class: "cursor-pointer", data: { action: "click->autosave-check#update" } do %>
       <%= image_tag "add_circle.svg" %>
     <% end %>
