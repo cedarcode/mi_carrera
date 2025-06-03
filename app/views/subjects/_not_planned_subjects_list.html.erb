@@ -19,22 +19,23 @@
             class: 'flex items-center gap-2',
             local: false
           ) do |form| %>
-            <div class="w-24">
-              <%= 
-                form.select(
-                  :semester, 
-                  options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
-                  {}, 
-                  {
-                    class: 'w-full h-6 px-2 rounded-md px-1 text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500',
-                    data: { action: "click->autosave-check#stopPropagation" }
-                  }
-                )
-              %>
-            </div>
+            <%= 
+              form.select(
+                :semester, 
+                options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
+                {}, 
+                {
+                  class: 'w-24 h-6 px-2 rounded-md px-1 text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500',
+                  data: { action: "click->autosave-check#stopPropagation" }
+                }
+              )
+            %>
             <%= form.hidden_field :subject_id, value: subject.id %>
             <%= form.button type: :submit, class: "cursor-pointer", data: { action: "click->autosave-check#update" } do %>
-              <%= image_tag "add_circle.svg", class: "w-5 h-5" %>
+              <svg data-icon="add-circle" width="20" height="20" fill="none" stroke="#9ca3af" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m-4-4h8"></path>
+              </svg>
             <% end %>
           <% end %>
         </li>

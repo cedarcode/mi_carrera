@@ -2,36 +2,36 @@ module PlannedSubjectsHelper
   def assert_approved_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_selector("img[src*='check']")
+      expect(page).to have_selector("svg[data-icon='check']")
     end
   end
 
   def assert_blocked_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_selector("img[src*='lock']")
+      expect(page).to have_selector("svg[data-icon='lock']")
     end
   end
 
   def assert_available_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_no_selector("img[src*='check']")
-      expect(page).to have_no_selector("img[src*='lock']")
+      expect(page).to have_no_selector("svg[data-icon='check']")
+      expect(page).to have_no_selector("svg[data-icon='lock']")
     end
   end
 
   def assert_planned_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_selector("img[src*='remove_circle']")
+      expect(page).to have_selector("svg[data-icon='remove-circle']")
     end
   end
 
   def assert_not_planned_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_selector("img[src*='add_circle']")
+      expect(page).to have_selector("svg[data-icon='add-circle']")
       expect(page).to have_selector("select", text: 'Sem. 1')
     end
   end

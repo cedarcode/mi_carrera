@@ -22,3 +22,7 @@ $ bin/rails s
 ```
 
 Una vez hecho esto podés entrar a http://localhost:3000 y usar la aplicación normalmente.
+
+### Credits
+
+Application performance monitoring sponsored by [AppSignal](https://www.appsignal.com/).
