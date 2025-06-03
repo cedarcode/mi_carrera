@@ -48,8 +48,8 @@ RSpec.describe "PlannedSubjects", type: :system do
       assert_subject_not_in_selector('Taller 1')
     end
 
-    within ".mdc-deprecated-list-item", text: "T1" do
-      find("span", text: "add_circle_outline").click
+    within ".flex.items-center", text: "T1" do
+      find("button[type='submit']").click
     end
 
     within_planned_subjects do
@@ -94,8 +94,8 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     expect(page).to have_text "Créditos planeados: 30"
 
-    within ".mdc-deprecated-list-item", text: "GAL 2" do
-      find("span", text: "remove_circle_outline").click
+    within ".flex.items-center", text: "GAL 2" do
+      find("button[type='submit']").click
     end
 
     within_planned_subjects do
