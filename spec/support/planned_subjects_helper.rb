@@ -49,7 +49,7 @@ module PlannedSubjectsHelper
   end
 
   def within_not_planned_approved_subjects(&block)
-    within(:xpath, "//h3[contains(text(), 'Materias aprobadas sin planificar')]/following-sibling::*[1]", &block)
+    within(:xpath, "//h3[contains(text(), 'Materias aprobadas sin semestre asignado')]/following-sibling::*[1]", &block)
   end
 
   def within_semester_section(semester, &block)

@@ -36,18 +36,7 @@ RSpec.describe "PlannedSubjects", type: :system do
   it "can add and remove subjects to planner" do
     visit subject_plans_path
 
-    expect_initial_page_state
-
-    add_approved_subject_to_first_semester
-    add_available_subject_to_first_semester
-    add_blocked_subject_to_second_semester
-    remove_subject_from_second_semester
-  end
-
-  private
-
-  def expect_initial_page_state
-    expect(page).to have_text "Materias aprobadas sin planificar"
+    expect(page).to have_text "Materias aprobadas sin semestre asignado"
     expect(page).to have_text "Materias planificadas"
     expect(page).to have_text "Créditos planeados: 0"
 
@@ -62,9 +51,7 @@ RSpec.describe "PlannedSubjects", type: :system do
         end
       end
     end
-  end
 
-  def add_approved_subject_to_first_semester
     within_not_planned_approved_subjects do
       assert_subject_not_in_selector("GAL 1")
       assert_subject_not_in_selector("GAL 2")
@@ -90,9 +77,7 @@ RSpec.describe "PlannedSubjects", type: :system do
         assert_subject_not_in_selector "T1"
       end
     end
-  end
 
-  def add_available_subject_to_first_semester
     within_planned_subjects do
       within_semester_section("Primer semestre") do
         within_subject_planning_form do
@@ -112,9 +97,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     end
 
     expect(page).to have_text "Créditos planeados: 20"
-  end
 
-  def add_blocked_subject_to_second_semester
     within_planned_subjects do
       within_semester_section("Segundo semestre") do
         within_subject_planning_form do
@@ -134,9 +117,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     end
 
     expect(page).to have_text "Créditos planeados: 30"
-  end
 
-  def remove_subject_from_second_semester
     within_planned_subjects do
       within_semester_section("Segundo semestre") do
         within("li", text: "GAL 2") do
