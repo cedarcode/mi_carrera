@@ -49,8 +49,8 @@ RSpec.describe "PlannedSubjects", type: :system do
     end
 
     within_not_planned_approved_subjects do
-      assert_subject_not_in_selector("GAL 1")
-      assert_subject_not_in_selector("GAL 2")
+      expect(page).to have_no_text "GAL 1"
+      expect(page).to have_no_text "GAL 2"
       assert_not_planned_subject "T1"
 
       within("li", text: "T1") do
