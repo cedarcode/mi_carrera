@@ -41,15 +41,11 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Créditos planeados: 0"
 
     within_planned_subjects do
-      semesters.each do |semester|
-        within_semester_section(semester) do
-          expect(page).to have_text "No hay materias planificadas para este semestre"
-          expect(page).to have_no_selector("li", text: "GAL 1")
-          expect(page).to have_no_selector("li", text: "GAL 2")
-          expect(page).to have_no_selector("li", text: "T1")
-          expect(page).to have_text "Créditos planeados: 0"
-        end
-      end
+      expect(page).to have_text "No hay materias planificadas para este semestre"
+      expect(page).to have_no_selector("li", text: "GAL 1")
+      expect(page).to have_no_selector("li", text: "GAL 2")
+      expect(page).to have_no_selector("li", text: "T1")
+      expect(page).to have_text "Créditos planeados: 0"
     end
 
     within_not_planned_approved_subjects do
