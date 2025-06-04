@@ -4,19 +4,12 @@ require 'support/planned_subjects_helper'
 RSpec.describe "PlannedSubjects", type: :system do
   include PlannedSubjectsHelper
 
-  let(:semesters) do
-    [
-      "Primer semestre", "Segundo semestre", "Tercer semestre", "Cuarto semestre",
-      "Quinto semestre", "Sexto semestre", "Séptimo semestre", "Octavo semestre",
-      "Noveno semestre", "Décimo semestre"
-    ]
-  end
-  let(:gal1) { create(:subject, :with_exam, name: "GAL 1", credits: 9, code: "1030") }
-  let(:gal2) { create(:subject, :with_exam, name: "GAL 2", credits: 10, code: "1031") }
-  let(:taller) { create(:subject, name: "Taller 1", short_name: 'T1', credits: 11) }
-  let(:user) { create(:user, approvals: [taller.course.id]) }
-
   before do
+    gal1 = create(:subject, :with_exam, name: "GAL 1", credits: 9, code: "1030")
+    gal2 = create(:subject, :with_exam, name: "GAL 2", credits: 10, code: "1031")
+    taller = create(:subject, name: "Taller 1", short_name: 'T1', credits: 11)
+    user = create(:user, approvals: [taller.course.id])
+
     create(:subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course)
 
     create(:and_prerequisite, approvable: gal2.course, operands_prerequisites: [
