@@ -10,7 +10,7 @@
       </div>
       
       <% if planned_subjects.any? %>
-        <ul class="space-y-1 mb-4">
+        <ul class="space-y-1">
           <% planned_subjects.each do |subject| %>
             <li class="flex items-center gap-4 px-4 py-2 hover:bg-gray-100 transition-colors">
               <%= link_to subject_path(subject), class: "flex-1 text-sm/6 text-gray-900 transition-colors" do %>
@@ -47,7 +47,7 @@
           <% end %>
         </ul>
       <% else %>
-        <div class="text-sm/6 text-gray-900 px-4 py-3 mb-4 italic">
+        <div class="text-sm/6 text-gray-900 px-4 py-3 italic">
           No hay materias planificadas para este semestre
         </div>
       <% end %>
