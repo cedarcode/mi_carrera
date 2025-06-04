@@ -1,7 +1,7 @@
 <div class="space-y-4">
   <% (1..10).each do |semester| %>
     <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
-    <div class="bg-white rounded-lg border border-gray-100 pb-2 shadow-sm">
+    <div class="bg-white rounded-lg border border-gray-100 shadow-sm">
       <div class="flex items-center justify-between h-10 bg-gray-50">
         <h3 class="text-sm font-bold ml-4">
           <%= semester_display_name(semester) %>
@@ -52,7 +52,7 @@
         </div>
       <% end %>
       
-      <div class="border-t border-gray-100 pt-3">
+      <div class="border-t border-gray-100 py-2">
         <div class="flex justify-between items-center px-4">
           <span class="whitespace-nowrap text-sm/6 text-gray-900">
             Planificar:
