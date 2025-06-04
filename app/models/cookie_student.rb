@@ -29,6 +29,6 @@ class CookieStudent < BaseStudent
   end
 
   def degree
-    Degree.find_by(key: "computacion")
+    Degree.default
   end
 end
