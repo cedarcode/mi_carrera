@@ -68,8 +68,8 @@ RSpec.describe User, type: :model do
 
     context 'when user has no degree' do
       let(:degree) { nil }
-      it 'returns the Subject model' do
-        expect(user.degree_subjects).to eq(Subject)
+      it 'returns all subjects' do
+        expect(user.degree_subjects).to eq(Subject.all)
       end
     end
   end
@@ -89,8 +89,8 @@ RSpec.describe User, type: :model do
 
     context 'when user has no degree' do
       let(:degree) { nil }
-      it 'returns the SubjectGroup model' do
-        expect(user.degree_subject_groups).to eq(SubjectGroup)
+      it 'returns all subject_groups' do
+        expect(user.degree_subject_groups).to eq(SubjectGroup.all)
       end
     end
   end

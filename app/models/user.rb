@@ -42,10 +42,10 @@ class User < ApplicationRecord
   end
 
   def degree_subjects
-    degree.present? ? super : Subject
+    degree.present? ? super : Subject.all
   end
 
   def degree_subject_groups
-    degree.present? ? super : SubjectGroup
+    degree.present? ? super : SubjectGroup.all
   end
 end
