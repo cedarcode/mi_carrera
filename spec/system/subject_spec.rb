@@ -83,6 +83,71 @@ RSpec.describe "Subject", type: :system do
     expect(page).to have_text('GAL 1')
     expect(page).to have_text('GAL 2')
     expect(page).to have_text('T1')
+
+    user = create(:user, degree:)
+
+    visit new_user_session_path
+
+    fill_in 'Correo electrónico', with: user.email
+    fill_in 'Contraseña', with: user.password
+    click_on 'Ingresar'
+
+    visit all_subjects_path
+
+    expect(page).to have_text('GAL 1')
+    expect(page).to have_text('GAL 2')
+    expect(page).to have_text('T1')
+
+    click_on "search"
+
+    fill_in 'search', with: "Taller\n"
+
+    expect(page).not_to have_text('GAL 1')
+    expect(page).not_to have_text('GAL 2')
+    expect(page).to have_text('T1')
+
+    fill_in 'search', with: " Taller\n"
+
+    expect(page).not_to have_text('GAL 1')
+    expect(page).not_to have_text('GAL 2')
+    expect(page).to have_text('T1')
+
+    fill_in 'search', with: "Taller \n"
+
+    expect(page).not_to have_text('GAL 1')
+    expect(page).not_to have_text('GAL 2')
+    expect(page).to have_text('T1')
+
+    fill_in 'search', with: "T1\n"
+
+    expect(page).not_to have_text('GAL 1')
+    expect(page).not_to have_text('GAL 2')
+    expect(page).to have_text('T1')
+
+    fill_in 'search', with: "1030\n"
+
+    expect(page).to have_text('GAL 1')
+    expect(page).not_to have_text('GAL 2')
+    expect(page).not_to have_text('T1')
+
+    fill_in 'search', with: "103\n"
+
+    expect(page).to have_text('GAL 1')
+    expect(page).to have_text('GAL 2')
+    expect(page).not_to have_text('T1')
+
+    fill_in 'search', with: "This subject does not exist\n"
+
+    expect(page).not_to have_text('GAL 1')
+    expect(page).not_to have_text('GAL 2')
+    expect(page).not_to have_text('T1')
+    expect(page).to have_text('No hay resultados')
+
+    fill_in 'search', with: " \n"
+
+    expect(page).to have_text('GAL 1')
+    expect(page).to have_text('GAL 2')
+    expect(page).to have_text('T1')
   end
 
   it "can review subjects" do
