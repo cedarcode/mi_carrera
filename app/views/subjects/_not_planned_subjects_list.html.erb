@@ -1,16 +1,16 @@
-<div class="mdc-deprecated-list">
+<ul class="space-y-1">
   <% subjects.each do |subject| %>
-    <%= link_to subject_path(subject), :class => "mdc-deprecated-list-item" do %>
-      <span class="mdc-deprecated-list-item__ripple"></span>
-      <span class="mdc-deprecated-list-item__text">
+    <li class="flex items-center gap-4 px-4 py-2 hover:bg-gray-100 transition-colors">
+      <%= link_to subject_path(subject), class: "flex-1 text-sm/6 text-gray-900 transition-colors" do %>
         <%= display_name(subject) %>
-      </span>
+      <% end %>
+      
       <%= form_with(
         model: SubjectPlan.new,
         url: subject_plans_path,
         method: :post,
         data: { controller: "autosave-check" },
-        class: 'd-flex',
+        class: 'flex items-center gap-2',
         local: false
       ) do |form| %>
         <%= 
@@ -18,12 +18,20 @@
             :semester, 
             options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
             {}, 
-            data: { action: "click->autosave-check#stopPropagation" }
+            {
+              class: 'mr-1 w-20 rounded-md px-1 text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
+              data: { action: "click->autosave-check#stopPropagation" }
+            }
           )
         %>
         <%= form.hidden_field :subject_id, value: subject.id %>
-        <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">add_circle_outline</button>
+        <%= form.button type: :submit, class: "cursor-pointer", data: { action: "click->autosave-check#update" } do %>
+          <svg data-icon="add-circle" width="20" height="20" fill="none" stroke="#9ca3af" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m-4-4h8"></path>
+          </svg>
+        <% end %>
       <% end %>
-    <% end %>
+    </li>
   <% end %>
-</div>
+</ul>

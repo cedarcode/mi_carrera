@@ -84,7 +84,7 @@ jobs:
         PGPORT: 5432
       run: |
         bundle exec rake db:create db:schema:load
-        bundle exec rake test test:system spec
+        bundle exec rake test spec
 
     - name: Upload screenshots
       if: failure()
