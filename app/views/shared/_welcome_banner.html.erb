@@ -1,21 +1,10 @@
-<div class="mdc-banner mdc-banner--mobile-stacked" role="banner" data-controller="welcome-banner">
-  <div class="mdc-banner__fixed">
-    <div class="mdc-banner__content"
-        role="alertdialog"
-        aria-live="assertive"
-        >
-      <div class="mdc-banner__graphic-text-wrapper">
-        <div class="mdc-banner__text">
-          Bienvenido! Marcá los cursos y exámenes que aprobaste para ver qué materias podés cursar.
-        </div>
-      </div>
-      <div class="mdc-banner__actions">
-        <%= form_with url: user_onboardings_path, method: :patch, local: false do |f| %>
-          <%= f.button class: 'mdc-button mdc-banner__primary-action' do %>
-            <div class="mdc-button__label">Listo</div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
+<div class="fixed flex justify-center items-center gap-x-6 overflow-hidden bg-purple-100 px-6 py-2.5 sm:px-3.5 w-full" data-controller="welcome-banner">
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-balance">
+    <p class="text-sm/6 text-gray-900">
+      Bienvenido! Marcá los cursos y exámenes que aprobaste para ver qué materias podés cursar.
+    </p>
+    <%= form_with url: user_onboardings_path, method: :patch, local: false, data: { action: "submit->welcome-banner#dismiss" } do |f| %>
+      <%= f.button 'Listo', class: "py-1 text-sm font-semibold text-primary cursor-pointer" %>
+    <% end %>
   </div>
 </div>
