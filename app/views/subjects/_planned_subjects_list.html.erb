@@ -64,17 +64,15 @@
           class: 'flex items-center gap-1',
           local: false
         ) do |form| %>
-          <div class="">
-            <%= form.select(
-              :subject_id,
-              @not_planned_subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
-              { prompt: 'Materia' },
-              {
-                class: 'w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
-                data: { action: "click->autosave-check#stopPropagation" }
-              }
-            ) %>
-          </div>
+          <%= form.select(
+            :subject_id,
+            @not_planned_subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
+            { prompt: 'Materia' },
+            {
+              class: 'w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
+              data: { action: "click->autosave-check#stopPropagation" }
+            }
+          ) %>
           <%= form.hidden_field :semester, value: semester %>
           <%= form.button type: :submit, class: "cursor-pointer py-3 ps-3", data: { action: "click->autosave-check#update" } do %>
             <svg data-icon="add-circle" width="20" height="20" fill="none" stroke="#9ca3af" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
