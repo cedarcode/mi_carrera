@@ -33,6 +33,7 @@ module Users
           sign_count: webauthn_passkey.sign_count
         )
           render json: { status: "ok" }, status: :ok
+          flash[:notice] = "Tu passkey ha sido agregada correctamente."
         else
           render json: "Couldn't add your Security Key", status: :unprocessable_entity
         end
@@ -47,6 +48,7 @@ module Users
       current_user.passkeys.destroy(params[:id])
 
       redirect_to user_passkeys_path
+      flash[:notice] = "Tu passkey ha sido eliminada correctamente."
     end
   end
 end

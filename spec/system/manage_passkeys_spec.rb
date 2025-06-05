@@ -25,6 +25,7 @@ RSpec.describe 'Manage passkeys' do
       click_on "Agregar Passkey"
 
       expect(page).to have_content "My new passkey"
+      expect(page).to have_text "Tu passkey ha sido agregada correctamente"
 
       within("li", text: "My new passkey") do
         accept_confirm "¿Seguro que quieres borrar esta Passkey?" do
@@ -32,7 +33,8 @@ RSpec.describe 'Manage passkeys' do
         end
       end
 
-      expect(page).to have_no_content 'My new passkey'
+      expect(page).to have_no_content "My new passkey"
+      expect(page).to have_text "Tu passkey ha sido eliminada correctamente"
     end
   end
 end
