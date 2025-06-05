@@ -2,7 +2,7 @@ class CreateDegrees < ActiveRecord::Migration[8.0]
   def change
     create_table :degrees do |t|
       t.string :name
-      t.string :key, null: false, default: ""
+      t.string :key, null: false
       t.string :current_plan
       t.boolean :include_inco_subjects
 

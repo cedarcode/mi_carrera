@@ -24,7 +24,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
 
   create_table "degrees", force: :cascade do |t|
     t.string "name"
-    t.string "key", default: "", null: false
+    t.string "key", null: false
     t.string "current_plan"
     t.boolean "include_inco_subjects"
     t.datetime "created_at", null: false
