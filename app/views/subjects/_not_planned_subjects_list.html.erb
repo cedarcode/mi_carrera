@@ -3,10 +3,10 @@
     Materias aprobadas sin semestre asignado
   </h3>
   
-  <div class="bg-white rounded-lg border border-gray-100 shadow-sm py-2">
+  <div class="bg-white rounded-lg border border-gray-100 shadow-sm">
     <ul class="space-y-1">
       <% subjects.each do |subject| %>
-        <li class="flex justify-between items-center gap-4 px-4 py-2 hover:bg-gray-100 transition-colors">
+        <li class="flex justify-between items-center gap-4 py-3 px-4 hover:bg-gray-100 transition-colors">
           <%= link_to subject_path(subject), class: "text-sm/6 text-gray-900 transition-colors" do %>
             <%= display_name(subject) %>
           <% end %>
@@ -16,7 +16,7 @@
             url: subject_plans_path,
             method: :post,
             data: { controller: "autosave-check" },
-            class: 'flex items-center gap-2',
+            class: 'flex items-center gap-1',
             local: false
           ) do |form| %>
             <%= 
@@ -31,7 +31,7 @@
               )
             %>
             <%= form.hidden_field :subject_id, value: subject.id %>
-            <%= form.button type: :submit, class: "cursor-pointer", data: { action: "click->autosave-check#update" } do %>
+            <%= form.button type: :submit, class: "cursor-pointer py-3 ps-3", data: { action: "click->autosave-check#update" } do %>
               <svg data-icon="add-circle" width="20" height="20" fill="none" stroke="#9ca3af" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m-4-4h8"></path>
