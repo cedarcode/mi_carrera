@@ -16,14 +16,9 @@
             
             <div class="flex items-center gap-2 flex-shrink-0">
               <% if current_student.approved?(subject) %>
-                <svg data-icon="check" width="20" height="20" fill="none" stroke="#22c55e" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l4 4 6-8" />
-                </svg>
+                <%= heroicon "check-circle", variant: :outline, options: { class: "size-6 text-green-500" } %>
               <% elsif !current_student.available?(subject) %>
-                <svg data-icon="lock" width="20" height="20" fill="none" stroke="#9ca3af" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="5" y="9" width="10" height="7" rx="2" stroke-width="2"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9V7a3 3 0 1 1 6 0v2" />
-                </svg>
+                <%= heroicon "lock-closed", variant: :outline, options: { class: "size-6 text-gray-500" } %>
               <% end %>
               
               <%= form_with(
@@ -33,10 +28,7 @@
                   class: 'inline-flex',
                 ) do |form| %>
                   <%= form.button type: :submit, class: "cursor-pointer", data: { action: "click->autosave-check#update" } do %>
-                    <svg data-icon="remove-circle" width="20" height="20" fill="none" stroke="#9ca3af" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="10" cy="10" r="8" stroke-width="2"/>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10h6" />
-                    </svg>
+                    <%= heroicon "minus-circle", variant: :outline, options: { class: "size-6 text-gray-500" } %>
                   <% end %>
               <% end %>
             </div>

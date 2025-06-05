@@ -135,6 +135,9 @@ GEM
       activesupport (>= 6.1)
     hashery (2.1.2)
     hashie (5.0.0)
+    heroicons (2.1.1)
+      nokogiri
+      railties (>= 5.2)
     htmlbeautifier (1.4.3)
     htmlentities (4.3.4)
     i18n (1.14.7)
@@ -448,6 +451,7 @@ DEPENDENCIES
   capybara (~> 3.40)
   devise (~> 4.9)
   factory_bot_rails (~> 6.4)
+  heroicons (~> 2.1)
   importmap-rails (~> 2.1)
   kamal
   letter_opener (~> 1.10)
