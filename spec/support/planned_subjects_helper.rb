@@ -28,6 +28,10 @@ module PlannedSubjectsHelper
     end
   end
 
+  def assert_no_subject(subject_name)
+    expect(page).to have_no_selector("li", text: subject_name)
+  end
+
   def assert_subject_with_semester_selector(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do

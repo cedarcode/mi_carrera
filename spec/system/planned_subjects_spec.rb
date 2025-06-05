@@ -35,15 +35,15 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     within_planned_subjects do
       expect(page).to have_text "No hay materias planificadas para este semestre"
-      expect(page).to have_no_selector("li", text: "GAL 1")
-      expect(page).to have_no_selector("li", text: "GAL 2")
-      expect(page).to have_no_selector("li", text: "T1")
+      assert_no_subject "GAL 1"
+      assert_no_subject "GAL 2"
+      assert_no_subject "T1"
       expect(page).to have_text "Créditos planeados: 0"
     end
 
     within_not_planned_approved_subjects do
-      expect(page).to have_no_text "GAL 1"
-      expect(page).to have_no_text "GAL 2"
+      assert_no_subject "GAL 1"
+      assert_no_subject "GAL 2"
       assert_subject_with_semester_selector "T1"
 
       within("li", text: "T1") do
@@ -58,8 +58,8 @@ RSpec.describe "PlannedSubjects", type: :system do
       within_semester_section("Primer semestre") do
         assert_approved_subject "T1"
         assert_planned_subject "T1"
-        expect(page).to have_no_selector("li", text: "GAL 1")
-        expect(page).to have_no_selector("li", text: "GAL 2")
+        assert_no_subject "GAL 1"
+        assert_no_subject "GAL 2"
         expect(page).to have_text "Créditos planeados: 11"
         assert_subject_selector_contains "GAL 1"
         assert_subject_selector_contains "GAL 2"
@@ -77,7 +77,7 @@ RSpec.describe "PlannedSubjects", type: :system do
         assert_available_subject "GAL 1"
         assert_planned_subject "GAL 1"
         assert_planned_subject "T1"
-        expect(page).to have_no_selector("li", text: "GAL 2")
+        assert_no_subject "GAL 2"
         expect(page).to have_text "Créditos planeados: 20"
         assert_subject_not_in_selector "T1"
         assert_subject_not_in_selector "GAL 1"
@@ -96,8 +96,8 @@ RSpec.describe "PlannedSubjects", type: :system do
 
         assert_blocked_subject "GAL 2"
         assert_planned_subject "GAL 2"
-        expect(page).to have_no_selector("li", text: "GAL 1")
-        expect(page).to have_no_selector("li", text: "T1")
+        assert_no_subject "GAL 1"
+        assert_no_subject "T1"
         expect(page).to have_text "Créditos planeados: 10"
         assert_subject_not_in_selector "GAL 2"
         assert_subject_not_in_selector "GAL 1"
@@ -113,7 +113,7 @@ RSpec.describe "PlannedSubjects", type: :system do
           find("button[type='submit']").click
         end
 
-        expect(page).to have_no_selector("li", text: "GAL 2")
+        assert_no_subject "GAL 2"
         expect(page).to have_text "Créditos planeados: 0"
         assert_subject_selector_contains "GAL 2"
       end
