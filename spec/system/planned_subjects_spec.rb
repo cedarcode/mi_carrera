@@ -29,15 +29,14 @@ RSpec.describe "PlannedSubjects", type: :system do
   it "can add and remove subjects to planner" do
     visit subject_plans_path
 
+    expect(page).to have_text "Planificador"
     expect(page).to have_text "Materias aprobadas sin semestre asignado"
-    expect(page).to have_text "Materias planificadas"
     expect(page).to have_text "Créditos planeados: 0"
 
-    within_planned_subjects do
+    within_planner do
       expect(page).to have_text "No hay materias planificadas para este semestre"
       assert_no_subject "GAL 1"
       assert_no_subject "GAL 2"
-      assert_no_subject "T1"
       expect(page).to have_text "Créditos planeados: 0"
     end
 
@@ -51,10 +50,10 @@ RSpec.describe "PlannedSubjects", type: :system do
       end
     end
 
-    expect(page).not_to have_text "Materias aprobadas sin planificar"
+    expect(page).not_to have_text "Materias aprobadas sin semestre asignado"
     expect(page).to have_text "Créditos planeados: 11"
 
-    within_planned_subjects do
+    within_planner do
       within_semester_section("Primer semestre") do
         assert_approved_subject "T1"
         assert_planned_subject "T1"
@@ -67,7 +66,7 @@ RSpec.describe "PlannedSubjects", type: :system do
       end
     end
 
-    within_planned_subjects do
+    within_planner do
       within_semester_section("Primer semestre") do
         within_add_subject_section do
           select 'GAL 1 - 1030', from: "subject_plan_subject_id"
@@ -87,7 +86,7 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     expect(page).to have_text "Créditos planeados: 20"
 
-    within_planned_subjects do
+    within_planner do
       within_semester_section("Segundo semestre") do
         within_add_subject_section do
           select 'GAL 2 - 1031', from: "subject_plan_subject_id"
@@ -107,7 +106,7 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     expect(page).to have_text "Créditos planeados: 30"
 
-    within_planned_subjects do
+    within_planner do
       within_semester_section("Segundo semestre") do
         within("li", text: "GAL 2") do
           find("button[type='submit']").click
