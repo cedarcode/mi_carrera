@@ -3,14 +3,10 @@
 <% end %>
 
 <div class="space-y-2 mb-4">
-  <div class="space-y-1 mb-4 mt-4">
-    <% if @not_planned_approved_subjects.any? %>
-      <%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
-    <% end %>
-
-    <div class="flex items-center justify-between h-10">
-      <h3 class="text-md font-bold ml-4">
-        Materias planificadas
+  <div class="my-3">
+    <div class="flex items-center justify-between h-10 mb-3">
+      <h3 class="text-lg font-bold ml-4">
+        Planificador
       </h3>
       <%= render partial: "credits_counter", locals: { planned_subjects: @planned_subjects } %>
     </div>
