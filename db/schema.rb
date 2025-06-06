@@ -35,13 +35,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
   end
 
   create_table "degrees", force: :cascade do |t|
-    t.string "name"
-    t.string "key", null: false
+    t.string "title"
+    t.string "name", null: false
     t.string "current_plan"
     t.boolean "include_inco_subjects"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["key"], name: "index_degrees_on_key", unique: true
+    t.index ["name"], name: "index_degrees_on_name", unique: true
   end
 
   create_table "prerequisites", force: :cascade do |t|
