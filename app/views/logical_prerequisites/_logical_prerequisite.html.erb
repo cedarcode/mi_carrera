@@ -4,7 +4,8 @@
   <div data-controller="prerequisite" >
     <a data-action="click->prerequisite#toggle" class="mdc-deprecated-list-item">
       <span class="mdc-deprecated-list-item__ripple"></span>
-      <span class="material-icons toggle-collapse" data-prerequisite-target="button">chevron_right</span>
+      <%= heroicon "chevron-right", options: { class: "text-gray-500 size-6 me-6", data_prerequisite_target: "chevronRight" } %>
+      <%= heroicon "chevron-down", options: { class: "text-gray-500 size-6 me-6 hidden", data_prerequisite_target: "chevronDown" } %>
       <%= logical_prerequisite_description(logical_prerequisite, negative) %>
 
       <%= render 'prerequisites/met_checkmark', prerequisite: logical_prerequisite, negative: %>
