@@ -53,19 +53,22 @@
           <%= link_to 'MiCarrera', root_path, class: 'home-button'%>
         </div>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          <button id="searchIcon" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-action="search#toggle">search</button>
+          <%= button_tag type: "button", class: "cursor-pointer", data: { action: "search#toggle" } do %>
+            <%= heroicon "magnifying-glass", variant: :outline, options: { class: "text-white size-5 me-2" } %>
+          <% end %>
+
           <span hidden>
-            <button id="butInstall" class="material-icons mdc-top-app-bar__action-item mdc-icon-button">cloud_download</button>
+            <%= heroicon "cloud-arrow-down", options: { class: "text-white size-6 cursor-pointer me-2", id: "butInstall", data: { action: "click->navigation-drawer#install" } } %>
           </span>
           <%= yield :credits %>
           <div class="mdc-menu-surface--anchor" data-controller='user-menu'>
-            <button id="user-menu" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
+            <button id="user-menu" class="mdc-top-app-bar__action-item mdc-icon-button" data-user-menu-target='trigger' data-action='user-menu#open'>
               <% if current_user %>
                 <div class='logged-in-account-circle'>
                   <%= current_user.email.first.capitalize %>
                 </div>
               <% else %>
-                account_circle
+                <%= heroicon "user-circle", options: { class: "text-white size-6 self-center" } %>
               <% end %>
             </button>
             <%= render 'shared/user_menu' %>
@@ -77,7 +80,10 @@
           <div class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating mdc-text-field--no-label mdc-text-field--with-trailing-icon">
             <span class="mdc-text-field__ripple"></span>
             <%= f.text_field :search, value: params[:search], class: "mdc-text-field__input", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { 'search-target': "searchInput" } %>
-            <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" data-action="click->search#toggle" tabindex="0" role="button">close</i>
+
+            <%= button_tag type: "button", class: "cursor-pointer self-center", data: { action: "search#toggle" } do %>
+              <%= heroicon "x-mark", options: { class: "text-gray-500 size-6" } %>
+            <% end %>
             <span class="mdc-line-ripple"></span>
           </div>
         <% end %>

@@ -7,7 +7,7 @@
   <span class="mdc-deprecated-list-item__text">
     Tu puntuación:
   </span>
-  <div class="rating-items">
+  <div class="rating-items gap-2">
     <% 5.downto(1).each do |value| %>
       <% filled = @user_review.present? && @user_review.rating >= value %>
       <% selected = @user_review.present? && @user_review.rating == value %>
@@ -16,7 +16,9 @@
       <%= form_with(url:, method:, class: "interactive-star") do |f| %>
         <%= f.hidden_field :subject_id, value: @subject.id %>
         <%= f.hidden_field :rating, value: %>
-        <%= f.button filled ? 'star' : 'star_outline', class: "material-icons mdc-icon-button" %>
+        <%= f.button do %>
+          <%= heroicon "star", variant: filled ? :solid : :outline, options: { class: "text-yellow-500 size-6 cursor-pointer" } %>
+        <% end %>
       <% end %>
     <% end %>
   </div>

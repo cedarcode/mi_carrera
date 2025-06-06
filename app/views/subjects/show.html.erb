@@ -34,7 +34,7 @@
       <% if @subject.openfing_id %>
         <a href="https://open.fing.edu.uy/courses/<%= @subject.openfing_id %>" target="_blank" class="mdc-deprecated-list-item">
           <span class="mdc-deprecated-list-item__ripple"></span>
-          <span class="mdc-deprecated-list-item__graphic material-icons">videocam</span>
+          <%= heroicon "video-camera", variant: :outline, options: { class: "text-gray-500 size-6 me-6" } %>
           <span class="mdc-deprecated-list-item__text">OpenFING</span>
         </a>
       <% end %>
