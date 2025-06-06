@@ -4,10 +4,10 @@ export default class extends Controller {
   static targets = ["appBar", "searchbar", "searchInput"];
 
   toggle() {
-    this.appBarTarget.classList.toggle("d-none")
+    this.appBarTarget.classList.toggle("hidden")
     this.searchInputTarget.value = ""
-    this.searchbarTarget.classList.toggle("d-none")
-    if (!this.searchbarTarget.classList.contains("d-none")) {
+    this.searchbarTarget.classList.toggle("hidden")
+    if (!this.searchbarTarget.classList.contains("hidden")) {
       this.searchInputTarget.focus()
     }
   }
