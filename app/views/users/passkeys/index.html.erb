@@ -17,8 +17,8 @@
     <% end %>
   </ul>
 
-  <div class="flex w-full justify-center items-center max-w-md" data-controller="add-passkey">
-    <%= form_with scope: :credential, url: user_passkeys_path, local: false, class: "flex flex-col w-full space-y-6", data: { action: "ajax:success->add-passkey#create" } do |f| %>
+  <div class="flex w-full justify-center items-center max-w-md">
+    <%= form_with url: user_passkeys_path, method: :post, class: "flex flex-col w-full space-y-6", data: { action: "passkeys#create:prevent", controller: "passkeys", passkeys_public_key_param: @create_passkey_options } do |f| %>
       <%= f.label :name, "Nombre", class: "text-sm/6 font-medium text-gray-700 with-error:text-red-600" %>
       <%= f.text_field :name, class: "bg-white w-full rounded-md px-3 py-1.5 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600", required: true %>
 
