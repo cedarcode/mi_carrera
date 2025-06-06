@@ -12,25 +12,6 @@ body {
   }
 }
 
-.home-button {
-  color: white;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  width: 220px;
-  height: 40px;
-  font-size: 21px;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
-  text-decoration: none;
-}
-
-.home-button:hover {
-  cursor: pointer;
-}
-
 .credits-counter {
   padding: 0 12px 0 0;
   white-space: nowrap;
@@ -62,10 +43,6 @@ body {
   a {
     color: inherit;
     text-decoration-line: inherit;
-  }
-
-  a.home-button {
-    color: #444;
   }
 
   a.account-session {
@@ -123,10 +100,6 @@ body {
 
 .subject-group-credits-unmet {
   color: red !important;
-}
-
-#butInstall {
-  padding-left: 0px;
 }
 
 .show-password-button {
