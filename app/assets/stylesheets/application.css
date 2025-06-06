@@ -17,11 +17,6 @@ body {
   white-space: nowrap;
 }
 
-.handle-account {
-  color: white;
-  padding: 16px;
-}
-
 .toggle-collapse {
   cursor: pointer;
 }
@@ -33,10 +28,6 @@ body {
 
 .prerequisite-type {
   font-weight: bold;
-}
-
-.subjects-list {
-  position: relative;
 }
 
 .growing-text-list {
@@ -73,37 +64,12 @@ body {
   flex: 1;
 }
 
-.menu-user-info {
-  padding: 0 16px;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.list-item {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.logged-in-account-circle {
-  border-radius: 50%;
-  background-color: cadetblue;
-  line-height: 24px;
-  font-size: 15px;
-  font-family: Roboto;
-}
-
 .subject-group-credits-met {
   color: green !important;
 }
 
 .subject-group-credits-unmet {
   color: red !important;
-}
-
-.show-password-button {
-  margin-right: -20px;
 }
 
 input {
