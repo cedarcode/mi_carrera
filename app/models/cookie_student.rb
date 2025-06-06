@@ -15,6 +15,8 @@ class CookieStudent < BaseStudent
     }
   end
 
+  delegate :subjects, :subject_groups, to: :degree, prefix: true
+
   private
 
   attr_reader :cookie
@@ -24,5 +26,9 @@ class CookieStudent < BaseStudent
       value: approved_approvable_ids.to_json,
       domain: :all
     }
+  end
+
+  def degree
+    Degree.default
   end
 end

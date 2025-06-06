@@ -1,0 +1,26 @@
+require 'rails_helper'
+
+RSpec.describe Degree, type: :model do
+  describe 'associations' do
+    it { should have_many(:users).dependent(:nullify) }
+    it { should have_many(:subjects).dependent(:destroy) }
+    it { should have_many(:subject_groups).dependent(:destroy) }
+  end
+
+  describe 'validations' do
+    subject { create :degree }
+
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_uniqueness_of(:name) }
+  end
+
+  describe '.default' do
+    context 'when computacion exists' do
+      let!(:degree) { create(:degree, name: "computacion") }
+
+      it 'returns computacion degree' do
+        expect(described_class.default).to eq(degree)
+      end
+    end
+  end
+end
