@@ -1,12 +1,10 @@
-<div class="border-box" data-controller="welcome-banner">
-  <div class="fixed flex justify-center bg-purple-100 px-6 py-2.5 sm:px-3.5 w-full" data-welcome-banner-target="content">
-    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-pretty">
-      <p class="text-sm/6 text-gray-900">
-        Bienvenido! Marcá los cursos y exámenes que aprobaste para ver qué materias podés cursar.
-      </p>
-      <%= form_with url: user_onboardings_path, method: :patch, local: false, data: { action: "welcome-banner#dismiss" } do |f| %>
-        <%= f.button 'Listo', class: "py-1 text-sm font-semibold text-primary cursor-pointer" %>
-      <% end %>
-    </div>
+<div class="sticky flex justify-center bg-purple-100 px-6 py-2.5 sm:px-3.5 w-full top-[64px] max-[599px]:top-[56px]" data-controller="welcome-banner">
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-pretty">
+    <p class="text-sm/6 text-gray-900">
+      Bienvenido! Marcá los cursos y exámenes que aprobaste para ver qué materias podés cursar.
+    </p>
+    <%= form_with url: user_onboardings_path, method: :patch, local: false, data: { action: "welcome-banner#dismiss" } do |f| %>
+      <%= f.button 'Listo', class: "py-1 text-sm font-semibold text-primary cursor-pointer" %>
+    <% end %>
   </div>
 </div>
