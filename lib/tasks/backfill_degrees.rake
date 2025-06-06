@@ -1,13 +1,17 @@
 task backfill_degrees: :environment do
   ActiveRecord::Base.transaction do
-    degrees = Rails.configuration.degrees
-    degrees.each do |degree_hash|
-      degree = Degree.find_or_initialize_by(key: degree_hash[:key])
-      degree.name = degree_hash[:name]
-      degree.current_plan = degree_hash[:current_plan]
-      degree.include_inco_subjects = degree_hash[:include_inco_subjects]
-      degree.save!
-    end
+    degree_hash = {
+      name: "INGENIERIA EN COMPUTACION",
+      key: "computacion",
+      current_plan: "1997",
+      include_inco_subjects: true
+    }
+
+    degree = Degree.find_or_initialize_by(key: degree_hash[:key])
+    degree.name = degree_hash[:name]
+    degree.current_plan = degree_hash[:current_plan]
+    degree.include_inco_subjects = degree_hash[:include_inco_subjects]
+    degree.save!
 
     computacion = Degree.find_by!(key: "computacion")
 
