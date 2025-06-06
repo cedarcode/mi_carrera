@@ -5,6 +5,8 @@ RSpec.describe 'Manage passkeys' do
     sign_in create(:user)
   end
 
+  ENV['ENABLE_PASSKEYS'] = 'true'
+
   describe 'Add and remove credentials' do
     fake_origin = Rails.configuration.webauthn_origin
     fake_client = WebAuthn::FakeClient.new(fake_origin, encoding: false)

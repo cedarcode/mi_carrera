@@ -1,5 +1,7 @@
 module Users
   class PasskeysController < ApplicationController
+    before_action :ensure_feature_enabled!
+
     def index
       @create_passkey_options = WebAuthn::Credential.options_for_create(
         user: {
@@ -44,6 +46,12 @@ module Users
 
       redirect_to user_passkeys_path
       flash[:notice] = "Tu passkey ha sido eliminada correctamente."
+    end
+
+    private
+
+    def ensure_feature_enabled!
+      redirect_to root_path, alert: 'Feature is not available' if ENV['ENABLE_PASSKEYS'].blank?
     end
   end
 end
