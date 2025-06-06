@@ -32,7 +32,9 @@ RSpec.describe "Subject", type: :system do
     expect(page).to have_text('GAL 2')
     expect(page).to have_text('T1')
 
-    click_on "search"
+    search_button = find('button[data-action="search#toggle"]')
+
+    search_button.click
 
     fill_in 'search', with: "Taller\n"
 
