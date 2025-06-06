@@ -224,7 +224,7 @@ RSpec.describe CookieStudent, type: :model do
   end
 
   describe '#degree_subjects' do
-    let!(:degree) { create :degree, key: "computacion" }
+    let!(:degree) { create :degree, name: "computacion" }
     let(:student) { build :cookie_student }
 
     it 'delegates #degree_subjects to degree' do
@@ -233,7 +233,7 @@ RSpec.describe CookieStudent, type: :model do
   end
 
   describe '#degree_subject_groups' do
-    let!(:degree) { create :degree, key: "computacion" }
+    let!(:degree) { create :degree, name: "computacion" }
     let(:student) { build :cookie_student }
 
     it 'delegates #degree_subject_groups to degree' do
