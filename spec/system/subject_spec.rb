@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Subject", type: :system do
-  let(:degree) { create(:degree, key: "computacion") }
+  let(:degree) { create(:degree, name: "computacion") }
   let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030', degree:) }
   let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10, code: '1031', degree:) }
 
