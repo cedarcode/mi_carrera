@@ -1,7 +1,7 @@
 <header class="fixed top-0 w-full bg-primary text-white z-4" data-controller='search'>
   <% show_search_bar = params[:search].present? %>
 
-  <div class="flex w-full h-16 <%= show_search_bar ? 'hidden' : '' %>" data-search-target="appBar">
+  <div class="flex w-full h-14 sm:h-16 <%= show_search_bar ? 'hidden' : '' %>" data-search-target="appBar">
     <div class="flex items-center gap-4 ms-4">
       <%= button_tag type: "button", class: "size-6 cursor-pointer", data: { action: "click->navigation-drawer#toggle" } do %>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
