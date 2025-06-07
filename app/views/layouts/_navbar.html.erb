@@ -13,17 +13,11 @@
     </div>
 
     <div class="flex w-full justify-end items-center me-4">
-      <%= button_tag type: "button", class: "me-3 cursor-pointer", data: { action: "search#toggle" } do %>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-        </svg>
-      <% end %>
+      <%= button_tag "search", type: "button", class: "me-3 cursor-pointer material-icons", data: { action: "search#toggle" } %>
 
-      <%= button_tag type: "button", class: "me-3 cursor-pointer", id: "butInstall" do %>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-          <path fill-rule="evenodd" d="M10.5 3.75a6 6 0 0 0-5.98 6.496A5.25 5.25 0 0 0 6.75 20.25H18a4.5 4.5 0 0 0 2.206-8.423 3.75 3.75 0 0 0-4.133-4.303A6.001 6.001 0 0 0 10.5 3.75Zm2.25 6a.75.75 0 0 0-1.5 0v4.94l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V9.75Z" clip-rule="evenodd" />
-        </svg>
-      <% end %>
+      <span hidden>
+        <%= button_tag "cloud_download", type: "button", class: "me-3 cursor-pointer material-icons p-2", id: "butInstall" %>
+      </span>
 
       <%= yield :credits %>
 
