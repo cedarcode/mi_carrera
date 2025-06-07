@@ -1,4 +1,58 @@
 <div class="space-y-4">
+  <% if @not_planned_approved_subjects.any? %>
+    <div class="bg-white rounded-lg border border-gray-100 shadow-sm">
+      <div class="flex items-center justify-between h-10 bg-gray-50">
+        <h3 class="text-sm font-bold ml-4">
+          Materias aprobadas sin semestre asignado
+        </h3>
+      </div>
+      
+      <ul class="space-y-1">
+        <% @not_planned_approved_subjects.each do |subject| %>
+          <li class="flex justify-between items-center gap-4 py-3 px-4 hover:bg-gray-100 transition-colors">
+            <%= link_to subject_path(subject), class: "text-sm/6 text-gray-900 transition-colors" do %>
+              <%= display_name(subject) %>
+            <% end %>
+            
+            <div class="flex items-center gap-1">
+              <svg data-icon="check" width="20" height="20" fill="none" stroke="#22c55e" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l4 4 6-8" />
+              </svg>
+              
+              <%= form_with(
+                model: SubjectPlan.new,
+                url: subject_plans_path,
+                method: :post,
+                data: { controller: "autosave-check" },
+                class: 'inline-flex items-center gap-2 py-3 ps-3',
+                local: false
+              ) do |form| %>
+                <%= 
+                  form.select(
+                    :semester, 
+                    options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
+                    {}, 
+                    {
+                      class: 'w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
+                      data: { action: "click->autosave-check#stopPropagation" }
+                    }
+                  )
+                %>
+                <%= form.hidden_field :subject_id, value: subject.id %>
+                <%= form.button type: :submit, class: "cursor-pointer ps-3", data: { action: "click->autosave-check#update" } do %>
+                  <svg data-icon="add-circle" width="20" height="20" fill="none" stroke="#9ca3af" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m-4-4h8"></path>
+                  </svg>
+                <% end %>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <% (1..10).each do |semester| %>
     <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
     <div class="bg-white rounded-lg border border-gray-100 shadow-sm">

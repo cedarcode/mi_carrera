@@ -48,12 +48,12 @@ module PlannedSubjectsHelper
     expect(page).to have_no_select('subject_plan_subject_id', with_options: [subject_name_with_code])
   end
 
-  def within_planned_subjects(&block)
-    within(:xpath, "//div[h3[contains(text(), 'Materias planificadas')]]/following-sibling::*[1]", &block)
+  def within_planner(&block)
+    within(:xpath, "//div[h3[contains(text(), 'Planificador')]]/following-sibling::*[1]", &block)
   end
 
   def within_not_planned_approved_subjects(&block)
-    within(:xpath, "//h3[contains(text(), 'Materias aprobadas sin semestre asignado')]/following-sibling::*[1]", &block)
+    within(:xpath, "//h3[contains(text(), 'Materias aprobadas sin semestre asignado')]/../../ul", &block)
   end
 
   def within_semester_section(semester, &block)
