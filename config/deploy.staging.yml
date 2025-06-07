@@ -15,3 +15,4 @@ env:
     ROLLBAR_ENV: staging
     APPSIGNAL_APP_ENV: staging
     ENABLE_PLANNER: true
+    ENABLE_PASSKEYS: true
