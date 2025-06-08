@@ -26,4 +26,8 @@ module ApplicationHelper
       raise "Unexpected logical operator: #{prerequisite.logical_operator}"
     end
   end
+
+  def material_icon(icon, classes = nil)
+    tag.span(icon, class: "material-icons #{classes}")
+  end
 end
