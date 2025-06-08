@@ -35,7 +35,7 @@ module PlannedSubjectsHelper
   def assert_subject_with_semester_selector(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_selector("svg[data-icon='add-circle']")
+      expect(page).to have_selector(".material-icons", text: "add_circle_outline")
       expect(page).to have_selector("select", text: 'Sem. 1')
     end
   end
