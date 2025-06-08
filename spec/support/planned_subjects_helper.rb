@@ -9,7 +9,7 @@ module PlannedSubjectsHelper
   def assert_blocked_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_selector("svg[data-icon='lock']")
+      expect(page).to have_selector(".material-icons", text: "lock_outline")
     end
   end
 
@@ -17,7 +17,7 @@ module PlannedSubjectsHelper
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
       expect(page).to have_no_selector(".material-icons", text: "check")
-      expect(page).to have_no_selector("svg[data-icon='lock']")
+      expect(page).to have_no_selector(".material-icons", text: "lock_outline")
     end
   end
 
