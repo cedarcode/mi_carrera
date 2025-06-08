@@ -1,4 +1,4 @@
-<header class="fixed top-0 w-full bg-primary text-white z-4" data-controller='search'>
+<header class="fixed w-full bg-primary text-white z-4" data-controller='search'>
   <% show_search_bar = params[:search].present? %>
 
   <div class="flex w-full h-14 sm:h-16 <%= show_search_bar ? 'hidden' : '' %>" data-search-target="appBar">
