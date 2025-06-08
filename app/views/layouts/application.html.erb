@@ -44,7 +44,7 @@
     <%= render 'shared/menu' %>
 
     <%= render 'layouts/navbar' %>
-    <main class="mdc-top-app-bar--fixed-adjust main-content" id='main-content'>
+    <main class="main-content sm:mt-16 mt-14" id='main-content'>
       <%= render 'shared/notice' if flash[:notice] %>
 
       <%= yield :welcome_banner %>
