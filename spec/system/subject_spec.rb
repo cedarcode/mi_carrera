@@ -89,7 +89,7 @@ RSpec.describe "Subject", type: :system do
 
     visit subject_path(gal1)
 
-    expect(page).to have_text('Sin calificar')
+    expect(page).to have_text('-.-')
     click_button('star_outline', match: :first)
     expect(page).to have_text('Iniciar sesión')
 
@@ -100,18 +100,18 @@ RSpec.describe "Subject", type: :system do
 
     visit subject_path(gal1)
 
-    expect(page).to have_text('Sin calificar')
+    expect(page).to have_text('-.-')
     click_button('star_outline', match: :first)
-    expect(page).to have_text('Puntuación: 5.0')
+    expect(page).to have_text('5.0')
 
     # Update review to 4 stars
     all('button', text: 'star')[1].click
 
-    expect(page).to have_text('Puntuación: 4.0')
+    expect(page).to have_text('4.0')
 
     # Destroy review by clicking on the same star
     all('button', text: 'star')[1].click
 
-    expect(page).to have_text('Sin calificar')
+    expect(page).to have_text('-.-')
   end
 end
