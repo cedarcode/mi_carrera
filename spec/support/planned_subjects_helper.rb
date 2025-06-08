@@ -24,7 +24,7 @@ module PlannedSubjectsHelper
   def assert_planned_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_selector("svg[data-icon='remove-circle']")
+      expect(page).to have_selector(".material-icons", text: "remove_circle_outline")
     end
   end
 
