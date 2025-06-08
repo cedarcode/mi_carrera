@@ -23,16 +23,18 @@ class ApprovableCheckboxComponent < ViewComponent::Base
       disabled:checked:bg-gray-100
 
       forced-colors:appearance-auto
+
+      peer
     ],
-    svg: %w[
+    icon: %w[
+      md-16
+      text-white
       pointer-events-none
       col-start-1
       row-start-1
-      size-3.5
-      self-center
-      justify-self-center
-      stroke-white
-      group-has-disabled:stroke-white/25
+      opacity-0
+      peer-checked:opacity-100
+      peer-disabled:text-gray-300
     ],
   }
 

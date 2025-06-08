@@ -78,3 +78,5 @@ input {
     transition-delay: calc(infinity * 1s);
   }
 }
+
+.material-icons.md-16 { font-size: 16px; }
