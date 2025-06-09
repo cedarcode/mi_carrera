@@ -4,14 +4,9 @@
       <%= link_to display_name(subject), subject_path(subject), class: "grow w-full" %>
     </p>
     <% if current_student.approved?(subject) %>
-      <svg width="20" height="20" fill="none" stroke="#22c55e" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l4 4 6-8" />
-      </svg>
+      <%= material_icon("check", "text-green-500") %>
     <% elsif !current_student.available?(subject) %>
-      <svg width="20" height="20" fill="none" stroke="#9ca3af" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <rect x="5" y="9" width="10" height="7" rx="2" stroke-width="2"/>
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9V7a3 3 0 1 1 6 0v2" />
-      </svg>
+      <%= material_icon("lock_outline", "text-gray-400") %>
     <% end %>
   </li>
 <% end %>

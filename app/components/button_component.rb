@@ -7,8 +7,9 @@ class ButtonComponent < ViewComponent::Base
   end
 
   def call
-    klass = 'bg-primary text-white font-bold shadow-sm cursor-pointer p-2 rounded-md'
+    klass = 'bg-primary text-white font-bold shadow-sm cursor-pointer p-2 rounded-md ' \
+            'disabled:opacity-50 disabled:cursor-not-allowed'
 
-    @form.button @label, class: klass
+    @form.submit @label, class: klass
   end
 end

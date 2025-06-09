@@ -2,29 +2,29 @@ module PlannedSubjectsHelper
   def assert_approved_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_selector("svg[data-icon='check']")
+      expect(page).to have_selector(".material-icons", text: "check")
     end
   end
 
   def assert_blocked_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_selector("svg[data-icon='lock']")
+      expect(page).to have_selector(".material-icons", text: "lock_outline")
     end
   end
 
   def assert_available_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_no_selector("svg[data-icon='check']")
-      expect(page).to have_no_selector("svg[data-icon='lock']")
+      expect(page).to have_no_selector(".material-icons", text: "check")
+      expect(page).to have_no_selector(".material-icons", text: "lock_outline")
     end
   end
 
   def assert_planned_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_selector("svg[data-icon='remove-circle']")
+      expect(page).to have_selector(".material-icons", text: "remove_circle_outline")
     end
   end
 
@@ -35,7 +35,7 @@ module PlannedSubjectsHelper
   def assert_subject_with_semester_selector(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
-      expect(page).to have_selector("svg[data-icon='add-circle']")
+      expect(page).to have_selector(".material-icons", text: "add_circle_outline")
       expect(page).to have_selector("select", text: 'Sem. 1')
     end
   end
