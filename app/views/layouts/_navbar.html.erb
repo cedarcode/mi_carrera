@@ -2,13 +2,13 @@
   <% show_search_bar = params[:search].present? %>
 
   <div class="flex w-full h-14 sm:h-16 px-2 sm:px-4 <%= show_search_bar ? 'hidden' : '' %>" data-search-target="appBar">
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-2 sm:gap-4">
       <%= button_tag "menu", type: "button", class: "size-6 cursor-pointer material-icons", data: { action: "click->navigation-drawer#toggle" } %>
 
       <%= link_to 'MiCarrera', root_path, class: 'text-xl font-bold' %>
     </div>
 
-    <div class="flex w-full justify-end items-center">
+    <div class="flex w-full justify-end items-center gap-2 sm:gap-4">
       <%= button_tag "search", type: "button", class: "cursor-pointer material-icons", data: { action: "search#toggle" } %>
 
       <span hidden>
