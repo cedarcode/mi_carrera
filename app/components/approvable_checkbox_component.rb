@@ -27,7 +27,7 @@ class ApprovableCheckboxComponent < ViewComponent::Base
       peer
     ],
     icon: %w[
-      md-16
+      text-base/4!
       text-white
       pointer-events-none
       col-start-1
