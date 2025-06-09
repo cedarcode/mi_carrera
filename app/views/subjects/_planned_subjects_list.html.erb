@@ -5,7 +5,7 @@
         Materias aprobadas sin semestre asignado
       </h3>
       
-      <ul class="space-y-1">
+      <ul>
         <% @not_planned_approved_subjects.each do |subject| %>
           <li class="flex justify-between items-center gap-4 py-3 px-4 hover:bg-gray-100 transition-colors">
             <%= link_to subject_path(subject), class: "text-sm/6 text-gray-900 transition-colors" do %>
@@ -62,7 +62,7 @@
       </div>
       
       <% if planned_subjects.any? %>
-        <ul class="space-y-1">
+        <ul>
           <% planned_subjects.each do |subject| %>
             <li class="flex justify-between items-center gap-4 py-3 px-4 hover:bg-gray-100 transition-colors">
               <%= link_to subject_path(subject), class: "text-sm/6 text-gray-900 transition-colors" do %>
