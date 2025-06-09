@@ -8,9 +8,7 @@
       <ul>
         <% @not_planned_approved_subjects.each do |subject| %>
           <li class="flex justify-between items-center gap-4 py-3 px-4 hover:bg-gray-100 transition-colors">
-            <%= link_to subject_path(subject), class: "text-sm/6 text-gray-900 transition-colors" do %>
-              <%= display_name(subject) %>
-            <% end %>
+            <%= link_to display_name(subject), subject, class: "text-sm/6 text-gray-900" %>
             
             <div class="flex items-center gap-1">
               <svg data-icon="check" width="20" height="20" fill="none" stroke="#22c55e" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -65,9 +63,7 @@
         <ul>
           <% planned_subjects.each do |subject| %>
             <li class="flex justify-between items-center gap-4 py-3 px-4 hover:bg-gray-100 transition-colors">
-              <%= link_to subject_path(subject), class: "text-sm/6 text-gray-900 transition-colors" do %>
-                <%= display_name(subject) %>
-              <% end %>
+              <%= link_to display_name(subject), subject, class: "text-sm/6 text-gray-900" %>
               
               <div class="flex items-center gap-1">
                 <% if current_student.approved?(subject) %>
