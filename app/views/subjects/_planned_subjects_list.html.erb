@@ -25,13 +25,10 @@
               ) do |form| %>
                 <%= 
                   form.select(
-                    :semester, 
-                    options_for_select((1..10).map{|i| ["Sem. #{i}", i]}),
+                    :semester,
+                    (1..10).map { |i| ["Sem. #{i}", i] },
                     {}, 
-                    {
-                      class: 'w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
-                      data: { action: "click->autosave-check#stopPropagation" }
-                    }
+                    class: 'w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer'
                   )
                 %>
                 <%= form.hidden_field :subject_id, value: subject.id %>
@@ -116,10 +113,7 @@
             :subject_id,
             @not_planned_subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
             { prompt: 'Materia' },
-            {
-              class: 'w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer',
-              data: { action: "click->autosave-check#stopPropagation" }
-            }
+            class: 'w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer'
           ) %>
           <%= form.hidden_field :semester, value: semester %>
           <%= form.button type: :submit, class: "cursor-pointer py-3 ps-3", data: { action: "click->autosave-check#update" } do %>
