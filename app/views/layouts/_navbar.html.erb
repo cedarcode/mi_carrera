@@ -3,9 +3,7 @@
 
   <div class="flex w-full h-14 sm:h-16 <%= show_search_bar ? 'hidden' : '' %>" data-search-target="appBar">
     <div class="flex items-center gap-4 ms-4">
-      <%= button_tag type: "button", class: "size-6 cursor-pointer", data: { action: "click->navigation-drawer#toggle" } do %>
-        <%= material_icon("menu") %>
-      <% end %>
+      <%= button_tag "menu", type: "button", class: "size-6 cursor-pointer material-icons", data: { action: "click->navigation-drawer#toggle" } %>
 
       <%= link_to 'MiCarrera', root_path, class: 'text-xl font-bold' %>
     </div>
