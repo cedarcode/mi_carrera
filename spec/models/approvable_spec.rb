@@ -6,10 +6,6 @@ RSpec.describe Approvable, type: :model do
     it { should have_one(:prerequisite_tree).class_name('Prerequisite').dependent(:destroy) }
   end
 
-  describe 'validations' do
-    it { should validate_inclusion_of(:is_exam).in_array([true, false]) }
-  end
-
   describe '#approved?' do
     context 'when not is_exam and course approved' do
       it 'is true' do

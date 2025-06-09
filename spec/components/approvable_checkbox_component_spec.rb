@@ -13,7 +13,7 @@ RSpec.describe ApprovableCheckboxComponent, type: :component do
       expect(page).to have_css "form[action='/approvables/#{approvable.id}/approval?subject_show=false']"
       expect(page).to have_css "input[name='_method'][value='delete']", visible: false
       expect(page).to have_css "input[type='checkbox'][name='approvable[approved]'][checked]"
-      expect(page).to have_css "svg"
+      expect(page).to have_css ".material-icons", text: "check"
     end
   end
 
@@ -26,7 +26,7 @@ RSpec.describe ApprovableCheckboxComponent, type: :component do
 
       expect(page).to have_css "form[action='/approvables/#{approvable.id}/approval?subject_show=false'][method='post']"
       expect(page).to have_css "input[type='checkbox'][name='approvable[approved]']"
-      expect(page).to have_css "svg"
+      expect(page).to have_css ".material-icons", text: "check"
     end
   end
 
@@ -39,7 +39,7 @@ RSpec.describe ApprovableCheckboxComponent, type: :component do
 
       expect(page).to have_css "form[action='/approvables/#{approvable.id}/approval?subject_show=false'][method='post']"
       expect(page).to have_css "input[type='checkbox'][name='approvable[approved]'][disabled]"
-      expect(page).to have_css "svg"
+      expect(page).to have_css ".material-icons", text: "check"
     end
   end
 end

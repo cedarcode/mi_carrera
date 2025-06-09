@@ -1,0 +1,43 @@
+<header class="fixed w-full bg-primary text-white z-4" data-controller='search'>
+  <% show_search_bar = params[:search].present? %>
+
+  <div class="flex w-full h-14 sm:h-16 px-2 sm:px-4 <%= show_search_bar ? 'hidden' : '' %>" data-search-target="appBar">
+    <div class="flex items-center gap-2 sm:gap-4">
+      <%= button_tag "menu", type: "button", class: "size-6 cursor-pointer material-icons", data: { action: "click->navigation-drawer#toggle" } %>
+
+      <%= link_to 'MiCarrera', root_path, class: 'text-xl font-bold' %>
+    </div>
+
+    <div class="flex w-full justify-end items-center gap-2 sm:gap-4">
+      <%= button_tag "search", type: "button", class: "cursor-pointer material-icons", data: { action: "search#toggle" } %>
+
+      <span hidden>
+        <%= button_tag "cloud_download", type: "button", class: "cursor-pointer material-icons p-2", id: "butInstall" %>
+      </span>
+
+      <%= yield :credits %>
+
+      <div class="relative" data-controller='user-menu' data-action="click@document->user-menu#onClick">
+        <%= button_tag type: "button", id: "user-menu", class: "flex cursor-pointer", data: { user_menu_target: 'trigger', action: 'click->user-menu#toggle:stop' } do %>
+          <% if current_user %>
+            <div class="flex items-center justify-center size-6 rounded-full bg-sky-500">
+              <%= current_user.email.first.capitalize %>
+            </div>
+          <% else %>
+            <%= material_icon("account_circle") %>
+          <% end %>
+        <% end %>
+
+        <%= render 'shared/user_menu' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex w-full h-14 sm:h-16 px-2 sm:px-4 border-b border-b-gray-700 bg-gray-100 text-gray-800 hover:bg-neutral-100 <%= show_search_bar ? '' : 'hidden' %>" data-search-target="searchbar">
+    <%= form_with(url: all_subjects_path, method: :get, local: true, class: "flex w-full justify-between") do |f| %>
+      <%= f.text_field :search, value: params[:search], class: "w-full focus:outline-0", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { search_target: "searchInput" } %>
+
+      <%= button_tag "close", type: "button", class: "cursor-pointer material-icons", data: { action: "search#toggle" }, tabindex: "0" %>
+    <% end %>
+  </div>
+</header>

@@ -12,33 +12,9 @@ body {
   }
 }
 
-.home-button {
-  color: white;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  width: 220px;
-  height: 40px;
-  font-size: 21px;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
-  text-decoration: none;
-}
-
-.home-button:hover {
-  cursor: pointer;
-}
-
 .credits-counter {
   padding: 0 12px 0 0;
   white-space: nowrap;
-}
-
-.handle-account {
-  color: white;
-  padding: 16px;
 }
 
 .toggle-collapse {
@@ -54,18 +30,10 @@ body {
   font-weight: bold;
 }
 
-.subjects-list {
-  position: relative;
-}
-
 .growing-text-list {
   a {
     color: inherit;
     text-decoration-line: inherit;
-  }
-
-  a.home-button {
-    color: #444;
   }
 
   a.account-session {
@@ -96,41 +64,12 @@ body {
   flex: 1;
 }
 
-.menu-user-info {
-  padding: 0 16px;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.list-item {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.logged-in-account-circle {
-  border-radius: 50%;
-  background-color: cadetblue;
-  line-height: 24px;
-  font-size: 15px;
-  font-family: Roboto;
-}
-
 .subject-group-credits-met {
   color: green !important;
 }
 
 .subject-group-credits-unmet {
   color: red !important;
-}
-
-#butInstall {
-  padding-left: 0px;
-}
-
-.show-password-button {
-  margin-right: -20px;
 }
 
 input {
