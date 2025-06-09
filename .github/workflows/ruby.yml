@@ -98,4 +98,4 @@ jobs:
       if: github.actor != 'dependabot[bot]'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        minimum_suite_coverage: 40
+        minimum_suite_coverage: 85
