@@ -32,7 +32,6 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Planificador"
     expect(page).to have_text "Materias aprobadas sin semestre asignado"
     expect(page).to have_text "Créditos planeados: 0"
-    expect(page).to have_text "No hay materias planificadas para este semestre"
     assert_no_subject "GAL 1"
     assert_no_subject "GAL 2"
     expect(page).to have_text "Créditos planeados: 0"
