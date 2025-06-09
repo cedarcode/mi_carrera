@@ -1,10 +1,10 @@
 <div class="sticky bg-purple-100 w-full top-14 sm:top-16" data-controller="welcome-banner">
-  <div class="max-w-[600px] mx-auto px-3 py-2.5 flex items-center gap-x-4">
+  <div class="max-w-[600px] mx-auto px-3 py-2.5 flex items-center gap-x-3">
     <p class="text-sm/6 text-gray-900">
       Bienvenido! Marcá los cursos y exámenes que aprobaste para ver qué materias podés cursar.
     </p>
     <%= form_with url: user_onboardings_path, method: :patch, local: false, data: { action: "welcome-banner#dismiss" } do |f| %>
-      <%= f.button 'Listo', class: "py-1 text-sm font-semibold text-primary cursor-pointer" %>
+      <%= f.button 'Listo', class: "py-1 text-sm font-semibold text-primary cursor-pointer uppercase" %>
     <% end %>
   </div>
 </div>
