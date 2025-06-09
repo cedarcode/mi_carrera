@@ -64,6 +64,6 @@ module PlannedSubjectsHelper
   private
 
   def within_subject_row(subject_name, &block)
-    within("li", text: subject_name, &block)
+    within("form", text: subject_name, &block)
   end
 end
