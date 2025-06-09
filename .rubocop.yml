@@ -33,8 +33,6 @@ Lint/MissingSuper:
 
 Layout/LineLength:
   Max: 120
-  Exclude:
-    - "test/models/bedel_test.rb"
 
 Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
