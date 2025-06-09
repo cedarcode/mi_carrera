@@ -1,11 +1,9 @@
 <div class="space-y-4">
   <% if @not_planned_approved_subjects.any? %>
     <div class="bg-white rounded-lg border border-gray-100 shadow-sm">
-      <div class="flex items-center justify-between h-10 bg-gray-50">
-        <h3 class="text-sm font-bold ml-4">
-          Materias aprobadas sin semestre asignado
-        </h3>
-      </div>
+      <h3 class="bg-gray-50 text-sm font-bold px-4 py-3">
+        Materias aprobadas sin semestre asignado
+      </h3>
       
       <ul class="space-y-1">
         <% @not_planned_approved_subjects.each do |subject| %>
