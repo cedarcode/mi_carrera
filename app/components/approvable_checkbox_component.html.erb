@@ -7,7 +7,7 @@
   class: "mx-[5px]"
 ) do |form| %>
   <div class="box-content w-[18px] h-[18px] p-3">
-    <div class="group grid size-4 grid-cols-1">
+    <div class="grid size-4 grid-cols-1">
       <%= form.checkbox(
         :approved,
         id: dom_id(approvable),
@@ -16,12 +16,7 @@
         class: STYLES[:checkbox],
         data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
       ) %>
-      <svg fill="none" viewBox="0 0 14 14" class="<%= class_names(STYLES[:svg]) %>">
-        <path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-checked:opacity-100">
-        </path>
-        <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-indeterminate:opacity-100">
-        </path>
-      </svg>
+      <%= helpers.material_icon("check", class_names(STYLES[:icon])) %>
     </div>
   </div>
 <% end %>
