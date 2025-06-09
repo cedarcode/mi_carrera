@@ -1,44 +1,5 @@
 <div class="space-y-4">
-  <% if @not_planned_approved_subjects.any? %>
-    <div class="bg-white rounded-lg border border-gray-100 shadow-sm">
-      <h3 class="bg-gray-50 text-sm font-bold px-4 py-3">
-        Materias aprobadas sin semestre asignado
-      </h3>
-      
-      <% @not_planned_approved_subjects.each do |subject| %> 
-        <%= form_with(
-          model: SubjectPlan.new,
-          url: subject_plans_path,
-          method: :post,
-          data: { turbo: true },
-          class: 'flex items-center gap-3 px-4 py-5 hover:bg-gray-100 transition-colors',
-          local: false
-        ) do |form| %>
-          <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900 transition-colors" %>
-          
-          <svg data-icon="check" width="20" height="20" fill="none" stroke="#22c55e" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l4 4 6-8" />
-          </svg>
-
-          <%= 
-            form.select(
-              :semester,
-              (1..10).map { |i| ["Sem. #{i}", i] },
-              {}, 
-              class: 'w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer'
-            )
-          %>
-          <%= form.hidden_field :subject_id, value: subject.id %>
-          <%= form.button type: :submit, class: "cursor-pointer ps-3", data: { action: "click->autosave-check#update" } do %>
-            <svg data-icon="add-circle" width="20" height="20" fill="none" stroke="#9ca3af" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m-4-4h8"></path>
-            </svg>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
 
   <% (1..10).each do |semester| %>
     <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
