@@ -53,7 +53,8 @@ module PlannedSubjectsHelper
   end
 
   def within_not_planned_approved_subjects(&block)
-    within(:xpath, "//h3[contains(text(), 'Materias aprobadas sin semestre asignado')]/../../ul", &block)
+    card = find(".bg-white", text: "Materias aprobadas sin semestre asignado")
+    within(card, &block)
   end
 
   def within_semester_section(semester, &block)
