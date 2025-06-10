@@ -48,12 +48,9 @@ module PlannedSubjectsHelper
     expect(page).to have_no_select('subject_plan_subject_id', with_options: [subject_name_with_code])
   end
 
-  def within_planned_subjects(&block)
-    within(:xpath, "//div[h3[contains(text(), 'Materias planificadas')]]/following-sibling::*[1]", &block)
-  end
-
   def within_not_planned_approved_subjects(&block)
-    within(:xpath, "//h3[contains(text(), 'Materias aprobadas sin semestre asignado')]/following-sibling::*[1]", &block)
+    card = find(".bg-white", text: "Materias aprobadas sin semestre asignado")
+    within(card, &block)
   end
 
   def within_semester_section(semester, &block)
@@ -67,6 +64,6 @@ module PlannedSubjectsHelper
   private
 
   def within_subject_row(subject_name, &block)
-    within("li", text: subject_name, &block)
+    within("form", text: subject_name, &block)
   end
 end

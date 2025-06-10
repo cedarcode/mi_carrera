@@ -29,94 +29,80 @@ RSpec.describe "PlannedSubjects", type: :system do
   it "can add and remove subjects to planner" do
     visit subject_plans_path
 
+    expect(page).to have_text "Planificador"
     expect(page).to have_text "Materias aprobadas sin semestre asignado"
-    expect(page).to have_text "Materias planificadas"
     expect(page).to have_text "Créditos planeados: 0"
-
-    within_planned_subjects do
-      expect(page).to have_text "No hay materias planificadas para este semestre"
-      assert_no_subject "GAL 1"
-      assert_no_subject "GAL 2"
-      assert_no_subject "T1"
-      expect(page).to have_text "Créditos planeados: 0"
-    end
+    assert_no_subject "GAL 1"
+    assert_no_subject "GAL 2"
 
     within_not_planned_approved_subjects do
       assert_no_subject "GAL 1"
       assert_no_subject "GAL 2"
       assert_subject_with_semester_selector "T1"
 
-      within("li", text: "T1") do
+      within("form", text: "T1") do
         find("button[type='submit']").click
       end
     end
 
-    expect(page).not_to have_text "Materias aprobadas sin planificar"
+    expect(page).not_to have_text "Materias aprobadas sin semestre asignado"
     expect(page).to have_text "Créditos planeados: 11"
 
-    within_planned_subjects do
-      within_semester_section("Primer semestre") do
-        assert_approved_subject "T1"
-        assert_planned_subject "T1"
-        assert_no_subject "GAL 1"
-        assert_no_subject "GAL 2"
-        expect(page).to have_text "Créditos planeados: 11"
-        assert_subject_selector_contains "GAL 1"
-        assert_subject_selector_contains "GAL 2"
-        assert_subject_not_in_selector "T1"
-      end
+    within_semester_section("Primer semestre") do
+      assert_approved_subject "T1"
+      assert_planned_subject "T1"
+      assert_no_subject "GAL 1"
+      assert_no_subject "GAL 2"
+      expect(page).to have_text "Créditos planeados: 11"
+      assert_subject_selector_contains "GAL 1"
+      assert_subject_selector_contains "GAL 2"
+      assert_subject_not_in_selector "T1"
     end
 
-    within_planned_subjects do
-      within_semester_section("Primer semestre") do
-        within_add_subject_section do
-          select 'GAL 1 - 1030', from: "subject_plan_subject_id"
-          find("button[type='submit']").click
-        end
-
-        assert_available_subject "GAL 1"
-        assert_planned_subject "GAL 1"
-        assert_planned_subject "T1"
-        assert_no_subject "GAL 2"
-        expect(page).to have_text "Créditos planeados: 20"
-        assert_subject_not_in_selector "T1"
-        assert_subject_not_in_selector "GAL 1"
-        assert_subject_selector_contains "GAL 2"
+    within_semester_section("Primer semestre") do
+      within_add_subject_section do
+        select 'GAL 1 - 1030', from: "subject_plan_subject_id"
+        find("button[type='submit']").click
       end
+
+      assert_available_subject "GAL 1"
+      assert_planned_subject "GAL 1"
+      assert_planned_subject "T1"
+      assert_no_subject "GAL 2"
+      expect(page).to have_text "Créditos planeados: 20"
+      assert_subject_not_in_selector "T1"
+      assert_subject_not_in_selector "GAL 1"
+      assert_subject_selector_contains "GAL 2"
     end
 
     expect(page).to have_text "Créditos planeados: 20"
 
-    within_planned_subjects do
-      within_semester_section("Segundo semestre") do
-        within_add_subject_section do
-          select 'GAL 2 - 1031', from: "subject_plan_subject_id"
-          find("button[type='submit']").click
-        end
-
-        assert_blocked_subject "GAL 2"
-        assert_planned_subject "GAL 2"
-        assert_no_subject "GAL 1"
-        assert_no_subject "T1"
-        expect(page).to have_text "Créditos planeados: 10"
-        assert_subject_not_in_selector "GAL 2"
-        assert_subject_not_in_selector "GAL 1"
-        assert_subject_not_in_selector "T1"
+    within_semester_section("Segundo semestre") do
+      within_add_subject_section do
+        select 'GAL 2 - 1031', from: "subject_plan_subject_id"
+        find("button[type='submit']").click
       end
+
+      assert_blocked_subject "GAL 2"
+      assert_planned_subject "GAL 2"
+      assert_no_subject "GAL 1"
+      assert_no_subject "T1"
+      expect(page).to have_text "Créditos planeados: 10"
+      assert_subject_not_in_selector "GAL 2"
+      assert_subject_not_in_selector "GAL 1"
+      assert_subject_not_in_selector "T1"
     end
 
     expect(page).to have_text "Créditos planeados: 30"
 
-    within_planned_subjects do
-      within_semester_section("Segundo semestre") do
-        within("li", text: "GAL 2") do
-          find("button[type='submit']").click
-        end
-
-        assert_no_subject "GAL 2"
-        expect(page).to have_text "Créditos planeados: 0"
-        assert_subject_selector_contains "GAL 2"
+    within_semester_section("Segundo semestre") do
+      within("form", text: "GAL 2") do
+        find("button[type='submit']").click
       end
+
+      assert_no_subject "GAL 2"
+      expect(page).to have_text "Créditos planeados: 0"
+      assert_subject_selector_contains "GAL 2"
     end
 
     expect(page).to have_text "Créditos planeados: 20"
