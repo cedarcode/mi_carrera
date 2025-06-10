@@ -34,7 +34,6 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Créditos planeados: 0"
     assert_no_subject "GAL 1"
     assert_no_subject "GAL 2"
-    expect(page).to have_text "Créditos planeados: 0"
 
     within_not_planned_approved_subjects do
       assert_no_subject "GAL 1"
