@@ -26,7 +26,7 @@
               <%= material_icon("lock_outline", "text-gray-400") %>
             <% end %>
 
-            <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400", data: { action: "click->autosave-check#update" } do %>
+            <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400" do %>
               remove_circle_outline
             <% end %>
           <% end %>
@@ -55,7 +55,7 @@
         class: 'w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer'
       ) %>
       <%= form.hidden_field :semester, value: semester %>
-      <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400", data: { action: "click->autosave-check#update" } do %>
+      <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400" do %>
           add_circle_outline
       <% end %>
     <% end %>

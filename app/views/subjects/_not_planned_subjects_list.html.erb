@@ -24,7 +24,7 @@
           )
         %>
         <%= form.hidden_field :subject_id, value: subject.id %>
-        <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400", data: { action: "click->autosave-check#update" } do %>
+        <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400" do %>
           add_circle_outline
         <% end %>
       <% end %>
