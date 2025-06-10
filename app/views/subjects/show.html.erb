@@ -29,23 +29,23 @@
   <hr class="mdc-deprecated-list-divider">
 
   <% if @subject.openfing_id || @subject.eva_id %>
-    <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Links de interés</h3>
-    <div class="mdc-deprecated-list">
-      <% if @subject.openfing_id %>
-        <a href="https://open.fing.edu.uy/courses/<%= @subject.openfing_id %>" target="_blank" class="mdc-deprecated-list-item">
-          <span class="mdc-deprecated-list-item__ripple"></span>
-          <span class="mdc-deprecated-list-item__graphic material-icons">videocam</span>
-          <span class="mdc-deprecated-list-item__text">OpenFING</span>
-        </a>
-      <% end %>
+    <h3 class="mx-4 my-3 text-sm font-medium">Links de interés</h3>
 
-      <% if @subject.eva_id %>
-        <% second_semester_eva_id = @subject.second_semester_eva_id %>
-        <%= render 'shared/eva_links_component', eva_id: @subject.eva_id, text: second_semester_eva_id ? "EVA - Primer semestre" : "EVA" %>
-        <%= render 'shared/eva_links_component', eva_id: second_semester_eva_id, text: "EVA - Segundo semestre" if second_semester_eva_id %>
+    <% if @subject.openfing_id %>
+      <%= link_to "https://open.fing.edu.uy/courses/#{@subject.openfing_id}", target: "_blank", class: "flex items-center h-12 px-4 hover:bg-gray-100" do %>
+        <%= material_icon("videocam", "text-gray-400 me-8") %>
+
+        OpenFING
       <% end %>
-    </div>
-    <hr class="mdc-deprecated-list-divider">
+    <% end %>
+
+    <% if @subject.eva_id %>
+      <% second_semester_eva_id = @subject.second_semester_eva_id %>
+      <%= render 'shared/eva_links_component', eva_id: @subject.eva_id, text: second_semester_eva_id ? "EVA - Primer semestre" : "EVA" %>
+      <%= render 'shared/eva_links_component', eva_id: second_semester_eva_id, text: "EVA - Segundo semestre" if second_semester_eva_id %>
+    <% end %>
+
+    <hr class="border-gray-200"/>
   <% end %>
 
   <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Previas</h3>
