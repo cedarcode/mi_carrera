@@ -1,8 +1,8 @@
 <div class="mdc-deprecated-list-group">
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5"><%= @subject.code %> - <%= @subject.name %></h3>
+  <h3 class="mx-4 my-3 text-2xl"><%= @subject.code %> - <%= @subject.name %></h3>
   <hr class="border-gray-200"/>
 
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Información general</h3>
+  <h3 class="mx-4 my-3 text-sm font-medium">Información general</h3>
   <div class="mdc-deprecated-list growing-text-list">
     <label class="mdc-deprecated-list-item non-clickable-list-item">
       <span class="mdc-deprecated-list-item__text">
@@ -24,7 +24,7 @@
   </div>
   <hr class="border-gray-200"/>
 
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Aprobación</h3>
+  <h3 class="mx-4 my-3 text-sm font-medium">Aprobación</h3>
   <%= render 'approvables' %>
   <hr class="border-gray-200"/>
 
@@ -48,7 +48,7 @@
     <hr class="border-gray-200"/>
   <% end %>
 
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Previas</h3>
+  <h3 class="mx-4 my-3 text-sm font-medium">Previas</h3>
 
   <% if @subject.course.prerequisite_tree %>
     <span class="mx-4">Del curso:</span>
