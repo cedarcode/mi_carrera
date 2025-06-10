@@ -1,0 +1,33 @@
+<div class="relative" data-subject-selector-target="dropdown">
+  <button class="w-32 h-6 px-2 rounded-md text-sm text-gray-900 border border-gray-300 truncate flex items-center justify-between"
+          data-action="click->subject-selector#toggle">
+    <span data-subject-selector-target="buttonText">Materia</span>
+    <span class="material-icons" data-subject-selector-target="arrow">expand_more</span>
+  </button>
+  
+  <div class="absolute z-50 mt-0.5 w-64 bg-white border border-gray-300 rounded-md hidden right-0 sm:left-0"
+        data-subject-selector-target="menu">
+    <input placeholder="Buscar materia..."
+           class="w-full p-2 text-sm border-b border-gray-200 focus:outline-none"
+           data-action="input->subject-selector#search"
+           data-subject-selector-target="searchInput">
+    
+    <div class="max-h-64 overflow-y-auto">
+      <% subjects.group_by(&:category).reject { |_, subjects| subjects.empty? }.each do |category, subjects| %>
+        <div class="p-2 text-xs font-semibold text-gray-600 bg-gray-50 border-b border-gray-100" 
+              data-subject-selector-target="categoryHeader">
+          <%= formatted_category(category) %>
+        </div>
+        <% subjects.each do |subject| %>
+          <div class="p-2 text-sm text-gray-900 hover:bg-blue-50 border-b border-gray-100 last:border-b-0"
+                data-action="click->subject-selector#select"
+                data-subject-id="<%= subject.id %>"
+                data-subject-name="<%= display_planned_subject_name_and_code(subject) %>"
+                data-subject-selector-target="option">
+            <%= display_planned_subject_name_and_code(subject) %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div> 

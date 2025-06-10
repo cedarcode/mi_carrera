@@ -41,21 +41,17 @@
       model: SubjectPlan.new,
       url: subject_plans_path,
       method: :post,
-      data: { turbo: true },
+      data: { turbo: true, controller: "subject-selector" },
       class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 border-t border-gray-100',
       local: false
     ) do |form| %>
       <span class="grow text-sm/6 text-gray-900">
         Planificar:
       </span>
-      <%= form.select(
-        :subject_id,
-        @not_planned_subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
-        { prompt: 'Materia' },
-        class: 'w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer'
-      ) %>
+      <%= render partial: "subjects/subject_selector", locals: { subjects: @not_planned_subjects } %>
+      <%= form.hidden_field :subject_id, data: { subject_selector_target: "hiddenInput" } %>
       <%= form.hidden_field :semester, value: semester %>
-      <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400" do %>
+      <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed", disabled: true, data: { subject_selector_target: "submitButton" } do %>
           add_circle_outline
       <% end %>
     <% end %>
