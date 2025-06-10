@@ -2,15 +2,13 @@
   <%= render 'shared/credits_counter' %>
 <% end %>
 
-<div class="space-y-2 mb-4">
-  <div class="my-3">
-    <div class="flex items-center justify-between h-10 mb-3">
-      <h3 class="text-lg font-bold ml-4">
-        Planificador
-      </h3>
-      <%= render partial: "credits_counter", locals: { planned_subjects: @planned_subjects } %>
-    </div>
-
-    <%= render partial: "subjects/planned_subjects_list", locals: { planned_subjects: @planned_subjects } %>
+<div class="my-3 space-y-4">
+  <div class="flex items-center justify-between h-10 mb-3">
+    <h3 class="text-lg font-bold ml-4">
+      Planificador
+    </h3>
+    <%= render partial: "credits_counter", locals: { planned_subjects: @planned_subjects } %>
   </div>
+
+  <%= render partial: "subjects/planned_subjects_list", locals: { planned_subjects: @planned_subjects } %>
 </div>
