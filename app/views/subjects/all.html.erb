@@ -6,9 +6,8 @@
     <div class="flex items-center h-[50px] border-y border-t-gray-100 border-b-gray-200 bg-gray-50 px-3 py-1.5 text-sm/6 font-semibold text-gray-900">
       <h3 class="grow"><%= formatted_category(category) %></h3>
     </div>
-    <ul role="list">
-      <%= render partial: "subjects/subjects_list", locals: { subjects: subjects } %>
-    </ul>
+
+    <%= render partial: "subjects/subjects_list", locals: { subjects: subjects } %>
   <% end %>
 <% else %>
   <div class="flex justify-center items-center mt-12 text-gray-500 text-2xl font-light gap-1">
