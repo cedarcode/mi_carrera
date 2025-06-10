@@ -1,6 +1,6 @@
 <div class="mdc-deprecated-list-group">
   <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5"><%= @subject.code %> - <%= @subject.name %></h3>
-  <hr class="mdc-deprecated-list-divider">
+  <hr class="border-gray-200"/>
 
   <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Información general</h3>
   <div class="mdc-deprecated-list growing-text-list">
@@ -22,11 +22,11 @@
 
     <%= render 'rating' %>
   </div>
-  <hr class="mdc-deprecated-list-divider">
+  <hr class="border-gray-200"/>
 
   <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Aprobación</h3>
   <%= render 'approvables' %>
-  <hr class="mdc-deprecated-list-divider">
+  <hr class="border-gray-200"/>
 
   <% if @subject.openfing_id || @subject.eva_id %>
     <h3 class="mx-4 my-3 text-sm font-medium">Links de interés</h3>
@@ -62,7 +62,7 @@
     <%= render @subject.exam.prerequisite_tree, negative: false %>
   <% end %>
 
-  <hr class="mdc-deprecated-list-divider">
+  <hr class="border-gray-200"/>
   <a href="https://github.com/cedarcode/mi_carrera/issues" target="_blank" class="mdc-deprecated-list-item">
     <span class="mdc-deprecated-list-item__ripple"></span>
     <span class="mdc-typography--subtitle2">¿Hay un error? ¿Hay información que falta? Reportalo acá</span>
