@@ -3,25 +3,21 @@
   <hr class="border-gray-200"/>
 
   <h3 class="mx-4 my-3 text-sm font-medium">Información general</h3>
-  <div class="mdc-deprecated-list growing-text-list">
-    <label class="mdc-deprecated-list-item non-clickable-list-item">
-      <span class="mdc-deprecated-list-item__text">
-        Créditos: <%= @subject.credits %>
-      </span>
-    </label>
 
-    <label class="mdc-deprecated-list-item">
-      <% if @subject.group %>
-        <%= link_to subject_group_path(@subject.group), :class => "mdc-deprecated-list-item__text" do %>
-          Grupo: <%= @subject.group.name %>
-        <% end %>
-      <% else  %>
-        Grupo: Desconocido
-      <% end %>
-    </label>
+  <span class="flex items-center h-12 px-4">
+    Créditos: <%= @subject.credits %>
+  </span>
 
-    <%= render 'rating' %>
-  </div>
+  <% if @subject.group %>
+    <%= link_to subject_group_path(@subject.group), :class => "flex items-center h-12 px-4 hover:bg-gray-100" do %>
+      Grupo: <%= @subject.group.name %>
+    <% end %>
+  <% else  %>
+    Grupo: Desconocido
+  <% end %>
+
+  <%= render 'rating' %>
+
   <hr class="border-gray-200"/>
 
   <h3 class="mx-4 my-3 text-sm font-medium">Aprobación</h3>
