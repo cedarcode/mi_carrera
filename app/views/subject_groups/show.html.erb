@@ -6,6 +6,4 @@
 
 <hr class="border-gray-200">
 
-<ul>
-  <%= render partial: "subjects/subjects_list", locals: { subjects: @subject_group.subjects.ordered_by_category } %>
-</ul>
+<%= render partial: "subjects/subjects_list", locals: { subjects: @subject_group.subjects.ordered_by_category } %>
