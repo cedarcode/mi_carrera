@@ -16,9 +16,9 @@
             url: subject_plan_path(subject_id: subject.id),
             method: :delete,
             data: { turbo: true },
-            class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 transition-colors',
+            class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100',
           ) do |form| %>
-            <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900 transition-colors" %>
+            <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900" %>
             
             <% if current_student.approved?(subject) %>
               <%= material_icon("check", "text-green-500") %>
@@ -42,10 +42,10 @@
       url: subject_plans_path,
       method: :post,
       data: { turbo: true },
-      class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 transition-colors border-t border-gray-100',
+      class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 border-t border-gray-100',
       local: false
     ) do |form| %>
-      <span class="grow text-sm/6 text-gray-900 transition-colors">
+      <span class="grow text-sm/6 text-gray-900">
         Planificar:
       </span>
       <%= form.select(

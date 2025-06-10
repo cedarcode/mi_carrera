@@ -10,10 +10,10 @@
         url: subject_plans_path,
         method: :post,
         data: { turbo: true },
-        class: 'flex items-center gap-3 p-3 hover:bg-gray-100 transition-colors',
+        class: 'flex items-center gap-3 p-3 hover:bg-gray-100',
         local: false
       ) do |form| %>
-        <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900 transition-colors" %>
+        <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900" %>
         <%= material_icon("check", "text-green-500") %>
         <%= 
           form.select(
