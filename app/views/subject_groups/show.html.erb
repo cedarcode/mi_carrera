@@ -2,9 +2,8 @@
   <%= render 'shared/credits_counter' %>
 <% end %>
 
-<div class="mdc-deprecated-list-group">
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5">Grupo <%= @subject_group.name %></h3>
-  <hr class="mdc-deprecated-list-divider">
+<h3 class="text-2xl mx-4 my-3">Grupo <%= @subject_group.name %></h3>
 
-  <%= render partial: "subjects/subjects_list", locals: { subjects: @subject_group.subjects.ordered_by_category } %>
-</div>
+<hr class="border-gray-200">
+
+<%= render partial: "subjects/subjects_list", locals: { subjects: @subject_group.subjects.ordered_by_category } %>

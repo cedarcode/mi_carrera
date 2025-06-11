@@ -1,10 +1,8 @@
 require 'rails_helper'
+require 'support/cookies_helper'
 
 RSpec.describe CookieStudent, type: :model do
-  def approvable_ids_in_cookie(cookie)
-    value = cookie[:approved_approvable_ids]
-    value.present? ? JSON.parse(value) : nil
-  end
+  include CookiesHelper
 
   describe '#add' do
     it 'adds approvable.id only if available' do

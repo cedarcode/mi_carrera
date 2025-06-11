@@ -66,7 +66,14 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.before(:each, type: :system) do
-    driven_by :selenium, using: :headless_chrome
+    driven_by :selenium, using: :headless_chrome do |options|
+      # For some reason, even though it's running in headless mode, chrome will treat a
+      # 'foreground' tab as backgrounded if the surrounding window is occluded (aka
+      # visually covered) by another window which causes it to halt animations,
+      # resulting in tests errors.
+      # This flag disables that behavior.
+      options.add_argument 'disable-backgrounding-occluded-windows'
+    end
   end
 
   [:system, :request].each do |type|

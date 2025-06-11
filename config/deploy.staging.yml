@@ -2,6 +2,7 @@ proxy:
   host: staging.micarrera.uy
   app_port: 3000
   ssl: true
+  forward_headers: true
 
 servers:
   web:
