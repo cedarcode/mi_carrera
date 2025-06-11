@@ -5,7 +5,8 @@ WebAuthn.configure do |config|
   # If you need your credentials to be bound to a single origin but you have more than one tenant, please see
   # [our Advanced Configuration section](https://github.com/cedarcode/webauthn-ruby/blob/master/docs/advanced_configuration.md)
   # instead of adding multiple origins.
-  config.allowed_origins = [Rails.configuration.webauthn_origin]
+  config.allowed_origins = Rails.configuration.webauthn_origin
+  config.rp_id = Rails.configuration.webauthn_rp_id
 
   # Relying Party name for display purposes
   config.rp_name = "Mi Carrera"

@@ -8,7 +8,7 @@ RSpec.describe 'Manage passkeys' do
   ENV['ENABLE_PASSKEYS'] = 'true'
 
   describe 'Add and remove credentials' do
-    fake_origin = Rails.configuration.webauthn_origin
+    fake_origin = Rails.configuration.webauthn_origin[0]
     fake_client = WebAuthn::FakeClient.new(fake_origin, encoding: false)
     fixed_challenge = SecureRandom.random_bytes(32)
     fake_credentials = fake_client.create(challenge: fixed_challenge, user_verified: true)
