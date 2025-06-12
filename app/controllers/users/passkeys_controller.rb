@@ -6,7 +6,7 @@ module Users
       @create_passkey_options = WebAuthn::Credential.options_for_create(
         user: {
           id: current_user.webauthn_id,
-          name: current_user.email.split('@').first
+          name: current_user.email
         },
         exclude: current_user.passkeys.pluck(:external_id),
         authenticator_selection: { user_verification: "required" }
@@ -32,7 +32,7 @@ module Users
           render json: { status: "ok" }, status: :ok
           flash[:notice] = "Tu passkey ha sido agregada correctamente."
         else
-          render json: "Couldn't add your Security Key", status: :unprocessable_entity
+          render json: "No se pudo agregar tu Passkey", status: :unprocessable_entity
         end
       rescue WebAuthn::Error => e
         render json: "Verification failed: #{e.message}", status: :unprocessable_entity
@@ -42,10 +42,11 @@ module Users
     end
 
     def destroy
-      current_user.passkeys.destroy(params[:id])
-
-      redirect_to user_passkeys_path
-      flash[:notice] = "Tu passkey ha sido eliminada correctamente."
+      if current_user.passkeys.destroy(params[:id])
+        redirect_to user_passkeys_path, notice: "Tu passkey ha sido eliminada correctamente."
+      else
+        render json: "No se pudo eliminar tu Passkey", status: :unprocessable_entity
+      end
     end
 
     private
