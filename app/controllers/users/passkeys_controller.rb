@@ -32,7 +32,7 @@ module Users
           render json: { status: "ok" }, status: :ok
           flash[:notice] = "Tu passkey ha sido agregada correctamente."
         else
-          render json: "Couldn't add your Security Key", status: :unprocessable_entity
+          render json: "No se pudo agregar tu Passkey", status: :unprocessable_entity
         end
       rescue WebAuthn::Error
         render json: "Verification failed", status: :unprocessable_entity
