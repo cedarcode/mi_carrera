@@ -82,7 +82,7 @@ RSpec.describe 'Approvals', type: :system do
     assert_approvable_checkbox(gal2.course, checked: false, disabled: true)
     assert_approvable_checkbox(gal2.exam, checked: false, disabled: false)
 
-    find('.mdc-deprecated-list-item', text: 'Todos los siguientes').click
+    find('a', text: 'Todos los siguientes').click
 
     expect(page).to have_text('1030 - GAL 1 (curso)')
     expect(page).to have_text('1030 - GAL 1 (examen)')
