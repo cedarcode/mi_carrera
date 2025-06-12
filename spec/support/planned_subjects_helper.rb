@@ -41,11 +41,15 @@ module PlannedSubjectsHelper
   end
 
   def assert_subject_selector_contains(subject_name_with_code)
-    expect(page).to have_select('subject_plan_subject_id', with_options: [subject_name_with_code])
+    within("[data-subject-selector-target='dropdown']") do
+      expect(page).to have_text(subject_name_with_code)
+    end
   end
 
   def assert_subject_not_in_selector(subject_name_with_code)
-    expect(page).to have_no_select('subject_plan_subject_id', with_options: [subject_name_with_code])
+    within("[data-subject-selector-target='dropdown']") do
+      expect(page).to have_no_text(subject_name_with_code)
+    end
   end
 
   def within_not_planned_approved_subjects(&block)
@@ -58,7 +62,7 @@ module PlannedSubjectsHelper
   end
 
   def within_add_subject_section(&block)
-    within(:xpath, ".//form[.//select[@name='subject_plan[subject_id]']]", &block)
+    within(:xpath, ".//form[.//div[@data-subject-selector-target='dropdown']]", &block)
   end
 
   private

@@ -54,6 +54,7 @@ RSpec.describe "PlannedSubjects", type: :system do
       assert_no_subject "GAL 1"
       assert_no_subject "GAL 2"
       expect(page).to have_text "Créditos planeados: 11"
+      find("button", text: "Materia").click
       assert_subject_selector_contains "GAL 1"
       assert_subject_selector_contains "GAL 2"
       assert_subject_not_in_selector "T1"
@@ -61,7 +62,7 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     within_semester_section("Primer semestre") do
       within_add_subject_section do
-        select 'GAL 1 - 1030', from: "subject_plan_subject_id"
+        find("[data-subject-selector-target='option']", text: "GAL 1").click
         find("button[type='submit']").click
       end
 
@@ -70,6 +71,7 @@ RSpec.describe "PlannedSubjects", type: :system do
       assert_planned_subject "T1"
       assert_no_subject "GAL 2"
       expect(page).to have_text "Créditos planeados: 20"
+      find("button", text: "Materia").click
       assert_subject_not_in_selector "T1"
       assert_subject_not_in_selector "GAL 1"
       assert_subject_selector_contains "GAL 2"
@@ -79,7 +81,8 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     within_semester_section("Segundo semestre") do
       within_add_subject_section do
-        select 'GAL 2 - 1031', from: "subject_plan_subject_id"
+        find("button", text: "Materia").click
+        find("[data-subject-selector-target='option']", text: "GAL 2").click
         find("button[type='submit']").click
       end
 
@@ -102,6 +105,7 @@ RSpec.describe "PlannedSubjects", type: :system do
 
       assert_no_subject "GAL 2"
       expect(page).to have_text "Créditos planeados: 0"
+      find("button", text: "Materia").click
       assert_subject_selector_contains "GAL 2"
     end
 
