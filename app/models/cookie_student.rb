@@ -15,6 +15,11 @@ class CookieStudent < BaseStudent
     }
   end
 
+  def degree
+    store_degree_in_cookie if should_store_degree_in_cookie?
+    Degree.find_by(name: cookie[:degree_name])
+  end
+
   delegate :subjects, :subject_groups, to: :degree, prefix: true
 
   private
@@ -28,7 +33,14 @@ class CookieStudent < BaseStudent
     }
   end
 
-  def degree
-    Degree.default
+  def should_store_degree_in_cookie?
+    cookie[:degree_name].blank?
+  end
+
+  def store_degree_in_cookie
+    cookie[:degree_name] = {
+      value: Degree.default.name,
+      domain: :all
+    }
   end
 end
