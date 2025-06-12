@@ -9,7 +9,7 @@
 
       <%= render 'prerequisites/met_checkmark', prerequisite: logical_prerequisite, negative: %>
     </a>
-    <div class="logical-prerequisite-operands" data-prerequisite-target="collapsable" >
+    <div class="hidden ml-5" data-prerequisite-target="collapsable" >
       <%= render logical_prerequisite.operands_prerequisites, negative: false %>
     </div>
   </div>

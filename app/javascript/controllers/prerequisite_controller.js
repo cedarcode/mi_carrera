@@ -4,12 +4,12 @@ export default class extends Controller {
   static targets = [ "collapsable", "button" ]
 
   toggle() {
-    if (this.collapsableTarget.style.display == "block") {
-      this.collapsableTarget.style.display = "none";
+    if (!this.collapsableTarget.classList.contains("hidden")) {
       this.buttonTarget.innerHTML = "chevron_right"
     } else {
-      this.collapsableTarget.style.display = "block";
       this.buttonTarget.innerHTML = "expand_more";
     }
+
+    this.collapsableTarget.classList.toggle("hidden");
   }
 }
