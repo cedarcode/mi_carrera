@@ -1,4 +1,4 @@
-<%= link_to subject_path(enrollment_prerequisite.approvable_needed.subject), class: 'flex items-center py-3 px-4 hover:bg-gray-100 cursor-pointer' do %>
+<%= link_to subject_path(enrollment_prerequisite.approvable_needed.subject), class: 'flex items-center py-3 px-4 hover:bg-gray-100' do %>
   <span class="flex-1 truncate">
     <%= negative ? "No estar" : "Estar" %>
     <%= display_enrollment_prerequisite(enrollment_prerequisite) %>
