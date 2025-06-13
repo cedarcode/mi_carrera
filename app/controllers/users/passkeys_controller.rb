@@ -6,7 +6,7 @@ module Users
       @create_passkey_options = WebAuthn::Credential.options_for_create(
         user: {
           id: current_user.webauthn_id,
-          name: current_user.email.split('@').first
+          name: current_user.email
         },
         exclude: current_user.passkeys.pluck(:external_id),
         authenticator_selection: { user_verification: "required" }
@@ -20,11 +20,8 @@ module Users
       begin
         webauthn_passkey.verify(session[:current_registration_challenge]["challenge"], user_verification: true)
 
-        passkey = current_user.passkeys.find_or_initialize_by(
-          external_id: Base64.strict_encode64(webauthn_passkey.raw_id)
-        )
-
-        if passkey.update(
+        if current_user.passkeys.create(
+          external_id: webauthn_passkey.id,
           name: params[:name],
           public_key: webauthn_passkey.public_key,
           sign_count: webauthn_passkey.sign_count
@@ -34,18 +31,19 @@ module Users
         else
           render json: "Couldn't add your Security Key", status: :unprocessable_entity
         end
-      rescue WebAuthn::Error => e
-        render json: "Verification failed: #{e.message}", status: :unprocessable_entity
+      rescue WebAuthn::Error
+        render json: "Verification failed", status: :unprocessable_entity
       ensure
         session.delete(:current_registration_challenge)
       end
     end
 
     def destroy
-      current_user.passkeys.destroy(params[:id])
-
-      redirect_to user_passkeys_path
-      flash[:notice] = "Tu passkey ha sido eliminada correctamente."
+      if current_user.passkeys.destroy(params[:id])
+        redirect_to user_passkeys_path, notice: "Tu passkey ha sido eliminada correctamente."
+      else
+        render json: "Couldn't delete your Security Key", status: :unprocessable_entity
+      end
     end
 
     private
