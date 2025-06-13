@@ -3,7 +3,7 @@
     <p class="text-sm/6 text-gray-900">
       ¡Bienvenido! Marcá los cursos y exámenes que aprobaste para ver qué materias podés cursar.
     </p>
-    <%= form_with url: user_onboardings_path, method: :patch, local: false, data: { action: "welcome-banner#dismiss" } do |f| %>
+    <%= form_with url: user_onboardings_path, method: :patch, data: { turbo: true, action: "welcome-banner#dismiss" } do |f| %>
       <%= f.button 'Listo', class: "py-1 text-sm font-semibold text-primary cursor-pointer uppercase" %>
     <% end %>
   </div>
