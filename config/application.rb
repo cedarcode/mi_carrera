@@ -38,10 +38,6 @@ module MiCarrera
 
     config.i18n.default_locale = :es
 
-    config.action_view.field_error_proc = Proc.new { |html_tag, _instance|
-      html_tag
-    }
-
     config.session_store :cookie_store, key: "_mi_carrera_session", domain: :all
 
     ###
@@ -49,5 +45,10 @@ module MiCarrera
     # If you are deploying to a memory constrained environment you may want to set this to `false`.
     #++
     config.yjit = false
+
+    config.degrees = config_for(:degrees)
+
+    config.view_component.preview_paths << "#{Rails.root.join("spec/components/previews")}"
+    config.view_component.default_preview_layout = "component_preview"
   end
 end

@@ -2,6 +2,7 @@ proxy:
   host: staging.micarrera.uy
   app_port: 3000
   ssl: true
+  forward_headers: true
 
 servers:
   web:
@@ -13,4 +14,5 @@ servers:
 env:
   clear:
     ROLLBAR_ENV: staging
+    APPSIGNAL_APP_ENV: staging
     ENABLE_PLANNER: true

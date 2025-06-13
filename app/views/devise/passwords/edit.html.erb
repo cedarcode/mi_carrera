@@ -1,25 +1,15 @@
-<div class="mdc-deprecated-list-group">
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5 sign-in">Restablecer Contraseña</h3>
-  <ul class="mdc-deprecated-list growing-text-list">
+<div class="flex flex-col justify-center items-center p-6 space-y-6">
+  <%= image_tag "icon.png", class: "w-20 rounded-full" %>
 
-    <%= form_with(model: resource, url: password_path(resource_name), method: :put, local: true) do |f| %>
-      <%= f.hidden_field :reset_password_token %>
+  <h2 class="text-3xl/9 text-neutral-700">Restablecer contraseña</h2>
 
-      <li class="form-input-container">
-        <%= render 'shared/password_field', f:, resource:, field: :password, label_text: "Nueva contraseña", autocomplete: "new-password", required: false %>
-        <%= render 'shared/info_and_errors', resource:, field: :password, text: "#{@minimum_password_length} caracteres mínimo" %>
-      </li>
+  <%= form_with(model: resource, url: password_path(resource_name), method: :put, class: "flex flex-col w-full max-w-md space-y-6 mb-12") do |f| %>
+    <%= f.hidden_field :reset_password_token %>
 
-      <li class="form-input-container sign-in">
-        <%= f.button class: "mdc-button mdc-button--raised" do %>
-          <span class="mdc-button__ripple"></span>
-          <span class='mdc-button__label'>
-            Restablecer contraseña
-          </span>
-        <% end %>
-      </li>
-    <% end %>
+    <%= render 'shared/alert' if flash[:alert] %>
 
-    <%= render "devise/shared/links" %>
-  </ul>
+    <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña", input_options: { required: true, autocomplete: "new-password", autofocus: true }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
+
+    <%= render ButtonComponent.new(form: f, label: "Restablecer contraseña") %>
+  <% end %>
 </div>

@@ -1,59 +1,29 @@
-<div class="mdc-deprecated-list-group">
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5 sign-in">Registro</h3>
-  <ul class="mdc-deprecated-list growing-text-list">
+<div class="flex flex-col justify-center items-center p-6 space-y-6">
+  <%= image_tag "icon.png", class: "w-20 rounded-full" %>
 
-    <li class="form-input-container google-button-container">
-      <%- resource_class.omniauth_providers.each do |provider| %>
-        <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, local: true do |f| %>
-          <%= f.button class: 'google-sign-in-button' do %>
-            <%= image_tag asset_path('google-icon.png'), class: 'google-icon' %>
-            <span class='google-sign-in-text'>Continuar con Google</span>
-          <% end %>
-        <% end %>
-      <% end %>
-    </li>
+  <h2 class="text-3xl/9 text-neutral-700">Registrarse</h2>
 
-    <li role="separator" class="mdc-deprecated-list-divider"></li>
+  <div class="w-full max-w-md space-y-6">
+    <%= form_with(model: resource, url: registration_path(resource_name), class: "flex flex-col space-y-6") do |f| %>
+      <%= render 'shared/alert' if flash[:alert] %>
 
-    <%= form_with(model: resource, url: registration_path(resource_name), local: true) do |f| %>
-      <li class="form-input-container sign-in">
-        Registrarte con tu correo electrónico
-      </li>
+      <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true, autocomplete: "email" }) %>
 
-      <li class="form-input-container">
-        <div class="mdc-text-field mdc-text-field--filled <%='mdc-text-field--invalid mdc-text-field--with-trailing-icon' if resource.errors[:email].any? %>" data-controller="textfield">
-          <span class="mdc-text-field__ripple"></span>
-          <%= f.label :email, "Correo electrónico", class: "mdc-floating-label" %>
-          <%= f.email_field :email, class: "mdc-text-field__input", required: true, autofocus: true %>
-          <%= render 'shared/invalid_icon', resource: resource, field: :email %>
-          <div class="mdc-line-ripple"></div>
-        </div>
-        <%= render 'shared/info_and_errors', resource: resource, field: :email, text: '' %>
-      </li>
-      <li class="form-input-container">
-        <%= render 'shared/password_field', f:, resource:, field: :password, label_text: "Nueva contraseña", autocomplete: "new-password", required: true %>
-        <%= render 'shared/info_and_errors', resource:, field: :password, text: "#{@minimum_password_length} caracteres mínimo." %>
-      </li>
-      <li class="form-input-container">
-        <%= render 'shared/password_field', f:, resource:, field: :password_confirmation, label_text: "Confirma tu nueva contraseña", autocomplete: "new-password", required: true %>
-        <%= render 'shared/info_and_errors', resource:, field: :password_confirmation, text: '' %>
-      </li>
+      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true, autocomplete: "new-password" }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
 
-      <li class="form-input-container sign-in">
-        <%= f.button class: "mdc-button mdc-button--raised" do %>
-          <span class="mdc-button__ripple"></span>
-          <span class='mdc-button__label'>
-            Registrarte
-          </span>
-        <% end %>
-      </li>
+      <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu contraseña", input_options: { required: true, autocomplete: "new-password" }) %>
+
+      <%= render ButtonComponent.new(form: f, label: "Registrarte") %>
     <% end %>
 
-    <li role="separator" class="mdc-deprecated-list-divider"></li>
-    <li class="form-input-container sign-in">
-      ¿Ya estás registrado?
-      <%= link_to 'Ingresar', new_session_path(resource), class: "account-session" %>
-    </li>
+    <div class="relative flex items-center">
+      <div class="flex-grow border-t border-neutral-500"></div>
+      <span class="flex-shrink mx-2 text-neutral-500">O continuar con</span>
+      <div class="flex-grow border-t border-neutral-500"></div>
+    </div>
 
-  </ul>
+    <%= render "shared/google_sso" %>
+
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

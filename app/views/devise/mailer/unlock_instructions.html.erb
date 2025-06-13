@@ -1,0 +1,14 @@
+<div class='mailer-content'>
+  <div class='email-text'>
+    <h4 class='mailer-center'>MiCarrera</h4>
+    <h2>¡Hola <%= @resource.email %>!</h2>
+
+    <p>Tu cuenta fue bloqueada por una cantidad excesiva de intentos de acceso fallidos.</p>
+
+    <p>Clickeá en el link de abajo para desbloquear tu cuenta, o espera una hora.</p>
+
+    <div class='mailer-button-container'>
+      <p><%= link_to 'Desbloquear mi cuenta', unlock_url(@resource, unlock_token: @token), class: 'mailer-button' %></p>
+    </div>
+  </div>
+</div>

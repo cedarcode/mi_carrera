@@ -1,27 +1,17 @@
-<div class="mdc-deprecated-list position-relative" data-controller="loading <%= "confetti" if @graduated %>" id="approvables">
+<div data-controller="loading <%= "confetti" if @graduated %>" id="approvables">
   <%= render "approvals/spinner_template" %>
 
-  <label class="mdc-deprecated-list-item <%= "mdc-deprecated-list-item--disabled" if !current_student.available?(@subject.course) %>" for="<%= dom_id(@subject.course) %>">
-    <span class="mdc-deprecated-list-item__ripple"></span>
-    <span class="mdc-deprecated-list-item__text">
-      Curso aprobado?
-    </span>
+  <label class="flex justify-between items-center px-4 h-12 cursor-pointer hover:bg-gray-100 <%= "hover:bg-white cursor-default! text-gray-400" if !current_student.available?(@subject.course) %>" for="<%= dom_id(@subject.course) %>">
+    Curso aprobado?
 
-    <span class="mdc-deprecated-list-item__meta">
-      <%= render 'shared/checkbox_component', approvable: @subject.course, subject_show: true %>
-    </span>
+    <%= render(ApprovableCheckboxComponent.new(approvable: @subject.course, subject_show: true, current_student: current_student)) %>
   </label>
 
   <% if @subject.exam %>
-    <label class="mdc-deprecated-list-item <%= "mdc-deprecated-list-item--disabled" if !current_student.available?(@subject.exam) %>" for="<%= dom_id(@subject.exam) %>">
-      <span class="mdc-deprecated-list-item__ripple"></span>
-      <span class="mdc-deprecated-list-item__text">
-        Examen aprobado?
-      </span>
+    <label class="flex justify-between items-center px-4 h-12 cursor-pointer hover:bg-gray-100 <%= "hover:bg-white cursor-default! text-gray-400" if !current_student.available?(@subject.exam) %>" for="<%= dom_id(@subject.exam) %>">
+      Examen aprobado?
 
-      <span class="mdc-deprecated-list-item__meta">
-        <%= render 'shared/checkbox_component', approvable: @subject.exam, subject_show: true %>
-      </span>
+      <%= render(ApprovableCheckboxComponent.new(approvable: @subject.exam, subject_show: true, current_student: current_student)) %>
     </label>
   <% end %>
 </div>

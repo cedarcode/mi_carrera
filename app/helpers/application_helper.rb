@@ -1,30 +1,25 @@
 module ApplicationHelper
-  def nav_icon(name, path)
-    link_to(name, path, class: "material-icons mdc-top-app-bar__navigation-icon mdc-icon-button")
-  end
-
-  def action_icon(name, path)
-    link_to(name, path, class: "material-icons mdc-top-app-bar__action-item mdc-icon-button")
-  end
-
-  def show_login_link?
-    !user_signed_in? && !current_page?(new_user_session_path)
-  end
-
-  def drawer_menu_navigation_item(text, link, icon = nil)
+  def drawer_menu_navigation_item(text, link, new_badge: false)
     link_options = {}
     link_options[:tabindex] = 0
-    link_options[:class] = "mdc-deprecated-list-item"
+
     if current_page?(link)
       link_options[:aria] = { current: 'page' }
 
-      link_options[:class] += " mdc-deprecated-list-item--activated"
+      link_options[:class] = "flex p-2 rounded-sm text-primary bg-purple-200"
+    else
+      link_options[:class] = "flex p-2 rounded-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100"
     end
 
     link_to link, **link_options do
-      concat tag.span(class: 'mdc-deprecated-list-item__ripple')
-      concat tag.span(text, class: 'mdc-deprecated-list-item__text')
-      concat tag.i(icon, class: 'material-icons mdc-deprecated-list-item__graphic') if icon
+      concat tag.span(text)
+      if new_badge
+        concat tag.span(
+          'Nuevo',
+          class: "h-[20px] self-center ms-3 bg-purple-100 border text-primary
+                  text-[10px] uppercase rounded-full py-0.5 px-2"
+        )
+      end
     end
   end
 
@@ -39,5 +34,9 @@ module ApplicationHelper
     else
       raise "Unexpected logical operator: #{prerequisite.logical_operator}"
     end
+  end
+
+  def material_icon(icon, classes = nil)
+    tag.span(icon, class: "material-icons #{classes}")
   end
 end
