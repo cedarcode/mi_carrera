@@ -18,18 +18,10 @@
     Colabora en Github
   <% end %>
 
-  <a href="https://mail.google.com/mail/?view=cm&fs=1
-  &to=feedback-micarrera@cedarcode.com
-  &su=Feedback%20sobre%20MiCarrera
-  &body=Hola,%20quiero%20compartir%20mi%20opinión%20sobre%20la%20app..."
-     target="_blank" style="text-decoration: none; color: inherit;">
-    <div class='mdc-deprecated-list-item'>
-      <span class="mdc-deprecated-list-item__ripple"></span>
-      <span class="material-symbols-outlined">rate_review</span>
-      &nbsp;
-      <span class='mdc-deprecated-list-item__text'>Opina de la app</span>
-    </div>
-  </a>
+  <%= link_to "https://mail.google.com/mail/?view=cm&fs=1&to=feedback-micarrera@cedarcode.com&su=Feedback%20sobre%20MiCarrera&body=Hola,%20quiero%20compartir%20mi%20opinión%20sobre%20la%20app...", target: "_blank", class: "flex items-center gap-1 p-2 rounded-sm hover:bg-gray-100 text-gray-600 hover:text-gray-800" do %>
+    <%= material_icon("rate_review") %>
+    Opina de la app
+  <% end %>
 </div>
 
 <div data-navigation-drawer-target="overlay" data-action="click->navigation-drawer#toggle" class="fixed inset-0 bg-black/30 hidden z-40"></div>
