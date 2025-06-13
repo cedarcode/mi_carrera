@@ -27,11 +27,12 @@ RSpec.describe 'Manage passkeys' do
       click_on "Agregar Passkey"
 
       expect(page).to have_content "My new passkey"
+      expect(page).to have_css ".material-icons", text: "delete"
       expect(page).to have_text "Tu passkey ha sido agregada correctamente"
 
       within("li", text: "My new passkey") do
         accept_confirm "¿Seguro que quieres borrar esta Passkey?" do
-          find("svg").click
+          find(".material-icons", text: "delete").click
         end
       end
 
