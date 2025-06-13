@@ -1,7 +1,7 @@
 <div class="flex flex-col justify-center items-center p-6 space-y-6">
   <h2 class="text-3xl/9 text-neutral-700">Editar Usuario</h2>
 
-  <%= form_with(model: resource, url: registration_path(resource_name), method: :put, local: true, class: "flex flex-col w-full max-w-md space-y-6") do |f| %>
+  <%= form_with(model: resource, url: registration_path(resource_name), method: :put, class: "flex flex-col w-full max-w-md space-y-6") do |f| %>
     <% if current_user.oauth_user? %>
       <div class="flex items-center p-4 mb-4 text-yellow-800 rounded-lg bg-yellow-50">
         <%= material_icon("info") %>
