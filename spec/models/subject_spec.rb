@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Subject, type: :model do
   describe 'associations' do
-    it { should belong_to(:degree).optional }
+    it { should belong_to(:degree) }
     it { should belong_to(:group).class_name('SubjectGroup').optional }
     it {
       should have_one(:course)
