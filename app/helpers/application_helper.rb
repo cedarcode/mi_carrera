@@ -16,8 +16,7 @@ module ApplicationHelper
       if new_badge
         concat tag.span(
           'Nuevo',
-          class: "h-[20px] self-center ms-3 bg-purple-100 border text-primary
-                  text-[10px] uppercase rounded-full py-0.5 px-2"
+          class: "self-center ms-3 bg-purple-100 border text-primary text-[10px] uppercase rounded-full py-0.5 px-2"
         )
       end
     end
