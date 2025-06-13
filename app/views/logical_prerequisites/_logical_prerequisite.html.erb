@@ -2,7 +2,7 @@
   <%= render logical_prerequisite.operands_prerequisites, negative: true %>
 <% else %>
   <div data-controller="prerequisite" >
-    <a data-action="click->prerequisite#toggle" class="flex items-center h-12 px-4 hover:bg-gray-100 cursor-pointer">
+    <a data-action="click->prerequisite#toggle" class="flex items-center py-3 px-4 hover:bg-gray-100 cursor-pointer">
       <span class="material-icons" data-prerequisite-target="button">chevron_right</span>
 
       <span class="flex-1"><%= logical_prerequisite_description(logical_prerequisite, negative) %></span>
