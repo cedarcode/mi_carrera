@@ -16,7 +16,7 @@ class CookieStudent < BaseStudent
   end
 
   def degree
-    store_degree_in_cookie if should_store_degree_in_cookie?
+    update_degree
     Degree.find_by(name: cookie[:degree_name])
   end
 
@@ -33,11 +33,9 @@ class CookieStudent < BaseStudent
     }
   end
 
-  def should_store_degree_in_cookie?
-    cookie[:degree_name].blank?
-  end
+  def update_degree
+    return if cookie[:degree_name].present?
 
-  def store_degree_in_cookie
     cookie[:degree_name] = {
       value: Degree.default.name,
       domain: :all
