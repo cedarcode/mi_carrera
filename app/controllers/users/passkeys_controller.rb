@@ -21,18 +21,22 @@ module Users
       webauthn_passkey = WebAuthn::Credential.from_create(JSON.parse(params[:passkey_public_key]))
 
       begin
-        webauthn_passkey.verify(session[:creation_challenge], user_verification: true)
+        if current_user.valid_password?(params[:password])
+          webauthn_passkey.verify(session[:creation_challenge], user_verification: true)
 
-        if current_user.passkeys.create(
-          external_id: webauthn_passkey.id,
-          name: params[:name],
-          public_key: webauthn_passkey.public_key,
-          sign_count: webauthn_passkey.sign_count
-        )
-          render json: { status: "ok" }, status: :ok
-          flash[:notice] = "Tu passkey ha sido agregada correctamente."
+          if current_user.passkeys.create(
+            external_id: webauthn_passkey.id,
+            name: params[:name],
+            public_key: webauthn_passkey.public_key,
+            sign_count: webauthn_passkey.sign_count
+          )
+            render json: { status: "ok" }, status: :ok
+            flash[:notice] = "Tu passkey ha sido agregada correctamente."
+          else
+            render json: "Couldn't add your Security Key", status: :unprocessable_entity
+          end
         else
-          render json: "Couldn't add your Security Key", status: :unprocessable_entity
+          flash[:alert] = "Contraseña Incorrecta"
         end
       rescue WebAuthn::Error
         render json: "Verification failed", status: :unprocessable_entity
