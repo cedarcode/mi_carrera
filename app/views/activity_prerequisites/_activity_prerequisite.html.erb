@@ -1,5 +1,5 @@
 <%= link_to subject_path(activity_prerequisite.approvable_needed.subject), class: 'flex items-center py-3 px-4 hover:bg-gray-100 cursor-pointer' do %>
-  <span class="flex-1 ml-5">
+  <span class="flex-1">
     <%= negative ? "No haber" : "Haber" %>
     <%= display_activity_prerequisite(activity_prerequisite) %>
   </span>
