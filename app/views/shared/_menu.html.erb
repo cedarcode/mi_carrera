@@ -8,7 +8,7 @@
   <%= drawer_menu_navigation_item "Materias INCO semestre actual", current_optional_subjects_path %>
 
   <% if current_user && ENV['ENABLE_PLANNER'].present? %>
-    <%= drawer_menu_navigation_item "Planificador", subject_plans_path %>
+    <%= drawer_menu_navigation_item "Planificador", subject_plans_path, new_badge: true %>
   <% end %>
 
   <hr class="text-gray-200"/>
