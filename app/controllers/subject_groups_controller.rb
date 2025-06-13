@@ -6,9 +6,5 @@ class SubjectGroupsController < ApplicationController
     end
   end
 
-  private
-
-  def degree_subject_groups
-    current_student.degree_subject_groups
-  end
+  delegate :degree_subject_groups, to: :current_student, private: true
 end
