@@ -12,4 +12,4 @@ pin "@github/webauthn-json/browser-ponyfill", to: "@github--webauthn-json--brows
 pin "stub_credentials" if Rails.env.test?
 
 # sinon
-pin "sinon", to: "https://cdn.jsdelivr.net/npm/sinon@15.2.0/pkg/sinon-esm.js"
+pin "sinon" if Rails.env.test? # @20.0.0
