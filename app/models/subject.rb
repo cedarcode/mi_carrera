@@ -1,5 +1,5 @@
 class Subject < ApplicationRecord
-  belongs_to :degree, optional: true
+  belongs_to :degree
   has_one :course, -> { where is_exam: false }, class_name: 'Approvable', dependent: :destroy, inverse_of: :subject
   has_one :exam, -> { where is_exam: true }, class_name: 'Approvable', dependent: :destroy, inverse_of: :subject
   belongs_to :group, class_name: 'SubjectGroup', optional: true
