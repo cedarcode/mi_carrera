@@ -214,4 +214,24 @@ RSpec.describe UserStudent, type: :model do
       expect(user.reload.approvals).to contain_exactly(subject.course.id, subject.exam.id)
     end
   end
+
+  describe '#degree_subjects' do
+    let(:degree) { create :degree }
+    let(:user) { create :user, degree: }
+    let(:student) { described_class.new(user) }
+
+    it 'delegates #degree_subjects to user' do
+      expect(student.degree_subjects).to eq(user.degree_subjects)
+    end
+  end
+
+  describe '#degree_subject_groups' do
+    let(:degree) { create :degree }
+    let(:user) { create :user, degree: }
+    let(:student) { described_class.new(user) }
+
+    it 'delegates #degree_subject_groups to user' do
+      expect(student.degree_subject_groups).to eq(user.degree_subject_groups)
+    end
+  end
 end
