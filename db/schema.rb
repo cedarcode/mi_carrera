@@ -58,7 +58,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
     t.datetime "updated_at", precision: nil, null: false
     t.string "code"
     t.integer "credits_needed", default: 0, null: false
-    t.integer "degree_id"
+    t.bigint "degree_id"
     t.index ["degree_id", "code"], name: "index_subject_groups_on_degree_id_and_code", unique: true
     t.index ["degree_id"], name: "index_subject_groups_on_degree_id"
   end
@@ -85,7 +85,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
     t.string "category", default: "optional"
     t.boolean "current_optional_subject", default: false
     t.string "second_semester_eva_id"
-    t.integer "degree_id"
+    t.bigint "degree_id"
     t.index ["degree_id", "code"], name: "index_subjects_on_degree_id_and_code", unique: true
     t.index ["degree_id"], name: "index_subjects_on_degree_id"
   end
@@ -114,7 +114,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
 
   add_foreign_key "reviews", "subjects"
   add_foreign_key "reviews", "users"
+  add_foreign_key "subject_groups", "degrees"
   add_foreign_key "subject_plans", "subjects"
   add_foreign_key "subject_plans", "users"
+  add_foreign_key "subjects", "degrees"
   add_foreign_key "users", "degrees"
 end
