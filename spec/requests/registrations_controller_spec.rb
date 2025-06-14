@@ -80,6 +80,7 @@ RSpec.describe Users::RegistrationsController, type: :request do
 
   describe 'POST #create' do
     it 'creates user with approvals when session has approvals' do
+      degree = create :degree, name: "computacion"
       subject1 = create :subject, name: "Subject 1", credits: 16
       subject2 = create :subject, :with_exam, name: "Subject 2", credits: 16
       post approvable_approval_path(subject1.course), params: {
@@ -104,6 +105,7 @@ RSpec.describe Users::RegistrationsController, type: :request do
       user = User.where(email: 'newuser@gmail.com').first
 
       expect(user.approvals).to eq [subject1.course.id, subject2.exam.id, subject2.course.id]
+      expect(user.degree).to eq(degree)
     end
   end
 end
