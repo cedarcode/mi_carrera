@@ -62,17 +62,9 @@
     <%= render @subject.exam.prerequisite_tree, negative: false %>
   <% end %>
 
-  <hr class="mdc-deprecated-list-divider">
-  <a href="https://mail.google.com/mail/?view=cm&fs=1
-&to=feedback-micarrera@cedarcode.com
-&su=Reporte%20de%20error%20o%20sugerencia
-&body=Hola,%20quiero%20reportar%20un%20error%20o%20sugerir%20información%20para%20MiCarrera..."
-   target="_blank" style="text-decoration: none; color: inherit;">
-    <div class="mdc-deprecated-list-item">
-        <span class="mdc-deprecated-list-item__ripple"></span>
-        <span class="mdc-typography--subtitle2">
-            ¿Hay un error? ¿Hay información que falta? Repórtalo acá
-        </span>
-    </div>
-  </a>
+  <hr class="border-gray-200"/>
+
+  <%= link_to "mailto:feedback-micarrera@cedarcode.com", target: "_blank", class: "flex items-center px-4 h-12 hover:bg-gray-100 no-underline font-medium text-sm" do %>
+    ¿Hay un error? ¿Hay información que falta? Repórtalo acá
+  <% end %>
 </div>
