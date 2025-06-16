@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class FiveStarReviewComponent < ViewComponent::Base
   attr_reader :review_name, :rating_value, :subject_id, :column_name
 
