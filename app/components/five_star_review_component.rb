@@ -21,7 +21,7 @@ class FiveStarReviewComponent < ViewComponent::Base
         url: selected?(value) ? review_path(@user_review) : reviews_path,
         form_method: selected?(value) ? :delete : :post,
         button_icon: filled?(value) ? 'star' : 'star_outline',
-        button_color: filled?(value) ? 'text-violet-400' : 'text-gray-400'
+        button_classes: filled?(value) ? 'text-violet-400' : 'text-gray-400'
       }
     end
   end
