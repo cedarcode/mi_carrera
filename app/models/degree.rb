@@ -1,6 +1,6 @@
 class Degree < ApplicationRecord
-  has_many :subjects, dependent: :destroy
-  has_many :subject_groups, dependent: :destroy
+  has_many :subjects, dependent: :restrict_with_exception
+  has_many :subject_groups, dependent: :restrict_with_exception
 
   validates :title, presence: true
   validates :name, presence: true, uniqueness: true
