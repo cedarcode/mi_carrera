@@ -12,7 +12,7 @@
         <%= form_with url: star[:url], method: star[:form_method], class: "transition-transform duration-[250ms] ease-[ease] hover:scale-[1.3] [&:hover~&]:scale-[1.3]" do |f| %>
           <%= f.hidden_field :subject_id, value: subject_id %>
           <%= f.hidden_field column_name, value: star[:value] %>
-          <%= f.button star[:button_icon], class: "material-icons !text-xl #{star[:button_color]}" %>
+          <%= f.button star[:button_icon], class: "material-icons cursor-pointer !text-xl #{star[:button_color]}" %>
         <% end %>
       <% end %>
     </div>
