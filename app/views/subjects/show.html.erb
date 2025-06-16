@@ -20,7 +20,15 @@
       <% end %>
     </label>
 
-    <%= render 'rating' %>
+    <div class="p-2">
+      <%= render(FiveStarReviewComponent.new(
+            review_name: "Puntuación",
+            rating_value: @subject.average_rating,
+            subject_id: @subject.id,
+            column_name: :rating,
+            user_review: @user_review
+          )) %>
+    </div>
   </div>
   <hr class="mdc-deprecated-list-divider">
 
