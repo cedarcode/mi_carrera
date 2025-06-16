@@ -7,7 +7,7 @@ gem 'rails', '~> 8.0.2'
 gem 'appsignal', '~> 4.5'
 gem 'bootsnap', '~> 1.18', require: false
 gem 'devise', '~> 4.9'
-gem 'factory_bot_rails', '~> 6.4'
+gem 'factory_bot_rails', '~> 6.5'
 gem 'importmap-rails', '~> 2.1'
 gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.2'
