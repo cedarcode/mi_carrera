@@ -1,31 +1,32 @@
-<div class="flex flex-col justify-center items-center p-6 space-y-8">
+<div class="flex flex-col justify-center items-center p-6 space-y-6">
   <h2 class="text-3xl/9 text-neutral-700">Editar Usuario</h2>
 
-  <%= form_with(model: resource, url: registration_path(resource_name), method: :put, class: "flex flex-col w-full max-w-md space-y-6") do |f| %>
-    <% if current_user.oauth_user? %>
-      <div class="flex items-center p-4 mb-4 text-yellow-800 rounded-lg bg-yellow-50">
-        <%= material_icon("info") %>
-        <span class="ms-3 text-sm/6 font-medium"> Si cambias tu correo electrónico, perderás el acceso con Google </span>
-      </div>
+  <div class="flex flex-col w-full max-w-md space-y-6">
+    <%= form_with(model: resource, url: registration_path(resource_name), method: :put, class: "flex flex-col space-y-6") do |f| %>
+      <% if current_user.oauth_user? %>
+        <div class="flex items-center p-4 mb-4 text-yellow-800 rounded-lg bg-yellow-50">
+          <%= material_icon("info") %>
+          <span class="ms-3 text-sm/6 font-medium"> Si cambias tu correo electrónico, perderás el acceso con Google </span>
+        </div>
+      <% end %>
+
+      <%= render 'shared/alert' if flash[:alert] %>
+
+      <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true, autocomplete: "email" }) %>
+
+      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña", input_options: { autocomplete: "new-password" }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
+
+      <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña"), input_options: { autocomplete: "new-password" } %>
+
+      <%= render PasswordFieldComponent.new(form: f, attribute: :current_password, label: "Contraseña actual", input_options: { required: true, autocomplete: "current-password" }, hint: "Necesitamos tu contraseña actual para validar los cambios") %>
+
+      <%= render ButtonComponent.new(form: f, label: "Guardar") %>
     <% end %>
 
-    <%= render 'shared/alert' if flash[:alert] %>
+    <% if ENV['ENABLE_PASSKEYS'].present? %>
+      <hr class="border-gray-200">
 
-    <%= render EmailFieldComponent.new(form: f, attribute: :email, label: "Correo electrónico", input_options: { required: true, autofocus: true, autocomplete: "email" }) %>
-
-    <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Nueva contraseña", input_options: { autocomplete: "new-password" }, hint: "La contraseña debe tener al menos #{@minimum_password_length} caracteres") %>
-
-    <%= render PasswordFieldComponent.new(form: f, attribute: :password_confirmation, label: "Confirma tu nueva contraseña"), input_options: { autocomplete: "new-password" } %>
-
-    <%= render PasswordFieldComponent.new(form: f, attribute: :current_password, label: "Contraseña actual", input_options: { required: true, autocomplete: "current-password" }, hint: "Necesitamos tu contraseña actual para validar los cambios") %>
-
-    <%= render ButtonComponent.new(form: f, label: "Guardar") %>
-  <% end %>
-  <% if current_user && ENV['ENABLE_PASSKEYS'].present? %>
-    <hr class="w-80 border-gray-300">
-
-    <div class="flex max-w-md w-70 space-y-6">
-      <%=link_to "Administrar Passkeys", user_passkeys_path, class: "bg-primary grow text-center text-white font-bold shadow-sm cursor-pointer p-2 rounded-md"%>
-    </div>
-  <% end %>
+      <%=link_to "Administrar Passkeys", user_passkeys_path, class: "bg-primary text-center text-white font-bold shadow-sm cursor-pointer p-2 rounded-md"%>
+    <% end %>
+  </div>
 </div>

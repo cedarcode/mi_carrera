@@ -9,7 +9,8 @@ pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "canvas-confetti", to: "https://ga.jspm.io/npm:canvas-confetti@1.6.0/dist/confetti.module.mjs"
 pin "@github/webauthn-json/browser-ponyfill", to: "@github--webauthn-json--browser-ponyfill.js"
-pin "stub_credentials" if Rails.env.test?
 
-# sinon
-pin "sinon" if Rails.env.test? # @20.0.0
+if Rails.env.test?
+  pin "stub_credentials"
+  pin "sinon" # @20.0.0
+end
