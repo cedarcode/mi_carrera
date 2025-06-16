@@ -3,9 +3,7 @@
 
 <h3 class="mx-4 my-3 text-sm font-medium">Información general</h3>
 
-<span class="flex items-center py-3 px-4">
-  Créditos: <%= @subject.credits %>
-</span>
+<div class="py-3 px-4">Créditos: <%= @subject.credits %></div>
 
 <% if @subject.group %>
   <%= link_to subject_group_path(@subject.group), :class => "flex items-center py-3 px-4 hover:bg-gray-100" do %>
