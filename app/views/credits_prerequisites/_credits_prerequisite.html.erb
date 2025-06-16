@@ -1,6 +1,5 @@
-<label class="mdc-deprecated-list-item">
-  <span class="mdc-deprecated-list-item__ripple"></span>
-  <span class="mdc-deprecated-list-item__text">
+<div class="flex items-center py-3 px-4 hover:bg-gray-100 cursor-pointer">
+  <span class="flex-1">
     <%= "Debe tener menos de " if negative %>
     <% if credits_prerequisite.subject_group %>
         <%= credits_prerequisite.credits_needed %> créditos en <%= credits_prerequisite.subject_group.name %>
@@ -10,4 +9,4 @@
   </span>
 
   <%= render 'prerequisites/met_checkmark', prerequisite: credits_prerequisite, negative: %>
-</label>
+</div>

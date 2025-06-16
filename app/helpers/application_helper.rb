@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def drawer_menu_navigation_item(text, link)
+  def drawer_menu_navigation_item(text, link, new_badge: false)
     link_options = {}
     link_options[:tabindex] = 0
 
@@ -11,7 +11,15 @@ module ApplicationHelper
       link_options[:class] = "flex p-2 rounded-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100"
     end
 
-    link_to text, link, **link_options
+    link_to link, **link_options do
+      concat tag.span(text)
+      if new_badge
+        concat tag.span(
+          'Nuevo',
+          class: "self-center ms-3 bg-purple-100 border text-primary text-[10px] uppercase rounded-full py-0.5 px-2"
+        )
+      end
+    end
   end
 
   def logical_prerequisite_description(prerequisite, negative)

@@ -3,7 +3,6 @@
   url: approvable_approval_path(approvable, subject_show: subject_show),
   data: { controller: "autosave-check" },
   method: current_student.approved?(approvable) ? :delete : :post,
-  local: false,
   class: "mx-[5px]"
 ) do |form| %>
   <div class="box-content w-[18px] h-[18px] p-3">

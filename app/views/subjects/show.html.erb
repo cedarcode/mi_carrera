@@ -51,21 +51,15 @@
   <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Previas</h3>
 
   <% if @subject.course.prerequisite_tree %>
-    <span class="mdc-deprecated-list-group__subheader mdc-typography--subtitle1 prerequisite-type">
-      Del curso:
-    </span>
-    <div class="mdc-deprecated-list">
-      <%= render @subject.course.prerequisite_tree, negative: false %>
-    </div>
+    <span class="mx-4">Del curso:</span>
+
+    <%= render @subject.course.prerequisite_tree, negative: false %>
   <% end %>
 
   <% if @subject.exam&.prerequisite_tree %>
-    <span class="mdc-deprecated-list-group__subheader mdc-typography--subtitle1 prerequisite-type">
-      Del examen:
-    </span>
-    <div class="mdc-deprecated-list" id="exam-prerequisites">
-      <%= render @subject.exam.prerequisite_tree, negative: false %>
-    </div>
+    <span class="mx-4">Del examen:</span>
+
+    <%= render @subject.exam.prerequisite_tree, negative: false %>
   <% end %>
 
   <hr class="mdc-deprecated-list-divider">
