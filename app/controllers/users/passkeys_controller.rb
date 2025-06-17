@@ -14,14 +14,14 @@ module Users
           user_verification: 'required'
         }
       )
-      session[:current_registration_challenge] = { challenge: @create_passkey_options.challenge }
+      session[:creation_challenge] = @create_passkey_options.challenge
     end
 
     def create
       webauthn_passkey = WebAuthn::Credential.from_create(JSON.parse(params[:passkey_public_key]))
 
       begin
-        webauthn_passkey.verify(session[:current_registration_challenge]["challenge"], user_verification: true)
+        webauthn_passkey.verify(session[:creation_challenge], user_verification: true)
 
         if current_user.passkeys.create(
           external_id: webauthn_passkey.id,
@@ -37,7 +37,7 @@ module Users
       rescue WebAuthn::Error
         render json: "Verification failed", status: :unprocessable_entity
       ensure
-        session.delete(:current_registration_challenge)
+        session.delete(:creation_challenge)
       end
     end
 
