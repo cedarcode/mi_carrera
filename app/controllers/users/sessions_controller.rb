@@ -5,7 +5,7 @@ module Users
     def new
       super do
         @get_passkey_options = WebAuthn::Credential.options_for_get(user_verification: 'required')
-        session[:current_authentication] = { challenge: @get_passkey_options.challenge }
+        session[:creation_challenge] = @get_passkey_options.challenge
       end
     end
   end

@@ -14,7 +14,7 @@ module Strategies
 
       begin
         webauthn_passkey.verify(
-          session[:current_authentication]['challenge'],
+          session[:creation_challenge],
           public_key: passkey.public_key,
           sign_count: passkey.sign_count,
           user_verification: true
