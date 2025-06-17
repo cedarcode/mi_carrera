@@ -23,4 +23,30 @@ export default class extends Controller {
       }
     }
   }
+
+  async get({ params: {publicKey} }) {
+    try {
+      const passkeyOptions = WebAuthnJSON.parseRequestOptionsFromJSON({ publicKey });
+      const passkeyPublicKey = await WebAuthnJSON.get(passkeyOptions);
+      const formData = new FormData(this.element);
+      formData.append('passkey_public_key', JSON.stringify(passkeyPublicKey));
+
+      const response = await fetch(this.element.action, {
+        method: this.element.method,
+        body: formData,
+        headers: {
+          "accept": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        window.location.href = response.headers.get("Location") || '/';
+      }  else {
+        const json = await response.json();
+        alert(json.error || "Ocurrió un error al intentar ingresar con su llave de seguridad.");
+      }
+    } catch (error) {
+      alert(error);
+    }
+  }
 }
