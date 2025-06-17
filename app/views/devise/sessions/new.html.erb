@@ -20,7 +20,10 @@
       <div class="flex-grow border-t border-neutral-500"></div>
     </div>
 
-    <%= render "shared/google_sso" %>
+    <div class="flex justify-evenly gap-2">
+      <%= render "shared/google_sso" %>
+      <%= render "shared/passkey" %>
+    </div>
 
     <%= render "devise/shared/links" %>
   </div>
