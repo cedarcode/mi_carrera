@@ -9,7 +9,10 @@ module Users
           name: current_user.email
         },
         exclude: current_user.passkeys.pluck(:external_id),
-        authenticator_selection: { user_verification: "required" }
+        authenticator_selection: {
+          resident_key: 'required',
+          user_verification: 'required'
+        }
       )
       session[:current_registration_challenge] = { challenge: @create_passkey_options.challenge }
     end
