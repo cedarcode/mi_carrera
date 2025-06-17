@@ -86,6 +86,14 @@ jobs:
         bundle exec rake db:create db:schema:load
         bundle exec rspec --exclude-pattern "spec/system/*.rb"
 
+    - name: Upload coverage
+      if: success()
+      uses: actions/upload-artifact@v4
+      with:
+        name: simplecov-resultset-unit
+        path: coverage/.resultset.json
+        include-hidden-files: true
+
   system_test:
     runs-on: ubuntu-latest
 
@@ -124,6 +132,14 @@ jobs:
         bundle exec rake db:create db:schema:load
         bundle exec rake spec:system
 
+    - name: Upload coverage
+      if: success()
+      uses: actions/upload-artifact@v4
+      with:
+        name: simplecov-resultset-system
+        path: coverage/.resultset.json
+        include-hidden-files: true
+
     - name: Upload screenshots
       if: failure()
       uses: actions/upload-artifact@v4
@@ -132,8 +148,40 @@ jobs:
         path: ./tmp/capybara
         retention-days: 2
 
-    - uses: joshmfrankel/simplecov-check-action@main
-      if: github.actor != 'dependabot[bot]'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        minimum_suite_coverage: 40
+  coverage:
+    needs: [unit_test, system_test]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Download unit tests coverage results
+        uses: actions/download-artifact@v4
+        with:
+          name: simplecov-resultset-unit
+          path: simplecov-resultset-unit
+
+      - name: Download system tests coverage results
+        uses: actions/download-artifact@v4
+        with:
+          name: simplecov-resultset-system
+          path: simplecov-resultset-system
+
+      - name: Merge coverage
+        env:
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          RAILS_ENV: test
+        run: |
+          bundle exec rake coverage:report
+
+      - uses: joshmfrankel/simplecov-check-action@main
+        if: github.actor != 'dependabot[bot]'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          minimum_suite_coverage: 40
