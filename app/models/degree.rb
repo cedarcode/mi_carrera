@@ -2,7 +2,6 @@ class Degree < ApplicationRecord
   has_many :subjects, dependent: :restrict_with_exception
   has_many :subject_groups, dependent: :restrict_with_exception
 
-  validates :title, presence: true
   validates :current_plan, presence: true
 
   def self.default

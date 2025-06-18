@@ -29,7 +29,6 @@ class YmlLoader
 
   def load_degree
     @degree = Degree.find_or_initialize_by(id: degree_id)
-    @degree.title = degree_hash[:title]
     @degree.current_plan = degree_hash[:current_plan]
     @degree.include_inco_subjects = degree_hash[:include_inco_subjects]
     @degree.save!

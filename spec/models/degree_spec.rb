@@ -9,7 +9,6 @@ RSpec.describe Degree, type: :model do
   describe 'validations' do
     subject { create :degree }
 
-    it { is_expected.to validate_presence_of(:title) }
     it { is_expected.to validate_presence_of(:current_plan) }
   end
 

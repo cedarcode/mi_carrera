@@ -23,7 +23,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
   end
 
   create_table "degrees", id: :string, force: :cascade do |t|
-    t.string "title", null: false
     t.string "current_plan", null: false
     t.boolean "include_inco_subjects", null: false
     t.datetime "created_at", null: false
@@ -115,8 +114,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "locked_at"
     t.string "unlock_token"
-    t.string "degree_id"
     t.string "webauthn_id"
+    t.string "degree_id"
     t.index ["degree_id"], name: "index_users_on_degree_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -31,7 +31,7 @@ module Scraper
 
     def initialize(degree)
       @degree = degree
-      @logger = Rails.logger.tagged("Scraper - #{degree[:title]}")
+      @logger = Rails.logger.tagged("Scraper - #{degree[:bedelias_name]}")
     end
 
     def scrape
@@ -90,9 +90,9 @@ module Scraper
 
       wait_for_loading_widget_to_disappear
 
-      find('.ui-column-filter').set(degree[:title])
+      find('.ui-column-filter').set(degree[:bedelias_name])
 
-      all('tr', text: degree[:title], match: :prefer_exact).each do |row|
+      all('tr', text: degree[:bedelias_name], match: :prefer_exact).each do |row|
         if row.has_selector?('td', text: 'Grado', match: :prefer_exact)
           row.find('.ui-row-toggler').click
           break
