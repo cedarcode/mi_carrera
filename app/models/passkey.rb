@@ -3,7 +3,6 @@ class Passkey < ApplicationRecord
 
   validates :external_id, :public_key, :name, :sign_count, presence: true
   validates :external_id, uniqueness: true
-  validates :sign_count, numericality: { only_integer: true, in: 0..2**32 - 1 }
 end
 
 # == Schema Information
