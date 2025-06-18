@@ -21,34 +21,8 @@ body {
   cursor: pointer;
 }
 
-.growing-text-list {
-  a {
-    color: inherit;
-    text-decoration-line: inherit;
-  }
-
-  .mdc-deprecated-list-item__text {
-    flex-grow: 1;
-    width: 100px;
-  }
-
-  .mdc-deprecated-list-item__meta {
-    margin-left: 0px;
-  }
-}
-
-.total-credits {
-  font-weight: bold;
-  font-size: larger;
-}
-
 .non-clickable-list-item {
   cursor: default !important;
-}
-
-.mdc-deprecated-list-item__text {
-  display: block;
-  flex: 1;
 }
 
 .subject-group-credits-met {
