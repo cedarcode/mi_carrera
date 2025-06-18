@@ -5,7 +5,7 @@
       <li>
         <%= link_to subject_group_path(group[:subject_group]), :class => "text-gray-900 flex items-center justify-between px-4 py-3 hover:bg-gray-50" do %>
           <%= group[:subject_group].name %>
-          <span class="ml-4 text-right <%= group_credits_class(group[:credits_needed_reached]) %>">
+          <span class="ml-4 text-right <%= group[:credits_needed_reached] ? "text-green-600" : "text-red-600" %>">
             <%= group[:credits] %> / <%= group[:subject_group].credits_needed %>
           </span>
         <% end %>
@@ -15,7 +15,7 @@
       <span class="text-gray-900">
         Total
       </span>
-      <span class="text-right <%= group_credits_class(@all_group_credits_met && @total_credits >= 450) %>">
+      <span class="text-right <%= (@all_group_credits_met && @total_credits >= 450) ? "text-green-600" : "text-red-600" %>">
         <%= @total_credits %> / 450
       </span>
     </li>
