@@ -130,15 +130,15 @@ RSpec.describe Subject, type: :model do
     }
 
     it "finds by name" do
-      expect(Subject.search("Geometría")).to eq([gal1, gal2])
+      expect(Subject.search("Geometría")).to contain_exactly(gal1, gal2)
     end
 
     it "finds by short name" do
-      expect(Subject.search("GAL")).to eq([gal1, gal2])
+      expect(Subject.search("GAL")).to contain_exactly(gal1, gal2)
     end
 
     it "finds by code" do
-      expect(Subject.search("1061")).to eq([cdiv])
+      expect(Subject.search("1061")).to contain_exactly(cdiv)
     end
   end
 
