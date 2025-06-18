@@ -69,7 +69,7 @@ module Scraper
     attr_reader :degree, :logger
 
     def write_yml(name, data)
-      dir_path = Rails.root.join("db/data/#{degree[:name]}")
+      dir_path = Rails.root.join("db/data/#{degree[:id]}")
 
       Dir.mkdir(dir_path) unless Dir.exist?(dir_path)
 

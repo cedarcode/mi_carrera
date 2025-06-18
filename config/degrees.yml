@@ -1,6 +1,6 @@
 ---
 shared:
 - title: "INGENIERIA EN COMPUTACION"
-  name: "computacion"
+  id: "computacion"
   current_plan: "1997"
   include_inco_subjects: true

@@ -22,6 +22,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
     t.datetime "updated_at", precision: nil, null: false
   end
 
+  create_table "degrees", id: :string, force: :cascade do |t|
+    t.string "title", null: false
+    t.string "current_plan", null: false
+    t.boolean "include_inco_subjects", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "passkeys", force: :cascade do |t|
     t.string "external_id", null: false
     t.string "public_key", null: false
@@ -32,16 +40,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
     t.datetime "updated_at", null: false
     t.index ["external_id"], name: "index_passkeys_on_external_id", unique: true
     t.index ["user_id"], name: "index_passkeys_on_user_id"
-  end
-
-  create_table "degrees", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "name", null: false
-    t.string "current_plan", null: false
-    t.boolean "include_inco_subjects", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_degrees_on_name", unique: true
   end
 
   create_table "prerequisites", force: :cascade do |t|
@@ -70,7 +68,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
     t.datetime "updated_at", precision: nil, null: false
     t.string "code"
     t.integer "credits_needed", default: 0, null: false
-    t.bigint "degree_id"
+    t.string "degree_id"
     t.index ["degree_id", "code"], name: "index_subject_groups_on_degree_id_and_code", unique: true
     t.index ["degree_id"], name: "index_subject_groups_on_degree_id"
   end
@@ -97,7 +95,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
     t.string "category", default: "optional"
     t.boolean "current_optional_subject", default: false
     t.string "second_semester_eva_id"
-    t.bigint "degree_id"
+    t.string "degree_id"
     t.index ["degree_id", "code"], name: "index_subjects_on_degree_id_and_code", unique: true
     t.index ["degree_id"], name: "index_subjects_on_degree_id"
   end
@@ -117,8 +115,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_28_222931) do
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "locked_at"
     t.string "unlock_token"
+    t.string "degree_id"
     t.string "webauthn_id"
-    t.bigint "degree_id"
     t.index ["degree_id"], name: "index_users_on_degree_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -80,7 +80,7 @@ RSpec.describe Users::RegistrationsController, type: :request do
 
   describe 'POST #create' do
     it 'creates user with approvals when session has approvals' do
-      degree = create :degree, name: "computacion"
+      degree = create :degree, id: "computacion"
       subject1 = create :subject, name: "Subject 1", credits: 16
       subject2 = create :subject, :with_exam, name: "Subject 2", credits: 16
       post approvable_approval_path(subject1.course), params: {

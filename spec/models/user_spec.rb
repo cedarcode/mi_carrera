@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
 
   describe '.from_omniauth' do
     context 'when user does not exist' do
-      let!(:degree) { create(:degree, name: "computacion") }
+      let!(:degree) { create(:degree, id: "computacion") }
 
       it 'creates a new user' do
         auth = OmniAuth::AuthHash.new(

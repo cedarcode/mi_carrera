@@ -8,8 +8,8 @@ class YmlLoader
 
   def initialize(degree_hash)
     @degree_hash = degree_hash
-    @degree_name = degree_hash[:name]
-    @degree_dir = Rails.root.join("db/data/#{@degree_name}/")
+    @degree_id = degree_hash[:id]
+    @degree_dir = Rails.root.join("db/data/#{@degree_id}/")
   end
 
   def load
@@ -23,12 +23,12 @@ class YmlLoader
   private
 
   attr_reader :degree_hash
-  attr_reader :degree_name
+  attr_reader :degree_id
   attr_reader :degree_dir
   attr_reader :degree
 
   def load_degree
-    @degree = Degree.find_or_initialize_by(name: degree_name)
+    @degree = Degree.find_or_initialize_by(id: degree_id)
     @degree.title = degree_hash[:title]
     @degree.current_plan = degree_hash[:current_plan]
     @degree.include_inco_subjects = degree_hash[:include_inco_subjects]

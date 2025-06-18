@@ -6,16 +6,9 @@ RSpec.describe Degree, type: :model do
     it { should have_many(:subject_groups).dependent(:restrict_with_exception) }
   end
 
-  describe 'validations' do
-    subject { create :degree }
-
-    it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_uniqueness_of(:name) }
-  end
-
   describe '.default' do
     context 'when computacion exists' do
-      let!(:degree) { create(:degree, name: "computacion") }
+      let!(:degree) { create(:degree, id: "computacion") }
 
       it 'returns computacion degree' do
         expect(described_class.default).to eq(degree)

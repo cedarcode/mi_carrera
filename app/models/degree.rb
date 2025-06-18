@@ -3,10 +3,9 @@ class Degree < ApplicationRecord
   has_many :subject_groups, dependent: :restrict_with_exception
 
   validates :title, presence: true
-  validates :name, presence: true, uniqueness: true
   validates :current_plan, presence: true
 
   def self.default
-    Degree.find_by(name: "computacion")
+    Degree.find_by(id: "computacion")
   end
 end
