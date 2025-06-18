@@ -8,6 +8,7 @@ inherit_mode:
 
 AllCops:
   DisabledByDefault: true
+  SuggestExtensions: false
   NewCops: disable
   Exclude:
     - "bin/*"
