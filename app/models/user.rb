@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :subject_plans, dependent: :destroy
   has_many :planned_subjects, through: :subject_plans, source: :subject
+  belongs_to :degree, optional: true
   has_many :passkeys, dependent: :destroy
 
   after_initialize do
@@ -29,6 +30,7 @@ class User < ApplicationRecord
         user.password = Devise.friendly_token[0, 20]
         user.approvals = JSON.parse(cookie[:approved_approvable_ids] || "[]")
         user.welcome_banner_viewed = cookie[:welcome_banner_viewed] == "true"
+        user.degree = Degree.default
       end
     end
   end
