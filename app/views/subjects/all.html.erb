@@ -1,22 +1,17 @@
 <% content_for :credits do %>
   <%= render 'shared/credits_counter' %>
 <% end %>
-
-<div class="mdc-deprecated-list-group subjects-list">
-  <% if @subjects.any? %>
-    <% @subjects.group_by(&:category).each do |category, subjects| %>
-      <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
-        <%= formatted_category(category) %>
-      </h3>
-
-      <%= render partial: "subjects/subjects_list", locals: { subjects: subjects } %>
-
-      <hr class="mdc-deprecated-list-divider">
-    <% end %>
-  <% else %>
-    <div class="search-no-results">
-      <i class="material-icons">search</i>
-      No hay resultados
+<% if @subjects.any? %>
+  <% @subjects.group_by(&:category).each do |category, subjects| %>
+    <div class="flex items-center h-[50px] border-y border-t-gray-100 border-b-gray-200 bg-gray-50 px-3 py-1.5 text-sm/6 font-semibold text-gray-900">
+      <h3 class="grow"><%= formatted_category(category) %></h3>
     </div>
+
+    <%= render partial: "subjects/subjects_list", locals: { subjects: subjects } %>
   <% end %>
-</div>
+<% else %>
+  <div class="flex justify-center items-center mt-12 text-gray-500 text-2xl font-light gap-1">
+    <%= material_icon("search") %>
+    No hay resultados
+  </div>
+<% end %>

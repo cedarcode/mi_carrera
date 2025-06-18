@@ -455,6 +455,12 @@
   credits: 10
   has_exam: true
   subject_group: '4442'
+1131P:
+  code: 1131P
+  name: CREDITOS NO ACUM INT. A LA FISICA MODERNA
+  credits: 0
+  has_exam: true
+  subject_group:
 '1145':
   code: '1145'
   name: VISION 3D
@@ -499,10 +505,16 @@
   subject_group:
 '1158':
   code: '1158'
-  name: PROCESAMIENTO CUÁNTICO DE LA INFORMACIÓN
+  name: PROCESAMIENTO CUANTICO DE LA INFORMACION
   credits: 10
   has_exam: true
   subject_group: '4083'
+'1159':
+  code: '1159'
+  name: INT. A LA FÍSICA MODERNA
+  credits: 10
+  has_exam: true
+  subject_group: '4442'
 '1170':
   code: '1170'
   name: FISICA GENERAL 1
@@ -619,7 +631,7 @@
   subject_group: '5265'
 '1275':
   code: '1275'
-  name: TALLER (TBEO)
+  name: TALLER BASICO DE ESTRATEGIAS Y ORIENTACION (TBEO)
   credits: 3
   has_exam: false
   subject_group: '3582'
@@ -1181,12 +1193,24 @@
   credits: 12
   has_exam: true
   subject_group: '4428'
+'1512':
+  code: '1512'
+  name: DISEÑO LOGICO
+  credits: 0
+  has_exam: false
+  subject_group:
 1512C:
   code: 1512C
   name: DISEÑO LOGICO
   credits: 12
   has_exam: false
   subject_group: '4428'
+1512P:
+  code: 1512P
+  name: CREDITOS NO ACUM DISEÑO LOGICO
+  credits: 0
+  has_exam: false
+  subject_group:
 1513C:
   code: 1513C
   name: INT. A LOS MICROPROCESADORES
@@ -2291,6 +2315,12 @@
   credits: 9
   has_exam: false
   subject_group: '5265'
+'2512':
+  code: '2512'
+  name: DISEÑO LOGICO
+  credits: 12
+  has_exam: true
+  subject_group: '4428'
 '3207':
   code: '3207'
   name: HERRAMIENTAS P/EL DISEÑO Y ANALISIS DE REDES DE TRANSP.URB DE PASAJEROS
@@ -3979,7 +4009,7 @@ MHC16:
   subject_group: '4442'
 MHC20:
   code: MHC20
-  name: GENÓMICA
+  name: GENÓMICA (2021-2024)
   credits: 10
   has_exam: false
   subject_group: '4442'
@@ -4065,7 +4095,7 @@ O6221:
 O6311:
   code: O6311
   name: TALLER DE INTERACCIÓN
-  credits: 6
+  credits: 7
   has_exam: true
   subject_group: '5082'
 O6521:
@@ -4200,6 +4230,12 @@ S42:
   credits: 10
   has_exam: true
   subject_group: '4066'
+SD10:
+  code: SD10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  credits: 0
+  has_exam: false
+  subject_group:
 SFW10:
   code: SFW10
   name: CREDITOS ASIGNADOS POR REVALIDA

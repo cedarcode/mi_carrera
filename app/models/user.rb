@@ -8,6 +8,11 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :subject_plans, dependent: :destroy
   has_many :planned_subjects, through: :subject_plans, source: :subject
+  has_many :passkeys, dependent: :destroy
+
+  after_initialize do
+    self.webauthn_id ||= WebAuthn.generate_user_id
+  end
 
   def self.from_omniauth(auth, cookie)
     # check that user with same email exists

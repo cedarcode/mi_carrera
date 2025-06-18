@@ -1,31 +1,62 @@
-<div class="mdc-deprecated-list">
-  <% @planned_subjects.group_by(&:semester).each do |semester, planned_subjects| %>
-    <div class="subject-group-header">
-      <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">
+<%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
+
+<% (1..10).each do |semester| %>
+  <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
+  <div class="bg-white rounded-lg border border-gray-100 shadow-sm">
+    <div class="flex items-center justify-between h-10 bg-gray-50">
+      <h3 class="text-sm font-bold ml-4">
         <%= semester_display_name(semester) %>
       </h3>
       <%= render partial: "credits_counter", locals: { planned_subjects: planned_subjects } %>
     </div>
-    <% planned_subjects.each do |subject| %>
-      <%= link_to subject_path(subject), class: "mdc-deprecated-list-item" do %>
-        <span class="mdc-deprecated-list-item__ripple"></span>
-        <span class="mdc-deprecated-list-item__text">
-          <%= display_name(subject) %>
-        </span>
-        <% if current_student.approved?(subject) %>
-          <span class="mdc-deprecated-list-item__meta material-icons">done</span>
-        <% elsif !current_student.available?(subject) %>
-          <span class="mdc-deprecated-list-item__meta material-icons">lock</span>
-        <% end %>
+    
+    <% if planned_subjects.any? %>
+      <% planned_subjects.each do |subject| %>
         <%= form_with(
             url: subject_plan_path(subject_id: subject.id),
             method: :delete,
-            data: { controller: "autosave-check" },
-            class: 'd-flex',
+            data: { turbo: true },
+            class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100',
           ) do |form| %>
-            <span class="mdc-deprecated-list-item__meta material-icons" data-action="click->autosave-check#update">remove_circle_outline</span>
+            <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900" %>
+            
+            <% if current_student.approved?(subject) %>
+              <%= material_icon("check", "text-green-500") %>
+            <% elsif !current_student.available?(subject) %>
+              <%= material_icon("lock_outline", "text-gray-400") %>
+            <% end %>
+
+            <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400" do %>
+              remove_circle_outline
+            <% end %>
           <% end %>
       <% end %>
+    <% else %>
+      <div class="text-sm/6 text-gray-900 mx-4 h-[44px] my-3 italic flex items-center">
+        No hay materias planificadas para este semestre
+      </div>
     <% end %>
-  <% end %>
-</div>
+    
+    <%= form_with(
+      model: SubjectPlan.new,
+      url: subject_plans_path,
+      method: :post,
+      data: { turbo: true },
+      class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 border-t border-gray-100'
+    ) do |form| %>
+      <span class="grow text-sm/6 text-gray-900">
+        Planificar:
+      </span>
+      <%= form.select(
+        :subject_id,
+        @not_planned_subjects.map { |s| [display_planned_subject_name_and_code(s), s.id] },
+        { prompt: 'Materia' },
+        class: 'w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer'
+      ) %>
+      <%= form.hidden_field :semester, value: semester %>
+      <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400" do %>
+          add_circle_outline
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

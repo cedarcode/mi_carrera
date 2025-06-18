@@ -7,28 +7,9 @@ body {
     margin-left: auto;
     margin-right: auto;
     max-width: 600px;
-    padding: 0px 5px 40px 5px;
+    padding-bottom: 40px;
     flex-grow: 1;
   }
-}
-
-.home-button {
-  color: white;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  width: 220px;
-  height: 40px;
-  font-size: 21px;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
-  text-decoration: none;
-}
-
-.home-button:hover {
-  cursor: pointer;
 }
 
 .credits-counter {
@@ -36,44 +17,14 @@ body {
   white-space: nowrap;
 }
 
-.two-checkboxes {
-  display: flex;
-  height: 40px;
-  width: 100px;
-  form {
-    margin: 0 5px;
-  }
-}
-
 .toggle-collapse {
   cursor: pointer;
-}
-
-.logical-prerequisite-operands {
-  margin-left: 20px;
-  display: none;
-}
-
-.prerequisite-type {
-  font-weight: bold;
-}
-
-.subjects-list {
-  position: relative;
 }
 
 .growing-text-list {
   a {
     color: inherit;
     text-decoration-line: inherit;
-  }
-
-  a.home-button {
-    color: #444;
-  }
-
-  a.account-session {
-    text-decoration-line: underline;
   }
 
   .mdc-deprecated-list-item__text {
@@ -100,57 +51,6 @@ body {
   flex: 1;
 }
 
-.not-planned-subjects-select {
-  max-width: 200px;
-}
-
-.new-planned-subjects {
-  align-items: center;
-  padding: 24px 16px;
-  @media (max-width: 500px) {
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-  }
-}
-
-.menu-user-info {
-  padding: 0 16px;
-}
-
-.subject-group-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 40px;
-}
-
-.checkbox-header {
-  height: 40px;
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.list-item {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.logged-in-account-circle {
-  border-radius: 50%;
-  background-color: cadetblue;
-  line-height: 24px;
-  font-size: 15px;
-  font-family: Roboto;
-}
-
 .subject-group-credits-met {
   color: green !important;
 }
@@ -159,18 +59,9 @@ body {
   color: red !important;
 }
 
-#butInstall {
-  padding-left: 0px;
-}
-
-.show-password-button {
-  margin-right: -20px;
-}
-
 input {
   &:-webkit-autofill {
     transition: background-color 0s 0s, color 0s 0s;
     transition-delay: calc(infinity * 1s);
   }
 }
-

@@ -4,7 +4,7 @@ Sistema de trackeo de materias realizadas para los estudiantes de Computación d
 
 ### Requisitos
 
-* Ruby 3.4.2
+* Ruby 3.4.4
 * PostgreSQL (preferentemente v14)
 
 ### Setup
@@ -22,3 +22,7 @@ $ bin/rails s
 ```
 
 Una vez hecho esto podés entrar a http://localhost:3000 y usar la aplicación normalmente.
+
+### Credits
+
+Application performance monitoring sponsored by [AppSignal](https://www.appsignal.com/).
