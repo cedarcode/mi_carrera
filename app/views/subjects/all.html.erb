@@ -27,6 +27,9 @@
 
   <% if @pagy.next.present? %>
     <%= turbo_frame_tag :all_subjects_page, @pagy.next,
+      data: {
+        controller: "infinite-scroll",
+      },
       src: all_subjects_path(page: @pagy.next),
       loading: :lazy,
       target: :_top do %>
