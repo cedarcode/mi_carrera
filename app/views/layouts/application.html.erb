@@ -53,16 +53,12 @@
       <div class='content'>
         <%= yield %>
       </div>
-      <footer class="flex justify-center items-center py-3">
-        <% if content_for?(:credits) %>
+
+      <% if content_for?(:credits) %>
+        <footer class="flex justify-center items-center py-3">
           <%= yield :credits %>
-        <% else %>
-          <span class="text-gray-600">
-            Built by&nbsp;
-          </span>
-          <a href="https://cedarcode.com" target="_blank" class="text-gray-700 hover:text-gray-800">Cedarcode</a>
-        <% end %>
-      </footer>
+        </footer>
+      <% end %>
     </main>
   </body>
 </html>
