@@ -22,7 +22,7 @@ class SubjectPlansController < ApplicationController
   private
 
   def ensure_feature_enabled!
-    redirect_to root_path, alert: 'Feature is not available' if ENV['ENABLE_PLANNER'].blank?
+    redirect_to root_path if ENV['ENABLE_PLANNER'].blank?
   end
 
   def set_planned_and_not_planned_subjects
