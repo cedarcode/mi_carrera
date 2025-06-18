@@ -4,7 +4,7 @@
   <% end %>
   <% if @subject.exam&.prerequisite_tree %>
     <%= turbo_stream.replace "exam-prerequisites" do %>
-      <div class="mdc-deprecated-list" id="exam-prerequisites">
+      <div id="exam-prerequisites">
         <%= render @subject.exam.prerequisite_tree, negative: false %>
       </div>
     <% end %>
