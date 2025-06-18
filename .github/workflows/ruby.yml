@@ -48,7 +48,7 @@ jobs:
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
-  unit_test:
+  test:
     runs-on: ubuntu-latest
 
     services:
@@ -149,7 +149,7 @@ jobs:
         retention-days: 2
 
   coverage:
-    needs: [unit_test, system_test]
+    needs: [test, system_test]
     runs-on: ubuntu-latest
 
     steps:
