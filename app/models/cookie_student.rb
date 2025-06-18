@@ -17,7 +17,7 @@ class CookieStudent < BaseStudent
 
   def degree
     update_degree
-    Degree.find_by(name: cookie[:degree_name])
+    Degree.find_by(id: cookie[:degree_id])
   end
 
   delegate :subjects, :subject_groups, to: :degree, prefix: true
@@ -34,10 +34,10 @@ class CookieStudent < BaseStudent
   end
 
   def update_degree
-    return if cookie[:degree_name].present?
+    return if cookie[:degree_id].present?
 
-    cookie[:degree_name] = {
-      value: Degree.default.name,
+    cookie[:degree_id] = {
+      value: Degree.default.id,
       domain: :all
     }
   end

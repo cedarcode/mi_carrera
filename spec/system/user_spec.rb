@@ -7,7 +7,7 @@ RSpec.describe 'User', type: :system do
   include PasswordHelper
 
   before do
-    create(:degree, name: "computacion")
+    create(:degree, id: "computacion")
   end
 
   it 'can sign up' do
