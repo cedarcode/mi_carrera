@@ -13,10 +13,6 @@ class User < ApplicationRecord
   has_many :degree_subject_groups, through: :degree, source: :subject_groups
   has_many :passkeys, dependent: :destroy
 
-  after_initialize do
-    self.webauthn_id ||= WebAuthn.generate_user_id
-  end
-
   def self.from_omniauth(auth, cookie)
     # check that user with same email exists
     existing_user = User.find_by(email: auth.info.email)
