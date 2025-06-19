@@ -90,6 +90,7 @@ RSpec.describe "Subject", type: :system do
     fill_in 'Correo electrónico', with: user.email
     fill_in 'Contraseña', with: user.password
     click_on 'Ingresar'
+    expect(page).to have_text('Iniciaste sesión correctamente')
 
     visit all_subjects_path
 
