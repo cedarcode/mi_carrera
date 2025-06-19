@@ -16,3 +16,4 @@ if Rails.env.test?
   pin "sinon" # @20.0.0
 end
 pin "sortablejs" # @1.15.6
+pin "@rails/request.js", to: "@rails--request.js.js" # @0.0.12
