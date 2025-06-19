@@ -1,6 +1,4 @@
 class FiveStarReviewComponent < ViewComponent::Base
-  attr_reader :review_name, :rating_value, :subject_id, :column_name
-
   def initialize(review_name:, rating_value: nil, subject_id:, user_review: nil, column_name:)
     @review_name = review_name
     @rating_value = rating_value
@@ -9,6 +7,10 @@ class FiveStarReviewComponent < ViewComponent::Base
     @column_name = column_name
     @user_review_rating = user_review&.public_send(column_name)
   end
+
+  private
+
+  attr_reader :review_name, :rating_value, :subject_id, :column_name
 
   def display_rating
     number_with_precision(rating_value, precision: 1) || '-.-'
@@ -25,8 +27,6 @@ class FiveStarReviewComponent < ViewComponent::Base
       }
     end
   end
-
-  private
 
   def filled?(value) = @user_review_rating&.>= value
 
