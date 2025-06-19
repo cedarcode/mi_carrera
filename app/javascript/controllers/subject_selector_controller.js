@@ -12,8 +12,6 @@ export default class extends Controller {
       noResultsText: "No se encontraron materias",
       noChoicesText: "No hay materias disponibles",
       shouldSort: false,
-      placeholder: true,
-      placeholderValue: "Seleccionar materia...",
       classNames: {
         containerOuter: ["choices", "!m-0", "!h-10"],
         containerInner: [
