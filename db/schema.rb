@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_13_175743) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_18_223654) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -116,6 +116,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_13_175743) do
     t.string "unlock_token"
     t.string "degree_id"
     t.string "webauthn_id"
+    t.integer "planned_semesters", default: 10, null: false
     t.index ["degree_id"], name: "index_users_on_degree_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
