@@ -5,12 +5,12 @@ class SubjectPlansController < ApplicationController
   def index
     set_planned_and_not_planned_subjects
 
-    @card_opened = flash[:card_opened]
+    @approved_subjects_card_opened = flash[:approved_subjects_card_opened]
   end
 
   def create
     current_user.subject_plans.create!(subject_plan_params)
-    flash[:card_opened] = params[:card_opened] == 'true'
+    flash[:approved_subjects_card_opened] = params[:approved_subjects_card_opened] == 'true'
 
     redirect_to subject_plans_path
   end
