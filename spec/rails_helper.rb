@@ -41,6 +41,8 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+  config.fixture_paths = [Rails.root.join('spec/fixtures')]
+  config.global_fixtures = :all
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
