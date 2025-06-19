@@ -10,13 +10,13 @@ class FiveStarReviewComponent < ViewComponent::Base
     button: %w[material-icons cursor-pointer !text-xl]
   }
 
-  def initialize(review_name:, rating_value: nil, subject_id:, user_review: nil, column_name:)
+  def initialize(review_name:, rating_value: nil, subject_id:, user_review: nil, rating_attribute:)
     @review_name = review_name
     @rating_value = rating_value
     @subject_id = subject_id
     @user_review = user_review
-    @column_name = column_name
-    @user_review_rating = user_review&.public_send(column_name)
+    @rating_attribute = rating_attribute
+    @user_review_rating = user_review&.public_send(rating_attribute)
   end
 
   private
@@ -41,7 +41,7 @@ class FiveStarReviewComponent < ViewComponent::Base
 
   def star_form_method(value) = selected?(value) ? :delete : :post
 
-  def star_params(value) = { subject_id: @subject_id, @column_name => value }
+  def star_params(value) = { subject_id: @subject_id, @rating_attribute => value }
 
   def star_button_classes(value) = STYLES[:button] + [star_color_classes(value)]
 

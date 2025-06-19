@@ -12,7 +12,7 @@ RSpec.describe FiveStarReviewComponent, type: :component do
           review_name: "Puntuación",
           rating_value: nil,
           subject_id:,
-          column_name: :rating,
+          rating_attribute: :rating,
           user_review: nil
         )
       end
@@ -40,7 +40,7 @@ RSpec.describe FiveStarReviewComponent, type: :component do
           review_name: "Puntuación",
           rating_value: 4.22,
           subject_id:,
-          column_name: :rating,
+          rating_attribute: :rating,
           user_review: nil
         )
       end
@@ -58,7 +58,7 @@ RSpec.describe FiveStarReviewComponent, type: :component do
           review_name: "Puntuación",
           rating_value: 4.2,
           subject_id:,
-          column_name: :rating,
+          rating_attribute: :rating,
           user_review:
         )
       end
@@ -77,7 +77,7 @@ RSpec.describe FiveStarReviewComponent, type: :component do
           review_name: "Puntuación",
           rating_value: 4.2,
           subject_id:,
-          column_name: :rating,
+          rating_attribute: :rating,
           user_review:
         )
       end

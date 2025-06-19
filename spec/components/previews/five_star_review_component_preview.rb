@@ -5,7 +5,7 @@ class FiveStarReviewComponentPreview < ViewComponent::Preview
     render(FiveStarReviewComponent.new(
              review_name: "Puntuación",
              subject_id: 123,
-             column_name: :rating
+             rating_attribute: :rating
            ))
   end
 
@@ -17,7 +17,7 @@ class FiveStarReviewComponentPreview < ViewComponent::Preview
              rating_value: 3.8,
              subject_id: user_review.subject_id,
              user_review: user_review,
-             column_name: :rating,
+             rating_attribute: :rating,
            ))
   end
   # @!endgroup
