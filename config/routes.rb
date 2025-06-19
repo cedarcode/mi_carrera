@@ -46,7 +46,11 @@ Rails.application.routes.draw do
 
     resources :reviews, only: [:create, :destroy]
 
-    resources :subject_plans, path: "materias_planeadas", only: [:index, :create, :destroy], param: :subject_id
+    resources :subject_plans, path: "materias_planeadas", only: [:index, :create, :destroy], param: :subject_id do
+      collection do
+        post :add_semester
+      end
+    end
 
     if Rails.env.development?
       mount Lookbook::Engine, at: "/lookbook"
