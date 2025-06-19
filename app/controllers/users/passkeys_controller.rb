@@ -29,10 +29,9 @@ module Users
           public_key: webauthn_passkey.public_key,
           sign_count: webauthn_passkey.sign_count
         )
-          render json: { status: "ok" }, status: :ok
           flash[:notice] = "Tu passkey ha sido agregada correctamente."
         else
-          render json: "Couldn't add your Security Key", status: :unprocessable_entity
+          flash[:alert] = "Hubo un error agregando esta passkey."
         end
       rescue WebAuthn::Error
         render json: "Verification failed", status: :unprocessable_entity
