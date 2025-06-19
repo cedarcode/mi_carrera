@@ -54,7 +54,7 @@
             [formatted_category(category), subjects.map { |subject| [display_planned_subject_name_and_code(subject), subject.id] }]
           end
         ),
-        { prompt: 'Seleccionar materia...' },
+        {},
         { data: { subject_selector_target: "select" }, class: "invisible absolute" }
       ) %>
       <%= form.hidden_field :semester, value: semester %>

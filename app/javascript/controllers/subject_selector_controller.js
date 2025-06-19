@@ -8,6 +8,7 @@ export default class extends Controller {
     this.choices = new Choices(this.selectTarget, {
       searchEnabled: true,
       searchPlaceholderValue: "Buscar materia...",
+      placeholderValue: "Seleccionar materia...",
       itemSelectText: "",
       noResultsText: "No se encontraron materias",
       noChoicesText: "No hay materias disponibles",
@@ -20,12 +21,15 @@ export default class extends Controller {
           "!h-10",
           "!flex",
           "!items-center",
+          "!bg-white",
+          "!rounded-md",
         ],
       },
     });
 
     this.selectTarget.addEventListener("change", () => {
-      this.submitButtonTarget.disabled = false;
+      const selectedValue = this.selectTarget.value;
+      this.submitButtonTarget.disabled = !selectedValue || selectedValue === "";
     });
   }
 
