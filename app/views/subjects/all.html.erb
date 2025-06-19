@@ -33,7 +33,9 @@
       src: all_subjects_path(page: @pagy.next),
       loading: :lazy,
       target: :_top do %>
-      <%= render "shared/spinner" %>
+      <div role="status" class="flex justify-center items-center m-2">
+        <%= render "shared/spinner" %>
+      </div>
     <% end %>
   <% end %>
 <% end %>
