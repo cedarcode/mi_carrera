@@ -1,0 +1,31 @@
+<div id="credits_circle">
+  <div class="circle-credits-layout">
+    <svg class="-rotate-90 circle-credits-progress" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-gray-600 dark:text-gray-400" stroke-width="2"></circle>
+      <circle
+        cx="18"
+        cy="18"
+        r="16"
+        fill="none"
+        class="stroke-current text-primary"
+        stroke-width="2"
+        stroke-dasharray="100"
+        stroke-dashoffset=<%=100 - (current_student.total_credits.to_f / 450 * 100)%>
+        stroke-linecap="round"
+      ></circle>
+    </svg>
+  </div>
+  <div class="circle-credits-layout">
+    <div class="circle-credits-background">
+      <span class="circle-credits-counter value">
+        <%= current_student.total_credits %>
+      </span>
+      <span class="circle-credits-counter divider">
+        /
+      </span>
+      <span class="circle-credits-counter total">
+        450
+      </span>
+    </div>
+  </div>
+</div>
