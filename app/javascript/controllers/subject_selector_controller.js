@@ -26,11 +26,11 @@ export default class extends Controller {
         ],
       },
     });
+  }
 
-    this.selectTarget.addEventListener("change", () => {
-      const selectedValue = this.selectTarget.value;
-      this.submitButtonTarget.disabled = !selectedValue || selectedValue === "";
-    });
+  onChange() {
+    const selectedValue = this.selectTarget.value;
+    this.submitButtonTarget.disabled = !selectedValue || selectedValue === "";
   }
 
   disconnect() {
