@@ -9,7 +9,7 @@ export default class extends Controller {
     lists.forEach((list) => {
       Sortable.create(list, {
         group: 'shared',
-        sort: true,
+        sort: false,
         onEnd: this.onEnd.bind(this),
       });
     });
