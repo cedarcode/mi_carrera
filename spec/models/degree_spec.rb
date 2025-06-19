@@ -14,10 +14,18 @@ RSpec.describe Degree, type: :model do
 
   describe '.default' do
     context 'when computacion exists' do
-      let!(:degree) { create(:degree, id: "computacion") }
-
       it 'returns computacion degree' do
-        expect(described_class.default).to eq(degree)
+        expect(described_class.default).to eq(degrees(:computacion))
+      end
+    end
+
+    context 'when computacion does not exist' do
+      before do
+        Degree.destroy_all
+      end
+
+      it 'returns nil' do
+        expect(described_class.default).to be_nil
       end
     end
   end
