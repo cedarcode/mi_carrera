@@ -18,5 +18,15 @@ RSpec.describe Degree, type: :model do
         expect(described_class.default).to eq(degrees(:computacion))
       end
     end
+
+    context 'when computacion does not exist' do
+      before do
+        Degree.destroy_all
+      end
+
+      it 'returns nil' do
+        expect(described_class.default).to be_nil
+      end
+    end
   end
 end
