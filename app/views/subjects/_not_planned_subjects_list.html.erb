@@ -5,30 +5,32 @@
       <span class="flex-1 text-sm font-bold"><%= subjects.size %> Materias aprobadas sin semestre asignado</span>
     </a>
 
-    <div class="hidden" data-collapsible-target="collapsible" data-action="turbo:before-morph-attribute->collapsible#preventToggle">
+    <ul id="not-approved-subjects" class="hidden" data-collapsible-target="collapsible" data-action="turbo:before-morph-attribute->collapsible#preventToggle">
       <% subjects.each do |subject| %>
-        <%= form_with(
-          model: SubjectPlan.new,
-          url: subject_plans_path,
-          method: :post,
-          data: { turbo: true },
-          class: 'flex items-center gap-3 p-3 hover:bg-gray-100'
-        ) do |form| %>
-          <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900" %>
-          <%= material_icon("check", "text-green-500") %>
-          <%=
-            form.select(
-              :semester,
-              (1..10).map { |i| ["Sem. #{i}", i] },
-              {},
-              class: 'min-w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer'
-            )
-          %>
-          <%= form.hidden_field :subject_id, value: subject.id %>
-          <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400" do %>
-            add_circle_outline
+        <li class="relative" data-draggable-url="<%= subject_plans_path %>" data-draggable-method="post" data-draggable-subject-id="<%= subject.id %>">
+          <%= form_with(
+            model: SubjectPlan.new,
+            url: subject_plans_path,
+            method: :post,
+            data: { turbo: true },
+            class: 'flex items-center gap-3 p-3 bg-white hover:bg-gray-100'
+          ) do |form| %>
+            <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900" %>
+            <%= material_icon("check", "text-green-500") %>
+            <%=
+              form.select(
+                :semester,
+                (1..10).map { |i| ["Sem. #{i}", i] },
+                {},
+                class: 'min-w-24 h-6 px-2 rounded-md text-sm/6 text-gray-900 shadow-sm border border-gray-300 truncate cursor-pointer'
+              )
+            %>
+            <%= form.hidden_field :subject_id, value: subject.id %>
+            <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400" do %>
+              add_circle_outline
+            <% end %>
           <% end %>
-        <% end %>
+        </li>
       <% end %>
     </div>
   </div>
