@@ -225,7 +225,6 @@ RSpec.describe CookieStudent, type: :model do
     let(:student) { build(:cookie_student, cookies:) }
 
     context 'when degree_id is not set in cookie' do
-      let!(:degree) { create :degree, id: "computacion" }
       let(:cookies) { build(:cookie) }
 
       it 'returns default degree' do
@@ -254,20 +253,18 @@ RSpec.describe CookieStudent, type: :model do
   end
 
   describe '#degree_subjects' do
-    let!(:degree) { create :degree, id: "computacion" }
     let(:student) { build :cookie_student }
 
     it 'delegates #degree_subjects to degree' do
-      expect(student.degree_subjects).to eq(degree.subjects)
+      expect(student.degree_subjects).to eq(degrees(:computacion).subjects)
     end
   end
 
   describe '#degree_subject_groups' do
-    let!(:degree) { create :degree, id: "computacion" }
     let(:student) { build :cookie_student }
 
     it 'delegates #degree_subject_groups to degree' do
-      expect(student.degree_subject_groups).to eq(degree.subject_groups)
+      expect(student.degree_subject_groups).to eq(degrees(:computacion).subject_groups)
     end
   end
 end

@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Subject", type: :system do
-  let(:degree) { create(:degree, id: "computacion") }
-  let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030', degree:) }
-  let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10, code: '1031', degree:) }
+  let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030', degree: degrees(:computacion)) }
+  let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10, code: '1031', degree: degrees(:computacion)) }
 
   before do
     create(:subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course)
@@ -25,7 +24,7 @@ RSpec.describe "Subject", type: :system do
   end
 
   it 'can search for subjects' do
-    create(:subject, name: 'Taller 1', short_name: 'T1', credits: 11, code: '1040', degree:)
+    create(:subject, name: 'Taller 1', short_name: 'T1', credits: 11, code: '1040', degree: degrees(:computacion))
 
     visit all_subjects_path
 
@@ -84,7 +83,7 @@ RSpec.describe "Subject", type: :system do
     expect(page).to have_text('GAL 2')
     expect(page).to have_text('T1')
 
-    user = create(:user, degree:)
+    user = create(:user, degree: degrees(:computacion))
 
     visit new_user_session_path
 
@@ -151,7 +150,7 @@ RSpec.describe "Subject", type: :system do
   end
 
   it "can review subjects" do
-    user = create(:user, degree:)
+    user = create(:user, degree: degrees(:computacion))
 
     visit subject_path(gal1)
 

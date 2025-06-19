@@ -12,8 +12,6 @@ RSpec.describe User, type: :model do
 
   describe '.from_omniauth' do
     context 'when user does not exist' do
-      let!(:degree) { create(:degree, id: "computacion") }
-
       it 'creates a new user' do
         auth = OmniAuth::AuthHash.new(
           provider: 'google',
@@ -29,7 +27,7 @@ RSpec.describe User, type: :model do
         expect(new_user.email).to eq(auth.info.email)
         expect(new_user.provider).to eq(auth.provider)
         expect(new_user.uid).to eq(auth.uid)
-        expect(new_user.degree).to eq(degree)
+        expect(new_user.degree).to eq(degrees(:computacion))
       end
     end
 

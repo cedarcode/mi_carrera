@@ -6,10 +6,6 @@ RSpec.describe 'User', type: :system do
   include FormFieldHelper
   include PasswordHelper
 
-  before do
-    create(:degree, id: "computacion")
-  end
-
   it 'can sign up' do
     user = create(:user)
 

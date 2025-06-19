@@ -1,0 +1,4 @@
+computacion:
+  id: "computacion"
+  current_plan: "2025"
+  include_inco_subjects: true
