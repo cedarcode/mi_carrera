@@ -40,7 +40,7 @@ export default class extends Controller {
       params = { subject_plan: { subject_id: subjectId, semester: newSemester } };
     }
 
-    const request = new FetchRequest(method, url, { body: JSON.stringify(params) })
+    const request = new FetchRequest(method, url, { headers: { 'Accept': 'text/vnd.turbo-stream.html, text/html' }, body: JSON.stringify(params) })
     request.perform()
   }
 }
