@@ -41,11 +41,19 @@ module PlannedSubjectsHelper
   end
 
   def assert_subject_selector_contains(subject_name_with_code)
-    expect(page).to have_select('subject_plan[subject_id]', with_options: [subject_name_with_code], visible: false)
+    find('.choices').click
+    within('.choices__list--dropdown') do
+      expect(page).to have_text(subject_name_with_code)
+    end
+    find('.choices').click
   end
 
   def assert_subject_not_in_selector(subject_name_with_code)
-    expect(page).to have_no_select('subject_plan[subject_id]', with_options: [subject_name_with_code], visible: false)
+    find('.choices').click
+    within('.choices__list--dropdown') do
+      expect(page).to have_no_text(subject_name_with_code)
+    end
+    find('.choices').click
   end
 
   def within_not_planned_approved_subjects(&block)
