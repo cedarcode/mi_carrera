@@ -14,11 +14,37 @@ RSpec.describe "Subject", type: :system do
   end
 
   it "lists entrollment prerequisites correctly" do
+    visit subject_path(gal1)
+
+    expect(page).to have_content("GAL 1")
+
+    within('label', text: 'Curso aprobado?') do
+      checkbox = find('input[type="checkbox"]')
+      expect(checkbox).to_not be_checked
+    end
+
+    within_exam_prerequisites do
+      expect(page).to_not have_content("done")
+    end
+
+    within('label', text: 'Curso aprobado?') do
+      checkbox = find('input[type="checkbox"]')
+      checkbox.click
+
+      expect(checkbox).to be_checked
+    end
+
+    within_exam_prerequisites do
+      expect(page).to have_content("done")
+    end
+
     visit subject_path(gal2)
 
-    expect(page).to have_content("Todos los siguientes")
+    expect(page).to have_content("GAL 2")
 
-    find('a', text: 'Todos los siguientes').click
+    within_course_prerequisites do
+      find('a', text: 'Todos los siguientes').click
+    end
 
     expect(page).to have_content("Estar inscripto a curso de #{gal1.code} - #{gal1.name}")
   end
@@ -179,5 +205,15 @@ RSpec.describe "Subject", type: :system do
     all('button', text: 'star')[1].click
 
     expect(page).to have_text('-.-')
+  end
+
+  private
+
+  def within_course_prerequisites(&block)
+    within(:xpath, "//span[text()='Del curso:']/following-sibling::*[1]", &block)
+  end
+
+  def within_exam_prerequisites(&block)
+    within(:xpath, "//span[text()='Del examen:']/following-sibling::*[1]", &block)
   end
 end
