@@ -22,7 +22,8 @@ class ApprovalsController < ApplicationController
     if params[:subject_show] == "true"
       @subject = @approvable.subject
     else
-      @subjects = TreePreloader.new(Subject.ordered_by_category_and_name).preload.select do |subject|
+      @pagy, paginated_subjects = pagy(Subject.ordered_by_category_and_name)
+      @subjects = TreePreloader.new(paginated_subjects).preload.select do |subject|
         current_student.approved?(subject.course) ||
           (!subject.hidden_by_default? && current_student.available?(subject.course))
       end
