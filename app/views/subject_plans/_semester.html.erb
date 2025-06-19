@@ -1,4 +1,4 @@
-<div id="semester-<%= semester %>" class="bg-white rounded-lg border border-gray-100 shadow-sm my-4">
+<div id="semester-<%= semester %>" class="bg-white rounded-lg border border-gray-100 shadow-sm my-4" data-semester="<%= semester %>">
   <div class="flex items-center justify-between h-10 bg-gray-50">
     <h3 class="text-sm font-bold ml-4">
       <%= semester_display_name(semester) %>
@@ -12,7 +12,7 @@
     </li>
 
     <% planned_subjects.each do |subject| %>
-      <li class="relative z-1">
+      <li class="relative z-1" data-draggable-url="<%= subject_plan_path(subject_id: subject.id) %>">
         <%= form_with(
           url: subject_plan_path(subject_id: subject.id),
           method: :delete,
