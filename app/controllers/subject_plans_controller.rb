@@ -22,6 +22,14 @@ class SubjectPlansController < ApplicationController
     redirect_to subject_plans_path
   end
 
+  def add_semester
+    if current_user.increment!(:planned_semesters)
+      redirect_to subject_plans_path
+    else
+      redirect_to subject_plans_path, alert: 'Error al agregar semestre'
+    end
+  end
+
   private
 
   def ensure_feature_enabled!

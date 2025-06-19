@@ -1,6 +1,6 @@
 <%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
 
-<% (1..10).each do |semester| %>
+<% (1..current_user.planned_semesters).each do |semester| %>
   <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
   <div class="bg-white rounded-lg border border-gray-100 shadow-sm">
     <div class="flex items-center justify-between h-10 bg-gray-50">
@@ -60,3 +60,21 @@
     <% end %>
   </div>
 <% end %>
+
+<div class="bg-white rounded-lg border border-gray-100 shadow-sm" data-controller="add-semester">
+  <%= form_with(
+    url: add_semester_subject_plans_path,
+    method: :post,
+    data: { 
+      turbo: true, 
+      action: "add-semester#submit",
+      "add-semester-target": "form"
+    },
+    class: 'flex items-center justify-center px-4 py-3 hover:bg-gray-100'
+  ) do |form| %>
+    <%= form.button type: :submit, class: "w-full text-sm text-gray-400 font-bold flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed", data: { "add-semester-target": "button" } do %>
+      <%= material_icon("add_circle_outline", "text-gray-400") %>
+      Agregar semestre
+    <% end %>
+  <% end %>
+</div>
