@@ -16,7 +16,6 @@
           </div>
         </div>
       <% end %>
-
       <% if @failed_entries.present? %>
         <div class="sm:flex sm:items-start mt-5">
           <div class="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-yellow-100 sm:mx-0 sm:size-10">
@@ -30,11 +29,10 @@
               <% end %>
             </div>
           </div>
-      <% end %>
-    </div>
-
-    <div class="mt-5 sm:mt-6">
-      <%= link_to "Ir al inicio", root_path, class: "inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2" %>
-    </div>
-  </dialog>
-<% end %>
+        <% end %>
+      </div>
+      <div class="mt-5 sm:mt-6">
+        <%= link_to "Ir al inicio", root_path, class: "inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2" %>
+      </div>
+    </dialog>
+  <% end %>
