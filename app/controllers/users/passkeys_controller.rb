@@ -45,7 +45,7 @@ module Users
       if current_user.passkeys.destroy(params[:id])
         redirect_to user_passkeys_path, notice: "Tu passkey ha sido eliminada correctamente."
       else
-        render json: "Couldn't delete your Security Key", status: :unprocessable_entity
+        redirect_to user_passkeys_path, alert: "Hubo un error eliminando esta passkey."
       end
     end
 
