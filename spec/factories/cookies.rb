@@ -3,7 +3,7 @@ FactoryBot.define do
     transient do
       welcome_banner_viewed { nil }
       approved_approvable_ids { nil }
-      degree_id { nil }
+      degree_id { "computacion" }
     end
 
     initialize_with do
