@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import Sortable from 'sortablejs';
-import { put, post } from '@rails/request.js';
+import { FetchRequest } from '@rails/request.js';
 
 export default class extends Controller {
   connect() {
@@ -32,16 +32,15 @@ export default class extends Controller {
     const method = event.item.dataset.draggableMethod;
     const newSemester = event.to.parentElement.dataset.semester;
 
+    var params;
     if (method == 'put') {
-      put(url, {
-        body: JSON.stringify({ semester: newSemester })
-      });
+      params = { semester: newSemester };
     } else if (method == 'post') {
       const subjectId = event.item.dataset.draggableSubjectId;
-
-      post(url, {
-        body: JSON.stringify({ subject_plan: { subject_id: subjectId, semester: newSemester } }),
-      });
+      params = { subject_plan: { subject_id: subjectId, semester: newSemester } };
     }
+
+    const request = new FetchRequest(method, url, { body: JSON.stringify(params) })
+    request.perform()
   }
 }
