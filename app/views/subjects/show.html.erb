@@ -1,7 +1,7 @@
 <h3 class="mx-4 my-3 text-2xl"><%= @subject.code %> - <%= @subject.name %></h3>
 <hr class="border-gray-200"/>
 
-<h3 class="mx-4 my-3 text-sm font-medium">Información general</h3>
+<h3 class="mx-4 my-3 font-medium">Información general</h3>
 
 <div class="py-3 px-4">Créditos: <%= @subject.credits %></div>
 
@@ -25,12 +25,12 @@
 
 <hr class="border-gray-200"/>
 
-<h3 class="mx-4 my-3 text-sm font-medium">Aprobación</h3>
+<h3 class="mx-4 my-3 font-medium">Aprobación</h3>
 <%= render 'approvables' %>
 <hr class="border-gray-200"/>
 
 <% if @subject.openfing_id || @subject.eva_id %>
-  <h3 class="mx-4 my-3 text-sm font-medium">Links de interés</h3>
+  <h3 class="mx-4 my-3 font-medium">Links de interés</h3>
 
   <% if @subject.openfing_id %>
     <%= link_to "https://open.fing.edu.uy/courses/#{@subject.openfing_id}", target: "_blank", class: "flex items-center py-3 px-4 hover:bg-gray-100" do %>
@@ -49,7 +49,7 @@
   <hr class="border-gray-200"/>
 <% end %>
 
-<h3 class="mx-4 my-3 text-sm font-medium">Previas</h3>
+<h3 class="mx-4 my-3 font-medium">Previas</h3>
 
 <% if @subject.course.prerequisite_tree %>
   <span class="mx-4">Del curso:</span>
@@ -65,6 +65,6 @@
 
 <hr class="border-gray-200"/>
 
-<%= link_to "mailto:feedback-micarrera@cedarcode.com", target: "_blank", class: "block px-4 py-3 hover:bg-gray-100 no-underline font-medium text-sm/6" do %>
+<%= link_to "mailto:feedback-micarrera@cedarcode.com", target: "_blank", class: "block px-4 py-3 hover:bg-gray-100 no-underline font-medium" do %>
   ¿Hay un error? ¿Hay información que falta? Repórtalo acá
 <% end %>
