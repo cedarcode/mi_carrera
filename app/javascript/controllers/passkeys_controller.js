@@ -14,11 +14,8 @@ export default class extends Controller {
         body: formData,
       });
 
-      if (response.ok) {
-        window.location.replace("/usuarios/passkeys");
-      } else {
-        alert("Ocurrió un error al registrar la llave de seguridad.");
-      }
+      window.location.replace("/usuarios/passkeys");
+
     } catch (error) {
       if (error.name === "NotAllowedError") {
         alert("No seleccionaste el autenticador o cancelaste la operación.");
