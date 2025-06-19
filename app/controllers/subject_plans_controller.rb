@@ -12,6 +12,13 @@ class SubjectPlansController < ApplicationController
     redirect_to subject_plans_path
   end
 
+  def update
+    subject_plan = current_user.subject_plans.find_by!(subject_id: params[:subject_id])
+    subject_plan.update!(semester: params[:semester])
+
+    head :ok
+  end
+
   def destroy
     subject_plan = current_user.subject_plans.find_by!(subject_id: params[:subject_id])
     subject_plan.destroy!
