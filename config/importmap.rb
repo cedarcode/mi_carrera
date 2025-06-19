@@ -15,3 +15,4 @@ if Rails.env.test?
   pin "stub_credentials"
   pin "sinon" # @20.0.0
 end
+pin "sortablejs" # @1.15.6
