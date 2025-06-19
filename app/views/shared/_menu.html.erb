@@ -1,27 +1,19 @@
-<div data-navigation-drawer-target="drawer" class="fixed inset-y-0 w-64 bg-white transform -translate-x-full transition-transform duration-300 z-50 space-y-2 font-semibold text-sm px-3" >
+<div data-navigation-drawer-target="drawer" class="fixed inset-y-0 w-64 bg-white transform -translate-x-full transition-transform duration-300 z-50 space-y-2 font-semibold px-3" >
   <%= image_tag "icon.png", class: "size-12 mb-4 mt-2" %>
-
   <%= drawer_menu_navigation_item "Avance de Carrera", root_path %>
-
   <%= drawer_menu_navigation_item "Todas las Materias", all_subjects_path %>
-
   <%= drawer_menu_navigation_item "Materias INCO semestre actual", current_optional_subjects_path %>
-
   <% if ENV['ENABLE_PLANNER'].present? %>
     <%= drawer_menu_navigation_item "Planificador", subject_plans_path, new_badge: true %>
   <% end %>
-
   <hr class="text-gray-200"/>
-
   <%= link_to "https://github.com/cedarcode/mi_carrera", target: "_blank", class: "flex items-center gap-1 p-2 rounded-sm hover:bg-gray-100 text-gray-600 hover:text-gray-800" do %>
     <%= material_icon("open_in_new") %>
     Colabora en Github
   <% end %>
-
   <%= link_to "mailto:feedback-micarrera@cedarcode.com", target: "_blank", class: "flex items-center gap-1 p-2 rounded-sm hover:bg-gray-100 text-gray-600 hover:text-gray-800" do %>
     <%= material_icon("rate_review") %>
     Opina de la app
   <% end %>
 </div>
-
 <div data-navigation-drawer-target="overlay" data-action="click->navigation-drawer#toggle" class="fixed inset-0 bg-black/30 hidden z-40"></div>
