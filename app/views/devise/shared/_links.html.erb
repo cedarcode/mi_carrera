@@ -1,19 +1,19 @@
 <%- if controller_name != 'sessions' %>
-  <p class="text-center text-sm/6 text-neutral-500">
+  <p class="text-center text-neutral-500">
     ¿Ya estás registrado?
 
     <%= link_to "Ingresar", new_session_path(resource), class: "font-semibold text-indigo-700 hover:text-indigo-500 hover:underline" %>
   </p>
 <% end %>
 <%- if controller_name != 'registrations' %>
-  <p class="text-center text-sm/6 text-neutral-500">
+  <p class="text-center text-neutral-500">
     ¿No estás registrado?
 
     <%= link_to "Registrarte", new_registration_path(resource), class: "font-semibold text-indigo-700 hover:text-indigo-500 hover:underline" %>
   </p>
 <% end %>
 <%- if controller_name != 'passwords' && controller_name != 'registrations' %>
-  <p class="text-center text-sm/6 text-neutral-500">
+  <p class="text-center text-neutral-500">
     ¿Has olvidado tu contraseña?
 
     <%= link_to "Restablecer contraseña", new_password_path(resource), class: "font-semibold text-indigo-700 hover:text-indigo-500 hover:underline" %>
