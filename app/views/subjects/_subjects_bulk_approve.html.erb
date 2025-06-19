@@ -1,7 +1,7 @@
 <div data-controller="bedel loading <%= "confetti" if @graduated %>" id="subjects" >
   <%= render "approvals/spinner_template" %>
   <% @subjects.group_by(&:category).each do |category, subjects| %>
-    <div class="flex items-center h-[50px] border-y border-t-gray-100 border-b-gray-200 bg-gray-50 px-3 py-1.5 font-semibold text-gray-900">
+    <div class="flex items-center h-[50px] border-y border-t-gray-100 border-b-gray-200 bg-gray-50 px-3 py-1.5 font-semibold text-sm text-gray-900">
       <h3 class="grow"><%= formatted_category(category) %></h3>
       <h3 class='w-[50px] text-center'>Curso</h3>
       <h3 class='w-[50px] text-center'>Examen</h3>
