@@ -50,10 +50,7 @@ module PlannedSubjectsHelper
 
   def within_not_planned_approved_subjects(&block)
     card = find(".bg-white", text: "Materias aprobadas sin semestre asignado")
-    # if the card is collapsed, we open it.
-    if card.has_selector?(".material-icons", text: "chevron_right")
-      card.click
-    end
+    card.click if card_collapsed?(card)
 
     within(card, &block)
   end
@@ -71,4 +68,6 @@ module PlannedSubjectsHelper
   def within_subject_row(subject_name, &block)
     within("form", text: subject_name, &block)
   end
+
+  def card_collapsed?(card) = card.has_selector?(".material-icons", text: "chevron_right")
 end
