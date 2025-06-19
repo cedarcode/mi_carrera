@@ -89,6 +89,8 @@ RSpec.describe "Subject", type: :system do
 
     visit subject_path(gal1)
 
+    expect(page).to have_text("Interesante")
+    expect(page).to have_text("Créditos/Dificultad")
     expect(page).to have_text('-.-')
     click_button('star_outline', match: :first)
     expect(page).to have_text('Iniciar sesión')
