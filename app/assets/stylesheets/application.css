@@ -16,10 +16,3 @@ body {
   padding: 0 12px 0 0;
   white-space: nowrap;
 }
-
-input {
-  &:-webkit-autofill {
-    transition: background-color 0s 0s, color 0s 0s;
-    transition-delay: calc(infinity * 1s);
-  }
-}
