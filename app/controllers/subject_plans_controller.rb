@@ -12,7 +12,9 @@ class SubjectPlansController < ApplicationController
     current_user.subject_plans.create!(subject_plan_params)
     flash[:approved_subjects_card_opened] = params[:approved_subjects_card_opened] == 'true'
 
-    redirect_to subject_plans_path
+    @semester = subject_plan_params[:semester].to_i
+
+    set_planned_and_not_planned_subjects
   end
 
   def destroy
