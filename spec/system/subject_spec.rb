@@ -109,7 +109,7 @@ RSpec.describe "Subject", type: :system do
 
     expect(page).to have_text('4.0')
 
-    # Destroy review by clicking on the same star
+    # Reset review by clicking on the same star
     all('button', text: 'star')[1].click
 
     expect(page).to have_text('-.-')

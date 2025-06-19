@@ -28,8 +28,8 @@ class FiveStarReviewComponent < ViewComponent::Base
   end
 
   def star_button(value)
-    button_to star_icon(value), star_url(value),
-              method: star_form_method(value),
+    button_to star_icon(value), reviews_path,
+              method: :post,
               params: star_params(value),
               class: star_button_classes(value),
               form: { class: STYLES[:form] }
@@ -37,11 +37,10 @@ class FiveStarReviewComponent < ViewComponent::Base
 
   def star_icon(value) = filled?(value) ? 'star' : 'star_outline'
 
-  def star_url(value) = selected?(value) ? review_path(@user_review) : reviews_path
-
-  def star_form_method(value) = selected?(value) ? :delete : :post
-
-  def star_params(value) = { subject_id: @subject_id, @rating_attribute => value }
+  def star_params(value)
+    rating_value = selected?(value) ? nil : value
+    { subject_id: @subject_id, @rating_attribute => rating_value }
+  end
 
   def star_button_classes(value) = STYLES[:button] + [star_color_classes(value)]
 
