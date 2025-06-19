@@ -7,11 +7,11 @@ class FiveStarReviewComponent < ViewComponent::Base
     @subject_id = subject_id
     @user_review = user_review
     @column_name = column_name
-    @user_review_rating = user_review&.send(column_name)
+    @user_review_rating = user_review&.public_send(column_name)
   end
 
   def display_rating
-    rating_value.present? ? number_with_precision(rating_value, precision: 1) : '-.-'
+    number_with_precision(rating_value, precision: 1) || '-.-'
   end
 
   def star_options
@@ -28,11 +28,7 @@ class FiveStarReviewComponent < ViewComponent::Base
 
   private
 
-  def filled?(value)
-    @user_review_rating.present? && @user_review_rating >= value
-  end
+  def filled?(value) = @user_review_rating&.>= value
 
-  def selected?(value)
-    @user_review_rating.present? && @user_review_rating == value
-  end
+  def selected?(value) = @user_review_rating == value
 end
