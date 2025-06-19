@@ -4,8 +4,9 @@ require 'support/checkboxes_helper'
 RSpec.describe 'Approvals', type: :system do
   include CheckboxesHelper
 
-  let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030') }
-  let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10) }
+  let(:degree) { create(:degree, id: "computacion") }
+  let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030', degree:) }
+  let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10, degree:) }
 
   before do
     create(:subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course)
@@ -82,7 +83,7 @@ RSpec.describe 'Approvals', type: :system do
     assert_approvable_checkbox(gal2.course, checked: false, disabled: true)
     assert_approvable_checkbox(gal2.exam, checked: false, disabled: false)
 
-    find('.mdc-deprecated-list-item', text: 'Todos los siguientes').click
+    find('a', text: 'Todos los siguientes').click
 
     expect(page).to have_text('1030 - GAL 1 (curso)')
     expect(page).to have_text('1030 - GAL 1 (examen)')

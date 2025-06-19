@@ -91,7 +91,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: system_test_screenshots
-        path: ./tmp/screenshots
+        path: ./tmp/capybara
         retention-days: 2
 
     - uses: joshmfrankel/simplecov-check-action@main

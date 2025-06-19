@@ -1,5 +1,5 @@
-<a href="https://eva.fing.edu.uy/course/view.php?id=<%= eva_id %>" target="_blank" class="mdc-deprecated-list-item">
-  <span class="mdc-deprecated-list-item__ripple"></span>
-  <span class="mdc-deprecated-list-item__graphic material-icons">forum</span>
-  <span class="mdc-deprecated-list-item__text"><%= text %></span>
-</a>
+<%= link_to "https://eva.fing.edu.uy/course/view.php?id=#{eva_id}", target: "_blank", class: "flex items-center h-12 px-4 hover:bg-gray-100" do %>
+  <%= material_icon("forum", "text-gray-400 me-8") %>
+
+  <%= text %>
+<% end %>

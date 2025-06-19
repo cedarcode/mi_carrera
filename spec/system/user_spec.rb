@@ -44,7 +44,7 @@ RSpec.describe 'User', type: :system do
     password_visibility_toggle_test('Confirma tu contraseña')
     click_on 'Registrarte'
 
-    expect(page).to have_text('Bienvenido! Te has registrado correctamente.')
+    expect(page).to have_text('¡Bienvenido! Te has registrado correctamente.')
 
     click_user_menu
     expect(page).to have_text('alice@test.com')

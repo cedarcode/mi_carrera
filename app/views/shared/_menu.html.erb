@@ -7,8 +7,8 @@
 
   <%= drawer_menu_navigation_item "Materias INCO semestre actual", current_optional_subjects_path %>
 
-  <% if current_user && ENV['ENABLE_PLANNER'].present? %>
-    <%= drawer_menu_navigation_item "Planificador", subject_plans_path %>
+  <% if ENV['ENABLE_PLANNER'].present? %>
+    <%= drawer_menu_navigation_item "Planificador", subject_plans_path, new_badge: true %>
   <% end %>
 
   <hr class="text-gray-200"/>
@@ -16,6 +16,11 @@
   <%= link_to "https://github.com/cedarcode/mi_carrera", target: "_blank", class: "flex items-center gap-1 p-2 rounded-sm hover:bg-gray-100 text-gray-600 hover:text-gray-800" do %>
     <%= material_icon("open_in_new") %>
     Colabora en Github
+  <% end %>
+
+  <%= link_to "mailto:feedback-micarrera@cedarcode.com", target: "_blank", class: "flex items-center gap-1 p-2 rounded-sm hover:bg-gray-100 text-gray-600 hover:text-gray-800" do %>
+    <%= material_icon("rate_review") %>
+    Opina de la app
   <% end %>
 </div>
 

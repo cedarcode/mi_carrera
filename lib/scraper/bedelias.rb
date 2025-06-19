@@ -31,7 +31,7 @@ module Scraper
 
     def initialize(degree)
       @degree = degree
-      @logger = Rails.logger.tagged("Scraper - #{degree[:name]}")
+      @logger = Rails.logger.tagged("Scraper - #{degree[:bedelias_name]}")
     end
 
     def scrape
@@ -69,7 +69,7 @@ module Scraper
     attr_reader :degree, :logger
 
     def write_yml(name, data)
-      dir_path = Rails.root.join("db/data/#{degree[:key]}")
+      dir_path = Rails.root.join("db/data/#{degree[:id]}")
 
       Dir.mkdir(dir_path) unless Dir.exist?(dir_path)
 
@@ -90,9 +90,9 @@ module Scraper
 
       wait_for_loading_widget_to_disappear
 
-      find('.ui-column-filter').set(degree[:name])
+      find('.ui-column-filter').set(degree[:bedelias_name])
 
-      all('tr', text: degree[:name], match: :prefer_exact).each do |row|
+      all('tr', text: degree[:bedelias_name], match: :prefer_exact).each do |row|
         if row.has_selector?('td', text: 'Grado', match: :prefer_exact)
           row.find('.ui-row-toggler').click
           break

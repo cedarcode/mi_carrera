@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "Subject", type: :system do
-  let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030') }
-  let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10, code: '1031') }
+  let(:degree) { create(:degree, id: "computacion") }
+  let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030', degree:) }
+  let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10, code: '1031', degree:) }
 
   before do
     create(:subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course)
@@ -24,7 +25,7 @@ RSpec.describe "Subject", type: :system do
   end
 
   it 'can search for subjects' do
-    create(:subject, name: 'Taller 1', short_name: 'T1', credits: 11, code: '1040')
+    create(:subject, name: 'Taller 1', short_name: 'T1', credits: 11, code: '1040', degree:)
 
     visit all_subjects_path
 
@@ -89,7 +90,7 @@ RSpec.describe "Subject", type: :system do
 
     visit subject_path(gal1)
 
-    expect(page).to have_text('Sin calificar')
+    expect(page).to have_text('-.-')
     click_button('star_outline', match: :first)
     expect(page).to have_text('Iniciar sesión')
 
@@ -100,18 +101,18 @@ RSpec.describe "Subject", type: :system do
 
     visit subject_path(gal1)
 
-    expect(page).to have_text('Sin calificar')
+    expect(page).to have_text('-.-')
     click_button('star_outline', match: :first)
-    expect(page).to have_text('Puntuación: 5.0')
+    expect(page).to have_text('5.0')
 
     # Update review to 4 stars
     all('button', text: 'star')[1].click
 
-    expect(page).to have_text('Puntuación: 4.0')
+    expect(page).to have_text('4.0')
 
     # Destroy review by clicking on the same star
     all('button', text: 'star')[1].click
 
-    expect(page).to have_text('Sin calificar')
+    expect(page).to have_text('-.-')
   end
 end

@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Subject, type: :model do
   describe 'associations' do
+    it { should belong_to(:degree).optional }
     it { should belong_to(:group).class_name('SubjectGroup').optional }
     it {
       should have_one(:course)
@@ -24,7 +25,7 @@ RSpec.describe Subject, type: :model do
 
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:credits) }
-    it { should validate_uniqueness_of(:code) }
+    it { should validate_uniqueness_of(:code).scoped_to(:degree_id) }
   end
 
   describe '#approved_credits' do

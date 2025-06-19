@@ -6218,8 +6218,126 @@
   - type: subject
     needs: course
     subject_needed_code: '1158'
-    subject_needed_name: PROCESAMIENTO CUÁNTICO DE LA INFORMACIÓN
+    subject_needed_name: PROCESAMIENTO CUANTICO DE LA INFORMACION
   subject_code: '1158'
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1131P
+        subject_needed_name: CREDITOS NO ACUM INT. A LA FISICA MODERNA
+        needs: exam
+      - type: subject
+        subject_needed_code: '1131'
+        subject_needed_name: INT. A LA FISICA MODERNA
+        needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1153P
+      subject_needed_name: CREDITOS NO ACUM FISICA 3
+      needs: exam
+    - type: subject
+      subject_needed_code: '1153'
+      subject_needed_name: FISICA 3
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1151P
+      subject_needed_name: CREDITOS NO ACUM FISICA 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1151'
+      subject_needed_name: FISICA 1
+      needs: exam
+  subject_code: '1159'
+  is_exam: false
+- type: logical
+  logical_operator: or
+  operands:
+  - type: logical
+    logical_operator: and
+    operands:
+    - type: logical
+      logical_operator: not
+      operands:
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: 1131P
+          subject_needed_name: CREDITOS NO ACUM INT. A LA FISICA MODERNA
+          needs: exam
+        - type: subject
+          subject_needed_code: '1131'
+          subject_needed_name: INT. A LA FISICA MODERNA
+          needs: exam
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1153P
+        subject_needed_name: CREDITOS NO ACUM FISICA 3
+        needs: exam
+      - type: subject
+        subject_needed_code: '1153'
+        subject_needed_name: FISICA 3
+        needs: exam
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1061'
+        subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+        needs: exam
+      - type: subject
+        subject_needed_code: 1061P
+        subject_needed_name: CREDITOS NO ACUM CDIV
+        needs: exam
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1151P
+        subject_needed_name: CREDITOS NO ACUM FISICA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1151'
+        subject_needed_name: FISICA 1
+        needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1131'
+      subject_needed_name: INT. A LA FISICA MODERNA
+      needs: course
+    - type: subject
+      subject_needed_code: '1159'
+      subject_needed_name: INT. A LA FÍSICA MODERNA
+      needs: course
+  subject_code: '1159'
   is_exam: true
 - type: logical
   logical_operator: and
@@ -16284,6 +16402,43 @@
       needs: exam
   subject_code: '2418'
   is_exam: false
+- type: logical
+  logical_operator: not
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: SD10
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: 1512P
+      subject_needed_name: CREDITOS NO ACUM DISEÑO LOGICO
+      needs: all
+    - type: subject
+      subject_needed_code: CP51
+      subject_needed_name: DISEÑO LOGICO
+      needs: all
+    - type: subject
+      subject_needed_code: '1512'
+      subject_needed_name: DISEÑO LOGICO
+      needs: all
+    - type: subject
+      subject_needed_code: 1512C
+      subject_needed_name: DISEÑO LOGICO
+      needs: all
+  subject_code: '2512'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: '2512'
+    subject_needed_name: DISEÑO LOGICO
+  subject_code: '2512'
+  is_exam: true
 - type: logical
   logical_operator: and
   operands:

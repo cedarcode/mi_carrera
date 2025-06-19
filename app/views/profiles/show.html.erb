@@ -1,27 +1,21 @@
-<div class="mdc-deprecated-list-group">
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5">Resumen por Grupo</h3>
-  <ul class="mdc-deprecated-list growing-text-list">
-    <li role="separator" class="mdc-deprecated-list-divider"></li>
-    <% @groups_and_credits.each do |group| %>
-      <li class="mdc-deprecated-list-item">
-        <%= link_to subject_group_path(group[:subject_group]), :class => "mdc-deprecated-list-item__text" do %>
-          <%= group[:subject_group].name %>
-        <% end %>
-
-        <span class="mdc-deprecated-list-item__meta <%= group_credits_class(group[:credits_needed_reached]) %>">
+<h3 class="text-3xl/9 text-center text-neutral-700 py-3">Resumen por Grupo</h3>
+<ul class="divide-y divide-gray-200">
+  <% @groups_and_credits.each do |group| %>
+    <li>
+      <%= link_to subject_group_path(group[:subject_group]), :class => "text-gray-900 flex items-center justify-between px-4 py-3 hover:bg-gray-50 gap-4" do %>
+        <%= group[:subject_group].name %>
+        <span class="<%= group[:credits_needed_reached] ? "text-green-600" : "text-red-600" %>">
           <%= group[:credits] %> / <%= group[:subject_group].credits_needed %>
         </span>
-      </li>
-      <li role="separator" class="mdc-deprecated-list-divider"></li>
-    <% end %>
-    <li class="mdc-deprecated-list-item total-credits">
-      <span class="mdc-deprecated-list-item__text">
-        Total
-      </span>
-
-      <span class="mdc-deprecated-list-item__meta <%= group_credits_class(@all_group_credits_met && @total_credits >= 450) %>">
-        <%= @total_credits %> / 450
-      </span>
+      <% end %>
     </li>
-  </ul>
-</div>
+  <% end %>
+  <li class="flex items-center justify-between px-4 py-3 font-bold text-lg gap-4">
+    <span class="text-gray-900">
+      Total
+    </span>
+    <span class="<%= (@all_group_credits_met && @total_credits >= 450) ? "text-green-600" : "text-red-600" %>">
+      <%= @total_credits %> / 450
+    </span>
+  </li>
+</ul>

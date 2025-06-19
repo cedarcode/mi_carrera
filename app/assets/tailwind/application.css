@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700");
 @import "tailwindcss";
 
 @theme {
   --color-primary: #6200ee;
+  --font-roboto: 'Roboto', sans-serif;
 }
 
 @custom-variant with-error (.field_with_errors &);
