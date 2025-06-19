@@ -6,11 +6,11 @@
     <%= render "credits_counter", planned_subjects: %>
   </div>
 
-  <ul class="min-h-[65px]">
-    <li class="absolute text-sm/6 text-gray-900 mx-4 h-[44px] my-3 z-0 italic flex items-center">
-      No hay materias planificadas para este semestre
-    </li>
+  <div class="absolute text-sm/6 text-gray-900 mx-4 h-[44px] my-3 z-0 italic flex items-center">
+    No hay materias planificadas para este semestre
+  </div>
 
+  <ul class="min-h-[65px]">
     <% planned_subjects.each do |subject| %>
       <li class="relative z-1" data-draggable-url="<%= subject_plan_path(subject_id: subject.id) %>">
         <%= form_with(
