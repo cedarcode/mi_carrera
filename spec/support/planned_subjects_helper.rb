@@ -73,6 +73,7 @@ module PlannedSubjectsHelper
 
   def select_from_choices(option_text)
     find('.choices').click
+    find('.choices__input').fill_in(with: option_text)
     find('.choices__item--choice', text: option_text).click
   end
 
