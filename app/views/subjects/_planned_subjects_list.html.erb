@@ -50,7 +50,7 @@
       <%= form.select(
         :subject_id,
         grouped_options_for_select(
-          @not_planned_subjects.group_by(&:category).reject { |_, subjects| subjects.empty? }.map do |category, subjects|
+          @not_planned_subjects.group_by(&:category).compact_blank.map do |category, subjects|
             [formatted_category(category), subjects.map { |subject| [display_planned_subject_name_and_code(subject), subject.id] }]
           end
         ),
