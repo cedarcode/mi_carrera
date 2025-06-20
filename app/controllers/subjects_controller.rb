@@ -1,8 +1,13 @@
 class SubjectsController < ApplicationController
   def index
-    @subjects = TreePreloader.new(degree_subjects.ordered_by_category_and_name).preload.select do |subject|
-      current_student.approved?(subject.course) ||
-        (!subject.hidden_by_default? && current_student.available?(subject.course))
+    @category = params[:category].presence
+
+    if @category.present?
+      subjects = degree_subjects.ordered_by_category_and_name.where(category: @category)
+      @subjects = TreePreloader.new(subjects).preload.select do |subject|
+        current_student.approved?(subject.course) ||
+          (!subject.hidden_by_default? && current_student.available?(subject.course))
+      end
     end
   end
 
@@ -15,14 +20,20 @@ class SubjectsController < ApplicationController
   end
 
   def all
-    subjects =
-      if params[:search].present?
-        degree_subjects.search(params[:search])
-      else
-        degree_subjects
-      end.ordered_by_category_and_name
+    @category = params[:category].presence
+    @search = params[:search].presence
 
-    @subjects = TreePreloader.new(subjects).preload
+    if @category.present?
+      subjects =
+        if params[:search].present?
+          degree_subjects.search(params[:search])
+        else
+          degree_subjects
+        end.ordered_by_category_and_name
+
+      subjects = subjects.where(category: @category)
+      @subjects = TreePreloader.new(subjects).preload
+    end
   end
 
   private

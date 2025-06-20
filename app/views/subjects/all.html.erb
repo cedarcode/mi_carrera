@@ -1,17 +1,26 @@
 <% content_for :credits do %>
   <%= render 'shared/credits_counter' %>
 <% end %>
-<% if @subjects.any? %>
-  <% @subjects.group_by(&:category).each do |category, subjects| %>
-    <div class="flex items-center h-[50px] border-y border-t-gray-100 border-b-gray-200 bg-gray-50 px-3 py-1.5 text-sm/6 font-semibold text-gray-900">
-      <h3 class="grow"><%= formatted_category(category) %></h3>
-    </div>
 
-    <%= render partial: "subjects/subjects_list", locals: { subjects: subjects } %>
+<% if @category.present? %>
+  <%= turbo_frame_tag :all_subjects_category, @category, target: :_top do %>
+    <% if @subjects.any? %>
+      <%= render partial: "subjects/subjects_list", locals: { subjects: @subjects } %>
+    <% else %>
+      <div class="flex justify-center items-center py-2 text-gray-500 text-2xl font-light gap-1">
+        <%= material_icon("search") %>
+        No hay resultados
+      </div>
+    <% end %>
   <% end %>
 <% else %>
-  <div class="flex justify-center items-center mt-12 text-gray-500 text-2xl font-light gap-1">
-    <%= material_icon("search") %>
-    No hay resultados
-  </div>
+  <% Subject::CATEGORIES.each do |category| %>
+    <div class="flex items-center h-[50px] border-y border-t-gray-100 border-b-gray-200 bg-gray-50 px-3 py-1.5 text-sm/6 font-semibold text-gray-900">
+      <h3 class="grow"><%= formatted_category(category.to_s) %></h3>
+    </div>
+
+    <%= turbo_frame_tag :all_subjects_category, category, src: all_subjects_path(category:, search: @search), target: :_top do %>
+      <%= render "shared/spinner" %>
+    <% end %>
+  <% end %>
 <% end %>
