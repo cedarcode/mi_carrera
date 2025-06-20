@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_20_202619) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_20_203334) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -51,6 +51,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_20_202619) do
     t.integer "subject_group_id"
     t.integer "approvable_needed_id"
     t.integer "amount_of_subjects_needed"
+    t.index ["approvable_id"], name: "index_prerequisites_on_approvable_id"
+    t.index ["approvable_needed_id"], name: "index_prerequisites_on_approvable_needed_id"
+    t.index ["parent_prerequisite_id"], name: "index_prerequisites_on_parent_prerequisite_id"
+    t.index ["subject_group_id"], name: "index_prerequisites_on_subject_group_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -125,6 +129,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_20_202619) do
 
   add_foreign_key "approvables", "subjects"
   add_foreign_key "passkeys", "users"
+  add_foreign_key "prerequisites", "approvables"
+  add_foreign_key "prerequisites", "approvables", column: "approvable_needed_id"
+  add_foreign_key "prerequisites", "prerequisites", column: "parent_prerequisite_id"
+  add_foreign_key "prerequisites", "subject_groups"
   add_foreign_key "reviews", "subjects"
   add_foreign_key "reviews", "users"
   add_foreign_key "subject_groups", "degrees"
