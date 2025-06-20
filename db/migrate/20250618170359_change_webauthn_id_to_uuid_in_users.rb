@@ -4,6 +4,6 @@ class ChangeWebauthnIdToUuidInUsers < ActiveRecord::Migration[8.0]
   end
 
   def down
-    change_column :users, :webauthn_id, :string
+    change_column :users, :webauthn_id, :string, default: nil
   end
 end
