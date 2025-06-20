@@ -85,8 +85,10 @@ end
 #
 #  index_subjects_on_degree_id           (degree_id)
 #  index_subjects_on_degree_id_and_code  (degree_id,code) UNIQUE
+#  index_subjects_on_group_id            (group_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (degree_id => degrees.id)
+#  fk_rails_...  (group_id => subject_groups.id)
 #

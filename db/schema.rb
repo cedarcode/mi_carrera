@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_20_203334) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_20_203849) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -102,6 +102,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_20_203334) do
     t.string "degree_id", null: false
     t.index ["degree_id", "code"], name: "index_subjects_on_degree_id_and_code", unique: true
     t.index ["degree_id"], name: "index_subjects_on_degree_id"
+    t.index ["group_id"], name: "index_subjects_on_group_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -139,5 +140,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_20_203334) do
   add_foreign_key "subject_plans", "subjects"
   add_foreign_key "subject_plans", "users"
   add_foreign_key "subjects", "degrees"
+  add_foreign_key "subjects", "subject_groups", column: "group_id"
   add_foreign_key "users", "degrees"
 end
