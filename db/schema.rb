@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_13_175743) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_20_202619) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -20,6 +20,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_13_175743) do
     t.boolean "is_exam", null: false
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.index ["subject_id"], name: "index_approvables_on_subject_id"
   end
 
   create_table "degrees", id: :string, force: :cascade do |t|
@@ -122,6 +123,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_13_175743) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "approvables", "subjects"
   add_foreign_key "passkeys", "users"
   add_foreign_key "reviews", "subjects"
   add_foreign_key "reviews", "users"

@@ -27,3 +27,11 @@ end
 #  updated_at :datetime         not null
 #  subject_id :integer          not null
 #
+# Indexes
+#
+#  index_approvables_on_subject_id  (subject_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (subject_id => subjects.id)
+#
