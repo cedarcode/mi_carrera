@@ -9,9 +9,9 @@ RSpec.describe TreePreloader do
 
       subjects = described_class.new(Subject).preload.sort_by(&:name)
 
-      Subject.destroy_all
-      Approvable.destroy_all
       Prerequisite.destroy_all
+      Approvable.destroy_all
+      Subject.destroy_all
 
       # check all entities are destroyed
       expect(Subject.count).to eq(0)
