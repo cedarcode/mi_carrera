@@ -2,8 +2,14 @@
   <%= render partial: "credits_counter", locals: { planned_subjects: @planned_subjects } %>
 <% end %>
 
-<%= turbo_stream.replace "not-planned-subjects", method: :morph do %>
-  <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
+<% if @not_planned_approved_subjects_was_empty %>
+  <%= turbo_stream.before "semester-1" do %>
+    <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace "not-planned-subjects", method: :morph do %>
+    <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
+  <% end %>
 <% end %>
 
 <%= turbo_stream.replace "semester-#{@semester}" do %>
