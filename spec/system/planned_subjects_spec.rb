@@ -61,7 +61,7 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     within_semester_section("Primer semestre") do
       within_add_subject_section do
-        select 'GAL 1 - 1030', from: "subject_plan_subject_id"
+        select_from_choices('GAL 1 - 1030')
         find("button[type='submit']").click
       end
 
@@ -79,7 +79,7 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     within_semester_section("Segundo semestre") do
       within_add_subject_section do
-        select 'GAL 2 - 1031', from: "subject_plan_subject_id"
+        select_from_choices('GAL 2 - 1031')
         find("button[type='submit']").click
       end
 

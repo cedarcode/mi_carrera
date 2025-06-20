@@ -8,6 +8,7 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "canvas-confetti", to: "https://ga.jspm.io/npm:canvas-confetti@1.6.0/dist/confetti.module.mjs"
+pin "choices.js", to: "https://ga.jspm.io/npm:choices.js@11.1.0/public/assets/scripts/choices.js"
 pin "@github/webauthn-json/browser-ponyfill", to: "@github--webauthn-json--browser-ponyfill.js"
 
 if Rails.env.test?
