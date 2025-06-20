@@ -16,3 +16,14 @@ class Approvable < ApplicationRecord
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: approvables
+#
+#  id         :bigint           not null, primary key
+#  is_exam    :boolean          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  subject_id :integer          not null
+#
