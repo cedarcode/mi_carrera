@@ -3,6 +3,7 @@
     <h3 class="bg-gray-50 font-bold px-4 py-3">
       Materias aprobadas sin semestre asignado
     </h3>
+
     <% subjects.each do |subject| %>
       <%= form_with(
         model: SubjectPlan.new,

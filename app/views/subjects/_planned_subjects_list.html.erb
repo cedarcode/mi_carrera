@@ -8,6 +8,7 @@
       </h3>
       <%= render partial: "credits_counter", locals: { planned_subjects: planned_subjects } %>
     </div>
+
     <% if planned_subjects.any? %>
       <% planned_subjects.each do |subject| %>
         <%= form_with(
@@ -17,11 +18,13 @@
             class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100',
           ) do |form| %>
           <%= link_to display_name(subject), subject, class: "grow text-gray-900" %>
+
           <% if current_student.approved?(subject) %>
             <%= material_icon("check", "text-green-500") %>
           <% elsif !current_student.available?(subject) %>
             <%= material_icon("lock_outline", "text-gray-400") %>
           <% end %>
+
           <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400" do %>
             remove_circle_outline
           <% end %>
@@ -32,6 +35,7 @@
         No hay materias planificadas para este semestre
       </div>
     <% end %>
+
     <%= form_with(
       model: SubjectPlan.new,
       url: subject_plans_path,

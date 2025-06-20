@@ -1,6 +1,7 @@
 <div>
   <%= form.label attribute, label, class: "font-medium text-gray-700 with-error:text-red-600" %>
   <%= form.email_field attribute, input_options %>
+
   <% if error_messages.present? %>
     <div class="text-red-600 text-sm/6 mt-1">
       <%= error_messages %>
