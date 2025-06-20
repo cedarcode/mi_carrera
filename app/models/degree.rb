@@ -8,3 +8,14 @@ class Degree < ApplicationRecord
     Degree.find_by(id: "computacion")
   end
 end
+
+# == Schema Information
+#
+# Table name: degrees
+#
+#  id                    :string           not null, primary key
+#  current_plan          :string           not null
+#  include_inco_subjects :boolean          not null
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#
