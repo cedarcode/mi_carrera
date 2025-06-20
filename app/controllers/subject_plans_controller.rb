@@ -4,13 +4,10 @@ class SubjectPlansController < ApplicationController
 
   def index
     set_planned_and_not_planned_subjects
-
-    @approved_subjects_card_opened = flash[:approved_subjects_card_opened]
   end
 
   def create
     current_user.subject_plans.create!(subject_plan_params)
-    flash[:approved_subjects_card_opened] = params[:approved_subjects_card_opened] == 'true'
 
     @semester = subject_plan_params[:semester].to_i
 

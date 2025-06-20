@@ -2,7 +2,7 @@
   <%= render partial: "credits_counter", locals: { planned_subjects: @planned_subjects } %>
 <% end %>
 
-<%= turbo_stream.replace "not-planned-subjects" do %>
+<%= turbo_stream.replace "not-planned-subjects", method: :morph do %>
   <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
 <% end %>
 
