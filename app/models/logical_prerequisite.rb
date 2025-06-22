@@ -51,9 +51,7 @@ end
 # Indexes
 #
 #  index_prerequisites_on_approvable_id           (approvable_id)
-#  index_prerequisites_on_approvable_needed_id    (approvable_needed_id)
 #  index_prerequisites_on_parent_prerequisite_id  (parent_prerequisite_id)
-#  index_prerequisites_on_subject_group_id        (subject_group_id)
 #
 # Foreign Keys
 #

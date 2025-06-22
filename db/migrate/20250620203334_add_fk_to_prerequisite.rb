@@ -7,7 +7,5 @@ class AddFkToPrerequisite < ActiveRecord::Migration[8.0]
 
     add_index :prerequisites, :parent_prerequisite_id
     add_index :prerequisites, :approvable_id
-    add_index :prerequisites, :approvable_needed_id
-    add_index :prerequisites, :subject_group_id
   end
 end

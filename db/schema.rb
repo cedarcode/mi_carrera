@@ -52,9 +52,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_20_203849) do
     t.integer "approvable_needed_id"
     t.integer "amount_of_subjects_needed"
     t.index ["approvable_id"], name: "index_prerequisites_on_approvable_id"
-    t.index ["approvable_needed_id"], name: "index_prerequisites_on_approvable_needed_id"
     t.index ["parent_prerequisite_id"], name: "index_prerequisites_on_parent_prerequisite_id"
-    t.index ["subject_group_id"], name: "index_prerequisites_on_subject_group_id"
   end
 
   create_table "reviews", force: :cascade do |t|
