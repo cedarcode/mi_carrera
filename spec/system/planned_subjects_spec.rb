@@ -106,5 +106,17 @@ RSpec.describe "PlannedSubjects", type: :system do
     end
 
     expect(page).to have_text "Créditos planeados: 20"
+
+    within_semester_section("Primer semestre") do
+      within("form", text: "T1") do
+        find("button[type='submit']").click
+      end
+
+      assert_no_subject "T1"
+      expect(page).to have_text "Créditos planeados: 9"
+    end
+
+    expect(page).to have_text "Materias aprobadas sin semestre asignado"
+    expect(page).to have_text "Créditos planeados: 9"
   end
 end
