@@ -59,14 +59,4 @@ RSpec.describe TreePreloader do
       expect(subjects.last.course.prerequisite_tree.approvable_needed).to eq(s1.course)
     end
   end
-
-  describe '#clear_cache' do
-    it 'calls Rails.cache.delete with the correct key' do
-      create(:subject, :with_exam, name: 's1')
-
-      expect(Rails.cache).to receive(:delete).with(TreePreloader::SUBJECTS_KEY)
-
-      described_class.new(Subject.all).clear_cache
-    end
-  end
 end

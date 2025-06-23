@@ -18,7 +18,7 @@ class YmlLoader
     load_subjects
     load_prerequisites
     load_current_optional_subjects
-    TreePreloader.clear_cache
+    PreloadedSubjects.reload!
   end
 
   private
