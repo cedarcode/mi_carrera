@@ -14,6 +14,7 @@ export default class extends Controller {
         group: 'shared',
         sort: false,
         onEnd: this.onEnd.bind(this),
+        handle: "[data-draggable-handle]",
       });
     });
 
@@ -24,6 +25,7 @@ export default class extends Controller {
       },
       sort: false,
       onEnd: this.onEnd.bind(this),
+      handle: "[data-draggable-handle]",
     });
   }
 

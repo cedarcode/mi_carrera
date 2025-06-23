@@ -8,6 +8,8 @@
     <ul id="not-approved-subjects" class="hidden" data-collapsible-target="collapsible" data-action="turbo:before-morph-attribute->collapsible#preventToggle">
       <% subjects.each do |subject| %>
         <li class="relative flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-100 h-[64px]" data-draggable-url="<%= subject_plans_path %>" data-draggable-method="post" data-draggable-subject-id="<%= subject.id %>">
+          <span class="material-icons text-gray-400 cursor-pointer" data-draggable-handle> drag_handle </span>
+
           <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900" %>
           <%= material_icon("check", "text-green-500") %>
         </li>
