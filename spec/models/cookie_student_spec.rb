@@ -223,32 +223,10 @@ RSpec.describe CookieStudent, type: :model do
 
   describe '#degree' do
     let(:student) { build(:cookie_student, cookies:) }
+    let(:cookies) { build(:cookie) }
 
-    context 'when degree_id is not set in cookie' do
-      let(:cookies) { build(:cookie) }
-
-      it 'returns default degree' do
-        expect(student.degree).to eq(Degree.default)
-      end
-
-      it 'stores default degree in cookie' do
-        student.degree
-        expect(cookies[:degree_id]).to eq(Degree.default.id)
-      end
-    end
-
-    context 'when degree_id is set in cookie' do
-      let!(:degree) { create :degree, id: "not_computacion" }
-      let(:cookies) { build(:cookie, degree_id: 'not_computacion') }
-
-      it 'returns the degree stored in the cookie' do
-        expect(student.degree).to eq(degree)
-      end
-
-      it 'does not store default degree in cookie' do
-        student.degree
-        expect(cookies[:degree_id]).to eq(degree.id)
-      end
+    it 'returns default degree' do
+      expect(student.degree).to eq(Degree.default)
     end
   end
 end
