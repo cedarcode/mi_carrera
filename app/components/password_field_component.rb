@@ -25,6 +25,8 @@ class PasswordFieldComponent < ViewComponent::Base
       right-0
       px-3
 
+      focus:outline-indigo-600
+
       cursor-pointer
       hover:text-indigo-700
     ]
