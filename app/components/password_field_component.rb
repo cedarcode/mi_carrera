@@ -23,7 +23,7 @@ class PasswordFieldComponent < ViewComponent::Base
       absolute
       inset-y-0
       right-0
-      pr-3
+      px-3
 
       cursor-pointer
       hover:text-indigo-700
