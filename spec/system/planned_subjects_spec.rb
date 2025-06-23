@@ -38,11 +38,9 @@ RSpec.describe "PlannedSubjects", type: :system do
     within_not_planned_approved_subjects do
       assert_no_subject "GAL 1"
       assert_no_subject "GAL 2"
-      assert_subject_with_semester_selector "T1"
+      assert_approved_subject "T1"
 
-      within("form", text: "T1") do
-        find("button[type='submit']").click
-      end
+      move_subject_to_semester "T1", "Primer semestre"
     end
 
     expect(page).not_to have_text "Materias aprobadas sin semestre asignado"
