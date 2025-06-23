@@ -21,3 +21,15 @@ end
 #  parent_prerequisite_id    :integer
 #  subject_group_id          :integer
 #
+# Indexes
+#
+#  index_prerequisites_on_approvable_id           (approvable_id)
+#  index_prerequisites_on_parent_prerequisite_id  (parent_prerequisite_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (approvable_id => approvables.id)
+#  fk_rails_...  (approvable_needed_id => approvables.id)
+#  fk_rails_...  (parent_prerequisite_id => prerequisites.id)
+#  fk_rails_...  (subject_group_id => subject_groups.id)
+#
