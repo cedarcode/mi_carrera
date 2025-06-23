@@ -251,20 +251,4 @@ RSpec.describe CookieStudent, type: :model do
       end
     end
   end
-
-  describe '#degree_subjects' do
-    let(:student) { build :cookie_student }
-
-    it 'delegates #degree_subjects to degree' do
-      expect(student.degree_subjects).to eq(degrees(:computacion).subjects)
-    end
-  end
-
-  describe '#degree_subject_groups' do
-    let(:student) { build :cookie_student }
-
-    it 'delegates #degree_subject_groups to degree' do
-      expect(student.degree_subject_groups).to eq(degrees(:computacion).subject_groups)
-    end
-  end
 end

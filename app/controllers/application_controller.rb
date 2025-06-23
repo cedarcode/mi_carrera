@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   def current_student
     @current_student ||= current_user ? UserStudent.new(current_user) : CookieStudent.new(cookies)
   end
+
+  def current_degree
+    current_student.degree
+  end
 end

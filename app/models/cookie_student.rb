@@ -20,8 +20,6 @@ class CookieStudent < BaseStudent
     Degree.find_by(id: cookie[:degree_id])
   end
 
-  delegate :subjects, :subject_groups, to: :degree, prefix: true
-
   private
 
   attr_reader :cookie

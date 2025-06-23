@@ -35,8 +35,6 @@ class BaseStudent
   def group_credits_met?(group) = group_credits(group) >= group.credits_needed
   def groups_credits_met? = SubjectGroup.all.all? { |group| group_credits_met?(group) }
   def graduated? = total_credits >= 450 && groups_credits_met?
-  def degree_subjects = raise NoMethodError
-  def degree_subject_groups = raise NoMethodError
 
   private
 
