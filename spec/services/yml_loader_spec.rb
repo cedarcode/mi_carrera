@@ -74,6 +74,12 @@ RSpec.describe YmlLoader do
 
   describe '.load' do
     it 'loads' do
+      # It loads the degree
+      expect { described_class.load }.to change(Degree, :count).by(1)
+      degree = Degree.find_by(id: degree_id)
+      expect(degree).to be_present
+      expect(degree.current_plan).to eq('2025')
+      expect(degree.include_inco_subjects).to eq(true)
     end
   end
 
