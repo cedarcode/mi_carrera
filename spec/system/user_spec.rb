@@ -51,7 +51,7 @@ RSpec.describe 'User', type: :system do
   end
 
   it 'can reset password' do
-    user = create(:user, degree: degrees(:computacion))
+    user = create(:user)
 
     visit new_user_session_path
 
@@ -102,7 +102,7 @@ RSpec.describe 'User', type: :system do
   end
 
   it 'can login' do
-    user = create(:user, degree: degrees(:computacion))
+    user = create(:user)
 
     visit new_user_session_path
 
@@ -126,7 +126,7 @@ RSpec.describe 'User', type: :system do
   end
 
   it 'can edit profile' do
-    user = create(:user, degree: degrees(:computacion))
+    user = create(:user)
     user2 = create(:user)
 
     visit new_user_session_path
