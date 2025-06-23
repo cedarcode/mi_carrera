@@ -29,9 +29,9 @@ module Users
           public_key: webauthn_passkey.public_key,
           sign_count: webauthn_passkey.sign_count
         )
-          flash[:notice] = "Tu passkey ha sido agregada correctamente."
+          redirect_to user_passkeys_path, notice: "Tu passkey ha sido agregada correctamente."
         else
-          flash[:alert] = "Hubo un error agregando esta passkey."
+          redirect_to user_passkeys_path, alert: "Hubo un error agregando esta passkey."
         end
       rescue WebAuthn::Error
         render json: "Verification failed", status: :unprocessable_entity
