@@ -1,24 +1,40 @@
 class TreePreloader
+  SUBJECTS_KEY = 'preloaded_subjects'.freeze
+  TIME_TO_LIVE = 12.hours
+
   def initialize(subjects)
     @subjects = subjects
   end
 
   def preload
-    # rubocop:disable Rails/FindEach
-    subjects
-      .includes(
-        course: :prerequisite_tree,
-        exam: :prerequisite_tree
-      ).each do |subject|
-      preload_prerequisite(subject.course.prerequisite_tree) if subject.course&.prerequisite_tree
-      preload_prerequisite(subject.exam.prerequisite_tree) if subject.exam&.prerequisite_tree
+    subjects.to_a.each do |subject|
+      preloaded_subject = preloaded_subjects[subject.id]
+      subject.association(:course).target = preloaded_subject.course
+      subject.association(:exam).target = preloaded_subject.exam
     end
-    # rubocop:enable Rails/FindEach
+  end
+
+  def clear_cache
+    Rails.cache.delete(SUBJECTS_KEY)
   end
 
   private
 
   attr_reader :subjects
+
+  def preloaded_subjects
+    @preloaded_subjects ||= Rails.cache.fetch(SUBJECTS_KEY, expires_in: TIME_TO_LIVE) do
+      Subject
+        .includes(course: :prerequisite_tree, exam: :prerequisite_tree)
+        .to_a
+        .each do |subject|
+        course = subject.course
+        exam = subject.exam
+        preload_prerequisite(course.prerequisite_tree) if course&.prerequisite_tree
+        preload_prerequisite(exam.prerequisite_tree) if exam&.prerequisite_tree
+      end.index_by(&:id)
+    end
+  end
 
   def preload_prerequisite(prereq)
     case prereq

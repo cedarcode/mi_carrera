@@ -7,7 +7,7 @@ RSpec.describe TreePreloader do
       s2 = create(:subject, :with_exam, name: 's2')
       create(:subject_prerequisite, approvable: s2.course, approvable_needed: s1.course)
 
-      subjects = described_class.new(Subject).preload.sort_by(&:name)
+      subjects = described_class.new(Subject.all).preload.sort_by(&:name)
 
       Prerequisite.destroy_all
       Approvable.destroy_all
@@ -49,7 +49,7 @@ RSpec.describe TreePreloader do
 
       expect(subjects.count).to eq(0)
 
-      subjects = described_class.new(Subject).preload
+      subjects = described_class.new(Subject.all).preload
 
       expect(subjects.count).to eq(2)
       expect(subjects.first.name).to eq('s1')
@@ -57,6 +57,16 @@ RSpec.describe TreePreloader do
 
       expect(subjects.last.course.prerequisite_tree).to be_a(SubjectPrerequisite)
       expect(subjects.last.course.prerequisite_tree.approvable_needed).to eq(s1.course)
+    end
+  end
+
+  describe '#clear_cache' do
+    it 'calls Rails.cache.delete with the correct key' do
+      create(:subject, :with_exam, name: 's1')
+
+      expect(Rails.cache).to receive(:delete).with(TreePreloader::SUBJECTS_KEY)
+
+      described_class.new(Subject.all).clear_cache
     end
   end
 end
