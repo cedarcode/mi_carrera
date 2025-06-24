@@ -63,6 +63,69 @@ RSpec.describe YmlLoader do
         ],
         'subject_code' => '101',
         'is_exam' => false
+      },
+      {
+        'type' => 'logical',
+        'logical_operator' => 'and',
+        'operands' => [
+          {
+            'type' => 'subject',
+            'needs' => 'course',
+            'subject_needed_code' => '101',
+            'subject_needed_name' => 'TEST SUBJECT I',
+          },
+        ],
+        'subject_code' => '101',
+        'is_exam' => true
+      },
+      {
+        'type' => 'logical',
+        'logical_operator' => 'and',
+        'operands' => [
+          {
+            'type' => 'subject',
+            'needs' => 'exam',
+            'subject_needed_code' => '101',
+            'subject_needed_name' => 'TEST SUBJECT I',
+          },
+          {
+            'type' => 'subject',
+            'needs' => 'all',
+            'subject_needed_code' => '101',
+            'subject_needed_name' => 'TEST SUBJECT I',
+          },
+          {
+            'type' => 'subject',
+            'needs' => 'course_enrollment',
+            'subject_needed_code' => '101',
+            'subject_needed_name' => 'TEST SUBJECT I',
+          },
+          {
+            'type' => 'subject',
+            'needs' => 'exam_enrollment',
+            'subject_needed_code' => '101',
+            'subject_needed_name' => 'TEST SUBJECT I',
+          },
+          {
+            'type' => 'subject',
+            'needs' => 'course_activity',
+            'subject_needed_code' => '101',
+            'subject_needed_name' => 'TEST SUBJECT I',
+          },
+          {
+            'type' => 'subject',
+            'needs' => 'exam_activity',
+            'subject_needed_code' => '101',
+            'subject_needed_name' => 'TEST SUBJECT I',
+          },
+          {
+            'type' => 'credits',
+            'credits' => 35,
+            'group' => "2003",
+          },
+        ],
+        'subject_code' => '102',
+        'is_exam' => false
       }
     ].to_yaml)
 
@@ -124,11 +187,39 @@ RSpec.describe YmlLoader do
       expect(subject1.course.prerequisite_tree.logical_operator).to eq("and")
       expect(subject1.course.prerequisite_tree.amount_of_subjects_needed).to be_nil
       expect(subject1.course.prerequisite_tree.operands_prerequisites.length).to eq(1)
-
-      operand_prereq = subject1.course.prerequisite_tree.operands_prerequisites.last
+      operand_prereq = subject1.course.prerequisite_tree.operands_prerequisites.first
       expect(operand_prereq).to be_a(CreditsPrerequisite)
       expect(operand_prereq.credits_needed).to eq(60)
       expect(operand_prereq.subject_group).to be_nil
+
+      expect(subject1.exam.prerequisite_tree).to be_a(LogicalPrerequisite)
+      expect(subject1.exam.prerequisite_tree.logical_operator).to eq("and")
+      expect(subject1.exam.prerequisite_tree.amount_of_subjects_needed).to be_nil
+      expect(subject1.exam.prerequisite_tree.operands_prerequisites.length).to eq(1)
+      operand_prereq2 = subject1.exam.prerequisite_tree.operands_prerequisites.first
+      expect(operand_prereq2).to be_a(SubjectPrerequisite)
+      expect(operand_prereq2.approvable_needed).to eq(subject1.course)
+
+      expect(subject2.course.prerequisite_tree).to be_a(LogicalPrerequisite)
+      expect(subject2.course.prerequisite_tree.logical_operator).to eq("and")
+      expect(subject2.course.prerequisite_tree.amount_of_subjects_needed).to be_nil
+      expect(subject2.course.prerequisite_tree.operands_prerequisites.length).to eq(7)
+      operands = subject2.course.prerequisite_tree.operands_prerequisites
+      expect(operands[0]).to be_a(SubjectPrerequisite)
+      expect(operands[0].approvable_needed).to eq(subject1.exam)
+      expect(operands[1]).to be_a(SubjectPrerequisite)
+      expect(operands[1].approvable_needed).to eq(subject1.exam)
+      expect(operands[2]).to be_a(EnrollmentPrerequisite)
+      expect(operands[2].approvable_needed).to eq(subject1.course)
+      expect(operands[3]).to be_a(EnrollmentPrerequisite)
+      expect(operands[3].approvable_needed).to eq(subject1.exam)
+      expect(operands[4]).to be_a(ActivityPrerequisite)
+      expect(operands[4].approvable_needed).to eq(subject1.course)
+      expect(operands[5]).to be_a(ActivityPrerequisite)
+      expect(operands[5].approvable_needed).to eq(subject1.exam)
+      expect(operands[6]).to be_a(CreditsPrerequisite)
+      expect(operands[6].credits_needed).to eq(35)
+      expect(operands[6].subject_group).to eq(subject_group)
     end
   end
 
