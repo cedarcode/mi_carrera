@@ -31,5 +31,7 @@ class SubjectsController < ApplicationController
     @subject ||= degree_subjects.find(params[:id])
   end
 
-  delegate :degree_subjects, to: :current_student, private: true
+  def degree_subjects
+    current_degree.subjects
+  end
 end
