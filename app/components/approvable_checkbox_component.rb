@@ -3,13 +3,13 @@
 class ApprovableCheckboxComponent < ViewComponent::Base
   STYLES = {
     checkbox: %w[
-      col-start-1
-      row-start-1
+      size-5
       appearance-none
       rounded-sm
       border
       border-gray-300
       bg-white
+      m-4
 
       checked:border-primary
       checked:bg-primary
@@ -27,14 +27,17 @@ class ApprovableCheckboxComponent < ViewComponent::Base
       peer
     ],
     icon: %w[
-      text-base/4!
+      absolute
       text-white
       pointer-events-none
-      col-start-1
-      row-start-1
       opacity-0
       peer-checked:opacity-100
-      peer-disabled:text-gray-300
+
+      top-1/2
+      left-1/2
+      transform
+      -translate-x-1/2
+      -translate-y-1/2
     ],
   }
 

@@ -3,19 +3,16 @@
   url: approvable_approval_path(approvable, subject_show: subject_show),
   data: { controller: "autosave-check" },
   method: current_student.approved?(approvable) ? :delete : :post,
-  class: "mx-[5px]"
+  class: "inline-flex items-center relative"
 ) do |form| %>
-  <div class="box-content w-[18px] h-[18px] p-3">
-    <div class="grid size-4 grid-cols-1">
-      <%= form.checkbox(
-        :approved,
-        id: dom_id(approvable),
-        checked: checked?,
-        disabled: disabled?,
-        class: STYLES[:checkbox],
-        data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
-      ) %>
-      <%= helpers.material_icon("check", class_names(STYLES[:icon])) %>
-    </div>
-  </div>
+  <%= form.checkbox(
+    :approved,
+    id: dom_id(approvable),
+    checked: checked?,
+    disabled: disabled?,
+    class: STYLES[:checkbox],
+    data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
+  ) %>
+
+  <%= helpers.material_icon("check", class_names(STYLES[:icon])) %>
 <% end %>
