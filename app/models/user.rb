@@ -64,7 +64,7 @@ end
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  degree_id              :string
-#  webauthn_id            :string
+#  webauthn_id            :uuid             not null
 #
 # Indexes
 #
