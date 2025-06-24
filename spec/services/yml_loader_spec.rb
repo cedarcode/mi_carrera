@@ -118,6 +118,17 @@ RSpec.describe YmlLoader do
       expect(subject2.short_name).to be_nil
       expect(subject2.category).to eq('optional')
       expect(subject2.current_optional_subject).to be true
+
+      # Prerequisites
+      expect(subject1.course.prerequisite_tree).to be_a(LogicalPrerequisite)
+      expect(subject1.course.prerequisite_tree.logical_operator).to eq("and")
+      expect(subject1.course.prerequisite_tree.amount_of_subjects_needed).to be_nil
+      expect(subject1.course.prerequisite_tree.operands_prerequisites.length).to eq(1)
+
+      operand_prereq = subject1.course.prerequisite_tree.operands_prerequisites.last
+      expect(operand_prereq).to be_a(CreditsPrerequisite)
+      expect(operand_prereq.credits_needed).to eq(60)
+      expect(operand_prereq.subject_group).to be_nil
     end
   end
 
