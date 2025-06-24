@@ -82,7 +82,10 @@ class YmlLoader
   def load_prerequisites
     prerequisites = YAML.load_file(degree_dir.join("scraped_prerequisites.yml"))
 
-    Prerequisite.destroy_all
+    Prerequisite
+      .joins(approvable: :subject)
+      .where(approvable: { subjects: { degree_id: degree.id } })
+      .destroy_all
 
     prerequisites.each do |prerequisite|
       subject = degree.subjects.find_by(code: prerequisite["subject_code"])
