@@ -3,7 +3,7 @@
   url: approvable_approval_path(approvable, subject_show: subject_show),
   data: { controller: "autosave-check" },
   method: current_student.approved?(approvable) ? :delete : :post,
-  class: "inline-flex items-center relative"
+  class: "inline-flex items-center relative p-3"
 ) do |form| %>
   <%= form.checkbox(
     :approved,

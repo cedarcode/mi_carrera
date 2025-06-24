@@ -1,12 +1,12 @@
 <li>
-  <%= link_to subject_path(subject), class: "flex gap-x-4 p-3 justify-between items-center hover:bg-gray-100 text-sm/6 text-gray-900" do %>
+  <%= link_to subject_path(subject), class: "flex py-3 px-4 justify-between items-center hover:bg-gray-100 text-sm/6 text-gray-900" do %>
     <%= display_name(subject) %>
 
-    <span>
+    <div class="flex gap-x-5">
       <%= render(ApprovableCheckboxComponent.new(approvable: subject.course, subject_show: false, current_student: current_student)) %>
       <% if subject.exam %>
         <%= render(ApprovableCheckboxComponent.new(approvable: subject.exam, subject_show: false, current_student: current_student)) %>
       <% end %>
-    </span>
+    </div>
   <% end %>
 </li>
