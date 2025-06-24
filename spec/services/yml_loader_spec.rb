@@ -44,9 +44,10 @@ RSpec.describe YmlLoader do
     File.write(degree_dir.join("subject_overrides.yml"), {
       '101' => {
         'eva_id' => '25',
+        'second_semester_eva_id' => '400',
         'openfing_id' => 'testsubj',
         'short_name' => 'TS1',
-        'category_name' => 'third_semester',
+        'category' => 'third_semester',
       }
     }.to_yaml)
 
@@ -77,15 +78,46 @@ RSpec.describe YmlLoader do
       # Degrees
       expect { described_class.load }.to change(Degree, :count).by(1)
       degree = Degree.find_by(id: degree_id)
+      expect(degree).to be_present
       expect(degree.current_plan).to eq('2025')
-      expect(degree.include_inco_subjects).to eq(true)
+      expect(degree.include_inco_subjects).to be true
 
       # Subject Groups
       expect(SubjectGroup.count).to eq(1)
-      subject_group = degree.subject_groups.last
-      expect(subject_group.code).to eq('2003')
+      subject_group = degree.subject_groups.find_by(code: '2003')
+      expect(subject_group).to be_present
       expect(subject_group.name).to eq('Test Group')
       expect(subject_group.credits_needed).to eq(70)
+
+      # Subjects
+      expect(Subject.count).to eq(2)
+      subject1 = Subject.find_by(code: '101')
+      expect(subject1).to be_present
+      expect(subject1.name).to eq('Test Subject I')
+      expect(subject1.credits).to eq(10)
+      expect(subject1.course).to be_present
+      expect(subject1.exam).to be_present
+      expect(subject1.group).to eq(subject_group)
+      expect(subject1.eva_id).to eq('25')
+      expect(subject1.second_semester_eva_id).to eq('400')
+      expect(subject1.openfing_id).to eq('testsubj')
+      expect(subject1.short_name).to eq('TS1')
+      expect(subject1.category).to eq('third_semester')
+      expect(subject1.current_optional_subject).to be false
+
+      subject2 = Subject.find_by(code: '102')
+      expect(subject2).to be_present
+      expect(subject2.name).to eq('Test Subject II')
+      expect(subject2.credits).to eq(12)
+      expect(subject2.course).to be_present
+      expect(subject2.exam).to be_nil
+      expect(subject2.group).to eq(subject_group)
+      expect(subject2.eva_id).to be_nil
+      expect(subject2.second_semester_eva_id).to be_nil
+      expect(subject2.openfing_id).to be_nil
+      expect(subject2.short_name).to be_nil
+      expect(subject2.category).to eq('optional')
+      expect(subject2.current_optional_subject).to be true
     end
   end
 
