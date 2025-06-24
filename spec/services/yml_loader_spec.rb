@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe YmlLoader do
   let(:degree_id) { 'test_degree' }
+  let(:another_degree_id) { 'another_test_degree' }
   let(:degree_dir) { Rails.root.join("db/data/#{degree_id}/") }
+  let(:another_degree_dir) { Rails.root.join("db/data/#{another_degree_id}/") }
 
   before do
     allow(Rails.configuration).to receive(:degrees).and_return([
@@ -11,16 +13,31 @@ RSpec.describe YmlLoader do
         id: degree_id,
         current_plan: '2025',
         include_inco_subjects: true
+      },
+      {
+        bedelias_name: 'ANOTHER TEST DEGREE',
+        id: another_degree_id,
+        current_plan: '1815',
+        include_inco_subjects: true
       }
     ])
 
     Dir.mkdir(degree_dir)
+    Dir.mkdir(another_degree_dir)
 
     File.write(degree_dir.join("scraped_subject_groups.yml"), {
       '2003' => {
         'code' => '2003',
         'name' => 'TEST GROUP',
         'min_credits' => 70
+      }
+    }.to_yaml)
+
+    File.write(another_degree_dir.join("scraped_subject_groups.yml"), {
+      '73' => {
+        'code' => '73',
+        'name' => 'ANOTHER TEST GROUP',
+        'min_credits' => 73
       }
     }.to_yaml)
 
@@ -41,6 +58,16 @@ RSpec.describe YmlLoader do
       },
     }.to_yaml)
 
+    File.write(another_degree_dir.join("scraped_subjects.yml"), {
+      '24' => {
+        'code' => '24',
+        'name' => 'ANOTHER TEST SUBJECT',
+        'credits' => 4,
+        'has_exam' => true,
+        'subject_group' => '73'
+      }
+    }.to_yaml)
+
     File.write(degree_dir.join("subject_overrides.yml"), {
       '101' => {
         'eva_id' => '25',
@@ -50,6 +77,8 @@ RSpec.describe YmlLoader do
         'category' => 'third_semester',
       }
     }.to_yaml)
+
+    File.write(another_degree_dir.join("subject_overrides.yml"), {}.to_yaml)
 
     File.write(degree_dir.join("scraped_prerequisites.yml"), [
       {
@@ -129,31 +158,36 @@ RSpec.describe YmlLoader do
       }
     ].to_yaml)
 
+    File.write(another_degree_dir.join("scraped_prerequisites.yml"), {}.to_yaml)
+
     File.write(degree_dir.join("scraped_optional_subjects.yml"), ["102"].to_yaml)
+
+    File.write(another_degree_dir.join("scraped_optional_subjects.yml"), [].to_yaml)
   end
 
   after do
     FileUtils.rm_rf(degree_dir)
+    FileUtils.rm_rf(another_degree_dir)
   end
 
   describe '.load' do
     it 'loads' do
       # Degrees
-      expect { described_class.load }.to change(Degree, :count).by(1)
-      degree = Degree.find_by(id: degree_id)
+      expect { described_class.load }.to change(Degree, :count).by(2)
+      degree = Degree.find(degree_id)
       expect(degree).to be_present
       expect(degree.current_plan).to eq('2025')
       expect(degree.include_inco_subjects).to be true
 
       # Subject Groups
-      expect(SubjectGroup.count).to eq(1)
+      expect(degree.subject_groups.count).to eq(1)
       subject_group = degree.subject_groups.find_by(code: '2003')
       expect(subject_group).to be_present
       expect(subject_group.name).to eq('Test Group')
       expect(subject_group.credits_needed).to eq(70)
 
       # Subjects
-      expect(Subject.count).to eq(2)
+      expect(degree.subjects.count).to eq(2)
       subject1 = Subject.find_by(code: '101')
       expect(subject1).to be_present
       expect(subject1.name).to eq('Test Subject I')
@@ -220,6 +254,15 @@ RSpec.describe YmlLoader do
       expect(operands[6]).to be_a(CreditsPrerequisite)
       expect(operands[6].credits_needed).to eq(35)
       expect(operands[6].subject_group).to eq(subject_group)
+
+      # Data isolation between degrees
+      another_degree = Degree.find(another_degree_id)
+
+      expect(degree.subject_groups.pluck(:code)).to contain_exactly("2003")
+      expect(another_degree.subject_groups.pluck(:code)).to contain_exactly("73")
+
+      expect(degree.subjects.pluck(:code)).to contain_exactly("101", "102")
+      expect(another_degree.subjects.pluck(:code)).to contain_exactly("24")
     end
 
     it 'raises error if unknown prerequisite type' do
