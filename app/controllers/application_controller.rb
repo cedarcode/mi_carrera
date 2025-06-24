@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def current_degree
-    current_student.degree
+    @current_degree ||= current_student.degree
   end
 end
