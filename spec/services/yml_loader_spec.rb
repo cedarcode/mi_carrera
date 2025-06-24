@@ -221,6 +221,46 @@ RSpec.describe YmlLoader do
       expect(operands[6].credits_needed).to eq(35)
       expect(operands[6].subject_group).to eq(subject_group)
     end
+
+    it 'raises error if unknown prerequisite type' do
+      File.write(degree_dir.join('scraped_prerequisites.yml'), [
+        {
+          'type' => 'foo',
+          'logical_operator' => 'and',
+          'operands' => [
+            {
+              'type' => 'credits',
+              'credits' => 60,
+            },
+          ],
+          'subject_code' => '101',
+          'is_exam' => false
+        }
+      ].to_yaml)
+
+      expect { described_class.load }.to raise_error('Unknown prerequisite type: foo')
+    end
+
+    it 'raises error if unknown approvable needed' do
+      File.write(degree_dir.join('scraped_prerequisites.yml'), [
+        {
+          'type' => 'logical',
+          'logical_operator' => 'and',
+          'operands' => [
+            {
+              'type' => 'subject',
+              'needs' => 'bar',
+              'subject_needed_code' => '101',
+              'subject_needed_name' => 'TEST SUBJECT I',
+            },
+          ],
+          'subject_code' => '101',
+          'is_exam' => false
+        }
+      ].to_yaml)
+
+      expect { described_class.load }.to raise_error('Unknown approvable needed: bar')
+    end
   end
 
   describe 'load' do
