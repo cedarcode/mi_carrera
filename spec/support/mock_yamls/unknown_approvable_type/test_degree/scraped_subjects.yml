@@ -1,0 +1,7 @@
+---
+'101':
+  code: '101'
+  name: TEST SUBJECT I
+  credits: 10
+  has_exam: true
+  subject_group: '2003'

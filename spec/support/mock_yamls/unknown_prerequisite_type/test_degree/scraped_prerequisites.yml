@@ -1,0 +1,8 @@
+---
+- type: foo
+  logical_operator: and
+  operands:
+  - type: credits
+    credits: 60
+  subject_code: '101'
+  is_exam: false
