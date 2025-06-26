@@ -109,7 +109,7 @@ RSpec.describe "Subject", type: :system do
     expect(page).to have_text('GAL 2')
     expect(page).to have_text('T1')
 
-    user = create(:user, degree: degrees(:computacion))
+    user = create(:user)
 
     visit new_user_session_path
 
@@ -177,7 +177,7 @@ RSpec.describe "Subject", type: :system do
   end
 
   it "can review subjects" do
-    user = create(:user, degree: degrees(:computacion))
+    user = create(:user)
 
     visit subject_path(gal1)
 

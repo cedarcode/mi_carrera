@@ -5,9 +5,15 @@ RSpec.describe User, type: :model do
     it { should have_many(:reviews).dependent(:destroy) }
     it { should have_many(:subject_plans).dependent(:destroy) }
     it { should have_many(:planned_subjects).through(:subject_plans).source(:subject) }
-    it { should belong_to(:degree).optional }
-    it { should have_many(:degree_subjects).through(:degree).source(:subjects) }
-    it { should have_many(:degree_subject_groups).through(:degree).source(:subject_groups) }
+    it { should belong_to(:degree).without_validating_presence }
+  end
+
+  describe 'before_validation callback' do
+    it 'sets default degree' do
+      user = User.new
+      user.valid?
+      expect(user.degree).to eq(Degree.default)
+    end
   end
 
   describe '.from_omniauth' do
