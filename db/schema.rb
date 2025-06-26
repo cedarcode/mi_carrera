@@ -118,7 +118,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_24_185553) do
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "locked_at"
     t.string "unlock_token"
-    t.string "degree_id"
+    t.string "degree_id", null: false
     t.uuid "webauthn_id", default: -> { "gen_random_uuid()" }, null: false
     t.index ["degree_id"], name: "index_users_on_degree_id"
     t.index ["email"], name: "index_users_on_email", unique: true

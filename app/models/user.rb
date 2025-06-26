@@ -8,10 +8,10 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :subject_plans, dependent: :destroy
   has_many :planned_subjects, through: :subject_plans, source: :subject
-  belongs_to :degree, optional: true
-  has_many :degree_subjects, through: :degree, source: :subjects
-  has_many :degree_subject_groups, through: :degree, source: :subject_groups
+  belongs_to :degree
   has_many :passkeys, dependent: :destroy
+
+  before_validation :set_default_degree
 
   def self.from_omniauth(auth, cookie)
     # check that user with same email exists
@@ -28,7 +28,6 @@ class User < ApplicationRecord
         user.password = Devise.friendly_token[0, 20]
         user.approvals = JSON.parse(cookie[:approved_approvable_ids] || "[]")
         user.welcome_banner_viewed = cookie[:welcome_banner_viewed] == "true"
-        user.degree = Degree.default
       end
     end
   end
@@ -41,6 +40,12 @@ class User < ApplicationRecord
 
   def planned?(subject)
     subject_plans.any? { |subject_plan| subject_plan.subject_id == subject.id }
+  end
+
+  private
+
+  def set_default_degree
+    self.degree = Degree.default
   end
 end
 
@@ -63,7 +68,7 @@ end
 #  welcome_banner_viewed  :boolean          default(FALSE)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  degree_id              :string
+#  degree_id              :string           not null
 #  webauthn_id            :uuid             not null
 #
 # Indexes

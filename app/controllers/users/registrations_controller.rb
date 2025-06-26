@@ -7,7 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       if user.persisted?
         user.approvals = JSON.parse(cookies[:approved_approvable_ids] || "[]")
         user.welcome_banner_viewed = cookies[:welcome_banner_viewed] == "true"
-        user.degree = Degree.default
         user.save!
       end
     end
