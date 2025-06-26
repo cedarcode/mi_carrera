@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Manage passkeys' do
   before do
-    sign_in create(:user)
+    sign_in create(:user, webauthn_id: "a1b2c3d4e5f6g7h8")
   end
 
   ENV['ENABLE_PASSKEYS'] = 'true'

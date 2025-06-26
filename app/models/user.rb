@@ -11,10 +11,6 @@ class User < ApplicationRecord
   belongs_to :degree
   has_many :passkeys, dependent: :destroy
 
-  after_initialize do
-    self.webauthn_id ||= WebAuthn.generate_user_id
-  end
-
   before_validation :set_default_degree
 
   def self.from_omniauth(auth, cookie)
