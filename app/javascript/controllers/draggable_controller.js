@@ -31,12 +31,10 @@ export default class extends Controller {
     const method = event.item.dataset.draggableMethod;
     const newSemester = event.to.dataset.semester;
 
-    var params;
-    if (method == 'put') {
-      params = { subject_plan: { semester: newSemester } };
-    } else if (method == 'post') {
-      const subjectId = event.item.dataset.draggableSubjectId;
-      params = { subject_plan: { subject_id: subjectId, semester: newSemester } };
+    var params = { subject_plan: { semester: newSemester } };
+
+    if (method == 'post') {
+      params['subject_plan'].subject_id = event.item.dataset.draggableSubjectId;
     }
 
     const request = new FetchRequest(method, url, { headers: { 'Accept': 'text/vnd.turbo-stream.html, text/html' }, body: JSON.stringify(params) })
