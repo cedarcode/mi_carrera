@@ -1,41 +1,7 @@
 <div id="semester-<%= semester %>" class="bg-white rounded-lg border border-gray-100 shadow-sm my-4" data-semester="<%= semester %>">
-  <div class="flex items-center justify-between h-10 bg-gray-50">
-    <h3 class="text-sm font-bold ml-4">
-      <%= semester_display_name(semester) %>
-    </h3>
-    <%= render "credits_counter", planned_subjects: %>
-  </div>
+  <%= render "semester_header", semester:, planned_subjects: %>
 
-  <div class="absolute text-sm/6 text-gray-900 mx-4 h-[44px] my-3 z-0 italic flex items-center">
-    No hay materias planificadas para este semestre
-  </div>
-
-  <ul class="min-h-[65px]">
-    <% planned_subjects.each do |subject| %>
-      <li class="relative" data-draggable-url="<%= subject_plan_path(subject_id: subject.id) %>" data-draggable-method="put">
-        <%= form_with(
-          url: subject_plan_path(subject_id: subject.id),
-          method: :delete,
-          data: { turbo: true },
-          class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 bg-white',
-        ) do |form| %>
-          <span class="material-icons text-gray-400 cursor-pointer" data-draggable-handle> drag_handle </span>
-
-          <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900" %>
-          
-          <% if current_student.approved?(subject) %>
-            <%= material_icon("check", "text-green-500") %>
-          <% elsif !current_student.available?(subject) %>
-            <%= material_icon("lock_outline", "text-gray-400") %>
-          <% end %>
-
-          <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400" do %>
-            remove_circle_outline
-          <% end %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+  <%= render "semester_subjects_list", semester:, planned_subjects: %>
 
   <%= render "semester_add_subject_form", semester:, not_planned_subjects: %>
 </div>
