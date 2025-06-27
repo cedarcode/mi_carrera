@@ -34,9 +34,10 @@ group :development, :test do
 end
 
 group :development do
+  gem "annotaterb", "~> 4.16"
   gem "letter_opener", "~> 1.10"
   gem "lookbook", "~> 2.3"
-  gem 'rubocop', '~> 1.76'
+  gem 'rubocop', '~> 1.77'
   gem 'rubocop-performance', '~> 1.25', require: false
   gem 'rubocop-rails', '~> 2.32', require: false
   gem 'web-console', '~> 4.2'

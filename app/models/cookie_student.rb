@@ -15,6 +15,10 @@ class CookieStudent < BaseStudent
     }
   end
 
+  def degree
+    Degree.default
+  end
+
   private
 
   attr_reader :cookie

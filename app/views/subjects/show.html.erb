@@ -1,70 +1,72 @@
-<div class="mdc-deprecated-list-group">
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--headline5"><%= @subject.code %> - <%= @subject.name %></h3>
-  <hr class="mdc-deprecated-list-divider">
+<h3 class="mx-4 my-3 text-2xl"><%= @subject.code %> - <%= @subject.name %></h3>
+<hr class="border-gray-200"/>
 
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Información general</h3>
-  <div class="mdc-deprecated-list growing-text-list">
-    <label class="mdc-deprecated-list-item non-clickable-list-item">
-      <span class="mdc-deprecated-list-item__text">
-        Créditos: <%= @subject.credits %>
-      </span>
-    </label>
+<h3 class="mx-4 my-3 text-sm font-medium">Información general</h3>
 
-    <label class="mdc-deprecated-list-item">
-      <% if @subject.group %>
-        <%= link_to subject_group_path(@subject.group), :class => "mdc-deprecated-list-item__text" do %>
-          Grupo: <%= @subject.group.name %>
-        <% end %>
-      <% else  %>
-        Grupo: Desconocido
-      <% end %>
-    </label>
+<div class="py-3 px-4">Créditos: <%= @subject.credits %></div>
 
-    <%= render 'rating' %>
-  </div>
-  <hr class="mdc-deprecated-list-divider">
-
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Aprobación</h3>
-  <%= render 'approvables' %>
-  <hr class="mdc-deprecated-list-divider">
-
-  <% if @subject.openfing_id || @subject.eva_id %>
-    <h3 class="mx-4 my-3 text-sm font-medium">Links de interés</h3>
-
-    <% if @subject.openfing_id %>
-      <%= link_to "https://open.fing.edu.uy/courses/#{@subject.openfing_id}", target: "_blank", class: "flex items-center h-12 px-4 hover:bg-gray-100" do %>
-        <%= material_icon("videocam", "text-gray-400 me-8") %>
-
-        OpenFING
-      <% end %>
-    <% end %>
-
-    <% if @subject.eva_id %>
-      <% second_semester_eva_id = @subject.second_semester_eva_id %>
-      <%= render 'shared/eva_links_component', eva_id: @subject.eva_id, text: second_semester_eva_id ? "EVA - Primer semestre" : "EVA" %>
-      <%= render 'shared/eva_links_component', eva_id: second_semester_eva_id, text: "EVA - Segundo semestre" if second_semester_eva_id %>
-    <% end %>
-
-    <hr class="border-gray-200"/>
+<% if @subject.group %>
+  <%= link_to subject_group_path(@subject.group), :class => "block py-3 px-4 hover:bg-gray-100" do %>
+    Grupo: <%= @subject.group.name %>
   <% end %>
+<% else  %>
+  <div class="py-3 px-4">Grupo: Desconocido</div>
+<% end %>
 
-  <h3 class="mdc-deprecated-list-group__subheader mdc-typography--subtitle2">Previas</h3>
-
-  <% if @subject.course.prerequisite_tree %>
-    <span class="mx-4">Del curso:</span>
-
-    <%= render @subject.course.prerequisite_tree, negative: false %>
-  <% end %>
-
-  <% if @subject.exam&.prerequisite_tree %>
-    <span class="mx-4">Del examen:</span>
-
-    <%= render @subject.exam.prerequisite_tree, negative: false %>
-  <% end %>
-
-  <hr class="mdc-deprecated-list-divider">
-  <a href="https://github.com/cedarcode/mi_carrera/issues" target="_blank" class="mdc-deprecated-list-item">
-    <span class="mdc-deprecated-list-item__ripple"></span>
-    <span class="mdc-typography--subtitle2">¿Hay un error? ¿Hay información que falta? Reportalo acá</span>
-  </a>
+<div class="p-2">
+  <%= render(FiveStarReviewComponent.new(
+    review_name: "Puntuación",
+    rating_value: @subject.average_rating,
+    subject_id: @subject.id,
+    column_name: :rating,
+    user_review: @user_review
+  )) %>
 </div>
+
+<hr class="border-gray-200"/>
+
+<h3 class="mx-4 my-3 text-sm font-medium">Aprobación</h3>
+<%= render 'approvables' %>
+<hr class="border-gray-200"/>
+
+<% if @subject.openfing_id || @subject.eva_id %>
+  <h3 class="mx-4 my-3 text-sm font-medium">Links de interés</h3>
+
+  <% if @subject.openfing_id %>
+    <%= link_to "https://open.fing.edu.uy/courses/#{@subject.openfing_id}", target: "_blank", class: "flex items-center py-3 px-4 hover:bg-gray-100" do %>
+      <%= material_icon("videocam", "text-gray-400 me-8") %>
+
+      OpenFING
+    <% end %>
+  <% end %>
+
+  <% if @subject.eva_id %>
+    <% second_semester_eva_id = @subject.second_semester_eva_id %>
+    <%= render 'shared/eva_links_component', eva_id: @subject.eva_id, text: second_semester_eva_id ? "EVA - Primer semestre" : "EVA" %>
+    <%= render 'shared/eva_links_component', eva_id: second_semester_eva_id, text: "EVA - Segundo semestre" if second_semester_eva_id %>
+  <% end %>
+
+  <hr class="border-gray-200"/>
+<% end %>
+
+<h3 class="mx-4 my-3 text-sm font-medium">Previas</h3>
+
+<% if @subject.course.prerequisite_tree %>
+  <span class="mx-4">Del curso:</span>
+
+  <%= render @subject.course.prerequisite_tree, negative: false %>
+<% end %>
+
+<% if @subject.exam&.prerequisite_tree %>
+  <span class="mx-4">Del examen:</span>
+
+  <div id="exam-prerequisites">
+    <%= render @subject.exam.prerequisite_tree, negative: false %>
+  </div>
+<% end %>
+
+<hr class="border-gray-200"/>
+
+<%= link_to "mailto:feedback-micarrera@cedarcode.com", target: "_blank", class: "block px-4 py-3 hover:bg-gray-100 no-underline font-medium text-sm/6" do %>
+  ¿Hay un error? ¿Hay información que falta? Repórtalo acá
+<% end %>

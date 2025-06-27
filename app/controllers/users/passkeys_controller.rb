@@ -56,7 +56,7 @@ module Users
     private
 
     def ensure_feature_enabled!
-      redirect_to root_path, alert: 'Feature is not available' if ENV['ENABLE_PASSKEYS'].blank?
+      redirect_to root_path if ENV['ENABLE_PASSKEYS'].blank?
     end
   end
 end

@@ -104,6 +104,7 @@ RSpec.describe Users::RegistrationsController, type: :request do
       user = User.where(email: 'newuser@gmail.com').first
 
       expect(user.approvals).to eq [subject1.course.id, subject2.exam.id, subject2.course.id]
+      expect(user.degree).to eq(degrees(:computacion))
     end
   end
 end
