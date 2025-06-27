@@ -1,9 +1,15 @@
 class PreloadedSubjectsFetcher
-  def self.call
-    new.call
+  class << self
+    def data
+      @data ||= new.fetch
+    end
+
+    def reload!
+      @data = new.fetch
+    end
   end
 
-  def call
+  def fetch
     Subject
       .includes(course: :prerequisite_tree, exam: :prerequisite_tree)
       .to_a

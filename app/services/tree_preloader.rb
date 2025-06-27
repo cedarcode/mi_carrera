@@ -16,9 +16,9 @@ class TreePreloader
   attr_reader :subjects
 
   def find_preloaded_subject(id)
-    return PreloadedSubjects.data[id] if PreloadedSubjects.data.key?(id)
+    return PreloadedSubjectsFetcher.data[id] if PreloadedSubjectsFetcher.data.key?(id)
 
-    PreloadedSubjects.reload!
-    PreloadedSubjects.data[id]
+    PreloadedSubjectsFetcher.reload!
+    PreloadedSubjectsFetcher.data[id]
   end
 end
