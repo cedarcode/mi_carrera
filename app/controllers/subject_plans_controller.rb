@@ -21,7 +21,7 @@ class SubjectPlansController < ApplicationController
   def update
     subject_plan = current_user.subject_plans.find_by!(subject_id: params[:subject_id])
     previous_semester = subject_plan.semester
-    new_semester = params[:semester].to_i
+    new_semester = subject_plan_params[:semester].to_i
     subject_plan.update!(semester: new_semester)
 
     @semesters_to_refresh = [previous_semester, new_semester]

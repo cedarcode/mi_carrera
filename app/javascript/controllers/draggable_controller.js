@@ -36,7 +36,7 @@ export default class extends Controller {
 
     var params;
     if (method == 'put') {
-      params = { semester: newSemester };
+      params = { subject_plan: { semester: newSemester } };
     } else if (method == 'post') {
       const subjectId = event.item.dataset.draggableSubjectId;
       params = { subject_plan: { subject_id: subjectId, semester: newSemester } };
