@@ -77,7 +77,7 @@ module PlannedSubjectsHelper
 
   def move_subject_to_semester(subject_name, semester)
     subject_element_drag_handle = within_subject_row(subject_name) { find("span", text: 'drag_handle') }
-    semester_subjects_list = page.find(:xpath, "//ul[../div[h3[contains(text(), '#{semester}')]]]")
+    semester_subjects_list = within_semester_section(semester) { find("ul") }
     subject_element_drag_handle.drag_to(semester_subjects_list)
   end
 
