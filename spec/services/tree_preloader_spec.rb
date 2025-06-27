@@ -64,13 +64,13 @@ RSpec.describe TreePreloader do
     end
   end
 
-  describe '#fetch_preloaded_approvables' do
+  describe '.fetch_preloaded_approvables' do
     it 'fetches and preloads approvables grouped by their subject' do
       s1 = create(:subject, :with_exam, name: 's1')
       s2 = create(:subject, name: 's2')
       create(:subject_prerequisite, approvable: s2.course, approvable_needed: s1.course)
 
-      preloaded_approvables = described_class.new([]).fetch_preloaded_approvables
+      preloaded_approvables = described_class.fetch_preloaded_approvables
 
       expect(preloaded_approvables.count).to eq(2)
       expect(preloaded_approvables[s1.id]).to be_present
@@ -99,7 +99,7 @@ RSpec.describe TreePreloader do
     end
 
     it 'returns an empty hash when no subjects are found' do
-      subjects = described_class.new([]).fetch_preloaded_approvables
+      subjects = described_class.fetch_preloaded_approvables
 
       expect(subjects).to eq({})
     end
