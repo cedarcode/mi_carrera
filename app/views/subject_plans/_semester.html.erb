@@ -1,4 +1,4 @@
-<div id="semester-<%= semester %>" class="bg-white rounded-lg border border-gray-100 shadow-sm my-4" data-semester="<%= semester %>">
+<div id="semester-<%= semester %>" class="bg-white rounded-lg border border-gray-100 shadow-sm my-4">
   <%= render partial: "semester_header", locals: { semester: semester, planned_subjects: planned_subjects } %>
 
   <%= render partial: "semester_subjects_list", locals: { semester: semester, planned_subjects: planned_subjects } %>
