@@ -3,7 +3,7 @@
     No hay materias planificadas para este semestre
   </div>
 
-  <ul class="min-h-[65px]">
+  <ul class="min-h-[65px]" data-semester="<%= semester %>">
     <% planned_subjects.each do |subject| %>
       <li class="relative" data-draggable-url="<%= subject_plan_path(subject_id: subject.id) %>" data-draggable-method="put">
         <%= form_with(

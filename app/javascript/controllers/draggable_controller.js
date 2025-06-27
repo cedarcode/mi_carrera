@@ -32,7 +32,7 @@ export default class extends Controller {
   onEnd(event) {
     const url = event.item.dataset.draggableUrl;
     const method = event.item.dataset.draggableMethod;
-    const newSemester = event.to.parentElement.dataset.semester;
+    const newSemester = event.to.dataset.semester;
 
     var params;
     if (method == 'put') {
