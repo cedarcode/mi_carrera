@@ -3,13 +3,10 @@ import Sortable from 'sortablejs';
 import { FetchRequest } from '@rails/request.js';
 
 export default class extends Controller {
+  static targets = ['semesterSubjectsList', 'notApprovedSubjectsList'];
+
   connect() {
-    var lists = document.querySelectorAll('ul');
-    var notApprovedSubjectsList = document.querySelector('ul#not-approved-subjects');
-
-    lists.forEach((list) => {
-      if (list.id === 'not-approved-subjects') return;
-
+    this.semesterSubjectsListTargets.forEach((list) => {
       Sortable.create(list, {
         group: 'shared',
         sort: false,
@@ -18,7 +15,7 @@ export default class extends Controller {
       });
     });
 
-    notApprovedSubjectsList && Sortable.create(notApprovedSubjectsList, {
+    this.hasNotApprovedSubjectsListTarget && Sortable.create(this.notApprovedSubjectsListTarget, {
       group: {
         name: 'shared',
         put: false
