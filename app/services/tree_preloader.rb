@@ -5,9 +5,9 @@ class TreePreloader
 
   def preload
     subjects.to_a.each do |subject|
-      preloaded_subject = find_preloaded_subject(subject.id)
-      subject.association(:course).target = preloaded_subject.course
-      subject.association(:exam).target = preloaded_subject.exam
+      preloaded_approvables = find_preloaded_approvables(subject.id)
+      subject.association(:course).target = preloaded_approvables[:course]
+      subject.association(:exam).target = preloaded_approvables[:exam]
     end
   end
 
@@ -15,10 +15,10 @@ class TreePreloader
 
   attr_reader :subjects
 
-  def find_preloaded_subject(id)
-    return PreloadedSubjectsFetcher.data[id] if PreloadedSubjectsFetcher.data.key?(id)
+  def find_preloaded_approvables(id)
+    return PreloadedApprovablesFetcher.data[id] if PreloadedApprovablesFetcher.data.key?(id)
 
-    PreloadedSubjectsFetcher.reload!
-    PreloadedSubjectsFetcher.data[id]
+    PreloadedApprovablesFetcher.reload!
+    PreloadedApprovablesFetcher.data[id]
   end
 end
