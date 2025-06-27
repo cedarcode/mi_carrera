@@ -2,22 +2,31 @@
   <%= render partial: "credits_counter", locals: { planned_subjects: @planned_subjects } %>
 <% end %>
 
-<% if @not_planned_approved_subjects_was_empty %>
-  <%= turbo_stream.before "semester-1" do %>
-    <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
-  <% end %>
-<% else %>
-  <%= turbo_stream.replace "not-planned-subjects", method: :morph do %>
-    <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
+<% if @reload_not_planned_subjects %>
+  <% if @not_planned_approved_subjects_was_empty %>
+    <%= turbo_stream.before "semester-1" do %>
+      <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
+    <% end %>
+  <% else %>
+    <%= turbo_stream.replace "not-planned-subjects", method: :morph do %>
+      <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
+    <% end %>
   <% end %>
 <% end %>
 
-<%= turbo_stream.replace "semester-#{@semester}" do %>
-  <% planned_subjects = @planned_subjects.select { |subject| subject.semester == @semester } %>
-  <%= render 'semester', planned_subjects: planned_subjects, not_planned_subjects: @not_planned_subjects, semester: @semester %>
+<% @semesters_to_update.each do |semester| %>
+  <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
+
+  <%= turbo_stream.replace "semester-#{semester}-header", method: :morph do %>
+    <%= render 'semester_header', semester: semester, planned_subjects: planned_subjects %>
+  <% end %>
+
+  <%= turbo_stream.replace "semester-#{semester}-subjects-list", method: :morph do %>
+    <%= render 'semester_subjects_list', semester: semester, planned_subjects: planned_subjects %>
+  <% end %>
 <% end %>
 
-<% ((1..10).to_a - [@semester]).each do |semester| %>
+<% (1..10).each do |semester| %>
   <%= turbo_stream.replace "semester-#{semester}-add-subject-form" do %>
     <%= render 'semester_add_subject_form', semester: semester, not_planned_subjects: @not_planned_subjects %>
   <% end %>
