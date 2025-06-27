@@ -16,3 +16,9 @@
   <% planned_subjects = @planned_subjects.select { |subject| subject.semester == @semester } %>
   <%= render 'semester', planned_subjects: planned_subjects, not_planned_subjects: @not_planned_subjects, semester: @semester %>
 <% end %>
+
+<% ((1..10).to_a - [@semester]).each do |semester| %>
+  <%= turbo_stream.replace "semester-#{semester}-add-subject-form" do %>
+    <%= render 'semester_add_subject_form', semester: semester, not_planned_subjects: @not_planned_subjects %>
+  <% end %>
+<% end %>
