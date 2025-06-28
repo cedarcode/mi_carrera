@@ -35,7 +35,7 @@ module ApplicationHelper
     end
   end
 
-  def material_icon(icon, classes = nil)
-    tag.span(icon, class: "material-icons #{classes}")
+  def material_icon(icon, classes = nil, **options)
+    tag.span(icon, class: "material-icons #{classes}", **options)
   end
 end
