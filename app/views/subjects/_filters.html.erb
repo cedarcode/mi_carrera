@@ -22,8 +22,12 @@
     ) do |b| %>
       <div class="flex flex-row">
         <div class="box-content w-[18px] h-[18px] p-3 grid size-4 grid-cols-1">
-          <%= b.check_box(class: class_names(ApprovableCheckboxComponent::STYLES[:checkbox], "px-2 py-2")) %>
-          <%= material_icon("check", class_names(ApprovableCheckboxComponent::STYLES[:icon])) %>
+          <%= render(
+            CheckboxComponent.new(
+              form: b,
+              extra_classes: ["px-2", "py-2"],
+            )
+          )%>
         </div>
         <%= b.label(class: "text-sm text-gray-700 pl-2 py-2") %>
       </div>
