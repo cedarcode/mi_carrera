@@ -17,7 +17,7 @@ class Subject < ApplicationRecord
       .or(where("lower(code) LIKE lower(?)", "%#{term.strip}%"))
   }
 
-  CATEGORIES = %i[
+  MAIN_CATEGORIES = %i[
     first_semester
     second_semester
     third_semester
@@ -28,6 +28,9 @@ class Subject < ApplicationRecord
     eighth_semester
     nineth_semester
     optional
+  ].freeze
+
+  CATEGORIES = MAIN_CATEGORIES + %i[
     extension_module
     outside_montevideo
     inactive

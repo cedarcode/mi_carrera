@@ -1,0 +1,37 @@
+<div data-controller="collapsible" class="bg-white rounded-lg border border-gray-100 shadow-sm my-2 filter-categories-card">
+  <a data-action="click->collapsible#toggle" class="flex items-center h-10 px-4 bg-gray-50 rounded-lg cursor-pointer">
+    <span class="material-icons pr-2" data-collapsible-target="button">chevron_right</span>
+    <span class="flex-1 text-sm font-bold">Filtros Activos</span>
+  </a>
+
+  <%= form_with(
+    url:,
+    method: :get,
+    class: "hidden grid grid-cols-2 gap-x-6 gap-y-2",
+    data: { "collapsible-target" => "collapsible"}
+  ) do |form| %>
+    <%= form.collection_check_boxes(
+      :filter_categories,
+      Subject::CATEGORIES.map { |cat| [cat, formatted_category(cat.to_s)] },
+      :first,
+      :second,
+      {
+        checked: @filter_categories,
+        include_hidden: false,
+      },
+    ) do |b| %>
+      <%= form.hidden_field :search, value: search %>
+      <div class="flex flex-row">
+        <div class="box-content w-[18px] h-[18px] p-3 grid size-4 grid-cols-1">
+          <%= b.check_box(class: class_names(ApprovableCheckboxComponent::STYLES[:checkbox], "px-2 py-2")) %>
+          <%= material_icon("check", class_names(ApprovableCheckboxComponent::STYLES[:icon])) %>
+        </div>
+        <%= b.label(class: "text-sm text-gray-700 pl-2 py-2") %>
+      </div>
+    <% end %>
+
+    <div class="col-span-2 flex flex-row items-center justify-end m-2">
+      <%= render ButtonComponent.new(form:, label: "Filtrar") %>
+    </div>
+  <% end %>
+</div>
