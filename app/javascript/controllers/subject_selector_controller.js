@@ -14,7 +14,7 @@ export default class extends Controller {
       noChoicesText: "No hay materias disponibles",
       shouldSort: false,
       classNames: {
-        containerOuter: ["choices", "!m-0", "!h-10"],
+        containerOuter: ["choices", "!m-0", "!h-10", "flex-grow-1"],
         containerInner: [
           "choices__inner",
           "!min-h-10",
@@ -23,7 +23,11 @@ export default class extends Controller {
           "!items-center",
           "!bg-white",
           "!rounded-md",
+          "!px-4",
+          "!py-3",
+          "!border-none",
         ],
+        listSingle: ["choices__list", "choices__list--single", "!p-0"],
       },
     });
   }

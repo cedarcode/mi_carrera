@@ -62,7 +62,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     within_semester_section("Primer semestre") do
       within_add_subject_section do
         select_from_choices('GAL 1 - 1030')
-        find("button[type='submit']").click
+        click_button "Añadir"
       end
 
       assert_available_subject "GAL 1"
@@ -80,7 +80,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     within_semester_section("Segundo semestre") do
       within_add_subject_section do
         select_from_choices('GAL 2 - 1031')
-        find("button[type='submit']").click
+        click_button "Añadir"
       end
 
       assert_blocked_subject "GAL 2"
