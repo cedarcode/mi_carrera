@@ -20,7 +20,6 @@
         include_hidden: false,
       },
     ) do |b| %>
-      <%= form.hidden_field :search, value: search %>
       <div class="flex flex-row">
         <div class="box-content w-[18px] h-[18px] p-3 grid size-4 grid-cols-1">
           <%= b.check_box(class: class_names(ApprovableCheckboxComponent::STYLES[:checkbox], "px-2 py-2")) %>

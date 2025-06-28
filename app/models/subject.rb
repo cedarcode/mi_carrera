@@ -35,7 +35,7 @@ class Subject < ApplicationRecord
     outside_montevideo
     inactive
     revalid
-  ]
+  ].freeze
 
   enum :category, CATEGORIES.index_with(&:to_s)
 
