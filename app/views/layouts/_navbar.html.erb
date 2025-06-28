@@ -35,6 +35,9 @@
 
   <div class="flex w-full h-14 sm:h-16 px-2 sm:px-4 border-b border-b-gray-700 bg-gray-100 text-gray-800 hover:bg-neutral-100 <%= show_search_bar ? '' : 'hidden' %>" data-search-target="searchbar">
     <%= form_with(url: all_subjects_path, method: :get, class: "flex w-full justify-between") do |f| %>
+      <% @filter_categories&.each do |category| %>
+        <%= f.hidden_field "filter_categories[]", value: category %>
+      <% end %>
       <%= f.text_field :search, value: params[:search], class: "w-full focus:outline-0", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { search_target: "searchInput" } %>
 
       <%= button_tag "close", type: "button", class: "cursor-pointer material-icons", data: { action: "search#toggle" }, tabindex: "0" %>

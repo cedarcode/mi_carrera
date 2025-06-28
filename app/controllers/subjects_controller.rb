@@ -1,6 +1,9 @@
 class SubjectsController < ApplicationController
+  before_action :set_filter_categories, only: [:index, :all]
+
   def index
-    @subjects = TreePreloader.preload(degree_subjects.ordered_by_category_and_name).select do |subject|
+    subjects = degree_subjects.ordered_by_category_and_name.where(category: @filter_categories)
+    @subjects = TreePreloader.preload(subjects).select do |subject|
       current_student.approved?(subject.course) ||
         (!subject.hidden_by_default? && current_student.available?(subject.course))
     end
@@ -20,8 +23,11 @@ class SubjectsController < ApplicationController
         degree_subjects.search(params[:search])
       else
         degree_subjects
-      end.ordered_by_category_and_name
+      end
+      .where(category: @filter_categories)
+      .ordered_by_category_and_name
 
+    @search = params[:search]
     @subjects = TreePreloader.preload(subjects)
   end
 
@@ -33,5 +39,9 @@ class SubjectsController < ApplicationController
 
   def degree_subjects
     current_degree.subjects
+  end
+
+  def set_filter_categories
+    @filter_categories = params[:filter_categories] || Subject::MAIN_CATEGORIES
   end
 end

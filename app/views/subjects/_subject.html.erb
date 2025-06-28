@@ -3,9 +3,9 @@
     <%= display_name(subject) %>
 
     <span class='flex h-[40px] w-[100px] min-w-[100px] ms-[15px]'>
-      <%= render(ApprovableCheckboxComponent.new(approvable: subject.course, subject_show: false, current_student: current_student)) %>
+      <%= render(ApprovableCheckboxComponent.new(approvable: subject.course, subject_show: false, current_student:, filter_categories: @filter_categories)) %>
       <% if subject.exam %>
-        <%= render(ApprovableCheckboxComponent.new(approvable: subject.exam, subject_show: false, current_student: current_student)) %>
+        <%= render(ApprovableCheckboxComponent.new(approvable: subject.exam, subject_show: false, current_student:, filter_categories: @filter_categories)) %>
       <% end %>
     </span>
   <% end %>

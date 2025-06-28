@@ -209,6 +209,82 @@ RSpec.describe "Subject", type: :system do
     expect(page).to have_text('-.-')
   end
 
+  it "can filter subjects by category" do
+    create(:subject, name: 'Subject Category 1', category: 'first_semester', degree: degrees(:computacion))
+    create(:subject, name: 'Different Subject', category: 'first_semester', degree: degrees(:computacion))
+    create(:subject, name: 'Subject Category 2', category: 'second_semester', degree: degrees(:computacion))
+    create(:subject, name: 'Subject Category 3', category: 'third_semester', degree: degrees(:computacion))
+
+    visit all_subjects_path
+
+    expect(page).to have_text('Primer semestre')
+    expect(page).to have_text('Segundo semestre')
+    expect(page).to have_text('Tercer semestre')
+
+    expect(page).to have_text('Subject Category 1')
+    expect(page).to have_text('Different Subject')
+    expect(page).to have_text('Subject Category 2')
+    expect(page).to have_text('Subject Category 3')
+
+    within_filter_categories do
+      uncheck 'Segundo semestre'
+      uncheck 'Tercer semestre'
+
+      click_on "Filtrar"
+    end
+
+    expect(page).to have_text('Primer semestre')
+    expect(page).to_not have_text('Segundo semestre')
+    expect(page).to_not have_text('Tercer semestre')
+
+    expect(page).to have_text('Subject Category 1')
+    expect(page).to have_text('Different Subject')
+    expect(page).to_not have_text('Subject Category 2')
+    expect(page).to_not have_text('Subject Category 3')
+
+    # allows to search and filter at the same time
+    click_on "search"
+    fill_in 'search', with: "Subject Category\n"
+
+    expect(page).to have_text('Subject Category 1')
+    expect(page).to_not have_text('Different Subject')
+    expect(page).to_not have_text('Subject Category 2')
+    expect(page).to_not have_text('Subject Category 3')
+
+    expect(page).to_not have_text('Segundo semestre')
+    expect(page).to_not have_text('Tercer semestre')
+
+    within_filter_categories do
+      check 'Segundo semestre'
+      click_on "Filtrar"
+    end
+
+    expect(page).to have_text('Primer semestre')
+    expect(page).to have_text('Segundo semestre')
+    expect(page).to_not have_text('Tercer semestre')
+
+    expect(page).to have_text('Subject Category 1')
+    expect(page).to_not have_text('Different Subject') # search query is kept
+    expect(page).to have_text('Subject Category 2')
+    expect(page).to_not have_text('Subject Category 3')
+
+    # filters in the main page
+    visit subjects_path
+    expect(page).to have_text('Primer semestre')
+    expect(page).to have_text('Segundo semestre')
+    expect(page).to have_text('Tercer semestre')
+
+    within_filter_categories do
+      uncheck 'Primer semestre'
+      uncheck 'Segundo semestre'
+      click_on "Filtrar"
+    end
+
+    expect(page).to_not have_text('Primer semestre')
+    expect(page).to_not have_text('Segundo semestre')
+    expect(page).to have_text('Tercer semestre')
+  end
+
   private
 
   def within_course_prerequisites(&block)
@@ -218,4 +294,12 @@ RSpec.describe "Subject", type: :system do
   def within_exam_prerequisites(&block)
     within(:xpath, "//span[text()='Del examen:']/following-sibling::*[1]", &block)
   end
+
+  def within_filter_categories(&block)
+    card = find(".filter-categories-card", text: "Filtros Activos")
+    card.click if card_collapsed?(card)
+    within(card, &block)
+  end
+
+  def card_collapsed?(card) = card.has_selector?(".material-icons", text: "chevron_right")
 end

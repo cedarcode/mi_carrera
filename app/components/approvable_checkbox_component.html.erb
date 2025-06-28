@@ -5,6 +5,10 @@
   method: current_student.approved?(approvable) ? :delete : :post,
   class: "mx-[5px]"
 ) do |form| %>
+  <% filter_categories.each do |category| %>
+    <%= hidden_field_tag "filter_categories[]", category %>
+  <% end %>
+
   <div class="box-content w-[18px] h-[18px] p-3">
     <div class="grid size-4 grid-cols-1">
       <%= form.checkbox(
