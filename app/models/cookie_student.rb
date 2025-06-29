@@ -15,6 +15,9 @@ class CookieStudent < BaseStudent
     }
   end
 
+  def planner_banner_viewed? = false
+  def planner_banner_mark_as_viewed! = nil
+
   def degree
     Degree.default
   end

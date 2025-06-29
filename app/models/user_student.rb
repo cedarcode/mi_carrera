@@ -12,6 +12,14 @@ class UserStudent < BaseStudent
     user.update!(welcome_banner_viewed: true)
   end
 
+  def planner_banner_viewed?
+    user.planner_banner_viewed
+  end
+
+  def planner_banner_mark_as_viewed!
+    user.update!(planner_banner_viewed: true)
+  end
+
   delegate :degree, to: :user
 
   private

@@ -29,6 +29,10 @@ RSpec.describe "PlannedSubjects", type: :system do
   it "can add and remove subjects to planner" do
     visit subject_plans_path
 
+    assert_banner_present('Bienvenido a tu planificador de materias: arrastra, suelta y organiza tu semestre')
+    click_button 'Listo'
+    assert_banner_dismissed
+
     expect(page).to have_text "Planificador"
     expect(page).to have_text "Materias aprobadas sin semestre asignado"
     expect(page).to have_text "Créditos planeados: 0"

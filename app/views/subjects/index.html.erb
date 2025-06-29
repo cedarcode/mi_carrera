@@ -4,7 +4,9 @@
 
 <% content_for :welcome_banner do %>
   <% unless current_student.welcome_banner_viewed? %>
-    <%= render 'shared/welcome_banner' %>
+    <%= render 'shared/banner', 
+        banner_type: 'welcome', 
+        message: '¡Bienvenido! Marcá los cursos y exámenes que aprobaste para ver qué materias podés cursar.' %>
   <% end %>
 <% end %>
 
