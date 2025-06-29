@@ -1,24 +1,64 @@
 class TreePreloader
+  class << self
+    def preloaded_approvables
+      @preloaded_approvables ||= fetch_preloaded_approvables
+    end
+
+    def refresh_cache!
+      @preloaded_approvables = fetch_preloaded_approvables
+    end
+
+    def fetch_preloaded_approvables
+      new([]).fetch_preloaded_approvables
+    end
+  end
+
   def initialize(subjects)
     @subjects = subjects
   end
 
   def preload
-    # rubocop:disable Rails/FindEach
-    subjects
-      .includes(
-        course: :prerequisite_tree,
-        exam: :prerequisite_tree
-      ).each do |subject|
-      preload_prerequisite(subject.course.prerequisite_tree) if subject.course&.prerequisite_tree
-      preload_prerequisite(subject.exam.prerequisite_tree) if subject.exam&.prerequisite_tree
+    subjects.to_a.each do |subject|
+      preloaded_approvables = find_preloaded_approvables(subject.id)
+      subject.association(:course).target = preloaded_approvables[:course]
+      subject.association(:exam).target = preloaded_approvables[:exam]
     end
-    # rubocop:enable Rails/FindEach
+  end
+
+  def fetch_preloaded_approvables
+    approvable_by_id.each_value do |approvable|
+      next if approvable.prerequisite_tree.blank?
+
+      preload_prerequisite(approvable.prerequisite_tree)
+    end
+    .values
+    .group_by(&:subject_id)
+    .to_h do |subject_id, approvables|
+      exam = approvables.find(&:is_exam?)
+      course = approvables.find { |a| !a.is_exam? }
+
+      [
+        subject_id,
+        {
+          course:,
+          exam:,
+        }
+      ]
+    end
   end
 
   private
 
   attr_reader :subjects
+
+  delegate :preloaded_approvables, :refresh_cache!, to: :class
+
+  def find_preloaded_approvables(subject_id)
+    return preloaded_approvables[subject_id] if preloaded_approvables.key?(subject_id)
+
+    refresh_cache!
+    preloaded_approvables[subject_id]
+  end
 
   def preload_prerequisite(prereq)
     case prereq
@@ -27,11 +67,7 @@ class TreePreloader
       prereq.operands_prerequisites.each { |p| preload_prerequisite(p) }
     when CreditsPrerequisite
       prereq.association(:subject_group).target = subject_groups_by_id[prereq.subject_group_id]
-    when SubjectPrerequisite
-      prereq.association(:approvable_needed).target = approvable_by_id[prereq.approvable_needed_id]
-    when EnrollmentPrerequisite
-      prereq.association(:approvable_needed).target = approvable_by_id[prereq.approvable_needed_id]
-    when ActivityPrerequisite
+    when SubjectPrerequisite, EnrollmentPrerequisite, ActivityPrerequisite
       prereq.association(:approvable_needed).target = approvable_by_id[prereq.approvable_needed_id]
     else
       raise "Unknown prerequisite type: #{prereq.class}"
@@ -47,6 +83,6 @@ class TreePreloader
   end
 
   def approvable_by_id
-    @approvable_by_id ||= Approvable.all.index_by(&:id)
+    @approvable_by_id ||= Approvable.includes(:prerequisite_tree).index_by(&:id)
   end
 end
