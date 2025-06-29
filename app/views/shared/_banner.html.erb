@@ -1,0 +1,11 @@
+<div class="sticky bg-purple-100 w-full top-14 sm:top-16" data-controller="banner">
+  <div class="max-w-[600px] mx-auto px-3 py-2.5 flex items-center gap-x-3">
+    <p class="text-sm/6 text-gray-900">
+      <%= message %>
+    </p>
+    <%= form_with url: user_onboardings_path, method: :patch, data: { turbo: true, action: "banner#dismiss" } do |f| %>
+      <%= f.hidden_field :banner_type, value: banner_type %>
+      <%= f.button 'Listo', class: "py-1 text-sm font-semibold text-primary cursor-pointer uppercase" %>
+    <% end %>
+  </div>
+</div> 
