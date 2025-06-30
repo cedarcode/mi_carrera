@@ -1,4 +1,24 @@
 class TreePreloader
+  class << self
+    def prerequisites_by_parent_prerequisite_id
+      @prerequisites_by_parent_prerequisite_id ||= Prerequisite.all.group_by(&:parent_prerequisite_id)
+    end
+
+    def subject_groups_by_id
+      @subject_groups_by_id ||= SubjectGroup.all.index_by(&:id)
+    end
+
+    def approvable_by_id
+      @approvable_by_id ||= Approvable.all.index_by(&:id)
+    end
+
+    def refresh_cache!
+      @prerequisites_by_parent_prerequisite_id = nil
+      @subject_groups_by_id = nil
+      @approvable_by_id = nil
+    end
+  end
+
   def initialize(subjects)
     @subjects = subjects
   end
@@ -23,30 +43,18 @@ class TreePreloader
   def preload_prerequisite(prereq)
     case prereq
     when LogicalPrerequisite
-      prereq.association(:operands_prerequisites).target = prerequisites_by_parent_prerequisite_id[prereq.id] || []
+      prereq.association(:operands_prerequisites).target = self.class.prerequisites_by_parent_prerequisite_id[prereq.id] || []
       prereq.operands_prerequisites.each { |p| preload_prerequisite(p) }
     when CreditsPrerequisite
-      prereq.association(:subject_group).target = subject_groups_by_id[prereq.subject_group_id]
+      prereq.association(:subject_group).target = self.class.subject_groups_by_id[prereq.subject_group_id]
     when SubjectPrerequisite
-      prereq.association(:approvable_needed).target = approvable_by_id[prereq.approvable_needed_id]
+      prereq.association(:approvable_needed).target = self.class.approvable_by_id[prereq.approvable_needed_id]
     when EnrollmentPrerequisite
-      prereq.association(:approvable_needed).target = approvable_by_id[prereq.approvable_needed_id]
+      prereq.association(:approvable_needed).target = self.class.approvable_by_id[prereq.approvable_needed_id]
     when ActivityPrerequisite
-      prereq.association(:approvable_needed).target = approvable_by_id[prereq.approvable_needed_id]
+      prereq.association(:approvable_needed).target = self.class.approvable_by_id[prereq.approvable_needed_id]
     else
       raise "Unknown prerequisite type: #{prereq.class}"
     end
-  end
-
-  def prerequisites_by_parent_prerequisite_id
-    @prerequisites_by_parent_prerequisite_id ||= Prerequisite.all.group_by(&:parent_prerequisite_id)
-  end
-
-  def subject_groups_by_id
-    @subject_groups_by_id ||= SubjectGroup.all.index_by(&:id)
-  end
-
-  def approvable_by_id
-    @approvable_by_id ||= Approvable.all.index_by(&:id)
   end
 end
