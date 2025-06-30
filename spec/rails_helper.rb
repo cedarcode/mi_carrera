@@ -67,6 +67,10 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  config.before(:suite) do
+    TreePreloader.refresh_cache!
+  end
+
   config.before(:each, type: :system) do
     driven_by :selenium, using: :headless_chrome do |options|
       # For some reason, even though it's running in headless mode, chrome will treat a
@@ -76,6 +80,10 @@ RSpec.configure do |config|
       # This flag disables that behavior.
       options.add_argument 'disable-backgrounding-occluded-windows'
     end
+  end
+
+  config.after(:each) do
+    TreePreloader.refresh_cache!
   end
 
   [:system, :request].each do |type|
