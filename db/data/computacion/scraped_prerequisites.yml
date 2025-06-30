@@ -16819,47 +16819,13 @@
       subject_needed_code: 5852P
       subject_needed_name: CREDITOS NO ACUM FUNDAMENTOS DE APRENDIZAJE AUT. Y REC.
         DE PATRO
+  - type: credits
+    credits: 60
+    group: 4083
   - type: subject
     needs: exam
-    subject_needed_code: '1026'
-    subject_needed_name: MATEMATICA DISCRETA 2
-  - type: subject
-    needs: exam
-    subject_needed_code: '1323'
-    subject_needed_name: PROGRAMACION 3
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1324P
-      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 4
-      needs: exam
-    - type: subject
-      subject_needed_code: '1324'
-      subject_needed_name: PROGRAMACION 4
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1027'
-      subject_needed_name: LOGICA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1013'
-      subject_needed_name: LOGICA MODALIDAD AL REVES
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1911P
-      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1911'
-      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
-      needs: exam
+    subject_needed_code: '1321'
+    subject_needed_name: PROGRAMACION 2
   - type: logical
     logical_operator: or
     operands:
@@ -17744,6 +17710,35 @@
       subject_needed_code: '1030'
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
   subject_code: GAL1P
+  is_exam: true
+- type: logical
+  logical_operator: or
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: '1783'
+    subject_needed_name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1716P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA ING. DE SOFTWARE
+      needs: exam
+    - type: subject
+      subject_needed_code: '1716'
+      subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+      needs: exam
+  subject_code: I546
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: I546
+    subject_needed_name: 'TALLER: DISEÑO DE PROY P/LA GESTIÓN UNIV'
+  subject_code: I546
   is_exam: true
 - type: logical
   logical_operator: and

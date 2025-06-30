@@ -3713,6 +3713,12 @@ GP7:
   credits: 4
   has_exam: false
   subject_group: '4815'
+I546:
+  code: I546
+  name: 'TALLER: DISEÑO DE PROY P/LA GESTIÓN UNIV'
+  credits: 0
+  has_exam: false
+  subject_group:
 I87:
   code: I87
   name: 'PROSPECTIVA ESTRATÉGICA: CON LA MIRADA EN EL FUTURO'
