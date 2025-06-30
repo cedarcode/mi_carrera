@@ -5,13 +5,13 @@ RSpec.describe TreePreloader do
     described_class.instance_variable_set(:@preloaded_approvables, nil)
   end
 
-  describe '#preload' do
+  describe '.preload' do
     it 'maintains preloaded subjects after being destroyed' do
       s1 = create(:subject, :with_exam, name: 's1')
       s2 = create(:subject, :with_exam, name: 's2')
       create(:subject_prerequisite, approvable: s2.course, approvable_needed: s1.course)
 
-      subjects = described_class.new(Subject.all).preload.sort_by(&:name)
+      subjects = described_class.preload(Subject.all).sort_by(&:name)
 
       Prerequisite.destroy_all
       Approvable.destroy_all
@@ -41,7 +41,7 @@ RSpec.describe TreePreloader do
       s2 = create(:subject, :with_exam, name: 's2')
       create(:subject_prerequisite, approvable: s2.course, approvable_needed: s1.course)
 
-      subjects = described_class.new(Subject.where(id: s2)).preload
+      subjects = described_class.preload(Subject.where(id: s2))
 
       expect(subjects.count).to eq(1)
       expect(subjects.first.name).to eq('s2')
@@ -49,11 +49,11 @@ RSpec.describe TreePreloader do
       expect(subjects.first.course.prerequisite_tree).to be_a(SubjectPrerequisite)
       expect(subjects.first.course.prerequisite_tree.approvable_needed).to eq(s1.course)
 
-      subjects = described_class.new(Subject.where(name: 'does_not_exist')).preload
+      subjects = described_class.preload(Subject.where(name: 'does_not_exist'))
 
       expect(subjects.count).to eq(0)
 
-      subjects = described_class.new(Subject.all).preload
+      subjects = described_class.preload(Subject.all)
 
       expect(subjects.count).to eq(2)
       expect(subjects.first.name).to eq('s1')
@@ -64,13 +64,33 @@ RSpec.describe TreePreloader do
     end
   end
 
-  describe '#preloaded_approvables' do
+  describe '.preloaded_approvables' do
+    it 'returns an empty hash when no subjects are found' do
+      expect(described_class.preloaded_approvables).to eq({})
+    end
+
+    it 'returns cached data after the first call' do
+      s1 = create(:subject, :with_exam, name: 's1')
+      create(:subject_prerequisite, approvable: s1.course, approvable_needed: s1.course)
+
+      first_call = described_class.preloaded_approvables
+      expect(first_call[s1.id]).to be_present
+
+      s2 = create(:subject, :with_exam, name: 's2')
+      create(:subject_prerequisite, approvable: s2.course, approvable_needed: s2.course)
+
+      second_call = described_class.preloaded_approvables
+
+      expect(second_call).to eq(first_call)
+      expect(second_call[s2.id]).to be_nil
+    end
+
     it 'fetches and preloads approvables grouped by their subject' do
       s1 = create(:subject, :with_exam, name: 's1')
       s2 = create(:subject, name: 's2')
       create(:subject_prerequisite, approvable: s2.course, approvable_needed: s1.course)
 
-      preloaded_approvables = described_class.new([]).preloaded_approvables
+      preloaded_approvables = described_class.preloaded_approvables
 
       expect(preloaded_approvables.count).to eq(2)
       expect(preloaded_approvables[s1.id]).to be_present
@@ -100,34 +120,6 @@ RSpec.describe TreePreloader do
       expect(c2.prerequisite_tree).to be_a(SubjectPrerequisite)
       expect(c2.prerequisite_tree.association(:approvable_needed).loaded?).to be_truthy
       expect(c2.prerequisite_tree.approvable_needed).to eq(s1.course)
-    end
-
-    it 'returns an empty hash when no subjects are found' do
-      subjects = described_class.new([]).preloaded_approvables
-
-      expect(subjects).to eq({})
-    end
-  end
-
-  describe '.preloaded_approvables' do
-    it 'returns an empty hash when no subjects are found' do
-      expect(described_class.preloaded_approvables).to eq({})
-    end
-
-    it 'returns cached data after the first call' do
-      s1 = create(:subject, :with_exam, name: 's1')
-      create(:subject_prerequisite, approvable: s1.course, approvable_needed: s1.course)
-
-      first_call = described_class.preloaded_approvables
-      expect(first_call[s1.id]).to be_present
-
-      s2 = create(:subject, :with_exam, name: 's2')
-      create(:subject_prerequisite, approvable: s2.course, approvable_needed: s2.course)
-
-      second_call = described_class.preloaded_approvables
-
-      expect(second_call).to eq(first_call)
-      expect(second_call[s2.id]).to be_nil
     end
   end
 

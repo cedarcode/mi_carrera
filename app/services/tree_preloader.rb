@@ -1,27 +1,25 @@
 class TreePreloader
   class << self
     def preloaded_approvables
-      @preloaded_approvables ||= new([]).preloaded_approvables
+      @preloaded_approvables ||= new.send(:preloaded_approvables)
     end
 
     def break_cache!
       @preloaded_approvables = nil
     end
-  end
 
-  def initialize(subjects)
-    @subjects = subjects
-  end
+    def preload(subjects)
+      subjects.to_a.each do |subject|
+        approvables = preloaded_approvables[subject.id]
+        next if approvables.blank?
 
-  def preload
-    subjects.to_a.each do |subject|
-      approvables = self.class.preloaded_approvables[subject.id]
-      next if approvables.blank?
-
-      subject.association(:course).target = approvables.find(&:is_course?)
-      subject.association(:exam).target = approvables.find(&:is_exam?)
+        subject.association(:course).target = approvables.find(&:is_course?)
+        subject.association(:exam).target = approvables.find(&:is_exam?)
+      end
     end
   end
+
+  private
 
   def preloaded_approvables
     approvable_by_id.each_value do |approvable|
@@ -32,10 +30,6 @@ class TreePreloader
     .values
     .group_by(&:subject_id)
   end
-
-  private
-
-  attr_reader :subjects
 
   def preload_prerequisite(prereq)
     case prereq
