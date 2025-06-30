@@ -1,15 +1,12 @@
 class TreePreloader
   class << self
     def preloaded_approvables
-      @preloaded_approvables ||= fetch_preloaded_approvables
+      @preloaded_approvables ||= new([]).fetch_preloaded_approvables
     end
 
     def refresh_cache!
-      @preloaded_approvables = fetch_preloaded_approvables
-    end
-
-    def fetch_preloaded_approvables
-      new([]).fetch_preloaded_approvables
+      @preloaded_approvables = nil
+      preloaded_approvables
     end
   end
 
