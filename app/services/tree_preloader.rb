@@ -1,12 +1,11 @@
 class TreePreloader
   class << self
     def preloaded_approvables
-      @preloaded_approvables ||= new([]).fetch_preloaded_approvables
+      @preloaded_approvables ||= new([]).preloaded_approvables
     end
 
-    def refresh_cache!
+    def break_cache!
       @preloaded_approvables = nil
-      preloaded_approvables
     end
   end
 
@@ -16,13 +15,15 @@ class TreePreloader
 
   def preload
     subjects.to_a.each do |subject|
-      preloaded_approvables = find_preloaded_approvables(subject.id)
-      subject.association(:course).target = preloaded_approvables[:course]
-      subject.association(:exam).target = preloaded_approvables[:exam]
+      approvables = self.class.preloaded_approvables[subject.id]
+      next if approvables.blank?
+
+      subject.association(:course).target = approvables.find(&:is_course?)
+      subject.association(:exam).target = approvables.find(&:is_exam?)
     end
   end
 
-  def fetch_preloaded_approvables
+  def preloaded_approvables
     approvable_by_id.each_value do |approvable|
       next if approvable.prerequisite_tree.blank?
 
@@ -30,32 +31,11 @@ class TreePreloader
     end
     .values
     .group_by(&:subject_id)
-    .to_h do |subject_id, approvables|
-      exam = approvables.find(&:is_exam?)
-      course = approvables.find { |a| !a.is_exam? }
-
-      [
-        subject_id,
-        {
-          course:,
-          exam:,
-        }
-      ]
-    end
   end
 
   private
 
   attr_reader :subjects
-
-  delegate :preloaded_approvables, :refresh_cache!, to: :class
-
-  def find_preloaded_approvables(subject_id)
-    return preloaded_approvables[subject_id] if preloaded_approvables.key?(subject_id)
-
-    refresh_cache!
-    preloaded_approvables[subject_id]
-  end
 
   def preload_prerequisite(prereq)
     case prereq

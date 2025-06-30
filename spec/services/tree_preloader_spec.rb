@@ -64,26 +64,30 @@ RSpec.describe TreePreloader do
     end
   end
 
-  describe '#fetch_preloaded_approvables' do
+  describe '#preloaded_approvables' do
     it 'fetches and preloads approvables grouped by their subject' do
       s1 = create(:subject, :with_exam, name: 's1')
       s2 = create(:subject, name: 's2')
       create(:subject_prerequisite, approvable: s2.course, approvable_needed: s1.course)
 
-      preloaded_approvables = described_class.new([]).fetch_preloaded_approvables
+      preloaded_approvables = described_class.new([]).preloaded_approvables
 
       expect(preloaded_approvables.count).to eq(2)
       expect(preloaded_approvables[s1.id]).to be_present
       expect(preloaded_approvables[s2.id]).to be_present
 
-      expect(preloaded_approvables[s1.id][:course]).to be_present
-      expect(preloaded_approvables[s1.id][:exam]).to be_present
-      expect(preloaded_approvables[s2.id][:course]).to be_present
-      expect(preloaded_approvables[s2.id][:exam]).to be_nil
+      s1_approvables = preloaded_approvables[s1.id]
+      s2_approvables = preloaded_approvables[s2.id]
 
-      c1 = preloaded_approvables[s1.id][:course]
-      ex1 = preloaded_approvables[s1.id][:exam]
-      c2 = preloaded_approvables[s2.id][:course]
+      c1 = s1_approvables.find(&:is_course?)
+      ex1 = s1_approvables.find(&:is_exam?)
+      c2 = s2_approvables.find(&:is_course?)
+      ex2 = s2_approvables.find(&:is_exam?)
+
+      expect(c1).to be_present
+      expect(ex1).to be_present
+      expect(c2).to be_present
+      expect(ex2).to be_nil
 
       # check all prerequisite trees are preloaded
       expect(c1.association(:prerequisite_tree).loaded?).to be_truthy
@@ -99,7 +103,7 @@ RSpec.describe TreePreloader do
     end
 
     it 'returns an empty hash when no subjects are found' do
-      subjects = described_class.new([]).fetch_preloaded_approvables
+      subjects = described_class.new([]).preloaded_approvables
 
       expect(subjects).to eq({})
     end
@@ -127,7 +131,7 @@ RSpec.describe TreePreloader do
     end
   end
 
-  describe '.refresh_cache!' do
+  describe '.break_cache!' do
     it 'reloads the cached data' do
       s1 = create(:subject, :with_exam, name: 's1')
       create(:subject_prerequisite, approvable: s1.course, approvable_needed: s1.course)
@@ -140,7 +144,7 @@ RSpec.describe TreePreloader do
 
       expect(first_call[s2.id]).to be_nil
 
-      described_class.refresh_cache!
+      described_class.break_cache!
 
       second_call = described_class.preloaded_approvables
 
