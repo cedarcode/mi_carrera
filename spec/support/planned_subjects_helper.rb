@@ -1,6 +1,4 @@
 module PlannedSubjectsHelper
-  include SubjectsHelper
-
   def assert_approved_subject(subject_name)
     expect(page).to have_text subject_name
     within_subject_row(subject_name) do
@@ -70,8 +68,8 @@ module PlannedSubjectsHelper
   end
 
   def within_each_semester_section(&block)
-    (1..10).each do |semester|
-      within_semester_section(semester_display_name(semester), &block)
+    %w[Primer Segundo Tercer Cuarto Quinto Sexto Séptimo Octavo Noveno Décimo].each do |ordinal_number|
+      within_semester_section("#{ordinal_number} semestre", &block)
     end
   end
 
