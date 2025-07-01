@@ -4,19 +4,24 @@ class CookieStudent < BaseStudent
     super(JSON.parse(@cookie[:approved_approvable_ids] || "[]"))
   end
 
-  def welcome_banner_viewed?
-    cookie[:welcome_banner_viewed] == "true"
+  def banner_viewed?(banner_type)
+    if banner_type == 'welcome'
+      cookie[:welcome_banner_viewed] == "true"
+    else
+      raise "Invalid banner type: #{banner_type}"
+    end
   end
 
-  def welcome_banner_mark_as_viewed!
-    cookie[:welcome_banner_viewed] = {
-      value: "true",
-      domain: :all
-    }
+  def mark_banner_as_viewed!(banner_type)
+    if banner_type == 'welcome'
+      cookie[:welcome_banner_viewed] = {
+        value: "true",
+        domain: :all
+      }
+    else
+      raise "Invalid banner type: #{banner_type}"
+    end
   end
-
-  def planner_banner_viewed? = false
-  def planner_banner_mark_as_viewed! = nil
 
   def degree
     Degree.default

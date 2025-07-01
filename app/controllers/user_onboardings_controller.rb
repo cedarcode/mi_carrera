@@ -1,17 +1,6 @@
 class UserOnboardingsController < ApplicationController
   def update
-    banner_type = params[:banner_type]
-
-    case banner_type
-    when 'planner'
-      current_student.planner_banner_mark_as_viewed!
-    when 'welcome'
-      current_student.welcome_banner_mark_as_viewed!
-    else
-      render json: { error: 'Invalid banner type' }, status: :bad_request
-      return
-    end
-
+    current_student.mark_banner_as_viewed!(params[:banner_type])
     head :ok
   end
 end

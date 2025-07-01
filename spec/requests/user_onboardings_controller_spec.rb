@@ -26,11 +26,10 @@ RSpec.describe UserOnboardingsController, type: :request do
       end
 
       context 'with invalid banner type' do
-        it 'returns bad request' do
-          patch user_onboardings_path, params: { banner_type: 'invalid', format: :json }
-
-          expect(response).to have_http_status(:bad_request)
-          expect(JSON.parse(response.body)).to eq({ 'error' => 'Invalid banner type' })
+        it 'raises unknown attribute error' do
+          expect {
+            patch user_onboardings_path, params: { banner_type: 'invalid', format: :json }
+          }.to raise_error(ActiveModel::UnknownAttributeError)
         end
       end
     end
@@ -45,19 +44,18 @@ RSpec.describe UserOnboardingsController, type: :request do
       end
 
       context 'with valid banner type "planner"' do
-        it 'returns ok (planner banner not supported for anonymous users)' do
-          patch user_onboardings_path, params: { banner_type: 'planner', format: :json }
-
-          expect(response).to have_http_status(:ok)
+        it 'raises invalid banner type error' do
+          expect {
+            patch user_onboardings_path, params: { banner_type: 'planner', format: :json }
+          }.to raise_error(RuntimeError, 'Invalid banner type: planner')
         end
       end
 
       context 'with invalid banner type' do
-        it 'returns bad request' do
-          patch user_onboardings_path, params: { banner_type: 'invalid', format: :json }
-
-          expect(response).to have_http_status(:bad_request)
-          expect(JSON.parse(response.body)).to eq({ 'error' => 'Invalid banner type' })
+        it 'raises invalid banner type error' do
+          expect {
+            patch user_onboardings_path, params: { banner_type: 'invalid', format: :json }
+          }.to raise_error(RuntimeError, 'Invalid banner type: invalid')
         end
       end
     end
