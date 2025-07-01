@@ -9,7 +9,7 @@ class SubjectPlansController < ApplicationController
   def create
     current_user.subject_plans.create!(subject_plan_params)
 
-    @semester = subject_plan_params[:semester].to_i
+    @semester_to_refresh = subject_plan_params[:semester].to_i
 
     set_planned_and_not_planned_subjects
 
@@ -18,7 +18,7 @@ class SubjectPlansController < ApplicationController
 
   def destroy
     subject_plan = current_user.subject_plans.find_by!(subject_id: params[:subject_id])
-    @semester = subject_plan.semester
+    @semester_to_refresh = subject_plan.semester
     subject = subject_plan.subject
     subject_plan.destroy!
 

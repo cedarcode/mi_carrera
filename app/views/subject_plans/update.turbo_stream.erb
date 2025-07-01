@@ -12,12 +12,12 @@
   <% end %>
 <% end %>
 
-<%= turbo_stream.replace "semester-#{@semester}" do %>
-  <% planned_subjects = @planned_subjects.select { |subject| subject.semester == @semester } %>
-  <%= render 'semester', planned_subjects: planned_subjects, not_planned_subjects: @not_planned_subjects, semester: @semester %>
+<%= turbo_stream.replace "semester-#{@semester_to_refresh}" do %>
+  <% planned_subjects = @planned_subjects.select { |subject| subject.semester == @semester_to_refresh } %>
+  <%= render 'semester', planned_subjects: planned_subjects, not_planned_subjects: @not_planned_subjects, semester: @semester_to_refresh %>
 <% end %>
 
-<% ((1..10).to_a - [@semester]).each do |semester| %>
+<% ((1..10).to_a - [@semester_to_refresh]).each do |semester| %>
   <%= turbo_stream.replace "semester-#{semester}-add-subject-form" do %>
     <%= render 'semester_add_subject_form', semester: semester, not_planned_subjects: @not_planned_subjects %>
   <% end %>
