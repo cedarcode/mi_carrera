@@ -9,7 +9,7 @@ class UserStudent < BaseStudent
   end
 
   def banner_viewed?(banner_type)
-    user.send("#{banner_type}_banner_viewed?")
+    user.public_send("#{banner_type}_banner_viewed?")
   end
 
   delegate :degree, to: :user
