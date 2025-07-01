@@ -3,7 +3,7 @@
     <h3 class="text-sm font-bold ml-4">
       <%= semester_display_name(semester) %>
     </h3>
-    <%= render partial: "credits_counter", locals: { planned_subjects: planned_subjects } %>
+    <%= render "credits_counter", planned_subjects: %>
   </div>
   
   <% if planned_subjects.any? %>
@@ -33,5 +33,5 @@
     </div>
   <% end %>
   
-  <%= render partial: "semester_add_subject_form", locals: { semester: semester, not_planned_subjects: not_planned_subjects } %>
+  <%= render "semester_add_subject_form", semester:, not_planned_subjects: %>
 </div>

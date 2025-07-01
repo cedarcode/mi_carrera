@@ -1,5 +1,5 @@
 <%= turbo_stream.replace "planned-credits" do %>
-  <%= render partial: "credits_counter", locals: { planned_subjects: @planned_subjects } %>
+  <%= render "credits_counter", planned_subjects: @planned_subjects %>
 <% end %>
 
 <% if @not_planned_approved_subjects_was_empty %>
