@@ -50,11 +50,11 @@ class Subject < ApplicationRecord
   end
 
   def average_interesting_rating
-    reviews.where.not(interesting_rating: nil).average(:interesting_rating)&.round(1)
+    reviews.average(:interesting_rating)&.round(1)
   end
 
   def average_credits_to_difficulty_rating
-    reviews.where.not(credits_to_difficulty_rating: nil).average(:credits_to_difficulty_rating)&.round(1)
+    reviews.average(:credits_to_difficulty_rating)&.round(1)
   end
 
   delegate :available?, to: :course
