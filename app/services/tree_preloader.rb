@@ -1,7 +1,7 @@
 class TreePreloader
   class << self
     def preloaded_approvables
-      @preloaded_approvables ||= new.send(:preloaded_approvables)
+      @preloaded_approvables ||= new.send(:build_preloaded_approvables_global_cache)
     end
 
     def break_cache!
@@ -21,7 +21,7 @@ class TreePreloader
 
   private
 
-  def preloaded_approvables
+  def build_preloaded_approvables_global_cache
     approvable_by_id.each_value do |approvable|
       next if approvable.prerequisite_tree.blank?
 
