@@ -90,4 +90,14 @@ module PlannedSubjectsHelper
   end
 
   def card_collapsed?(card) = card.has_selector?(".material-icons", text: "chevron_right")
+
+  def assert_banner_present(message)
+    within('[data-controller="banner"]') do
+      expect(page).to have_text(message)
+    end
+  end
+
+  def assert_banner_dismissed
+    expect(page).not_to have_css('[data-controller="banner"]')
+  end
 end
