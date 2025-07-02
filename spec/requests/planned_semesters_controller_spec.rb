@@ -13,4 +13,4 @@ RSpec.describe PlannedSemestersController, type: :request do
       expect(response).to redirect_to(subject_plans_path)
     end
   end
-end 
+end
