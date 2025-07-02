@@ -230,11 +230,13 @@ RSpec.describe UserStudent, type: :model do
     let(:student) { described_class.new(user) }
 
     it 'delegates to user for welcome banner' do
-      expect(student.banner_viewed?('welcome')).to eq(user.welcome_banner_viewed)
+      expect(user).to receive(:welcome_banner_viewed)
+      student.banner_viewed?('welcome')
     end
 
     it 'delegates to user for planner banner' do
-      expect(student.banner_viewed?('planner')).to eq(user.planner_banner_viewed)
+      expect(user).to receive(:planner_banner_viewed)
+      student.banner_viewed?('planner')
     end
 
     it 'raises error if banner type is invalid' do
@@ -247,11 +249,11 @@ RSpec.describe UserStudent, type: :model do
     let(:student) { described_class.new(user) }
 
     it 'delegates to user for welcome banner' do
-      expect { student.mark_banner_as_viewed!('welcome') }.to change(user, :welcome_banner_viewed).to(true)
+      expect { student.mark_banner_as_viewed!('welcome') }.to change(user, :welcome_banner_viewed).from(false).to(true)
     end
 
     it 'delegates to user for planner banner' do
-      expect { student.mark_banner_as_viewed!('planner') }.to change(user, :planner_banner_viewed).to(true)
+      expect { student.mark_banner_as_viewed!('planner') }.to change(user, :planner_banner_viewed).from(false).to(true)
     end
 
     it 'raises error if banner type is invalid' do
