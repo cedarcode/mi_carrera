@@ -14,17 +14,16 @@ class FiveStarReviewComponent < ViewComponent::Base
     @review_name = review_name
     @rating_value = rating_value
     @subject_id = subject_id
-    @user_review = user_review
     @rating_attribute = rating_attribute
     @user_review_rating = user_review&.public_send(rating_attribute)
   end
 
   private
 
-  attr_reader :review_name
+  attr_reader :review_name, :rating_value, :subject_id, :rating_attribute, :user_review_rating
 
   def display_rating
-    number_with_precision(@rating_value, precision: 1) || '-.-'
+    number_with_precision(rating_value, precision: 1) || '-.-'
   end
 
   def star_button(value)
@@ -39,14 +38,14 @@ class FiveStarReviewComponent < ViewComponent::Base
 
   def star_params(value)
     rating_value = selected?(value) ? nil : value
-    { subject_id: @subject_id, @rating_attribute => rating_value }
+    { subject_id: subject_id, rating_attribute => rating_value }
   end
 
   def star_button_classes(value) = STYLES[:button] + [star_color_classes(value)]
 
   def star_color_classes(value) = filled?(value) ? 'text-violet-400' : 'text-gray-400'
 
-  def filled?(value) = @user_review_rating&.>= value
+  def filled?(value) = user_review_rating&.>= value
 
-  def selected?(value) = @user_review_rating == value
+  def selected?(value) = user_review_rating == value
 end
