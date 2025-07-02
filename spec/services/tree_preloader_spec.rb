@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TreePreloader do
   before do
-    described_class.instance_variable_set(:@preloaded_approvables, nil)
+    described_class.break_cache!
   end
 
   describe '.preload' do
