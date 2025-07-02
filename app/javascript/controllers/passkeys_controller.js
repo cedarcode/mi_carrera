@@ -41,7 +41,11 @@ export default class extends Controller {
       this.element.submit();
 
     } catch (error) {
-      alert(error);
+      if (error.name === "NotAllowedError") {
+        alert("No seleccionaste el autenticador o cancelaste la operación.");
+      } else {
+        alert(error.message || error);
+      }
     }
   }
 }
