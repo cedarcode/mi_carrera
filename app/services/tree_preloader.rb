@@ -1,26 +1,15 @@
 class TreePreloader
   class << self
-    def preloaded_approvables
-      @preloaded_approvables ||=
-        approvable_by_id.each_value do |approvable|
-          next if approvable.prerequisite_tree.blank?
-
-          preload_prerequisite(approvable.prerequisite_tree)
-        end
-        .values
-        .group_by(&:subject_id)
-    end
-
     def break_cache!
       @prerequisites_by_parent_prerequisite_id = nil
       @subject_groups_by_id = nil
       @approvable_by_id = nil
-      @preloaded_approvables = nil
+      @preloaded_approvables_by_subject_id = nil
     end
 
     def preload(subjects)
       subjects.to_a.each do |subject|
-        approvables = preloaded_approvables[subject.id]
+        approvables = preloaded_approvables_by_subject_id[subject.id]
         next if approvables.blank?
 
         subject.association(:course).target = approvables.find(&:is_course?)
@@ -29,6 +18,17 @@ class TreePreloader
     end
 
     private
+
+    def preloaded_approvables_by_subject_id
+      @preloaded_approvables_by_subject_id ||=
+        approvable_by_id.each_value do |approvable|
+          next if approvable.prerequisite_tree.blank?
+
+          preload_prerequisite(approvable.prerequisite_tree)
+        end
+        .values
+        .group_by(&:subject_id)
+    end
 
     def preload_prerequisite(prereq)
       case prereq
