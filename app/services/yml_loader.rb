@@ -18,6 +18,7 @@ class YmlLoader
     load_subjects
     load_prerequisites
     load_current_optional_subjects
+    TreePreloader.break_cache!
   end
 
   private
