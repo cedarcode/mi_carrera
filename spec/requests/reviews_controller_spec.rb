@@ -43,6 +43,18 @@ RSpec.describe ReviewsController, type: :request do
         expect(review.reload.credits_to_difficulty_rating).to eq(1)
       end
 
+      it 'updates the existing review with nil values' do
+        review.update!(interesting_rating: 3, credits_to_difficulty_rating: 1)
+
+        post reviews_path,
+             params: {
+               subject_id: subject_record.id, interesting_rating: nil, credits_to_difficulty_rating: nil
+             }
+
+        expect(review.reload.interesting_rating).to be_nil
+        expect(review.reload.credits_to_difficulty_rating).to be_nil
+      end
+
       it 'does not create another record' do
         review
 
