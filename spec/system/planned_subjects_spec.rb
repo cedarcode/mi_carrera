@@ -4,11 +4,13 @@ require 'support/planned_subjects_helper'
 RSpec.describe "PlannedSubjects", type: :system do
   include PlannedSubjectsHelper
 
+  let(:user) { create(:user) }
+
   before do
     gal1 = create(:subject, :with_exam, name: "GAL 1", credits: 9, code: "1030")
     gal2 = create(:subject, :with_exam, name: "GAL 2", credits: 10, code: "1031")
     taller = create(:subject, name: "Taller 1", short_name: 'T1', credits: 11)
-    user = create(:user, approvals: [taller.course.id])
+    user.approvals << taller.course.id
 
     create(:subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course)
 
@@ -52,7 +54,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).not_to have_text "Materias aprobadas sin semestre asignado"
     expect(page).to have_text "Créditos planeados: 11"
 
-    within_semester_section("Primer semestre") do
+    within_semester_section("1º semestre") do
       assert_approved_subject "T1"
       assert_planned_subject "T1"
       assert_no_subject "GAL 1"
@@ -63,7 +65,7 @@ RSpec.describe "PlannedSubjects", type: :system do
       assert_subject_not_in_selector "T1"
     end
 
-    within_semester_section("Primer semestre") do
+    within_semester_section("1º semestre") do
       within_add_subject_section do
         select_from_choices('GAL 1 - 1030')
         find("button[type='submit']").click
@@ -81,11 +83,11 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     expect(page).to have_text "Créditos planeados: 20"
 
-    within_each_semester_section do
+    within_each_semester_section(user.planned_semesters) do
       assert_subject_not_in_selector "GAL 1 - 1030"
     end
 
-    within_semester_section("Segundo semestre") do
+    within_semester_section("2º semestre") do
       within_add_subject_section do
         select_from_choices('GAL 2 - 1031')
         find("button[type='submit']").click
@@ -103,11 +105,11 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     expect(page).to have_text "Créditos planeados: 30"
 
-    within_each_semester_section do
+    within_each_semester_section(user.planned_semesters) do
       assert_subject_not_in_selector "GAL 2 - 1031"
     end
 
-    within_semester_section("Segundo semestre") do
+    within_semester_section("2º semestre") do
       within("form", text: "GAL 2") do
         find("button[type='submit']").click
       end
@@ -119,11 +121,11 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     expect(page).to have_text "Créditos planeados: 20"
 
-    within_each_semester_section do
+    within_each_semester_section(user.planned_semesters) do
       assert_subject_selector_contains "GAL 2 - 1031"
     end
 
-    within_semester_section("Primer semestre") do
+    within_semester_section("1º semestre") do
       within("form", text: "T1") do
         find("button[type='submit']").click
       end

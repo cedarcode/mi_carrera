@@ -1,6 +1,10 @@
-<%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
+<div id="planned-subjects-list" class="space-y-4 pb-16">
+  <%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
 
-<% (1..10).each do |semester| %>
-  <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
-  <%= render 'semester', planned_subjects: planned_subjects, not_planned_subjects: @not_planned_subjects, semester: semester %>
-<% end %>
+  <% (1..current_user.planned_semesters).each do |semester| %>
+    <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
+    <%= render 'semester', planned_subjects: planned_subjects, not_planned_subjects: @not_planned_subjects, semester: semester %>
+  <% end %>
+
+  <%= render partial: "add_semester_form" %>
+</div>
