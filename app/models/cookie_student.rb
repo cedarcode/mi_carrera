@@ -29,6 +29,22 @@ class CookieStudent < BaseStudent
     Degree.default
   end
 
+  def total_credits
+    @total_credits ||= 0
+  end
+
+  def total_credits=(value)
+    @total_credits = value.to_i
+  end
+
+  def group_credits
+    @group_credits ||= {}
+  end
+
+  def group_credits=(value)
+    @group_credits = value
+  end
+
   private
 
   attr_reader :cookie
@@ -36,6 +52,14 @@ class CookieStudent < BaseStudent
   def save!
     cookie[:approved_approvable_ids] = {
       value: approved_approvable_ids.to_json,
+      domain: :all
+    }
+    cookie[:total_credits] = {
+      value: total_credits,
+      domain: :all
+    }
+    cookie[:group_credits] = {
+      value: group_credits.to_json,
       domain: :all
     }
   end

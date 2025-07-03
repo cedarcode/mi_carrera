@@ -47,8 +47,8 @@ class Subject < ApplicationRecord
     ).sum(:credits)
   end
 
-  def approved?(approved_approvable_ids)
-    approved_approvable_ids.include?(exam ? exam.id : course.id)
+  def approved?(student)
+    student.approved_approvable_ids.include?(exam ? exam.id : course.id)
   end
 
   def hidden_by_default?

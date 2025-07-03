@@ -1,7 +1,7 @@
 class EnrollmentPrerequisite < Prerequisite
   belongs_to :approvable_needed, class_name: "Approvable"
 
-  def met?(_approved_approvable_ids)
+  def met?(_student)
     false
   end
 end

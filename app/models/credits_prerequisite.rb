@@ -3,10 +3,9 @@ class CreditsPrerequisite < Prerequisite
 
   validates :credits_needed, presence: true
 
-  def met?(approved_approvable_ids)
-    subjects = subject_group ? subject_group.subjects : Subject.all
-
-    approved_credits = subjects.approved_credits(approved_approvable_ids)
+  def met?(student)
+    # byebug if subject_group
+    approved_credits = subject_group ? student.group_credits[subject_group.id].to_i : student.total_credits
     approved_credits >= credits_needed
   end
 end

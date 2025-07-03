@@ -4,13 +4,13 @@ class Approvable < ApplicationRecord
 
   validates :is_exam, inclusion: { in: [true, false] }
 
-  def approved?(approved_approvable_ids)
-    approved_approvable_ids.include?(id)
+  def approved?(student)
+    student.ids.include?(id)
   end
 
-  def available?(approved_approvable_ids)
+  def available?(student)
     if prerequisite_tree
-      prerequisite_tree.met?(approved_approvable_ids)
+      prerequisite_tree.met?(student)
     else
       true
     end
