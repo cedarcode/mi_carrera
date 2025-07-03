@@ -1,10 +1,7 @@
 class TreePreloader
   class << self
     def break_cache!
-      @prerequisites_by_parent_prerequisite_id = nil
-      @subject_groups_by_id = nil
-      @approvable_by_id = nil
-      @preloaded_approvables_by_subject_id = nil
+      @cache = {}
     end
 
     def preload(subjects)
@@ -19,8 +16,12 @@ class TreePreloader
 
     private
 
+    def cache
+      @cache ||= {}
+    end
+
     def preloaded_approvables_by_subject_id
-      @preloaded_approvables_by_subject_id ||=
+      cache[:preloaded_approvables_by_subject_id] ||=
         approvable_by_id.each_value do |approvable|
           next if approvable.prerequisite_tree.blank?
 
@@ -45,15 +46,15 @@ class TreePreloader
     end
 
     def prerequisites_by_parent_prerequisite_id
-      @prerequisites_by_parent_prerequisite_id ||= Prerequisite.all.group_by(&:parent_prerequisite_id)
+      cache[:prerequisites_by_parent_prerequisite_id] ||= Prerequisite.all.group_by(&:parent_prerequisite_id)
     end
 
     def subject_groups_by_id
-      @subject_groups_by_id ||= SubjectGroup.all.index_by(&:id)
+      cache[:subject_groups_by_id] ||= SubjectGroup.all.index_by(&:id)
     end
 
     def approvable_by_id
-      @approvable_by_id ||= Approvable.includes(:prerequisite_tree).index_by(&:id)
+      cache[:approvable_by_id] ||= Approvable.includes(:prerequisite_tree).index_by(&:id)
     end
   end
 end
