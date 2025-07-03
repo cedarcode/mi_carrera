@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe TreePreloader do
-  before do
-    described_class.break_cache!
-  end
-
   describe '.preload' do
     it 'maintains preloaded subjects after being destroyed' do
       s1 = create(:subject, :with_exam, name: 's1')
