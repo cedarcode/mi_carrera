@@ -29,6 +29,10 @@ RSpec.describe "PlannedSubjects", type: :system do
   it "can add and remove subjects to planner" do
     visit subject_plans_path
 
+    assert_banner_present('Bienvenido a tu planificador de materias: arrastra, suelta y organiza tu semestre')
+    click_button 'Listo'
+    assert_banner_dismissed
+
     expect(page).to have_text "Planificador"
     expect(page).to have_text "Materias aprobadas sin semestre asignado"
     expect(page).to have_text "Créditos planeados: 0"
@@ -77,6 +81,10 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     expect(page).to have_text "Créditos planeados: 20"
 
+    within_each_semester_section do
+      assert_subject_not_in_selector "GAL 1 - 1030"
+    end
+
     within_semester_section("Segundo semestre") do
       within_add_subject_section do
         select_from_choices('GAL 2 - 1031')
@@ -95,6 +103,10 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     expect(page).to have_text "Créditos planeados: 30"
 
+    within_each_semester_section do
+      assert_subject_not_in_selector "GAL 2 - 1031"
+    end
+
     within_semester_section("Segundo semestre") do
       within("form", text: "GAL 2") do
         find("button[type='submit']").click
@@ -106,5 +118,21 @@ RSpec.describe "PlannedSubjects", type: :system do
     end
 
     expect(page).to have_text "Créditos planeados: 20"
+
+    within_each_semester_section do
+      assert_subject_selector_contains "GAL 2 - 1031"
+    end
+
+    within_semester_section("Primer semestre") do
+      within("form", text: "T1") do
+        find("button[type='submit']").click
+      end
+
+      assert_no_subject "T1"
+      expect(page).to have_text "Créditos planeados: 9"
+    end
+
+    expect(page).to have_text "Materias aprobadas sin semestre asignado"
+    expect(page).to have_text "Créditos planeados: 9"
   end
 end
