@@ -94,14 +94,12 @@ RSpec.describe FiveStarReviewComponent, type: :component do
         expect(page).to have_field('subject_id', with: subject_id.to_s, type: 'hidden', count: 5)
       end
 
-      it 'includes rating values 1 through 5' do
+      it 'includes rating values 1 through 5, with nil for current rating' do
         render_inline(component)
 
-        expect(page).to have_field('interesting_rating', with: '1', type: 'hidden', count: 1)
-        expect(page).to have_field('interesting_rating', with: '2', type: 'hidden', count: 1)
-        expect(page).to have_field('interesting_rating', with: '4', type: 'hidden', count: 1)
-        expect(page).to have_field('interesting_rating', with: '5', type: 'hidden', count: 1)
-        expect(page).not_to have_field('interesting_rating', with: '3', type: 'hidden', count: 1)
+        rating_values = page.all('input[name="interesting_rating"]', visible: false).map(&:value)
+
+        expect(rating_values).to contain_exactly('1', '2', nil, '4', '5')
       end
     end
   end
