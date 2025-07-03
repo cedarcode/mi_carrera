@@ -73,27 +73,22 @@ RSpec.describe TreePreloader do
       expect(preloaded_s1).to be_present
       expect(preloaded_s2).to be_present
 
-      c1 = preloaded_s1.course
-      ex1 = preloaded_s1.exam
-      c2 = preloaded_s2.course
-      ex2 = preloaded_s2.exam
-
-      expect(c1).to be_present
-      expect(ex1).to be_present
-      expect(c2).to be_present
-      expect(ex2).to be_nil
+      expect(preloaded_s1.course).to be_present
+      expect(preloaded_s1.exam).to be_present
+      expect(preloaded_s2.course).to be_present
+      expect(preloaded_s2.exam).to be_nil
 
       # check all prerequisite trees are preloaded
-      expect(c1.association(:prerequisite_tree).loaded?).to be_truthy
-      expect(ex1.association(:prerequisite_tree).loaded?).to be_truthy
-      expect(c2.association(:prerequisite_tree).loaded?).to be_truthy
+      expect(preloaded_s1.course.association(:prerequisite_tree).loaded?).to be_truthy
+      expect(preloaded_s1.exam.association(:prerequisite_tree).loaded?).to be_truthy
+      expect(preloaded_s2.course.association(:prerequisite_tree).loaded?).to be_truthy
 
-      expect(c1.prerequisite_tree).to be_nil
-      expect(ex1.prerequisite_tree).to be_nil
+      expect(preloaded_s1.course.prerequisite_tree).to be_nil
+      expect(preloaded_s1.exam.prerequisite_tree).to be_nil
 
-      expect(c2.prerequisite_tree).to be_a(SubjectPrerequisite)
-      expect(c2.prerequisite_tree.association(:approvable_needed).loaded?).to be_truthy
-      expect(c2.prerequisite_tree.approvable_needed).to eq(s1.course)
+      expect(preloaded_s2.course.prerequisite_tree).to be_a(SubjectPrerequisite)
+      expect(preloaded_s2.course.prerequisite_tree.association(:approvable_needed).loaded?).to be_truthy
+      expect(preloaded_s2.course.prerequisite_tree.approvable_needed).to eq(s1.course)
     end
 
     it 'uses cached data for preloading' do
@@ -101,20 +96,20 @@ RSpec.describe TreePreloader do
       s2 = create(:subject, name: 's2')
       create(:subject_prerequisite, approvable: s2.course, approvable_needed: s1.course)
 
-      first_call = described_class.preload(Subject.all)
+      first_call_results = described_class.preload(Subject.all)
 
-      expect(first_call.count).to eq(2)
-      expect(first_call.first.name).to eq('s1')
-      expect(first_call.last.name).to eq('s2')
+      expect(first_call_results.count).to eq(2)
+      expect(first_call_results.first.name).to eq('s1')
+      expect(first_call_results.last.name).to eq('s2')
 
       s3 = create(:subject, :with_exam, name: 's3')
 
-      second_call = described_class.preload(Subject.all)
+      second_call_results = described_class.preload(Subject.all)
 
-      expect(second_call.count).to eq(3)
-      preloaded_s1 = second_call.find { |s| s.id == s1.id }
-      preloaded_s2 = second_call.find { |s| s.id == s2.id }
-      preloaded_s3 = second_call.find { |s| s.id == s3.id }
+      expect(second_call_results.count).to eq(3)
+      preloaded_s1 = second_call_results.find { |s| s.id == s1.id }
+      preloaded_s2 = second_call_results.find { |s| s.id == s2.id }
+      preloaded_s3 = second_call_results.find { |s| s.id == s3.id }
 
       # check that s3 does not have any approvables preloaded
       expect(preloaded_s1.association(:course).loaded?).to be_truthy
@@ -125,26 +120,27 @@ RSpec.describe TreePreloader do
       expect(preloaded_s3.association(:exam).loaded?).to be_falsey
     end
   end
+
   describe '.break_cache!' do
     it 'reloads the cached data' do
       s1 = create(:subject, :with_exam, name: 's1')
       create(:subject_prerequisite, approvable: s1.course, approvable_needed: s1.course)
 
-      first_call = described_class.preload(Subject.all)
+      first_call_results = described_class.preload(Subject.all)
 
-      expect(first_call.count).to eq(1)
-      preloaded_s1 = first_call.first
+      expect(first_call_results.count).to eq(1)
+      preloaded_s1 = first_call_results.first
 
       expect(preloaded_s1.association(:course).loaded?).to be_truthy
       expect(preloaded_s1.association(:exam).loaded?).to be_truthy
 
       s2 = create(:subject, :with_exam, name: 's2')
 
-      second_call = described_class.preload(Subject.all)
-      expect(second_call.count).to eq(2)
+      second_call_results = described_class.preload(Subject.all)
+      expect(second_call_results.count).to eq(2)
 
-      preloaded_s1 = second_call.find { |s| s.id == s1.id }
-      preloaded_s2 = second_call.find { |s| s.id == s2.id }
+      preloaded_s1 = second_call_results.find { |s| s.id == s1.id }
+      preloaded_s2 = second_call_results.find { |s| s.id == s2.id }
 
       expect(preloaded_s1.association(:course).loaded?).to be_truthy
       expect(preloaded_s1.association(:exam).loaded?).to be_truthy
