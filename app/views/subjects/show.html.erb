@@ -13,14 +13,23 @@
   <div class="py-3 px-4">Grupo: Desconocido</div>
 <% end %>
 
-<div class="p-2">
-  <%= render(FiveStarReviewComponent.new(
-    review_name: "Puntuación",
-    rating_value: @subject.average_rating,
-    subject_id: @subject.id,
-    column_name: :rating,
-    user_review: @user_review
-  )) %>
+<div class="overflow-x-auto">
+  <div class="flex gap-2 min-w-max p-2">
+    <%= render(FiveStarReviewComponent.new(
+      review_name: "Interesante",
+      rating_value: @subject.average_interesting_rating,
+      subject_id: @subject.id,
+      rating_attribute: :interesting_rating,
+      user_review: @user_review
+    )) %>
+    <%= render(FiveStarReviewComponent.new(
+      review_name: "Créditos/Dificultad",
+      rating_value: @subject.average_credits_to_difficulty_rating,
+      subject_id: @subject.id,
+      rating_attribute: :credits_to_difficulty_rating,
+      user_review: @user_review
+    )) %>
+  </div>
 </div>
 
 <hr class="border-gray-200"/>

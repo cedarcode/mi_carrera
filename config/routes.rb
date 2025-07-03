@@ -44,7 +44,7 @@ Rails.application.routes.draw do
 
     resources :transcripts, path: "escolaridades", only: [:new, :create]
 
-    resources :reviews, only: [:create, :destroy]
+    resources :reviews, only: [:create]
 
     resources :subject_plans, path: "materias_planeadas", only: [:index, :create, :destroy], param: :subject_id
 

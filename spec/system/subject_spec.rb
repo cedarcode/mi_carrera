@@ -181,6 +181,8 @@ RSpec.describe "Subject", type: :system do
 
     visit subject_path(gal1)
 
+    expect(page).to have_text("Interesante")
+    expect(page).to have_text("Créditos/Dificultad")
     expect(page).to have_text('-.-')
     click_button('star_outline', match: :first)
     expect(page).to have_text('Iniciar sesión')
@@ -201,7 +203,7 @@ RSpec.describe "Subject", type: :system do
 
     expect(page).to have_text('4.0')
 
-    # Destroy review by clicking on the same star
+    # Reset review by clicking on the same star
     all('button', text: 'star')[1].click
 
     expect(page).to have_text('-.-')
