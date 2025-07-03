@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Subject, type: :model do
   describe 'associations' do
+    it { should belong_to(:degree) }
     it { should belong_to(:group).class_name('SubjectGroup').optional }
     it {
       should have_one(:course)
@@ -24,7 +25,7 @@ RSpec.describe Subject, type: :model do
 
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:credits) }
-    it { should validate_uniqueness_of(:code) }
+    it { should validate_uniqueness_of(:code).scoped_to(:degree_id) }
   end
 
   describe '#approved_credits' do
@@ -154,6 +155,26 @@ RSpec.describe Subject, type: :model do
 
     it 'returns subjects that do not require exam' do
       expect(Subject.without_exam).to eq([s1])
+    end
+  end
+
+  describe '.search' do
+    let!(:gal1) { create(:subject, name: "Geometría Y Álgebra Lineal 1", short_name: "GAL 1", code: "1030") }
+    let!(:gal2) { create(:subject, name: "Geometría Y Álgebra Lineal 2", short_name: "GAL 2", code: "1031") }
+    let!(:cdiv) {
+      create(:subject, name: "Cálculo Dif. E Integral En Una Variable", short_name: "Calculo DIV", code: "1061")
+    }
+
+    it "finds by name" do
+      expect(Subject.search("Geometría")).to contain_exactly(gal1, gal2)
+    end
+
+    it "finds by short name" do
+      expect(Subject.search("GAL")).to contain_exactly(gal1, gal2)
+    end
+
+    it "finds by code" do
+      expect(Subject.search("1061")).to contain_exactly(cdiv)
     end
   end
 

@@ -220,4 +220,13 @@ RSpec.describe CookieStudent, type: :model do
       expect(student).to be_graduated
     end
   end
+
+  describe '#degree' do
+    let(:student) { build(:cookie_student, cookies:) }
+    let(:cookies) { build(:cookie) }
+
+    it 'returns default degree' do
+      expect(student.degree).to eq(Degree.default)
+    end
+  end
 end

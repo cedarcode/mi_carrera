@@ -1,6 +1,6 @@
 class SubjectGroupsController < ApplicationController
   def show
-    @subject_group = SubjectGroup.find(params[:id])
+    @subject_group = current_degree.subject_groups.find(params[:id])
     respond_to do |format|
       format.html
     end

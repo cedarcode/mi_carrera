@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/icon?family=Material+Icons' %>
-    <%= stylesheet_link_tag    'https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css' %>
+    <%= stylesheet_link_tag    'https://cdn.jsdelivr.net/npm/choices.js@11.1.0/public/assets/styles/choices.min.css' %>
 
     <%= favicon_link_tag "/icon-200-dark.png", type: 'image/png', size: "200x200", href: "/icon-200-dark.png", media: "(prefers-color-scheme: light)"  %>
     <%= favicon_link_tag "/icon-200-light.png", type: 'image/png', size: "200x200", href: "/icon-200-light.png", media: "(prefers-color-scheme: dark)" %>
@@ -42,7 +42,7 @@
     <% end %>
   </head>
 
-  <body class="font-roboto antialiased" data-controller='navigation-drawer'>
+  <body class="font-roboto antialiased flex justify-start flex-col" data-controller='navigation-drawer'>
     <%= render 'shared/menu' %>
 
     <%= render 'layouts/navbar' %>
@@ -50,15 +50,15 @@
       <%= render 'shared/notice' if flash[:notice] %>
 
       <%= yield :welcome_banner %>
-      <div class='content'>
+      <div class='mx-auto max-w-[600px] pb-[40px]'>
         <%= yield %>
       </div>
     </main>
-    <footer class="footer mdc-theme--text-primary-on-light">
-      <span class="mdc-theme--text-secondary-on-light">
-        Built by&nbsp;
+    <footer class="fixed bottom-0 w-full bg-gray-100 px-3 py-1">
+      <span class="text-gray-500">
+        Built by
       </span>
-      <a class="mdc-theme--text-primary-on-light" href="https://cedarcode.com" target="_blank" >Cedarcode</a>
+      <a class="text-gray-800" href="https://cedarcode.com" target="_blank" >Cedarcode</a>
     </footer>
   </body>
 </html>

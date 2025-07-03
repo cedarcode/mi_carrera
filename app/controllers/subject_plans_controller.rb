@@ -9,14 +9,24 @@ class SubjectPlansController < ApplicationController
   def create
     current_user.subject_plans.create!(subject_plan_params)
 
-    redirect_to subject_plans_path
+    @semester_to_refresh = subject_plan_params[:semester].to_i
+
+    set_planned_and_not_planned_subjects
+
+    render :update
   end
 
   def destroy
     subject_plan = current_user.subject_plans.find_by!(subject_id: params[:subject_id])
+    @semester_to_refresh = subject_plan.semester
+    subject = subject_plan.subject
     subject_plan.destroy!
 
-    redirect_to subject_plans_path
+    set_planned_and_not_planned_subjects
+
+    @not_planned_approved_subjects_was_empty = @not_planned_approved_subjects == [subject]
+
+    render :update
   end
 
   private
@@ -30,7 +40,7 @@ class SubjectPlansController < ApplicationController
       TreePreloader.new(current_user.planned_subjects.select('subjects.*', 'subject_plans.semester')
         .order('subject_plans.semester')).preload
     @not_planned_approved_subjects, @not_planned_subjects =
-      TreePreloader.new(Subject.ordered_by_short_or_full_name).preload.reject { |subject|
+      TreePreloader.new(Subject.ordered_by_category.ordered_by_short_or_full_name).preload.reject { |subject|
         current_user.planned?(subject)
       }.partition { |subject| current_student.approved?(subject) }
   end

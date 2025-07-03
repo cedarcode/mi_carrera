@@ -1,16 +1,19 @@
 class YmlLoader
   def self.load
     degrees = Rails.configuration.degrees
-    degrees.each do |degree|
-      new(degree[:key]).load
+    degrees.each do |degree_hash|
+      new(degree_hash).load
     end
   end
 
-  def initialize(degree_key)
-    @degree_dir = Rails.root.join("db/data/#{degree_key}/")
+  def initialize(degree_hash)
+    @degree_hash = degree_hash
+    @degree_id = degree_hash[:id]
+    @degree_dir = Rails.root.join("db/data/#{@degree_id}/")
   end
 
   def load
+    load_degree
     load_subject_groups
     load_subjects
     load_prerequisites
@@ -19,12 +22,22 @@ class YmlLoader
 
   private
 
+  attr_reader :degree_hash
+  attr_reader :degree_id
   attr_reader :degree_dir
+  attr_reader :degree
+
+  def load_degree
+    @degree = Degree.find_or_initialize_by(id: degree_id)
+    @degree.current_plan = degree_hash[:current_plan]
+    @degree.include_inco_subjects = degree_hash[:include_inco_subjects]
+    @degree.save!
+  end
 
   def load_subject_groups
     subject_groups = YAML.load_file(degree_dir.join("scraped_subject_groups.yml"))
     subject_groups.each do |code, yml_group|
-      subject_group = SubjectGroup.find_or_initialize_by(code:)
+      subject_group = degree.subject_groups.find_or_initialize_by(code:)
       subject_group.name = format_name(yml_group["name"])
       subject_group.credits_needed = yml_group["min_credits"]
       subject_group.save!
@@ -36,11 +49,11 @@ class YmlLoader
     subjects_overrides = YAML.load_file(degree_dir.join("subject_overrides.yml"))
 
     subjects.each do |code, subject|
-      new_subject = Subject.find_or_initialize_by(code:)
+      new_subject = degree.subjects.find_or_initialize_by(code:)
 
       new_subject.name = format_name(subject["name"])
       new_subject.credits = subject["credits"]
-      new_subject.group = SubjectGroup.find_by(code: subject["subject_group"])
+      new_subject.group = degree.subject_groups.find_by(code: subject["subject_group"])
 
       subject_overrides = subjects_overrides[code] || {}
       new_subject.eva_id = subject_overrides['eva_id']
@@ -60,8 +73,8 @@ class YmlLoader
   def load_current_optional_subjects
     optional_subject_codes = YAML.load_file(degree_dir.join("scraped_optional_subjects.yml"))
     Subject.transaction do
-      Subject.where(code: optional_subject_codes).update_all(current_optional_subject: true)
-      Subject.where.not(code: optional_subject_codes).update_all(current_optional_subject: false)
+      degree.subjects.where(code: optional_subject_codes).update_all(current_optional_subject: true)
+      degree.subjects.where.not(code: optional_subject_codes).update_all(current_optional_subject: false)
     end
   end
   # rubocop:enable Rails/SkipsModelValidations
@@ -69,10 +82,13 @@ class YmlLoader
   def load_prerequisites
     prerequisites = YAML.load_file(degree_dir.join("scraped_prerequisites.yml"))
 
-    Prerequisite.destroy_all
+    Prerequisite
+      .joins(approvable: :subject)
+      .where(approvable: { subjects: { degree_id: degree.id } })
+      .destroy_all
 
     prerequisites.each do |prerequisite|
-      subject = Subject.find_by(code: prerequisite["subject_code"])
+      subject = degree.subjects.find_by(code: prerequisite["subject_code"])
       approvable = prerequisite["is_exam"] ? subject.exam : subject.course
       approvable.prerequisite_tree = prerequisite_tree(prerequisite)
       approvable.save!
@@ -104,7 +120,7 @@ class YmlLoader
         operands_prerequisites:
       ) if operands_prerequisites.present?
     when 'subject'
-      subject = Subject.find_by!(code: prerequisite["subject_needed_code"])
+      subject = degree.subjects.find_by!(code: prerequisite["subject_needed_code"])
 
       case prerequisite["needs"]
       when 'exam' then SubjectPrerequisite.new(approvable_needed: subject.exam)
@@ -118,7 +134,7 @@ class YmlLoader
       end
 
     when 'credits'
-      subject_group = prerequisite["group"] ? SubjectGroup.find_by(code: prerequisite["group"]) : nil
+      subject_group = prerequisite["group"] ? degree.subject_groups.find_by(code: prerequisite["group"]) : nil
       CreditsPrerequisite.new(credits_needed: prerequisite["credits"], subject_group:)
     else
       raise "Unknown prerequisite type: #{prerequisite["type"]}"

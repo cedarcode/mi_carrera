@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def show
-    @groups_and_credits = SubjectGroup.find_each.map do |subject_group|
+    @groups_and_credits = current_degree.subject_groups.find_each.map do |subject_group|
       credits = current_student.group_credits(subject_group)
       {
         subject_group:,

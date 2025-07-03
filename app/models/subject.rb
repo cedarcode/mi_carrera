@@ -1,4 +1,5 @@
 class Subject < ApplicationRecord
+  belongs_to :degree
   has_one :course, -> { where is_exam: false }, class_name: 'Approvable', dependent: :destroy, inverse_of: :subject
   has_one :exam, -> { where is_exam: true }, class_name: 'Approvable', dependent: :destroy, inverse_of: :subject
   belongs_to :group, class_name: 'SubjectGroup', optional: true
@@ -6,10 +7,15 @@ class Subject < ApplicationRecord
 
   validates :name, presence: true
   validates :credits, presence: true
-  validates :code, uniqueness: true
+  validates :code, uniqueness: { scope: :degree_id }
 
   scope :with_exam, -> { includes(:exam, :course).where.not(exam: { id: nil }) }
   scope :without_exam, -> { includes(:exam, :course).where(exam: { id: nil }) }
+  scope :search, ->(term) {
+    where("lower(unaccent(subjects.name)) LIKE lower(unaccent(?))", "%#{term.strip}%")
+      .or(where("lower(unaccent(short_name)) LIKE lower(unaccent(?))", "%#{term.strip}%"))
+      .or(where("lower(code) LIKE lower(?)", "%#{term.strip}%"))
+  }
 
   CATEGORIES = %i[
     first_semester
@@ -59,3 +65,34 @@ class Subject < ApplicationRecord
 
   delegate :available?, to: :course
 end
+
+# == Schema Information
+#
+# Table name: subjects
+#
+#  id                       :bigint           not null, primary key
+#  category                 :string           default("optional")
+#  code                     :string
+#  credits                  :integer          not null
+#  current_optional_subject :boolean          default(FALSE)
+#  name                     :string           not null
+#  short_name               :string
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  degree_id                :string           not null
+#  eva_id                   :string
+#  group_id                 :integer
+#  openfing_id              :string
+#  second_semester_eva_id   :string
+#
+# Indexes
+#
+#  index_subjects_on_degree_id           (degree_id)
+#  index_subjects_on_degree_id_and_code  (degree_id,code) UNIQUE
+#  index_subjects_on_group_id            (group_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (degree_id => degrees.id)
+#  fk_rails_...  (group_id => subject_groups.id)
+#

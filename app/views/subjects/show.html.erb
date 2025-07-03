@@ -69,7 +69,9 @@
 <% if @subject.exam&.prerequisite_tree %>
   <span class="mx-4">Del examen:</span>
 
-  <%= render @subject.exam.prerequisite_tree, negative: false %>
+  <div id="exam-prerequisites">
+    <%= render @subject.exam.prerequisite_tree, negative: false %>
+  </div>
 <% end %>
 
 <hr class="border-gray-200"/>
