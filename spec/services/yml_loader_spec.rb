@@ -42,7 +42,7 @@ RSpec.describe YmlLoader do
 
         # Subjects
         expect(degree.subjects.count).to eq(2)
-        subject1 = Subject.find_by(code: '101')
+        subject1 = degree.subjects.find_by(code: '101')
         expect(subject1).to be_present
         expect(subject1.name).to eq('Test Subject I')
         expect(subject1.credits).to eq(10)
@@ -56,7 +56,7 @@ RSpec.describe YmlLoader do
         expect(subject1.category).to eq('third_semester')
         expect(subject1.current_optional_subject).to be false
 
-        subject2 = Subject.find_by(code: '102')
+        subject2 = degree.subjects.find_by(code: '102')
         expect(subject2).to be_present
         expect(subject2.name).to eq('Test Subject II')
         expect(subject2.credits).to eq(12)
