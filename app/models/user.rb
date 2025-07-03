@@ -58,12 +58,14 @@ end
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  failed_attempts        :integer          default(0), not null
+#  group_credits          :jsonb            not null
 #  locked_at              :datetime
 #  planner_banner_viewed  :boolean          default(FALSE), not null
 #  provider               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  total_credits          :integer          default(0), not null
 #  uid                    :string
 #  unlock_token           :string
 #  welcome_banner_viewed  :boolean          default(FALSE)
