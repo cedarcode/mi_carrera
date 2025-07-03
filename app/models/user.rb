@@ -59,6 +59,7 @@ end
 #  encrypted_password     :string           default(""), not null
 #  failed_attempts        :integer          default(0), not null
 #  locked_at              :datetime
+#  planner_banner_viewed  :boolean          default(FALSE), not null
 #  provider               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime

@@ -67,6 +67,12 @@ module PlannedSubjectsHelper
     within(:xpath, "//h3[contains(text(), '#{semester}')]/../..", &block)
   end
 
+  def within_each_semester_section(&block)
+    %w[Primer Segundo Tercer Cuarto Quinto Sexto Séptimo Octavo Noveno Décimo].each do |ordinal_number|
+      within_semester_section("#{ordinal_number} semestre", &block)
+    end
+  end
+
   def within_add_subject_section(&block)
     within(:xpath, ".//form[.//select[@name='subject_plan[subject_id]']]", &block)
   end
@@ -84,4 +90,14 @@ module PlannedSubjectsHelper
   end
 
   def card_collapsed?(card) = card.has_selector?(".material-icons", text: "chevron_right")
+
+  def assert_banner_present(message)
+    within('[data-controller="banner"]') do
+      expect(page).to have_text(message)
+    end
+  end
+
+  def assert_banner_dismissed
+    expect(page).not_to have_css('[data-controller="banner"]')
+  end
 end

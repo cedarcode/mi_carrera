@@ -224,4 +224,40 @@ RSpec.describe UserStudent, type: :model do
       expect(student.degree).to eq(user.degree)
     end
   end
+
+  describe '#banner_viewed?' do
+    let(:user) { create :user }
+    let(:student) { described_class.new(user) }
+
+    it 'delegates to user for welcome banner' do
+      expect(user).to receive(:welcome_banner_viewed)
+      student.banner_viewed?('welcome')
+    end
+
+    it 'delegates to user for planner banner' do
+      expect(user).to receive(:planner_banner_viewed)
+      student.banner_viewed?('planner')
+    end
+
+    it 'raises error if banner type is invalid' do
+      expect { student.banner_viewed?('invalid') }.to raise_error(NoMethodError)
+    end
+  end
+
+  describe '#mark_banner_as_viewed!' do
+    let(:user) { create :user }
+    let(:student) { described_class.new(user) }
+
+    it 'delegates to user for welcome banner' do
+      expect { student.mark_banner_as_viewed!('welcome') }.to change(user, :welcome_banner_viewed).from(false).to(true)
+    end
+
+    it 'delegates to user for planner banner' do
+      expect { student.mark_banner_as_viewed!('planner') }.to change(user, :planner_banner_viewed).from(false).to(true)
+    end
+
+    it 'raises error if banner type is invalid' do
+      expect { student.mark_banner_as_viewed!('invalid') }.to raise_error(NoMethodError)
+    end
+  end
 end

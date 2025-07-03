@@ -1,0 +1,24 @@
+<%= turbo_stream.replace "planned-credits" do %>
+  <%= render "credits_counter", planned_subjects: @planned_subjects %>
+<% end %>
+
+<% if @not_planned_approved_subjects_was_empty %>
+  <%= turbo_stream.before "semester-1" do %>
+    <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace "not-planned-subjects", method: :morph do %>
+    <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.replace "semester-#{@semester_to_refresh}" do %>
+  <% planned_subjects = @planned_subjects.select { |subject| subject.semester == @semester_to_refresh } %>
+  <%= render 'semester', planned_subjects: planned_subjects, not_planned_subjects: @not_planned_subjects, semester: @semester_to_refresh %>
+<% end %>
+
+<% ((1..10).to_a - [@semester_to_refresh]).each do |semester| %>
+  <%= turbo_stream.replace "semester-#{semester}-add-subject-form" do %>
+    <%= render 'semester_add_subject_form', semester: semester, not_planned_subjects: @not_planned_subjects %>
+  <% end %>
+<% end %>
