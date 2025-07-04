@@ -26,7 +26,7 @@ export default class extends Controller {
     });
   }
 
-  onEnd(event) {
+  async onEnd(event) {
     const url = event.item.dataset.plannerDraggableUrl;
     const method = event.item.dataset.plannerDraggableMethod;
     const newSemester = event.to.dataset.semester;
@@ -38,6 +38,9 @@ export default class extends Controller {
     }
 
     const request = new FetchRequest(method, url, { headers: { 'Accept': 'text/vnd.turbo-stream.html, text/html' }, body: JSON.stringify(params) })
-    request.perform()
+    const response = await request.perform()
+    if (!response.ok) {
+      window.location.reload();
+    }
   }
 }
