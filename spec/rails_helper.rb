@@ -89,6 +89,10 @@ RSpec.configure do |config|
 
   config.include ViewComponent::TestHelpers, type: :component
   config.include Support::StubPasskeys, type: :system
+
+  config.after(:each) do
+    TreePreloader.break_cache!
+  end
 end
 
 Shoulda::Matchers.configure do |config|

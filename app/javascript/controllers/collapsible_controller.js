@@ -9,4 +9,9 @@ export default class extends Controller {
     this.buttonTarget.innerHTML = icon;
     this.collapsibleTarget.classList.toggle("hidden");
   }
+
+  preventToggle(event) {
+    const { attributeName } = event.detail;
+    if (attributeName === "class") event.preventDefault();
+  }
 }

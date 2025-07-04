@@ -1,15 +1,15 @@
 <% if subjects.any? %>
-  <div data-controller="collapsible" class="bg-white rounded-lg border border-gray-100 shadow-sm">
+  <div id="not-planned-subjects" data-controller="collapsible" class="bg-white rounded-lg border border-gray-100 shadow-sm">
     <a data-action="click->collapsible#toggle" class="flex items-center h-10 px-4 bg-gray-50 rounded-lg cursor-pointer">
-      <span class="material-icons pr-2" data-collapsible-target="button"><%= @approved_subjects_card_opened ? "expand_more" : "chevron_right"%></span>
+      <span class="material-icons pr-2" data-collapsible-target="button" data-turbo-permanent>chevron_right</span>
       <span class="flex-1 text-sm font-bold"><%= subjects.size %> Materias aprobadas sin semestre asignado</span>
     </a>
 
-    <div class="<%= "hidden" unless @approved_subjects_card_opened %>" data-collapsible-target="collapsible" >
+    <div class="hidden" data-collapsible-target="collapsible" data-action="turbo:before-morph-attribute->collapsible#preventToggle">
       <% subjects.each do |subject| %>
         <%= form_with(
           model: SubjectPlan.new,
-          url: subject_plans_path(approved_subjects_card_opened: true),
+          url: subject_plans_path,
           method: :post,
           data: { turbo: true },
           class: 'flex items-center gap-3 p-3 hover:bg-gray-100'

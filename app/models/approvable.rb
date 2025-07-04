@@ -15,6 +15,8 @@ class Approvable < ApplicationRecord
       true
     end
   end
+
+  def is_course? = !is_exam? # rubocop:disable Naming/PredicatePrefix
 end
 
 # == Schema Information
