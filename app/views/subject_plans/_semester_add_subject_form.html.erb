@@ -6,9 +6,6 @@
   data: { turbo: true, controller: "subject-selector" },
   class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 border-t border-gray-100'
 ) do |form| %>
-  <span class="grow text-sm/6 text-gray-900">
-    Planificar:
-  </span>
   <%= form.select(
     :subject_id,
     grouped_options_for_select(
