@@ -42,11 +42,9 @@ RSpec.describe "PlannedSubjects", type: :system do
     within_not_planned_approved_subjects do
       assert_no_subject "GAL 1"
       assert_no_subject "GAL 2"
-      assert_subject_with_semester_selector "T1"
+      assert_approved_subject "T1"
 
-      within("form", text: "T1") do
-        find("button[type='submit']").click
-      end
+      move_subject_to_semester "T1", "Primer semestre"
     end
 
     expect(page).not_to have_text "Materias aprobadas sin semestre asignado"
@@ -108,6 +106,32 @@ RSpec.describe "PlannedSubjects", type: :system do
     end
 
     within_semester_section("Segundo semestre") do
+      move_subject_to_semester "GAL 2", "Tercer semestre"
+
+      expect(page).to have_text "No hay materias planificadas para este semestre"
+      assert_no_subject "GAL 1"
+      assert_no_subject "GAL 2"
+      assert_no_subject "T1"
+      expect(page).to have_text "Créditos planeados: 0"
+      assert_subject_not_in_selector "GAL 2"
+      assert_subject_not_in_selector "GAL 1"
+      assert_subject_not_in_selector "T1"
+    end
+
+    within_semester_section("Tercer semestre") do
+      assert_blocked_subject "GAL 2"
+      assert_planned_subject "GAL 2"
+      assert_no_subject "GAL 1"
+      assert_no_subject "T1"
+      expect(page).to have_text "Créditos planeados: 10"
+      assert_subject_not_in_selector "GAL 2"
+      assert_subject_not_in_selector "GAL 1"
+      assert_subject_not_in_selector "T1"
+    end
+
+    expect(page).to have_text "Créditos planeados: 30"
+
+    within_semester_section("Tercer semestre") do
       within("form", text: "GAL 2") do
         find("button[type='submit']").click
       end
