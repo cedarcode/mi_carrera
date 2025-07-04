@@ -6,19 +6,18 @@ export default class extends Controller {
     try{
       const passkeyOptions = WebAuthnJSON.parseCreationOptionsFromJSON({ publicKey });
       const passkeyPublicKey = await WebAuthnJSON.create(passkeyOptions);
-      const formData = new FormData(this.element);
-      formData.append('passkey_public_key', JSON.stringify(passkeyPublicKey));
 
-      const response = await fetch(this.element.action, {
-        method: this.element.method,
-        body: formData,
-      });
-
-      if (response.ok) {
-        window.location.replace("/usuarios/passkeys");
-      } else {
-        alert("Ocurrió un error al registrar la llave de seguridad.");
+      let hiddenPasskeyInput = this.element.querySelector("input[name='passkey_public_key']");
+      if (!hiddenPasskeyInput) {
+        hiddenPasskeyInput = document.createElement("input");
+        hiddenPasskeyInput.type = "hidden";
+        hiddenPasskeyInput.name = "passkey_public_key";
+        this.element.appendChild(hiddenPasskeyInput);
       }
+      hiddenPasskeyInput.value = JSON.stringify(passkeyPublicKey);
+
+      this.element.submit();
+
     } catch (error) {
       if (error.name === "NotAllowedError") {
         alert("No seleccionaste el autenticador o cancelaste la operación.");
