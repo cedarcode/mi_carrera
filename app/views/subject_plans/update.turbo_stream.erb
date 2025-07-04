@@ -18,16 +18,16 @@
   <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
 
   <%= turbo_stream.replace "semester-#{semester}-header", method: :morph do %>
-    <%= render 'semester_header', semester: semester, planned_subjects: planned_subjects %>
+    <%= render 'subject_plans/semester_card/header', semester: semester, planned_subjects: planned_subjects %>
   <% end %>
 
   <%= turbo_stream.replace "semester-#{semester}-subjects-list", method: :morph do %>
-    <%= render 'semester_subjects_list', semester: semester, planned_subjects: planned_subjects %>
+    <%= render 'subject_plans/semester_card/subjects_list', semester: semester, planned_subjects: planned_subjects %>
   <% end %>
 <% end %>
 
 <% (1..10).each do |semester| %>
   <%= turbo_stream.replace "semester-#{semester}-add-subject-form" do %>
-    <%= render 'semester_add_subject_form', semester: semester, not_planned_subjects: @not_planned_subjects %>
+    <%= render 'subject_plans/semester_card/add_subject_form', semester: semester, not_planned_subjects: @not_planned_subjects %>
   <% end %>
 <% end %>
