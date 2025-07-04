@@ -3,16 +3,16 @@
     No hay materias planificadas para este semestre
   </div>
 
-  <ul class="min-h-[65px]" data-semester="<%= semester %>" data-draggable-target="semesterSubjectsList">
+  <ul class="min-h-[65px]" data-semester="<%= semester %>" data-planner-draggable-target="semesterSubjectsList">
     <% planned_subjects.each do |subject| %>
-      <li class="relative" data-draggable-url="<%= subject_plan_path(subject_id: subject.id) %>" data-draggable-method="put">
+      <li class="relative" data-planner-draggable-url="<%= subject_plan_path(subject_id: subject.id) %>" data-planner-draggable-method="put">
         <%= form_with(
           url: subject_plan_path(subject_id: subject.id),
           method: :delete,
           data: { turbo: true },
           class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 bg-white',
         ) do |form| %>
-          <span class="material-icons text-gray-400 cursor-pointer" data-draggable-handle> drag_handle </span>
+          <span class="material-icons text-gray-400 cursor-pointer" data-planner-draggable-handle> drag_handle </span>
 
           <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900" %>
 

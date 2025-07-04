@@ -11,7 +11,7 @@ export default class extends Controller {
         group: 'shared',
         sort: false,
         onEnd: this.onEnd.bind(this),
-        handle: "[data-draggable-handle]",
+        handle: "[data-planner-draggable-handle]",
       });
     });
 
@@ -22,19 +22,19 @@ export default class extends Controller {
       },
       sort: false,
       onEnd: this.onEnd.bind(this),
-      handle: "[data-draggable-handle]",
+      handle: "[data-planner-draggable-handle]",
     });
   }
 
   onEnd(event) {
-    const url = event.item.dataset.draggableUrl;
-    const method = event.item.dataset.draggableMethod;
+    const url = event.item.dataset.plannerDraggableUrl;
+    const method = event.item.dataset.plannerDraggableMethod;
     const newSemester = event.to.dataset.semester;
 
     var params = { subject_plan: { semester: newSemester } };
 
     if (method == 'post') {
-      params['subject_plan'].subject_id = event.item.dataset.draggableSubjectId;
+      params['subject_plan'].subject_id = event.item.dataset.plannerDraggableSubjectId;
     }
 
     const request = new FetchRequest(method, url, { headers: { 'Accept': 'text/vnd.turbo-stream.html, text/html' }, body: JSON.stringify(params) })
