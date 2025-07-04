@@ -2,7 +2,7 @@
   <%= render "credits_counter", planned_subjects: @planned_subjects %>
 <% end %>
 
-<% if @reload_not_planned_subjects %>
+<% if @reload_not_planned_approved_subjects %>
   <% if @not_planned_approved_subjects_was_empty %>
     <%= turbo_stream.before "semester-1" do %>
       <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>

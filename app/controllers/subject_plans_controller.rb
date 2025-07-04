@@ -13,7 +13,7 @@ class SubjectPlansController < ApplicationController
 
     set_planned_and_not_planned_subjects
 
-    @reload_not_planned_subjects = true
+    @reload_not_planned_approved_subjects = true
 
     render :update
   end
@@ -37,7 +37,7 @@ class SubjectPlansController < ApplicationController
 
     set_planned_and_not_planned_subjects
 
-    @reload_not_planned_subjects = true
+    @reload_not_planned_approved_subjects = true
     @not_planned_approved_subjects_was_empty = @not_planned_approved_subjects == [subject]
 
     render :update
