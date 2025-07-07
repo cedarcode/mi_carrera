@@ -3,7 +3,7 @@ import Sortable from 'sortablejs';
 import { FetchRequest } from '@rails/request.js';
 
 export default class extends Controller {
-  static targets = ['semesterSubjectsList', 'notApprovedSubjectsList'];
+  static targets = ['semesterSubjectsList', 'notPlannedApprovedSubjectsList'];
 
   connect() {
     this.semesterSubjectsListTargets.forEach((list) => {
@@ -15,7 +15,7 @@ export default class extends Controller {
       });
     });
 
-    this.hasNotApprovedSubjectsListTarget && Sortable.create(this.notApprovedSubjectsListTarget, {
+    this.hasNotPlannedApprovedSubjectsListTarget && Sortable.create(this.notPlannedApprovedSubjectsListTarget, {
       group: {
         name: 'shared',
         put: false
