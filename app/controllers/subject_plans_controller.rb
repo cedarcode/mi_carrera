@@ -9,21 +9,35 @@ class SubjectPlansController < ApplicationController
   def create
     current_user.subject_plans.create!(subject_plan_params)
 
-    @semester_to_refresh = subject_plan_params[:semester].to_i
+    @semesters_to_refresh = [subject_plan_params[:semester].to_i]
 
     set_planned_and_not_planned_subjects
+
+    @reload_not_planned_approved_subjects = true
 
     render :update
   end
 
+  def update
+    subject_plan = current_user.subject_plans.find_by!(subject_id: params[:subject_id])
+    previous_semester = subject_plan.semester
+    new_semester = subject_plan_params[:semester].to_i
+    subject_plan.update!(semester: new_semester)
+
+    @semesters_to_refresh = [previous_semester, new_semester]
+
+    set_planned_and_not_planned_subjects
+  end
+
   def destroy
     subject_plan = current_user.subject_plans.find_by!(subject_id: params[:subject_id])
-    @semester_to_refresh = subject_plan.semester
+    @semesters_to_refresh = [subject_plan.semester]
     subject = subject_plan.subject
     subject_plan.destroy!
 
     set_planned_and_not_planned_subjects
 
+    @reload_not_planned_approved_subjects = true
     @not_planned_approved_subjects_was_empty = @not_planned_approved_subjects == [subject]
 
     render :update

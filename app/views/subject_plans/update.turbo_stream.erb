@@ -2,23 +2,32 @@
   <%= render "credits_counter", planned_subjects: @planned_subjects %>
 <% end %>
 
-<% if @not_planned_approved_subjects_was_empty %>
-  <%= turbo_stream.before "semester-1" do %>
-    <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
-  <% end %>
-<% else %>
-  <%= turbo_stream.replace "not-planned-subjects", method: :morph do %>
-    <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
+<% if @reload_not_planned_approved_subjects %>
+  <% if @not_planned_approved_subjects_was_empty %>
+    <%= turbo_stream.before "semester-1" do %>
+      <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
+    <% end %>
+  <% else %>
+    <%= turbo_stream.replace "not-planned-subjects", method: :morph do %>
+      <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
+    <% end %>
   <% end %>
 <% end %>
 
-<%= turbo_stream.replace "semester-#{@semester_to_refresh}" do %>
-  <% planned_subjects = @planned_subjects.select { |subject| subject.semester == @semester_to_refresh } %>
-  <%= render 'semester', planned_subjects: planned_subjects, not_planned_subjects: @not_planned_subjects, semester: @semester_to_refresh %>
+<% @semesters_to_refresh.each do |semester| %>
+  <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
+
+  <%= turbo_stream.replace "semester-#{semester}-header", method: :morph do %>
+    <%= render 'subject_plans/semester_card/header', semester:, planned_subjects: %>
+  <% end %>
+
+  <%= turbo_stream.replace "semester-#{semester}-subjects-list", method: :morph do %>
+    <%= render 'subject_plans/semester_card/subjects_list', semester:, planned_subjects: %>
+  <% end %>
 <% end %>
 
-<% ((1..10).to_a - [@semester_to_refresh]).each do |semester| %>
+<% (1..10).each do |semester| %>
   <%= turbo_stream.replace "semester-#{semester}-add-subject-form" do %>
-    <%= render 'semester_add_subject_form', semester: semester, not_planned_subjects: @not_planned_subjects %>
+    <%= render 'subject_plans/semester_card/add_subject_form', semester:, not_planned_subjects: @not_planned_subjects %>
   <% end %>
 <% end %>
