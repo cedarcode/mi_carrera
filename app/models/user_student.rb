@@ -4,12 +4,12 @@ class UserStudent < BaseStudent
     @user = user
   end
 
-  def welcome_banner_viewed?
-    user.welcome_banner_viewed
+  def mark_banner_as_viewed!(banner_type)
+    user.update!("#{banner_type}_banner_viewed" => true)
   end
 
-  def welcome_banner_mark_as_viewed!
-    user.update!(welcome_banner_viewed: true)
+  def banner_viewed?(banner_type)
+    user.public_send("#{banner_type}_banner_viewed?")
   end
 
   delegate :degree, to: :user

@@ -3343,7 +3343,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -6335,7 +6335,7 @@
       needs: course
     - type: subject
       subject_needed_code: '1159'
-      subject_needed_name: INT. A LA FÍSICA MODERNA
+      subject_needed_name: INT. A LA FISICA MODERNA
       needs: course
   subject_code: '1159'
   is_exam: true
@@ -8988,7 +8988,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -10020,7 +10020,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11261,7 +11261,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11346,7 +11346,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11366,7 +11366,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11411,7 +11411,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11454,7 +11454,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11474,7 +11474,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11494,7 +11494,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11542,7 +11542,7 @@
       needs: course
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: course
     - type: subject
       subject_needed_code: CP27
@@ -11636,7 +11636,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11671,7 +11671,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11746,7 +11746,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -11787,7 +11787,7 @@
   - type: subject
     needs: all
     subject_needed_code: '1650'
-    subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+    subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
   subject_code: '1639'
   is_exam: false
 - type: logical
@@ -11813,7 +11813,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
   subject_code: '1640'
   is_exam: false
@@ -12093,7 +12093,7 @@
       needs: course
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: course
   subject_code: '1650'
   is_exam: true
@@ -12312,7 +12312,7 @@
         - type: subject
           needs: course
           subject_needed_code: '1650'
-          subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+          subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       - type: logical
         logical_operator: or
         operands:
@@ -13511,7 +13511,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
     - type: subject
       subject_needed_code: CP27
@@ -14658,7 +14658,7 @@
     - type: subject
       needs: exam
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
   - type: logical
     logical_operator: or
     operands:
@@ -14932,7 +14932,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
   - type: logical
     logical_operator: or
@@ -16459,7 +16459,7 @@
       needs: exam
     - type: subject
       subject_needed_code: '1650'
-      subject_needed_name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       needs: exam
   subject_code: '3207'
   is_exam: false
