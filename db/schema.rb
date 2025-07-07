@@ -120,6 +120,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_211639) do
     t.datetime "locked_at"
     t.string "unlock_token"
     t.string "degree_id", null: false
+    t.integer "planned_semesters", default: 10, null: false
     t.uuid "webauthn_id", default: -> { "gen_random_uuid()" }, null: false
     t.boolean "planner_banner_viewed", default: false, null: false
     t.index ["degree_id"], name: "index_users_on_degree_id"
