@@ -23,7 +23,11 @@ export default class extends Controller {
           "!items-center",
           "!bg-white",
           "!rounded-md",
+          "!px-4",
+          "!py-3",
+          "!border-none",
         ],
+        listSingle: ["choices__list", "choices__list--single", "!p-0"],
       },
     });
   }
