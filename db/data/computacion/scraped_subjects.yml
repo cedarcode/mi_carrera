@@ -511,7 +511,7 @@
   subject_group: '4083'
 '1159':
   code: '1159'
-  name: INT. A LA FÍSICA MODERNA
+  name: INT. A LA FISICA MODERNA
   credits: 10
   has_exam: true
   subject_group: '4442'
@@ -919,7 +919,7 @@
   subject_group: '4580'
 '1374':
   code: '1374'
-  name: CONCEPTOS DE LENGUAJES DE PROGRAMACIÓN
+  name: CONCEPTOS DE LENGUAJES DE PROGRAMACION
   credits: 6
   has_exam: false
   subject_group: '4580'
@@ -1441,13 +1441,13 @@
   subject_group:
 '1641':
   code: '1641'
-  name: ALGORITMOS DE APROXIMACIÓN
+  name: ALGORITMOS DE APROXIMACION
   credits: 10
   has_exam: false
   subject_group: '4815'
 '1650':
   code: '1650'
-  name: INT. A LA INVESTIGACIÓN DE OPERACIONES
+  name: INT. A LA INVESTIGACION DE OPERACIONES
   credits: 10
   has_exam: true
   subject_group: '4815'
@@ -1999,7 +1999,7 @@
   subject_group: '4428'
 '1899':
   code: '1899'
-  name: TEMAS AVANZADOS EN CÓDIGOS PARA CORRECCIÓN DE ERRORES
+  name: TEMAS AVANZADOS EN CODIGOS PARA CORRECCION DE ERRORES
   credits: 7
   has_exam: false
   subject_group: '4083'
