@@ -10,7 +10,7 @@ RSpec.describe PlannedSemestersController, type: :request do
       expect {
         post planned_semesters_path, params: { format: :turbo_stream }
       }.to change { user.reload.planned_semesters }.by(1)
-      
+
       expect(response).to have_http_status(:ok)
       expect(response.body).to include("Semestre #{user.planned_semesters}")
     end
