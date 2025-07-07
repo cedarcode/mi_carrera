@@ -3,15 +3,9 @@
     No hay materias planificadas para este semestre
   </div>
 
-  <div class="min-h-[65px]" data-semester="<%= semester %>" data-planner-draggable-target="semesterSubjectsList">
+  <ul class="min-h-[65px]" data-semester="<%= semester %>" data-planner-draggable-target="semesterSubjectsList">
     <% planned_subjects.each do |subject| %>
-      <%= form_with(
-        url: subject_plan_path(subject_id: subject.id),
-        method: :delete,
-        data: { turbo: true },
-        class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 bg-white relative',
-        data: { planner_draggable_url: subject_plan_path(subject_id: subject.id), planner_draggable_method: "put" }
-      ) do |form| %>
+      <li class="relative flex items-center gap-3 px-4 py-3 hover:bg-gray-100 bg-white" data-planner-draggable-url="<%= subject_plan_path(subject_id: subject.id) %>" data-planner-draggable-method="put">
         <span class="material-icons text-gray-400 cursor-pointer" data-planner-draggable-handle> drag_handle </span>
 
         <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900" %>
@@ -22,10 +16,10 @@
           <%= material_icon("lock_outline", "text-gray-400") %>
         <% end %>
 
-        <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400" do %>
+        <%= button_to subject_plan_path(subject_id: subject.id), method: :delete, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400", form: { data: { turbo: true } } do %>
           remove_circle_outline
         <% end %>
-      <% end %>
+      </li>
     <% end %>
-  </div>
+  </ul>
 </div>

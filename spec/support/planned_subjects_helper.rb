@@ -81,11 +81,11 @@ module PlannedSubjectsHelper
     subject_element_drag_handle.drag_to(semester_subjects_list)
   end
 
-  private
-
   def within_subject_row(subject_name, &block)
     within("li", text: subject_name, &block)
   end
+
+  private
 
   def card_collapsed?(card) = card.has_selector?(".material-icons", text: "chevron_right")
 

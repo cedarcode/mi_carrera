@@ -132,7 +132,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Créditos planeados: 30"
 
     within_semester_section("Tercer semestre") do
-      within("form", text: "GAL 2") do
+      within_subject_row("GAL 2") do
         find("button[type='submit']").click
       end
 
@@ -148,7 +148,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     end
 
     within_semester_section("Primer semestre") do
-      within("form", text: "T1") do
+      within_subject_row("T1") do
         find("button[type='submit']").click
       end
 
