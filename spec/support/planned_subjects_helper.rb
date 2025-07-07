@@ -59,9 +59,9 @@ module PlannedSubjectsHelper
     within(:xpath, "//h3[contains(text(), '#{semester}')]/../..", &block)
   end
 
-  def within_each_semester_section(&block)
-    %w[Primer Segundo Tercer Cuarto Quinto Sexto Séptimo Octavo Noveno Décimo].each do |ordinal_number|
-      within_semester_section("#{ordinal_number} semestre", &block)
+  def within_each_semester_section(number_of_semesters, &block)
+    1.upto(number_of_semesters).each do |number|
+      within_semester_section("Semestre #{number}", &block)
     end
   end
 
