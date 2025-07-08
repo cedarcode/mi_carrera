@@ -63,22 +63,58 @@ RSpec.describe Subject, type: :model do
     end
   end
 
-  describe '#average_rating' do
-    let(:subject) { create :subject }
+  describe '#average_interesting_rating' do
+    let(:subject_record) { create :subject }
 
     context 'when there are no reviews' do
       it 'returns nil' do
-        expect(subject.average_rating).to be_nil
+        expect(subject_record.average_interesting_rating).to be_nil
       end
     end
 
-    context 'when there are reviews' do
-      let!(:first_review) { create :review, subject:, rating: 2 }
-      let!(:second_review) { create :review, subject:, rating: 4 }
-      let!(:third_review) { create :review, subject:, rating: 5 }
+    context 'when there are reviews without interesting rating' do
+      let!(:review) { create :review, subject: subject_record }
 
-      it 'returns the average rating' do
-        expect(subject.average_rating).to eq(3.7)
+      it 'returns nil' do
+        expect(subject_record.average_interesting_rating).to be_nil
+      end
+    end
+
+    context 'when there are reviews with interesting rating' do
+      let!(:first_review) { create :review, subject: subject_record, interesting_rating: 2 }
+      let!(:second_review) { create :review, subject: subject_record, interesting_rating: 4 }
+      let!(:third_review) { create :review, subject: subject_record, interesting_rating: 5 }
+
+      it 'returns the average interesting rating' do
+        expect(subject_record.average_interesting_rating).to eq(3.7)
+      end
+    end
+  end
+
+  describe '#average_credits_to_difficulty_rating' do
+    let(:subject_record) { create :subject }
+
+    context 'when there are no reviews' do
+      it 'returns nil' do
+        expect(subject_record.average_credits_to_difficulty_rating).to be_nil
+      end
+    end
+
+    context 'when there are reviews without credits to difficulty rating' do
+      let!(:review) { create :review, subject: subject_record }
+
+      it 'returns nil' do
+        expect(subject_record.average_credits_to_difficulty_rating).to be_nil
+      end
+    end
+
+    context 'when there are reviews with credits to difficulty rating' do
+      let!(:first_review) { create :review, subject: subject_record, credits_to_difficulty_rating: 2 }
+      let!(:second_review) { create :review, subject: subject_record, credits_to_difficulty_rating: 4 }
+      let!(:third_review) { create :review, subject: subject_record, credits_to_difficulty_rating: 5 }
+
+      it 'returns the average credits to difficulty rating' do
+        expect(subject_record.average_credits_to_difficulty_rating).to eq(3.7)
       end
     end
   end
