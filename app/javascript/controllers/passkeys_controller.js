@@ -26,4 +26,29 @@ export default class extends Controller {
       }
     }
   }
+
+  async get({ params: {publicKey} }) {
+    try {
+      const passkeyOptions = WebAuthnJSON.parseRequestOptionsFromJSON({ publicKey });
+      const passkeyPublicKey = await WebAuthnJSON.get(passkeyOptions);
+
+      let hiddenPasskeyInput = this.element.querySelector("input[name='passkey_public_key']");
+      if (!hiddenPasskeyInput) {
+        hiddenPasskeyInput = document.createElement("input");
+        hiddenPasskeyInput.type = "hidden";
+        hiddenPasskeyInput.name = "passkey_public_key";
+        this.element.appendChild(hiddenPasskeyInput);
+      }
+      hiddenPasskeyInput.value = JSON.stringify(passkeyPublicKey);
+
+      this.element.submit();
+
+    } catch (error) {
+      if (error.name === "NotAllowedError") {
+        alert("No seleccionaste el autenticador o cancelaste la operación.");
+      } else {
+        alert(error.message || error);
+      }
+    }
+  }
 }
