@@ -2,23 +2,20 @@ import { Controller } from "@hotwired/stimulus"
 import * as WebAuthnJSON from "@github/webauthn-json/browser-ponyfill"
 
 export default class extends Controller {
+  static targets = ["passkeyPublicKey"]
+
   async create({ params: { publicKey } }) {
     try{
       const passkeyOptions = WebAuthnJSON.parseCreationOptionsFromJSON({ publicKey });
       const passkeyPublicKey = await WebAuthnJSON.create(passkeyOptions);
-      const formData = new FormData(this.element);
-      formData.append('passkey_public_key', JSON.stringify(passkeyPublicKey));
 
-      const response = await fetch(this.element.action, {
-        method: this.element.method,
-        body: formData,
-      });
-
-      if (response.ok) {
-        window.location.replace("/usuarios/passkeys");
-      } else {
-        alert("Ocurrió un error al registrar la llave de seguridad.");
+      if (this.hasPasskeyPublicKeyTarget) {
+        const hiddenPasskeyInput = this.passkeyPublicKeyTarget;
+        hiddenPasskeyInput.value = JSON.stringify(passkeyPublicKey);
       }
+
+      this.element.submit();
+
     } catch (error) {
       if (error.name === "NotAllowedError") {
         alert("No seleccionaste el autenticador o cancelaste la operación.");
