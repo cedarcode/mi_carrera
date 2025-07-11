@@ -1,15 +1,17 @@
 class YmlLoader
-  def self.load(base_dir: Rails.root.join("db/data"))
+  BASE_DIR = Rails.root.join("db/data")
+
+  def self.load
     degrees = Rails.configuration.degrees
     degrees.each do |degree_hash|
-      new(degree_hash, base_dir).load
+      new(degree_hash).load
     end
   end
 
-  def initialize(degree_hash, base_dir)
+  def initialize(degree_hash)
     @degree_hash = degree_hash
     @degree_id = degree_hash[:id]
-    @degree_dir = base_dir.join(degree_id)
+    @degree_dir = BASE_DIR.join(degree_id)
   end
 
   def load
