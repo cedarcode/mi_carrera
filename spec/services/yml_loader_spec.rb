@@ -5,6 +5,8 @@ RSpec.describe YmlLoader do
   let(:another_degree_id) { 'another_test_degree' }
 
   before do
+    stub_const("YmlLoader::BASE_DIR", base_dir)
+
     allow(Rails.configuration).to receive(:degrees).and_return([
       {
         bedelias_name: 'TEST DEGREE',
@@ -27,7 +29,7 @@ RSpec.describe YmlLoader do
 
       it 'loads' do
         # Degrees
-        expect { described_class.load(base_dir:) }.to change(Degree, :count).by(2)
+        expect { described_class.load }.to change(Degree, :count).by(2)
         degree = Degree.find(degree_id)
         expect(degree).to be_present
         expect(degree.current_plan).to eq('2025')
@@ -124,7 +126,7 @@ RSpec.describe YmlLoader do
       let(:base_dir) { Rails.root.join("spec/support/mock_yamls/unknown_prerequisite_type") }
 
       it 'raises error if unknown prerequisite type' do
-        expect { described_class.load(base_dir:) }.to raise_error('Unknown prerequisite type: foo')
+        expect { described_class.load }.to raise_error('Unknown prerequisite type: foo')
       end
     end
 
@@ -132,7 +134,7 @@ RSpec.describe YmlLoader do
       let(:base_dir) { Rails.root.join("spec/support/mock_yamls/unknown_approvable_type") }
 
       it 'raises error if unknown approvable needed' do
-        expect { described_class.load(base_dir:) }.to raise_error('Unknown approvable needed: bar')
+        expect { described_class.load }.to raise_error('Unknown approvable needed: bar')
       end
     end
   end
