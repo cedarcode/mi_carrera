@@ -59,6 +59,8 @@ RSpec.describe "PlannedSubjects", type: :system do
       click_on "remove_circle_outline"
     end
 
+    expect(page).to have_text "Créditos planeados: 0"
+
     within_not_planned_approved_subjects do
       assert_approved_subject "T1"
 
