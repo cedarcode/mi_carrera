@@ -4,6 +4,7 @@ import { FetchRequest } from '@rails/request.js';
 
 export default class extends Controller {
   static targets = ['semesterSubjectsList', 'notPlannedApprovedSubjectsList'];
+  static outlets = ['planner-loading']
 
   connect() {
     this.semesterSubjectsListTargets.forEach((list) => {
@@ -28,6 +29,8 @@ export default class extends Controller {
 
   async onEnd(event) {
     if (event.from === event.to) { return; }
+
+    this.plannerLoadingOutlet.start();
 
     const url = event.item.dataset.plannerDraggableUrl;
     const method = event.item.dataset.plannerDraggableMethod;
