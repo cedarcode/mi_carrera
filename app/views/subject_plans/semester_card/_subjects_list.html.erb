@@ -16,7 +16,7 @@
           <%= material_icon("lock_outline", "text-gray-400") %>
         <% end %>
 
-        <%= button_to subject_plan_path(subject_id: subject.id), method: :delete, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400", form: { data: { turbo: true } } do %>
+        <%= button_to subject_plan_path(subject_id: subject.id), method: :delete, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400", form: { data: { turbo: true } }, data: { action: "planner-loading#start" } do %>
           remove_circle_outline
         <% end %>
       </li>

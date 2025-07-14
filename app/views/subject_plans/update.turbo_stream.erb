@@ -25,3 +25,5 @@
     <%= render 'subject_plans/semester_card/add_subject_form', semester:, not_planned_subjects: @not_planned_subjects %>
   <% end %>
 <% end %>
+
+<%= turbo_stream.remove "foreground-layer" %>
