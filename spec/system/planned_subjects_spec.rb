@@ -55,7 +55,7 @@ RSpec.describe "PlannedSubjects", type: :system do
       assert_subject_not_in_selector "T1"
     end
 
-    within("li", text: "T1") do
+    within_subject_row("T1") do
       click_on "remove_circle_outline"
     end
 
