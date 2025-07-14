@@ -2,17 +2,14 @@ import { Controller } from "@hotwired/stimulus"
 import * as WebAuthnJSON from "@github/webauthn-json/browser-ponyfill"
 
 export default class extends Controller {
-  static targets = ["passkeyPublicKey"]
+  static targets = ["hiddenPasskeyPublicKeyInput"]
 
   async create({ params: { publicKey } }) {
     try{
       const passkeyOptions = WebAuthnJSON.parseCreationOptionsFromJSON({ publicKey });
       const passkeyPublicKey = await WebAuthnJSON.create(passkeyOptions);
 
-      if (this.hasPasskeyPublicKeyTarget) {
-        const hiddenPasskeyInput = this.passkeyPublicKeyTarget;
-        hiddenPasskeyInput.value = JSON.stringify(passkeyPublicKey);
-      }
+      this.hiddenPasskeyPublicKeyInputTarget.value = JSON.stringify(passkeyPublicKey);
 
       this.element.submit();
 
