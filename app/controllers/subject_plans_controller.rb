@@ -31,13 +31,11 @@ class SubjectPlansController < ApplicationController
   def destroy
     subject_plan = current_user.subject_plans.find_by!(subject_id: params[:subject_id])
     @semesters_to_refresh = [subject_plan.semester]
-    subject = subject_plan.subject
     subject_plan.destroy!
 
     set_planned_and_not_planned_subjects
 
     @reload_not_planned_approved_subjects = true
-    @not_planned_approved_subjects_was_empty = @not_planned_approved_subjects == [subject]
 
     render :update
   end
