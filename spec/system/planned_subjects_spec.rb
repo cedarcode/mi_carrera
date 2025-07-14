@@ -20,12 +20,6 @@ RSpec.describe "PlannedSubjects", type: :system do
     sign_in user
   end
 
-  around do |example|
-    ENV['ENABLE_PLANNER'] = 'true'
-    example.run
-    ENV.delete('ENABLE_PLANNER')
-  end
-
   it "can add and remove subjects to planner" do
     visit subject_plans_path
 
