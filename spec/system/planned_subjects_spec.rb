@@ -55,6 +55,30 @@ RSpec.describe "PlannedSubjects", type: :system do
       assert_subject_not_in_selector "T1"
     end
 
+    within_subject_row("T1") do
+      click_on "remove_circle_outline"
+    end
+
+    expect(page).to have_text "Créditos planeados: 0"
+
+    within_semester_section("Primer semestre") do
+      expect(page).to have_text "Créditos planeados: 0"
+    end
+
+    within_not_planned_approved_subjects do
+      assert_approved_subject "T1"
+
+      move_subject_to_semester "T1", "Primer semestre"
+    end
+
+    expect(page).to have_text "Créditos planeados: 11"
+
+    within_semester_section("Primer semestre") do
+      assert_approved_subject "T1"
+      assert_planned_subject "T1"
+      expect(page).to have_text "Créditos planeados: 11"
+    end
+
     within_semester_section("Primer semestre") do
       within_add_subject_section do
         select_from_choices('GAL 1 - 1030')
