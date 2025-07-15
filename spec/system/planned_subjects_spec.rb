@@ -61,15 +61,22 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     expect(page).to have_text "Créditos planeados: 0"
 
+    within_semester_section("Primer semestre") do
+      expect(page).to have_text "Créditos planeados: 0"
+    end
+
     within_not_planned_approved_subjects do
       assert_approved_subject "T1"
 
       move_subject_to_semester "T1", "Primer semestre"
     end
 
+    expect(page).to have_text "Créditos planeados: 11"
+
     within_semester_section("Primer semestre") do
       assert_approved_subject "T1"
       assert_planned_subject "T1"
+      expect(page).to have_text "Créditos planeados: 11"
     end
 
     within_semester_section("Primer semestre") do
