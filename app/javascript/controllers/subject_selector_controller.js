@@ -3,6 +3,9 @@ import Choices from "choices.js";
 
 export default class extends Controller {
   static targets = ["select", "submitButton"];
+  static values = {
+    url: String,
+  };
 
   connect() {
     this.choices = new Choices(this.selectTarget, {
@@ -26,6 +29,13 @@ export default class extends Controller {
         ],
       },
     });
+
+    this.selectTarget.addEventListener('showDropdown', () => {
+      if (!this.selectTarget.dataset.optionsLoaded) {
+        this.fetchOptionsAndPopulate();
+        this.selectTarget.dataset.optionsLoaded = 'true';
+      }
+    });
   }
 
   onChange() {
@@ -37,5 +47,18 @@ export default class extends Controller {
     if (this.choices) {
       this.choices.destroy();
     }
+  }
+
+  fetchOptionsAndPopulate() {
+    fetch(this.urlValue)
+      .then(response => response.json())
+      .then(data => {
+        this.choices.setChoices(
+          data,
+          'value',
+          'label',
+          true // replaceChoices = true
+        );
+      });
   }
 }
