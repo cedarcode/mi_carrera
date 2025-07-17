@@ -16,6 +16,7 @@ export default class extends Controller {
       noResultsText: "No se encontraron materias",
       noChoicesText: "No hay materias disponibles",
       shouldSort: false,
+      choices: [{"label": "Cargando materias...", "value": "", "disabled": true}],
       classNames: {
         containerOuter: ["choices", "!m-0", "!h-10", "flex-grow-1"],
         containerInner: [
