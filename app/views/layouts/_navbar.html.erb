@@ -15,8 +15,6 @@
         <%= button_tag "cloud_download", type: "button", class: "cursor-pointer material-icons p-2", id: "butInstall" %>
       </span>
 
-      <%= yield :credits %>
-
       <div class="relative" data-controller='user-menu' data-action="click@document->user-menu#onClick">
         <%= button_tag type: "button", id: "user-menu", class: "flex cursor-pointer", data: { user_menu_target: 'trigger', action: 'click->user-menu#toggle:stop' } do %>
           <% if current_user %>

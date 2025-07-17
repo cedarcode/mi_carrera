@@ -10,8 +10,8 @@
     <% end %>
   <% end %>
 <% else %>
-  <%= turbo_stream.replace "credits" do %>
-    <%= render 'shared/credits_counter' %>
+  <%= turbo_stream.replace "credits-bar" do %>
+    <%= render 'shared/credits_bar' %>
   <% end %>
 
   <%= turbo_stream.replace "subjects" do %>
