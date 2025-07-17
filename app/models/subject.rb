@@ -16,6 +16,7 @@ class Subject < ApplicationRecord
       .or(where("lower(unaccent(short_name)) LIKE lower(unaccent(?))", "%#{term.strip}%"))
       .or(where("lower(code) LIKE lower(?)", "%#{term.strip}%"))
   }
+  scope :active, -> { where.not(category: 'inactive') }
 
   CATEGORIES = %i[
     first_semester

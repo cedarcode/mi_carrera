@@ -178,6 +178,15 @@ RSpec.describe Subject, type: :model do
     end
   end
 
+  describe '.active' do
+    let!(:inactive_subject) { create(:subject, category: 'inactive') }
+    let!(:active_subject) { create(:subject, category: 'optional') }
+
+    it 'returns only active subjects' do
+      expect(Subject.active).to contain_exactly(active_subject)
+    end
+  end
+
   describe '#ordered_by_category_and_name' do
     let(:s1) { create :subject, category: :first_semester, name: 'A' }
     let(:s2) { create :subject, category: :second_semester, name: 'B' }
