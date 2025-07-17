@@ -9,6 +9,7 @@ export default class extends Controller {
 
   connect() {
     Sortable.create(this.element, {
+      forceAutoScrollFallback: true,
       group: {
         name: 'shared',
         put: this.putValue
