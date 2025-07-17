@@ -9,6 +9,7 @@ export default class extends Controller {
       searchEnabled: true,
       searchPlaceholderValue: "Buscar materia...",
       searchFields: ["label"],
+      searchResultLimit: -1,
       placeholderValue: "Seleccionar materia para planificar...",
       itemSelectText: "",
       noResultsText: "No se encontraron materias",
