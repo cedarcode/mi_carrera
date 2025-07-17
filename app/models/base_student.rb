@@ -35,7 +35,7 @@ class BaseStudent
   def graduated? = total_credits >= 450 && groups_credits_met?
   def banner_viewed?(_) = raise NoMethodError
   def mark_banner_as_viewed!(_) = raise NoMethodError
-  def approved_subjects = Subject.approved_with(ids)
+  def approved_subjects = Subject.approved_for(ids)
 
   private
 

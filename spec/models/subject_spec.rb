@@ -197,13 +197,13 @@ RSpec.describe Subject, type: :model do
     end
   end
 
-  describe ".approved_with" do
+  describe ".approved_for" do
     context "when the subject doesn't have an exam" do
       it "returns it if the course is is in the param" do
         subject = create(:subject, name: "Subject 1")
 
-        expect(Subject.approved_with([subject.course.id])).to include(subject)
-        expect(Subject.approved_with([])).to be_empty
+        expect(Subject.approved_for([subject.course.id])).to include(subject)
+        expect(Subject.approved_for([])).to be_empty
       end
     end
 
@@ -211,9 +211,9 @@ RSpec.describe Subject, type: :model do
       it "returns it if the exam are in the param" do
         subject = create(:subject, :with_exam, name: "Subject 2")
 
-        expect(Subject.approved_with([subject.exam.id])).to include(subject)
-        expect(Subject.approved_with([subject.course.id])).to be_empty
-        expect(Subject.approved_with([])).to be_empty
+        expect(Subject.approved_for([subject.exam.id])).to include(subject)
+        expect(Subject.approved_for([subject.course.id])).to be_empty
+        expect(Subject.approved_for([])).to be_empty
       end
     end
   end
