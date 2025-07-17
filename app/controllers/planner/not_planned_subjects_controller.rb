@@ -29,10 +29,10 @@ module Planner
           current_degree
             .subjects
             .where.not(id: current_user.planned_subjects)
+            .where.not(id: current_student.approved_subjects)
             .ordered_by_category
             .ordered_by_short_or_full_name
         )
-        .reject { |subject| current_student.approved?(subject) }
     end
   end
 end
