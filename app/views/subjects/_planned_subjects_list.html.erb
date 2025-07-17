@@ -4,3 +4,5 @@
   <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
   <%= render 'semester_card', planned_subjects: planned_subjects, semester: semester %>
 <% end %>
+
+<%= render 'subject_plans/add_semester_form' %>
