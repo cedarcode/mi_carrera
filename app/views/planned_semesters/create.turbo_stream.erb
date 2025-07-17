@@ -1,11 +1,5 @@
 <%= turbo_stream.before "add-semester-form" do %>
-  <%= render 'subject_plans/semester_card', planned_subjects: [], not_planned_subjects: @not_planned_subjects, semester: @semester %>
-<% end %>
-
-<%= turbo_stream.after "add-semester-form" do %>
-  <script>
-    setTimeout(() => {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-    }, 100);
-  </script>
+  <div data-controller="add-semester-scroll">
+    <%= render 'subject_plans/semester_card', planned_subjects: [], not_planned_subjects: @not_planned_subjects, semester: @semester %>
+  </div>
 <% end %>
