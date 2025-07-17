@@ -36,6 +36,10 @@ Rails.application.routes.draw do
       end
     end
 
+    namespace :planner do
+      resources :not_planned_subjects, only: :index
+    end
+
     resource :user_onboardings, only: :update
 
     resources :current_optional_subjects, path: "materias_inco_semestre_actual", only: :index

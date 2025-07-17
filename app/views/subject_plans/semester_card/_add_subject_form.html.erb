@@ -3,16 +3,17 @@
   model: SubjectPlan.new,
   url: subject_plans_path,
   method: :post,
-  data: { turbo: true, controller: "subject-selector" },
+  data: {
+    turbo: true,
+    controller: "subject-selector",
+    "subject-selector-url-value": planner_not_planned_subjects_path,
+    action: "click->subject-selector#onClick"
+  },
   class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 border-t border-gray-100'
 ) do |form| %>
   <%= form.select(
     :subject_id,
-    grouped_options_for_select(
-      not_planned_subjects.group_by(&:category).compact_blank.map do |category, subjects|
-        [formatted_category(category), subjects.map { |subject| [display_planned_subject_name_and_code(subject), subject.id] }]
-      end
-    ),
+    [],
     {},
     { data: { subject_selector_target: "select", action: "subject-selector#onChange" }, class: "invisible absolute" }
   ) %>
