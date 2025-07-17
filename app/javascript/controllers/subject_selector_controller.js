@@ -29,13 +29,6 @@ export default class extends Controller {
         ],
       },
     });
-
-    this.selectTarget.addEventListener('showDropdown', () => {
-      if (!this.selectTarget.dataset.optionsLoaded) {
-        this.fetchOptionsAndPopulate();
-        this.selectTarget.dataset.optionsLoaded = 'true';
-      }
-    });
   }
 
   onChange() {
@@ -46,6 +39,13 @@ export default class extends Controller {
   disconnect() {
     if (this.choices) {
       this.choices.destroy();
+    }
+  }
+
+  onClick() {
+    if (!this.selectTarget.dataset.optionsLoaded) {
+      this.fetchOptionsAndPopulate();
+      this.selectTarget.dataset.optionsLoaded = 'true';
     }
   }
 
