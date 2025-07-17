@@ -52,6 +52,7 @@ class SubjectPlansController < ApplicationController
                                      .where.not(id: @planned_subjects)
                                      .ordered_by_category
                                      .ordered_by_short_or_full_name
+                                     .to_a
   end
 
   def subject_plan_params
