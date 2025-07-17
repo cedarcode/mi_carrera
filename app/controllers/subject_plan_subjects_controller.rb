@@ -4,7 +4,7 @@ class SubjectPlanSubjectsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    json = not_planned_subjects.group_by(&:category).map do |category, subjects|
+    json = not_planned_and_not_approved_subjects.group_by(&:category).map do |category, subjects|
       {
         label: formatted_category(category),
         id: category,
@@ -22,7 +22,7 @@ class SubjectPlanSubjectsController < ApplicationController
 
   private
 
-  def not_planned_subjects
+  def not_planned_and_not_approved_subjects
     TreePreloader
       .preload(
         current_degree
