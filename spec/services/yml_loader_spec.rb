@@ -31,21 +31,18 @@ RSpec.describe YmlLoader do
         # Degrees
         expect { described_class.load }.to change(Degree, :count).by(2)
         degree = Degree.find(degree_id)
-        expect(degree).to be_present
         expect(degree.current_plan).to eq('2025')
         expect(degree.include_inco_subjects).to be true
 
         # Subject Groups
         expect(degree.subject_groups.count).to eq(1)
-        subject_group = degree.subject_groups.find_by(code: '2003')
-        expect(subject_group).to be_present
+        subject_group = degree.subject_groups.find_by!(code: '2003')
         expect(subject_group.name).to eq('Test Group')
         expect(subject_group.credits_needed).to eq(70)
 
         # Subjects
         expect(degree.subjects.count).to eq(2)
-        subject1 = degree.subjects.find_by(code: '101')
-        expect(subject1).to be_present
+        subject1 = degree.subjects.find_by!(code: '101')
         expect(subject1.name).to eq('Test Subject I')
         expect(subject1.credits).to eq(10)
         expect(subject1.course).to be_present
@@ -58,8 +55,7 @@ RSpec.describe YmlLoader do
         expect(subject1.category).to eq('third_semester')
         expect(subject1.current_optional_subject).to be false
 
-        subject2 = degree.subjects.find_by(code: '102')
-        expect(subject2).to be_present
+        subject2 = degree.subjects.find_by!(code: '102')
         expect(subject2.name).to eq('Test Subject II')
         expect(subject2.credits).to eq(12)
         expect(subject2.course).to be_present
