@@ -39,7 +39,7 @@ Rails.application.routes.draw do
     end
 
     namespace :planner do
-      resources :subjects, only: :index
+      resources :not_planned_subjects, only: :index
     end
 
     resource :user_onboardings, only: :update

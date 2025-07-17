@@ -1,5 +1,5 @@
 module Planner
-  class SubjectsController < ApplicationController
+  class NotPlannedSubjectsController < ApplicationController
     include SubjectsHelper
 
     before_action :authenticate_user!
