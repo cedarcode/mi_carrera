@@ -21,11 +21,9 @@ class Subject < ApplicationRecord
       with_exam.where(exam: { id: approved_approvable_ids })
     )
   }
+  scope :active, -> { where.not(category: 'inactive') }
   scope :active_or_approved, ->(approved_ids) {
-    active = where.not(category: 'inactive')
-    approved = approved_for(approved_ids)
-
-    where(id: active).or(where(id: approved))
+    approved_for(approved_ids).or(active)
   }
 
   CATEGORIES = %i[

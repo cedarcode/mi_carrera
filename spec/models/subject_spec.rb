@@ -199,6 +199,15 @@ RSpec.describe Subject, type: :model do
     end
   end
 
+  describe '.active' do
+    let!(:inactive_subject) { create(:subject, category: 'inactive') }
+    let!(:active_subject) { create(:subject, category: 'optional') }
+
+    it 'returns only active subjects' do
+      expect(Subject.active).to contain_exactly(active_subject)
+    end
+  end
+
   describe ".active_or_approved" do
     context "when the subject doesn't have an exam" do
       it "returns it if the course is is in the param or if the subject is active" do
