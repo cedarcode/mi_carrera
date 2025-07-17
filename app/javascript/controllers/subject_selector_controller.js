@@ -8,6 +8,7 @@ export default class extends Controller {
     this.choices = new Choices(this.selectTarget, {
       searchEnabled: true,
       searchPlaceholderValue: "Buscar materia...",
+      searchFields: ["label"],
       placeholderValue: "Seleccionar materia para planificar...",
       itemSelectText: "",
       noResultsText: "No se encontraron materias",
