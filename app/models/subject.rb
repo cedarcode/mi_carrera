@@ -45,6 +45,10 @@ class Subject < ApplicationRecord
       with_exam.where(exam: { id: approved_approvable_ids })
     )
   }
+  scope :active, -> { where.not(category: 'inactive') }
+  scope :active_or_approved, ->(approved_ids) {
+    approved_for(approved_ids).or(active)
+  }
 
   def self.approved_credits(approved_approvable_ids)
     approved_for(approved_approvable_ids).sum(:credits)
