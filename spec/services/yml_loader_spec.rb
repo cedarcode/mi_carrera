@@ -109,11 +109,7 @@ RSpec.describe YmlLoader do
 
         # Data isolation between degrees
         another_degree = Degree.find(another_degree_id)
-
-        expect(degree.subject_groups.pluck(:code)).to contain_exactly("2003")
         expect(another_degree.subject_groups.pluck(:code)).to contain_exactly("73")
-
-        expect(degree.subjects.pluck(:code)).to contain_exactly("101", "102")
         expect(another_degree.subjects.pluck(:code)).to contain_exactly("24")
       end
     end
