@@ -6,10 +6,10 @@ FactoryBot.define do
     category { 'first_semester' }
     group
     degree_id { "computacion" }
-    course { association :course, subject: instance }
+    course { association :course, subject: instance, strategy: :build }
 
     trait :with_exam do
-      exam { association :exam, subject: instance }
+      exam { association :exam, subject: instance, strategy: :build }
     end
 
     trait :inactive do
