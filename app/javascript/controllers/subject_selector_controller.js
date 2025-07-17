@@ -5,6 +5,7 @@ export default class extends Controller {
   static targets = ["select", "submitButton"];
   static values = {
     url: String,
+    optionsLoaded: { type: Boolean, default: false }
   };
 
   connect() {
@@ -44,13 +45,13 @@ export default class extends Controller {
   }
 
   onClick() {
-    if (!this.selectTarget.dataset.optionsLoaded) {
-      this.fetchOptionsAndPopulate();
-      this.selectTarget.dataset.optionsLoaded = 'true';
+    if (!this.optionsLoadedValue) {
+      this.fetchAndPopulateOptions();
+      this.optionsLoadedValue = true;
     }
   }
 
-  fetchOptionsAndPopulate() {
+  fetchAndPopulateOptions() {
     fetch(this.urlValue)
       .then(response => response.json())
       .then(data => {
