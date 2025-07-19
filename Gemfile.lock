@@ -108,6 +108,7 @@ GEM
       xpath (~> 3.2)
     cbor (0.5.9.8)
     childprocess (5.0.0)
+    coderay (1.1.3)
     concurrent-ruby (1.3.5)
     connection_pool (2.5.3)
     cose (1.3.1)
@@ -276,6 +277,12 @@ GEM
       activesupport (>= 7.0.0)
       rack
       railties (>= 7.0.0)
+    pry (0.15.2)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.11.0)
+      byebug (~> 12.0)
+      pry (>= 0.13, < 0.16)
     psych (5.2.6)
       date
       stringio
@@ -473,7 +480,6 @@ DEPENDENCIES
   appsignal (~> 4.5)
   bootsnap (~> 1.18)
   brakeman (~> 7.0)
-  byebug (~> 12.0)
   capybara (~> 3.40)
   devise (~> 4.9)
   factory_bot_rails (~> 6.5)
@@ -487,6 +493,7 @@ DEPENDENCIES
   pdf-reader
   pg (~> 1.5)
   propshaft (~> 1.1)
+  pry-byebug
   puma (~> 6.6)
   rails (~> 8.0.2)
   rollbar (~> 3.6)
