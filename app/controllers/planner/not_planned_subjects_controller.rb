@@ -5,7 +5,7 @@ module Planner
     before_action :authenticate_user!
 
     def index
-      json = not_planned_and_not_approved_subjects.group_by(&:category).map do |category, subjects|
+      json = not_planned_subjects.group_by(&:category).map do |category, subjects|
         {
           label: formatted_category(category),
           id: category,
@@ -23,13 +23,13 @@ module Planner
 
     private
 
-    def not_planned_and_not_approved_subjects
+    def not_planned_subjects
       TreePreloader
         .preload(
           current_degree
             .subjects
             .where.not(id: current_user.planned_subjects)
-            .where.not(id: current_student.approved_subjects)
+            .active_or_approved(current_student.approved_approvable_ids)
             .ordered_by_category
             .ordered_by_short_or_full_name
         )
