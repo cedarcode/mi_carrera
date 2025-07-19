@@ -29,7 +29,7 @@ end
 
 group :development, :test do
   gem "brakeman", "~> 7.0"
-  gem 'byebug', '~> 12.0', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
   gem 'rspec-rails', '~> 8.0'
 end
 
