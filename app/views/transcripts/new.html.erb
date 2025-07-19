@@ -6,7 +6,8 @@
     <ol class="list-decimal list-inside">
       <li>Entrar a <a href="https://bedelias.udelar.edu.uy/" target="_blank" class="text-blue-600 hover:text-blue-800">Bedelias</a> e iniciar sesión</li>
       <li>Entrar a "Estudiante" -> "Escolaridad" -> "Solicitar Escolaridad"</li>
-      <li>Seleccionar tu carrera y "No" en "Resultados Intermedios"</li>
+      <li>Seleccionar tu carrera</li>
+      <li><strong class="bg-yellow-100">Seleccionar "No" en "Resultados Intermedios"</strong></li>
     </ol>
   </div>
   <%= form_with url: transcripts_path, method: :post, data: { turbo: true }, html: { multipart: true }, class: 'flex flex-col' do |form| %>
