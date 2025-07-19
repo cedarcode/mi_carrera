@@ -5,7 +5,7 @@
 
   <ul class="min-h-[65px]" data-semester="<%= semester %>" data-controller="planner-draggable">
     <% planned_subjects.each do |subject| %>
-      <li class="relative flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-100" data-planner-draggable-url="<%= subject_plan_path(subject_id: subject.id) %>" data-planner-draggable-method="put">
+      <li class="relative flex items-center gap-3 px-4 py-3 hover:bg-gray-100 bg-white" data-planner-draggable-url="<%= subject_plan_path(subject_id: subject.id) %>" data-planner-draggable-method="put">
         <span class="material-icons text-gray-400 cursor-pointer" data-planner-draggable-handle> drag_handle </span>
 
         <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900" %>
