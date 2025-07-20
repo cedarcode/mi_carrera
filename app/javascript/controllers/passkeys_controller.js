@@ -29,14 +29,7 @@ export default class extends Controller {
       const passkeyOptions = WebAuthnJSON.parseRequestOptionsFromJSON({ publicKey });
       const passkeyPublicKey = await WebAuthnJSON.get(passkeyOptions);
 
-      let hiddenPasskeyInput = this.element.querySelector("input[name='passkey_public_key']");
-      if (!hiddenPasskeyInput) {
-        hiddenPasskeyInput = document.createElement("input");
-        hiddenPasskeyInput.type = "hidden";
-        hiddenPasskeyInput.name = "passkey_public_key";
-        this.element.appendChild(hiddenPasskeyInput);
-      }
-      hiddenPasskeyInput.value = JSON.stringify(passkeyPublicKey);
+      this.hiddenPasskeyPublicKeyInputTarget.value = JSON.stringify(passkeyPublicKey);
 
       this.element.submit();
 
