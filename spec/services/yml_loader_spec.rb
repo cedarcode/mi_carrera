@@ -120,10 +120,23 @@ RSpec.describe YmlLoader do
       context 'when data already exists' do
         let!(:existing_degree) { create(:degree, id: degree_id, current_plan: '1830', include_inco_subjects: false) }
         let!(:existing_group) do
-          create(:subject_group, code: '2003', name: 'Existing Group', credits_needed: 50, degree_id:)
+          create(
+            :subject_group,
+            code: '2003',
+            name: 'Existing Group',
+            credits_needed: 50,
+            degree_id:
+          )
         end
         let!(:existing_subject) do
-          create(:subject, code: '101', name: 'Existing Subject', credits: 100, degree_id:, current_optional_subject: true)
+          create(
+            :subject,
+            code: '101',
+            name: 'Existing Subject',
+            credits: 100,
+            degree_id:,
+            current_optional_subject: true
+          )
         end
 
         it 'updates existing data' do
