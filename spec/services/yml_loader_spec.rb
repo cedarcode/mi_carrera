@@ -27,7 +27,7 @@ RSpec.describe YmlLoader do
     context 'when yamls are correct' do
       let(:base_dir) { Rails.root.join("spec/support/mock_yamls/success") }
 
-      it 'loads' do
+      it 'loads new data' do
         # Degrees
         expect { described_class.load }.to change(Degree, :count).by(2)
         degree = Degree.find(degree_id)
@@ -111,6 +111,34 @@ RSpec.describe YmlLoader do
         another_degree = Degree.find(another_degree_id)
         expect(another_degree.subject_groups.pluck(:code)).to contain_exactly("73")
         expect(another_degree.subjects.pluck(:code)).to contain_exactly("24")
+      end
+
+      context 'when data already exists' do
+        let!(:existing_degree) { create(:degree, id: degree_id, current_plan: '1830', include_inco_subjects: false) }
+        let!(:existing_group) do
+          create(:subject_group, code: '2003', name: 'Existing Group', credits_needed: 50, degree_id:)
+        end
+        let!(:existing_subject) do
+          create(:subject, code: '101', name: 'Existing Subject', credits: 100, degree_id:)
+        end
+
+        it 'updates existing data' do
+          described_class.load
+
+          existing_degree.reload
+          expect(existing_degree.current_plan).to eq('2025')
+          expect(existing_degree.include_inco_subjects).to eq(true)
+
+          existing_group.reload
+          expect(existing_group.name).to eq('Test Group')
+          expect(existing_group.credits_needed).to eq(70)
+
+          existing_subject.reload
+          expect(existing_subject.name).to eq('Test Subject I')
+          expect(existing_subject.credits).to eq(10)
+          expect(existing_subject.exam).to be_present
+          expect(existing_subject.group).to eq(existing_group)
+        end
       end
     end
 
