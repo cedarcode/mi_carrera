@@ -123,7 +123,7 @@ RSpec.describe YmlLoader do
           create(:subject_group, code: '2003', name: 'Existing Group', credits_needed: 50, degree_id:)
         end
         let!(:existing_subject) do
-          create(:subject, code: '101', name: 'Existing Subject', credits: 100, degree_id:)
+          create(:subject, code: '101', name: 'Existing Subject', credits: 100, degree_id:, current_optional_subject: true)
         end
 
         it 'updates existing data' do
@@ -142,6 +142,7 @@ RSpec.describe YmlLoader do
           expect(existing_subject.credits).to eq(10)
           expect(existing_subject.exam).to be_present
           expect(existing_subject.group).to eq(existing_group)
+          expect(existing_subject.current_optional_subject).to be false
         end
       end
     end
