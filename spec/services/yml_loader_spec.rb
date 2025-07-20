@@ -41,7 +41,7 @@ RSpec.describe YmlLoader do
         expect(subject_group.credits_needed).to eq(70)
 
         # Subjects
-        expect(degree.subjects.count).to eq(2)
+        expect(degree.subjects.count).to eq(3)
         subject1 = degree.subjects.find_by!(code: '101')
         expect(subject1.name).to eq('Cálculo I')
         expect(subject1.credits).to eq(10)
@@ -67,6 +67,10 @@ RSpec.describe YmlLoader do
         expect(subject2.short_name).to be_nil
         expect(subject2.category).to eq('optional')
         expect(subject2.current_optional_subject).to be true
+
+        subject3 = degree.subjects.find_by!(code: '25')
+        expect(subject3.name).to eq('Subject With No Group')
+        expect(subject3.group).to be_nil
 
         # Prerequisites
         expect(subject1.course.prerequisite_tree).to be_a(LogicalPrerequisite)
