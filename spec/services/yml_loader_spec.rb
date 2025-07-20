@@ -74,7 +74,7 @@ RSpec.describe YmlLoader do
 
         # Prerequisites
         expect(subject1.course.prerequisite_tree).to be_a(LogicalPrerequisite)
-        expect(subject1.course.prerequisite_tree.logical_operator).to eq("and")
+        expect(subject1.course.prerequisite_tree.logical_operator).to eq("or")
         expect(subject1.course.prerequisite_tree.amount_of_subjects_needed).to be_nil
         expect(subject1.course.prerequisite_tree.operands_prerequisites.length).to eq(1)
         operand_prereq = subject1.course.prerequisite_tree.operands_prerequisites.first
@@ -93,7 +93,7 @@ RSpec.describe YmlLoader do
         expect(subject2.course.prerequisite_tree).to be_a(LogicalPrerequisite)
         expect(subject2.course.prerequisite_tree.logical_operator).to eq("and")
         expect(subject2.course.prerequisite_tree.amount_of_subjects_needed).to be_nil
-        expect(subject2.course.prerequisite_tree.operands_prerequisites.length).to eq(7)
+        expect(subject2.course.prerequisite_tree.operands_prerequisites.length).to eq(9)
         operands = subject2.course.prerequisite_tree.operands_prerequisites
         expect(operands[0]).to be_a(SubjectPrerequisite)
         expect(operands[0].approvable_needed).to eq(subject1.exam)
@@ -110,6 +110,17 @@ RSpec.describe YmlLoader do
         expect(operands[6]).to be_a(CreditsPrerequisite)
         expect(operands[6].credits_needed).to eq(35)
         expect(operands[6].subject_group).to eq(subject_group)
+        expect(operands[7]).to be_a(LogicalPrerequisite)
+        expect(operands[7].logical_operator).to eq("at_least")
+        expect(operands[7].amount_of_subjects_needed).to eq(1)
+        expect(operands[7].operands_prerequisites.length).to eq(1)
+        expect(operands[7].operands_prerequisites.first).to be_a(SubjectPrerequisite)
+        expect(operands[7].operands_prerequisites.first.approvable_needed).to eq(subject1.exam)
+        expect(operands[8]).to be_a(LogicalPrerequisite)
+        expect(operands[8].logical_operator).to eq("not")
+        expect(operands[8].operands_prerequisites.length).to eq(1)
+        expect(operands[8].operands_prerequisites.first).to be_a(EnrollmentPrerequisite)
+        expect(operands[8].operands_prerequisites.first.approvable_needed).to eq(subject3.course)
 
         # Data isolation between degrees
         another_degree = Degree.find(another_degree_id)

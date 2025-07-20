@@ -1,6 +1,6 @@
 ---
 - type: logical
-  logical_operator: and
+  logical_operator: or
   operands:
   - type: credits
     credits: 60
@@ -45,5 +45,19 @@
   - type: credits
     credits: 35
     group: '2003'
+  - type: logical
+    logical_operator: at_least
+    amount_of_subjects_needed: 1
+    operands:
+      - type: subject
+        subject_needed_code: '101'
+        subject_needed_name: CALCULO 1
+        needs: exam
+  - type: logical
+    logical_operator: not
+    operands:
+      - type: subject
+        needs: course_enrollment
+        subject_needed_code: '25'
   subject_code: '102'
   is_exam: false
