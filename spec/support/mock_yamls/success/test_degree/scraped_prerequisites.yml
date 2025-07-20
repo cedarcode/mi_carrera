@@ -59,5 +59,8 @@
       - type: subject
         needs: course_enrollment
         subject_needed_code: '25'
+  - type: subject
+    needs: all
+    subject_needed_code: '25'
   subject_code: '102'
   is_exam: false
