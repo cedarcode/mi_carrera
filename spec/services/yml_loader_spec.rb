@@ -127,7 +127,14 @@ RSpec.describe YmlLoader do
         # Data isolation between degrees
         another_degree = Degree.find(another_degree_id)
         expect(another_degree.subject_groups.pluck(:code)).to contain_exactly("73")
-        expect(another_degree.subjects.pluck(:code)).to contain_exactly("24")
+        expect(another_degree.subjects.pluck(:code)).to contain_exactly("25")
+
+        subject4 = another_degree.subjects.find_by!(code: '25')
+        expect(subject4.name).to eq('Another Test Subject')
+        expect(subject4.group.code).to eq('73')
+        expect(subject4.course).to be_present
+        expect(subject4.exam).to be_present
+        expect(subject4.credits).to eq(4)
       end
 
       context 'when data already exists' do
