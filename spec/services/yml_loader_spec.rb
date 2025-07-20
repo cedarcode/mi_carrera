@@ -158,6 +158,15 @@ RSpec.describe YmlLoader do
             current_optional_subject: true
           )
         end
+        let!(:subject_with_exam) do
+          create(
+            :subject,
+            :with_exam,
+            code: '25',
+            name: 'Existing Subject with Exam',
+            degree_id:,
+          )
+        end
 
         it 'updates existing data' do
           described_class.load
@@ -176,6 +185,8 @@ RSpec.describe YmlLoader do
           expect(existing_subject.exam).to be_present
           expect(existing_subject.group).to eq(existing_group)
           expect(existing_subject.current_optional_subject).to be false
+
+          expect(subject_with_exam.reload.exam).to be_present
         end
       end
     end
