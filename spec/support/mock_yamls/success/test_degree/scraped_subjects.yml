@@ -1,13 +1,13 @@
 ---
 '101':
   code: '101'
-  name: TEST SUBJECT I
+  name: CALCULO I
   credits: 10
   has_exam: true
   subject_group: '2003'
 '102':
   code: '102'
-  name: TEST SUBJECT II
+  name: CALCULO II
   credits: 12
   has_exam: false
   subject_group: '2003'

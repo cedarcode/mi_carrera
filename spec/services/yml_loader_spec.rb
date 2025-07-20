@@ -37,13 +37,13 @@ RSpec.describe YmlLoader do
         # Subject Groups
         expect(degree.subject_groups.count).to eq(1)
         subject_group = degree.subject_groups.find_by!(code: '2003')
-        expect(subject_group.name).to eq('Test Group')
+        expect(subject_group.name).to eq('Matemática')
         expect(subject_group.credits_needed).to eq(70)
 
         # Subjects
         expect(degree.subjects.count).to eq(2)
         subject1 = degree.subjects.find_by!(code: '101')
-        expect(subject1.name).to eq('Test Subject I')
+        expect(subject1.name).to eq('Cálculo I')
         expect(subject1.credits).to eq(10)
         expect(subject1.course).to be_present
         expect(subject1.exam).to be_present
@@ -56,7 +56,7 @@ RSpec.describe YmlLoader do
         expect(subject1.current_optional_subject).to be false
 
         subject2 = degree.subjects.find_by!(code: '102')
-        expect(subject2.name).to eq('Test Subject II')
+        expect(subject2.name).to eq('Cálculo II')
         expect(subject2.credits).to eq(12)
         expect(subject2.course).to be_present
         expect(subject2.exam).to be_nil
@@ -130,11 +130,11 @@ RSpec.describe YmlLoader do
           expect(existing_degree.include_inco_subjects).to eq(true)
 
           existing_group.reload
-          expect(existing_group.name).to eq('Test Group')
+          expect(existing_group.name).to eq('Matemática')
           expect(existing_group.credits_needed).to eq(70)
 
           existing_subject.reload
-          expect(existing_subject.name).to eq('Test Subject I')
+          expect(existing_subject.name).to eq('Cálculo I')
           expect(existing_subject.credits).to eq(10)
           expect(existing_subject.exam).to be_present
           expect(existing_subject.group).to eq(existing_group)

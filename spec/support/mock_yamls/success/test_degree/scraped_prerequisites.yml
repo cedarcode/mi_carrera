@@ -12,7 +12,7 @@
   - type: subject
     needs: course
     subject_needed_code: '101'
-    subject_needed_name: TEST SUBJECT I
+    subject_needed_name: CALCULO I
   subject_code: '101'
   is_exam: true
 - type: logical
@@ -21,27 +21,27 @@
   - type: subject
     needs: exam
     subject_needed_code: '101'
-    subject_needed_name: TEST SUBJECT I
+    subject_needed_name: CALCULO I
   - type: subject
     needs: all
     subject_needed_code: '101'
-    subject_needed_name: TEST SUBJECT I
+    subject_needed_name: CALCULO I
   - type: subject
     needs: course_enrollment
     subject_needed_code: '101'
-    subject_needed_name: TEST SUBJECT I
+    subject_needed_name: CALCULO I
   - type: subject
     needs: exam_enrollment
     subject_needed_code: '101'
-    subject_needed_name: TEST SUBJECT I
+    subject_needed_name: CALCULO I
   - type: subject
     needs: course_activity
     subject_needed_code: '101'
-    subject_needed_name: TEST SUBJECT I
+    subject_needed_name: CALCULO I
   - type: subject
     needs: exam_activity
     subject_needed_code: '101'
-    subject_needed_name: TEST SUBJECT I
+    subject_needed_name: CALCULO I
   - type: credits
     credits: 35
     group: '2003'
