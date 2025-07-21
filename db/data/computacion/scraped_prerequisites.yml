@@ -9591,6 +9591,13 @@
   - type: logical
     logical_operator: not
     operands:
+    - type: subject
+      needs: exam
+      subject_needed_code: '1454'
+      subject_needed_name: ASPECTOS BASICOS DE REDES DE COMPUT
+  - type: logical
+    logical_operator: not
+    operands:
     - type: logical
       logical_operator: or
       operands:
@@ -9615,45 +9622,31 @@
         subject_needed_name: INT. A LAS REDES DE COMPUTADORES
         needs: exam
   - type: logical
-    logical_operator: not
-    operands:
-    - type: subject
-      needs: exam
-      subject_needed_code: '1454'
-      subject_needed_name: ASPECTOS BASICOS DE REDES DE COMPUT
-  - type: logical
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: CP29
-      subject_needed_name: PROGRAMACION III
+      subject_needed_code: CP31
+      subject_needed_name: SISTEMAS OPERATIVOS
       needs: exam
     - type: subject
-      subject_needed_code: '1323'
-      subject_needed_name: PROGRAMACION 3
+      subject_needed_code: C350
+      subject_needed_name: SISTEMAS OPERATIVOS
       needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
     - type: subject
-      subject_needed_code: '1443'
-      subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+      subject_needed_code: '1511'
+      subject_needed_name: SISTEMAS OPERATIVOS
       needs: course
     - type: subject
-      subject_needed_code: '1424'
-      subject_needed_name: ARQUITECTURA DE COMPUTADORES 1
+      subject_needed_code: '1518'
+      subject_needed_name: SISTEMAS OPERATIVOS
       needs: course
     - type: subject
-      subject_needed_code: CP28
-      subject_needed_name: ARQUITECTURA DE SISTEMAS
-      needs: exam
+      subject_needed_code: '1532'
+      subject_needed_name: SISTEMAS OPERATIVOS
+      needs: course
     - type: subject
-      subject_needed_code: 1443P
-      subject_needed_name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1403'
-      subject_needed_name: INT. A LA ARQUITECTURA DE COMPUTADORES
+      subject_needed_code: '1537'
+      subject_needed_name: SISTEMAS OPERATIVOS
       needs: course
   - type: logical
     logical_operator: or
@@ -9698,29 +9691,44 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: CP31
-      subject_needed_name: SISTEMAS OPERATIVOS
+      subject_needed_code: '1443'
+      subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+      needs: course
+    - type: subject
+      subject_needed_code: '1466'
+      subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+      needs: course
+    - type: subject
+      subject_needed_code: '1466'
+      subject_needed_name: ARQUITECTURA DE COMPUTADORAS
       needs: exam
     - type: subject
-      subject_needed_code: C350
-      subject_needed_name: SISTEMAS OPERATIVOS
+      subject_needed_code: '1424'
+      subject_needed_name: ARQUITECTURA DE COMPUTADORES 1
+      needs: course
+    - type: subject
+      subject_needed_code: CP28
+      subject_needed_name: ARQUITECTURA DE SISTEMAS
       needs: exam
     - type: subject
-      subject_needed_code: '1511'
-      subject_needed_name: SISTEMAS OPERATIVOS
-      needs: course
+      subject_needed_code: 1443P
+      subject_needed_name: CREDITOS NO ACUM. CON ARQUITECTURA DE COMPUTADORAS
+      needs: exam
     - type: subject
-      subject_needed_code: '1518'
-      subject_needed_name: SISTEMAS OPERATIVOS
+      subject_needed_code: '1403'
+      subject_needed_name: INT. A LA ARQUITECTURA DE COMPUTADORES
       needs: course
+  - type: logical
+    logical_operator: or
+    operands:
     - type: subject
-      subject_needed_code: '1532'
-      subject_needed_name: SISTEMAS OPERATIVOS
-      needs: course
+      subject_needed_code: CP29
+      subject_needed_name: PROGRAMACION III
+      needs: exam
     - type: subject
-      subject_needed_code: '1537'
-      subject_needed_name: SISTEMAS OPERATIVOS
-      needs: course
+      subject_needed_code: '1323'
+      subject_needed_name: PROGRAMACION 3
+      needs: exam
   subject_code: '1446'
   is_exam: false
 - type: logical

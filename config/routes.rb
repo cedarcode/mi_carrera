@@ -17,9 +17,7 @@ Rails.application.routes.draw do
     }
 
     scope path: "usuarios", module: "users", as: "user" do
-      resources :passkeys, only: [:index, :create, :destroy] do
-        post :callback, on: :collection
-      end
+      resources :passkeys, only: [:index, :create, :destroy]
     end
 
     root to: "subjects#index"
@@ -36,6 +34,10 @@ Rails.application.routes.draw do
       collection do
         get :all, path: "todas"
       end
+    end
+
+    namespace :planner do
+      resources :not_planned_subjects, only: :index
     end
 
     resource :user_onboardings, only: :update

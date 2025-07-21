@@ -5,11 +5,11 @@ FactoryBot.define do
     credits { 5 }
     category { 'first_semester' }
     group
-    degree
-    course { association :course, subject: instance }
+    degree_id { "computacion" }
+    course { association :course, subject: instance, strategy: :build }
 
     trait :with_exam do
-      exam { association :exam, subject: instance }
+      exam { association :exam, subject: instance, strategy: :build }
     end
 
     trait :inactive do

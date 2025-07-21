@@ -3,22 +3,16 @@ import Sortable from 'sortablejs';
 import { FetchRequest } from '@rails/request.js';
 
 export default class extends Controller {
-  static targets = ['semesterSubjectsList', 'notPlannedApprovedSubjectsList'];
+  static values = {
+    put: { type: Boolean, default: true }
+  };
 
   connect() {
-    this.semesterSubjectsListTargets.forEach((list) => {
-      Sortable.create(list, {
-        group: 'shared',
-        sort: false,
-        onEnd: this.onEnd.bind(this),
-        handle: "[data-planner-draggable-handle]",
-      });
-    });
-
-    this.hasNotPlannedApprovedSubjectsListTarget && Sortable.create(this.notPlannedApprovedSubjectsListTarget, {
+    Sortable.create(this.element, {
+      forceAutoScrollFallback: true,
       group: {
         name: 'shared',
-        put: false
+        put: this.putValue
       },
       sort: false,
       onEnd: this.onEnd.bind(this),
@@ -27,6 +21,8 @@ export default class extends Controller {
   }
 
   async onEnd(event) {
+    if (event.from === event.to) { return; }
+
     const url = event.item.dataset.plannerDraggableUrl;
     const method = event.item.dataset.plannerDraggableMethod;
     const newSemester = event.to.dataset.semester;

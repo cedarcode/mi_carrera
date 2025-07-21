@@ -14,7 +14,7 @@ gem "omniauth-google-oauth2", '~> 1.2'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pdf-reader'
 gem 'pg', '~> 1.5'
-gem 'propshaft', '~> 1.1'
+gem 'propshaft', '~> 1.2'
 gem 'puma', '~> 6.6'
 gem 'rollbar', '~> 3.6'
 gem 'stimulus-rails', '~> 1.3'
@@ -28,16 +28,16 @@ group :development, :deploy do
 end
 
 group :development, :test do
-  gem "brakeman", "~> 7.0"
-  gem 'byebug', '~> 12.0', platforms: [:mri, :mingw, :x64_mingw]
+  gem "brakeman", "~> 7.1"
+  gem 'pry-byebug'
   gem 'rspec-rails', '~> 8.0'
 end
 
 group :development do
-  gem "annotaterb", "~> 4.16"
+  gem "annotaterb", "~> 4.17"
   gem "letter_opener", "~> 1.10"
   gem "lookbook", "~> 2.3"
-  gem 'rubocop', '~> 1.77'
+  gem 'rubocop', '~> 1.78'
   gem 'rubocop-performance', '~> 1.25', require: false
   gem 'rubocop-rails', '~> 2.32', require: false
   gem 'web-console', '~> 4.2'

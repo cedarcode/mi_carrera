@@ -20,12 +20,6 @@ RSpec.describe "PlannedSubjects", type: :system do
     sign_in user
   end
 
-  around do |example|
-    ENV['ENABLE_PLANNER'] = 'true'
-    example.run
-    ENV.delete('ENABLE_PLANNER')
-  end
-
   it "can add and remove subjects to planner" do
     visit subject_plans_path
 
@@ -61,9 +55,33 @@ RSpec.describe "PlannedSubjects", type: :system do
       assert_subject_not_in_selector "T1"
     end
 
+    within_subject_row("T1") do
+      click_on "remove_circle_outline"
+    end
+
+    expect(page).to have_text "Créditos planeados: 0"
+
+    within_semester_section("Primer semestre") do
+      expect(page).to have_text "Créditos planeados: 0"
+    end
+
+    within_not_planned_approved_subjects do
+      assert_approved_subject "T1"
+
+      move_subject_to_semester "T1", "Primer semestre"
+    end
+
+    expect(page).to have_text "Créditos planeados: 11"
+
+    within_semester_section("Primer semestre") do
+      assert_approved_subject "T1"
+      assert_planned_subject "T1"
+      expect(page).to have_text "Créditos planeados: 11"
+    end
+
     within_semester_section("Primer semestre") do
       within_add_subject_section do
-        select_from_choices('GAL 1 - 1030')
+        select_from_choices('1030 - GAL 1')
         find("button[type='submit']").click
       end
 
@@ -80,12 +98,12 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Créditos planeados: 20"
 
     within_each_semester_section do
-      assert_subject_not_in_selector "GAL 1 - 1030"
+      assert_subject_not_in_selector "1030 - GAL 1"
     end
 
     within_semester_section("Segundo semestre") do
       within_add_subject_section do
-        select_from_choices('GAL 2 - 1031')
+        select_from_choices('1031 - GAL 2')
         find("button[type='submit']").click
       end
 
@@ -102,7 +120,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Créditos planeados: 30"
 
     within_each_semester_section do
-      assert_subject_not_in_selector "GAL 2 - 1031"
+      assert_subject_not_in_selector "1031 - GAL 2"
     end
 
     within_semester_section("Segundo semestre") do
@@ -144,7 +162,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Créditos planeados: 20"
 
     within_each_semester_section do
-      assert_subject_selector_contains "GAL 2 - 1031"
+      assert_subject_selector_contains "1031 - GAL 2"
     end
 
     within_semester_section("Primer semestre") do
