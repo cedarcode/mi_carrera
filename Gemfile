@@ -14,7 +14,7 @@ gem "omniauth-google-oauth2", '~> 1.2'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pdf-reader'
 gem 'pg', '~> 1.5'
-gem 'propshaft', '~> 1.1'
+gem 'propshaft', '~> 1.2'
 gem 'puma', '~> 6.6'
 gem 'rollbar', '~> 3.6'
 gem 'stimulus-rails', '~> 1.3'
@@ -28,7 +28,7 @@ group :development, :deploy do
 end
 
 group :development, :test do
-  gem "brakeman", "~> 7.0"
+  gem "brakeman", "~> 7.1"
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 8.0'
 end
