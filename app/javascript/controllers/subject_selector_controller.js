@@ -37,7 +37,7 @@ export default class extends Controller {
 
   onChange() {
     const selectedValue = this.selectTarget.value;
-    this.submitButtonTarget.disabled = !selectedValue || selectedValue === "";
+    this.element.requestSubmit();
   }
 
   disconnect() {
