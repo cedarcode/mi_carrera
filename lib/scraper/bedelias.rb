@@ -118,7 +118,8 @@ module Scraper
           match = SUBJECT_CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all))
           if match
             code, name, credits = match.captures
-            subjects[code] = { code:, name:, credits: credits.to_i, has_exam: false, subject_group: group_code }
+            subjects[code] ||= { code:, name:, subject_groups: [], has_exam: false }
+            subjects[code][:subject_groups] << { group: group_code, credits: credits.to_i }
           else
             raise "Regex didn't match for subject: #{subject_node.text(:all)}"
           end
@@ -215,9 +216,8 @@ module Scraper
           subjects[prerequisite_tree[:subject_needed_code]] = {
             code: prerequisite_tree[:subject_needed_code],
             name: prerequisite_tree[:subject_needed_name],
-            credits: 0,
             has_exam: prerequisite_tree[:needs] == 'exam',
-            subject_group: nil,
+            subject_groups: [],
           }
         end
       elsif prerequisite_tree[:type] == 'logical'
