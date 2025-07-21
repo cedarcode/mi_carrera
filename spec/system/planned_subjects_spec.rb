@@ -81,7 +81,7 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     within_semester_section("Primer semestre") do
       within_add_subject_section do
-        select_from_choices('GAL 1 - 1030')
+        select_from_choices('1030 - GAL 1')
         find("button[type='submit']").click
       end
 
@@ -98,12 +98,12 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Créditos planeados: 20"
 
     within_each_semester_section do
-      assert_subject_not_in_selector "GAL 1 - 1030"
+      assert_subject_not_in_selector "1030 - GAL 1"
     end
 
     within_semester_section("Segundo semestre") do
       within_add_subject_section do
-        select_from_choices('GAL 2 - 1031')
+        select_from_choices('1031 - GAL 2')
         find("button[type='submit']").click
       end
 
@@ -120,7 +120,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Créditos planeados: 30"
 
     within_each_semester_section do
-      assert_subject_not_in_selector "GAL 2 - 1031"
+      assert_subject_not_in_selector "1031 - GAL 2"
     end
 
     within_semester_section("Segundo semestre") do
@@ -162,7 +162,7 @@ RSpec.describe "PlannedSubjects", type: :system do
     expect(page).to have_text "Créditos planeados: 20"
 
     within_each_semester_section do
-      assert_subject_selector_contains "GAL 2 - 1031"
+      assert_subject_selector_contains "1031 - GAL 2"
     end
 
     within_semester_section("Primer semestre") do

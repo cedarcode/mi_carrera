@@ -66,7 +66,12 @@ class YmlLoader
       new_subject.save!
 
       new_subject.create_course! unless new_subject.course
-      new_subject.create_exam! if subject["has_exam"] && !new_subject.exam
+
+      if subject["has_exam"]
+        new_subject.create_exam! unless new_subject.exam
+      else
+        raise "Subject #{code} no longer has an exam" if new_subject.exam
+      end
     end
   end
 

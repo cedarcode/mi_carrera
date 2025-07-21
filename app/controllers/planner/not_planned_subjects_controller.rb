@@ -11,7 +11,7 @@ module Planner
           id: category,
           choices: subjects.map do |subject|
             {
-              label: display_planned_subject_name_and_code(subject),
+              label: display_name(subject),
               value: subject.id,
             }
           end
