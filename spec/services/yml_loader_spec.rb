@@ -158,15 +158,6 @@ RSpec.describe YmlLoader do
             current_optional_subject: true
           )
         end
-        let!(:subject_with_exam) do
-          create(
-            :subject,
-            :with_exam,
-            code: '25',
-            name: 'Existing Subject with Exam',
-            degree_id:,
-          )
-        end
 
         it 'updates existing data' do
           described_class.load
@@ -185,16 +176,31 @@ RSpec.describe YmlLoader do
           expect(existing_subject.exam).to be_present
           expect(existing_subject.group).to eq(existing_group)
           expect(existing_subject.current_optional_subject).to be false
-
-          expect(subject_with_exam.reload.exam).to be_present
         end
+      end
+    end
+
+    context 'when a subject no longer has an exam' do
+      let(:base_dir) { Rails.root.join("spec/support/mock_yamls/success") }
+      let!(:existing_degree) { create(:degree, id: degree_id) }
+      let!(:subject_with_exam) do
+        create(
+          :subject,
+          :with_exam,
+          code: '25',
+          degree_id:,
+        )
+      end
+
+      it 'raises an error' do
+        expect { described_class.load }.to raise_error('Subject 25 no longer has an exam')
       end
     end
 
     context 'when there is an unknown prerequiste type' do
       let(:base_dir) { Rails.root.join("spec/support/mock_yamls/unknown_prerequisite_type") }
 
-      it 'raises error if unknown prerequisite type' do
+      it 'raises an error' do
         expect { described_class.load }.to raise_error('Unknown prerequisite type: foo')
       end
     end
@@ -202,7 +208,7 @@ RSpec.describe YmlLoader do
     context 'when there is an unknown approvable needed' do
       let(:base_dir) { Rails.root.join("spec/support/mock_yamls/unknown_approvable_type") }
 
-      it 'raises error if unknown approvable needed' do
+      it 'raises an error' do
         expect { described_class.load }.to raise_error('Unknown approvable needed: bar')
       end
     end
