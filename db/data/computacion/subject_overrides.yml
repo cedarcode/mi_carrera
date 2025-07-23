@@ -316,7 +316,9 @@ F66:
 SRN17:
   category: 'outside_montevideo'
 '1373':
-  category: 'inactive'
+  eva_id: '58'
+  openfing_id: p1
+  category: 'first_semester'
 1322T:
   category: 'inactive'
 PR4:
@@ -389,7 +391,7 @@ CP374:
 '1322':
   eva_id: '58'
   openfing_id: p1
-  category: 'first_semester'
+  category: 'inactive'
 '1372':
   category: 'inactive'
 '1321':
