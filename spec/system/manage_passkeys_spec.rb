@@ -34,10 +34,10 @@ RSpec.describe 'Manage passkeys' do
 
       expect(page).to have_text('Cerraste sesión correctamente')
 
-      fake_assertion = fake_client.get(challenge: fixed_challenge, user_verified: true)
-
       allow_any_instance_of(WebAuthn::PublicKeyCredential::RequestOptions).to receive(:raw_challenge)
         .and_return(fixed_challenge)
+
+      fake_assertion = fake_client.get(challenge: fixed_challenge, user_verified: true)
 
       click_user_menu
       click_on 'Ingresar'
