@@ -31,8 +31,6 @@ export default class extends Controller {
 
       this.hiddenPasskeyPublicKeyInputTarget.value = JSON.stringify(passkeyPublicKey);
 
-      alert(this.hiddenPasskeyPublicKeyInputTarget.value);
-
       this.element.submit();
 
     } catch (error) {
