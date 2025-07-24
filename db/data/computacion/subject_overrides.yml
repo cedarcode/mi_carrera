@@ -7,8 +7,6 @@ CIM11:
   category: 'inactive'
 CH201:
   category: 'inactive'
-CIM24:
-  category: 'inactive'
 CIM10:
   category: 'inactive'
 SRN09:
@@ -218,15 +216,7 @@ SRN11:
   category: 'outside_montevideo'
 REF04:
   category: 'inactive'
-MHC16:
-  category: 'inactive'
-MHC24:
-  category: 'inactive'
-MHC20:
-  category: 'inactive'
 M000:
-  category: 'inactive'
-203EU:
   category: 'inactive'
 M001:
   category: 'inactive'
@@ -935,12 +925,6 @@ GO9:
   category: 'revalid'
 SRN13:
   category: 'outside_montevideo'
-FD1:
-  category: 'inactive'
-C216:
-  category: 'inactive'
-AT002:
-  category: 'inactive'
 558EU:
   category: 'inactive'
 CHU10:
@@ -992,21 +976,11 @@ SRN22:
   category: 'outside_montevideo'
 SRN25:
   category: 'outside_montevideo'
-736EU:
-  category: 'inactive'
-836EU:
-  category: 'inactive'
 AT023:
   category: 'inactive'
 AT021:
   category: 'inactive'
-816EU:
-  category: 'inactive'
 2107A:
-  category: 'inactive'
-AT003:
-  category: 'inactive'
-AT009:
   category: 'inactive'
 MOP8:
   category: 'revalid'
@@ -1015,8 +989,6 @@ MOP8:
 '1951':
   category: 'inactive'
 GP4:
-  category: 'inactive'
-'2040':
   category: 'inactive'
 '1438':
   eva_id: '20'
