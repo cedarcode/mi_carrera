@@ -1,0 +1,10 @@
+---
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: bar
+    subject_needed_code: '101'
+    subject_needed_name: TEST SUBJECT I
+  subject_code: '101'
+  is_exam: false

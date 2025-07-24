@@ -316,7 +316,9 @@ F66:
 SRN17:
   category: 'outside_montevideo'
 '1373':
-  category: 'inactive'
+  eva_id: '58'
+  openfing_id: p1
+  category: 'first_semester'
 1322T:
   category: 'inactive'
 PR4:
@@ -389,7 +391,7 @@ CP374:
 '1322':
   eva_id: '58'
   openfing_id: p1
-  category: 'first_semester'
+  category: 'inactive'
 '1372':
   category: 'inactive'
 '1321':
@@ -1170,6 +1172,7 @@ CP144:
   category: 'inactive'
 '1411':
   category: 'inactive'
+  eva_id: '204'
 C402:
   category: 'inactive'
 1224P:
@@ -1235,3 +1238,45 @@ R100:
   category: 'revalid'
 5852P:
   category: 'revalid'
+'1641':
+  eva_id: '914'
+'1892':
+  eva_id: '1207'
+'1349':
+  eva_id: '1067'
+'1347':
+  eva_id: '363'
+'2418':
+  eva_id: '1551'
+'2417':
+  eva_id: '1086'
+'2413':
+  eva_id: '1532'
+'3207':
+  eva_id: '1179'
+'2033':
+  eva_id: '327'
+'1640':
+  eva_id: '1538'
+'2037':
+  eva_id: '445'
+'1887':
+  eva_id: '1758'
+'1774':
+  eva_id: '1138'
+'1952':
+  eva_id: '1074'
+'1775':
+  eva_id: '1140'
+'1633':
+  eva_id: '934'
+'1899':
+  eva_id: '456'
+'1860':
+  eva_id: '800'
+'1862':
+  eva_id: '800'
+'1863':
+  eva_id: '800'
+'1512':
+  category: 'inactive'

@@ -1,0 +1,7 @@
+---
+'25':
+  code: '25'
+  name: ANOTHER TEST SUBJECT
+  credits: 4
+  has_exam: true
+  subject_group: '73'
