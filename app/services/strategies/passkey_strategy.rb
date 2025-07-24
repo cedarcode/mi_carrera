@@ -13,12 +13,15 @@ module Strategies
       end
 
       begin
-        webauthn_passkey.verify(
+        if !webauthn_passkey.verify(
           session[:creation_challenge],
           public_key: passkey.public_key,
           sign_count: passkey.sign_count,
           user_verification: true
         )
+          self.fail("Verification failed")
+          return
+        end
 
         passkey.update!(sign_count: webauthn_passkey.sign_count)
 
