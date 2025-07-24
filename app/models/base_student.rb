@@ -1,4 +1,6 @@
 class BaseStudent
+  attr_reader :approved_approvable_ids
+
   def initialize(approved_approvable_ids)
     @approved_approvable_ids = approved_approvable_ids
   end
@@ -39,7 +41,6 @@ class BaseStudent
 
   private
 
-  attr_reader :approved_approvable_ids
   alias_method :ids, :approved_approvable_ids
 
   def save!
