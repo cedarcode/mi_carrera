@@ -24,6 +24,11 @@ class ApprovableCheckboxComponent < ViewComponent::Base
 
       forced-colors:appearance-auto
 
+      before:absolute
+      before:inset-[-4px]
+      before:content-['']
+      relative
+
       peer
     ],
     icon: %w[
