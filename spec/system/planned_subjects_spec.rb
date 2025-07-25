@@ -178,5 +178,30 @@ RSpec.describe "PlannedSubjects", type: :system do
 
     expect(page).to have_text "Materias aprobadas sin semestre asignado"
     expect(page).to have_text "Créditos planeados: 9"
+
+    click_button "Agregar semestre"
+    
+    expect(page).to have_text "Semestre 6"
+    
+    within_not_planned_approved_subjects do
+      move_subject_to_semester "T1", "Semestre 6"
+    end
+
+    within_semester_section("Semestre 6") do
+      assert_approved_subject "T1"
+      assert_planned_subject "T1"
+      expect(page).to have_text "Créditos planeados: 11"
+      
+      within_add_subject_section do
+        select_from_choices('1031 - GAL 2')
+        find("button[type='submit']").click
+      end
+
+      assert_blocked_subject "GAL 2"
+      assert_planned_subject "GAL 2"
+      expect(page).to have_text "Créditos planeados: 21"
+    end
+
+    expect(page).to have_text "Créditos planeados: 30"
   end
 end
