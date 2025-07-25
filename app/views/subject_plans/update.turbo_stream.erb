@@ -22,6 +22,6 @@
 
 <% (1..10).each do |semester| %>
   <%= turbo_stream.replace "semester-#{semester}-add-subject-form" do %>
-    <%= render 'subject_plans/semester_card/add_subject_form', semester:, not_planned_subjects: @not_planned_subjects %>
+    <%= render 'subject_plans/semester_card/add_subject_form', semester: %>
   <% end %>
 <% end %>
