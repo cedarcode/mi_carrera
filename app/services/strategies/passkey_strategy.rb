@@ -8,7 +8,7 @@ module Strategies
       webauthn_passkey = WebAuthn::Credential.from_get(JSON.parse(params[:passkey_public_key]))
       passkey = Passkey.find_by(external_id: webauthn_passkey.id)
       unless passkey
-        self.fail(:invalid)
+        self.fail("Tu passkey no existe o no es válida.")
         return
       end
 
