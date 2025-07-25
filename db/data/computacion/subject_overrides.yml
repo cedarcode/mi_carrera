@@ -677,7 +677,6 @@ CP376:
   category: 'inactive'
 '1055':
   eva_id: '24'
-  category: 'inactive'
 '1033':
   eva_id: '62'
   openfing_id: metn-2023
@@ -883,7 +882,7 @@ TP25:
   eva_id: '429'
   short_name: Taller de SIG
 '2401':
-  category: 'inactive'
+  eva_id: '735'
 AT010:
   category: 'inactive'
 GO10:
@@ -944,6 +943,7 @@ CH04:
 '1229':
   category: 'inactive'
 '1223':
+  eva_id: '1243'
   short_name: CTS
 '1230':
   category: 'inactive'
@@ -1236,6 +1236,7 @@ R100:
   eva_id: '1758'
 '1774':
   eva_id: '1138'
+  short_name: 'TETI'
 '1952':
   eva_id: '1074'
 '1775':
@@ -1252,3 +1253,41 @@ R100:
   eva_id: '800'
 '1512':
   category: 'inactive'
+'5853':
+  category: 'inactive'
+'1066':
+  eva_id: '55'
+'5852':
+  eva_id: '1252'
+'5907':
+  eva_id: '1862'
+'1871':
+  eva_id: '1513'
+'1872':
+  eva_id: '1543'
+'1064':
+  eva_id: '342'
+'1868':
+  eva_id: '1514'
+'1158':
+  eva_id: '1903'
+'1886':
+  eva_id: '1279'
+'1556':
+  eva_id: '581'
+'5828':
+  eva_id: '520'
+'5720':
+  eva_id: '1492'
+'1876':
+  eva_id: '1572'
+'1888':
+  eva_id: '1792'
+'1898':
+  eva_id: '1076'
+'1857':
+  eva_id: '869'
+'1353':
+  eva_id: '874'
+'2415':
+  eva_id: '134'
