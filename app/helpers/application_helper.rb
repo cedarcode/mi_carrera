@@ -38,4 +38,8 @@ module ApplicationHelper
   def material_icon(icon, classes = nil)
     tag.span(icon, class: "material-icons #{classes}")
   end
+
+  def material_icon_outlined(icon, classes = nil)
+    tag.span(icon, class: "material-icons-outlined #{classes}")
+  end
 end
