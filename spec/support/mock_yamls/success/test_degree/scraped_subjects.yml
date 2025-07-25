@@ -4,6 +4,8 @@
   name: CALCULO I
   has_exam: true
   subject_groups:
+    - group: '1917'
+      credits: 4
     - group: '2003'
       credits: 10
 '102':
