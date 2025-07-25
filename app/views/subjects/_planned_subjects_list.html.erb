@@ -2,5 +2,5 @@
 
 <% (1..10).each do |semester| %>
   <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
-  <%= render 'semester_card', planned_subjects: planned_subjects, not_planned_subjects: @not_planned_subjects, semester: semester %>
+  <%= render 'semester_card', planned_subjects: planned_subjects, semester: semester %>
 <% end %>
