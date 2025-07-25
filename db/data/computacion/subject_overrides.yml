@@ -542,6 +542,7 @@ CP372:
 '1449':
   eva_id: '1136'
 '1437':
+  category: 'inactive'
   eva_id: '324'
 '1535':
   category: 'inactive'
@@ -1252,3 +1253,5 @@ R100:
   eva_id: '800'
 '1512':
   category: 'inactive'
+'1891':
+  eva_id: '324'
