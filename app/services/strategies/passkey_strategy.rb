@@ -23,7 +23,7 @@ module Strategies
 
         success!(passkey.user)
       ensure
-        session.delete(:current_authentication)
+        session.delete(:creation_challenge)
       end
     end
   end
