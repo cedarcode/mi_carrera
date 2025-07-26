@@ -23,4 +23,22 @@ export default class extends Controller {
       }
     }
   }
+
+  async get({ params: {publicKey} }) {
+    try {
+      const passkeyOptions = WebAuthnJSON.parseRequestOptionsFromJSON({ publicKey });
+      const passkeyPublicKey = await WebAuthnJSON.get(passkeyOptions);
+
+      this.hiddenPasskeyPublicKeyInputTarget.value = JSON.stringify(passkeyPublicKey);
+
+      this.element.submit();
+
+    } catch (error) {
+      if (error.name === "NotAllowedError") {
+        alert("No seleccionaste el autenticador o cancelaste la operación.");
+      } else {
+        alert(error.message || error);
+      }
+    }
+  }
 }
