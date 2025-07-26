@@ -55,8 +55,9 @@ class YmlLoader
       new_subject = degree.subjects.find_or_initialize_by(code:)
 
       new_subject.name = format_name(subject["name"])
-      new_subject.credits = subject["credits"]
-      new_subject.group = degree.subject_groups.find_by(code: subject["subject_group"])
+      new_subject.credits = subject["subject_groups"].sum { |group| group["credits"] }
+      group_code = subject["subject_groups"].last&.dig("group")
+      new_subject.group = degree.subject_groups.find_by(code: group_code)
 
       subject_overrides = subjects_overrides[code] || {}
       new_subject.eva_id = subject_overrides['eva_id']
