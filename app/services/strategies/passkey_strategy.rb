@@ -26,10 +26,7 @@ module Strategies
       end
 
       passkey.update!(sign_count: webauthn_passkey.sign_count)
-
       success!(passkey.user)
-    rescue WebAuthn::Error => e
-      self.fail("Passkey verification error and it raised exception: #{e.message}")
     ensure
       session.delete(:creation_challenge)
     end
