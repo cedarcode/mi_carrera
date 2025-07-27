@@ -12,26 +12,20 @@ module Strategies
         return
       end
 
-      webauthn_passkey.verify(
-        session[:creation_challenge],
-        public_key: passkey.public_key,
-        sign_count: passkey.sign_count,
-        user_verification: true
-      )
-      if webauthn_passkey.error
-        self.fail("Passkey verification failed and an error was kept: #{webauthn_passkey.error}")
-        return
+      begin
+        webauthn_passkey.verify(
+          session[:creation_challenge],
+          public_key: passkey.public_key,
+          sign_count: passkey.sign_count,
+          user_verification: true
+        )
+      rescue WebAuthn::SignCountVerificationError
+        return fail!("Fallo el sign count verification")
+      rescue WebAuthn::Error
+        return fail!("Fallo la verificación del passkey")
       end
 
-      if webauthn_passkey.sign_count == nil
-        self.fail("Passkey sign count is missing")
-        return
-      end
-
-      if passkey.update!(sign_count: webauthn_passkey.sign_count)
-        self.fail("Passkey verification failed")
-        return
-      end
+      passkey.update!(sign_count: webauthn_passkey.sign_count)
 
       success!(passkey.user)
     rescue WebAuthn::Error => e
