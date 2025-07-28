@@ -4,6 +4,8 @@
       message: '¡Bienvenido! Marcá los cursos y exámenes que aprobaste para ver qué materias podés cursar.' %>
 <% end %>
 
-<%= render 'shared/credits_bar' %>
+<% content_for :credits_bar do %>
+  <%= render 'shared/credits_bar' %>
+<% end %>
 
 <%= render 'subjects_bulk_approve' %>

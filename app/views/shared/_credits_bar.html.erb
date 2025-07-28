@@ -1,6 +1,6 @@
 <% percentage = ((current_student.total_credits / 450.0) * 100).floor %>
 <% show_credits_inside_bar = current_student.total_credits >= 150 %>
-<div id="credits-bar" class="sticky mx-auto max-w-[600px] bg-white border-b border-b-gray-200 p-2">
+<div id="credits-bar" class="mx-auto max-w-[600px] bg-white border-b border-b-gray-200 p-2">
   <div class="relative flex w-full h-4 bg-gray-200 rounded-full overflow-hidden" role="progressbar" aria-valuenow="<%= percentage %>">
     <div class="flex flex-col justify-center rounded-full overflow-hidden bg-primary text-xs text-white text-center whitespace-nowrap" style="width: <%= percentage %>%">
       <span class="<%= 'hidden' unless show_credits_inside_bar %>"> <%= current_student.total_credits %> créditos </span>
