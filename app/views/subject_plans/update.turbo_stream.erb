@@ -26,4 +26,6 @@
   <% end %>
 <% end %>
 
-<%= turbo_stream.remove "foreground-layer" %>
+<%= turbo_stream.replace "foreground-layer" do %>
+  <%= render 'foreground_layer' %>
+<% end %>
