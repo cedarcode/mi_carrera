@@ -15,7 +15,6 @@ class ApprovableCheckboxComponent < ViewComponent::Base
       h-full
       m-0
       cursor-pointer
-      opacity-0
       z-10
     ],
     visual_checkbox: %w[
