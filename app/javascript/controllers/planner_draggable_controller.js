@@ -3,7 +3,6 @@ import Sortable from 'sortablejs';
 import { FetchRequest } from '@rails/request.js';
 
 export default class extends Controller {
-  static targets = ['semesterSubjectsList', 'notPlannedApprovedSubjectsList'];
   static outlets = ['planner-loading'];
   static values = {
     put: { type: Boolean, default: true }
