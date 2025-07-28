@@ -16,3 +16,5 @@ env:
     ROLLBAR_ENV: staging
     APPSIGNAL_APP_ENV: staging
     ENABLE_PASSKEYS: true
+    WEBAUTHN_ORIGIN: 'https://staging.micarrera.uy'
+    WEBAUTHN_RP_ID: 'staging.micarrera.uy'

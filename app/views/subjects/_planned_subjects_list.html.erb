@@ -1,8 +1,8 @@
-<div data-controller="planner-draggable" data-planner-draggable-planner-loading-outlet="#planner">
-  <%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
+<%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
 
-  <% (1..10).each do |semester| %>
-    <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
-    <%= render 'semester_card', planned_subjects: planned_subjects, not_planned_subjects: @not_planned_subjects, semester: semester %>
-  <% end %>
-</div>
+<% (1..current_user.planned_semesters).each do |semester| %>
+  <% planned_subjects = @planned_subjects.select { |subject| subject.semester == semester } %>
+  <%= render 'semester_card', planned_subjects: planned_subjects, semester: semester %>
+<% end %>
+
+<%= render 'subject_plans/add_semester_form' %>

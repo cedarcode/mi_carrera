@@ -17,9 +17,7 @@ Rails.application.routes.draw do
     }
 
     scope path: "usuarios", module: "users", as: "user" do
-      resources :passkeys, only: [:index, :create, :destroy] do
-        post :callback, on: :collection
-      end
+      resources :passkeys, only: [:index, :create, :destroy]
     end
 
     root to: "subjects#index"
@@ -38,6 +36,10 @@ Rails.application.routes.draw do
       end
     end
 
+    namespace :planner do
+      resources :not_planned_subjects, only: :index
+    end
+
     resource :user_onboardings, only: :update
 
     resources :current_optional_subjects, path: "materias_inco_semestre_actual", only: :index
@@ -47,6 +49,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
 
     resources :subject_plans, path: "materias_planeadas", only: [:index, :create, :update, :destroy], param: :subject_id
+
+    resources :planned_semesters, only: [:create]
 
     if Rails.env.development?
       mount Lookbook::Engine, at: "/lookbook"

@@ -1,0 +1,13 @@
+<div id="add-semester-form" class="bg-white rounded-lg border border-gray-100 shadow-sm">
+  <%= form_with(
+    url: planned_semesters_path,
+    method: :post,
+    data: { turbo: true },
+    class: 'flex items-center justify-center px-4 py-3 hover:bg-gray-100'
+  ) do |form| %>
+    <%= form.button type: :submit, class: "w-full text-sm text-gray-400 font-bold flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed" do %>
+      <%= material_icon("add_circle_outline", "text-gray-400") %>
+      Agregar semestre
+    <% end %>
+  <% end %>
+</div>

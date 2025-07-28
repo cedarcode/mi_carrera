@@ -260,4 +260,17 @@ RSpec.describe UserStudent, type: :model do
       expect { student.mark_banner_as_viewed!('invalid') }.to raise_error(NoMethodError)
     end
   end
+
+  describe "#approved_subjects" do
+    let(:user) { create :user }
+    let(:student) { described_class.new(user) }
+
+    it 'returns approved subjects for the user' do
+      subject1 = create(:subject, :with_exam)
+      subject2 = create(:subject, :with_exam)
+      user.approvals = [subject1.course.id, subject2.exam.id]
+
+      expect(student.approved_subjects).to contain_exactly(subject2)
+    end
+  end
 end

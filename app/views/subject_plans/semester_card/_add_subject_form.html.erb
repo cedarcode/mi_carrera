@@ -3,21 +3,27 @@
   model: SubjectPlan.new,
   url: subject_plans_path,
   method: :post,
-  data: { turbo: true, controller: "subject-selector" },
-  class: 'flex items-center gap-3 px-4 py-3 hover:bg-gray-100 border-t border-gray-100'
+  data: {
+    turbo: true,
+    controller: "subject-selector",
+    "subject-selector-url-value": planner_not_planned_subjects_path,
+  },
+  class: 'flex items-center gap-3 px-4 py-3 border-t border-gray-100'
 ) do |form| %>
   <%= form.select(
     :subject_id,
-    grouped_options_for_select(
-      not_planned_subjects.group_by(&:category).compact_blank.map do |category, subjects|
-        [formatted_category(category), subjects.map { |subject| [display_planned_subject_name_and_code(subject), subject.id] }]
-      end
-    ),
+    [],
     {},
-    { data: { subject_selector_target: "select", action: "subject-selector#onChange" }, class: "invisible absolute" }
+    {
+      data: {
+        subject_selector_target: "select",
+        action: "subject-selector#onChange showDropdown->subject-selector#onClick",
+      },
+      class: "invisible absolute"
+    }
   ) %>
   <%= form.hidden_field :semester, value: semester %>
-  <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed", disabled: true, data: { subject_selector_target: "submitButton", action: "planner-loading#start" } do %>
+  <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400 hover:not-disabled:text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed", disabled: true, data: { subject_selector_target: "submitButton", action: "planner-loading#start" } do %>
       add_circle_outline
   <% end %>
 <% end %>

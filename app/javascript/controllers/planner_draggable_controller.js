@@ -4,22 +4,17 @@ import { FetchRequest } from '@rails/request.js';
 
 export default class extends Controller {
   static targets = ['semesterSubjectsList', 'notPlannedApprovedSubjectsList'];
-  static outlets = ['planner-loading']
+  static outlets = ['planner-loading'];
+  static values = {
+    put: { type: Boolean, default: true }
+  };
 
   connect() {
-    this.semesterSubjectsListTargets.forEach((list) => {
-      Sortable.create(list, {
-        group: 'shared',
-        sort: false,
-        onEnd: this.onEnd.bind(this),
-        handle: "[data-planner-draggable-handle]",
-      });
-    });
-
-    this.hasNotPlannedApprovedSubjectsListTarget && Sortable.create(this.notPlannedApprovedSubjectsListTarget, {
+    Sortable.create(this.element, {
+      forceAutoScrollFallback: true,
       group: {
         name: 'shared',
-        put: false
+        put: this.putValue
       },
       sort: false,
       onEnd: this.onEnd.bind(this),

@@ -1,4 +1,6 @@
 class BaseStudent
+  attr_reader :approved_approvable_ids
+
   def initialize(approved_approvable_ids)
     @approved_approvable_ids = approved_approvable_ids
   end
@@ -35,10 +37,10 @@ class BaseStudent
   def graduated? = total_credits >= 450 && groups_credits_met?
   def banner_viewed?(_) = raise NoMethodError
   def mark_banner_as_viewed!(_) = raise NoMethodError
+  def approved_subjects = degree.subjects.approved_for(ids)
 
   private
 
-  attr_reader :approved_approvable_ids
   alias_method :ids, :approved_approvable_ids
 
   def save!
