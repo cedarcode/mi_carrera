@@ -2,17 +2,21 @@
 '101':
   code: '101'
   name: CALCULO I
-  credits: 10
   has_exam: true
-  subject_group: '2003'
+  subject_groups:
+    - group: '1917'
+      credits: 4
+    - group: '2003'
+      credits: 10
 '102':
   code: '102'
   name: CALCULO II
-  credits: 12
   has_exam: false
-  subject_group: '2003'
+  subject_groups:
+    - group: '2003'
+      credits: 12
 '25':
   code: '25'
   name: SUBJECT WITH NO GROUP
-  credits: 6
   has_exam: false
+  subject_groups: []
