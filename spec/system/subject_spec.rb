@@ -19,7 +19,7 @@ RSpec.describe "Subject", type: :system do
     expect(page).to have_content("GAL 1")
 
     within('label', text: 'Curso aprobado?') do
-      checkbox = find('input[type="checkbox"]')
+      checkbox = find('input[type="checkbox"]', visible: false)
       expect(checkbox).to_not be_checked
     end
 
@@ -28,7 +28,7 @@ RSpec.describe "Subject", type: :system do
     end
 
     within('label', text: 'Curso aprobado?') do
-      checkbox = find('input[type="checkbox"]')
+      checkbox = find('input[type="checkbox"]', visible: false)
       checkbox.click
 
       expect(checkbox).to be_checked
