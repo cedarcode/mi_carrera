@@ -1328,3 +1328,7 @@ MA18:
   category: 'revalid'
 1027P:
   category: 'revalid'
+RN115:
+  category: 'outside_montevideo'
+RN252:
+  category: 'outside_montevideo'
