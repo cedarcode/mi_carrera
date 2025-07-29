@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :subject_plans, dependent: :destroy
   has_many :planned_subjects, through: :subject_plans, source: :subject
+  belongs_to :degree
 
   before_validation :set_default_degree
 
@@ -69,7 +70,6 @@ end
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  degree_id              :string           not null
-#  webauthn_id            :string
 #
 # Indexes
 #
