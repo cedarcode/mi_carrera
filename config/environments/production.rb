@@ -82,4 +82,17 @@ Rails.application.configure do
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+# DeviseWebauthn configuration for production
+# TODO: Update these values for your production domain
+config.devise_webauthn.relying_party_id = "yourdomain.com"
+config.devise_webauthn.relying_party_origins = [
+  "https://yourdomain.com",
+  "https://www.yourdomain.com"
+]
+
+# Optional: Use Rails credentials for sensitive values
+# config.devise_webauthn.relying_party_id = Rails.application.credentials.dig(:webauthn, :rp_id)
+# config.devise_webauthn.relying_party_origins = Rails.application.credentials.dig(:webauthn, :origins)
+
 end

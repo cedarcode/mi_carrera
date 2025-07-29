@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_27_211639) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_29_215957) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -28,6 +28,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_211639) do
     t.boolean "include_inco_subjects", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "passkeys", force: :cascade do |t|
+    t.string "external_id", null: false
+    t.string "name", null: false
+    t.text "public_key", null: false
+    t.bigint "sign_count", default: 0, null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["external_id"], name: "index_passkeys_on_external_id", unique: true
+    t.index ["user_id"], name: "index_passkeys_on_user_id"
   end
 
   create_table "prerequisites", force: :cascade do |t|
@@ -110,13 +122,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_211639) do
     t.string "degree_id", null: false
     t.integer "planned_semesters", default: 10, null: false
     t.boolean "planner_banner_viewed", default: false, null: false
+    t.string "webauthn_id"
     t.index ["degree_id"], name: "index_users_on_degree_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+    t.index ["webauthn_id"], name: "index_users_on_webauthn_id", unique: true
   end
 
   add_foreign_key "approvables", "subjects"
+  add_foreign_key "passkeys", "users"
   add_foreign_key "prerequisites", "approvables"
   add_foreign_key "prerequisites", "approvables", column: "approvable_needed_id"
   add_foreign_key "prerequisites", "prerequisites", column: "parent_prerequisite_id"

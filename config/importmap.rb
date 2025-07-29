@@ -12,3 +12,4 @@ pin "choices.js", to: "https://ga.jspm.io/npm:choices.js@11.1.0/public/assets/sc
 
 pin "sortablejs" # @1.15.6
 pin "@rails/request.js", to: "@rails--request.js.js" # @0.0.12
+pin "@github/webauthn-json/browser-ponyfill", to: "@github--webauthn-json--browser-ponyfill.js" # @2.1.1

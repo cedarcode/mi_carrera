@@ -52,4 +52,9 @@ Rails.application.routes.draw do
       mount Lookbook::Engine, at: "/lookbook"
     end
   end
+
+# DeviseWebauthn passkeys routes
+scope module: :devise_webauthn do
+  resources :passkeys, only: %i[create destroy index]
+end
 end

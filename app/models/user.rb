@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
+  validates :webauthn_id, uniqueness: true, allow_blank: true
+
+  devise :database_authenticatable, :registerable, :passkey_authenticatable,
          :recoverable, :rememberable, :validatable, :lockable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
@@ -40,6 +42,8 @@ class User < ApplicationRecord
   def planned?(subject)
     subject_plans.any? { |subject_plan| subject_plan.subject_id == subject.id }
   end
+  has_many :passkeys, dependent: :destroy
+
 
   private
 
@@ -70,6 +74,7 @@ end
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  degree_id              :string           not null
+#  webauthn_id            :string
 #
 # Indexes
 #
@@ -77,6 +82,7 @@ end
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
+#  index_users_on_webauthn_id           (webauthn_id) UNIQUE
 #
 # Foreign Keys
 #

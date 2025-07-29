@@ -67,4 +67,13 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
+
+# DeviseWebauthn configuration for development
+config.devise_webauthn.relying_party_id = "localhost"
+config.devise_webauthn.relying_party_origins = [
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+  "http://0.0.0.0:3000"
+]
+
 end
