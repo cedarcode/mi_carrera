@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     }
 
     scope path: "usuarios", module: "users", as: "user" do
-      resources :passkeys, only: [:index, :create, :destroy]
+      resources :passkeys, only: [:index, :create, :destroy] do
+        post :callback, on: :collection
+      end
     end
 
     root to: "subjects#index"
