@@ -10,10 +10,7 @@ class ApprovableCheckboxComponent < ViewComponent::Base
       cursor-pointer
     ],
     visual_checkbox: %w[
-      col-start-1
-      row-start-1
-      w-4
-      h-4
+      size-4
       rounded-sm
       border
       border-gray-300
@@ -37,8 +34,7 @@ class ApprovableCheckboxComponent < ViewComponent::Base
       text-base/4!
       text-white
       pointer-events-none
-      col-start-1
-      row-start-1
+      absolute
       opacity-0
       peer-checked:opacity-100
       peer-disabled:text-gray-300
