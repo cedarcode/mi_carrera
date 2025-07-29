@@ -5,9 +5,6 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
-require 'support/stub_passkeys'
-require 'webauthn/fake_client'
-
 # Add additional requires below this line. Rails is not loaded until this point!
 require "view_component/test_helpers"
 
@@ -41,8 +38,6 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
-  config.fixture_paths = [Rails.root.join('spec/fixtures')]
-  config.global_fixtures = :all
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
@@ -88,11 +83,6 @@ RSpec.configure do |config|
   end
 
   config.include ViewComponent::TestHelpers, type: :component
-  config.include Support::StubPasskeys, type: :system
-
-  config.after(:each) do
-    TreePreloader.break_cache!
-  end
 end
 
 Shoulda::Matchers.configure do |config|

@@ -82,7 +82,4 @@ Rails.application.configure do
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
-
-  config.webauthn_origin = ['https://micarrera.uy', 'https://fing.micarrera.uy', 'https://www.micarrera.uy', 'https://staging.micarrera.uy']
-  config.webauthn_rp_id = 'micarrera.uy'
 end

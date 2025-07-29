@@ -16,12 +16,6 @@ Rails.application.routes.draw do
       password: 'contraseña',
     }
 
-    scope path: "usuarios", module: "users", as: "user" do
-      resources :passkeys, only: [:index, :create, :destroy] do
-        post :callback, on: :collection
-      end
-    end
-
     root to: "subjects#index"
 
     resource :profile, path: "perfil", only: :show

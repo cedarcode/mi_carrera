@@ -21,7 +21,6 @@ gem 'stimulus-rails', '~> 1.3'
 gem 'tailwindcss-rails', '~> 4.3'
 gem 'turbo-rails', '~> 2.0'
 gem "view_component", "~> 3.23"
-gem 'webauthn'
 
 group :development, :deploy do
   gem 'kamal'
