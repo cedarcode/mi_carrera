@@ -3,19 +3,11 @@
 class ApprovableCheckboxComponent < ViewComponent::Base
   STYLES = {
     checkbox: %w[
-      col-start-1
-      row-start-1
       appearance-none
-
       peer
-
       absolute
-      inset-0
-      w-full
-      h-full
-      m-0
+      size-full
       cursor-pointer
-      z-10
     ],
     visual_checkbox: %w[
       col-start-1
