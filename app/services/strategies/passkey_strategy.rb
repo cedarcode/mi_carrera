@@ -14,7 +14,7 @@ module Strategies
 
       begin
         webauthn_passkey.verify(
-          session[:creation_challenge],
+          session[:authentication_challenge],
           public_key: passkey.public_key,
           sign_count: passkey.sign_count,
           user_verification: true
@@ -23,7 +23,7 @@ module Strategies
 
         success!(passkey.user)
       ensure
-        session.delete(:creation_challenge)
+        session.delete(:authentication_challenge)
       end
     end
   end
