@@ -35,7 +35,7 @@ RSpec.describe YmlLoader do
         expect(degree.include_inco_subjects).to be true
 
         # Subject Groups
-        expect(degree.subject_groups.count).to eq(1)
+        expect(degree.subject_groups.count).to eq(2)
         subject_group = degree.subject_groups.find_by!(code: '2003')
         expect(subject_group.name).to eq('Matemática')
         expect(subject_group.credits_needed).to eq(70)

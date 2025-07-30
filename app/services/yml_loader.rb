@@ -59,6 +59,16 @@ class YmlLoader
       group_code = subject["subject_groups"].last&.dig("group")
       new_subject.group = degree.subject_groups.find_by(code: group_code)
 
+      subject["subject_groups"].each do |yml_group|
+        group = degree.subject_groups.find_by!(code: yml_group["group"])
+        membership = SubjectGroupMembership.find_or_initialize_by(
+          subject: new_subject,
+          group: group,
+        )
+        membership.credits = yml_group["credits"]
+        membership.save!
+      end
+
       subject_overrides = subjects_overrides[code] || {}
       new_subject.eva_id = subject_overrides['eva_id']
       new_subject.second_semester_eva_id = subject_overrides['second_semester_eva_id']

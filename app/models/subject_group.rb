@@ -1,6 +1,7 @@
 class SubjectGroup < ApplicationRecord
   belongs_to :degree
   has_many :subjects, foreign_key: :group_id, inverse_of: :group, dependent: :restrict_with_exception
+  has_many :subject_group_memberships, dependent: :destroy
 
   validates :name, presence: true
   validates :code, uniqueness: { scope: :degree_id }
