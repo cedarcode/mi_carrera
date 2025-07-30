@@ -15,7 +15,7 @@ export default class extends Controller {
 
     } catch (error) {
       if (error.name === "NotAllowedError") {
-        alert("No seleccionaste el autenticador o cancelaste la operación.");
+        alert("La operación fue cancelada o su tiempo se agotó.");
       } else if (error.name === "InvalidStateError") {
         alert("Ya registraste esta passkey con tu cuenta.");
       } else {
@@ -35,7 +35,7 @@ export default class extends Controller {
 
     } catch (error) {
       if (error.name === "NotAllowedError") {
-        alert("No seleccionaste el autenticador o cancelaste la operación.");
+        alert("La operación fue cancelada o su tiempo se agotó.");
       } else {
         alert(error.message || error);
       }

@@ -19,12 +19,15 @@ module Strategies
           sign_count: passkey.sign_count,
           user_verification: true
         )
-        passkey.update!(sign_count: webauthn_passkey.sign_count)
-
-        success!(passkey.user)
-      ensure
-        session.delete(:authentication_challenge)
+      rescue WebAuthn::Error
+        self.fail("La verificación de la passkey falló. Por favor, inténtalo de nuevo.")
+        return
       end
+      passkey.update!(sign_count: webauthn_passkey.sign_count)
+
+      success!(passkey.user)
+    ensure
+      session.delete(:authentication_challenge)
     end
   end
 end
