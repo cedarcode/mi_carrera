@@ -11,10 +11,10 @@
       id: dom_id(approvable),
       checked: checked?,
       disabled: disabled?,
-      class: STYLES[:checkbox],
+      class: STYLES[:checkbox_input],
       data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
     ) %>
-    <div class="<%= class_names(STYLES[:visual_checkbox]) %>"></div>
+    <div class="<%= class_names(STYLES[:checkbox]) %>"></div>
     <%= helpers.material_icon("check", class_names(STYLES[:icon])) %>
   </div>
 <% end %>

@@ -2,14 +2,14 @@
 
 class ApprovableCheckboxComponent < ViewComponent::Base
   STYLES = {
-    checkbox: %w[
+    checkbox_input: %w[
       appearance-none
       peer
       absolute
       size-full
       cursor-pointer
     ],
-    visual_checkbox: %w[
+    checkbox: %w[
       size-4
       rounded-sm
       border
