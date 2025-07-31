@@ -83,23 +83,7 @@ module Scraper
       click_on "PLANES DE ESTUDIO"
       click_on "Planes de estudio / Previas"
 
-      execute_script("$.fx.off = true;") # Disable jQuery effects
-
-      find('.ui-accordion-header', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
-      find('td', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
-
-      find('span', text: 'Planes de estudio - FING')
-
-      wait_for_loading_widget_to_disappear
-
-      find('.ui-column-filter').set(degree[:bedelias_name])
-
-      all('tr', text: degree[:bedelias_name], match: :prefer_exact).each do |row|
-        if row.has_selector?('td', text: 'Grado', match: :prefer_exact)
-          row.find('.ui-row-toggler').click
-          break
-        end
-      end
+      select_degree_in_accordion
 
       within('.ui-expanded-row-content', text: 'Planes') do
         find('tr', text: degree[:current_plan]).click_on "Ver más datos"
@@ -111,12 +95,22 @@ module Scraper
       click_on "PLANES DE ESTUDIO"
       click_on "Calendarios"
 
+      select_degree_in_accordion
+
+      within('.ui-expanded-row-content', text: 'Planes') do
+        within('tr', text: degree[:current_plan]) do
+          first('a').click
+        end
+      end
+    end
+
+    def select_degree_in_accordion
       execute_script("$.fx.off = true;") # Disable jQuery effects
 
       find('.ui-accordion-header', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
       find('td', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
 
-      find('span', text: 'Consultar calendario - FING')
+      find('span', text: ' - FING')
 
       wait_for_loading_widget_to_disappear
 
@@ -126,12 +120,6 @@ module Scraper
         if row.has_selector?('td', text: 'Grado', match: :prefer_exact)
           row.find('.ui-row-toggler').click
           break
-        end
-      end
-
-      within('.ui-expanded-row-content', text: 'Planes') do
-        within('tr', text: degree[:current_plan]) do
-          first('a').click
         end
       end
     end
