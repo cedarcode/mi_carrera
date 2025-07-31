@@ -80,7 +80,7 @@ class YmlLoader
 
   # rubocop:disable Rails/SkipsModelValidations
   def load_current_optional_subjects
-    optional_subject_codes = safe_read_yaml(degree_dir.join("scraped_optional_subjects.yml"), default: [])
+    optional_subject_codes = safe_read_yaml(degree_dir.join("scraped_current_semester_subjects.yml"), default: [])
     Subject.transaction do
       degree.subjects.where(code: optional_subject_codes).update_all(current_optional_subject: true)
       degree.subjects.where.not(code: optional_subject_codes).update_all(current_optional_subject: false)
