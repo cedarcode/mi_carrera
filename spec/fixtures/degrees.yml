@@ -1,4 +1,4 @@
 computacion:
   id: "computacion"
   current_plan: "2025"
-  include_inco_subjects: true
+  include_current_semester_subjects: true

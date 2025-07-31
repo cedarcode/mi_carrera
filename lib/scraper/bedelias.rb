@@ -51,7 +51,7 @@ module Scraper
 
       scraped_prerequisites =
         prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
-      if degree[:include_inco_subjects].present?
+      if degree[:include_current_semester_subjects].present?
         optional_inco_subjects = load_this_semester_inco_subjects
         write_yml("scraped_optional_subjects", optional_inco_subjects.sort)
       end

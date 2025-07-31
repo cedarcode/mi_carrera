@@ -12,13 +12,13 @@ RSpec.describe YmlLoader do
         bedelias_name: 'TEST DEGREE',
         id: degree_id,
         current_plan: '2025',
-        include_inco_subjects: true
+        include_current_semester_subjects: true
       },
       {
         bedelias_name: 'ANOTHER TEST DEGREE',
         id: another_degree_id,
         current_plan: '1815',
-        include_inco_subjects: true
+        include_current_semester_subjects: true
       }
     ])
   end
@@ -32,7 +32,7 @@ RSpec.describe YmlLoader do
         expect { described_class.load }.to change(Degree, :count).by(2)
         degree = Degree.find(degree_id)
         expect(degree.current_plan).to eq('2025')
-        expect(degree.include_inco_subjects).to be true
+        expect(degree.include_current_semester_subjects).to be true
 
         # Subject Groups
         expect(degree.subject_groups.count).to eq(1)
@@ -138,7 +138,7 @@ RSpec.describe YmlLoader do
       end
 
       context 'when data already exists' do
-        let!(:existing_degree) { create(:degree, id: degree_id, current_plan: '1830', include_inco_subjects: false) }
+        let!(:existing_degree) { create(:degree, id: degree_id, current_plan: '1830', include_current_semester_subjects: false) }
         let!(:existing_group) do
           create(
             :subject_group,
@@ -164,7 +164,7 @@ RSpec.describe YmlLoader do
 
           existing_degree.reload
           expect(existing_degree.current_plan).to eq('2025')
-          expect(existing_degree.include_inco_subjects).to eq(true)
+          expect(existing_degree.include_current_semester_subjects).to eq(true)
 
           existing_group.reload
           expect(existing_group.name).to eq('Matemática')

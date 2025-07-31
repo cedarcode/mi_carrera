@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_27_211639) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_31_131318) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -25,7 +25,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_211639) do
 
   create_table "degrees", id: :string, force: :cascade do |t|
     t.string "current_plan", null: false
-    t.boolean "include_inco_subjects", null: false
+    t.boolean "include_current_semester_subjects", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -120,9 +120,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_211639) do
     t.datetime "locked_at"
     t.string "unlock_token"
     t.string "degree_id", null: false
-    t.integer "planned_semesters", default: 10, null: false
     t.uuid "webauthn_id", default: -> { "gen_random_uuid()" }, null: false
     t.boolean "planner_banner_viewed", default: false, null: false
+    t.integer "planned_semesters", default: 10, null: false
     t.index ["degree_id"], name: "index_users_on_degree_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
