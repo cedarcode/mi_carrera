@@ -39,7 +39,7 @@ class Subject < ApplicationRecord
   scope :ordered_by_category, -> { in_order_of(:category, CATEGORIES) }
   scope :ordered_by_short_or_full_name, -> { order(Arel.sql('unaccent(COALESCE(short_name, name))')) }
   scope :ordered_by_category_and_name, -> { ordered_by_category.order(:name) }
-  scope :current_semester_optionals, -> { where(current_optional_subject: true) }
+  scope :current_semester_optionals, -> { where(current_semester_subject: true) }
   scope :approved_for, ->(approved_approvable_ids) {
     without_exam.where(course: { id: approved_approvable_ids }).or(
       with_exam.where(exam: { id: approved_approvable_ids })
@@ -81,7 +81,7 @@ end
 #  category                 :string           default("optional")
 #  code                     :string
 #  credits                  :integer          not null
-#  current_optional_subject :boolean          default(FALSE)
+#  current_semester_subject :boolean          default(FALSE)
 #  name                     :string           not null
 #  short_name               :string
 #  created_at               :datetime         not null

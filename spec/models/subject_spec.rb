@@ -189,8 +189,8 @@ RSpec.describe Subject, type: :model do
   end
 
   describe '#current_semester_optionals' do
-    let(:s1) { create :subject, current_optional_subject: true }
-    let(:s2) { create :subject, current_optional_subject: false }
+    let(:s1) { create :subject, current_semester_subject: true }
+    let(:s2) { create :subject, current_semester_subject: false }
 
     it 'returns subjects that are current semester optionals' do
       expect(Subject.current_semester_optionals).to eq([s1])

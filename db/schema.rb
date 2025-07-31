@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_31_131318) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_31_134828) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -96,7 +96,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_31_131318) do
     t.string "eva_id"
     t.string "code"
     t.string "category", default: "optional"
-    t.boolean "current_optional_subject", default: false
+    t.boolean "current_semester_subject", default: false
     t.string "second_semester_eva_id"
     t.string "degree_id", null: false
     t.index ["degree_id", "code"], name: "index_subjects_on_degree_id_and_code", unique: true

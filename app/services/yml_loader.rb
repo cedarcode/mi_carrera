@@ -19,7 +19,7 @@ class YmlLoader
     load_subject_groups
     load_subjects
     load_prerequisites
-    load_current_optional_subjects
+    load_current_semester_subjects
     TreePreloader.break_cache!
   end
 
@@ -79,11 +79,11 @@ class YmlLoader
   end
 
   # rubocop:disable Rails/SkipsModelValidations
-  def load_current_optional_subjects
-    optional_subject_codes = safe_read_yaml(degree_dir.join("scraped_current_semester_subjects.yml"), default: [])
+  def load_current_semester_subjects
+    current_semester_subject_codes = safe_read_yaml(degree_dir.join("scraped_current_semester_subjects.yml"), default: [])
     Subject.transaction do
-      degree.subjects.where(code: optional_subject_codes).update_all(current_optional_subject: true)
-      degree.subjects.where.not(code: optional_subject_codes).update_all(current_optional_subject: false)
+      degree.subjects.where(code: current_semester_subject_codes).update_all(current_semester_subject: true)
+      degree.subjects.where.not(code: current_semester_subject_codes).update_all(current_semester_subject: false)
     end
   end
   # rubocop:enable Rails/SkipsModelValidations
