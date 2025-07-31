@@ -1,4 +1,4 @@
-class CurrentOptionalSubjectsController < ApplicationController
+class CurrentSemesterSubjectsController < ApplicationController
   def index
     @subjects = current_degree.subjects.current_semester_optionals.order(:code)
   end
