@@ -50,7 +50,10 @@
     <main class="main-content sm:mt-16 mt-14" id='main-content'>
       <%= render 'shared/notice' if flash[:notice] %>
 
-      <%= yield :welcome_banner %>
+      <div class="sticky top-14 sm:top-16 z-2">
+        <%= yield :welcome_banner %>
+        <%= yield :credits_bar %>
+      </div>
       <div class='mx-auto max-w-[600px] pb-[40px]'>
         <%= yield %>
       </div>
