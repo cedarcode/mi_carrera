@@ -52,11 +52,9 @@ module Scraper
       scraped_prerequisites =
         prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
 
-      if degree[:include_current_semester_subjects].present?
-        go_to_current_semester_subjects_page
-        current_semester_subjects = load_current_semester_subjects
-        write_yml("scraped_current_semester_subjects", current_semester_subjects.sort)
-      end
+      go_to_current_semester_subjects_page
+      current_semester_subjects = load_current_semester_subjects
+      write_yml("scraped_current_semester_subjects", current_semester_subjects.sort)
 
       write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
       write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h)
