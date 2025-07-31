@@ -1,8 +1,19 @@
-<%- resource_class.omniauth_providers.each do |provider| %>
-  <%= form_with url: omniauth_authorize_path(resource_name, provider), class: "w-full", method: :post do |f| %>
-    <%= f.button class: "w-full flex items-center justify-center p-2 rounded-lg border border-neutral-300 cursor-pointer bg-white space-x-1" do %>
-      <%= image_tag "google-icon.png", class: "w-6" %>
-      <span class="text-sm text-neutral-700 font-semibold">Google</span>
+<% if ENV['ENABLE_PASSKEYS'].present? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= form_with url: omniauth_authorize_path(resource_name, provider), class: "w-full", method: :post do |f| %>
+      <%= f.button class: "w-full flex items-center justify-center p-2 rounded-lg border border-neutral-300 cursor-pointer bg-white space-x-1" do %>
+        <%= image_tag "google-icon.png", class: "w-6" %>
+        <span class="text-sm text-neutral-700 font-semibold">Google</span>
+      <% end %>
+    <% end %>
+  <% end %>
+<% else %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post do |f| %>
+      <%= f.button class: "w-full flex items-center justify-center p-2 rounded-lg border-1 border-neutral-300 cursor-pointer bg-white" do %>
+        <%= image_tag "google-icon.png", class: "w-6" %>
+        <span class="text-sm text-neutral-700 font-semibold">Google</span>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
