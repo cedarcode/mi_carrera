@@ -3,8 +3,8 @@ es:
     failure:
       already_authenticated: "Ya iniciaste sesión."
       invalid: "Email y/o contraseña inválidos."
-      invalid_passkey: "Tu passkey no existe o no es válida."
-      invalid_webauthn_error: "La verificación de la passkey falló. Por favor, inténtalo de nuevo."
+      passkey_not_found: "Tu passkey no existe o no es válida."
+      invalid_passkey: "La verificación de la passkey falló. Por favor, inténtalo de nuevo."
       not_found_in_database: "%{authentication_keys} o contraseña inválidos."
       timeout: "Tu sesión ha expirado. Inicia sesión nuevamente."
       unauthenticated: "Tienes que registrarte o iniciar sesión antes de continuar."
