@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_27_211639) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_17_002921) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -63,6 +63,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_211639) do
     t.integer "interesting_rating"
     t.integer "credits_to_difficulty_rating"
     t.index ["subject_id", "user_id"], name: "index_reviews_on_subject_id_and_user_id", unique: true
+  end
+
+  create_table "subject_group_memberships", force: :cascade do |t|
+    t.bigint "subject_id", null: false
+    t.bigint "subject_group_id", null: false
+    t.integer "credits", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_group_id"], name: "index_subject_group_memberships_on_subject_group_id"
+    t.index ["subject_id", "subject_group_id"], name: "index_subject_group_memberships_on_subject_and_group", unique: true
+    t.index ["subject_id"], name: "index_subject_group_memberships_on_subject_id"
   end
 
   create_table "subject_groups", force: :cascade do |t|
@@ -137,6 +148,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_211639) do
   add_foreign_key "prerequisites", "subject_groups"
   add_foreign_key "reviews", "subjects"
   add_foreign_key "reviews", "users"
+  add_foreign_key "subject_group_memberships", "subject_groups"
+  add_foreign_key "subject_group_memberships", "subjects"
   add_foreign_key "subject_groups", "degrees"
   add_foreign_key "subject_plans", "subjects"
   add_foreign_key "subject_plans", "users"
