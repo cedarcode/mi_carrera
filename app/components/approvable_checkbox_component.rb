@@ -11,6 +11,8 @@ class ApprovableCheckboxComponent < ViewComponent::Base
     ],
     checkbox: %w[
       size-4
+      col-start-1
+      row-start-1
       rounded-sm
       border
       border-gray-300
@@ -34,7 +36,8 @@ class ApprovableCheckboxComponent < ViewComponent::Base
       text-base/4!
       text-white
       pointer-events-none
-      absolute
+      col-start-1
+      row-start-1
       opacity-0
       peer-checked:opacity-100
       peer-disabled:text-gray-300
