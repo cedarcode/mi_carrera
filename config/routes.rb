@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
     devise_for :users, path: "usuarios", controllers: {
       omniauth_callbacks: 'users/omniauth_callbacks',
-      registrations: 'users/registrations'
+      registrations: 'users/registrations',
+      sessions: 'users/sessions'
     }, path_names: {
       sign_in: 'iniciar_sesion',
       sign_out: 'cerrar_sesion',
