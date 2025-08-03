@@ -50,7 +50,7 @@ RSpec.describe YmlLoader do
         expect(subject1.openfing_id).to eq('testsubj')
         expect(subject1.short_name).to eq('TS1')
         expect(subject1.category).to eq('third_semester')
-        expect(subject1.current_semester_subject).to be false
+        expect(subject1.current_semester).to be false
 
         subject2 = degree.subjects.find_by!(code: '102')
         expect(subject2.name).to eq('Cálculo II')
@@ -63,7 +63,7 @@ RSpec.describe YmlLoader do
         expect(subject2.openfing_id).to be_nil
         expect(subject2.short_name).to be_nil
         expect(subject2.category).to eq('optional')
-        expect(subject2.current_semester_subject).to be true
+        expect(subject2.current_semester).to be true
 
         subject3 = degree.subjects.find_by!(code: '25')
         expect(subject3.name).to eq('Subject With No Group')
@@ -154,7 +154,7 @@ RSpec.describe YmlLoader do
             name: 'Existing Subject',
             credits: 100,
             degree_id:,
-            current_semester_subject: true
+            current_semester: true
           )
         end
 
@@ -173,7 +173,7 @@ RSpec.describe YmlLoader do
           expect(existing_subject.credits).to eq(14)
           expect(existing_subject.exam).to be_present
           expect(existing_subject.group).to eq(existing_group)
-          expect(existing_subject.current_semester_subject).to be false
+          expect(existing_subject.current_semester).to be false
         end
       end
     end

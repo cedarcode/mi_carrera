@@ -39,7 +39,7 @@ class Subject < ApplicationRecord
   scope :ordered_by_category, -> { in_order_of(:category, CATEGORIES) }
   scope :ordered_by_short_or_full_name, -> { order(Arel.sql('unaccent(COALESCE(short_name, name))')) }
   scope :ordered_by_category_and_name, -> { ordered_by_category.order(:name) }
-  scope :current_semester, -> { where(current_semester_subject: true) }
+  scope :current_semester, -> { where(current_semester: true) }
   scope :approved_for, ->(approved_approvable_ids) {
     without_exam.where(course: { id: approved_approvable_ids }).or(
       with_exam.where(exam: { id: approved_approvable_ids })
@@ -77,20 +77,20 @@ end
 #
 # Table name: subjects
 #
-#  id                       :bigint           not null, primary key
-#  category                 :string           default("optional")
-#  code                     :string
-#  credits                  :integer          not null
-#  current_semester_subject :boolean          default(FALSE)
-#  name                     :string           not null
-#  short_name               :string
-#  created_at               :datetime         not null
-#  updated_at               :datetime         not null
-#  degree_id                :string           not null
-#  eva_id                   :string
-#  group_id                 :integer
-#  openfing_id              :string
-#  second_semester_eva_id   :string
+#  id                     :bigint           not null, primary key
+#  category               :string           default("optional")
+#  code                   :string
+#  credits                :integer          not null
+#  current_semester       :boolean          default(FALSE)
+#  name                   :string           not null
+#  short_name             :string
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  degree_id              :string           not null
+#  eva_id                 :string
+#  group_id               :integer
+#  openfing_id            :string
+#  second_semester_eva_id :string
 #
 # Indexes
 #
