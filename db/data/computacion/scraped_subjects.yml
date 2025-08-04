@@ -195,6 +195,11 @@
   - group: '5020'
     credits: 8
   has_exam: true
+1033P:
+  code: 1033P
+  name: CREDITOS NO ACUM METODOS NUMERICOS
+  has_exam: true
+  subject_groups: []
 '1034':
   code: '1034'
   name: TEORIA DE JUEGOS Y PROG. FUNCIONAL
@@ -2506,6 +2511,13 @@
   - group: '3582'
     credits: 6
   has_exam: false
+'2041':
+  code: '2041'
+  name: MÉTODOS NUMÉRICOS
+  subject_groups:
+  - group: '4083'
+    credits: 10
+  has_exam: true
 2107A:
   code: 2107A
   name: TALLER DE COMUNICACIÓN ORAL Y ESCRITA
