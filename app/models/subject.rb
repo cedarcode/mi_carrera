@@ -81,7 +81,7 @@ end
 #  category               :string           default("optional")
 #  code                   :string
 #  credits                :integer          not null
-#  current_semester       :boolean          default(FALSE)
+#  current_semester       :boolean          default(FALSE), not null
 #  name                   :string           not null
 #  short_name             :string
 #  created_at             :datetime         not null
