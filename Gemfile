@@ -4,7 +4,7 @@ ruby file: ".ruby-version"
 
 gem 'rails', '~> 8.0.2'
 
-gem 'appsignal', '~> 4.5'
+gem 'appsignal', '~> 4.6'
 gem 'bootsnap', '~> 1.18', require: false
 gem 'devise', '~> 4.9'
 gem 'factory_bot_rails', '~> 6.5'
@@ -20,7 +20,7 @@ gem 'rollbar', '~> 3.6'
 gem 'stimulus-rails', '~> 1.3'
 gem 'tailwindcss-rails', '~> 4.3'
 gem 'turbo-rails', '~> 2.0'
-gem "view_component", "~> 3.23"
+gem "view_component", "~> 4.0"
 gem 'webauthn'
 
 group :development, :deploy do
