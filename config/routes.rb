@@ -18,7 +18,12 @@ Rails.application.routes.draw do
     }
 
     scope path: "usuarios", module: "users", as: "user" do
-      resources :passkeys, only: [:index, :create, :destroy]
+      resources :passkeys, only: [:index, :create, :destroy] do
+        collection do
+          get :verify_password
+          post :process_verification
+        end
+      end
     end
 
     root to: "subjects#index"
