@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Manage passkeys' do
-
   let!(:user) { create(:user) }
   ENV['ENABLE_PASSKEYS'] = 'true'
 
