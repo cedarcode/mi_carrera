@@ -1,8 +1,6 @@
 require 'rails_helper'
-require 'support/virtual_authenticator_helper'
 
 RSpec.describe 'Manage passkeys' do
-  include VirtualAuthenticatorHelper
 
   let!(:user) { create(:user) }
   ENV['ENABLE_PASSKEYS'] = 'true'
@@ -64,5 +62,13 @@ RSpec.describe 'Manage passkeys' do
 
   def click_user_menu
     find("#user-menu[data-controller-connected='true']").click
+  end
+
+  def add_virtual_authenticator
+    options = ::Selenium::WebDriver::VirtualAuthenticatorOptions.new
+    options.user_verification = true
+    options.user_verified = true
+    options.resident_key = true
+    page.driver.browser.add_virtual_authenticator(options)
   end
 end
