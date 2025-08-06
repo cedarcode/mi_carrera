@@ -20,6 +20,16 @@ RSpec.describe 'Manage passkeys' do
 
       click_on "Administrar Passkeys"
 
+      expect(page).to have_text "Ingresa tu Contraseña"
+      fill_in "Contraseña", with: "Contraseña incorrecta!!!!!!!!"
+      click_on "Verificar"
+
+      expect(page).to have_text "Contraseña incorrecta. por favor, intenta de nuevo."
+
+      fill_in "Contraseña", with: user.password
+      click_on "Verificar"
+      expect(page).to have_text "Contraseña verificada correctamente."
+
       stub_create(fake_credentials)
 
       fill_in "Nombre", with: "My new passkey"
@@ -53,6 +63,10 @@ RSpec.describe 'Manage passkeys' do
       visit edit_user_registration_path
 
       click_on "Administrar Passkeys"
+
+      fill_in "Contraseña", with: user.password
+      click_on "Verificar"
+      expect(page).to have_text "Contraseña verificada correctamente."
 
       within("li", text: "My new passkey") do
         accept_confirm "¿Seguro que quieres borrar esta Passkey?" do
