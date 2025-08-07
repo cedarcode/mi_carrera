@@ -73,10 +73,9 @@ RSpec.configure do |config|
       # resulting in tests errors.
       # This flag disables that behavior.
       options.add_argument 'disable-backgrounding-occluded-windows'
-      Capybara.app_host = 'http://localhost:3000'
+      Capybara.app_host = 'http://localhost:3030'
       Capybara.server_host = 'localhost'
-      Capybara.server_port = 3000
-      Capybara.default_max_wait_time = 20
+      Capybara.server_port = 3030
     end
   end
 
