@@ -7,3 +7,15 @@
 }
 
 @custom-variant with-error (.field_with_errors &);
+
+@layer utilities {
+  .sign-in-buttons {
+    @apply justify-evenly gap-2;
+  }
+
+  @media (max-width: 416px) {
+    .sign-in-buttons {
+      @apply grid grid-cols-1 gap-3;
+    }
+  }
+}
