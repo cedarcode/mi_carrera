@@ -5,8 +5,6 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
-require 'support/stub_passkeys'
-require 'webauthn/fake_client'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 require "view_component/test_helpers"
@@ -75,6 +73,9 @@ RSpec.configure do |config|
       # resulting in tests errors.
       # This flag disables that behavior.
       options.add_argument 'disable-backgrounding-occluded-windows'
+      Capybara.app_host = 'http://localhost:3030'
+      Capybara.server_host = 'localhost'
+      Capybara.server_port = 3030
     end
   end
 
@@ -88,7 +89,6 @@ RSpec.configure do |config|
   end
 
   config.include ViewComponent::TestHelpers, type: :component
-  config.include Support::StubPasskeys, type: :system
 
   config.after(:each) do
     TreePreloader.break_cache!
