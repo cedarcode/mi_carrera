@@ -21,7 +21,7 @@
     </div>
 
     <% if ENV['ENABLE_PASSKEYS'].present? %>
-      <div class="flex max-sm:grid max-sm:grid-cols-1 max-sm:gap-3 sm:justify-evenly sm:gap-2">
+      <div class="flex max-sm:flex-col sm:justify-evenly gap-2">
         <%= render "shared/google_sso" %>
         <%= render "shared/passkey" %>
       </div>
