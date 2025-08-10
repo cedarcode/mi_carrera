@@ -11,9 +11,5 @@ pin "canvas-confetti", to: "https://ga.jspm.io/npm:canvas-confetti@1.6.0/dist/co
 pin "choices.js", to: "https://ga.jspm.io/npm:choices.js@11.1.0/public/assets/scripts/choices.js"
 pin "@github/webauthn-json/browser-ponyfill", to: "@github--webauthn-json--browser-ponyfill.js"
 
-if Rails.env.test?
-  pin "stub_credentials"
-  pin "sinon" # @20.0.0
-end
 pin "sortablejs" # @1.15.6
 pin "@rails/request.js", to: "@rails--request.js.js" # @0.0.12
