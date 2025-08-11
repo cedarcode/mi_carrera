@@ -16418,6 +16418,66 @@
   - type: logical
     logical_operator: not
     operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1613'
+        subject_needed_name: METAHEURISTICAS Y OPTIMIZACION SOBRE REDES
+        needs: course
+      - type: subject
+        subject_needed_code: '1635'
+        subject_needed_name: METAHEURISTICAS Y OPTIMIZACION SOBRE REDES (MOR)
+        needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1025P
+      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
+      needs: exam
+    - type: subject
+      subject_needed_code: '1025'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1610P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1610'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1650'
+      subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1322P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1322'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1373'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+  subject_code: '2042'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
     - type: subject
       needs: all
       subject_needed_code: '1761'
