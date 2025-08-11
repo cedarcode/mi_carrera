@@ -2518,6 +2518,15 @@
   - group: '4083'
     credits: 10
   has_exam: true
+'2042':
+  code: '2042'
+  name: OPTIMIZACIÓN COMBINATORIA CON METAHEURÍSTICAS
+  subject_groups:
+  - group: '4580'
+    credits: 2
+  - group: '4815'
+    credits: 8
+  has_exam: false
 2107A:
   code: 2107A
   name: TALLER DE COMUNICACIÓN ORAL Y ESCRITA
