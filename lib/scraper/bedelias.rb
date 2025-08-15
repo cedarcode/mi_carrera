@@ -51,10 +51,10 @@ module Scraper
 
       scraped_prerequisites =
         prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
-      if degree[:include_inco_subjects].present?
-        optional_inco_subjects = load_this_semester_inco_subjects
-        write_yml("scraped_optional_subjects", optional_inco_subjects.sort)
-      end
+
+      go_to_current_semester_subjects_page
+      current_semester_subjects = load_current_semester_subjects
+      write_yml("scraped_current_semester_subjects", current_semester_subjects.sort)
 
       write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
       write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h)
@@ -81,12 +81,34 @@ module Scraper
       click_on "PLANES DE ESTUDIO"
       click_on "Planes de estudio / Previas"
 
+      select_degree_in_accordion
+
+      within('.ui-expanded-row-content', text: 'Planes') do
+        find('tr', text: degree[:current_plan]).click_on "Ver más datos"
+      end
+    end
+
+    def go_to_current_semester_subjects_page
+      visit "https://bedelias.udelar.edu.uy"
+      click_on "PLANES DE ESTUDIO"
+      click_on "Calendarios"
+
+      select_degree_in_accordion
+
+      within('.ui-expanded-row-content', text: 'Planes') do
+        within('tr', text: degree[:current_plan]) do
+          first('a').click
+        end
+      end
+    end
+
+    def select_degree_in_accordion
       execute_script("$.fx.off = true;") # Disable jQuery effects
 
       find('.ui-accordion-header', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
       find('td', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
 
-      find('span', text: 'Planes de estudio - FING')
+      find('span', text: ' - FING')
 
       wait_for_loading_widget_to_disappear
 
@@ -97,10 +119,6 @@ module Scraper
           row.find('.ui-row-toggler').click
           break
         end
-      end
-
-      within('.ui-expanded-row-content', text: 'Planes') do
-        find('tr', text: degree[:current_plan]).click_on "Ver más datos"
       end
     end
 
@@ -227,22 +245,30 @@ module Scraper
       end
     end
 
-    def load_this_semester_inco_subjects
-      visit "https://www.fing.edu.uy/es/node/43774"
+    def load_current_semester_subjects
+      subjects = []
 
-      find('table').all('tr').each_with_object([]) do |row, subjects|
-        cells = row.all('td')
-        next unless cells&.size == 6
+      find('.ui-paginator-last').click
+      has_selector?(".ui-paginator-last.ui-state-disabled")
 
-        name = cells[0]&.text&.strip
-        codigo = cells[1]&.text&.strip
+      total_pages = find(".ui-paginator-page.ui-state-active").text.to_i
 
-        next unless name && codigo
-        next if name == "Curso" # the first row is the header
-        next if codigo == "nueva" # there's one row with "nueva" as the code
+      find(".ui-paginator-first").click
 
-        subjects << codigo
+      total_pages.times do
+        wait_for_loading_widget_to_disappear
+
+        all('[data-ri]').map { |node| node['data-ri'] }.map do |row_id|
+          subject_row = find("[data-ri='#{row_id}']")
+          subject_code = subject_row.all('td')[0].text.split(' ').last
+
+          subjects << subject_code
+        end
+
+        find('.ui-paginator-next').click unless has_selector?(".ui-paginator-next.ui-state-disabled")
       end
+
+      subjects
     end
 
     def wait_for_loading_widget_to_disappear
