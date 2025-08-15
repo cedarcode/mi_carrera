@@ -2513,7 +2513,7 @@
   has_exam: false
 '2041':
   code: '2041'
-  name: MÉTODOS NUMÉRICOS
+  name: METODOS NUMERICOS
   subject_groups:
   - group: '4083'
     credits: 10

@@ -10594,6 +10594,10 @@
       subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
       needs: course
     - type: subject
+      subject_needed_code: '1783'
+      subject_needed_name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+      needs: course
+    - type: subject
       subject_needed_code: C402
       subject_needed_name: TALLER IV (ANUAL)
       needs: course
@@ -12262,10 +12266,17 @@
         subject_needed_code: CP30
         subject_needed_name: TALLER III (1ER.SEM.)
         needs: course
-  - type: subject
-    needs: course
-    subject_needed_code: '1716'
-    subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1716'
+      subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+      needs: course
+    - type: subject
+      subject_needed_code: '1783'
+      subject_needed_name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+      needs: course
   subject_code: '1721'
   is_exam: false
 - type: logical
@@ -16409,7 +16420,7 @@
   - type: subject
     needs: course
     subject_needed_code: '2041'
-    subject_needed_name: MÉTODOS NUMÉRICOS
+    subject_needed_name: METODOS NUMERICOS
   subject_code: '2041'
   is_exam: true
 - type: logical
@@ -16695,6 +16706,10 @@
       subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
       needs: exam
     - type: subject
+      subject_needed_code: '1783'
+      subject_needed_name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+      needs: course
+    - type: subject
       subject_needed_code: CP366
       subject_needed_name: TALLER IV (2DO.SEM.)
       needs: course
@@ -16738,31 +16753,37 @@
   subject_code: '2418'
   is_exam: false
 - type: logical
-  logical_operator: not
+  logical_operator: and
   operands:
   - type: logical
-    logical_operator: or
+    logical_operator: not
     operands:
-    - type: subject
-      subject_needed_code: SD10
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: 1512P
-      subject_needed_name: CREDITOS NO ACUM DISEÑO LOGICO
-      needs: all
-    - type: subject
-      subject_needed_code: CP51
-      subject_needed_name: DISEÑO LOGICO
-      needs: all
-    - type: subject
-      subject_needed_code: '1512'
-      subject_needed_name: DISEÑO LOGICO
-      needs: all
-    - type: subject
-      subject_needed_code: 1512C
-      subject_needed_name: DISEÑO LOGICO
-      needs: all
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: SD10
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: all
+      - type: subject
+        subject_needed_code: 1512P
+        subject_needed_name: CREDITOS NO ACUM DISEÑO LOGICO
+        needs: all
+      - type: subject
+        subject_needed_code: CP51
+        subject_needed_name: DISEÑO LOGICO
+        needs: all
+      - type: subject
+        subject_needed_code: '1512'
+        subject_needed_name: DISEÑO LOGICO
+        needs: all
+      - type: subject
+        subject_needed_code: 1512C
+        subject_needed_name: DISEÑO LOGICO
+        needs: all
+  - type: credits
+    credits: 15
+    group: 4442
   subject_code: '2512'
   is_exam: false
 - type: logical
