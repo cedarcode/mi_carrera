@@ -3,6 +3,7 @@ import Sortable from 'sortablejs';
 import { FetchRequest } from '@rails/request.js';
 
 export default class extends Controller {
+  static outlets = ['planner-loading'];
   static values = {
     put: { type: Boolean, default: true }
   };
@@ -22,6 +23,8 @@ export default class extends Controller {
 
   async onEnd(event) {
     if (event.from === event.to) { return; }
+
+    this.plannerLoadingOutlet.start();
 
     const url = event.item.dataset.plannerDraggableUrl;
     const method = event.item.dataset.plannerDraggableMethod;
