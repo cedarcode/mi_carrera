@@ -53,7 +53,6 @@ module Scraper
       scraped_prerequisites =
         prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
 
-      go_to_current_semester_subjects_page
       current_semester_subjects += load_current_semester_subjects("Instancias de dictado con período habilitado")
       current_semester_subjects += load_current_semester_subjects("Instancias de dictado con período finalizado")
       write_yml("scraped_current_semester_subjects", current_semester_subjects.sort)
@@ -246,17 +245,32 @@ module Scraper
     end
 
     def load_current_semester_subjects(inscription_period)
-      subjects = []
+      Thread.abort_on_exception = true
 
+      go_to_current_semester_subjects_page
       ensure_accordion_open(inscription_period)
       find('.ui-paginator-last').click
       has_selector?(".ui-paginator-last.ui-state-disabled")
-
       total_pages = find(".ui-paginator-page.ui-state-active").text.to_i
-
       find(".ui-paginator-first").click
 
-      1.upto(total_pages).each do |page|
+      max_pages = MAX_PAGES || total_pages
+
+      1.upto(max_pages).each_slice((max_pages / THREADS).ceil).map do |slice|
+        Thread.new do
+          using_session(Capybara::Session.new(page.mode)) do
+            load_current_semester_subjects_slice(inscription_period, slice)
+          end
+        end
+      end.flat_map(&:value).uniq
+    end
+
+    def load_current_semester_subjects_slice(inscription_period, slice)
+      go_to_current_semester_subjects_page
+
+      subjects = []
+
+      slice.flat_map do |page|
         ensure_accordion_open(inscription_period)
         go_to_page(page)
 
