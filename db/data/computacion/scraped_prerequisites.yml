@@ -10065,28 +10065,6 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: 1027P
-      subject_needed_name: CREDITOS NO ACUM. CON LOGICA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1027'
-      subject_needed_name: LOGICA
-      needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1321P
-      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
-      needs: exam
-    - type: subject
-      subject_needed_code: '1321'
-      subject_needed_name: PROGRAMACION 2
-      needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
       subject_needed_code: 1023P
       subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
       needs: exam
@@ -10117,6 +10095,36 @@
       subject_needed_code: SRN17
       subject_needed_name: PROGRAMACIÓN I- CIO CT-LHRH
       needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1027P
+      subject_needed_name: CREDITOS NO ACUM. CON LOGICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1027'
+      subject_needed_name: LOGICA
+      needs: course
+    - type: subject
+      subject_needed_code: '1013'
+      subject_needed_name: LOGICA MODALIDAD AL REVES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1010'
+      subject_needed_name: LOGICA Y COMPUTACION
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: course
   subject_code: '1466'
   is_exam: false
 - type: logical
@@ -12317,14 +12325,20 @@
       - type: credits
         credits: 330
       - type: credits
-        credits: 10
-        group: 4066
+        credits: 8
+        group: 5020
+      - type: credits
+        credits: 15
+        group: 4756
+      - type: credits
+        credits: 60
+        group: 4580
       - type: credits
         credits: 10
-        group: 5265
+        group: 4647
       - type: credits
-        credits: 30
-        group: 4428
+        credits: 10
+        group: 4815
       - type: credits
         credits: 10
         group: 5082
@@ -12333,33 +12347,16 @@
         group: 4083
       - type: credits
         credits: 10
-        group: 4647
+        group: 5265
+      - type: credits
+        credits: 30
+        group: 4428
       - type: credits
         credits: 10
-        group: 4815
-      - type: credits
-        credits: 15
-        group: 4756
-      - type: credits
-        credits: 60
-        group: 4580
-      - type: credits
-        credits: 8
-        group: 5020
+        group: 4066
     - type: logical
       logical_operator: and
       operands:
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          needs: course
-          subject_needed_code: '1610'
-          subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
-        - type: subject
-          needs: course
-          subject_needed_code: '1650'
-          subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       - type: logical
         logical_operator: or
         operands:
@@ -12397,9 +12394,24 @@
             subject_needed_name: ARQUITECTURA DE COMPUTADORAS
             needs: course
           - type: subject
+            subject_needed_code: '1466'
+            subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+            needs: course
+          - type: subject
             subject_needed_code: '1403'
             subject_needed_name: INT. A LA ARQUITECTURA DE COMPUTADORES
             needs: course
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          needs: course
+          subject_needed_code: '1610'
+          subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
+        - type: subject
+          needs: course
+          subject_needed_code: '1650'
+          subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       - type: credits
         credits: 365
       - type: subject
@@ -12408,8 +12420,20 @@
         subject_needed_name: TALLER DE PROGRAMACION
       - type: subject
         needs: course
-        subject_needed_code: '1911'
-        subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+        subject_needed_code: '1721'
+        subject_needed_name: PROYECTO DE INGENIERIA DE SOFTWARE
+      - type: subject
+        needs: course
+        subject_needed_code: '1325'
+        subject_needed_name: TEORIA DE LENGUAJES
+      - type: subject
+        needs: course
+        subject_needed_code: '1033'
+        subject_needed_name: METODOS NUMERICOS
+      - type: subject
+        needs: course
+        subject_needed_code: '1324'
+        subject_needed_name: PROGRAMACION 4
       - type: subject
         needs: course
         subject_needed_code: '1716'
@@ -12420,20 +12444,8 @@
         subject_needed_name: PROGRAMACION 3
       - type: subject
         needs: course
-        subject_needed_code: '1324'
-        subject_needed_name: PROGRAMACION 4
-      - type: subject
-        needs: course
-        subject_needed_code: '1033'
-        subject_needed_name: METODOS NUMERICOS
-      - type: subject
-        needs: course
-        subject_needed_code: '1721'
-        subject_needed_name: PROYECTO DE INGENIERIA DE SOFTWARE
-      - type: subject
-        needs: course
-        subject_needed_code: '1325'
-        subject_needed_name: TEORIA DE LENGUAJES
+        subject_needed_code: '1911'
+        subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
       - type: logical
         logical_operator: or
         operands:
@@ -14872,6 +14884,10 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1025P
+      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
+      needs: exam
+    - type: subject
       subject_needed_code: 1025T
       subject_needed_name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
       needs: exam
@@ -16753,37 +16769,31 @@
   subject_code: '2418'
   is_exam: false
 - type: logical
-  logical_operator: and
+  logical_operator: not
   operands:
   - type: logical
-    logical_operator: not
+    logical_operator: or
     operands:
-    - type: logical
-      logical_operator: or
-      operands:
-      - type: subject
-        subject_needed_code: SD10
-        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-        needs: all
-      - type: subject
-        subject_needed_code: 1512P
-        subject_needed_name: CREDITOS NO ACUM DISEÑO LOGICO
-        needs: all
-      - type: subject
-        subject_needed_code: CP51
-        subject_needed_name: DISEÑO LOGICO
-        needs: all
-      - type: subject
-        subject_needed_code: '1512'
-        subject_needed_name: DISEÑO LOGICO
-        needs: all
-      - type: subject
-        subject_needed_code: 1512C
-        subject_needed_name: DISEÑO LOGICO
-        needs: all
-  - type: credits
-    credits: 15
-    group: 4442
+    - type: subject
+      subject_needed_code: SD10
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: 1512P
+      subject_needed_name: CREDITOS NO ACUM DISEÑO LOGICO
+      needs: all
+    - type: subject
+      subject_needed_code: CP51
+      subject_needed_name: DISEÑO LOGICO
+      needs: all
+    - type: subject
+      subject_needed_code: '1512'
+      subject_needed_name: DISEÑO LOGICO
+      needs: all
+    - type: subject
+      subject_needed_code: 1512C
+      subject_needed_name: DISEÑO LOGICO
+      needs: all
   subject_code: '2512'
   is_exam: false
 - type: logical
@@ -16840,7 +16850,7 @@
     logical_operator: or
     operands:
     - type: subject
-      needs: exam_activity
+      needs: exam
       subject_needed_code: '1151'
       subject_needed_name: FISICA 1
     - type: logical
@@ -17256,6 +17266,10 @@
       needs: exam
     - type: subject
       subject_needed_code: '1033'
+      subject_needed_name: METODOS NUMERICOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '2041'
       subject_needed_name: METODOS NUMERICOS
       needs: exam
   subject_code: '5914'

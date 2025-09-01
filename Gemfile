@@ -4,7 +4,7 @@ ruby file: ".ruby-version"
 
 gem 'rails', '~> 8.0.2'
 
-gem 'appsignal', '~> 4.6'
+gem 'appsignal', '~> 4.7'
 gem 'bootsnap', '~> 1.18', require: false
 gem 'devise', '~> 4.9'
 gem 'factory_bot_rails', '~> 6.5'
@@ -34,7 +34,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "annotaterb", "~> 4.18"
+  gem "annotaterb", "~> 4.19"
   gem "letter_opener", "~> 1.10"
   gem "lookbook", "~> 2.3"
   gem 'rubocop', '~> 1.80'
