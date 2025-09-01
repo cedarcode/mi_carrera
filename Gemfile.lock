@@ -77,10 +77,10 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     afm (1.0.0)
     android_key_attestation (0.3.0)
-    annotaterb (4.18.0)
+    annotaterb (4.19.0)
       activerecord (>= 6.0.0)
       activesupport (>= 6.0.0)
-    appsignal (4.6.0)
+    appsignal (4.7.0)
       logger
       rack (>= 2.0.0)
     ast (2.4.3)
@@ -362,7 +362,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.4)
-    rubocop (1.80.0)
+    rubocop (1.80.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -474,8 +474,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotaterb (~> 4.18)
-  appsignal (~> 4.6)
+  annotaterb (~> 4.19)
+  appsignal (~> 4.7)
   bootsnap (~> 1.18)
   brakeman (~> 7.1)
   capybara (~> 3.40)
