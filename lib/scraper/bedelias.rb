@@ -14,6 +14,8 @@ module Scraper
     SUBJECT_CODE_NAME_CREDITS_REGEX = /\A((?:\w|\.|\-)+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
     MAX_PAGES = ENV["MAX_PAGES"]&.to_i
     THREADS = (ENV['THREADS'] || 6).to_f
+    INVALID_PERIOD = 'Instancias de dictado con período finalizado'
+    VALID_PERIOD = 'Instancias de dictado con período habilitado'
 
     def self.scrape
       Capybara.configure do |config|
@@ -53,8 +55,8 @@ module Scraper
       scraped_prerequisites =
         prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
 
-      current_semester_subjects += load_current_semester_subjects("Instancias de dictado con período habilitado")
-      current_semester_subjects += load_current_semester_subjects("Instancias de dictado con período finalizado")
+      current_semester_subjects += load_current_semester_subjects(VALID_PERIOD)
+      current_semester_subjects += load_current_semester_subjects(INVALID_PERIOD)
       write_yml("scraped_current_semester_subjects", current_semester_subjects.sort)
 
       write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
@@ -311,8 +313,8 @@ module Scraper
         header.click
         wait_for_loading_widget_to_disappear
         has_selector?("div.ui-accordion-header.ui-state-active", text: text, match: :prefer_exact)
-        has_css?('#accordDict\\tabDictF', visible: text == "Instancias de dictado con período finalizado")
-        has_css?('#accordDict\\tabDictH', visible: text == "Instancias de dictado con período habilitado")
+        has_css?('#accordDict\\tabDictF', visible: text == INVALID_PERIOD)
+        has_css?('#accordDict\\tabDictH', visible: text == VALID_PERIOD)
       end
     end
   end
