@@ -38,6 +38,7 @@ module Scraper
       logger.info "Starting to scrape degree"
       groups = {}
       subjects = {}
+      current_semester_subjects = []
 
       go_to_groups_and_subjects_page
       process_groups_and_subjects(groups, subjects)
@@ -53,7 +54,8 @@ module Scraper
         prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
 
       go_to_current_semester_subjects_page
-      current_semester_subjects = load_current_semester_subjects
+      current_semester_subjects += load_current_semester_subjects("Instancias de dictado con período habilitado")
+      current_semester_subjects += load_current_semester_subjects("Instancias de dictado con período finalizado")
       write_yml("scraped_current_semester_subjects", current_semester_subjects.sort)
 
       write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
@@ -245,9 +247,10 @@ module Scraper
       end
     end
 
-    def load_current_semester_subjects
+    def load_current_semester_subjects(inscription_period)
       subjects = []
 
+      ensure_accordion_open(inscription_period)
       find('.ui-paginator-last').click
       has_selector?(".ui-paginator-last.ui-state-disabled")
 
@@ -255,17 +258,19 @@ module Scraper
 
       find(".ui-paginator-first").click
 
-      total_pages.times do
-        wait_for_loading_widget_to_disappear
+      1.upto(total_pages).each do |page|
+        ensure_accordion_open(inscription_period)
+        go_to_page(page)
 
         all('[data-ri]').map { |node| node['data-ri'] }.map do |row_id|
+          ensure_accordion_open(inscription_period)
+          go_to_page(page)
+
           subject_row = find("[data-ri='#{row_id}']")
           subject_code = subject_row.all('td')[0].text.split(' ').last
 
-          subjects << subject_code
+          subjects << subject_code if matches_current_period?(subject_row)
         end
-
-        find('.ui-paginator-next').click unless has_selector?(".ui-paginator-next.ui-state-disabled")
       end
 
       subjects
@@ -274,6 +279,28 @@ module Scraper
     def wait_for_loading_widget_to_disappear
       if has_css?('.ui-widget-overlay')
         assert_no_selector('.ui-widget-overlay')
+      end
+    end
+
+    def matches_current_period?(subject_row)
+      subject_row.click_on 'Ver más datos'
+
+      periods = all(:xpath, "//td[normalize-space(text())='Período:']/following-sibling::td/span").map(&:text)
+
+      click_on 'Volver'
+
+      periods.include?(degree[:current_period])
+    end
+
+    def ensure_accordion_open(text)
+      header = find("div.ui-accordion-header", text: text, match: :prefer_exact)
+
+      unless header[:class].include?("ui-state-active")
+        header.click
+        wait_for_loading_widget_to_disappear
+        has_selector?("div.ui-accordion-header.ui-state-active", text: text, match: :prefer_exact)
+        has_css?('#accordDict\\tabDictF', visible: text == "Instancias de dictado con período finalizado")
+        has_css?('#accordDict\\tabDictH', visible: text == "Instancias de dictado con período habilitado")
       end
     end
   end

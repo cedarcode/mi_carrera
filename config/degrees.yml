@@ -3,3 +3,4 @@ shared:
 - bedelias_name: "INGENIERIA EN COMPUTACION"
   id: "computacion"
   current_plan: "1997"
+  current_period: "202502"
