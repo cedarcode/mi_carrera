@@ -210,22 +210,20 @@ module Scraper
     end
 
     def go_to_page(page)
-      # Requested page is not visible in the pages list
-      if page > all('.ui-paginator-page').last.text.to_i
-        # Navigate to last page because as of 3/3/2023 there are only 16 pages,
-        # so all pages are visible from either the first or last page.
-        # Would be more correct to navigate to the last visible page and repeat
-        # until we see the requested page, but that would require extra navigations
-        # after processing each approvable, making it slower.
-        # If the number of pages increases in the future, this approach will raise
-        # an error if it can't find the requested page. We can implement a better
-        # (and maybe slower) approach when/if this happens
-        find('.ui-paginator-last').click
-        has_selector?(".ui-paginator-last.ui-state-disabled")
+      # Loop until the desired page is visible in the paginator
+      until page_visible?(page)
+        last_visible_page = all('.ui-paginator-page').last
+
+        last_visible_page.click
+        has_selector?('.ui-paginator-page.ui-state-active', text: last_visible_page.text)
       end
 
       find('.ui-paginator-page', text: page, match: :prefer_exact).click
-      has_selector?(".ui-paginator-page.ui-state-active", text: "#{page}")
+      has_selector?('.ui-paginator-page.ui-state-active', text: page.to_s)
+    end
+
+    def page_visible?(page)
+      has_selector?('.ui-paginator-page', text: page, match: :prefer_exact)
     end
 
     def add_missing_exams_and_subjects(prerequisite_tree, subjects)
