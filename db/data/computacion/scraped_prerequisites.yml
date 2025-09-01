@@ -10065,28 +10065,6 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: 1027P
-      subject_needed_name: CREDITOS NO ACUM. CON LOGICA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1027'
-      subject_needed_name: LOGICA
-      needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1321P
-      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
-      needs: exam
-    - type: subject
-      subject_needed_code: '1321'
-      subject_needed_name: PROGRAMACION 2
-      needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
       subject_needed_code: 1023P
       subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
       needs: exam
@@ -10117,6 +10095,36 @@
       subject_needed_code: SRN17
       subject_needed_name: PROGRAMACIÓN I- CIO CT-LHRH
       needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1027P
+      subject_needed_name: CREDITOS NO ACUM. CON LOGICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1027'
+      subject_needed_name: LOGICA
+      needs: course
+    - type: subject
+      subject_needed_code: '1013'
+      subject_needed_name: LOGICA MODALIDAD AL REVES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1010'
+      subject_needed_name: LOGICA Y COMPUTACION
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: course
   subject_code: '1466'
   is_exam: false
 - type: logical
