@@ -14959,16 +14959,9 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: 1911P
-      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+      subject_needed_code: '1454'
+      subject_needed_name: ASPECTOS BASICOS DE REDES DE COMPUT
       needs: exam
-    - type: subject
-      subject_needed_code: '1911'
-      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
     - type: subject
       subject_needed_code: 1446P
       subject_needed_name: CREDITOS NO ACUM. CON REDES DE COMPUTADORAS
@@ -14977,6 +14970,17 @@
       subject_needed_code: '1446'
       subject_needed_name: REDES DE COMPUTADORAS
       needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1911P
+      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1911'
+      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
   subject_code: '1891'
   is_exam: false
 - type: logical
@@ -18107,7 +18111,7 @@
   - type: subject
     needs: course
     subject_needed_code: I546
-    subject_needed_name: 'TALLER: DISEÑO DE PROY P/LA GESTIÓN UNIV'
+    subject_needed_name: 'TALLER: DISEÑO DE PROYECTOS PARA LA GESTIÓN UNIVERSITARIA'
   subject_code: I546
   is_exam: true
 - type: logical
