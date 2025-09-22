@@ -4197,7 +4197,7 @@ GP7:
   has_exam: false
 I546:
   code: I546
-  name: 'TALLER: DISEÑO DE PROY P/LA GESTIÓN UNIV'
+  name: 'TALLER: DISEÑO DE PROYECTOS PARA LA GESTIÓN UNIVERSITARIA'
   subject_groups:
   - group: '5082'
     credits: 10
