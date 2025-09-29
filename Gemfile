@@ -14,7 +14,7 @@ gem "omniauth-google-oauth2", '~> 1.2'
 gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pdf-reader'
 gem 'pg', '~> 1.6'
-gem 'propshaft', '~> 1.2'
+gem 'propshaft', '~> 1.3'
 gem 'puma', '~> 7.0'
 gem 'rollbar', '~> 3.6'
 gem 'stimulus-rails', '~> 1.3'
@@ -37,7 +37,7 @@ group :development do
   gem "annotaterb", "~> 4.19"
   gem "letter_opener", "~> 1.10"
   gem "lookbook", "~> 2.3"
-  gem 'rubocop', '~> 1.80'
+  gem 'rubocop', '~> 1.81'
   gem 'rubocop-performance', '~> 1.26', require: false
   gem 'rubocop-rails', '~> 2.33', require: false
   gem 'web-console', '~> 4.2'
