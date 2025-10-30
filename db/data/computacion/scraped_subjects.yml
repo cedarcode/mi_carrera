@@ -195,11 +195,6 @@
   - group: '5020'
     credits: 8
   has_exam: true
-1033P:
-  code: 1033P
-  name: CREDITOS NO ACUM METODOS NUMERICOS
-  has_exam: true
-  subject_groups: []
 '1034':
   code: '1034'
   name: TEORIA DE JUEGOS Y PROG. FUNCIONAL
@@ -2515,7 +2510,7 @@
   code: '2041'
   name: METODOS NUMERICOS
   subject_groups:
-  - group: '4083'
+  - group: '5020'
     credits: 10
   has_exam: true
 '2042':
