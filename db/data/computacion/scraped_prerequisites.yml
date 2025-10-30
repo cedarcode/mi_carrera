@@ -10395,6 +10395,21 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      needs: exam
+    - type: subject
+      subject_needed_code: CP15
+      subject_needed_name: PROGRAMACION II
+      needs: exam
+    - type: subject
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: CP1
       subject_needed_name: ANALISIS MATEMATICO I
       needs: exam
@@ -10503,21 +10518,6 @@
     - type: subject
       subject_needed_code: GAL1P
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1321P
-      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
-      needs: exam
-    - type: subject
-      subject_needed_code: CP15
-      subject_needed_name: PROGRAMACION II
-      needs: exam
-    - type: subject
-      subject_needed_code: '1321'
-      subject_needed_name: PROGRAMACION 2
       needs: exam
   subject_code: '1537'
   is_exam: false
@@ -14959,16 +14959,9 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: 1911P
-      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+      subject_needed_code: '1454'
+      subject_needed_name: ASPECTOS BASICOS DE REDES DE COMPUT
       needs: exam
-    - type: subject
-      subject_needed_code: '1911'
-      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
     - type: subject
       subject_needed_code: 1446P
       subject_needed_name: CREDITOS NO ACUM. CON REDES DE COMPUTADORAS
@@ -14977,6 +14970,17 @@
       subject_needed_code: '1446'
       subject_needed_name: REDES DE COMPUTADORAS
       needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1911P
+      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1911'
+      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
   subject_code: '1891'
   is_exam: false
 - type: logical
@@ -15266,6 +15270,25 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: CP364
+      subject_needed_name: COMUNICACION DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1433'
+      subject_needed_name: INT. A LAS REDES DE COMPUTADORAS
+      needs: course
+    - type: subject
+      subject_needed_code: '1406'
+      subject_needed_name: INT. A LAS REDES DE COMPUTADORES
+      needs: course
+    - type: subject
+      subject_needed_code: '1446'
+      subject_needed_name: REDES DE COMPUTADORAS
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: '1716'
       subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
       needs: course
@@ -15318,25 +15341,6 @@
     - type: subject
       subject_needed_code: '1537'
       subject_needed_name: SISTEMAS OPERATIVOS
-      needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP364
-      subject_needed_name: COMUNICACION DE DATOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1433'
-      subject_needed_name: INT. A LAS REDES DE COMPUTADORAS
-      needs: course
-    - type: subject
-      subject_needed_code: '1406'
-      subject_needed_name: INT. A LAS REDES DE COMPUTADORES
-      needs: course
-    - type: subject
-      subject_needed_code: '1446'
-      subject_needed_name: REDES DE COMPUTADORAS
       needs: course
   subject_code: '1918'
   is_exam: false
@@ -15961,6 +15965,29 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: '1454'
+      subject_needed_name: ASPECTOS BASICOS DE REDES DE COMPUT
+      needs: exam
+    - type: subject
+      subject_needed_code: CP364
+      subject_needed_name: COMUNICACION DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1433'
+      subject_needed_name: INT. A LAS REDES DE COMPUTADORAS
+      needs: course
+    - type: subject
+      subject_needed_code: '1406'
+      subject_needed_name: INT. A LAS REDES DE COMPUTADORES
+      needs: course
+    - type: subject
+      subject_needed_code: '1446'
+      subject_needed_name: REDES DE COMPUTADORAS
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: CP362
       subject_needed_name: BASES DE DATOS
       needs: exam
@@ -16009,29 +16036,6 @@
     - type: subject
       subject_needed_code: CP363
       subject_needed_name: TALLER IV (1ER.SEM.)
-      needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1454'
-      subject_needed_name: ASPECTOS BASICOS DE REDES DE COMPUT
-      needs: exam
-    - type: subject
-      subject_needed_code: CP364
-      subject_needed_name: COMUNICACION DE DATOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1433'
-      subject_needed_name: INT. A LAS REDES DE COMPUTADORAS
-      needs: course
-    - type: subject
-      subject_needed_code: '1406'
-      subject_needed_name: INT. A LAS REDES DE COMPUTADORES
-      needs: course
-    - type: subject
-      subject_needed_code: '1446'
-      subject_needed_name: REDES DE COMPUTADORAS
       needs: course
   subject_code: '1948'
   is_exam: false
@@ -16210,245 +16214,6 @@
       logical_operator: or
       operands:
       - type: subject
-        subject_needed_code: 1033P
-        subject_needed_name: CREDITOS NO ACUM METODOS NUMERICOS
-        needs: exam
-      - type: subject
-        subject_needed_code: '1033'
-        subject_needed_name: METODOS NUMERICOS
-        needs: exam
-      - type: subject
-        subject_needed_code: '1079'
-        subject_needed_name: METODOS NUMERICOS
-        needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP52
-      subject_needed_name: COMPUTACION
-      needs: exam
-    - type: subject
-      subject_needed_code: CP24
-      subject_needed_name: COMPUTACION (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: 1322P
-      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
-      needs: exam
-    - type: subject
-      subject_needed_code: CP36
-      subject_needed_name: INT. A LA COMPUTACION
-      needs: exam
-    - type: subject
-      subject_needed_code: CP9
-      subject_needed_name: PROGRAMACION I
-      needs: exam
-    - type: subject
-      subject_needed_code: IN35
-      subject_needed_name: PROGRAMACION 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1320'
-      subject_needed_name: PROGRAMACION 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1322'
-      subject_needed_name: PROGRAMACION 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1373'
-      subject_needed_name: PROGRAMACION 1
-      needs: exam
-    - type: subject
-      subject_needed_code: CP10
-      subject_needed_name: TALLER II
-      needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1021'
-      subject_needed_name: ALGEBRA LINEAL
-      needs: exam
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: M9
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: 1031P
-      subject_needed_name: CREDITOS NO ACUM GAL2
-      needs: exam
-    - type: subject
-      subject_needed_code: CP2
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-      needs: exam
-    - type: subject
-      subject_needed_code: CP23
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: '1031'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-      needs: exam
-    - type: subject
-      subject_needed_code: '1058'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-      needs: exam
-    - type: subject
-      subject_needed_code: 158Q
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP1
-      subject_needed_name: ANALISIS MATEMATICO I
-      needs: exam
-    - type: subject
-      subject_needed_code: CP22
-      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: '1061'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-      needs: exam
-    - type: subject
-      subject_needed_code: '1020'
-      subject_needed_name: CALCULO 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1070'
-      subject_needed_name: CALCULO 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1052'
-      subject_needed_name: CALCULO 1 (ANUAL)
-      needs: exam
-    - type: subject
-      subject_needed_code: CAL10
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: 1020P
-      subject_needed_name: CREDITOS NO ACUM CALCULO 1
-      needs: exam
-    - type: subject
-      subject_needed_code: 1061P
-      subject_needed_name: CREDITOS NO ACUM CDIV
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP1
-      subject_needed_name: ANALISIS MATEMATICO I
-      needs: exam
-    - type: subject
-      subject_needed_code: CP22
-      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: '1062'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-      needs: exam
-    - type: subject
-      subject_needed_code: '1022'
-      subject_needed_name: CALCULO 2
-      needs: exam
-    - type: subject
-      subject_needed_code: '1072'
-      subject_needed_name: CALCULO 2
-      needs: exam
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: 1062P
-      subject_needed_name: CREDITOS NO ACUM CDIVV
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1021'
-      subject_needed_name: ALGEBRA LINEAL
-      needs: exam
-    - type: subject
-      subject_needed_code: CM14
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: M9
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: 1030P
-      subject_needed_name: CREDITOS NO ACUM GAL1
-      needs: exam
-    - type: subject
-      subject_needed_code: CP2
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-      needs: exam
-    - type: subject
-      subject_needed_code: CP23
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: '1030'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1071'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: 171Q
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1053'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-      needs: exam
-    - type: subject
-      subject_needed_code: GAL1P
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
-      needs: exam
-  subject_code: '2041'
-  is_exam: false
-- type: logical
-  logical_operator: and
-  operands:
-  - type: subject
-    needs: course
-    subject_needed_code: '2041'
-    subject_needed_name: METODOS NUMERICOS
-  subject_code: '2041'
-  is_exam: true
-- type: logical
-  logical_operator: and
-  operands:
-  - type: logical
-    logical_operator: not
-    operands:
-    - type: logical
-      logical_operator: or
-      operands:
-      - type: subject
         subject_needed_code: '1613'
         subject_needed_name: METAHEURISTICAS Y OPTIMIZACION SOBRE REDES
         needs: course
@@ -16597,6 +16362,36 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1023P
+      subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1023'
+      subject_needed_name: MATEMATICA DISCRETA 1
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: '1020'
+      subject_needed_name: CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1052'
+      subject_needed_name: CALCULO 1 (ANUAL)
+      needs: exam
+    - type: subject
+      subject_needed_code: 1020P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 1
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: 1025P
       subject_needed_name: CREDITOS NO ACUM PROB Y EST.
       needs: exam
@@ -16653,36 +16448,6 @@
     - type: subject
       subject_needed_code: 1062P
       subject_needed_name: CREDITOS NO ACUM CDIVV
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1023P
-      subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1023'
-      subject_needed_name: MATEMATICA DISCRETA 1
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1061'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-      needs: exam
-    - type: subject
-      subject_needed_code: '1020'
-      subject_needed_name: CALCULO 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1052'
-      subject_needed_name: CALCULO 1 (ANUAL)
-      needs: exam
-    - type: subject
-      subject_needed_code: 1020P
-      subject_needed_name: CREDITOS NO ACUM CALCULO 1
       needs: exam
   subject_code: '2415'
   is_exam: false
@@ -18107,7 +17872,7 @@
   - type: subject
     needs: course
     subject_needed_code: I546
-    subject_needed_name: 'TALLER: DISEÑO DE PROY P/LA GESTIÓN UNIV'
+    subject_needed_name: 'TALLER: DISEÑO DE PROYECTOS PARA LA GESTIÓN UNIVERSITARIA'
   subject_code: I546
   is_exam: true
 - type: logical
