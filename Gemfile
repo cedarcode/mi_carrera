@@ -16,9 +16,9 @@ gem 'pdf-reader'
 gem 'pg', '~> 1.6'
 gem 'propshaft', '~> 1.3'
 gem 'puma', '~> 7.1'
-gem 'rollbar', '~> 3.6'
+gem 'rollbar', '~> 3.7'
 gem 'stimulus-rails', '~> 1.3'
-gem 'tailwindcss-rails', '~> 4.3'
+gem 'tailwindcss-rails', '~> 4.4'
 gem 'turbo-rails', '~> 2.0'
 gem "view_component", "~> 4.1"
 gem 'webauthn'
@@ -46,6 +46,6 @@ end
 group :test do
   gem 'capybara', '~> 3.40'
   gem 'selenium-webdriver', '~> 4.38'
-  gem 'shoulda-matchers', '~> 6.5'
+  gem 'shoulda-matchers', '~> 7.0'
   gem 'simplecov', require: false
 end
