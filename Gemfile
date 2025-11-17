@@ -5,7 +5,7 @@ ruby file: ".ruby-version"
 gem 'rails', '~> 8.0.4'
 
 gem 'appsignal', '~> 4.7'
-gem 'bootsnap', '~> 1.18', require: false
+gem 'bootsnap', '~> 1.19', require: false
 gem 'devise', '~> 4.9'
 gem 'factory_bot_rails', '~> 6.5'
 gem 'importmap-rails', '~> 2.2'
@@ -39,7 +39,7 @@ group :development do
   gem "lookbook", "~> 2.3"
   gem 'rubocop', '~> 1.81'
   gem 'rubocop-performance', '~> 1.26', require: false
-  gem 'rubocop-rails', '~> 2.33', require: false
+  gem 'rubocop-rails', '~> 2.34', require: false
   gem 'web-console', '~> 4.2'
 end
 
