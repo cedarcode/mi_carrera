@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Start the ssh-agent
         uses: webfactory/ssh-agent@v0.9.1
