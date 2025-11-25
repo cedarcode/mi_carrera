@@ -11,7 +11,7 @@ gem 'factory_bot_rails', '~> 6.5'
 gem 'importmap-rails', '~> 2.2'
 gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.2'
-gem "omniauth-rails_csrf_protection", '~> 2.0'
+gem "omniauth-rails_csrf_protection", '~> 1.0'
 gem 'pdf-reader'
 gem 'pg', '~> 1.6'
 gem 'propshaft', '~> 1.3'
