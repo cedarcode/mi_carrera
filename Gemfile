@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby file: ".ruby-version"
-
 gem 'rails', '~> 8.1.1'
 
 gem 'appsignal', '~> 4.7'
