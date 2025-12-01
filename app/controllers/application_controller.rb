@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  # Changes to the importmap will invalidate the etag for HTML responses
+  stale_when_importmap_changes
+
   helper_method :current_student
   rate_limit to: 20, within: 10.seconds
 

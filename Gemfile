@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby file: ".ruby-version"
 
-gem 'rails', '~> 8.0.4'
+gem 'rails', '~> 8.1.1'
 
 gem 'appsignal', '~> 4.7'
 gem 'bootsnap', '~> 1.19', require: false
