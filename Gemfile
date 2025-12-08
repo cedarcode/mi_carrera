@@ -4,7 +4,7 @@ ruby file: ".ruby-version"
 
 gem 'rails', '~> 8.1.1'
 
-gem 'appsignal', '~> 4.7'
+gem 'appsignal', '~> 4.8'
 gem 'bootsnap', '~> 1.19', require: false
 gem 'devise', '~> 4.9'
 gem 'factory_bot_rails', '~> 6.5'
@@ -45,7 +45,7 @@ end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.38'
+  gem 'selenium-webdriver', '~> 4.39'
   gem 'shoulda-matchers', '~> 7.0'
   gem 'simplecov', require: false
 end

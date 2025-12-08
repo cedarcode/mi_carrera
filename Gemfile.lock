@@ -83,7 +83,7 @@ GEM
     annotaterb (4.20.0)
       activerecord (>= 6.0.0)
       activesupport (>= 6.0.0)
-    appsignal (4.7.5)
+    appsignal (4.8.0)
       logger
       rack (>= 2.0.0)
     ast (2.4.3)
@@ -394,11 +394,11 @@ GEM
       rubocop-ast (>= 1.44.0, < 2.0)
     ruby-progressbar (1.13.0)
     ruby-rc4 (0.1.5)
-    rubyzip (3.2.1)
+    rubyzip (3.2.2)
     safety_net_attestation (0.5.0)
       jwt (>= 2.0, < 4.0)
     securerandom (0.4.1)
-    selenium-webdriver (4.38.0)
+    selenium-webdriver (4.39.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -483,7 +483,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotaterb (~> 4.20)
-  appsignal (~> 4.7)
+  appsignal (~> 4.8)
   bootsnap (~> 1.19)
   brakeman (~> 7.1)
   capybara (~> 3.40)
@@ -507,7 +507,7 @@ DEPENDENCIES
   rubocop (~> 1.81)
   rubocop-performance (~> 1.26)
   rubocop-rails (~> 2.34)
-  selenium-webdriver (~> 4.38)
+  selenium-webdriver (~> 4.39)
   shoulda-matchers (~> 7.0)
   simplecov
   stimulus-rails (~> 1.3)
