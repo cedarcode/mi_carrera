@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_09_140632) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_09_143243) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -28,18 +28,6 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_09_140632) do
     t.string "current_plan", null: false
     t.boolean "include_inco_subjects", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "passkeys", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.string "external_id", null: false
-    t.string "name", null: false
-    t.string "public_key", null: false
-    t.bigint "sign_count", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["external_id"], name: "index_passkeys_on_external_id", unique: true
-    t.index ["user_id"], name: "index_passkeys_on_user_id"
   end
 
   create_table "prerequisites", force: :cascade do |t|
@@ -143,7 +131,6 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_09_140632) do
   end
 
   add_foreign_key "approvables", "subjects"
-  add_foreign_key "passkeys", "users"
   add_foreign_key "prerequisites", "approvables"
   add_foreign_key "prerequisites", "approvables", column: "approvable_needed_id"
   add_foreign_key "prerequisites", "prerequisites", column: "parent_prerequisite_id"
