@@ -1,12 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
+import * as WebAuthnJSON from "@github/webauthn-json/browser-ponyfill"
 
 export default class extends Controller {
   static targets = ["credentialHiddenInput"]
 
   async create({ params: { options } }) {
     try {
-      const credentialOptions = PublicKeyCredential.parseCreationOptionsFromJSON(options);
-      const credential = await navigator.credentials.create({ publicKey: credentialOptions });
+      const credentialOptions = WebAuthnJSON.parseCreationOptionsFromJSON({ publicKey: options });
+      const credential = await WebAuthnJSON.create(credentialOptions);
 
       this.credentialHiddenInputTarget.value = JSON.stringify(credential);
 
@@ -24,8 +25,8 @@ export default class extends Controller {
 
   async get({ params: { options } }) {
     try {
-      const credentialOptions = PublicKeyCredential.parseRequestOptionsFromJSON(options);
-      const credential = await navigator.credentials.get({ publicKey: credentialOptions });
+      const credentialOptions = WebAuthnJSON.parseRequestOptionsFromJSON({ publicKey: options });
+      const credential = await WebAuthnJSON.get(credentialOptions);
 
       this.credentialHiddenInputTarget.value = JSON.stringify(credential);
 
