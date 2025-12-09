@@ -12,7 +12,13 @@ export default class extends Controller {
 
       this.element.submit();
     } catch (error) {
-      alert(error.message || error);
+      if (error.name === "NotAllowedError") {
+        alert("La operación fue cancelada o su tiempo se agotó.");
+      } else if (error.name === "InvalidStateError") {
+        alert("Ya registraste esta passkey con tu cuenta.");
+      } else {
+        alert(error.message || error);
+      }
     }
   }
 
@@ -25,7 +31,11 @@ export default class extends Controller {
 
       this.element.submit();
     } catch (error) {
-      alert(error.message || error);
+      if (error.name === "NotAllowedError") {
+        alert("La operación fue cancelada o su tiempo se agotó.");
+      } else {
+        alert(error.message || error);
+      }
     }
   }
 }
