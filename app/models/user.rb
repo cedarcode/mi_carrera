@@ -10,7 +10,6 @@ class User < ApplicationRecord
   has_many :subject_plans, dependent: :destroy
   has_many :planned_subjects, through: :subject_plans, source: :subject
   belongs_to :degree
-  has_many :passkeys, dependent: :destroy
 
   before_validation :set_default_degree
 
