@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_06_27_211639) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_09_140632) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -129,6 +129,19 @@ ActiveRecord::Schema[8.1].define(version: 2025_06_27_211639) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  create_table "webauthn_credentials", force: :cascade do |t|
+    t.integer "authentication_factor", limit: 2, null: false
+    t.datetime "created_at", null: false
+    t.string "external_id", null: false
+    t.string "name", null: false
+    t.text "public_key", null: false
+    t.bigint "sign_count", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["external_id"], name: "index_webauthn_credentials_on_external_id", unique: true
+    t.index ["user_id"], name: "index_webauthn_credentials_on_user_id"
+  end
+
   add_foreign_key "approvables", "subjects"
   add_foreign_key "passkeys", "users"
   add_foreign_key "prerequisites", "approvables"
@@ -143,4 +156,5 @@ ActiveRecord::Schema[8.1].define(version: 2025_06_27_211639) do
   add_foreign_key "subjects", "degrees"
   add_foreign_key "subjects", "subject_groups", column: "group_id"
   add_foreign_key "users", "degrees"
+  add_foreign_key "webauthn_credentials", "users"
 end
