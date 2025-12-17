@@ -4,13 +4,14 @@ es:
       already_authenticated: "Ya iniciaste sesión."
       invalid: "Email y/o contraseña inválidos."
       passkey_not_found: "Tu passkey no existe o no es válida."
-      invalid_passkey: "La verificación de la passkey falló. Por favor, inténtalo de nuevo."
       not_found_in_database: "%{authentication_keys} o contraseña inválidos."
       timeout: "Tu sesión ha expirado. Inicia sesión nuevamente."
       unauthenticated: "Tienes que registrarte o iniciar sesión antes de continuar."
       unconfirmed: "Tienes que confirmar tu cuenta antes de continuar."
       locked: "Tu cuenta fue bloqueada por demasiados intentos de acceso fallidos. Sigue las instrucciones en el email que te enviamos, o espera 1 hora."
       last_attempt: "Tienes un intento más antes de que tu cuenta sea bloqueada."
+      passkey_verification_failed: "Hubo un error agregando esta passkey."
+      passkey_deletion_failed: "Hubo un error eliminando esta passkey."
     mailer:
       reset_password_instructions:
         subject: "Instrucciones de cambio de contraseña"
@@ -44,6 +45,9 @@ es:
       already_signed_out: "Se cerró sesión correctamente."
     unlocks:
       unlocked: "Tu cuenta ha sido desbloqueada. Ya puedes iniciar sesión."
+    passkeys:
+      passkey_created: "Tu passkey ha sido agregada correctamente."
+      passkey_deleted: "Tu passkey ha sido eliminada correctamente."
   errors:
     messages:
       already_confirmed: "ya fue confirmada. Intenta ingresar."
