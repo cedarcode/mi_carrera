@@ -195,6 +195,11 @@
   - group: '5020'
     credits: 8
   has_exam: true
+1033P:
+  code: 1033P
+  name: CREDITOS NO ACUM METODOS NUMERICOS
+  has_exam: true
+  subject_groups: []
 '1034':
   code: '1034'
   name: TEORIA DE JUEGOS Y PROG. FUNCIONAL
@@ -2522,6 +2527,13 @@
   - group: '4815'
     credits: 8
   has_exam: false
+'2044':
+  code: '2044'
+  name: FUNDAMENTOS DE LA COMBINATORIA
+  subject_groups:
+  - group: '4083'
+    credits: 9
+  has_exam: true
 2107A:
   code: 2107A
   name: TALLER DE COMUNICACIÓN ORAL Y ESCRITA
@@ -4250,6 +4262,13 @@ IS14:
   subject_groups:
   - group: '5082'
     credits: 14
+  has_exam: true
+LIB44:
+  code: LIB44
+  name: IMÁGENES EN BIOLOGÍA Y MEDICINA
+  subject_groups:
+  - group: '3582'
+    credits: 10
   has_exam: true
 M000:
   code: M000
