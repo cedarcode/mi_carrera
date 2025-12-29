@@ -5,7 +5,7 @@ ruby file: ".ruby-version"
 gem 'rails', '~> 8.1.1'
 
 gem 'appsignal', '~> 4.8'
-gem 'bootsnap', '~> 1.19', require: false
+gem 'bootsnap', '~> 1.20', require: false
 gem 'devise', '~> 4.9'
 gem 'factory_bot_rails', '~> 6.5'
 gem 'importmap-rails', '~> 2.2'
