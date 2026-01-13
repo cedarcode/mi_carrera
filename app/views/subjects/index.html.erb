@@ -1,11 +1,11 @@
-<% content_for :credits do %>
-  <%= render 'shared/credits_counter' %>
+<% content_for :welcome_banner do %>
+  <%= render 'shared/banner', 
+      banner_type: 'welcome', 
+      message: '¡Bienvenido! Marcá los cursos y exámenes que aprobaste para ver qué materias podés cursar.' %>
 <% end %>
 
-<% content_for :welcome_banner do %>
-  <% unless current_student.welcome_banner_viewed? %>
-    <%= render 'shared/welcome_banner' %>
-  <% end %>
+<% content_for :credits_bar do %>
+  <%= render 'shared/credits_bar' %>
 <% end %>
 
 <%= render 'subjects_bulk_approve' %>

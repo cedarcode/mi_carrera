@@ -1,0 +1,6 @@
+---
+'101':
+  code: '101'
+  name: TEST SUBJECT I
+  has_exam: true
+  subject_groups: []

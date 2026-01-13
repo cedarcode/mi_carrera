@@ -1,4 +1,15 @@
-<h3 class="mx-4 my-3 text-2xl"><%= @subject.code %> - <%= @subject.name %></h3>
+<div class="flex items-center justify-between px-4 py-3">
+  <h3 class="text-2xl">
+    <%= @subject.code %> - <%= @subject.name %>
+  </h3>
+
+  <% if @subject.inactive? %>
+    <span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20">
+      Inactiva
+    </span>
+  <% end %>
+</div>
+
 <hr class="border-gray-200"/>
 
 <h3 class="mx-4 my-3 font-medium">Información general</h3>
@@ -13,14 +24,23 @@
   <div class="py-3 px-4">Grupo: Desconocido</div>
 <% end %>
 
-<div class="p-2">
-  <%= render(FiveStarReviewComponent.new(
-    review_name: "Puntuación",
-    rating_value: @subject.average_rating,
-    subject_id: @subject.id,
-    column_name: :rating,
-    user_review: @user_review
-  )) %>
+<div class="overflow-x-auto">
+  <div class="flex gap-2 min-w-max p-2">
+    <%= render(FiveStarReviewComponent.new(
+      review_name: "Interesante",
+      rating_value: @subject.average_interesting_rating,
+      subject_id: @subject.id,
+      rating_attribute: :interesting_rating,
+      user_review: @user_review
+    )) %>
+    <%= render(FiveStarReviewComponent.new(
+      review_name: "Créditos/Dificultad",
+      rating_value: @subject.average_credits_to_difficulty_rating,
+      subject_id: @subject.id,
+      rating_attribute: :credits_to_difficulty_rating,
+      user_review: @user_review
+    )) %>
+  </div>
 </div>
 
 <hr class="border-gray-200"/>
@@ -60,7 +80,9 @@
 <% if @subject.exam&.prerequisite_tree %>
   <span class="mx-4">Del examen:</span>
 
-  <%= render @subject.exam.prerequisite_tree, negative: false %>
+  <div id="exam-prerequisites">
+    <%= render @subject.exam.prerequisite_tree, negative: false %>
+  </div>
 <% end %>
 
 <hr class="border-gray-200"/>

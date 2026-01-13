@@ -1,0 +1,5 @@
+<%= turbo_stream.before "add-semester-form" do %>
+  <div data-controller="scroll-to-bottom">
+    <%= render 'subject_plans/semester_card', planned_subjects: [], semester: @semester %>
+  </div>
+<% end %>

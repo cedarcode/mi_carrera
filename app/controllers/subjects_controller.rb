@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   def index
-    @subjects = TreePreloader.new(Subject.ordered_by_category_and_name).preload.select do |subject|
+    @subjects = TreePreloader.preload(degree_subjects.ordered_by_category_and_name).select do |subject|
       current_student.approved?(subject.course) ||
         (!subject.hidden_by_default? && current_student.available?(subject.course))
     end
@@ -17,20 +17,21 @@ class SubjectsController < ApplicationController
   def all
     subjects =
       if params[:search].present?
-        Subject
-          .where("lower(unaccent(name)) LIKE lower(unaccent(?))", "%#{params[:search].strip}%")
-          .or(Subject.where("lower(unaccent(short_name)) LIKE lower(unaccent(?))", "%#{params[:search].strip}%"))
-          .or(Subject.where("lower(code) LIKE lower(?)", "%#{params[:search].strip}%"))
+        degree_subjects.search(params[:search])
       else
-        Subject
+        degree_subjects
       end.ordered_by_category_and_name
 
-    @subjects = TreePreloader.new(subjects).preload
+    @subjects = TreePreloader.preload(subjects)
   end
 
   private
 
   def subject
-    @subject ||= Subject.find(params[:id])
+    @subject ||= degree_subjects.find(params[:id])
+  end
+
+  def degree_subjects
+    current_degree.subjects
   end
 end

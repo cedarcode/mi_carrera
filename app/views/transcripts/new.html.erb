@@ -1,12 +1,13 @@
 <div class="py-6 px-3 sm:px-6 space-y-6">
-  <h2 class="text-3xl/9 text-center text-neutral-700">Importar Materias</h2>
-  <div class="text-gray-600">
+  <h2 class="text-center text-neutral-700">Subir Escolaridad</h2>
+  <div class=" text-gray-600">
     <p>Cargá tu escolaridad para marcar automáticamente las materias que ya cursaste.</p>
     <p class="mt-2">Si no tenés tu escolaridad, podés conseguirla siguiendo los pasos a continuación:</p>
     <ol class="list-decimal list-inside">
       <li>Entrar a <a href="https://bedelias.udelar.edu.uy/" target="_blank" class="text-blue-600 hover:text-blue-800">Bedelias</a> e iniciar sesión</li>
       <li>Entrar a "Estudiante" -> "Escolaridad" -> "Solicitar Escolaridad"</li>
-      <li>Seleccionar tu carrera y "No" en "Resultados Intermedios"</li>
+      <li>Seleccionar tu carrera</li>
+      <li><strong class="bg-yellow-100">Seleccionar "No" en "Resultados Intermedios"</strong></li>
     </ol>
   </div>
   <%= form_with url: transcripts_path, method: :post, data: { turbo: true }, html: { multipart: true }, class: 'flex flex-col' do |form| %>

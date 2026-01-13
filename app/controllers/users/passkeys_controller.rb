@@ -1,5 +1,6 @@
 module Users
   class PasskeysController < ApplicationController
+    before_action :authenticate_user!
     before_action :ensure_feature_enabled!
 
     def index
@@ -29,13 +30,12 @@ module Users
           public_key: webauthn_passkey.public_key,
           sign_count: webauthn_passkey.sign_count
         )
-          render json: { status: "ok" }, status: :ok
-          flash[:notice] = "Tu passkey ha sido agregada correctamente."
+          redirect_to user_passkeys_path, notice: "Tu passkey ha sido agregada correctamente."
         else
-          render json: "Couldn't add your Security Key", status: :unprocessable_entity
+          redirect_to user_passkeys_path, alert: "Hubo un error agregando esta passkey."
         end
       rescue WebAuthn::Error
-        render json: "Verification failed", status: :unprocessable_entity
+        render json: "Verification failed", status: :unprocessable_content
       ensure
         session.delete(:creation_challenge)
       end
@@ -45,7 +45,7 @@ module Users
       if current_user.passkeys.destroy(params[:id])
         redirect_to user_passkeys_path, notice: "Tu passkey ha sido eliminada correctamente."
       else
-        render json: "Couldn't delete your Security Key", status: :unprocessable_entity
+        redirect_to user_passkeys_path, alert: "Hubo un error eliminando esta passkey."
       end
     end
 

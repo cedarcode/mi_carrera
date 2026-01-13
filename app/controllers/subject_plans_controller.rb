@@ -1,6 +1,5 @@
 class SubjectPlansController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_feature_enabled!
 
   def index
     set_planned_and_not_planned_subjects
@@ -9,30 +8,51 @@ class SubjectPlansController < ApplicationController
   def create
     current_user.subject_plans.create!(subject_plan_params)
 
-    redirect_to subject_plans_path
+    @semesters_to_refresh = [subject_plan_params[:semester].to_i]
+
+    set_planned_and_not_planned_subjects
+
+    @reload_not_planned_approved_subjects = true
+
+    render :update
+  end
+
+  def update
+    subject_plan = current_user.subject_plans.find_by!(subject_id: params[:subject_id])
+    previous_semester = subject_plan.semester
+    new_semester = subject_plan_params[:semester].to_i
+    subject_plan.update!(semester: new_semester)
+
+    @semesters_to_refresh = [previous_semester, new_semester]
+
+    set_planned_and_not_planned_subjects
   end
 
   def destroy
     subject_plan = current_user.subject_plans.find_by!(subject_id: params[:subject_id])
+    @semesters_to_refresh = [subject_plan.semester]
     subject_plan.destroy!
 
-    redirect_to subject_plans_path
+    set_planned_and_not_planned_subjects
+
+    @reload_not_planned_approved_subjects = true
+
+    render :update
   end
 
   private
 
-  def ensure_feature_enabled!
-    redirect_to root_path if ENV['ENABLE_PLANNER'].blank?
-  end
-
   def set_planned_and_not_planned_subjects
     @planned_subjects =
-      TreePreloader.new(current_user.planned_subjects.select('subjects.*', 'subject_plans.semester')
-        .order('subject_plans.semester')).preload
-    @not_planned_approved_subjects, @not_planned_subjects =
-      TreePreloader.new(Subject.ordered_by_short_or_full_name).preload.reject { |subject|
-        current_user.planned?(subject)
-      }.partition { |subject| current_student.approved?(subject) }
+      TreePreloader.preload(current_user.planned_subjects.select('subjects.*', 'subject_plans.semester')
+        .order('subject_plans.semester'))
+
+    @not_planned_approved_subjects = current_student
+                                     .approved_subjects
+                                     .where.not(id: @planned_subjects)
+                                     .ordered_by_category
+                                     .ordered_by_short_or_full_name
+                                     .load
   end
 
   def subject_plan_params

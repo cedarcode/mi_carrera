@@ -1,5 +1,7 @@
-<% content_for :credits do %>
-  <%= render 'shared/credits_counter' %>
+<% content_for :welcome_banner do %>
+  <%= render 'shared/banner', 
+      banner_type: 'planner', 
+      message: 'Bienvenido a tu planificador de materias: arrastra, suelta y organiza tu semestre' %>
 <% end %>
 
 <div class="my-3 space-y-4">

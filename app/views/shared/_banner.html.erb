@@ -1,0 +1,13 @@
+<% unless current_student.banner_viewed?(banner_type) %>
+  <div class="bg-purple-100 w-full" data-controller="banner">
+    <div class="max-w-[600px] mx-auto px-3 py-2.5 flex items-center gap-x-3">
+      <p class="text-gray-900">
+        <%= message %>
+      </p>
+      <%= form_with url: user_onboardings_path, method: :patch, data: { turbo: true, action: "banner#dismiss" } do |f| %>
+        <%= f.hidden_field :banner_type, value: banner_type %>
+        <%= f.button 'Listo', class: "py-1 font-semibold text-primary cursor-pointer uppercase" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

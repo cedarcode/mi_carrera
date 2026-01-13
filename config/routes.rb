@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
     devise_for :users, path: "usuarios", controllers: {
       omniauth_callbacks: 'users/omniauth_callbacks',
-      registrations: 'users/registrations'
+      registrations: 'users/registrations',
+      sessions: 'users/sessions'
     }, path_names: {
       sign_in: 'iniciar_sesion',
       sign_out: 'cerrar_sesion',
@@ -17,9 +18,7 @@ Rails.application.routes.draw do
     }
 
     scope path: "usuarios", module: "users", as: "user" do
-      resources :passkeys, only: [:index, :create, :destroy] do
-        post :callback, on: :collection
-      end
+      resources :passkeys, only: [:index, :create, :destroy]
     end
 
     root to: "subjects#index"
@@ -38,15 +37,21 @@ Rails.application.routes.draw do
       end
     end
 
+    namespace :planner do
+      resources :not_planned_subjects, only: :index
+    end
+
     resource :user_onboardings, only: :update
 
     resources :current_optional_subjects, path: "materias_inco_semestre_actual", only: :index
 
     resources :transcripts, path: "escolaridades", only: [:new, :create]
 
-    resources :reviews, only: [:create, :destroy]
+    resources :reviews, only: [:create]
 
-    resources :subject_plans, path: "materias_planeadas", only: [:index, :create, :destroy], param: :subject_id
+    resources :subject_plans, path: "materias_planeadas", only: [:index, :create, :update, :destroy], param: :subject_id
+
+    resources :planned_semesters, only: [:create]
 
     if Rails.env.development?
       mount Lookbook::Engine, at: "/lookbook"

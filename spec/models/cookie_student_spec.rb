@@ -220,4 +220,24 @@ RSpec.describe CookieStudent, type: :model do
       expect(student).to be_graduated
     end
   end
+
+  describe '#degree' do
+    let(:student) { build(:cookie_student, cookies:) }
+    let(:cookies) { build(:cookie) }
+
+    it 'returns default degree' do
+      expect(student.degree).to eq(Degree.default)
+    end
+  end
+
+  describe "#approved_subjects" do
+    it "returns approved subjects for the student" do
+      subject1 = create(:subject, :with_exam)
+      subject2 = create(:subject, :with_exam)
+      cookies = build(:cookie, approved_approvable_ids: [subject1.course.id, subject2.exam.id])
+      student = build(:cookie_student, cookies:)
+
+      expect(student.approved_subjects).to contain_exactly(subject2)
+    end
+  end
 end

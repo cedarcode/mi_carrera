@@ -7,9 +7,7 @@
 
   <%= drawer_menu_navigation_item "Materias INCO semestre actual", current_optional_subjects_path %>
 
-  <% if ENV['ENABLE_PLANNER'].present? %>
-    <%= drawer_menu_navigation_item "Planificador", subject_plans_path, new_badge: true %>
-  <% end %>
+  <%= drawer_menu_navigation_item "Planificador", subject_plans_path, new_badge: true %>
 
   <hr class="text-gray-200"/>
 
@@ -19,9 +17,16 @@
   <% end %>
 
   <%= link_to "mailto:feedback-micarrera@cedarcode.com", target: "_blank", class: "flex items-center gap-1 p-2 rounded-sm hover:bg-gray-100 text-gray-600 hover:text-gray-800" do %>
-    <%= material_icon("rate_review") %>
+    <%= material_icon_outlined("rate_review") %>
     Opina de la app
   <% end %>
+
+  <div class="absolute bottom-0 pb-2 text-base">
+    <span class="text-gray-500">
+      Built by
+    </span>
+    <a class="text-gray-800" href="https://cedarcode.com" target="_blank" >Cedarcode</a>
+  </div>
 </div>
 
 <div data-navigation-drawer-target="overlay" data-action="click->navigation-drawer#toggle" class="fixed inset-0 bg-black/30 hidden z-40"></div>
