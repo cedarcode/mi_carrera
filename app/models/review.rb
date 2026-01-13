@@ -14,6 +14,7 @@ end
 #  id                           :bigint           not null, primary key
 #  credits_to_difficulty_rating :integer
 #  interesting_rating           :integer
+#  recommended_rating           :boolean
 #  created_at                   :datetime         not null
 #  updated_at                   :datetime         not null
 #  subject_id                   :bigint           not null
