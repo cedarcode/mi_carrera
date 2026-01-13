@@ -1,0 +1,12 @@
+<div class="inline-flex flex-col items-center rounded-lg border border-purple-500 p-4 mb-4 text-center">
+  <h3 class="font-semibold text-gray-800 mb-1"><%= review_name %></h3>
+
+  <span class="text-xl font-extrabold text-indigo-900 mb-3"><%= display_rating %></span>
+
+  <h4 class="text-xs font-semibold text-indigo-900 mb-1">Tu puntuación</h4>
+  <div class="flex items-center justify-center gap-2">
+    <% [true, false].each do |value| %>
+      <%= vote_button(value) %>
+    <% end %>
+  </div>
+</div>
