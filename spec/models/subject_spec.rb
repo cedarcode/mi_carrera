@@ -119,6 +119,51 @@ RSpec.describe Subject, type: :model do
     end
   end
 
+  describe '#recommended_percentage' do
+    let(:subject_record) { create :subject }
+
+    context 'when there are no reviews' do
+      it 'returns nil' do
+        expect(subject_record.recommended_percentage).to be_nil
+      end
+    end
+
+    context 'when there are reviews without recommended rating' do
+      let!(:review) { create :review, subject: subject_record }
+
+      it 'returns nil' do
+        expect(subject_record.recommended_percentage).to be_nil
+      end
+    end
+
+    context 'when there are reviews with recommended rating' do
+      let!(:first_review) { create :review, subject: subject_record, recommended_rating: true }
+      let!(:second_review) { create :review, subject: subject_record, recommended_rating: false }
+
+      it 'returns the recommended percentage' do
+        expect(subject_record.recommended_percentage).to eq(50)
+      end
+    end
+
+    context 'when all reviews are positive' do
+      let!(:first_review) { create :review, subject: subject_record, recommended_rating: true }
+      let!(:second_review) { create :review, subject: subject_record, recommended_rating: true }
+
+      it 'returns 100%' do
+        expect(subject_record.recommended_percentage).to eq(100)
+      end
+    end
+
+    context 'when all reviews are negative' do
+      let!(:first_review) { create :review, subject: subject_record, recommended_rating: false }
+      let!(:second_review) { create :review, subject: subject_record, recommended_rating: false }
+
+      it 'returns 0%' do
+        expect(subject_record.recommended_percentage).to eq(0)
+      end
+    end
+  end
+
   describe '#available?' do
     let(:subject) { create :subject }
     let(:course) { subject.course }
