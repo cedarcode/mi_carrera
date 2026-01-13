@@ -25,7 +25,14 @@
 <% end %>
 
 <div class="overflow-x-auto">
-  <div class="flex gap-2 min-w-max p-2">
+  <div class="grid grid-cols-3 gap-2 min-w-max p-2">
+    <%= render(BooleanReviewComponent.new(
+      review_name: "Recomendado",
+      rating_value: @subject.recommended_percentage,
+      subject_id: @subject.id,
+      rating_attribute: :recommended_rating,
+      user_review: @user_review
+    )) %>
     <%= render(FiveStarReviewComponent.new(
       review_name: "Interesante",
       rating_value: @subject.average_interesting_rating,
