@@ -11,11 +11,7 @@ RSpec.describe 'Changing degrees', type: :system do
 
   context 'when feature is enabled' do
     before do
-      ENV['ENABLE_CHANGING_DEGREES'] = 'true'
-    end
-
-    after do
-      ENV.delete('ENABLE_CHANGING_DEGREES')
+      allow(Features::ChangingDegrees).to receive(:enabled?).and_return(true)
     end
 
     it 'allows user to change their degree successfully' do
@@ -49,7 +45,7 @@ RSpec.describe 'Changing degrees', type: :system do
 
   context 'when feature is disabled' do
     before do
-      ENV.delete('ENABLE_CHANGING_DEGREES')
+      allow(Features::ChangingDegrees).to receive(:enabled?).and_return(false)
     end
 
     it 'does not show the change degree link in user menu' do
@@ -69,12 +65,8 @@ RSpec.describe 'Changing degrees', type: :system do
 
   context 'when user is not authenticated' do
     before do
-      ENV['ENABLE_CHANGING_DEGREES'] = 'true'
+      allow(Features::ChangingDegrees).to receive(:enabled?).and_return(true)
       sign_out :user
-    end
-
-    after do
-      ENV.delete('ENABLE_CHANGING_DEGREES')
     end
 
     it 'redirects to login page when accessing edit page' do
