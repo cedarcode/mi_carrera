@@ -55,7 +55,9 @@ class SubjectPlansController < ApplicationController
                                      .load
 
     # Calculate credits only from planned subjects (those positioned in semesters)
-    planned_credits_by_group = @planned_subjects.group_by(&:group_id).transform_values { |subjects| subjects.sum(&:credits) }
+    planned_credits_by_group = @planned_subjects
+                                 .group_by(&:group_id)
+                                 .transform_values { |subjects| subjects.sum(&:credits) }
 
     @groups_and_credits = current_degree.subject_groups.find_each.map do |subject_group|
       credits = planned_credits_by_group[subject_group.id] || 0
