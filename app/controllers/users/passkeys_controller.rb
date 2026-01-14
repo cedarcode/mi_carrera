@@ -35,7 +35,7 @@ module Users
           redirect_to user_passkeys_path, alert: "Hubo un error agregando esta passkey."
         end
       rescue WebAuthn::Error
-        render json: "Verification failed", status: :unprocessable_entity
+        render json: "Verification failed", status: :unprocessable_content
       ensure
         session.delete(:creation_challenge)
       end

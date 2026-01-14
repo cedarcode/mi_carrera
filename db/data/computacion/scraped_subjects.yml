@@ -2515,7 +2515,7 @@
   code: '2041'
   name: METODOS NUMERICOS
   subject_groups:
-  - group: '4083'
+  - group: '5020'
     credits: 10
   has_exam: true
 '2042':
@@ -2527,6 +2527,13 @@
   - group: '4815'
     credits: 8
   has_exam: false
+'2044':
+  code: '2044'
+  name: FUNDAMENTOS DE LA COMBINATORIA
+  subject_groups:
+  - group: '4083'
+    credits: 9
+  has_exam: true
 2107A:
   code: 2107A
   name: TALLER DE COMUNICACIÓN ORAL Y ESCRITA
@@ -4197,7 +4204,7 @@ GP7:
   has_exam: false
 I546:
   code: I546
-  name: 'TALLER: DISEÑO DE PROY P/LA GESTIÓN UNIV'
+  name: 'TALLER: DISEÑO DE PROYECTOS PARA LA GESTIÓN UNIVERSITARIA'
   subject_groups:
   - group: '5082'
     credits: 10
@@ -4255,6 +4262,13 @@ IS14:
   subject_groups:
   - group: '5082'
     credits: 14
+  has_exam: true
+LIB44:
+  code: LIB44
+  name: IMÁGENES EN BIOLOGÍA Y MEDICINA
+  subject_groups:
+  - group: '3582'
+    credits: 10
   has_exam: true
 M000:
   code: M000

@@ -73,10 +73,9 @@ RSpec.configure do |config|
       # resulting in tests errors.
       # This flag disables that behavior.
       options.add_argument 'disable-backgrounding-occluded-windows'
-      Capybara.app_host = 'http://localhost:3030'
-      Capybara.server_host = 'localhost'
-      Capybara.server_port = 3030
     end
+    Capybara.server_host = "localhost"
+    WebAuthn.configuration.allowed_origins = ["http://#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}"]
   end
 
   [:system, :request].each do |type|
