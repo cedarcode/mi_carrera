@@ -303,7 +303,18 @@ module Scraper
 
       click_on 'Volver'
 
-      periods.include?(degree[:current_period])
+      periods.any? do |period|
+        period_code = period[/\A\d{6}/]
+        period_code == current_period
+      end
+    end
+
+    def current_period
+      date  = Time.current
+      year  = date.year
+      half  = date.month <= 6 ? "01" : "02"
+
+      "#{year}#{half}"
     end
 
     def ensure_accordion_open(text)
