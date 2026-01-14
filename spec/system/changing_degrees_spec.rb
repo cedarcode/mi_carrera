@@ -27,19 +27,10 @@ RSpec.describe 'Changing degrees', type: :system do
       click_on 'Guardar'
 
       expect(page).to have_text('Tu carrera ha sido actualizada correctamente.')
-      expect(page).to have_select('degree_id', selected: 'Sistemas')
+      expect(current_path).to eq(root_path)
 
       user.reload
       expect(user.degree_id).to eq('sistemas')
-    end
-
-    it 'redirects back to edit page after successful update' do
-      visit edit_user_degree_path(user)
-
-      select 'Sistemas', from: 'degree_id'
-      click_on 'Guardar'
-
-      expect(current_path).to eq(edit_user_degree_path(user))
     end
   end
 

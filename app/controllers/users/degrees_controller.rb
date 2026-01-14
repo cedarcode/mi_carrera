@@ -9,7 +9,7 @@ module Users
       current_user.degree = Degree.find(params[:degree_id])
 
       if current_user.save
-        redirect_to edit_user_degree_path, notice: "Tu carrera ha sido actualizada correctamente."
+        redirect_to root_path, notice: "Tu carrera ha sido actualizada correctamente."
       else
         redirect_to edit_user_degree_path, alert: "Hubo un error actualizando tu carrera."
       end
