@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
     scope path: "usuarios", module: "users", as: "user" do
       resources :passkeys, only: [:index, :create, :destroy]
+      resources :degrees, only: [:update, :edit]
     end
 
     root to: "subjects#index"

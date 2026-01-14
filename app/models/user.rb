@@ -45,7 +45,7 @@ class User < ApplicationRecord
   private
 
   def set_default_degree
-    self.degree = Degree.default
+    self.degree ||= Degree.default
   end
 end
 
