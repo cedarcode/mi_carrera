@@ -79,8 +79,8 @@ class YmlLoader
 
   # rubocop:disable Rails/SkipsModelValidations
   def load_current_semester_subjects
-    current_semester_subject_codes = safe_read_yaml(degree_dir.join("scraped_current_semester_subjects.yml"),
-                                                    default: [])
+    current_semester_subject_codes =
+      safe_read_yaml(degree_dir.join("scraped_current_semester_subjects.yml"), default: [])
     Subject.transaction do
       degree.subjects.where(code: current_semester_subject_codes).update_all(current_semester: true)
       degree.subjects.where.not(code: current_semester_subject_codes).update_all(current_semester: false)
