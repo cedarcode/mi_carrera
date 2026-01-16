@@ -91,20 +91,6 @@ module Scraper
       end
     end
 
-    def go_to_current_semester_subjects_page
-      visit "https://bedelias.udelar.edu.uy"
-      click_on "PLANES DE ESTUDIO"
-      click_on "Calendarios"
-
-      select_degree_in_accordion
-
-      within('.ui-expanded-row-content', text: 'Planes') do
-        within('tr', text: degree[:current_plan]) do
-          first('a').click
-        end
-      end
-    end
-
     def select_degree_in_accordion
       execute_script("$.fx.off = true;") # Disable jQuery effects
 
@@ -242,6 +228,20 @@ module Scraper
       elsif prerequisite_tree[:type] == 'logical'
         prerequisite_tree[:operands].each do |operand|
           add_missing_exams_and_subjects(operand, subjects)
+        end
+      end
+    end
+
+    def go_to_current_semester_subjects_page
+      visit "https://bedelias.udelar.edu.uy"
+      click_on "PLANES DE ESTUDIO"
+      click_on "Calendarios"
+
+      select_degree_in_accordion
+
+      within('.ui-expanded-row-content', text: 'Planes') do
+        within('tr', text: degree[:current_plan]) do
+          first('a').click
         end
       end
     end
