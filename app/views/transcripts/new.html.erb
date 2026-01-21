@@ -1,6 +1,6 @@
 <div class="py-6 px-3 sm:px-6 space-y-6">
-  <h2 class="text-3xl/9 text-center text-neutral-700">Subir Escolaridad</h2>
-  <div class="text-sm/6 text-gray-600">
+  <h2 class="text-center text-neutral-700">Subir Escolaridad</h2>
+  <div class=" text-gray-600">
     <p>Cargá tu escolaridad para marcar automáticamente las materias que ya cursaste.</p>
     <p class="mt-2">Si no tenés tu escolaridad, podés conseguirla siguiendo los pasos a continuación:</p>
     <ol class="list-decimal list-inside">
@@ -11,10 +11,10 @@
     </ol>
   </div>
   <%= form_with url: transcripts_path, method: :post, data: { turbo: true }, html: { multipart: true }, class: 'flex flex-col' do |form| %>
-    <%= form.label :file, "Subí la escolaridad", class: "block text-sm/6 font-medium text-gray-900 mb-1" %>
+    <%= form.label :file, "Subí la escolaridad", class: "block font-medium text-gray-900 mb-1" %>
     <%= form.file_field :file, accept: "application/pdf", required: true, class: "relative flex w-full border mb-4
       overflow-hidden border-gray-200
-      shadow-2xs rounded-lg text-sm
+      shadow-2xs rounded-lg
       focus:outline-hidden focus:z-10
       file:h-full file:py-2 file:px-4
       file:bg-gray-100 file:text-nowrap
