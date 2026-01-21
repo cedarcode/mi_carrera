@@ -3,7 +3,6 @@ shared:
 - bedelias_name: "INGENIERÍA EN COMPUTACIÓN"
   id: "computacion"
   current_plan: "1997"
-  include_inco_subjects: true
 - bedelias_name: "INGENIERÍA ELÉCTRICA"
   id: "electrica"
   current_plan: "2023"
