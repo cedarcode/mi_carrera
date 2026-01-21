@@ -48,7 +48,7 @@ RSpec.describe 'Changing degrees', type: :system do
     end
 
     it 'redirects to root path when trying to access edit page directly' do
-      visit edit_user_degree_path(user)
+      visit edit_user_degrees_path
 
       expect(current_path).to eq(root_path)
     end
@@ -61,7 +61,7 @@ RSpec.describe 'Changing degrees', type: :system do
     end
 
     it 'redirects to login page when accessing edit page' do
-      visit edit_user_degree_path(user)
+      visit edit_user_degrees_path
 
       expect(current_path).to eq(new_user_session_path)
     end
