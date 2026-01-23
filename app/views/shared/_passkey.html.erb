@@ -2,7 +2,7 @@
     url: session_path(resource_name),
     method: :post,
     class: "w-full",
-    data: { controller: "passkey-button-visibility", action: "webauthn:unsupported->passkey-button-visibility#hide" }
+    data: { controller: "webauthn-support", action: "webauthn:unsupported->webauthn-support#hide" }
   ) do |form| %>
   <%= tag.webauthn_get(data: { options_json: passkey_authentication_options }) do %>
     <%= form.hidden_field(:public_key_credential, data: { webauthn_target: "response" }) %>
