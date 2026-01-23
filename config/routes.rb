@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     devise_scope :user do
       scope path: "usuarios", module: "users", as: "user" do
         resources :passkeys, only: [:index]
+        resource :degrees, only: [:edit, :update], path: "carreras"
       end
     end
 
