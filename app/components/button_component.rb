@@ -1,9 +1,10 @@
 class ButtonComponent < ViewComponent::Base
   attr_reader :form, :label
 
-  def initialize(form:, label:)
+  def initialize(form:, label:, data: {})
     @form = form
     @label = label
+    @data = data
   end
 
   def call
@@ -11,6 +12,6 @@ class ButtonComponent < ViewComponent::Base
             'disabled:opacity-50 disabled:cursor-not-allowed hover:bg-violet-500 ' \
             'focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600'
 
-    @form.submit @label, class: klass
+    @form.submit @label, class: klass, data: @data
   end
 end
