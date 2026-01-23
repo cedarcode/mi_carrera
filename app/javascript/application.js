@@ -3,5 +3,6 @@ import { Turbo } from "@hotwired/turbo-rails"
 import "controllers"
 import "install";
 import "serviceworker-companion";
+import "devise/webauthn"
 
 Turbo.session.drive = false

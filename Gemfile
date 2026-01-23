@@ -7,6 +7,7 @@ gem 'rails', '~> 8.1.1'
 gem 'appsignal', '~> 4.8'
 gem 'bootsnap', '~> 1.21', require: false
 gem 'devise', '~> 4.9'
+gem "devise-webauthn", "~> 0.3.0"
 gem 'factory_bot_rails', '~> 6.5'
 gem 'importmap-rails', '~> 2.2'
 gem "omniauth", "~> 2.1"
