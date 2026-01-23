@@ -16,14 +16,14 @@
     <% end %>
   </ul>
 
-  <div data-controller="passkey-button-visibility" data-action="webauthn:unsupported->passkey-button-visibility#disable" class="contents">
+  <div data-controller="webauthn-support" data-action="webauthn:unsupported->webauthn-support#disableButton" class="contents">
     <%= passkey_creation_form_for(current_user, form_classes: "flex flex-col w-full max-w-md gap-6") do |f| %>
       <%= f.label :name, "Nombre", class: "text-sm/6 font-medium text-gray-700 with-error:text-red-600" %>
       <%= f.text_field :name, class: "bg-white w-full rounded-md px-3 py-1.5 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600", required: true %>
 
       <div class="w-full flex flex-col">
-        <%= render ButtonComponent.new(form: f, label: "Agregar Passkey", data: { passkey_button_visibility_target: "createPasskeyButton" }) %>
-        <p class="text-xs text-red-600 mt-1" data-passkey-button-visibility-target="unsupportedMessage" hidden>
+        <%= render ButtonComponent.new(form: f, label: "Agregar Passkey", data: { webauthn_support_target: "button" }) %>
+        <p class="text-xs text-red-600 mt-1" data-webauthn-support-target="unsupportedMessage" hidden>
           WebAuthn no está soportado en este navegador. Por favor, usa un navegador compatible para agregar passkeys.
         </p>
       </div>
