@@ -16,7 +16,7 @@
     <% end %>
   </ul>
 
-  <%= passkey_creation_form_for(current_user, form_classes: "flex flex-col w-full max-w-md space-y-6") do |f| %>
+  <%= passkey_creation_form_for(current_user, form_classes: "flex flex-col w-full max-w-md gap-6") do |f| %>
     <%= f.label :name, "Nombre", class: "text-sm/6 font-medium text-gray-700 with-error:text-red-600" %>
     <%= f.text_field :name, class: "bg-white w-full rounded-md px-3 py-1.5 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600", required: true %>
     <%= f.hidden_field :passkey_public_key, data: { "passkeys-target": "hiddenPasskeyPublicKeyInput" } %>
