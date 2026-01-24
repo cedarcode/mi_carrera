@@ -252,10 +252,19 @@ RSpec.describe CookieStudent, type: :model do
   end
 
   describe '#degree' do
-    let(:student) { build(:cookie_student, cookies:) }
-    let(:cookies) { build(:cookie) }
+    it 'returns default degree when no degree_id cookie is set' do
+      student = build(:cookie_student)
+      expect(student.degree).to eq(Degree.default)
+    end
 
-    it 'returns default degree' do
+    it 'returns degree from cookie when degree_id is set' do
+      degree = create(:degree)
+      student = build(:cookie_student, degree_id: degree.id)
+      expect(student.degree).to eq(degree)
+    end
+
+    it 'returns default degree when cookie has invalid degree_id' do
+      student = build(:cookie_student, degree_id: 'nonexistent')
       expect(student.degree).to eq(Degree.default)
     end
   end
@@ -285,6 +294,55 @@ RSpec.describe CookieStudent, type: :model do
       allow(student).to receive(:degree).and_return(default_degree)
 
       expect(student.approved_subjects).to contain_exactly(subject1)
+    end
+  end
+
+  describe '#degree= and #degree_id' do
+    it 'persists degree_id to cookie after save' do
+      degree = create(:degree)
+      cookies = build(:cookie)
+      student = build(:cookie_student, cookies:)
+
+      student.degree = degree
+      student.save
+
+      expect(cookies[:degree_id]).to eq(degree.id)
+    end
+
+    it 'returns the new degree for a new CookieStudent instance with same cookie' do
+      degree = create(:degree)
+      cookies = build(:cookie)
+      student = build(:cookie_student, cookies:)
+
+      student.degree = degree
+      student.save
+
+      new_student = build(:cookie_student, cookies:)
+      expect(new_student.degree).to eq(degree)
+    end
+
+    it 'degree_id returns the correct value when @degree is set' do
+      degree = create(:degree)
+      cookies = build(:cookie)
+      student = build(:cookie_student, cookies:)
+
+      student.degree = degree
+
+      expect(student.degree_id).to eq(degree.id)
+    end
+
+    it 'degree_id falls back to cookie value when @degree is not set' do
+      degree_id = "new_degree"
+      cookies = build(:cookie, degree_id:)
+      student = build(:cookie_student, cookies:)
+
+      expect(student.degree_id).to eq(degree_id)
+    end
+
+    it 'degree_id falls back to default degree when neither @degree nor cookie is set' do
+      student = build(:cookie_student)
+
+      expect(student.degree_id).to eq(Degree.default.id)
     end
   end
 end

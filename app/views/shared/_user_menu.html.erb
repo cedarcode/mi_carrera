@@ -13,10 +13,10 @@
       <li class="border-t border-gray-100 my-1"></li>
       <%= link_to "Editar Perfil", edit_user_registration_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
       <%= link_to "Subir Escolaridad", new_transcript_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
-      <% if Features::ChangingDegrees.enabled? %>
-        <%= link_to "Cambiar Carrera", edit_user_degrees_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
-      <% end %>
       <%= link_to "Salir", destroy_user_session_path, data: { turbo: true, turbo_method: :delete }, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
+    <% end %>
+    <% if Features::ChangingDegrees.enabled? %>
+      <%= link_to "Cambiar Carrera", edit_user_degrees_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
     <% end %>
   </ul>
 </div>

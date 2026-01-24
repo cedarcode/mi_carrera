@@ -1,6 +1,8 @@
 class CookieStudent < BaseStudent
   VALID_BANNER_TYPES = %w[welcome].freeze
 
+  attr_writer :degree
+
   def initialize(cookie)
     @cookie = cookie.permanent
     super(JSON.parse(@cookie[:approved_approvable_ids] || "[]"))
@@ -26,17 +28,28 @@ class CookieStudent < BaseStudent
   end
 
   def degree
-    Degree.default
+    Degree.find_by(id: degree_id) || Degree.default
   end
 
-  private
-
-  attr_reader :cookie
-
-  def save!
+  def save
     cookie[:approved_approvable_ids] = {
       value: approved_approvable_ids.to_json,
       domain: :all
     }
+    cookie[:degree_id] = {
+      value: degree_id,
+      domain: :all
+    }
+    true
   end
+
+  def degree_id
+    @degree&.id || cookie[:degree_id].presence || Degree.default.id
+  end
+
+  def save! = save
+
+  private
+
+  attr_reader :cookie
 end
