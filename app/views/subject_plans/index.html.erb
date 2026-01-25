@@ -6,9 +6,14 @@
 
 <div id="planner" class="relative pt-3 space-y-4" data-controller="planner-loading">
   <div class="flex items-center justify-between h-10 mb-3">
-    <h3 class="text-lg font-bold ml-4">
-      Planificador
-    </h3>
+    <div class="flex items-center gap-2 ml-4">
+      <h3 class="text-lg font-bold">
+        Planificador
+      </h3>
+      <%= link_to planner_graph_path, class: "text-gray-500 hover:text-primary", title: "Ver grafo de dependencias" do %>
+        <%= material_icon("account_tree", "text-xl") %>
+      <% end %>
+    </div>
     <%= render partial: "credits_counter", locals: { planned_subjects: @planned_subjects } %>
   </div>
 
