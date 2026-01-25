@@ -4,8 +4,8 @@ module Subjects
       categories = params[:categories] || []
 
       @subjects = current_degree.subjects
-        .where(category: categories)
-        .includes(:course, :exam)
+                                .where(category: categories)
+                                .includes(:course, :exam)
 
       TreePreloader.preload(@subjects)
     end

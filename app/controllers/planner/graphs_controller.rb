@@ -4,8 +4,8 @@ module Planner
 
     def show
       planned_subjects = current_user.subject_plans
-        .includes(subject: [:course, :exam])
-        .map(&:subject)
+                                     .includes(subject: [:course, :exam])
+                                     .map(&:subject)
 
       TreePreloader.preload(planned_subjects)
 
