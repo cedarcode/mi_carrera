@@ -6,7 +6,7 @@ gem 'rails', '~> 8.1.1'
 
 gem 'appsignal', '~> 4.8'
 gem 'bootsnap', '~> 1.21', require: false
-gem 'devise', '~> 4.9'
+gem 'devise', '~> 5.0'
 gem "devise-webauthn", "~> 0.3.0"
 gem 'factory_bot_rails', '~> 6.5'
 gem 'importmap-rails', '~> 2.2'
@@ -16,7 +16,7 @@ gem "omniauth-rails_csrf_protection", '~> 2.0'
 gem 'pdf-reader'
 gem 'pg', '~> 1.6'
 gem 'propshaft', '~> 1.3'
-gem 'puma', '~> 7.1'
+gem 'puma', '~> 7.2'
 gem 'rollbar', '~> 3.7'
 gem 'stimulus-rails', '~> 1.3'
 gem 'tailwindcss-rails', '~> 4.4'
