@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class SubjectGraphComponent < ViewComponent::Base
   def initialize(subjects:, current_student:)
     @subjects = subjects
