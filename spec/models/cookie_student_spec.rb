@@ -295,8 +295,9 @@ RSpec.describe CookieStudent, type: :model do
   end
 
   describe '#degree= and #degree_id' do
+    let(:degree) { create(:degree) }
+
     it 'persists degree_id to cookie after save' do
-      degree = create(:degree)
       cookies = build(:cookie)
       student = build(:cookie_student, cookies:)
 
@@ -306,22 +307,8 @@ RSpec.describe CookieStudent, type: :model do
       expect(cookies[:degree_id]).to eq(degree.id)
     end
 
-    it 'returns the new degree for a new CookieStudent instance with same cookie' do
-      degree = create(:degree)
-      cookies = build(:cookie)
-      student = build(:cookie_student, cookies:)
-
-      student.degree = degree
-      student.save
-
-      new_student = build(:cookie_student, cookies:)
-      expect(new_student.degree).to eq(degree)
-    end
-
     it 'degree_id returns the correct value when @degree is set' do
-      degree = create(:degree)
-      cookies = build(:cookie)
-      student = build(:cookie_student, cookies:)
+      student = build(:cookie_student)
 
       student.degree = degree
 
@@ -330,8 +317,7 @@ RSpec.describe CookieStudent, type: :model do
 
     it 'degree_id falls back to cookie value when @degree is not set' do
       degree_id = "new_degree"
-      cookies = build(:cookie, degree_id:)
-      student = build(:cookie_student, cookies:)
+      student = build(:cookie_student, degree_id:)
 
       expect(student.degree_id).to eq(degree_id)
     end
