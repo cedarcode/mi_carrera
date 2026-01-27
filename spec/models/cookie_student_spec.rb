@@ -174,9 +174,8 @@ RSpec.describe CookieStudent, type: :model do
       subject3 = create :subject, credits: 20, group: group1, degree: default_degree
 
       student = build(:cookie_student,
+                      degree_id: default_degree.id,
                       approved_approvable_ids: [subject1.course.id, subject2.course.id, subject3.course.id])
-      allow(student).to receive(:degree).and_return(default_degree)
-
       expect(student.total_credits).to eq(30)
     end
   end
@@ -220,16 +219,14 @@ RSpec.describe CookieStudent, type: :model do
       create :subject, credits: 10, group: group3, degree: other_degree
 
       cookies = build(:cookie)
-      student = build(:cookie_student, cookies:)
-      allow(student).to receive(:degree).and_return(default_degree)
+      student = build(:cookie_student, cookies:, degree_id: default_degree.id)
       student.add(subject1.course)
       student.add(subject2.course)
 
       expect(student.groups_credits_met?).to be true
 
-      cookies2 = build(:cookie)
+      cookies2 = build(:cookie, degree_id: default_degree.id)
       student2 = build(:cookie_student, cookies: cookies2)
-      allow(student2).to receive(:degree).and_return(default_degree)
       student2.add(subject1.course)
       expect(student2.groups_credits_met?).to be false
     end
@@ -289,9 +286,9 @@ RSpec.describe CookieStudent, type: :model do
       subject1 = create(:subject, :with_exam, group: group1, degree: default_degree)
       subject2 = create(:subject, :with_exam, group: group2, degree: other_degree)
 
-      cookies = build(:cookie, approved_approvable_ids: [subject1.exam.id, subject2.exam.id])
+      cookies = build(:cookie, approved_approvable_ids: [subject1.exam.id, subject2.exam.id],
+                               degree_id: default_degree.id)
       student = build(:cookie_student, cookies:)
-      allow(student).to receive(:degree).and_return(default_degree)
 
       expect(student.approved_subjects).to contain_exactly(subject1)
     end
