@@ -1,14 +1,13 @@
 module Users
   class DegreesController < ApplicationController
-    before_action :authenticate_user!
     before_action :ensure_feature_enabled!
 
     def edit; end
 
     def update
-      current_user.degree = Degree.find(params[:degree_id])
+      current_student.degree = Degree.find(params[:degree_id])
 
-      if current_user.save
+      if current_student.save
         redirect_to root_path, notice: "Tu carrera ha sido actualizada correctamente."
       else
         redirect_to edit_user_degrees_path, alert: "Hubo un error actualizando tu carrera."
