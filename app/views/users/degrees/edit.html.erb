@@ -7,7 +7,7 @@
       <%= f.select(
         :degree_id,
         options_for_select(
-          Degree.all.map { |degree| [degree.title, degree.id] },
+          Degree.pluck(:title, :id),
           selected: current_user.degree_id
         ),
         {
