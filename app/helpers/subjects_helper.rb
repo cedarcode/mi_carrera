@@ -10,6 +10,7 @@ module SubjectsHelper
     when 'seventh_semester' then 'Séptimo semestre'
     when 'eighth_semester' then 'Octavo semestre'
     when 'nineth_semester' then 'Noveno semestre'
+    when 'tenth_semester' then 'Décimo semestre'
     when 'inactive' then 'Materias inactivas'
     when 'optional' then 'Materias opcionales'
     when 'revalid' then 'Reválidas'
