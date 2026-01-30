@@ -27,6 +27,7 @@ class Subject < ApplicationRecord
     seventh_semester
     eighth_semester
     nineth_semester
+    tenth_semester
     optional
     extension_module
     outside_montevideo

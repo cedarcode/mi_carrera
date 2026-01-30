@@ -1,0 +1,100 @@
+---
+'1061':
+  eva_id: '1024'
+  second_semester_eva_id: '1504'
+  openfing_id: cdiv-2022
+  short_name: Cálculo DIV
+  category: 'first_semester'
+'1030':
+  eva_id: '256'
+  openfing_id: gal1-2022
+  short_name: GAL 1
+  category: 'first_semester'
+MI2:
+  category: 'first_semester'
+'1151':
+  eva_id: '87'
+  openfing_id: f1-2018
+  category: 'first_semester'
+'5904':
+  eva_id: '405'
+  short_name: 'Tallerine'
+  category: 'first_semester'
+'1062':
+  eva_id: '1594'
+  second_semester_eva_id: '1131'
+  openfing_id: cdivv-2022
+  short_name: Cálculo DIVV
+  category: 'second_semester'
+'1031':
+  eva_id: '270'
+  openfing_id: gal219
+  short_name: GAL 2
+  category: 'second_semester'
+'1152':
+  eva_id: '32'
+  second_semester_eva_id: '1546'
+  openfing_id: f2-2023
+  category: 'second_semester'
+'1373':
+  eva_id: '58'
+  openfing_id: p1
+  category: 'second_semester'
+'1063':
+  eva_id: '1498'
+  second_semester_eva_id: '1183'
+  category: 'third_semester'
+'1025':
+  eva_id: '54'
+  second_semester_eva_id: '1537'
+  category: 'third_semester'
+'1153':
+  category: 'third_semester'
+'1122':
+  category: 'third_semester'
+'1154':
+  category: 'third_semester'
+'1064':
+  category: 'fourth_semester'
+'1128':
+  category: 'fourth_semester'
+'1155':
+  category: 'fourth_semester'
+'1456':
+  category: 'fourth_semester'
+'1512':
+  category: 'fourth_semester'
+'1066':
+  category: 'fifth_semester'
+'1457':
+  category: 'fifth_semester'
+'1513':
+  category: 'fifth_semester'
+'1307':
+  category: 'fifth_semester'
+'5715':
+  category: 'fifth_semester'
+'2041':
+  category: 'sixth_semester'
+'5905':
+  category: 'sixth_semester'
+'1459':
+  category: 'sixth_semester'
+'1460':
+  category: 'sixth_semester'
+'5824':
+  category: 'sixth_semester'
+'1461':
+  category: 'seventh_semester'
+'5850':
+  category: 'seventh_semester'
+'2011':
+  category: 'eighth_semester'
+'5507':
+  category: 'eighth_semester'
+'2013':
+  category: 'nineth_semester'
+'2401':
+  category: 'tenth_semester'
+'1224':
+  category: 'tenth_semester'
