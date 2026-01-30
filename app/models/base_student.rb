@@ -1,5 +1,6 @@
 class BaseStudent
   attr_reader :approved_approvable_ids
+  alias_method :ids, :approved_approvable_ids
 
   def initialize(approved_approvable_ids)
     @approved_approvable_ids = approved_approvable_ids
@@ -39,11 +40,11 @@ class BaseStudent
   def mark_banner_as_viewed!(_) = raise NoMethodError
   def approved_subjects = degree.subjects.approved_for(ids)
 
-  private
-
-  alias_method :ids, :approved_approvable_ids
-
   def save!
+    raise NotImplementedError
+  end
+
+  def save
     raise NotImplementedError
   end
 end
