@@ -161,6 +161,24 @@ RSpec.describe CookieStudent, type: :model do
                    approved_approvable_ids: [subject1.course.id, subject2.exam.id,
                                              subject3.course.id]).total_credits).to eq(33)
     end
+
+    it 'calculates credits only from subjects in the student degree' do
+      default_degree = Degree.default
+      other_degree = create :degree
+
+      group1 = create :subject_group, degree: default_degree
+      group2 = create :subject_group, degree: other_degree
+
+      subject1 = create :subject, credits: 10, group: group1, degree: default_degree
+      subject2 = create :subject, credits: 15, group: group2, degree: other_degree
+      subject3 = create :subject, credits: 20, group: group1, degree: default_degree
+
+      student = build(:cookie_student,
+                      approved_approvable_ids: [subject1.course.id, subject2.course.id, subject3.course.id])
+      allow(student).to receive(:degree).and_return(default_degree)
+
+      expect(student.total_credits).to eq(30)
+    end
   end
 
   describe '#met?' do
@@ -189,19 +207,31 @@ RSpec.describe CookieStudent, type: :model do
   end
 
   describe '#groups_credits_met?' do
-    it 'returns true if all groups credits met' do
-      group1 = create :subject_group, credits_needed: 10
-      group2 = create :subject_group, credits_needed: 10
-      subject1 = create :subject, credits: 10, group: group1
-      subject2 = create :subject, credits: 10, group: group2
+    it 'checks only groups from the student degree' do
+      default_degree = Degree.default
+      other_degree = create :degree
+
+      group1 = create :subject_group, degree: default_degree, credits_needed: 10
+      group2 = create :subject_group, degree: default_degree, credits_needed: 10
+      group3 = create :subject_group, degree: other_degree, credits_needed: 10
+
+      subject1 = create :subject, credits: 10, group: group1, degree: default_degree
+      subject2 = create :subject, credits: 10, group: group2, degree: default_degree
+      create :subject, credits: 10, group: group3, degree: other_degree
+
       cookies = build(:cookie)
       student = build(:cookie_student, cookies:)
-
-      expect(student.groups_credits_met?).to be false
+      allow(student).to receive(:degree).and_return(default_degree)
       student.add(subject1.course)
-      expect(student.groups_credits_met?).to be false
       student.add(subject2.course)
+
       expect(student.groups_credits_met?).to be true
+
+      cookies2 = build(:cookie)
+      student2 = build(:cookie_student, cookies: cookies2)
+      allow(student2).to receive(:degree).and_return(default_degree)
+      student2.add(subject1.course)
+      expect(student2.groups_credits_met?).to be false
     end
   end
 
@@ -238,6 +268,23 @@ RSpec.describe CookieStudent, type: :model do
       student = build(:cookie_student, cookies:)
 
       expect(student.approved_subjects).to contain_exactly(subject2)
+    end
+
+    it 'returns only approved subjects from the student degree' do
+      default_degree = Degree.default
+      other_degree = create :degree
+
+      group1 = create :subject_group, degree: default_degree
+      group2 = create :subject_group, degree: other_degree
+
+      subject1 = create(:subject, :with_exam, group: group1, degree: default_degree)
+      subject2 = create(:subject, :with_exam, group: group2, degree: other_degree)
+
+      cookies = build(:cookie, approved_approvable_ids: [subject1.exam.id, subject2.exam.id])
+      student = build(:cookie_student, cookies:)
+      allow(student).to receive(:degree).and_return(default_degree)
+
+      expect(student.approved_subjects).to contain_exactly(subject1)
     end
   end
 end
