@@ -25,3 +25,7 @@
     <%= render 'subject_plans/semester_card/add_subject_form', semester: %>
   <% end %>
 <% end %>
+
+<%= turbo_stream.replace "foreground-layer" do %>
+  <%= render 'foreground_layer' %>
+<% end %>
