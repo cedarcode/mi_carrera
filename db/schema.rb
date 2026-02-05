@@ -27,7 +27,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
     t.datetime "created_at", null: false
     t.string "current_plan", null: false
     t.boolean "include_inco_subjects", null: false
-    t.string "title"
+    t.string "name"
     t.datetime "updated_at", null: false
   end
 

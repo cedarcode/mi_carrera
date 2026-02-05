@@ -7,7 +7,7 @@
       <%= f.select(
         :degree_id,
         options_for_select(
-          Degree.pluck(:title, :id),
+          Degree.pluck(:name, :id),
           selected: current_user.degree_id
         ),
         {
