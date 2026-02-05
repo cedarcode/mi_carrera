@@ -315,17 +315,25 @@ RSpec.describe CookieStudent, type: :model do
       expect(student.degree_id).to eq(degree.id)
     end
 
-    it 'degree_id falls back to cookie value when @degree is not set' do
-      degree_id = "new_degree"
-      student = build(:cookie_student, degree_id:)
+    it 'degree_id and degree falls back to cookie value when @degree is not set' do
+      student = build(:cookie_student, degree_id: degree.id)
 
-      expect(student.degree_id).to eq(degree_id)
+      expect(student.degree_id).to eq(degree.id)
+      expect(student.degree).to eq(degree)
     end
 
-    it 'degree_id falls back to default degree when neither @degree nor cookie is set' do
+    it 'degree_id and degree falls back to default value when degree_id param is invalid' do
+      student = build(:cookie_student, degree_id: "new_degree")
+
+      expect(student.degree_id).to eq(Degree.default.id)
+      expect(student.degree).to eq(Degree.default)
+    end
+
+    it 'degree_id and degree falls back to default degree when neither @degree nor cookie is set' do
       student = build(:cookie_student)
 
       expect(student.degree_id).to eq(Degree.default.id)
+      expect(student.degree).to eq(Degree.default)
     end
   end
 end
