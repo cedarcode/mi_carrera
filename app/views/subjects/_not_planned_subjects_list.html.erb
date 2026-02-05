@@ -6,7 +6,7 @@
         <span class="flex-1 font-bold"><%= subjects.size %> Materias aprobadas sin semestre asignado</span>
       </a>
 
-      <ul class="hidden" data-collapsible-target="collapsible" data-controller="planner-draggable" data-action="turbo:before-morph-attribute->collapsible#preventToggle" data-planner-draggable-put-value="false">
+      <ul class="hidden" data-collapsible-target="collapsible" data-controller="planner-draggable" data-action="turbo:before-morph-attribute->collapsible#preventToggle" data-planner-draggable-put-value="false" data-planner-draggable-planner-loading-outlet="#planner">
         <% subjects.each do |subject| %>
           <li class="relative flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-100 h-[64px]" data-planner-draggable-url="<%= subject_plans_path %>" data-planner-draggable-method="post" data-planner-draggable-subject-id="<%= subject.id %>">
             <span class="material-icons text-gray-400 cursor-pointer" data-planner-draggable-handle> drag_handle </span>

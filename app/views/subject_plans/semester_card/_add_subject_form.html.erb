@@ -23,7 +23,7 @@
     }
   ) %>
   <%= form.hidden_field :semester, value: semester %>
-  <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400 hover:not-disabled:text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed", disabled: true, data: { subject_selector_target: "submitButton" } do %>
+  <%= form.button type: :submit, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400 hover:not-disabled:text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed", disabled: true, data: { subject_selector_target: "submitButton", action: "planner-loading#start" } do %>
       add_circle_outline
   <% end %>
 <% end %>
