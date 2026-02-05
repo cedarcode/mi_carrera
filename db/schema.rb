@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_09_143243) do
+ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -27,6 +27,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_09_143243) do
     t.datetime "created_at", null: false
     t.string "current_plan", null: false
     t.boolean "include_inco_subjects", null: false
+    t.string "name"
     t.datetime "updated_at", null: false
   end
 

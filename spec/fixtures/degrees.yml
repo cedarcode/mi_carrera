@@ -1,4 +1,5 @@
 computacion:
   id: "computacion"
+  name: "Ingeniería en Computación"
   current_plan: "2025"
   include_inco_subjects: true

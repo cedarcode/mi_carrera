@@ -5,7 +5,10 @@ RSpec.describe 'Changing degrees', type: :system do
   include CheckboxesHelper
 
   let!(:computacion_degree) { degrees(:computacion) }
-  let!(:sistemas_degree) { create(:degree, id: 'sistemas', current_plan: '2025', include_inco_subjects: false) }
+  let!(:sistemas_degree) do
+    create(:degree, id: 'sistemas', name: 'Ingeniería en Sistemas',
+                    current_plan: '2025', include_inco_subjects: false)
+  end
   let!(:user) { create(:user, degree: computacion_degree) }
 
   before do
@@ -24,9 +27,9 @@ RSpec.describe 'Changing degrees', type: :system do
       click_on 'Cambiar Carrera'
 
       expect(page).to have_text('Cambiar Carrera')
-      expect(page).to have_select('degree_id', selected: 'Computacion')
+      expect(page).to have_select('degree_id', selected: 'Ingeniería en Computación')
 
-      select 'Sistemas', from: 'degree_id'
+      select 'Ingeniería en Sistemas', from: 'degree_id'
       click_on 'Guardar'
 
       expect(page).to have_text('Tu carrera ha sido actualizada correctamente.')
@@ -70,7 +73,7 @@ RSpec.describe 'Changing degrees', type: :system do
       visit edit_user_degrees_path
 
       expect(page).to have_text('Cambiar Carrera')
-      expect(page).to have_select('degree_id', selected: 'Computacion')
+      expect(page).to have_select('degree_id', selected: 'Ingeniería en Computación')
     end
 
     it 'allows selecting degree when no cookie is set' do
@@ -98,7 +101,7 @@ RSpec.describe 'Changing degrees', type: :system do
       visit edit_user_degrees_path
 
       expect(page).to have_text('Cambiar Carrera')
-      expect(page).to have_select('degree_id', selected: 'Computacion')
+      expect(page).to have_select('degree_id', selected: 'Ingeniería en Computación')
     end
 
     it 'allows changing degree and updates the cookie' do
@@ -109,7 +112,7 @@ RSpec.describe 'Changing degrees', type: :system do
       click_user_menu
       click_on 'Cambiar Carrera'
 
-      expect(page).to have_select('degree_id', selected: 'Computacion')
+      expect(page).to have_select('degree_id', selected: 'Ingeniería en Computación')
 
       select 'Sistemas', from: 'degree_id'
       click_on 'Guardar'
