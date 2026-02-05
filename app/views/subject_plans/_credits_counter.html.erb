@@ -1,4 +1,4 @@
-<div id="planned-credits" class="mx-4 my-3 font-medium text-sm">
+<div id="planned-credits" class="mx-4 my-3 font-medium">
   <% planned_approvable_ids = planned_subjects.map { |subject| [subject.course.id, subject.exam&.id] }.flatten.compact %>
   <strong> Créditos planeados:</strong> <%= Subject.approved_credits(planned_approvable_ids) %>
 </div>
