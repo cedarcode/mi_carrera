@@ -38,30 +38,30 @@ module Scraper
 
     def scrape
       logger.info "Starting to scrape degree"
-      groups = {}
-      subjects = {}
+      # groups = {}
+      # subjects = {}
       current_semester_subjects = []
 
-      go_to_groups_and_subjects_page
-      process_groups_and_subjects(groups, subjects)
-
-      go_to_prerequisites_page
-      prerequisites = process_prerequisites(subjects)
-
-      prerequisites.each do |prerequisite_tree|
-        add_missing_exams_and_subjects(prerequisite_tree, subjects)
-      end
-
-      scraped_prerequisites =
-        prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
-
+      # go_to_groups_and_subjects_page
+      # process_groups_and_subjects(groups, subjects)
+      #
+      # go_to_prerequisites_page
+      # prerequisites = process_prerequisites(subjects)
+      #
+      # prerequisites.each do |prerequisite_tree|
+      #   add_missing_exams_and_subjects(prerequisite_tree, subjects)
+      # end
+      #
+      # scraped_prerequisites =
+      #   prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
+      #
       current_semester_subjects += load_current_semester_subjects(VALID_PERIOD)
       current_semester_subjects += load_current_semester_subjects(INVALID_PERIOD)
       write_yml("scraped_current_semester_subjects", current_semester_subjects.sort)
 
-      write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
-      write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h)
-      write_yml("scraped_prerequisites", scraped_prerequisites)
+      # write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
+      # write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h)
+      # write_yml("scraped_prerequisites", scraped_prerequisites)
     rescue
       Rails.logger.info save_screenshot
       raise
