@@ -73,7 +73,7 @@ RSpec.describe 'Changing degrees', type: :system do
       visit edit_user_degrees_path
 
       expect(page).to have_text('Cambiar Carrera')
-      expect(page).to have_select('degree_id', selected: 'Computacion')
+      expect(page).to have_select('degree_id', selected: 'Ingeniería en Computación')
     end
 
     it 'allows selecting degree when no cookie is set' do
@@ -101,7 +101,7 @@ RSpec.describe 'Changing degrees', type: :system do
       visit edit_user_degrees_path
 
       expect(page).to have_text('Cambiar Carrera')
-      expect(page).to have_select('degree_id', selected: 'Computacion')
+      expect(page).to have_select('degree_id', selected: 'Ingeniería en Computación')
     end
 
     it 'allows changing degree and updates the cookie' do
@@ -112,7 +112,7 @@ RSpec.describe 'Changing degrees', type: :system do
       click_user_menu
       click_on 'Cambiar Carrera'
 
-      expect(page).to have_select('degree_id', selected: 'Computacion')
+      expect(page).to have_select('degree_id', selected: 'Ingeniería en Computación')
 
       select 'Sistemas', from: 'degree_id'
       click_on 'Guardar'
