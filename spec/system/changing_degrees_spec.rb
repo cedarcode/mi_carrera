@@ -6,8 +6,7 @@ RSpec.describe 'Changing degrees', type: :system do
 
   let!(:computacion_degree) { degrees(:computacion) }
   let!(:sistemas_degree) do
-    create(:degree, id: 'sistemas', name: 'Ingeniería en Sistemas',
-                    current_plan: '2025', include_inco_subjects: false)
+    create(:degree, id: 'sistemas', name: 'Ingeniería en Sistemas', current_plan: '2025')
   end
   let!(:user) { create(:user, degree: computacion_degree) }
 

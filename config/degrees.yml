@@ -8,4 +8,3 @@ shared:
   id: "electrica"
   name: "Ingeniería Eléctrica"
   current_plan: "2023"
-  include_inco_subjects: false
