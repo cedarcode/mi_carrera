@@ -309,6 +309,9 @@ module Scraper
       end
     end
 
+    # Bedelias represents academic periods using a YYYY-{01||02} format.
+    # For example, "2026-01" corresponds to the first semester of 2026,
+    # and "2026-02" corresponds to the second semester of the same year.
     def current_period
       date  = Time.current
       year  = date.year
