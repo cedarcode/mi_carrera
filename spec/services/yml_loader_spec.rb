@@ -11,11 +11,13 @@ RSpec.describe YmlLoader do
       {
         bedelias_name: 'TEST DEGREE',
         id: degree_id,
+        name: 'Test Degree',
         current_plan: '2025',
       },
       {
         bedelias_name: 'ANOTHER TEST DEGREE',
         id: another_degree_id,
+        name: 'Another Test Degree',
         current_plan: '1815',
       }
     ])
@@ -29,6 +31,7 @@ RSpec.describe YmlLoader do
         # Degrees
         expect { described_class.load }.to change(Degree, :count).by(2)
         degree = Degree.find(degree_id)
+        expect(degree.name).to eq('Test Degree')
         expect(degree.current_plan).to eq('2025')
 
         # Subject Groups
@@ -162,6 +165,7 @@ RSpec.describe YmlLoader do
           described_class.load
 
           existing_degree.reload
+          expect(existing_degree.name).to eq('Test Degree')
           expect(existing_degree.current_plan).to eq('2025')
 
           existing_group.reload

@@ -32,6 +32,7 @@ class YmlLoader
 
   def load_degree
     @degree = Degree.find_or_initialize_by(id: degree_id)
+    @degree.name = degree_hash[:name]
     @degree.current_plan = degree_hash[:current_plan]
     @degree.save!
   end

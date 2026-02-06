@@ -13,8 +13,9 @@ end
 #
 # Table name: degrees
 #
-#  id           :string           not null, primary key
-#  current_plan :string           not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id                    :string           not null, primary key
+#  current_plan          :string           not null
+#  name                  :string
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
 #
