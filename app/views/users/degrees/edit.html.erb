@@ -3,12 +3,12 @@
 
   <%= form_with(url: user_degrees_path, method: :put, class: "flex flex-col w-full max-w-md space-y-6") do |f| %>
     <div>
-      <%= f.label :degree_id, "Carrera de Grado", class: "text-sm/6 font-medium text-gray-700 with-error:text-red-600" %>
+      <%= f.label :degree_id, "Carrera de Grado", class: "font-medium text-gray-700 with-error:text-red-600" %>
       <%= f.select(
         :degree_id,
         options_for_select(
-          Degree.ids.map { |id| [id.humanize, id] },
-          selected: current_user.degree_id
+          Degree.pluck(:name, :id),
+          selected: current_student.degree_id
         ),
         {
           include_blank: "Selecciona tu carrera de grado",

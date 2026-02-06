@@ -29,13 +29,13 @@ group :development, :deploy do
 end
 
 group :development, :test do
-  gem "brakeman", "~> 7.1"
+  gem "brakeman", "~> 8.0"
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 8.0'
 end
 
 group :development do
-  gem "annotaterb", "~> 4.20"
+  gem "annotaterb", "~> 4.21"
   gem "letter_opener", "~> 1.10"
   gem "lookbook", "~> 2.3"
   gem 'rubocop', '~> 1.84'
