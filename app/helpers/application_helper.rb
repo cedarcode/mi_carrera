@@ -42,4 +42,12 @@ module ApplicationHelper
   def material_icon_outlined(icon, classes = nil)
     tag.span(icon, class: "material-icons-outlined #{classes}")
   end
+
+  def academic_year
+    Time.current.year
+  end
+
+  def academic_semester
+    Time.current.month < 8 ? "primer semestre" : "segundo semestre"
+  end
 end
