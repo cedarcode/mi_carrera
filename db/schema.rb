@@ -26,7 +26,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
   create_table "degrees", id: :string, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "current_plan", null: false
-    t.boolean "include_inco_subjects", null: false
     t.string "name"
     t.datetime "updated_at", null: false
   end
@@ -79,7 +78,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
     t.string "code"
     t.datetime "created_at", precision: nil, null: false
     t.integer "credits", null: false
-    t.boolean "current_optional_subject", default: false
+    t.boolean "current_semester", default: false, null: false
     t.string "degree_id", null: false
     t.string "eva_id"
     t.integer "group_id"

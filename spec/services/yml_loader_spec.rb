@@ -13,14 +13,12 @@ RSpec.describe YmlLoader do
         id: degree_id,
         name: 'Test Degree',
         current_plan: '2025',
-        include_inco_subjects: true
       },
       {
         bedelias_name: 'ANOTHER TEST DEGREE',
         id: another_degree_id,
         name: 'Another Test Degree',
         current_plan: '1815',
-        include_inco_subjects: true
       }
     ])
   end
@@ -35,7 +33,6 @@ RSpec.describe YmlLoader do
         degree = Degree.find(degree_id)
         expect(degree.name).to eq('Test Degree')
         expect(degree.current_plan).to eq('2025')
-        expect(degree.include_inco_subjects).to be true
 
         # Subject Groups
         expect(degree.subject_groups.count).to eq(1)
@@ -56,7 +53,7 @@ RSpec.describe YmlLoader do
         expect(subject1.openfing_id).to eq('testsubj')
         expect(subject1.short_name).to eq('TS1')
         expect(subject1.category).to eq('third_semester')
-        expect(subject1.current_optional_subject).to be false
+        expect(subject1.current_semester).to be false
 
         subject2 = degree.subjects.find_by!(code: '102')
         expect(subject2.name).to eq('Cálculo II')
@@ -69,7 +66,7 @@ RSpec.describe YmlLoader do
         expect(subject2.openfing_id).to be_nil
         expect(subject2.short_name).to be_nil
         expect(subject2.category).to eq('optional')
-        expect(subject2.current_optional_subject).to be true
+        expect(subject2.current_semester).to be true
 
         subject3 = degree.subjects.find_by!(code: '25')
         expect(subject3.name).to eq('Subject With No Group')
@@ -141,7 +138,9 @@ RSpec.describe YmlLoader do
       end
 
       context 'when data already exists' do
-        let!(:existing_degree) { create(:degree, id: degree_id, current_plan: '1830', include_inco_subjects: false) }
+        let!(:existing_degree) do
+          create(:degree, id: degree_id, current_plan: '1830')
+        end
         let!(:existing_group) do
           create(
             :subject_group,
@@ -158,7 +157,7 @@ RSpec.describe YmlLoader do
             name: 'Existing Subject',
             credits: 100,
             degree_id:,
-            current_optional_subject: true
+            current_semester: true
           )
         end
 
@@ -168,7 +167,6 @@ RSpec.describe YmlLoader do
           existing_degree.reload
           expect(existing_degree.name).to eq('Test Degree')
           expect(existing_degree.current_plan).to eq('2025')
-          expect(existing_degree.include_inco_subjects).to eq(true)
 
           existing_group.reload
           expect(existing_group.name).to eq('Matemática')
@@ -179,7 +177,7 @@ RSpec.describe YmlLoader do
           expect(existing_subject.credits).to eq(14)
           expect(existing_subject.exam).to be_present
           expect(existing_subject.group).to eq(existing_group)
-          expect(existing_subject.current_optional_subject).to be false
+          expect(existing_subject.current_semester).to be false
         end
       end
     end
