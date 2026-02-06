@@ -135,9 +135,9 @@ RSpec.describe YmlLoader do
       end
 
       context 'when data already exists' do
-        let!(:existing_degree) {
+        let!(:existing_degree) do
           create(:degree, id: degree_id, current_plan: '1830')
-        }
+        end
         let!(:existing_group) do
           create(
             :subject_group,
