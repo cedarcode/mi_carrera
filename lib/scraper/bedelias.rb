@@ -315,7 +315,7 @@ module Scraper
     def current_period
       date  = Time.current
       year  = date.year
-      half  = date.month <= 6 ? "01" : "02"
+      half  = date.month < 8 ? "01" : "02"
 
       "#{year}#{half}"
     end
