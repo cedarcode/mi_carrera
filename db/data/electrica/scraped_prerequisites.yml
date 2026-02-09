@@ -8335,7 +8335,7 @@
       subject_needed_code: '1903'
       subject_needed_name: COSTOS PARA INGENIERIA
   - type: credits
-    credits: 130
+    credits: 100
   subject_code: '1922'
   is_exam: false
 - type: logical
