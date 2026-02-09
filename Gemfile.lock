@@ -83,7 +83,7 @@ GEM
     annotaterb (4.21.0)
       activerecord (>= 6.0.0)
       activesupport (>= 6.0.0)
-    appsignal (4.8.1)
+    appsignal (4.8.2)
       logger
       rack (>= 2.0.0)
     ast (2.4.3)
@@ -93,9 +93,9 @@ GEM
     bigdecimal (3.3.1)
     bindata (2.5.1)
     bindex (0.8.1)
-    bootsnap (1.21.1)
+    bootsnap (1.22.0)
       msgpack (~> 1.2)
-    brakeman (8.0.1)
+    brakeman (8.0.2)
       racc
     builder (3.3.0)
     byebug (13.0.0)
@@ -165,7 +165,7 @@ GEM
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    json (2.18.0)
+    json (2.18.1)
     jwt (2.10.2)
       base64
     kamal (2.10.1)
@@ -374,7 +374,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.4)
-    rubocop (1.84.0)
+    rubocop (1.84.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -490,7 +490,7 @@ PLATFORMS
 DEPENDENCIES
   annotaterb (~> 4.21)
   appsignal (~> 4.8)
-  bootsnap (~> 1.21)
+  bootsnap (~> 1.22)
   brakeman (~> 8.0)
   capybara (~> 3.40)
   devise (~> 5.0)
