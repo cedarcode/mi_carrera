@@ -15264,64 +15264,15 @@
           needs: course
     - type: subject
       needs: all
-      subject_needed_code: '1403'
-      subject_needed_name: INT. A LA ARQUITECTURA DE COMPUTADORES
-    - type: subject
-      needs: all
       subject_needed_code: '1443'
       subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+    - type: subject
+      needs: all
+      subject_needed_code: '1403'
+      subject_needed_name: INT. A LA ARQUITECTURA DE COMPUTADORES
   - type: credits
     credits: 10
     group: 4066
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP364
-      subject_needed_name: COMUNICACION DE DATOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1433'
-      subject_needed_name: INT. A LAS REDES DE COMPUTADORAS
-      needs: course
-    - type: subject
-      subject_needed_code: '1406'
-      subject_needed_name: INT. A LAS REDES DE COMPUTADORES
-      needs: course
-    - type: subject
-      subject_needed_code: '1446'
-      subject_needed_name: REDES DE COMPUTADORAS
-      needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1716'
-      subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
-      needs: course
-    - type: subject
-      subject_needed_code: C402
-      subject_needed_name: TALLER IV (ANUAL)
-      needs: course
-    - type: subject
-      subject_needed_code: CP363
-      subject_needed_name: TALLER IV (1ER.SEM.)
-      needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP362
-      subject_needed_name: BASES DE DATOS
-      needs: exam
-    - type: subject
-      subject_needed_code: BD10
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1911'
-      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
-      needs: course
   - type: logical
     logical_operator: or
     operands:
@@ -15348,6 +15299,59 @@
     - type: subject
       subject_needed_code: '1537'
       subject_needed_name: SISTEMAS OPERATIVOS
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP362
+      subject_needed_name: BASES DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: BD10
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1911'
+      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1716'
+      subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+      needs: course
+    - type: subject
+      subject_needed_code: '1783'
+      subject_needed_name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+      needs: course
+    - type: subject
+      subject_needed_code: C402
+      subject_needed_name: TALLER IV (ANUAL)
+      needs: course
+    - type: subject
+      subject_needed_code: CP363
+      subject_needed_name: TALLER IV (1ER.SEM.)
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP364
+      subject_needed_name: COMUNICACION DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1433'
+      subject_needed_name: INT. A LAS REDES DE COMPUTADORAS
+      needs: course
+    - type: subject
+      subject_needed_code: '1406'
+      subject_needed_name: INT. A LAS REDES DE COMPUTADORES
+      needs: course
+    - type: subject
+      subject_needed_code: '1446'
+      subject_needed_name: REDES DE COMPUTADORAS
       needs: course
   subject_code: '1918'
   is_exam: false

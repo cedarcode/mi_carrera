@@ -5,7 +5,7 @@ ruby file: ".ruby-version"
 gem 'rails', '~> 8.1.1'
 
 gem 'appsignal', '~> 4.8'
-gem 'bootsnap', '~> 1.21', require: false
+gem 'bootsnap', '~> 1.22', require: false
 gem 'devise', '~> 5.0'
 gem "devise-webauthn", "~> 0.3.0"
 gem 'factory_bot_rails', '~> 6.5'
