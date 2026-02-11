@@ -15,7 +15,7 @@ module Transcript
     end
 
     def save_to_user(student)
-      subject = subject_from_name(name, student)
+      subject = subject_from_name(name, student.degree_id)
 
       return false if subject.blank?
 
@@ -25,10 +25,10 @@ module Transcript
 
     private
 
-    def subject_from_name(name, student)
+    def subject_from_name(name, degree_id)
       subject_match = Subject.where("lower(unaccent(name)) = lower(unaccent(?))", name)
       subject_match = subject_match.select { |subject| subject.credits == credits.to_i }
-      subject_match = subject_match.select { |subject| subject.degree_id == student.degree_id }
+      subject_match = subject_match.select { |subject| subject.degree_id == degree_id }
 
       return subject_match.first if subject_match.length == 1
 
