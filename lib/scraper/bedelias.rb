@@ -1,6 +1,7 @@
 require 'capybara'
 require 'capybara/dsl'
 require 'scraper/prerequisites_tree_page'
+require 'selenium-webdriver'
 
 module Scraper
   class Bedelias
@@ -18,12 +19,7 @@ module Scraper
     VALID_PERIOD = 'Instancias de dictado con período habilitado'
 
     def self.scrape
-      Capybara.configure do |config|
-        config.default_driver = ENV["HEADLESS"] == "false" ? :selenium_chrome : :selenium_chrome_headless
-        config.run_server = false
-        config.save_path = "tmp/capybara"
-        config.threadsafe = true
-      end
+      configure_capybara
 
       degrees = Rails.configuration.degrees
       degrees.each do |degree|
@@ -65,6 +61,23 @@ module Scraper
     rescue
       Rails.logger.info save_screenshot
       raise
+    end
+
+    def self.configure_capybara
+      Capybara.register_driver :selenium_chrome_headless_large do |app|
+        options = ::Selenium::WebDriver::Chrome::Options.new
+        options.add_argument('--headless')
+        options.add_argument('--window-size=1920,1080')
+
+        ::Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+      end
+
+      Capybara.configure do |config|
+        config.default_driver = ENV["HEADLESS"] == "false" ? :selenium_chrome : :selenium_chrome_headless_large
+        config.run_server = false
+        config.save_path = "tmp/capybara"
+        config.threadsafe = true
+      end
     end
 
     private
