@@ -18,8 +18,16 @@ module Scraper
     end
 
     def self.configure_capybara
+      Capybara.register_driver :selenium_chrome_headless_large do |app|
+        options = ::Selenium::WebDriver::Chrome::Options.new
+        options.add_argument('--headless')
+        options.add_argument('--window-size=1920,1080')
+
+        ::Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+      end
+
       Capybara.configure do |config|
-        config.default_driver = ENV["HEADLESS"] == "false" ? :selenium_chrome : :selenium_chrome_headless
+        config.default_driver = ENV["HEADLESS"] == "false" ? :selenium_chrome : :selenium_chrome_headless_large
         config.run_server = false
         config.save_path = "tmp/capybara"
         config.threadsafe = true
