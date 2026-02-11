@@ -27,8 +27,8 @@ module Transcript
 
     def subject_from_name(name, degree_id)
       subject_match = Subject.where("lower(unaccent(name)) = lower(unaccent(?))", name)
-      subject_match = subject_match.select { |subject| subject.credits == credits.to_i }
-      subject_match = subject_match.select { |subject| subject.degree_id == degree_id }
+                             .where(degree_id: degree_id)
+                             .where(credits: credits.to_i)
 
       return subject_match.first if subject_match.length == 1
 
