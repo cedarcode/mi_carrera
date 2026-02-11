@@ -682,6 +682,10 @@ CP376:
 '1033':
   eva_id: '62'
   openfing_id: metn-2023
+  category: 'inactive'
+'2041':
+  eva_id: '62'
+  openfing_id: metn-2023
   category: 'fourth_semester'
 '1079':
   category: 'inactive'
