@@ -8,6 +8,7 @@ RSpec.describe SubjectGroup, type: :model do
     it {
       should have_many(:subjects).with_foreign_key('group_id').inverse_of(:group).dependent(:restrict_with_exception)
     }
+    it { should have_many(:subject_group_memberships).dependent(:destroy) }
   end
 
   describe 'validations' do

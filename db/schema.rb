@@ -53,6 +53,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
     t.index ["subject_id", "user_id"], name: "index_reviews_on_subject_id_and_user_id", unique: true
   end
 
+  create_table "subject_group_memberships", force: :cascade do |t|
+    t.bigint "subject_id", null: false
+    t.bigint "subject_group_id", null: false
+    t.integer "credits", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_group_id"], name: "index_subject_group_memberships_on_subject_group_id"
+    t.index ["subject_id", "subject_group_id"], name: "index_subject_group_memberships_on_subject_and_group", unique: true
+    t.index ["subject_id"], name: "index_subject_group_memberships_on_subject_id"
+  end
+
   create_table "subject_groups", force: :cascade do |t|
     t.string "code"
     t.datetime "created_at", precision: nil, null: false
@@ -137,6 +148,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
   add_foreign_key "prerequisites", "subject_groups"
   add_foreign_key "reviews", "subjects"
   add_foreign_key "reviews", "users"
+  add_foreign_key "subject_group_memberships", "subject_groups"
+  add_foreign_key "subject_group_memberships", "subjects"
   add_foreign_key "subject_groups", "degrees"
   add_foreign_key "subject_plans", "subjects"
   add_foreign_key "subject_plans", "users"
