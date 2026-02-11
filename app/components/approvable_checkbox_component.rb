@@ -2,29 +2,35 @@
 
 class ApprovableCheckboxComponent < ViewComponent::Base
   STYLES = {
+    checkbox_input: %w[
+      appearance-none
+      peer
+      absolute
+      size-full
+      cursor-pointer
+    ],
     checkbox: %w[
+      size-4
       col-start-1
       row-start-1
-      appearance-none
       rounded-sm
       border
       border-gray-300
       bg-white
+      pointer-events-none
 
-      checked:border-primary
-      checked:bg-primary
+      peer-checked:border-primary
+      peer-checked:bg-primary
 
-      focus-visible:outline-2
-      focus-visible:outline-offset-0
-      focus-visible:outline-primary
+      peer-focus-visible:outline-2
+      peer-focus-visible:outline-offset-0
+      peer-focus-visible:outline-primary
 
-      disabled:border-gray-300
-      disabled:bg-gray-100
-      disabled:checked:bg-gray-100
+      peer-disabled:border-gray-300
+      peer-disabled:bg-gray-100
+      peer-disabled:checked:bg-gray-100
 
       forced-colors:appearance-auto
-
-      peer
     ],
     icon: %w[
       text-base/4!

@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
     devise_for :users, path: "usuarios", controllers: {
       omniauth_callbacks: 'users/omniauth_callbacks',
-      registrations: 'users/registrations'
+      registrations: 'users/registrations',
+      passkeys: 'users/passkeys',
     }, path_names: {
       sign_in: 'iniciar_sesion',
       sign_out: 'cerrar_sesion',
@@ -16,8 +17,11 @@ Rails.application.routes.draw do
       password: 'contraseña',
     }
 
-    scope path: "usuarios", module: "users", as: "user" do
-      resources :passkeys, only: [:index, :create, :destroy]
+    devise_scope :user do
+      scope path: "usuarios", module: "users", as: "user" do
+        resources :passkeys, only: [:index]
+        resource :degrees, only: [:edit, :update], path: "carreras"
+      end
     end
 
     root to: "subjects#index"
@@ -42,7 +46,7 @@ Rails.application.routes.draw do
 
     resource :user_onboardings, only: :update
 
-    resources :current_optional_subjects, path: "materias_inco_semestre_actual", only: :index
+    resources :current_semester_subjects, path: "materias_semestre_actual", only: :index
 
     resources :transcripts, path: "escolaridades", only: [:new, :create]
 

@@ -1,14 +1,10 @@
-<% content_for :credits do %>
-  <%= render 'shared/credits_counter' %>
-<% end %>
-
 <% content_for :welcome_banner do %>
   <%= render 'shared/banner', 
       banner_type: 'planner', 
       message: 'Bienvenido a tu planificador de materias: arrastra, suelta y organiza tu semestre' %>
 <% end %>
 
-<div class="my-3 space-y-4">
+<div id="planner" class="relative pt-3 space-y-4" data-controller="planner-loading">
   <div class="flex items-center justify-between h-10 mb-3">
     <h3 class="text-lg font-bold ml-4">
       Planificador
@@ -17,4 +13,6 @@
   </div>
 
   <%= render partial: "subjects/planned_subjects_list", locals: { planned_subjects: @planned_subjects } %>
+
+  <%= render 'foreground_layer' %>
 </div>

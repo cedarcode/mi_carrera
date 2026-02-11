@@ -5,8 +5,6 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
-require 'support/stub_passkeys'
-require 'webauthn/fake_client'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 require "view_component/test_helpers"
@@ -76,19 +74,15 @@ RSpec.configure do |config|
       # This flag disables that behavior.
       options.add_argument 'disable-backgrounding-occluded-windows'
     end
+    Capybara.server_host = "localhost"
+    WebAuthn.configuration.allowed_origins = ["http://#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}"]
   end
 
   [:system, :request].each do |type|
     config.include(Devise::Test::IntegrationHelpers, type:)
-
-    # TODO Remove when Devise fixes https://github.com/heartcombo/devise/issues/5705
-    config.before(:each, type:) do
-      Rails.application.reload_routes_unless_loaded
-    end
   end
 
   config.include ViewComponent::TestHelpers, type: :component
-  config.include Support::StubPasskeys, type: :system
 
   config.after(:each) do
     TreePreloader.break_cache!

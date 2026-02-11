@@ -130,6 +130,23 @@ RSpec.describe UserStudent, type: :model do
                                         approvals: [subject1.course.id, subject2.exam.id,
                                                     subject3.course.id]).total_credits).to eq(33)
     end
+
+    it 'calculates credits only from subjects in the user degree' do
+      degree1 = create :degree
+      degree2 = create :degree
+
+      group1 = create :subject_group, degree: degree1
+      group2 = create :subject_group, degree: degree2
+
+      subject1 = create :subject, credits: 10, group: group1, degree: degree1
+      subject2 = create :subject, credits: 15, group: group2, degree: degree2
+      subject3 = create :subject, credits: 20, group: group1, degree: degree1
+
+      user = create :user, degree: degree1, approvals: [subject1.course.id, subject2.course.id, subject3.course.id]
+      student = described_class.new(user)
+
+      expect(student.total_credits).to eq(30)
+    end
   end
 
   describe '#met?' do
@@ -156,18 +173,25 @@ RSpec.describe UserStudent, type: :model do
   end
 
   describe '#groups_credits_met?' do
-    it 'returns true if all groups credits met' do
-      group1 = create :subject_group, credits_needed: 10
-      group2 = create :subject_group, credits_needed: 10
-      subject1 = create :subject, credits: 10, group: group1
-      subject2 = create :subject, credits: 10, group: group2
-      user = create :user, approvals: []
+    it 'checks only groups from the user degree' do
+      degree1 = create :degree
+      degree2 = create :degree
 
-      expect(described_class.new(user).groups_credits_met?).to be false
+      group1 = create :subject_group, degree: degree1, credits_needed: 10
+      group2 = create :subject_group, degree: degree1, credits_needed: 10
+      group3 = create :subject_group, degree: degree2, credits_needed: 10
+
+      subject1 = create :subject, credits: 10, group: group1, degree: degree1
+      subject2 = create :subject, credits: 10, group: group2, degree: degree1
+      create :subject, credits: 10, group: group3, degree: degree2
+
+      user = create :user, degree: degree1, approvals: [subject1.course.id, subject2.course.id]
+      student = described_class.new(user)
+
+      expect(student.groups_credits_met?).to be true
+
       user.approvals = [subject1.course.id]
       expect(described_class.new(user).groups_credits_met?).to be false
-      user.approvals = [subject1.course.id, subject2.course.id]
-      expect(described_class.new(user).groups_credits_met?).to be true
     end
   end
 
@@ -271,6 +295,22 @@ RSpec.describe UserStudent, type: :model do
       user.approvals = [subject1.course.id, subject2.exam.id]
 
       expect(student.approved_subjects).to contain_exactly(subject2)
+    end
+
+    it 'returns only approved subjects from the user degree' do
+      degree1 = create :degree
+      degree2 = create :degree
+
+      group1 = create :subject_group, degree: degree1
+      group2 = create :subject_group, degree: degree2
+
+      subject1 = create(:subject, :with_exam, group: group1, degree: degree1)
+      subject2 = create(:subject, :with_exam, group: group2, degree: degree2)
+
+      user = create :user, degree: degree1, approvals: [subject1.exam.id, subject2.exam.id]
+      student = described_class.new(user)
+
+      expect(student.approved_subjects).to contain_exactly(subject1)
     end
   end
 end

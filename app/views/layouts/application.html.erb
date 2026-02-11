@@ -21,6 +21,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="MiCarrera PWA">
+    <meta name="application-name" content="MiCarrera">
     <meta name="theme-color" content="#6200ee"/>
     <meta name="description" content="Sistema de trackeo de previaturas de materias realizadas por estudiantes en la FING">
     <meta property="og:title" content="MiCarrera"/>
@@ -37,29 +38,22 @@
     <%# See: https://github.com/rails/importmap-rails/tree/v2.0.3?tab=readme-ov-file#supporting-legacy-browsers-such-as-safari-on-ios-15 %>
     <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.2/dist/es-module-shims.js" data-turbo-track="reload"></script>
     <%= javascript_importmap_tags %>
-
-    <% if Rails.env.test? %>
-      <%= javascript_import_module_tag 'stub_credentials' %>
-    <% end %>
   </head>
 
-  <body class="font-roboto antialiased flex justify-start flex-col" data-controller='navigation-drawer'>
+  <body class="font-roboto antialiased flex justify-start flex-col text-sm" data-controller='navigation-drawer'>
     <%= render 'shared/menu' %>
 
     <%= render 'layouts/navbar' %>
     <main class="main-content sm:mt-16 mt-14" id='main-content'>
       <%= render 'shared/notice' if flash[:notice] %>
 
-      <%= yield :welcome_banner %>
+      <div class="sticky top-14 sm:top-16 z-2">
+        <%= yield :welcome_banner %>
+        <%= yield :credits_bar %>
+      </div>
       <div class='mx-auto max-w-[600px] pb-[40px]'>
         <%= yield %>
       </div>
     </main>
-    <footer class="fixed bottom-0 w-full bg-gray-100 px-3 py-1">
-      <span class="text-gray-500">
-        Built by
-      </span>
-      <a class="text-gray-800" href="https://cedarcode.com" target="_blank" >Cedarcode</a>
-    </footer>
   </body>
 </html>

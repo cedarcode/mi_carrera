@@ -14,6 +14,8 @@ module Scraper
     SUBJECT_CODE_NAME_CREDITS_REGEX = /\A((?:\w|\.|\-)+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
     MAX_PAGES = ENV["MAX_PAGES"]&.to_i
     THREADS = (ENV['THREADS'] || 6).to_f
+    INVALID_PERIOD = 'Instancias de dictado con período finalizado'
+    VALID_PERIOD = 'Instancias de dictado con período habilitado'
 
     def self.scrape
       Capybara.configure do |config|
@@ -38,6 +40,7 @@ module Scraper
       logger.info "Starting to scrape degree"
       groups = {}
       subjects = {}
+      current_semester_subjects = []
 
       go_to_groups_and_subjects_page
       process_groups_and_subjects(groups, subjects)
@@ -51,10 +54,10 @@ module Scraper
 
       scraped_prerequisites =
         prerequisites.sort_by { |e| [e[:subject_code], e[:is_exam] ? 1 : 0] }.map(&:deep_stringify_keys)
-      if degree[:include_inco_subjects].present?
-        optional_inco_subjects = load_this_semester_inco_subjects
-        write_yml("scraped_optional_subjects", optional_inco_subjects.sort)
-      end
+
+      current_semester_subjects += load_current_semester_subjects(VALID_PERIOD)
+      current_semester_subjects += load_current_semester_subjects(INVALID_PERIOD)
+      write_yml("scraped_current_semester_subjects", current_semester_subjects.sort)
 
       write_yml("scraped_subject_groups", groups.deep_stringify_keys.sort.to_h)
       write_yml("scraped_subjects", subjects.deep_stringify_keys.sort.to_h)
@@ -81,12 +84,20 @@ module Scraper
       click_on "PLANES DE ESTUDIO"
       click_on "Planes de estudio / Previas"
 
+      select_degree_in_accordion
+
+      within('.ui-expanded-row-content', text: 'Planes') do
+        find('tr', text: degree[:current_plan]).click_on "Ver más datos"
+      end
+    end
+
+    def select_degree_in_accordion
       execute_script("$.fx.off = true;") # Disable jQuery effects
 
       find('.ui-accordion-header', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
       find('td', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
 
-      find('span', text: 'Planes de estudio - FING')
+      find('span', text: ' - FING')
 
       wait_for_loading_widget_to_disappear
 
@@ -97,10 +108,6 @@ module Scraper
           row.find('.ui-row-toggler').click
           break
         end
-      end
-
-      within('.ui-expanded-row-content', text: 'Planes') do
-        find('tr', text: degree[:current_plan]).click_on "Ver más datos"
       end
     end
 
@@ -190,22 +197,20 @@ module Scraper
     end
 
     def go_to_page(page)
-      # Requested page is not visible in the pages list
-      if page > all('.ui-paginator-page').last.text.to_i
-        # Navigate to last page because as of 3/3/2023 there are only 16 pages,
-        # so all pages are visible from either the first or last page.
-        # Would be more correct to navigate to the last visible page and repeat
-        # until we see the requested page, but that would require extra navigations
-        # after processing each approvable, making it slower.
-        # If the number of pages increases in the future, this approach will raise
-        # an error if it can't find the requested page. We can implement a better
-        # (and maybe slower) approach when/if this happens
-        find('.ui-paginator-last').click
-        has_selector?(".ui-paginator-last.ui-state-disabled")
+      # Loop until the desired page is visible in the paginator
+      until page_visible?(page)
+        last_visible_page = all('.ui-paginator-page').last
+
+        last_visible_page.click
+        has_selector?('.ui-paginator-page.ui-state-active', text: last_visible_page.text)
       end
 
       find('.ui-paginator-page', text: page, match: :prefer_exact).click
-      has_selector?(".ui-paginator-page.ui-state-active", text: "#{page}")
+      has_selector?('.ui-paginator-page.ui-state-active', text: page.to_s)
+    end
+
+    def page_visible?(page)
+      has_selector?('.ui-paginator-page', text: page, match: :prefer_exact)
     end
 
     def add_missing_exams_and_subjects(prerequisite_tree, subjects)
@@ -227,27 +232,103 @@ module Scraper
       end
     end
 
-    def load_this_semester_inco_subjects
-      visit "https://www.fing.edu.uy/es/node/43774"
+    def go_to_current_semester_subjects_page
+      visit "https://bedelias.udelar.edu.uy"
+      click_on "PLANES DE ESTUDIO"
+      click_on "Calendarios"
 
-      find('table').all('tr').each_with_object([]) do |row, subjects|
-        cells = row.all('td')
-        next unless cells&.size == 6
+      select_degree_in_accordion
 
-        name = cells[0]&.text&.strip
-        codigo = cells[1]&.text&.strip
-
-        next unless name && codigo
-        next if name == "Curso" # the first row is the header
-        next if codigo == "nueva" # there's one row with "nueva" as the code
-
-        subjects << codigo
+      within('.ui-expanded-row-content', text: 'Planes') do
+        within('tr', text: degree[:current_plan]) do
+          first('a').click
+        end
       end
+    end
+
+    def load_current_semester_subjects(inscription_period)
+      Thread.abort_on_exception = true
+
+      go_to_current_semester_subjects_page
+      ensure_accordion_open(inscription_period)
+      find('.ui-paginator-last').click
+      has_selector?(".ui-paginator-last.ui-state-disabled")
+      total_pages = find(".ui-paginator-page.ui-state-active").text.to_i
+      find(".ui-paginator-first").click
+
+      max_pages = MAX_PAGES || total_pages
+
+      1.upto(max_pages).each_slice((max_pages / THREADS).ceil).map do |slice|
+        Thread.new do
+          using_session(Capybara::Session.new(page.mode)) do
+            load_current_semester_subjects_slice(inscription_period, slice)
+          end
+        end
+      end.flat_map(&:value).uniq
+    end
+
+    def load_current_semester_subjects_slice(inscription_period, slice)
+      go_to_current_semester_subjects_page
+
+      subjects = []
+
+      slice.flat_map do |page|
+        ensure_accordion_open(inscription_period)
+        go_to_page(page)
+
+        all('[data-ri]').map { |node| node['data-ri'] }.map do |row_id|
+          ensure_accordion_open(inscription_period)
+          go_to_page(page)
+
+          subject_row = find("[data-ri='#{row_id}']")
+          subject_code = subject_row.all('td')[0].text.split(' ').last
+
+          subjects << subject_code if matches_current_period?(subject_row)
+        end
+      end
+
+      subjects
     end
 
     def wait_for_loading_widget_to_disappear
       if has_css?('.ui-widget-overlay')
         assert_no_selector('.ui-widget-overlay')
+      end
+    end
+
+    def matches_current_period?(subject_row)
+      subject_row.click_on 'Ver más datos'
+
+      periods = all(:xpath, "//td[normalize-space(text())='Período:']/following-sibling::td/span").map(&:text)
+
+      click_on 'Volver'
+
+      periods.any? do |period|
+        period_code = period[/\A\d{6}/]
+        period_code == current_period
+      end
+    end
+
+    # Bedelias represents academic periods using a YYYY-{01||02} format.
+    # For example, "2026-01" corresponds to the first semester of 2026,
+    # and "2026-02" corresponds to the second semester of the same year.
+    def current_period
+      date  = Time.current
+      year  = date.year
+      half  = date.month < 8 ? "01" : "02"
+
+      "#{year}#{half}"
+    end
+
+    def ensure_accordion_open(text)
+      header = find("div.ui-accordion-header", text: text, match: :prefer_exact)
+
+      unless header[:class].include?("ui-state-active")
+        header.click
+        wait_for_loading_widget_to_disappear
+        has_selector?("div.ui-accordion-header.ui-state-active", text: text, match: :prefer_exact)
+        has_css?('#accordDict\\tabDictF', visible: text == INVALID_PERIOD)
+        has_css?('#accordDict\\tabDictH', visible: text == VALID_PERIOD)
       end
     end
   end
