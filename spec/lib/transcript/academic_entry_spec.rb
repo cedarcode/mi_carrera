@@ -110,12 +110,13 @@ RSpec.describe Transcript::AcademicEntry, type: :lib do
       degree = create(:degree)
       other_degree = create(:degree)
       student_with_degree = build(:cookie_student, degree: degree)
-      create(:subject, name: 'Mathematics', credits: 5, degree: other_degree)
+      subject_other_degree = create(:subject, name: 'Mathematics', credits: 5, degree: other_degree)
       entry = described_class.new(name: 'Mathematics', credits: 5)
 
       result = entry.save_to_user(student_with_degree)
 
       expect(result).to be false
+      expect(student_with_degree.approved?(subject_other_degree)).to be false
     end
 
     it 'adds subject matching degree_id when multiple subjects with same name, credits, and activity status exist' do
