@@ -22,6 +22,10 @@ RSpec.describe 'Changing degrees', type: :system do
     it 'allows user to change their degree successfully' do
       visit root_path
 
+      within('header') do
+        expect(page).to have_text('Ingeniería en Computación')
+      end
+
       click_user_menu
       click_on 'Cambiar Carrera'
 
@@ -33,6 +37,10 @@ RSpec.describe 'Changing degrees', type: :system do
 
       expect(page).to have_text('Tu carrera ha sido actualizada correctamente.')
       expect(current_path).to eq(root_path)
+
+      within('header') do
+        expect(page).to have_text('Ingeniería en Sistemas')
+      end
 
       user.reload
       expect(user.degree_id).to eq('sistemas')
@@ -46,6 +54,11 @@ RSpec.describe 'Changing degrees', type: :system do
 
     it 'does not show the change degree link in user menu' do
       visit root_path
+
+      within('header') do
+        expect(page).not_to have_text('Ingeniería en Computación')
+        expect(page).not_to have_text('Ingeniería en Sistemas')
+      end
 
       click_user_menu
 
@@ -78,6 +91,10 @@ RSpec.describe 'Changing degrees', type: :system do
     it 'allows selecting degree when no cookie is set' do
       visit root_path
 
+      within('header') do
+        expect(page).to have_text('Ingeniería en Computación')
+      end
+
       click_user_menu
       click_on 'Cambiar Carrera'
 
@@ -86,6 +103,10 @@ RSpec.describe 'Changing degrees', type: :system do
 
       expect(page).to have_text('Tu carrera ha sido actualizada correctamente.')
       expect(current_path).to eq(root_path)
+
+      within('header') do
+        expect(page).to have_text('Ingeniería en Sistemas')
+      end
 
       degree_cookie = page.driver.browser.manage.cookie_named('degree_id')
       expect(degree_cookie[:value]).to eq('sistemas')
@@ -128,6 +149,11 @@ RSpec.describe 'Changing degrees', type: :system do
       page.driver.browser.manage.add_cookie(name: 'degree_id', value: 'computacion')
 
       visit root_path
+
+      within('header') do
+        expect(page).to have_text('Ingeniería en Computación')
+      end
+
       expect(page).to have_text('Algebra')
       expect(page).not_to have_text('Programacion')
 
@@ -136,6 +162,13 @@ RSpec.describe 'Changing degrees', type: :system do
 
       select 'Sistemas', from: 'degree_id'
       click_on 'Guardar'
+
+      expect(page).to have_text('Tu carrera ha sido actualizada correctamente.')
+      expect(current_path).to eq(root_path)
+
+      within('header') do
+        expect(page).to have_text('Ingeniería en Sistemas')
+      end
 
       expect(page).not_to have_text('Algebra')
       expect(page).to have_text('Programacion')
@@ -146,11 +179,23 @@ RSpec.describe 'Changing degrees', type: :system do
       page.driver.browser.manage.add_cookie(name: 'degree_id', value: 'computacion')
 
       visit root_path
+
+      within('header') do
+        expect(page).to have_text('Ingeniería en Computación')
+      end
+
       click_user_menu
       click_on 'Cambiar Carrera'
 
       select 'Sistemas', from: 'degree_id'
       click_on 'Guardar'
+
+      expect(page).to have_text('Tu carrera ha sido actualizada correctamente.')
+      expect(current_path).to eq(root_path)
+
+      within('header') do
+        expect(page).to have_text('Ingeniería en Sistemas')
+      end
 
       expect(page).to have_text('Programacion')
 
@@ -165,15 +210,31 @@ RSpec.describe 'Changing degrees', type: :system do
       page.driver.browser.manage.add_cookie(name: 'degree_id', value: 'computacion')
 
       visit root_path
+
+      within('header') do
+        expect(page).to have_text('Ingeniería en Computación')
+      end
+
       click_user_menu
       click_on 'Cambiar Carrera'
 
       select 'Sistemas', from: 'degree_id'
       click_on 'Guardar'
 
+      expect(page).to have_text('Tu carrera ha sido actualizada correctamente.')
+      expect(current_path).to eq(root_path)
+
+      within('header') do
+        expect(page).to have_text('Ingeniería en Sistemas')
+      end
+
       expect(page).to have_text('Programacion')
 
       visit root_path
+
+      within('header') do
+        expect(page).to have_text('Ingeniería en Sistemas')
+      end
 
       expect(page).to have_text('Programacion')
       expect(page).not_to have_text('Algebra')
