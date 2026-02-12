@@ -1,6 +1,12 @@
 class Degree < ApplicationRecord
   has_many :subjects, dependent: :restrict_with_exception
   has_many :subject_groups, dependent: :restrict_with_exception
+  has_many :degree_plans, dependent: :restrict_with_exception
+
+  has_one :active_degree_plan, -> { active },
+          class_name: "DegreePlan",
+          dependent: :restrict_with_exception,
+          inverse_of: :degree
 
   validates :current_plan, presence: true
 

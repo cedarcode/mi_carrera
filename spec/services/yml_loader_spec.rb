@@ -151,13 +151,17 @@ RSpec.describe YmlLoader do
         let!(:existing_degree) do
           create(:degree, id: degree_id, current_plan: '1830')
         end
+        let!(:existing_degree_plan) do
+          create(:degree_plan, degree: existing_degree, name: '2025')
+        end
         let!(:existing_group) do
           create(
             :subject_group,
             code: '2003',
             name: 'Existing Group',
             credits_needed: 50,
-            degree_id:
+            degree_id:,
+            degree_plan: existing_degree_plan
           )
         end
         let!(:existing_subject) do
@@ -167,6 +171,7 @@ RSpec.describe YmlLoader do
             name: 'Existing Subject',
             credits: 100,
             degree_id:,
+            degree_plan: existing_degree_plan,
             current_semester: true
           )
         end
@@ -195,12 +200,14 @@ RSpec.describe YmlLoader do
     context 'when a subject no longer has an exam' do
       let(:base_dir) { Rails.root.join("spec/support/mock_yamls/success") }
       let!(:existing_degree) { create(:degree, id: degree_id) }
+      let!(:existing_degree_plan) { create(:degree_plan, degree: existing_degree, name: '2025') }
       let!(:subject_with_exam) do
         create(
           :subject,
           :with_exam,
           code: '25',
           degree_id:,
+          degree_plan: existing_degree_plan,
         )
       end
 

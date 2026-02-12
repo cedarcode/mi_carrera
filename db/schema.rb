@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_11_000004) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -21,6 +21,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
     t.integer "subject_id", null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["subject_id"], name: "index_approvables_on_subject_id"
+  end
+
+  create_table "degree_plans", force: :cascade do |t|
+    t.boolean "active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.string "degree_id", null: false
+    t.string "name", null: false
+    t.datetime "updated_at", null: false
+    t.index ["degree_id", "name"], name: "index_degree_plans_on_degree_id_and_name", unique: true
   end
 
   create_table "degrees", id: :string, force: :cascade do |t|
@@ -69,10 +78,12 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
     t.datetime "created_at", precision: nil, null: false
     t.integer "credits_needed", default: 0, null: false
     t.string "degree_id", null: false
+    t.bigint "degree_plan_id", null: false
     t.string "name", null: false
     t.datetime "updated_at", precision: nil, null: false
-    t.index ["degree_id", "code"], name: "index_subject_groups_on_degree_id_and_code", unique: true
     t.index ["degree_id"], name: "index_subject_groups_on_degree_id"
+    t.index ["degree_plan_id", "code"], name: "index_subject_groups_on_degree_plan_id_and_code", unique: true
+    t.index ["degree_plan_id"], name: "index_subject_groups_on_degree_plan_id"
   end
 
   create_table "subject_plans", force: :cascade do |t|
@@ -91,6 +102,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
     t.integer "credits", null: false
     t.boolean "current_semester", default: false, null: false
     t.string "degree_id", null: false
+    t.bigint "degree_plan_id", null: false
     t.string "eva_id"
     t.integer "group_id"
     t.string "name", null: false
@@ -98,8 +110,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
     t.string "second_semester_eva_id"
     t.string "short_name"
     t.datetime "updated_at", precision: nil, null: false
-    t.index ["degree_id", "code"], name: "index_subjects_on_degree_id_and_code", unique: true
     t.index ["degree_id"], name: "index_subjects_on_degree_id"
+    t.index ["degree_plan_id", "code"], name: "index_subjects_on_degree_plan_id_and_code", unique: true
+    t.index ["degree_plan_id"], name: "index_subjects_on_degree_plan_id"
     t.index ["group_id"], name: "index_subjects_on_group_id"
   end
 
@@ -107,6 +120,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
     t.text "approvals"
     t.datetime "created_at", null: false
     t.string "degree_id", null: false
+    t.bigint "degree_plan_id", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.integer "failed_attempts", default: 0, null: false
@@ -123,6 +137,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
     t.uuid "webauthn_id", default: -> { "gen_random_uuid()" }, null: false
     t.boolean "welcome_banner_viewed", default: false
     t.index ["degree_id"], name: "index_users_on_degree_id"
+    t.index ["degree_plan_id"], name: "index_users_on_degree_plan_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
@@ -142,6 +157,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
   end
 
   add_foreign_key "approvables", "subjects"
+  add_foreign_key "degree_plans", "degrees"
   add_foreign_key "prerequisites", "approvables"
   add_foreign_key "prerequisites", "approvables", column: "approvable_needed_id"
   add_foreign_key "prerequisites", "prerequisites", column: "parent_prerequisite_id"
@@ -150,11 +166,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
   add_foreign_key "reviews", "users"
   add_foreign_key "subject_group_memberships", "subject_groups"
   add_foreign_key "subject_group_memberships", "subjects"
+  add_foreign_key "subject_groups", "degree_plans"
   add_foreign_key "subject_groups", "degrees"
   add_foreign_key "subject_plans", "subjects"
   add_foreign_key "subject_plans", "users"
+  add_foreign_key "subjects", "degree_plans"
   add_foreign_key "subjects", "degrees"
   add_foreign_key "subjects", "subject_groups", column: "group_id"
+  add_foreign_key "users", "degree_plans"
   add_foreign_key "users", "degrees"
   add_foreign_key "webauthn_credentials", "users"
 end
