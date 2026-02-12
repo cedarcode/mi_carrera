@@ -29,7 +29,7 @@
     <%= render(BooleanReviewComponent.new(
       review_name: "Recomendado",
       rating_value: @subject.recommended_percentage,
-      likes_count: @subject.recommended_count,
+      likes_count: @subject.recommendations_count,
       dislikes_count: @subject.not_recommended_count,
       subject_id: @subject.id,
       rating_attribute: :recommended_rating,

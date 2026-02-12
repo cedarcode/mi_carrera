@@ -165,12 +165,12 @@ RSpec.describe Subject, type: :model do
     end
   end
 
-  describe '#recommended_count' do
+  describe '#recommendations_count' do
     let(:subject_record) { create :subject }
 
     context 'when there are no reviews' do
       it 'returns 0' do
-        expect(subject_record.recommended_count).to eq(0)
+        expect(subject_record.recommendations_count).to eq(0)
       end
     end
 
@@ -178,7 +178,7 @@ RSpec.describe Subject, type: :model do
       let!(:review) { create :review, subject: subject_record }
 
       it 'returns 0' do
-        expect(subject_record.recommended_count).to eq(0)
+        expect(subject_record.recommendations_count).to eq(0)
       end
     end
 
@@ -188,7 +188,7 @@ RSpec.describe Subject, type: :model do
       let!(:another_positive_review) { create :review, subject: subject_record, recommended_rating: true }
 
       it 'returns the count of positive recommendations' do
-        expect(subject_record.recommended_count).to eq(2)
+        expect(subject_record.recommendations_count).to eq(2)
       end
     end
   end

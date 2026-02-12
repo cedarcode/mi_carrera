@@ -9,7 +9,7 @@ class BooleanReviewComponent < ViewComponent::Base
       hover:scale-[1.3]
       inline-flex
     ],
-    button: %w[material-icons cursor-pointer !text-xl]
+    button: %w[material-icons cursor-pointer !text-3xl]
   }
 
   def initialize(review_name:, rating_value: nil, subject_id:, user_review: nil, rating_attribute:,
