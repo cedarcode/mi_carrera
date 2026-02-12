@@ -26,7 +26,7 @@ RSpec.describe Subject, type: :model do
 
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:credits) }
-    it { should validate_uniqueness_of(:code).scoped_to(:degree_id) }
+    it { should validate_uniqueness_of(:code).scoped_to(:degree_plan_id) }
   end
 
   describe '#approved_credits' do

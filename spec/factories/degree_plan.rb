@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :degree_plan do
-    name { '2025' }
+    sequence(:name) { |n| "Degree Plan #{n}" }
     degree
   end
 end

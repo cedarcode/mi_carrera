@@ -12,7 +12,7 @@ class User < ApplicationRecord
   belongs_to :degree
   belongs_to :degree_plan
 
-  before_validation :set_default_degree
+  before_validation :set_default_degree_and_plan
 
   def self.from_omniauth(auth, cookie)
     # check that user with same email exists
@@ -45,8 +45,9 @@ class User < ApplicationRecord
 
   private
 
-  def set_default_degree
+  def set_default_degree_and_plan
     self.degree ||= Degree.default
+    self.degree_plan ||= degree.active_degree_plan
   end
 end
 

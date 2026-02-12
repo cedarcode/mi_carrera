@@ -21,6 +21,7 @@ RSpec.describe Degree, type: :model do
 
     context 'when computacion does not exist' do
       before do
+        DegreePlan.destroy_all
         Degree.destroy_all
       end
 

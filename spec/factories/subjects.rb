@@ -7,7 +7,7 @@ FactoryBot.define do
     group
     degree_id { "computacion" }
     course { association :course, subject: instance, strategy: :build }
-    degree_plan { association :degree_plan, degree: degree }
+    degree_plan_id { ActiveRecord::FixtureSet.identify(:computacion_active_plan) }
 
     trait :with_exam do
       exam { association :exam, subject: instance, strategy: :build }
