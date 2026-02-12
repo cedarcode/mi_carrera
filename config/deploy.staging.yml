@@ -9,7 +9,7 @@ servers:
     hosts:
       - 3.233.189.168
     options:
-      memory: 250MiB
+      memory: 300MiB
 
 env:
   clear:
