@@ -7,21 +7,26 @@ class BooleanReviewComponent < ViewComponent::Base
       duration-[250ms]
       ease-[ease]
       hover:scale-[1.3]
+      inline-flex
     ],
     button: %w[material-icons cursor-pointer !text-xl]
   }
 
-  def initialize(review_name:, rating_value: nil, subject_id:, user_review: nil, rating_attribute:)
+  def initialize(review_name:, rating_value: nil, subject_id:, user_review: nil, rating_attribute:,
+                 likes_count: nil, dislikes_count: nil)
     @review_name = review_name
     @rating_value = rating_value
     @subject_id = subject_id
     @rating_attribute = rating_attribute
     @user_review_value = user_review&.public_send(rating_attribute)
+    @likes_count = likes_count
+    @dislikes_count = dislikes_count
   end
 
   private
 
-  attr_reader :review_name, :rating_value, :subject_id, :rating_attribute, :user_review_value
+  attr_reader :review_name, :rating_value, :subject_id, :rating_attribute, :user_review_value,
+              :likes_count, :dislikes_count
 
   def display_rating
     rating_value.nil? ? '?' : "#{rating_value}%"

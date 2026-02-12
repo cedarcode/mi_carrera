@@ -4,9 +4,12 @@
   <span class="text-xl font-extrabold text-indigo-900 mb-3"><%= display_rating %></span>
 
   <h4 class="text-xs font-semibold text-indigo-900 mb-1">Tu puntuación</h4>
-  <div class="flex items-center justify-center gap-2">
+  <div class="flex items-center justify-center gap-4">
     <% [true, false].each do |value| %>
-      <%= vote_button(value) %>
+      <div class="flex items-center gap-1">
+        <%= vote_button(value) %>
+        <span class="text-xs text-gray-500"><%= value ? likes_count : dislikes_count %></span>
+      </div>
     <% end %>
   </div>
 </div>

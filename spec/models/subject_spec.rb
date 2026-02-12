@@ -164,6 +164,62 @@ RSpec.describe Subject, type: :model do
     end
   end
 
+  describe '#recommended_count' do
+    let(:subject_record) { create :subject }
+
+    context 'when there are no reviews' do
+      it 'returns 0' do
+        expect(subject_record.recommended_count).to eq(0)
+      end
+    end
+
+    context 'when there are reviews without recommended rating' do
+      let!(:review) { create :review, subject: subject_record }
+
+      it 'returns 0' do
+        expect(subject_record.recommended_count).to eq(0)
+      end
+    end
+
+    context 'when there are reviews with recommended rating' do
+      let!(:positive_review) { create :review, subject: subject_record, recommended_rating: true }
+      let!(:negative_review) { create :review, subject: subject_record, recommended_rating: false }
+      let!(:another_positive_review) { create :review, subject: subject_record, recommended_rating: true }
+
+      it 'returns the count of positive recommendations' do
+        expect(subject_record.recommended_count).to eq(2)
+      end
+    end
+  end
+
+  describe '#not_recommended_count' do
+    let(:subject_record) { create :subject }
+
+    context 'when there are no reviews' do
+      it 'returns 0' do
+        expect(subject_record.not_recommended_count).to eq(0)
+      end
+    end
+
+    context 'when there are reviews without recommended rating' do
+      let!(:review) { create :review, subject: subject_record }
+
+      it 'returns 0' do
+        expect(subject_record.not_recommended_count).to eq(0)
+      end
+    end
+
+    context 'when there are reviews with recommended rating' do
+      let!(:positive_review) { create :review, subject: subject_record, recommended_rating: true }
+      let!(:negative_review) { create :review, subject: subject_record, recommended_rating: false }
+      let!(:another_negative_review) { create :review, subject: subject_record, recommended_rating: false }
+
+      it 'returns the count of negative recommendations' do
+        expect(subject_record.not_recommended_count).to eq(2)
+      end
+    end
+  end
+
   describe '#available?' do
     let(:subject) { create :subject }
     let(:course) { subject.course }

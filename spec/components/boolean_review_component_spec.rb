@@ -91,6 +91,26 @@ RSpec.describe BooleanReviewComponent, type: :component do
       end
     end
 
+    context 'with likes and dislikes counts' do
+      let(:component) do
+        BooleanReviewComponent.new(
+          review_name: "Recomendado",
+          rating_value: 67,
+          subject_id:,
+          rating_attribute: :recommended_rating,
+          user_review: nil,
+          likes_count: 10,
+          dislikes_count: 5
+        )
+      end
+
+      it 'displays the likes and dislikes counts' do
+        render_inline(component)
+        expect(page).to have_text("10")
+        expect(page).to have_text("5")
+      end
+    end
+
     context 'form attributes' do
       let(:user_review) { create(:review, user:, subject: subject_record, recommended_rating: true) }
       let(:component) do

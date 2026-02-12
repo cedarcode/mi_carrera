@@ -74,8 +74,15 @@ class Subject < ApplicationRecord
     total_count = reviews.where.not(recommended_rating: nil).count
     return nil if total_count.zero?
 
-    recommended_count = reviews.where(recommended_rating: true).count
     (recommended_count * 100.0 / total_count).round
+  end
+
+  def recommended_count
+    reviews.where(recommended_rating: true).count
+  end
+
+  def not_recommended_count
+    reviews.where(recommended_rating: false).count
   end
 
   delegate :available?, to: :course
