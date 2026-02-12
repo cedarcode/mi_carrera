@@ -54,10 +54,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
   end
 
   create_table "subject_group_memberships", force: :cascade do |t|
-    t.bigint "subject_id", null: false
-    t.bigint "subject_group_id", null: false
-    t.integer "credits", null: false
     t.datetime "created_at", null: false
+    t.integer "credits", null: false
+    t.bigint "subject_group_id", null: false
+    t.bigint "subject_id", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_group_id"], name: "index_subject_group_memberships_on_subject_group_id"
     t.index ["subject_id", "subject_group_id"], name: "index_subject_group_memberships_on_subject_and_group", unique: true
