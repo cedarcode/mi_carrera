@@ -16,9 +16,7 @@ class YmlLoader
 
   def load
     load_degree
-    load_subject_groups
-    load_subjects
-    load_prerequisites
+    load_degree_plans
     load_current_semester_subjects
     TreePreloader.break_cache!
   end
@@ -38,32 +36,46 @@ class YmlLoader
     @degree.save!
   end
 
-  def load_subject_groups
-    subject_groups = safe_read_yaml(degree_dir.join("scraped_subject_groups.yml"))
+  def load_degree_plans
+    Dir.children(degree_dir)
+       .select { |entry| File.directory?(degree_dir.join(entry)) }
+       .each do |plan_name|
+         degree_plan = degree.degree_plans.find_or_create_by(name: plan_name)
+         degree_plan.active = (plan_name == degree_hash[:current_plan])
+         degree_plan.save!
+
+         load_subject_groups(degree_plan)
+         load_subjects(degree_plan)
+         load_prerequisites(degree_plan)
+       end
+  end
+
+  def load_subject_groups(degree_plan)
+    subject_groups = safe_read_yaml(degree_dir.join("#{degree_plan.name}/scraped_subject_groups.yml"))
     subject_groups.each do |code, yml_group|
       subject_group = degree.subject_groups.find_or_initialize_by(code:)
       subject_group.name = format_name(yml_group["name"])
       subject_group.credits_needed = yml_group["min_credits"]
-      subject_group.degree_plan = degree.active_degree_plan
+      subject_group.degree_plan = degree_plan
       subject_group.save!
     end
   end
 
-  def load_subjects
-    subjects = safe_read_yaml(degree_dir.join("scraped_subjects.yml"))
-    subjects_overrides = safe_read_yaml(degree_dir.join("subject_overrides.yml"))
+  def load_subjects(degree_plan)
+    subjects = safe_read_yaml(degree_dir.join("#{degree_plan.name}/scraped_subjects.yml"))
+    subjects_overrides = safe_read_yaml(degree_dir.join("#{degree_plan.name}/subject_overrides.yml"))
 
     subjects.each do |code, subject|
-      new_subject = degree.subjects.find_or_initialize_by(code:)
+      new_subject = degree_plan.subjects.find_or_initialize_by(code:, degree:)
 
       new_subject.name = format_name(subject["name"])
       new_subject.credits = subject["subject_groups"].sum { |group| group["credits"] }
       group_code = subject["subject_groups"].last&.dig("group")
-      new_subject.group = degree.subject_groups.find_by(code: group_code)
-      new_subject.degree_plan = degree.active_degree_plan
+      new_subject.group = degree_plan.subject_groups.find_by(code: group_code)
+      new_subject.degree_plan = degree_plan
 
       subject["subject_groups"].each do |yml_group|
-        group = degree.subject_groups.find_by!(code: yml_group["group"])
+        group = degree_plan.subject_groups.find_by!(code: yml_group["group"])
         membership = SubjectGroupMembership.find_or_initialize_by(
           subject: new_subject,
           group: group,
@@ -102,18 +114,18 @@ class YmlLoader
   end
   # rubocop:enable Rails/SkipsModelValidations
 
-  def load_prerequisites
-    prerequisites = safe_read_yaml(degree_dir.join("scraped_prerequisites.yml"))
+  def load_prerequisites(degree_plan)
+    prerequisites = safe_read_yaml(degree_dir.join("#{degree_plan.name}/scraped_prerequisites.yml"))
 
     Prerequisite
       .joins(approvable: :subject)
-      .where(approvable: { subjects: { degree_id: degree.id } })
+      .where(approvable: { subjects: { degree_plan_id: degree_plan.id } })
       .destroy_all
 
     prerequisites.each do |prerequisite|
-      subject = degree.subjects.find_by(code: prerequisite["subject_code"])
+      subject = degree_plan.subjects.find_by(code: prerequisite["subject_code"])
       approvable = prerequisite["is_exam"] ? subject.exam : subject.course
-      approvable.prerequisite_tree = prerequisite_tree(prerequisite)
+      approvable.prerequisite_tree = prerequisite_tree(prerequisite, degree_plan)
       approvable.save!
     end
   end
@@ -132,10 +144,10 @@ class YmlLoader
     @typos_list ||= YAML.load_file(Rails.root.join("lib/typos_list.yml"))
   end
 
-  def prerequisite_tree(prerequisite)
+  def prerequisite_tree(prerequisite, degree_plan)
     case prerequisite["type"]
     when 'logical'
-      operands_prerequisites = prerequisite["operands"].filter_map { |operand| prerequisite_tree(operand) }
+      operands_prerequisites = prerequisite["operands"].filter_map { |operand| prerequisite_tree(operand, degree_plan) }
 
       LogicalPrerequisite.new(
         logical_operator: prerequisite["logical_operator"],
@@ -143,7 +155,7 @@ class YmlLoader
         operands_prerequisites:
       ) if operands_prerequisites.present?
     when 'subject'
-      subject = degree.subjects.find_by!(code: prerequisite["subject_needed_code"])
+      subject = degree_plan.subjects.find_by!(code: prerequisite["subject_needed_code"])
 
       case prerequisite["needs"]
       when 'exam' then SubjectPrerequisite.new(approvable_needed: subject.exam)
@@ -157,7 +169,7 @@ class YmlLoader
       end
 
     when 'credits'
-      subject_group = prerequisite["group"] ? degree.subject_groups.find_by(code: prerequisite["group"]) : nil
+      subject_group = prerequisite["group"] ? degree_plan.subject_groups.find_by(code: prerequisite["group"]) : nil
       CreditsPrerequisite.new(credits_needed: prerequisite["credits"], subject_group:)
     else
       raise "Unknown prerequisite type: #{prerequisite["type"]}"
