@@ -9,7 +9,7 @@ class Subject < ApplicationRecord
 
   validates :name, presence: true
   validates :credits, presence: true
-  validates :code, uniqueness: { scope: :degree_id }
+  validates :code, uniqueness: { scope: :degree_plan_id }
 
   scope :with_exam, -> { includes(:exam, :course).where.not(exam: { id: nil }) }
   scope :without_exam, -> { includes(:exam, :course).where(exam: { id: nil }) }

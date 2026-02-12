@@ -5,7 +5,7 @@ class SubjectGroup < ApplicationRecord
   has_many :subject_group_memberships, dependent: :destroy
 
   validates :name, presence: true
-  validates :code, uniqueness: { scope: :degree_id }
+  validates :code, uniqueness: { scope: :degree_plan_id }
 end
 
 # == Schema Information
