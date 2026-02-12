@@ -1,3 +1,5 @@
+<%= render partial: "subjects/groups_credits_list", locals: { groups_and_credits: @groups_and_credits, all_group_credits_met: @all_group_credits_met, total_credits: @total_credits } %>
+
 <%= render partial: "subjects/not_planned_subjects_list", locals: { subjects: @not_planned_approved_subjects } %>
 
 <% (1..current_user.planned_semesters).each do |semester| %>
