@@ -41,7 +41,7 @@ class BooleanReviewComponent < ViewComponent::Base
   end
 
   def vote_icon(value)
-    if selected?(value)
+    if recommended?(value)
       value ? 'thumb_up' : 'thumb_down'
     else
       value ? 'thumb_up_off_alt' : 'thumb_down_off_alt'
@@ -49,13 +49,13 @@ class BooleanReviewComponent < ViewComponent::Base
   end
 
   def vote_params(value)
-    rating_value = selected?(value) ? nil : value
+    rating_value = recommended?(value) ? nil : value
     { subject_id: subject_id, rating_attribute => rating_value }
   end
 
   def vote_button_classes(value) = STYLES[:button] + [vote_color_classes(value)]
 
-  def vote_color_classes(value) = selected?(value) ? 'text-violet-400' : 'text-gray-400'
+  def vote_color_classes(value) = recommended?(value) ? 'text-violet-400' : 'text-gray-400'
 
-  def selected?(value) = !user_review_value.nil? && user_review_value == value
+  def recommended?(value) = !user_review_value.nil? && user_review_value == value
 end
