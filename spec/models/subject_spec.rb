@@ -4,6 +4,7 @@ RSpec.describe Subject, type: :model do
   describe 'associations' do
     it { should belong_to(:degree) }
     it { should belong_to(:group).class_name('SubjectGroup').optional }
+    it { should have_many(:subject_group_memberships).dependent(:destroy) }
     it {
       should have_one(:course)
         .class_name('Approvable')
@@ -289,12 +290,12 @@ RSpec.describe Subject, type: :model do
     end
   end
 
-  describe '#current_semester_optionals' do
-    let(:s1) { create :subject, current_optional_subject: true }
-    let(:s2) { create :subject, current_optional_subject: false }
+  describe '#current_semester' do
+    let(:s1) { create :subject, current_semester: true }
+    let(:s2) { create :subject, current_semester: false }
 
     it 'returns subjects that are current semester optionals' do
-      expect(Subject.current_semester_optionals).to eq([s1])
+      expect(Subject.current_semester).to eq([s1])
     end
   end
 

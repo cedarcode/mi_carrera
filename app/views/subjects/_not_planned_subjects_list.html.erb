@@ -3,15 +3,15 @@
     <div data-controller="collapsible" class="bg-white rounded-lg border border-gray-100 shadow-sm">
       <a data-action="click->collapsible#toggle" class="flex items-center h-10 px-4 bg-gray-50 rounded-lg cursor-pointer">
         <span class="material-icons pr-2" data-collapsible-target="button" data-turbo-permanent>chevron_right</span>
-        <span class="flex-1 text-sm font-bold"><%= subjects.size %> Materias aprobadas sin semestre asignado</span>
+        <span class="flex-1 font-bold"><%= subjects.size %> Materias aprobadas sin semestre asignado</span>
       </a>
 
-      <ul class="hidden" data-collapsible-target="collapsible" data-controller="planner-draggable" data-action="turbo:before-morph-attribute->collapsible#preventToggle" data-planner-draggable-put-value="false">
+      <ul class="hidden" data-collapsible-target="collapsible" data-controller="planner-draggable" data-action="turbo:before-morph-attribute->collapsible#preventToggle" data-planner-draggable-put-value="false" data-planner-draggable-planner-loading-outlet="#planner">
         <% subjects.each do |subject| %>
           <li class="relative flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-100 h-[64px]" data-planner-draggable-url="<%= subject_plans_path %>" data-planner-draggable-method="post" data-planner-draggable-subject-id="<%= subject.id %>">
             <span class="material-icons text-gray-400 cursor-pointer" data-planner-draggable-handle> drag_handle </span>
 
-            <%= link_to display_name(subject), subject, class: "grow text-sm/6 text-gray-900" %>
+            <%= link_to display_name(subject), subject, class: "grow text-gray-900" %>
             <%= material_icon("check", "text-green-500") %>
           </li>
         <% end %>

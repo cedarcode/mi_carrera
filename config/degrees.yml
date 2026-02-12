@@ -2,5 +2,9 @@
 shared:
 - bedelias_name: "INGENIERÍA EN COMPUTACIÓN"
   id: "computacion"
+  name: "Ingeniería en Computación"
   current_plan: "1997"
-  include_inco_subjects: true
+- bedelias_name: "INGENIERÍA ELÉCTRICA"
+  id: "electrica"
+  name: "Ingeniería Eléctrica"
+  current_plan: "2023"

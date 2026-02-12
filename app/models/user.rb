@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :lockable,
+         :passkey_authenticatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   serialize :approvals, type: Array, coder: YAML
@@ -9,7 +10,6 @@ class User < ApplicationRecord
   has_many :subject_plans, dependent: :destroy
   has_many :planned_subjects, through: :subject_plans, source: :subject
   belongs_to :degree
-  has_many :passkeys, dependent: :destroy
 
   before_validation :set_default_degree
 
@@ -45,7 +45,7 @@ class User < ApplicationRecord
   private
 
   def set_default_degree
-    self.degree = Degree.default
+    self.degree ||= Degree.default
   end
 end
 

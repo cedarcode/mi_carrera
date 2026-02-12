@@ -11,14 +11,14 @@ RSpec.describe YmlLoader do
       {
         bedelias_name: 'TEST DEGREE',
         id: degree_id,
+        name: 'Test Degree',
         current_plan: '2025',
-        include_inco_subjects: true
       },
       {
         bedelias_name: 'ANOTHER TEST DEGREE',
         id: another_degree_id,
+        name: 'Another Test Degree',
         current_plan: '1815',
-        include_inco_subjects: true
       }
     ])
   end
@@ -31,11 +31,11 @@ RSpec.describe YmlLoader do
         # Degrees
         expect { described_class.load }.to change(Degree, :count).by(2)
         degree = Degree.find(degree_id)
+        expect(degree.name).to eq('Test Degree')
         expect(degree.current_plan).to eq('2025')
-        expect(degree.include_inco_subjects).to be true
 
         # Subject Groups
-        expect(degree.subject_groups.count).to eq(1)
+        expect(degree.subject_groups.count).to eq(2)
         subject_group = degree.subject_groups.find_by!(code: '2003')
         expect(subject_group.name).to eq('Matemática')
         expect(subject_group.credits_needed).to eq(70)
@@ -53,7 +53,12 @@ RSpec.describe YmlLoader do
         expect(subject1.openfing_id).to eq('testsubj')
         expect(subject1.short_name).to eq('TS1')
         expect(subject1.category).to eq('third_semester')
-        expect(subject1.current_optional_subject).to be false
+        expect(subject1.current_semester).to be false
+        expect(subject1.subject_group_memberships.count).to eq(2)
+        expect(subject1.subject_group_memberships.first.credits).to eq(4)
+        expect(subject1.subject_group_memberships.first.group.code).to eq('1917')
+        expect(subject1.subject_group_memberships.last.credits).to eq(10)
+        expect(subject1.subject_group_memberships.last.group.code).to eq('2003')
 
         subject2 = degree.subjects.find_by!(code: '102')
         expect(subject2.name).to eq('Cálculo II')
@@ -66,11 +71,16 @@ RSpec.describe YmlLoader do
         expect(subject2.openfing_id).to be_nil
         expect(subject2.short_name).to be_nil
         expect(subject2.category).to eq('optional')
-        expect(subject2.current_optional_subject).to be true
+        expect(subject2.current_semester).to be true
+        expect(subject2.subject_group_memberships.count).to eq(1)
+        subject_group_membership = subject2.subject_group_memberships.first
+        expect(subject_group_membership.credits).to eq(12)
+        expect(subject_group_membership.group.code).to eq('2003')
 
         subject3 = degree.subjects.find_by!(code: '25')
         expect(subject3.name).to eq('Subject With No Group')
         expect(subject3.group).to be_nil
+        expect(subject3.subject_group_memberships.count).to eq(0)
 
         # Prerequisites
         expect(subject1.course.prerequisite_tree).to be_a(LogicalPrerequisite)
@@ -138,7 +148,9 @@ RSpec.describe YmlLoader do
       end
 
       context 'when data already exists' do
-        let!(:existing_degree) { create(:degree, id: degree_id, current_plan: '1830', include_inco_subjects: false) }
+        let!(:existing_degree) do
+          create(:degree, id: degree_id, current_plan: '1830')
+        end
         let!(:existing_group) do
           create(
             :subject_group,
@@ -155,7 +167,7 @@ RSpec.describe YmlLoader do
             name: 'Existing Subject',
             credits: 100,
             degree_id:,
-            current_optional_subject: true
+            current_semester: true
           )
         end
 
@@ -163,8 +175,8 @@ RSpec.describe YmlLoader do
           described_class.load
 
           existing_degree.reload
+          expect(existing_degree.name).to eq('Test Degree')
           expect(existing_degree.current_plan).to eq('2025')
-          expect(existing_degree.include_inco_subjects).to eq(true)
 
           existing_group.reload
           expect(existing_group.name).to eq('Matemática')
@@ -175,7 +187,7 @@ RSpec.describe YmlLoader do
           expect(existing_subject.credits).to eq(14)
           expect(existing_subject.exam).to be_present
           expect(existing_subject.group).to eq(existing_group)
-          expect(existing_subject.current_optional_subject).to be false
+          expect(existing_subject.current_semester).to be false
         end
       end
     end

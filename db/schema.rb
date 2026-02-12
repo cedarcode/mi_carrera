@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_01_13_221812) do
+ActiveRecord::Schema[8.1].define(version: 2026_01_29_013020) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "unaccent"
@@ -26,20 +26,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_13_221812) do
   create_table "degrees", id: :string, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "current_plan", null: false
-    t.boolean "include_inco_subjects", null: false
+    t.string "name"
     t.datetime "updated_at", null: false
-  end
-
-  create_table "passkeys", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.string "external_id", null: false
-    t.string "name", null: false
-    t.string "public_key", null: false
-    t.bigint "sign_count", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["external_id"], name: "index_passkeys_on_external_id", unique: true
-    t.index ["user_id"], name: "index_passkeys_on_user_id"
   end
 
   create_table "prerequisites", force: :cascade do |t|
@@ -64,6 +52,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_13_221812) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["subject_id", "user_id"], name: "index_reviews_on_subject_id_and_user_id", unique: true
+  end
+
+  create_table "subject_group_memberships", force: :cascade do |t|
+    t.bigint "subject_id", null: false
+    t.bigint "subject_group_id", null: false
+    t.integer "credits", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_group_id"], name: "index_subject_group_memberships_on_subject_group_id"
+    t.index ["subject_id", "subject_group_id"], name: "index_subject_group_memberships_on_subject_and_group", unique: true
+    t.index ["subject_id"], name: "index_subject_group_memberships_on_subject_id"
   end
 
   create_table "subject_groups", force: :cascade do |t|
@@ -91,7 +90,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_13_221812) do
     t.string "code"
     t.datetime "created_at", precision: nil, null: false
     t.integer "credits", null: false
-    t.boolean "current_optional_subject", default: false
+    t.boolean "current_semester", default: false, null: false
     t.string "degree_id", null: false
     t.string "eva_id"
     t.integer "group_id"
@@ -130,18 +129,33 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_13_221812) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  create_table "webauthn_credentials", force: :cascade do |t|
+    t.integer "authentication_factor", limit: 2, null: false
+    t.datetime "created_at", null: false
+    t.string "external_id", null: false
+    t.string "name", null: false
+    t.text "public_key", null: false
+    t.bigint "sign_count", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["external_id"], name: "index_webauthn_credentials_on_external_id", unique: true
+    t.index ["user_id"], name: "index_webauthn_credentials_on_user_id"
+  end
+
   add_foreign_key "approvables", "subjects"
-  add_foreign_key "passkeys", "users"
   add_foreign_key "prerequisites", "approvables"
   add_foreign_key "prerequisites", "approvables", column: "approvable_needed_id"
   add_foreign_key "prerequisites", "prerequisites", column: "parent_prerequisite_id"
   add_foreign_key "prerequisites", "subject_groups"
   add_foreign_key "reviews", "subjects"
   add_foreign_key "reviews", "users"
+  add_foreign_key "subject_group_memberships", "subject_groups"
+  add_foreign_key "subject_group_memberships", "subjects"
   add_foreign_key "subject_groups", "degrees"
   add_foreign_key "subject_plans", "subjects"
   add_foreign_key "subject_plans", "users"
   add_foreign_key "subjects", "degrees"
   add_foreign_key "subjects", "subject_groups", column: "group_id"
   add_foreign_key "users", "degrees"
+  add_foreign_key "webauthn_credentials", "users"
 end

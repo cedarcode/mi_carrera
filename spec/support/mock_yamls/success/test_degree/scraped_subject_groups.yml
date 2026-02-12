@@ -3,3 +3,7 @@
   code: '2003'
   name: MATEMATICA
   min_credits: 70
+'1917':
+  code: '1917'
+  name: CIENCIAS FORMALES
+  min_credits: 0
