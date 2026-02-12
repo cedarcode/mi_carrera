@@ -34,6 +34,7 @@ class YmlLoader
     @degree = Degree.find_or_initialize_by(id: degree_id)
     @degree.name = degree_hash[:name]
     @degree.current_plan = degree_hash[:current_plan]
+    @degree.degree_plans.find_or_initialize_by(name: degree_hash[:current_plan])
     @degree.save!
   end
 
@@ -43,6 +44,7 @@ class YmlLoader
       subject_group = degree.subject_groups.find_or_initialize_by(code:)
       subject_group.name = format_name(yml_group["name"])
       subject_group.credits_needed = yml_group["min_credits"]
+      subject_group.degree_plan = degree.active_degree_plan
       subject_group.save!
     end
   end
@@ -58,6 +60,7 @@ class YmlLoader
       new_subject.credits = subject["subject_groups"].sum { |group| group["credits"] }
       group_code = subject["subject_groups"].last&.dig("group")
       new_subject.group = degree.subject_groups.find_by(code: group_code)
+      new_subject.degree_plan = degree.active_degree_plan
 
       subject["subject_groups"].each do |yml_group|
         group = degree.subject_groups.find_by!(code: yml_group["group"])

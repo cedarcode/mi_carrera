@@ -1,5 +1,6 @@
 class Subject < ApplicationRecord
   belongs_to :degree
+  belongs_to :degree_plan
   has_one :course, -> { where is_exam: false }, class_name: 'Approvable', dependent: :destroy, inverse_of: :subject
   has_one :exam, -> { where is_exam: true }, class_name: 'Approvable', dependent: :destroy, inverse_of: :subject
   belongs_to :group, class_name: 'SubjectGroup', optional: true
@@ -89,6 +90,7 @@ end
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  degree_id              :string           not null
+#  degree_plan_id         :bigint           not null
 #  eva_id                 :string
 #  group_id               :integer
 #  openfing_id            :string
@@ -96,12 +98,14 @@ end
 #
 # Indexes
 #
-#  index_subjects_on_degree_id           (degree_id)
-#  index_subjects_on_degree_id_and_code  (degree_id,code) UNIQUE
-#  index_subjects_on_group_id            (group_id)
+#  index_subjects_on_degree_id                (degree_id)
+#  index_subjects_on_degree_plan_id           (degree_plan_id)
+#  index_subjects_on_degree_plan_id_and_code  (degree_plan_id,code) UNIQUE
+#  index_subjects_on_group_id                 (group_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (degree_id => degrees.id)
+#  fk_rails_...  (degree_plan_id => degree_plans.id)
 #  fk_rails_...  (group_id => subject_groups.id)
 #
