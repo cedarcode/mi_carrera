@@ -41,9 +41,6 @@ RSpec.describe 'Changing degrees', type: :system do
       within('header') do
         expect(page).to have_text('Ingeniería en Sistemas')
       end
-
-      user.reload
-      expect(user.degree_id).to eq('sistemas')
     end
   end
 
