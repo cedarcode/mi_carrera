@@ -8,7 +8,7 @@
       <div class="flex flex-col">
         <%= link_to 'MiCarrera', root_path, class: 'text-xl font-bold' %>
         <% if Features::ChangingDegrees.enabled? %>
-          <span class="text-xs text-white/70 text-nowrap"><%= current_degree.name %></span>
+          <span class="text-xs text-white/70 text-nowrap"><%= current_degree_plan.degree.name %></span>
         <% end %>
       </div>
     </div>
