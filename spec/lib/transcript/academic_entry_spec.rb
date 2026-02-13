@@ -91,47 +91,47 @@ RSpec.describe Transcript::AcademicEntry, type: :lib do
       expect(student.approved?(subject2)).to be false
     end
 
-    it 'adds subject with matching degree_id' do
-      degree = create(:degree)
-      other_degree = create(:degree)
-      student_with_degree = build(:cookie_student, degree: degree)
-      subject_same_degree = create(:subject, name: 'Mathematics', credits: 5, degree: degree)
-      subject_other_degree = create(:subject, name: 'Mathematics', credits: 5, degree: other_degree)
+    it 'adds subject with matching degree_plan' do
+      degree_plan = create(:degree_plan)
+      other_degree_plan = create(:degree_plan)
+      student_with_degree_plan = build(:cookie_student, degree_plan_id: degree_plan.id)
+      subject_same_plan = create(:subject, name: 'Mathematics', credits: 5, degree_plan: degree_plan)
+      subject_other_plan = create(:subject, name: 'Mathematics', credits: 5, degree_plan: other_degree_plan)
       entry = described_class.new(name: 'Mathematics', credits: 5)
 
-      result = entry.save_to_user(student_with_degree)
+      result = entry.save_to_user(student_with_degree_plan)
 
-      expect(result).to eq(subject_same_degree)
-      expect(student_with_degree.approved?(subject_same_degree)).to be true
-      expect(student_with_degree.approved?(subject_other_degree)).to be false
+      expect(result).to eq(subject_same_plan)
+      expect(student_with_degree_plan.approved?(subject_same_plan)).to be true
+      expect(student_with_degree_plan.approved?(subject_other_plan)).to be false
     end
 
-    it 'returns false when subject exists but does not match degree_id' do
-      degree = create(:degree)
-      other_degree = create(:degree)
-      student_with_degree = build(:cookie_student, degree: degree)
-      subject_other_degree = create(:subject, name: 'Mathematics', credits: 5, degree: other_degree)
+    it 'returns false when subject exists but does not match degree_plan' do
+      degree_plan = create(:degree_plan)
+      other_degree_plan = create(:degree_plan)
+      student_with_degree_plan = build(:cookie_student, degree_plan_id: degree_plan.id)
+      subject_other_plan = create(:subject, name: 'Mathematics', credits: 5, degree_plan: other_degree_plan)
       entry = described_class.new(name: 'Mathematics', credits: 5)
 
-      result = entry.save_to_user(student_with_degree)
+      result = entry.save_to_user(student_with_degree_plan)
 
       expect(result).to be false
-      expect(student_with_degree.approved?(subject_other_degree)).to be false
+      expect(student_with_degree_plan.approved?(subject_other_plan)).to be false
     end
 
-    it 'adds subject matching degree_id when multiple subjects with same name, credits, and activity status exist' do
-      degree = create(:degree)
-      other_degree = create(:degree)
-      student_with_degree = build(:cookie_student, degree: degree)
-      subject_same_degree = create(:subject, name: 'Mathematics', credits: 5, degree: degree)
-      subject_other_degree = create(:subject, name: 'Mathematics', credits: 5, degree: other_degree)
+    it 'adds subject matching degree_plan when multiple subjects with same name, credits, and activity status exist' do
+      degree_plan = create(:degree_plan)
+      other_degree_plan = create(:degree_plan)
+      student_with_degree_plan = build(:cookie_student, degree_plan_id: degree_plan.id)
+      subject_same_plan = create(:subject, name: 'Mathematics', credits: 5, degree_plan: degree_plan)
+      subject_other_plan = create(:subject, name: 'Mathematics', credits: 5, degree_plan: other_degree_plan)
       entry = described_class.new(name: 'Mathematics', credits: 5)
 
-      result = entry.save_to_user(student_with_degree)
+      result = entry.save_to_user(student_with_degree_plan)
 
-      expect(result).to eq(subject_same_degree)
-      expect(student_with_degree.approved?(subject_same_degree)).to be true
-      expect(student_with_degree.approved?(subject_other_degree)).to be false
+      expect(result).to eq(subject_same_plan)
+      expect(student_with_degree_plan.approved?(subject_same_plan)).to be true
+      expect(student_with_degree_plan.approved?(subject_other_plan)).to be false
     end
   end
 end
