@@ -5,7 +5,6 @@ FactoryBot.define do
     credits { 5 }
     category { 'first_semester' }
     group
-    degree_id { "computacion" }
     course { association :course, subject: instance, strategy: :build }
     degree_plan_id { ActiveRecord::FixtureSet.identify(:computacion_active_plan) }
 
