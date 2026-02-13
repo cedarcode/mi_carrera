@@ -6,6 +6,10 @@ class DegreePlan < ApplicationRecord
   validates :name, presence: true, uniqueness: { scope: :degree_id }
 
   scope :active, -> { where(active: true) }
+
+  def self.default
+    Degree.default&.active_degree_plan
+  end
 end
 
 # == Schema Information
