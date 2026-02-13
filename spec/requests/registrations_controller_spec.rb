@@ -104,16 +104,16 @@ RSpec.describe Users::RegistrationsController, type: :request do
       user = User.where(email: 'newuser@gmail.com').first
 
       expect(user.approvals).to eq [subject1.course.id, subject2.exam.id, subject2.course.id]
-      expect(user.degree).to eq(degrees(:computacion))
+      expect(user.degree_plan).to eq(degree_plans(:computacion_active_plan))
     end
 
-    it 'transfers degree_id from cookie to user on registration' do
+    it 'transfers degree_plan_id from cookie to user on registration' do
       sistemas_degree = create(:degree, id: 'sistemas', current_plan: '2025')
-      create(:degree_plan, degree: sistemas_degree, name: '2025', active: true)
+      sistemas_degree_plan = create(:degree_plan, degree: sistemas_degree, name: '2025', active: true)
       allow(Features::ChangingDegrees).to receive(:enabled?).and_return(true)
 
-      # Cookie student selects a degree (this sets the cookie)
-      put user_degrees_path, params: { degree_id: 'sistemas' }
+      # Cookie student selects a degree plan (this sets the cookie)
+      put user_degrees_path, params: { degree_plan_id: sistemas_degree_plan.id }
 
       # Then registers
       post user_registration_path, params: {
@@ -125,8 +125,7 @@ RSpec.describe Users::RegistrationsController, type: :request do
       }
 
       user = User.find_by(email: 'newuser@example.com')
-      expect(user.degree_id).to eq('sistemas')
-      expect(user.degree).to eq(sistemas_degree)
+      expect(user.degree_plan).to eq(sistemas_degree_plan)
     end
   end
 end
