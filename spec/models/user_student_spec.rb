@@ -144,7 +144,8 @@ RSpec.describe UserStudent, type: :model do
       subject2 = create :subject, credits: 15, group: group2, degree_plan: degree_plan2
       subject3 = create :subject, credits: 20, group: group1, degree_plan: degree_plan1
 
-      user = create :user, degree_plan: degree_plan1, approvals: [subject1.course.id, subject2.course.id, subject3.course.id]
+      user = create :user, degree_plan: degree_plan1,
+                           approvals: [subject1.course.id, subject2.course.id, subject3.course.id]
       student = described_class.new(user)
 
       expect(student.total_credits).to eq(30)
