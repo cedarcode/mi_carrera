@@ -1,4 +1,4 @@
-name: Scraper
+name: Subjects Scraper
 
 on:
   schedule:
@@ -28,7 +28,7 @@ jobs:
       env:
         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
       run: |
-        bundle exec rake scraper
+        bundle exec rake scraper:subjects
         sed -i -e 's/ $//' db/data/*/*.yml
         git add db/data
         if ! git diff --cached --quiet;
@@ -36,13 +36,13 @@ jobs:
             git config --global user.email "micarrera@cedarcode.com"
             git config --global user.name "MiCarrera"
             git commit -m 'chore: update scraped subjects data'
-            git push -f origin HEAD:scraper
-            if [ $(gh pr list --head scraper --json title --jq 'length') == '0' ];
+            git push -f origin HEAD:scraper-subjects
+            if [ $(gh pr list --head scraper-subjects --json title --jq 'length') == '0' ];
             then
                 gh pr create \
                     --title "Update scraped subjects data" \
-                    --body "This PR runs `rails scraper` to update scraped subjects' data" \
-                    --head scraper
+                    --body "This PR runs `rails scraper:subjects` to update scraped subjects' data" \
+                    --head scraper-subjects
             else
                 echo "A PR already exists and was correctly updated."
             fi
@@ -63,5 +63,5 @@ jobs:
       run: |
         curl -X POST -H 'Content-type: application/json' \
           --data '{
-            "text": "El Scraper de MiCarrera falló - <'"$RUN_URL"'|logs>"
+            "text": "El Scraper de Subjects de MiCarrera falló - <'"$RUN_URL"'|logs>"
           }' "${{ secrets.SLACK_WEBHOOK_URL }}"

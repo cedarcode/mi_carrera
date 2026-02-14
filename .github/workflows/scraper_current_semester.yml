@@ -1,0 +1,67 @@
+name: Current Semester Subjects Scraper
+
+on:
+  schedule:
+    - cron:  '0 5 * * MON'
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Generate a token
+      id: generate-token
+      uses: actions/create-github-app-token@v2
+      with:
+        app-id: ${{ secrets.SCRAPER_APP_ID }}
+        private-key: ${{ secrets.SCRAPER_APP_PRIVATE_KEY }}
+
+    - uses: actions/checkout@v6
+      with:
+        token: ${{ steps.generate-token.outputs.token }}
+
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+
+    - name: Run scraper
+      env:
+        GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+      run: |
+        bundle exec rake scraper:current_semester
+        sed -i -e 's/ $//' db/data/*/*.yml
+        git add db/data
+        if ! git diff --cached --quiet;
+        then
+            git config --global user.email "micarrera@cedarcode.com"
+            git config --global user.name "MiCarrera"
+            git commit -m 'chore: update scraped current semester subjects data'
+            git push -f origin HEAD:scraper-current-semester-subjects
+            if [ $(gh pr list --head scraper-current-semester-subjects --json title --jq 'length') == '0' ];
+            then
+                gh pr create \
+                    --title "Update scraped current semester subjects data" \
+                    --body "This PR runs `rails scraper:current_semester` to update scraped current semester subjects' data" \
+                    --head scraper-current-semester-subjects
+            else
+                echo "A PR already exists and was correctly updated."
+            fi
+        else
+            echo "There were no changes. Nothing to do."
+        fi
+    - name: Upload screenshots
+      if: failure()
+      uses: actions/upload-artifact@v6
+      with:
+        name: scraper_screenshot
+        path: ./tmp/capybara
+        retention-days: 5
+    - name: Send Slack notification
+      if: failure()
+      env:
+        RUN_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+      run: |
+        curl -X POST -H 'Content-type: application/json' \
+          --data '{
+            "text": "El Scraper de Current Semester Subjects de MiCarrera falló - <'"$RUN_URL"'|logs>"
+          }' "${{ secrets.SLACK_WEBHOOK_URL }}"
