@@ -9,11 +9,10 @@ servers:
     hosts:
       - 3.233.189.168
     options:
-      memory: 250MiB
+      memory: 300MiB
 
 env:
   clear:
-    ROLLBAR_ENV: staging
     APPSIGNAL_APP_ENV: staging
     ENABLE_PASSKEYS: true
     ENABLE_CHANGING_DEGREES: true

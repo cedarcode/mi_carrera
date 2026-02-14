@@ -8,6 +8,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
         user.approvals = JSON.parse(cookies[:approved_approvable_ids] || "[]")
         user.welcome_banner_viewed = cookies[:welcome_banner_viewed] == "true"
         user.degree_id = cookies[:degree_id] if cookies[:degree_id].present?
+
+        # TODO: stop persisting degree_id on the user and only set degree plan
+        if cookies[:degree_plan_id].present?
+          user.degree_plan_id = cookies[:degree_plan_id]
+        else
+          degree = Degree.find_by(id: user.degree_id) if user.degree_id.present?
+          degree ||= Degree.default
+          user.degree_plan_id ||= degree.active_degree_plan.id
+        end
+
         user.save!
       end
     end

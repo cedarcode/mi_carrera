@@ -355,7 +355,6 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.4.4)
-    rollbar (3.7.0)
     rouge (4.6.1)
     rspec-core (3.13.5)
       rspec-support (~> 3.13.0)
@@ -509,7 +508,6 @@ DEPENDENCIES
   pry-byebug
   puma (~> 7.2)
   rails (~> 8.1.1)
-  rollbar (~> 3.7)
   rspec-rails (~> 8.0)
   rubocop (~> 1.84)
   rubocop-performance (~> 1.26)
