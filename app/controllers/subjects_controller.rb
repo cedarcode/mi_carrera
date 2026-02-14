@@ -32,6 +32,6 @@ class SubjectsController < ApplicationController
   end
 
   def degree_subjects
-    current_degree.subjects
+    current_degree_plan.subjects
   end
 end

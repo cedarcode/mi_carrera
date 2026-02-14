@@ -4,7 +4,7 @@ RSpec.describe SubjectGroup, type: :model do
   subject { build :subject_group }
 
   describe 'associations' do
-    it { should belong_to(:degree) }
+    it { should belong_to(:degree_plan) }
     it {
       should have_many(:subjects).with_foreign_key('group_id').inverse_of(:group).dependent(:restrict_with_exception)
     }

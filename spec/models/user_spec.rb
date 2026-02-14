@@ -5,14 +5,14 @@ RSpec.describe User, type: :model do
     it { should have_many(:reviews).dependent(:destroy) }
     it { should have_many(:subject_plans).dependent(:destroy) }
     it { should have_many(:planned_subjects).through(:subject_plans).source(:subject) }
-    it { should belong_to(:degree).without_validating_presence }
+    it { should belong_to(:degree_plan).without_validating_presence }
   end
 
   describe 'before_validation callback' do
-    it 'sets default degree' do
+    it 'sets default degree_plan' do
       user = User.new
       user.valid?
-      expect(user.degree).to eq(Degree.default)
+      expect(user.degree_plan).to eq(DegreePlan.default)
     end
   end
 
@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
         expect(new_user.email).to eq(auth.info.email)
         expect(new_user.provider).to eq(auth.provider)
         expect(new_user.uid).to eq(auth.uid)
-        expect(new_user.degree).to eq(degrees(:computacion))
+        expect(new_user.degree_plan).to eq(degree_plans(:computacion_active_plan))
       end
     end
 

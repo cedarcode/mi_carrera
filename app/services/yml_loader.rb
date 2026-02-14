@@ -53,10 +53,9 @@ class YmlLoader
   def load_subject_groups(degree_plan)
     subject_groups = safe_read_yaml(degree_dir.join("#{degree_plan.name}/scraped_subject_groups.yml"))
     subject_groups.each do |code, yml_group|
-      subject_group = degree.subject_groups.find_or_initialize_by(code:)
+      subject_group = degree_plan.subject_groups.find_or_initialize_by(code:)
       subject_group.name = format_name(yml_group["name"])
       subject_group.credits_needed = yml_group["min_credits"]
-      subject_group.degree_plan = degree_plan
       subject_group.save!
     end
   end
@@ -66,13 +65,12 @@ class YmlLoader
     subjects_overrides = safe_read_yaml(degree_dir.join("#{degree_plan.name}/subject_overrides.yml"))
 
     subjects.each do |code, subject|
-      new_subject = degree_plan.subjects.find_or_initialize_by(code:, degree:)
+      new_subject = degree_plan.subjects.find_or_initialize_by(code:)
 
       new_subject.name = format_name(subject["name"])
       new_subject.credits = subject["subject_groups"].sum { |group| group["credits"] }
       group_code = subject["subject_groups"].last&.dig("group")
       new_subject.group = degree_plan.subject_groups.find_by(code: group_code)
-      new_subject.degree_plan = degree_plan
 
       subject["subject_groups"].each do |yml_group|
         group = degree_plan.subject_groups.find_by!(code: yml_group["group"])

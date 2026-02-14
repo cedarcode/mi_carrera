@@ -34,15 +34,18 @@ RSpec.describe YmlLoader do
         expect(degree.name).to eq('Test Degree')
         expect(degree.current_plan).to eq('2025')
 
+        degree_plan = degree.degree_plans.find_by!(name: '2025')
+        expect(degree_plan.active).to be true
+
         # Subject Groups
-        expect(degree.subject_groups.count).to eq(2)
-        subject_group = degree.subject_groups.find_by!(code: '2003')
+        expect(degree_plan.subject_groups.count).to eq(2)
+        subject_group = degree_plan.subject_groups.find_by!(code: '2003')
         expect(subject_group.name).to eq('Matemática')
         expect(subject_group.credits_needed).to eq(70)
 
         # Subjects
-        expect(degree.subjects.count).to eq(3)
-        subject1 = degree.subjects.find_by!(code: '101')
+        expect(degree_plan.subjects.count).to eq(3)
+        subject1 = degree_plan.subjects.find_by!(code: '101')
         expect(subject1.name).to eq('Cálculo I')
         expect(subject1.credits).to eq(14)
         expect(subject1.course).to be_present
@@ -60,7 +63,7 @@ RSpec.describe YmlLoader do
         expect(subject1.subject_group_memberships.last.credits).to eq(10)
         expect(subject1.subject_group_memberships.last.group.code).to eq('2003')
 
-        subject2 = degree.subjects.find_by!(code: '102')
+        subject2 = degree_plan.subjects.find_by!(code: '102')
         expect(subject2.name).to eq('Cálculo II')
         expect(subject2.credits).to eq(12)
         expect(subject2.course).to be_present
@@ -77,7 +80,7 @@ RSpec.describe YmlLoader do
         expect(subject_group_membership.credits).to eq(12)
         expect(subject_group_membership.group.code).to eq('2003')
 
-        subject3 = degree.subjects.find_by!(code: '25')
+        subject3 = degree_plan.subjects.find_by!(code: '25')
         expect(subject3.name).to eq('Subject With No Group')
         expect(subject3.group).to be_nil
         expect(subject3.subject_group_memberships.count).to eq(0)
@@ -136,10 +139,12 @@ RSpec.describe YmlLoader do
 
         # Data isolation between degrees
         another_degree = Degree.find(another_degree_id)
-        expect(another_degree.subject_groups.pluck(:code)).to contain_exactly("73")
-        expect(another_degree.subjects.pluck(:code)).to contain_exactly("25")
+        another_degree_plan = another_degree.degree_plans.find_by!(name: '1815')
+        expect(another_degree_plan.active).to be true
+        expect(another_degree_plan.subject_groups.pluck(:code)).to contain_exactly("73")
+        expect(another_degree_plan.subjects.pluck(:code)).to contain_exactly("25")
 
-        subject4 = another_degree.subjects.find_by!(code: '25')
+        subject4 = another_degree_plan.subjects.find_by!(code: '25')
         expect(subject4.name).to eq('Another Test Subject')
         expect(subject4.group.code).to eq('73')
         expect(subject4.course).to be_present
@@ -160,7 +165,6 @@ RSpec.describe YmlLoader do
             code: '2003',
             name: 'Existing Group',
             credits_needed: 50,
-            degree_id:,
             degree_plan: existing_degree_plan
           )
         end
@@ -170,7 +174,6 @@ RSpec.describe YmlLoader do
             code: '101',
             name: 'Existing Subject',
             credits: 100,
-            degree_id:,
             degree_plan: existing_degree_plan,
             current_semester: true
           )
@@ -206,7 +209,6 @@ RSpec.describe YmlLoader do
           :subject,
           :with_exam,
           code: '25',
-          degree_id:,
           degree_plan: existing_degree_plan,
         )
       end

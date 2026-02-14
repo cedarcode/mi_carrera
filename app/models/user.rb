@@ -9,10 +9,9 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :subject_plans, dependent: :destroy
   has_many :planned_subjects, through: :subject_plans, source: :subject
-  belongs_to :degree
   belongs_to :degree_plan
 
-  before_validation :set_default_degree_and_plan
+  before_validation :set_default_degree_plan
 
   def self.from_omniauth(auth, cookie)
     # check that user with same email exists
@@ -45,9 +44,8 @@ class User < ApplicationRecord
 
   private
 
-  def set_default_degree_and_plan
-    self.degree ||= Degree.default
-    self.degree_plan ||= degree.active_degree_plan
+  def set_default_degree_plan
+    self.degree_plan ||= DegreePlan.default
   end
 end
 
@@ -72,13 +70,11 @@ end
 #  welcome_banner_viewed  :boolean          default(FALSE)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  degree_id              :string           not null
 #  degree_plan_id         :bigint           not null
 #  webauthn_id            :uuid             not null
 #
 # Indexes
 #
-#  index_users_on_degree_id             (degree_id)
 #  index_users_on_degree_plan_id        (degree_plan_id)
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
@@ -86,6 +82,5 @@ end
 #
 # Foreign Keys
 #
-#  fk_rails_...  (degree_id => degrees.id)
 #  fk_rails_...  (degree_plan_id => degree_plans.id)
 #
