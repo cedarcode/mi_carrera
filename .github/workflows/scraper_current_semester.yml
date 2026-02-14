@@ -1,4 +1,4 @@
-name: Scraper Current Semester
+name: Current Semester Subjects Scraper
 
 on:
   schedule:
@@ -36,13 +36,13 @@ jobs:
             git config --global user.email "micarrera@cedarcode.com"
             git config --global user.name "MiCarrera"
             git commit -m 'chore: update scraped current semester subjects data'
-            git push -f origin HEAD:scraper-current-semester
-            if [ $(gh pr list --head scraper-current-semester --json title --jq 'length') == '0' ];
+            git push -f origin HEAD:scraper-current-semester-subjects
+            if [ $(gh pr list --head scraper-current-semester-subjects --json title --jq 'length') == '0' ];
             then
                 gh pr create \
                     --title "Update scraped current semester subjects data" \
                     --body "This PR runs `rails scraper:current_semester` to update scraped current semester subjects' data" \
-                    --head scraper-current-semester
+                    --head scraper-current-semester-subjects
             else
                 echo "A PR already exists and was correctly updated."
             fi
@@ -63,5 +63,5 @@ jobs:
       run: |
         curl -X POST -H 'Content-type: application/json' \
           --data '{
-            "text": "El Scraper de Current Semester de MiCarrera falló - <'"$RUN_URL"'|logs>"
+            "text": "El Scraper de Current Semester Subjects de MiCarrera falló - <'"$RUN_URL"'|logs>"
           }' "${{ secrets.SLACK_WEBHOOK_URL }}"

@@ -1,4 +1,4 @@
-name: Scraper Subjects
+name: Subjects Scraper
 
 on:
   schedule:
