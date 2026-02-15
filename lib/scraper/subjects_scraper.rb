@@ -46,7 +46,7 @@ module Scraper
       select_degree_in_accordion
 
       within('.ui-expanded-row-content', text: 'Planes') do
-        find('tr', text: degree[:current_plan]).click_on "Ver más datos"
+        find('tr', text: plan).click_on "Ver más datos"
       end
     end
 
