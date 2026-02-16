@@ -5,9 +5,9 @@ ruby file: ".ruby-version"
 gem 'rails', '~> 8.1.1'
 
 gem 'appsignal', '~> 4.8'
-gem 'bootsnap', '~> 1.22', require: false
+gem 'bootsnap', '~> 1.23', require: false
 gem 'devise', '~> 5.0'
-gem "devise-webauthn", "~> 0.3.0"
+gem "devise-webauthn", "~> 0.3.1"
 gem 'factory_bot_rails', '~> 6.5'
 gem 'importmap-rails', '~> 2.2'
 gem "omniauth", "~> 2.1"
@@ -20,7 +20,7 @@ gem 'puma', '~> 7.2'
 gem 'stimulus-rails', '~> 1.3'
 gem 'tailwindcss-rails', '~> 4.4'
 gem 'turbo-rails', '~> 2.0'
-gem "view_component", "~> 4.2"
+gem "view_component", "~> 4.4"
 gem 'webauthn'
 
 group :development, :deploy do
@@ -34,7 +34,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "annotaterb", "~> 4.21"
+  gem "annotaterb", "~> 4.22"
   gem "letter_opener", "~> 1.10"
   gem "lookbook", "~> 2.3"
   gem 'rubocop', '~> 1.84'
