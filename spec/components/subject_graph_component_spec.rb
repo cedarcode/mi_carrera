@@ -107,6 +107,45 @@ RSpec.describe SubjectGraphComponent, type: :component do
     end
   end
 
+  context "semester labels" do
+    it "renders semester-labels data attribute" do
+      subject1 = create(:subject, name: "Subject 1", code: "S1", category: "first_semester")
+
+      render_inline(described_class.new(subjects: [subject1], current_student: student))
+
+      expect(page).to have_css "[data-subject-graph-semester-labels-value]"
+    end
+
+    it "produces correct labels for curriculum graph" do
+      subject1 = create(:subject, name: "Subject 1", code: "S1", category: "first_semester")
+      subject2 = create(:subject, name: "Subject 2", code: "S2", category: "second_semester")
+
+      render_inline(described_class.new(subjects: [subject1, subject2], current_student: student))
+
+      labels_data = page.find("[data-subject-graph-semester-labels-value]")["data-subject-graph-semester-labels-value"]
+      labels = JSON.parse(labels_data)
+
+      expect(labels["1"]).to eq("Primer semestre")
+      expect(labels["2"]).to eq("Segundo semestre")
+    end
+
+    it "produces correct labels for planner graph with semester_map" do
+      subject1 = create(:subject, name: "Subject 1", code: "S1")
+      subject2 = create(:subject, name: "Subject 2", code: "S2")
+
+      semester_map = { subject1.id => 3, subject2.id => 5 }
+
+      render_inline(described_class.new(subjects: [subject1, subject2], current_student: student,
+                                        semester_map: semester_map))
+
+      labels_data = page.find("[data-subject-graph-semester-labels-value]")["data-subject-graph-semester-labels-value"]
+      labels = JSON.parse(labels_data)
+
+      expect(labels["3"]).to eq("Semestre 3")
+      expect(labels["5"]).to eq("Semestre 5")
+    end
+  end
+
   context "without subjects" do
     it "renders empty arrays for nodes and edges" do
       render_inline(described_class.new(subjects: [], current_student: student))

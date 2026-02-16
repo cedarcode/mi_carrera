@@ -21,6 +21,7 @@ RSpec.describe "Planner Graph", type: :system do
     expect(page).to have_css "[data-controller='subject-graph']"
     expect(page).to have_css "[data-subject-graph-nodes-value]"
     expect(page).to have_css "[data-subject-graph-edges-value]"
+    expect(page).to have_css "[data-subject-graph-semester-labels-value]"
 
     node_data = find("[data-subject-graph-nodes-value]")["data-subject-graph-nodes-value"]
     nodes = JSON.parse(node_data)

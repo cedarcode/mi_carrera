@@ -1,32 +1,20 @@
 <div class="px-4 py-4 flex flex-col h-[calc(100dvh-3.5rem)] sm:h-[calc(100dvh-4rem)]">
   <div class="flex items-center justify-between mb-4">
-    <h1 class="text-xl font-semibold text-gray-900">Grafo de curícula sugerida</h1>
+    <h1 class="text-xl font-semibold text-gray-900">Grafo de malla curricular sugerida</h1>
   </div>
 
   <% if @subjects.any? %>
-    <div class="flex flex-wrap gap-4 mb-3 text-xs">
-      <div class="flex items-center gap-1.5">
-        <span class="w-3 h-3 rounded-sm bg-gray-500"></span>
-        <span class="text-gray-600">No disponible</span>
-      </div>
-      <div class="flex items-center gap-1.5">
-        <span class="w-3 h-3 rounded-sm bg-blue-500"></span>
-        <span class="text-gray-600">Disponible</span>
-      </div>
-      <div class="flex items-center gap-1.5">
-        <span class="w-3 h-3 rounded-sm bg-green-500"></span>
-        <span class="text-gray-600">Completada</span>
-      </div>
-    </div>
+    <%= render "shared/graph_legend" %>
+
+    <p class="mb-2 text-xs text-gray-500">
+      <span class="hidden sm:inline">Click en un nodo para ver detalles de la materia.</span>
+      <span class="sm:hidden">Pellizca para hacer zoom. Toca un nodo para ver detalles.</span>
+    </p>
 
     <%= render SubjectGraphComponent.new(
       subjects: @subjects,
       current_student: current_student
     ) %>
-
-    <p class="mt-2 text-xs text-gray-500">
-      Click en un nodo para ver detalles de la materia.
-    </p>
   <% else %>
     <div class="flex flex-col justify-center items-center mt-12 text-gray-500">
       <p class="text-lg">No hay materias para mostrar.</p>

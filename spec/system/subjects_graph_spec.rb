@@ -14,6 +14,7 @@ RSpec.describe "Subjects Graph", type: :system do
     visit subjects_graph_path(categories: ["first_semester"])
 
     expect(page).to have_css "[data-controller='subject-graph']"
+    expect(page).to have_css "[data-subject-graph-semester-labels-value]"
 
     node_data = find("[data-subject-graph-nodes-value]")["data-subject-graph-nodes-value"]
     nodes = JSON.parse(node_data)

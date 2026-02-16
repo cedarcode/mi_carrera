@@ -2,5 +2,6 @@
   data-controller="subject-graph"
   data-subject-graph-nodes-value="<%= nodes.to_json %>"
   data-subject-graph-edges-value="<%= edges.to_json %>"
-  class="subject-graph-container border border-gray-200 rounded-lg w-[100vw] relative left-[50%] -translate-x-1/2 flex-1 min-h-0">
+  data-subject-graph-semester-labels-value="<%= semester_labels.to_json %>"
+  class="subject-graph-container border border-gray-200 rounded-lg w-[100vw] relative left-[50%] -translate-x-1/2 flex-1 min-h-0 overflow-hidden">
 </div>

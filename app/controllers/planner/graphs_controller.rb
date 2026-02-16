@@ -3,13 +3,15 @@ module Planner
     before_action :authenticate_user!
 
     def show
-      planned_subjects = current_user.subject_plans
-                                     .includes(subject: [:course, :exam])
-                                     .map(&:subject)
+      subject_plans = current_user.subject_plans
+                                  .includes(subject: [:course, :exam])
 
-      TreePreloader.preload(planned_subjects)
+      @semester_map = subject_plans.to_h do |subject_plan|
+        [subject_plan.subject_id, subject_plan.semester]
+      end
 
-      @subjects = planned_subjects
+      @subjects = subject_plans.map(&:subject)
+      TreePreloader.preload(@subjects)
     end
   end
 end
