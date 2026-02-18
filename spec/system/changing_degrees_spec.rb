@@ -43,7 +43,7 @@ RSpec.describe 'Changing degrees', type: :system do
       select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
-      expect(page).to have_text('Tu plan ha sido actualizada correctamente.')
+      expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
       expect(current_path).to eq(root_path)
 
       within('header') do
@@ -110,7 +110,7 @@ RSpec.describe 'Changing degrees', type: :system do
       select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
-      expect(page).to have_text('Tu plan ha sido actualizada correctamente.')
+      expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
       expect(current_path).to eq(root_path)
 
       within('header') do
@@ -137,7 +137,7 @@ RSpec.describe 'Changing degrees', type: :system do
       select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
-      expect(page).to have_text('Tu plan ha sido actualizada correctamente.')
+      expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
       expect(current_path).to eq(root_path)
 
       degree_plan_cookie = page.driver.browser.manage.cookie_named('degree_plan_id')
@@ -165,7 +165,7 @@ RSpec.describe 'Changing degrees', type: :system do
       select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
-      expect(page).to have_text('Tu plan ha sido actualizada correctamente.')
+      expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
       expect(current_path).to eq(root_path)
 
       within('header') do
@@ -194,7 +194,7 @@ RSpec.describe 'Changing degrees', type: :system do
       select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
-      expect(page).to have_text('Tu plan ha sido actualizada correctamente.')
+      expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
       expect(current_path).to eq(root_path)
 
       within('header') do
@@ -227,7 +227,7 @@ RSpec.describe 'Changing degrees', type: :system do
       select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
-      expect(page).to have_text('Tu plan ha sido actualizada correctamente.')
+      expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
       expect(current_path).to eq(root_path)
 
       within('header') do
