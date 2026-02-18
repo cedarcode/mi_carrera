@@ -11,7 +11,7 @@ module Users
       current_student.degree_plan = DegreePlan.find(params[:degree_plan_id])
 
       if current_student.save
-        redirect_to root_path, notice: "Tu plan ha sido actualizada correctamente."
+        redirect_to root_path, notice: "Tu plan ha sido actualizado correctamente."
       else
         redirect_to edit_user_degrees_path, alert: "Hubo un error actualizando tu plan."
       end
