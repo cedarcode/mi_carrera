@@ -3,8 +3,7 @@ module Users
     before_action :ensure_feature_enabled!
 
     def edit
-      @degree = Degree.find_by(id: params[:degree_id]) || current_student.degree
-      @degree_plans = @degree.degree_plans.order(:name)
+      @degree_plans = DegreePlan.includes(:degree)
     end
 
     def update

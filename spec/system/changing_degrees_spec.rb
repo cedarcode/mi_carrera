@@ -12,7 +12,7 @@ RSpec.describe 'Changing degrees', type: :system do
   let!(:sistemas_degree_plan) do
     create(:degree_plan, degree: sistemas_degree, name: '2025', active: true)
   end
-  let!(:user) { create(:user) }
+  let!(:user) { create(:user, degree_plan: computacion_degree_plan) }
 
   before do
     sign_in user
@@ -36,11 +36,10 @@ RSpec.describe 'Changing degrees', type: :system do
       click_on 'Cambiar Carrera'
 
       expect(page).to have_text('Cambiar Carrera')
-      expect(page).to have_select('degree_id', selected: 'Ingeniería en Computación')
+      expect(page).to have_select('degree_plan_id', selected: 'Ingeniería en Computación - Plan 2025')
 
-      select 'Ingeniería en Sistemas', from: 'degree_id'
+      select 'Ingeniería en Sistemas - Plan 2025', from: 'degree_plan_id'
 
-      select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
       expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
@@ -92,7 +91,7 @@ RSpec.describe 'Changing degrees', type: :system do
       visit edit_user_degrees_path
 
       expect(page).to have_text('Cambiar Carrera')
-      expect(page).to have_select('degree_id', selected: 'Ingeniería en Computación')
+      expect(page).to have_select('degree_plan_id', selected: 'Ingeniería en Computación - Plan 2025')
     end
 
     it 'allows selecting degree plan when no cookie is set' do
@@ -105,9 +104,8 @@ RSpec.describe 'Changing degrees', type: :system do
       click_user_menu
       click_on 'Cambiar Carrera'
 
-      select 'Ingeniería en Sistemas', from: 'degree_id'
+      select 'Ingeniería en Sistemas - Plan 2025', from: 'degree_plan_id'
 
-      select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
       expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
@@ -132,9 +130,8 @@ RSpec.describe 'Changing degrees', type: :system do
       click_user_menu
       click_on 'Cambiar Carrera'
 
-      select 'Ingeniería en Sistemas', from: 'degree_id'
+      select 'Ingeniería en Sistemas - Plan 2025', from: 'degree_plan_id'
 
-      select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
       expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
@@ -160,9 +157,8 @@ RSpec.describe 'Changing degrees', type: :system do
       click_user_menu
       click_on 'Cambiar Carrera'
 
-      select 'Ingeniería en Sistemas', from: 'degree_id'
+      select 'Ingeniería en Sistemas - Plan 2025', from: 'degree_plan_id'
 
-      select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
       expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
@@ -189,9 +185,8 @@ RSpec.describe 'Changing degrees', type: :system do
       click_user_menu
       click_on 'Cambiar Carrera'
 
-      select 'Ingeniería en Sistemas', from: 'degree_id'
+      select 'Ingeniería en Sistemas - Plan 2025', from: 'degree_plan_id'
 
-      select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
       expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
@@ -222,9 +217,8 @@ RSpec.describe 'Changing degrees', type: :system do
       click_user_menu
       click_on 'Cambiar Carrera'
 
-      select 'Ingeniería en Sistemas', from: 'degree_id'
+      select 'Ingeniería en Sistemas - Plan 2025', from: 'degree_plan_id'
 
-      select '2025', from: 'degree_plan_id'
       click_on 'Guardar'
 
       expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
