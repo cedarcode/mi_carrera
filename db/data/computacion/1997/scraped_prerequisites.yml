@@ -10820,6 +10820,10 @@
       subject_needed_name: ARQUITECTURA DE COMPUTADORAS
       needs: exam
     - type: subject
+      subject_needed_code: '1466'
+      subject_needed_name: ARQUITECTURA DE COMPUTADORAS
+      needs: exam
+    - type: subject
       subject_needed_code: '1424'
       subject_needed_name: ARQUITECTURA DE COMPUTADORES 1
       needs: exam
@@ -17590,10 +17594,17 @@
 - type: logical
   logical_operator: and
   operands:
-  - type: subject
-    needs: exam
-    subject_needed_code: '1716'
-    subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1716'
+      subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+      needs: exam
+    - type: subject
+      subject_needed_code: '1783'
+      subject_needed_name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+      needs: course
   subject_code: AT021
   is_exam: false
 - type: logical
