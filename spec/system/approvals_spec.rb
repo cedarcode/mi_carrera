@@ -4,8 +4,8 @@ require 'support/checkboxes_helper'
 RSpec.describe 'Approvals', type: :system do
   include CheckboxesHelper
 
-  let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030', degree: degrees(:computacion)) }
-  let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10, degree: degrees(:computacion)) }
+  let(:gal1) { create(:subject, :with_exam, name: 'GAL 1', credits: 9, code: '1030') }
+  let(:gal2) { create(:subject, :with_exam, name: 'GAL 2', credits: 10) }
 
   before do
     create(:subject_prerequisite, approvable: gal1.exam, approvable_needed: gal1.course)

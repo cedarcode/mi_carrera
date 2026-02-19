@@ -2,15 +2,17 @@ module Users
   class DegreesController < ApplicationController
     before_action :ensure_feature_enabled!
 
-    def edit; end
+    def edit
+      @degree_plans = DegreePlan.includes(:degree)
+    end
 
     def update
-      current_student.degree = Degree.find(params[:degree_id])
+      current_student.degree_plan = DegreePlan.find(params[:degree_plan_id])
 
       if current_student.save
-        redirect_to root_path, notice: "Tu carrera ha sido actualizada correctamente."
+        redirect_to root_path, notice: "Tu plan ha sido actualizado correctamente."
       else
-        redirect_to edit_user_degrees_path, alert: "Hubo un error actualizando tu carrera."
+        redirect_to edit_user_degrees_path, alert: "Hubo un error actualizando tu plan."
       end
     end
 
