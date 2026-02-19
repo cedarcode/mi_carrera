@@ -6,6 +6,7 @@ shared:
   current_plan: "1997"
   plans:
     - "1997"
+    - "2025"
 - bedelias_name: "INGENIERÍA ELÉCTRICA"
   id: "electrica"
   name: "Ingeniería Eléctrica"
