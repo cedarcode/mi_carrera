@@ -14,7 +14,9 @@ module Scraper
 
       degrees = Rails.configuration.degrees
       degrees.each do |degree|
-        new(degree).scrape
+        degree[:plans].each do |plan|
+          new(degree, plan).scrape
+        end
       end
     end
 
@@ -35,17 +37,18 @@ module Scraper
       end
     end
 
-    def initialize(degree)
+    def initialize(degree, plan)
       @degree = degree
-      @logger = Rails.logger.tagged("Scraper - #{degree[:bedelias_name]}")
+      @plan = plan
+      @logger = Rails.logger.tagged("Scraper - #{degree[:bedelias_name]} - #{plan}")
     end
 
     private
 
-    attr_reader :degree, :logger
+    attr_reader :degree, :plan, :logger
 
     def write_yml(name, data)
-      dir_path = Rails.root.join("db/data/#{degree[:id]}/#{degree[:current_plan]}")
+      dir_path = Rails.root.join("db/data/#{degree[:id]}/#{plan}")
 
       FileUtils.mkdir_p(dir_path) unless Dir.exist?(dir_path)
 
