@@ -2534,6 +2534,13 @@
   - group: '4083'
     credits: 9
   has_exam: true
+'2045':
+  code: '2045'
+  name: GESTION DE SOFTWARE PARA EQUIPOS ALTAMENTE PERFORMANTES
+  subject_groups:
+  - group: '5082'
+    credits: 9
+  has_exam: false
 2107A:
   code: 2107A
   name: TALLER DE COMUNICACIÓN ORAL Y ESCRITA
@@ -3868,6 +3875,20 @@ CR10:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
+CS101:
+  code: CS101
+  name: ADMIN. Y GESTIÓN DE LAS ORGANIZACIONES I
+  subject_groups:
+  - group: '4066'
+    credits: 10
+  has_exam: false
+CS160:
+  code: CS160
+  name: ADMIN.Y GESTION DE LAS ORGANIZACIONES II
+  subject_groups:
+  - group: '4066'
+    credits: 10
+  has_exam: false
 D78A:
   code: D78A
   name: CIENCIA,TECNOLOGÍA, INNOVACIÓN, SOCIEDAD Y DESARROLLO
@@ -4912,6 +4933,13 @@ SRN50:
   - group: '4442'
     credits: 4
   has_exam: true
+SRN52:
+  code: SRN52
+  name: INTRODUCCIÓN A LA EXTENSION UNIVERSITARIA
+  subject_groups:
+  - group: '3582'
+    credits: 4
+  has_exam: false
 TIIO:
   code: TIIO
   name: TALLER INTR A LA INVEST DE OPERACIONES
