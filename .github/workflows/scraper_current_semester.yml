@@ -75,15 +75,3 @@ jobs:
         name: scraper_screenshot_${{ matrix.combo.degree_id }}_${{ matrix.combo.plan }}
         path: ./tmp/capybara
         retention-days: 5
-    - name: Send Slack notification
-      if: failure()
-      env:
-        RUN_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-        DEGREE_NAME: ${{ matrix.combo.name }}
-        PLAN: ${{ matrix.combo.plan }}
-      run: |
-        curl -X POST -H 'Content-type: application/json' \
-          --data '{
-            "text": "El Scraper de Current Semester Subjects de MiCarrera falló para '"$DEGREE_NAME"' (plan '"$PLAN"') - <'"$RUN_URL"'|logs>"
-          }' "${{ secrets.SLACK_WEBHOOK_URL }}"dns:
-              - ip
