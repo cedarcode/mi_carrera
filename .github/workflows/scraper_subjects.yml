@@ -6,8 +6,32 @@ on:
   workflow_dispatch:
 
 jobs:
-  scrape:
+  build-degree-plan-matrix:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: Build degree+plan matrix
+      id: set-matrix
+      run: |
+        matrix=$(ruby -ryaml -rjson -e '
+          degrees = YAML.load_file("config/degrees.yml")["shared"]
+          combos = degrees.flat_map do |degree|
+            degree["plans"].map { |plan| { degree_id: degree["id"], name: degree["name"], plan: plan } }
+          end
+          puts JSON.generate(combos)
+        ')
+        echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
+
+  scrape:
+    needs: build-degree-plan-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        combo: ${{ fromJson(needs.build-degree-plan-matrix.outputs.matrix) }}
+      fail-fast: false
     steps:
     - name: Generate a token
       id: generate-token
@@ -27,22 +51,26 @@ jobs:
     - name: Run scraper
       env:
         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+        DEGREE_ID: ${{ matrix.combo.degree_id }}
+        PLAN: ${{ matrix.combo.plan }}
+        DEGREE_NAME: ${{ matrix.combo.name }}
       run: |
-        bundle exec rake scraper:subjects
+        bundle exec rake "scraper:subjects[$DEGREE_ID,$PLAN]"
         sed -i -e 's/ $//' db/data/*/*/*.yml
         git add db/data
         if ! git diff --cached --quiet;
         then
+            BRANCH="scraper--subjects--${DEGREE_ID}-${PLAN}"
             git config --global user.email "micarrera@cedarcode.com"
             git config --global user.name "MiCarrera"
-            git commit -m 'chore: update scraped subjects data'
-            git push -f origin HEAD:scraper-subjects
-            if [ $(gh pr list --head scraper-subjects --json title --jq 'length') == '0' ];
+            git commit -m "chore: update scraped subjects data for ${DEGREE_NAME} - ${PLAN}"
+            git push -f origin "HEAD:${BRANCH}"
+            if [ $(gh pr list --head "$BRANCH" --json title --jq 'length') == '0' ];
             then
                 gh pr create \
-                    --title "Update scraped subjects data" \
-                    --body "This PR runs `rails scraper:subjects` to update scraped subjects' data" \
-                    --head scraper-subjects
+                    --title "Actualizar datos scrapeados de materias para ${DEGREE_NAME} - ${PLAN}" \
+                    --body "This PR runs \`rails scraper:subjects[${DEGREE_ID},${PLAN}]\` to update scraped subjects data for ${DEGREE_NAME} (plan ${PLAN})." \
+                    --head "$BRANCH"
             else
                 echo "A PR already exists and was correctly updated."
             fi
@@ -53,15 +81,17 @@ jobs:
       if: failure()
       uses: actions/upload-artifact@v6
       with:
-        name: scraper_screenshot
+        name: scraper_screenshot_${{ matrix.combo.degree_id }}_${{ matrix.combo.plan }}
         path: ./tmp/capybara
         retention-days: 5
     - name: Send Slack notification
       if: failure()
       env:
         RUN_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        DEGREE_NAME: ${{ matrix.combo.name }}
+        PLAN: ${{ matrix.combo.plan }}
       run: |
         curl -X POST -H 'Content-type: application/json' \
           --data '{
-            "text": "El Scraper de Subjects de MiCarrera falló - <'"$RUN_URL"'|logs>"
+            "text": "El Scraper de Subjects de MiCarrera falló para '"$DEGREE_NAME"' (plan '"$PLAN"') - <'"$RUN_URL"'|logs>"
           }' "${{ secrets.SLACK_WEBHOOK_URL }}"
