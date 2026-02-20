@@ -27,16 +27,20 @@ jobs:
     - name: Run scraper
       env:
         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-      run: |
-        bundle exec rake scraper:subjects
-        sed -i -e 's/ $//' db/data/*/*/*.yml
-        git add db/data
-        if ! git diff --cached --quiet;
-        then
-            git config --global user.email "micarrera@cedarcode.com"
-            git config --global user.name "MiCarrera"
-            git commit -m 'chore: update scraped subjects data'
-            git push -f origin HEAD:scraper-subjects
+      uses: nick-fields/retry@v3
+      with:
+        max_attempts: 3
+        timeout_minutes: 30
+        command: |
+          bundle exec rake scraper:subjects
+          sed -i -e 's/ $//' db/data/*/*/*.yml
+          git add db/data
+          if ! git diff --cached --quiet;
+          then
+              git config --global user.email "micarrera@cedarcode.com"
+              git config --global user.name "MiCarrera"
+              git commit -m 'chore: update scraped subjects data'
+              git push -f origin HEAD:scraper-subjects
     - name: Upload screenshots
       if: failure()
       uses: actions/upload-artifact@v6
