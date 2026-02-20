@@ -15,7 +15,10 @@
       <%= link_to "Subir Escolaridad", new_transcript_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
     <% end %>
     <% if Features::ChangingDegrees.enabled? %>
-      <%= link_to "Cambiar Carrera", edit_user_degrees_path, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>
+      <%= link_to edit_user_degrees_path, class: "flex items-center px-4 py-2 hover:bg-gray-100", tabindex: 0 do %>
+        Cambiar Carrera
+        <span class="ms-2 bg-purple-100 border text-primary text-[10px] uppercase rounded-full py-0.5 px-2">Nuevo</span>
+      <% end %>
     <% end %>
     <% if current_user %>
       <%= link_to "Salir", destroy_user_session_path, data: { turbo: true, turbo_method: :delete }, class: "block px-4 py-2 hover:bg-gray-100", tabindex: 0 %>

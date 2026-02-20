@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["menu", "trigger"];
+  static targets = ["menu", "trigger", "notificationDot"];
 
   connect() {
     // If the JS takes some time to load, it is possible to click on the
@@ -14,10 +14,22 @@ export default class extends Controller {
     // finding the button – that way capybara will only click on it when the
     // controller it's connected.
     this.triggerTarget.setAttribute("data-controller-connected", "true");
+
+    if (this.hasNotificationDotTarget && !localStorage.getItem("user_menu_seen")) {
+      this.notificationDotTarget.classList.remove("hidden");
+    }
   }
 
   toggle() {
     this.menuTarget.classList.toggle("hidden");
+    this.#dismissNotificationDot();
+  }
+
+  #dismissNotificationDot() {
+    if (this.hasNotificationDotTarget && !this.notificationDotTarget.classList.contains("hidden")) {
+      this.notificationDotTarget.classList.add("hidden");
+      localStorage.setItem("user_menu_seen", "true");
+    }
   }
 
   onClick() {
