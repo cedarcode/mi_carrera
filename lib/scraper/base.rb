@@ -20,6 +20,16 @@ module Scraper
       end
     end
 
+    def self.scrape_one(degree_id, plan)
+      configure_capybara
+
+      degree = Rails.configuration.degrees.find { |d| d[:id] == degree_id }
+      raise "Degree '#{degree_id}' not found in config/degrees.yml" unless degree
+      raise "Plan '#{plan}' not found for degree '#{degree_id}'" unless degree[:plans].include?(plan)
+
+      new(degree, plan).scrape
+    end
+
     def self.configure_capybara
       Capybara.register_driver :selenium_chrome_headless_large do |app|
         options = ::Selenium::WebDriver::Chrome::Options.new
