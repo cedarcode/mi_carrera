@@ -65,15 +65,6 @@ jobs:
             git config --global user.name "MiCarrera"
             git commit -m "chore: update scraped subjects data for ${DEGREE_NAME} - ${PLAN}"
             git push -f origin "HEAD:${BRANCH}"
-            if [ $(gh pr list --head "$BRANCH" --json title --jq 'length') == '0' ];
-            then
-                gh pr create \
-                    --title "Actualizar datos scrapeados de materias para ${DEGREE_NAME} - ${PLAN}" \
-                    --body "This PR runs \`rails scraper:subjects[${DEGREE_ID},${PLAN}]\` to update scraped subjects data for ${DEGREE_NAME} (plan ${PLAN})." \
-                    --head "$BRANCH"
-            else
-                echo "A PR already exists and was correctly updated."
-            fi
         else
             echo "There were no changes. Nothing to do."
         fi
