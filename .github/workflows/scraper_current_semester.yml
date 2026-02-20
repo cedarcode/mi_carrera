@@ -56,24 +56,20 @@ jobs:
         DEGREE_ID: ${{ matrix.combo.degree_id }}
         PLAN: ${{ matrix.combo.plan }}
         DEGREE_NAME: ${{ matrix.combo.name }}
-      uses: nick-fields/retry@v3
-      with:
-        max_attempts: 3
-        timeout_minutes: 30
-        command: |
-          bundle exec rake "scraper:current_semester[$DEGREE_ID,$PLAN]"
-          sed -i -e 's/ $//' db/data/*/*/*.yml
-          git add db/data
-          if ! git diff --cached --quiet;
-          then
-              BRANCH="scraper--current-semester--${DEGREE_ID}-${PLAN}"
-              git config --global user.email "micarrera@cedarcode.com"
-              git config --global user.name "MiCarrera"
-              git commit -m "chore: update scraped current semester subjects data for ${DEGREE_NAME} - ${PLAN}"
-              git push -f origin "HEAD:${BRANCH}"
-          else
-              echo "There were no changes. Nothing to do."
-          fi
+      run: |
+        bundle exec rake "scraper:current_semester[$DEGREE_ID,$PLAN]"
+        sed -i -e 's/ $//' db/data/*/*/*.yml
+        git add db/data
+        if ! git diff --cached --quiet;
+        then
+            BRANCH="scraper--current-semester--${DEGREE_ID}-${PLAN}"
+            git config --global user.email "micarrera@cedarcode.com"
+            git config --global user.name "MiCarrera"
+            git commit -m "chore: update scraped current semester subjects data for ${DEGREE_NAME} - ${PLAN}"
+            git push -f origin "HEAD:${BRANCH}"
+        else
+            echo "There were no changes. Nothing to do."
+        fi
     - name: Upload screenshots
       if: failure()
       uses: actions/upload-artifact@v6
