@@ -25,30 +25,34 @@ jobs:
         bundler-cache: true
 
     - name: Run scraper
+      uses: nick-fields/retry@v3
       env:
         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-      run: |
-        bundle exec rake scraper:subjects
-        sed -i -e 's/ $//' db/data/*/*/*.yml
-        git add db/data
-        if ! git diff --cached --quiet;
-        then
-            git config --global user.email "micarrera@cedarcode.com"
-            git config --global user.name "MiCarrera"
-            git commit -m 'chore: update scraped subjects data'
-            git push -f origin HEAD:scraper-subjects
-            if [ $(gh pr list --head scraper-subjects --json title --jq 'length') == '0' ];
-            then
-                gh pr create \
-                    --title "Update scraped subjects data" \
-                    --body "This PR runs `rails scraper:subjects` to update scraped subjects' data" \
-                    --head scraper-subjects
-            else
-                echo "A PR already exists and was correctly updated."
-            fi
-        else
-            echo "There were no changes. Nothing to do."
-        fi
+      with:
+        timeout_minutes: 30
+        max_attempts: 3
+        command: |
+          bundle exec rake scraper:subjects
+          sed -i -e 's/ $//' db/data/*/*/*.yml
+          git add db/data
+          if ! git diff --cached --quiet;
+          then
+              git config --global user.email "micarrera@cedarcode.com"
+              git config --global user.name "MiCarrera"
+              git commit -m 'chore: update scraped subjects data'
+              git push -f origin HEAD:scraper-subjects
+              if [ $(gh pr list --head scraper-subjects --json title --jq 'length') == '0' ];
+              then
+                  gh pr create \
+                      --title "Update scraped subjects data" \
+                      --body "This PR runs `rails scraper:subjects` to update scraped subjects' data" \
+                      --head scraper-subjects
+              else
+                  echo "A PR already exists and was correctly updated."
+              fi
+          else
+              echo "There were no changes. Nothing to do."
+          fi
     - name: Upload screenshots
       if: failure()
       uses: actions/upload-artifact@v6
