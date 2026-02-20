@@ -4,7 +4,8 @@ require 'scraper/prerequisites_tree_page'
 module Scraper
   class SubjectsScraper < Base
     # 5265 - CIENCIAS HUMANAS Y SOCIALES - min: 10 créditos
-    GROUP_CODE_NAME_CREDITS_REGEX = /\A(\w+) - (.+) - (?:min): (\d+)(?: créditos)\z/
+    # I.I - MATEMÁTICA Y CIENCIAS EXPERIMENTALES - min: 50 créditos
+    GROUP_CODE_NAME_CREDITS_REGEX = /\A([\w.]+) - (.+) - (?:min): (\d+)(?: créditos)\z/
     # SRN14 - MATEMÁTICA DISCRETA I - créditos: 10
     # FF1-7 - CREDITOS ASIGNADOS POR REVALIDA - créditos: 7
     # FL2.6 - CREDITOS ASIGANDOS POR REVALIDA - créditos: 6
