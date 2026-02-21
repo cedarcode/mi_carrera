@@ -1,0 +1,587 @@
+---
+'01':
+  code: '01'
+  name: MAT. 01 (ANÁLISIS I)
+  has_exam: true
+  subject_groups: []
+'101':
+  code: '101'
+  name: MATEMÁTICA 101 (ANÁLISIS I)
+  has_exam: true
+  subject_groups: []
+'1020':
+  code: '1020'
+  name: CALCULO 1
+  has_exam: true
+  subject_groups: []
+1020P:
+  code: 1020P
+  name: CREDITOS NO ACUM CALCULO 1
+  has_exam: true
+  subject_groups: []
+1020R:
+  code: 1020R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+'1021':
+  code: '1021'
+  name: ALGEBRA LINEAL
+  has_exam: true
+  subject_groups: []
+'1022':
+  code: '1022'
+  name: CALCULO 2
+  has_exam: true
+  subject_groups: []
+1022P:
+  code: 1022P
+  name: CREDITOS NO ACUM CALCULO 2
+  has_exam: true
+  subject_groups: []
+1022T:
+  code: 1022T
+  name: CREDITOS POR CALCULO 2
+  has_exam: true
+  subject_groups: []
+'1023':
+  code: '1023'
+  name: MATEMATICA DISCRETA 1
+  has_exam: true
+  subject_groups: []
+1023P:
+  code: 1023P
+  name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+  has_exam: true
+  subject_groups: []
+'1024':
+  code: '1024'
+  name: CALCULO 3
+  has_exam: true
+  subject_groups: []
+1024P:
+  code: 1024P
+  name: CREDITOS NO ACUM CALCULO 3
+  has_exam: true
+  subject_groups: []
+'1025':
+  code: '1025'
+  name: PROBABILIDAD Y ESTADISTICA
+  subject_groups:
+  - group: I.I
+    credits: 10
+  has_exam: true
+1025P:
+  code: 1025P
+  name: CREDITOS NO ACUM PROB Y EST.
+  has_exam: true
+  subject_groups: []
+1025T:
+  code: 1025T
+  name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
+  has_exam: true
+  subject_groups: []
+'1028':
+  code: '1028'
+  name: ECUACIONES DIFERENCIALES
+  has_exam: false
+  subject_groups: []
+1028M:
+  code: 1028M
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+1028P:
+  code: 1028P
+  name: CREDITOS NO ACUM EC. DIFERENCIALES
+  has_exam: false
+  subject_groups: []
+'1030':
+  code: '1030'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  subject_groups:
+  - group: I.I
+    credits: 9
+  has_exam: true
+1030P:
+  code: 1030P
+  name: CREDITOS NO ACUM GAL1
+  has_exam: true
+  subject_groups: []
+'1031':
+  code: '1031'
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  subject_groups:
+  - group: I.I
+    credits: 9
+  has_exam: true
+1031P:
+  code: 1031P
+  name: CREDITOS NO ACUM GAL2
+  has_exam: true
+  subject_groups: []
+'1036':
+  code: '1036'
+  name: FUNCIONES DE VARIABLE COMPLEJA
+  has_exam: true
+  subject_groups: []
+1036R:
+  code: 1036R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+'1052':
+  code: '1052'
+  name: CALCULO 1 (ANUAL)
+  has_exam: true
+  subject_groups: []
+'1053':
+  code: '1053'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+  has_exam: true
+  subject_groups: []
+'1058':
+  code: '1058'
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  has_exam: true
+  subject_groups: []
+'1061':
+  code: '1061'
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  subject_groups:
+  - group: I.I
+    credits: 13
+  has_exam: true
+1061I:
+  code: 1061I
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  has_exam: true
+  subject_groups: []
+1061P:
+  code: 1061P
+  name: CREDITOS NO ACUM CDIV
+  has_exam: true
+  subject_groups: []
+1061R:
+  code: 1061R
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  has_exam: true
+  subject_groups: []
+'1062':
+  code: '1062'
+  name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+  subject_groups:
+  - group: I.I
+    credits: 13
+  has_exam: true
+1062P:
+  code: 1062P
+  name: CREDITOS NO ACUM CDIVV
+  has_exam: true
+  subject_groups: []
+'1063':
+  code: '1063'
+  name: CALCULO VECTORIAL
+  subject_groups:
+  - group: I.I
+    credits: 10
+  has_exam: true
+1063P:
+  code: 1063P
+  name: CREDITOS NO ACUM CAL. VECTORIAL
+  has_exam: true
+  subject_groups: []
+'1064':
+  code: '1064'
+  name: INT. A LAS ECUACIONES DIFERENCIALES
+  subject_groups:
+  - group: I.I
+    credits: 10
+  has_exam: true
+'1066':
+  code: '1066'
+  name: FUNCIONES DE VARIABLE COMPLEJA
+  subject_groups:
+  - group: I.I
+    credits: 5
+  has_exam: true
+'1070':
+  code: '1070'
+  name: CALCULO 1
+  has_exam: true
+  subject_groups: []
+'1071':
+  code: '1071'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  has_exam: true
+  subject_groups: []
+'1072':
+  code: '1072'
+  name: CALCULO 2
+  has_exam: true
+  subject_groups: []
+'1074':
+  code: '1074'
+  name: ECUACIONES DIFERENCIALES
+  has_exam: false
+  subject_groups: []
+'1076':
+  code: '1076'
+  name: CALCULO 3
+  has_exam: true
+  subject_groups: []
+107L:
+  code: 107L
+  name: CALCULO 1
+  has_exam: true
+  subject_groups: []
+108L:
+  code: 108L
+  name: CALCULO 2
+  has_exam: true
+  subject_groups: []
+'1221':
+  code: '1221'
+  name: ECONOMIA
+  has_exam: false
+  subject_groups: []
+'1224':
+  code: '1224'
+  name: ECONOMIA
+  subject_groups:
+  - group: III.II
+    credits: 7
+  has_exam: true
+1224P:
+  code: 1224P
+  name: CREDITOS NO ACUM ECONOMIA
+  has_exam: false
+  subject_groups: []
+158Q:
+  code: 158Q
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  has_exam: true
+  subject_groups: []
+170Q:
+  code: 170Q
+  name: CALCULO 1
+  has_exam: true
+  subject_groups: []
+171L:
+  code: 171L
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  has_exam: true
+  subject_groups: []
+171Q:
+  code: 171Q
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  has_exam: true
+  subject_groups: []
+172Q:
+  code: 172Q
+  name: CALCULO 2
+  has_exam: true
+  subject_groups: []
+176Q:
+  code: 176Q
+  name: CALCULO 3
+  has_exam: true
+  subject_groups: []
+'1886':
+  code: '1886'
+  name: TOPOLOGIA Y ANALISIS REAL
+  subject_groups:
+  - group: I.I
+    credits: 10
+  has_exam: false
+'2043':
+  code: '2043'
+  name: INTRODUCCIÓN A LA COMPUTACIÓN
+  subject_groups:
+  - group: II.V
+    credits: 5
+  has_exam: false
+'2044':
+  code: '2044'
+  name: FUNDAMENTOS DE LA COMBINATORIA
+  subject_groups:
+  - group: I.II
+    credits: 9
+  has_exam: true
+CAL10:
+  code: CAL10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+CAL12:
+  code: CAL12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+CH201:
+  code: CH201
+  name: PROBABILIDAD Y ESTADÍSTICA
+  subject_groups:
+  - group: I.I
+    credits: 10
+  has_exam: false
+CIM10:
+  code: CIM10
+  name: CÁLCULO VECTORIAL
+  subject_groups:
+  - group: I.I
+    credits: 12
+  has_exam: false
+CIM22:
+  code: CIM22
+  name: TOPOLOGÍA
+  subject_groups:
+  - group: I.I
+    credits: 12
+  has_exam: false
+CIM24:
+  code: CIM24
+  name: ECUACIONES DIFERENCIALES
+  subject_groups:
+  - group: I.I
+    credits: 10
+  has_exam: false
+CM14:
+  code: CM14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+CP1:
+  code: CP1
+  name: ANALISIS MATEMATICO I
+  has_exam: true
+  subject_groups: []
+CP2:
+  code: CP2
+  name: GEOMETRIA Y ALGEBRA LINEAL
+  has_exam: true
+  subject_groups: []
+CP20:
+  code: CP20
+  name: ECONOMIA POLITICA
+  has_exam: false
+  subject_groups: []
+CP22:
+  code: CP22
+  name: ANALISIS MATEMATICO I (P. 74)
+  has_exam: true
+  subject_groups: []
+CP23:
+  code: CP23
+  name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+  has_exam: true
+  subject_groups: []
+CP25:
+  code: CP25
+  name: ANALISIS MATEMATICO II (P. 74)
+  has_exam: true
+  subject_groups: []
+CP44:
+  code: CP44
+  name: ANALISIS MATEMATICO I (1ER.SEM.)
+  has_exam: true
+  subject_groups: []
+CP45:
+  code: CP45
+  name: ANALISIS MATEMATICO I (2DO.SEM.)
+  has_exam: false
+  subject_groups: []
+CP46:
+  code: CP46
+  name: GEOMETRIA Y ALGEBRA LINEAL (1ER.SEM.)
+  has_exam: true
+  subject_groups: []
+CP47:
+  code: CP47
+  name: GEOMETRIA Y ALGEBRA LINEAL (2DO.SEM.)
+  has_exam: false
+  subject_groups: []
+CP48:
+  code: CP48
+  name: ANALISIS MATEMATICO II (1ER.SEM.)
+  has_exam: false
+  subject_groups: []
+CP49:
+  code: CP49
+  name: ANALISIS MATEMATICO II (2DO.SEM.)
+  has_exam: true
+  subject_groups: []
+CP6:
+  code: CP6
+  name: ANALISIS MATEMATICO II
+  has_exam: true
+  subject_groups: []
+CP7:
+  code: CP7
+  name: ANALISIS COMPLEJO
+  has_exam: true
+  subject_groups: []
+GAL1P:
+  code: GAL1P
+  name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+  has_exam: true
+  subject_groups: []
+GAL7:
+  code: GAL7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M12:
+  code: M12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M13:
+  code: M13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M14:
+  code: M14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M24:
+  code: M24
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M9:
+  code: M9
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA09:
+  code: MA09
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+MA10:
+  code: MA10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+MA11:
+  code: MA11
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA16:
+  code: MA16
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA20:
+  code: MA20
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA25:
+  code: MA25
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA29:
+  code: MA29
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA47:
+  code: MA47
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA5:
+  code: MA5
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+MA51:
+  code: MA51
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA7:
+  code: MA7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA9:
+  code: MA9
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+MAT14:
+  code: MAT14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MAT33:
+  code: MAT33
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MC13:
+  code: MC13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MC3:
+  code: MC3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MI2:
+  code: MI2
+  name: MATEMATICA INICIAL
+  subject_groups:
+  - group: I.I
+    credits: 4
+  has_exam: true
+SRN02:
+  code: SRN02
+  name: CÁLCULO I
+  subject_groups:
+  - group: I.I
+    credits: 16
+  has_exam: false
+SRN03:
+  code: SRN03
+  name: ALGEBRA LINEAL I
+  subject_groups:
+  - group: I.I
+    credits: 12
+  has_exam: false
+SRN09:
+  code: SRN09
+  name: CÁLCULO II
+  subject_groups:
+  - group: I.I
+    credits: 16
+  has_exam: false
+SRN10:
+  code: SRN10
+  name: ALGEBRA LINEAL II
+  subject_groups:
+  - group: I.I
+    credits: 12
+  has_exam: false
+SRN13:
+  code: SRN13
+  name: ECONOMÍA POLÍTICA
+  subject_groups:
+  - group: III.II
+    credits: 10
+  has_exam: false
+SRN45:
+  code: SRN45
+  name: MATEMATICA INICIAL-OPTATIVA
+  subject_groups:
+  - group: I.I
+    credits: 4
+  has_exam: false
