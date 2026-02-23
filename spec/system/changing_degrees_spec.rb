@@ -60,9 +60,9 @@ RSpec.describe 'Changing degrees', type: :system do
       click_on 'Cambiar Carrera'
 
       expect(page).to have_select('degree_plan_id',
-        with_options: ['Ingeniería en Computación - Plan 2025'])
+                                  with_options: ['Ingeniería en Computación - Plan 2025'])
       expect(page).not_to have_select('degree_plan_id',
-        with_options: ['Ingeniería en Sistemas - Plan 2025'])
+                                      with_options: ['Ingeniería en Sistemas - Plan 2025'])
     end
   end
 
