@@ -21,6 +21,16 @@ RSpec.describe DegreePlan, type: :model do
     end
   end
 
+  describe '.visible' do
+    let!(:visible_plan) { create(:degree_plan) }
+    let!(:hidden_plan) { create(:degree_plan, hidden: true) }
+
+    it 'excludes hidden plans' do
+      expect(described_class.visible).to include(visible_plan)
+      expect(described_class.visible).not_to include(hidden_plan)
+    end
+  end
+
   describe '.default' do
     context 'when computacion degree exists with active plan' do
       it 'returns the active degree plan for default subject' do

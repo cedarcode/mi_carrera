@@ -51,6 +51,19 @@ RSpec.describe 'Changing degrees', type: :system do
 
       expect(user.reload.degree_plan).to eq(sistemas_degree_plan)
     end
+
+    it 'does not show hidden plans in the picker' do
+      sistemas_degree_plan.update!(hidden: true)
+
+      visit root_path
+      click_user_menu
+      click_on 'Cambiar Carrera'
+
+      expect(page).to have_select('degree_plan_id',
+        with_options: ['Ingeniería en Computación - Plan 2025'])
+      expect(page).not_to have_select('degree_plan_id',
+        with_options: ['Ingeniería en Sistemas - Plan 2025'])
+    end
   end
 
   context 'when feature is disabled' do

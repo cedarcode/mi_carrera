@@ -3,7 +3,7 @@ module Users
     before_action :ensure_feature_enabled!
 
     def edit
-      @degree_plans = DegreePlan.includes(:degree)
+      @degree_plans = DegreePlan.visible.includes(:degree)
     end
 
     def update
