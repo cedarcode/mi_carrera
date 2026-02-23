@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-matrix:
+  build-degree-plan-matrix:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -28,11 +28,11 @@ jobs:
         echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
 
   scrape:
-    needs: build-matrix
+    needs: build-degree-plan-matrix
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        combo: ${{ fromJson(needs.build-matrix.outputs.matrix) }}
+        combo: ${{ fromJson(needs.build-degree-plan-matrix.outputs.matrix) }}
       fail-fast: false
     steps:
     - name: Generate a token
