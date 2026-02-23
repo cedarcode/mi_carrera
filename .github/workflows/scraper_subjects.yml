@@ -18,11 +18,9 @@ jobs:
       run: |
         matrix=$(ruby -ryaml -rjson -e '
           degrees = YAML.load_file("config/degrees.yml")["shared"]
-          combos = degrees.flat_map { |degree|
-            degree["plans"].map { |plan|
-              { degree_id: degree["id"], name: degree["name"], plan: plan }
-            }
-          }
+          combos = degrees.flat_map do |degree|
+            degree["plans"].map { |plan| { degree_id: degree["id"], name: degree["name"], plan: plan } }
+          end
           puts JSON.generate(combos)
         ')
         echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
