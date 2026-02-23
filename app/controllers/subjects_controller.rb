@@ -28,7 +28,7 @@ class SubjectsController < ApplicationController
   private
 
   def subject
-    @subject ||= degree_subjects.find(params[:id])
+    @subject ||= Subject.find(params[:id])
   end
 
   def degree_subjects
