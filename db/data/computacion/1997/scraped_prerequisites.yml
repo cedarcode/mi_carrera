@@ -12342,11 +12342,11 @@
         operands:
         - type: subject
           needs: course
-          subject_needed_code: '1650'
+          subject_needed_code: '1610'
           subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
         - type: subject
           needs: course
-          subject_needed_code: '1610'
+          subject_needed_code: '1650'
           subject_needed_name: INT. A LA INVESTIGACION DE OPERACIONES
       - type: logical
         logical_operator: or
@@ -12396,32 +12396,39 @@
         credits: 365
       - type: subject
         needs: course
-        subject_needed_code: '1033'
-        subject_needed_name: METODOS NUMERICOS
-      - type: subject
-        needs: course
-        subject_needed_code: '1325'
-        subject_needed_name: TEORIA DE LENGUAJES
-      - type: subject
-        needs: course
-        subject_needed_code: '1721'
-        subject_needed_name: PROYECTO DE INGENIERIA DE SOFTWARE
-      - type: subject
-        needs: course
-        subject_needed_code: '1327'
-        subject_needed_name: TALLER DE PROGRAMACION
-      - type: subject
-        needs: course
-        subject_needed_code: '1911'
-        subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+        subject_needed_code: '1324'
+        subject_needed_name: PROGRAMACION 4
       - type: subject
         needs: course
         subject_needed_code: '1323'
         subject_needed_name: PROGRAMACION 3
       - type: subject
         needs: course
-        subject_needed_code: '1324'
-        subject_needed_name: PROGRAMACION 4
+        subject_needed_code: '1911'
+        subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      - type: subject
+        needs: course
+        subject_needed_code: '1327'
+        subject_needed_name: TALLER DE PROGRAMACION
+      - type: subject
+        needs: course
+        subject_needed_code: '1721'
+        subject_needed_name: PROYECTO DE INGENIERIA DE SOFTWARE
+      - type: subject
+        needs: course
+        subject_needed_code: '1325'
+        subject_needed_name: TEORIA DE LENGUAJES
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: '1716'
+          subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+          needs: course
+        - type: subject
+          subject_needed_code: '1783'
+          subject_needed_name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+          needs: course
       - type: logical
         logical_operator: or
         operands:
@@ -12445,12 +12452,12 @@
         logical_operator: or
         operands:
         - type: subject
-          subject_needed_code: '1716'
-          subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+          subject_needed_code: '1033'
+          subject_needed_name: METODOS NUMERICOS
           needs: course
         - type: subject
-          subject_needed_code: '1783'
-          subject_needed_name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+          subject_needed_code: '2041'
+          subject_needed_name: METODOS NUMERICOS
           needs: course
     - type: logical
       logical_operator: and
@@ -12458,35 +12465,35 @@
       - type: credits
         credits: 330
       - type: credits
-        credits: 10
-        group: 5082
+        credits: 70
+        group: 4083
       - type: credits
         credits: 10
-        group: 4815
-      - type: credits
-        credits: 10
-        group: 4647
-      - type: credits
-        credits: 60
-        group: 4580
-      - type: credits
-        credits: 15
-        group: 4756
-      - type: credits
-        credits: 8
-        group: 5020
-      - type: credits
-        credits: 10
-        group: 4066
+        group: 5265
       - type: credits
         credits: 30
         group: 4428
       - type: credits
         credits: 10
-        group: 5265
+        group: 4066
       - type: credits
-        credits: 70
-        group: 4083
+        credits: 8
+        group: 5020
+      - type: credits
+        credits: 15
+        group: 4756
+      - type: credits
+        credits: 60
+        group: 4580
+      - type: credits
+        credits: 10
+        group: 4647
+      - type: credits
+        credits: 10
+        group: 4815
+      - type: credits
+        credits: 10
+        group: 5082
     - type: credits
       credits: 380
   subject_code: '1730'
