@@ -32,6 +32,7 @@ jobs:
         timeout_minutes: 30
         max_attempts: 3
         command: |
+          set -e
           bundle exec rake scraper:current_semester
           sed -i -e 's/ $//' db/data/*/*/*.yml
           git add db/data
