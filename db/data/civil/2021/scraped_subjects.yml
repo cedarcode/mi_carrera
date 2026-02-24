@@ -1,0 +1,4377 @@
+---
+'01':
+  code: '01'
+  name: MAT. 01 (ANÁLISIS I)
+  has_exam: true
+  subject_groups: []
+'0401':
+  code: '0401'
+  name: RESISTENCIA DE MATERIALES II
+  has_exam: true
+  subject_groups: []
+'0402':
+  code: '0402'
+  name: FUNDAMENTOS DE CONSTRUCCION
+  has_exam: true
+  subject_groups: []
+'0403':
+  code: '0403'
+  name: HORMIGON ARMADO I
+  has_exam: true
+  subject_groups: []
+'0404':
+  code: '0404'
+  name: GEOTECNICA I
+  has_exam: true
+  subject_groups: []
+'0405':
+  code: '0405'
+  name: MATERIALES Y ENSAYOS
+  has_exam: true
+  subject_groups: []
+'0502':
+  code: '0502'
+  name: GEOTECNICA II
+  has_exam: true
+  subject_groups: []
+'0506':
+  code: '0506'
+  name: TRANSPORTE
+  has_exam: false
+  subject_groups: []
+'0508':
+  code: '0508'
+  name: CONSTRUCCION PARA ESTRUCTURAS
+  has_exam: true
+  subject_groups: []
+'0510':
+  code: '0510'
+  name: HORMIGON ARMADO II
+  has_exam: true
+  subject_groups: []
+'0511':
+  code: '0511'
+  name: PROYECTO ESTRUCTURAL I
+  has_exam: true
+  subject_groups: []
+'0513':
+  code: '0513'
+  name: FUNDAMENTOS DE INGENIERIA AMBIENTAL
+  has_exam: true
+  subject_groups: []
+'06':
+  code: '06'
+  name: MAT. 06 (CÁLCULO NUMÉRICO)
+  has_exam: false
+  subject_groups: []
+'0607':
+  code: '0607'
+  name: PUENTES
+  subject_groups:
+  - group: '5168'
+    credits: 15
+  has_exam: false
+'0608':
+  code: '0608'
+  name: COSTOS
+  has_exam: true
+  subject_groups: []
+'0629':
+  code: '0629'
+  name: INT. A LA MAMPOSTERIA ESTRUCTURAL
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: false
+'101':
+  code: '101'
+  name: MATEMÁTICA 101 (ANÁLISIS I)
+  has_exam: true
+  subject_groups: []
+'1020':
+  code: '1020'
+  name: CALCULO 1
+  subject_groups:
+  - group: '4886'
+    credits: 16
+  has_exam: true
+1020P:
+  code: 1020P
+  name: CREDITOS NO ACUM CALCULO 1
+  has_exam: true
+  subject_groups: []
+1020R:
+  code: 1020R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: true
+'1021':
+  code: '1021'
+  name: ALGEBRA LINEAL
+  subject_groups:
+  - group: '4886'
+    credits: 18
+  has_exam: true
+'1022':
+  code: '1022'
+  name: CALCULO 2
+  subject_groups:
+  - group: '4886'
+    credits: 16
+  has_exam: true
+1022P:
+  code: 1022P
+  name: CREDITOS NO ACUM CALCULO 2
+  has_exam: true
+  subject_groups: []
+1022T:
+  code: 1022T
+  name: CREDITOS POR CALCULO 2
+  has_exam: true
+  subject_groups: []
+'1024':
+  code: '1024'
+  name: CALCULO 3
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: true
+1024P:
+  code: 1024P
+  name: CREDITOS NO ACUM CALCULO 3
+  has_exam: true
+  subject_groups: []
+'1025':
+  code: '1025'
+  name: PROBABILIDAD Y ESTADISTICA
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: true
+1025P:
+  code: 1025P
+  name: CREDITOS NO ACUM PROB Y EST.
+  has_exam: true
+  subject_groups: []
+1025T:
+  code: 1025T
+  name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
+  has_exam: false
+  subject_groups: []
+'1028':
+  code: '1028'
+  name: ECUACIONES DIFERENCIALES
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: true
+1028M:
+  code: 1028M
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+1028P:
+  code: 1028P
+  name: CREDITOS NO ACUM EC. DIFERENCIALES
+  has_exam: true
+  subject_groups: []
+1028R:
+  code: 1028R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 8
+  has_exam: true
+'1030':
+  code: '1030'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  subject_groups:
+  - group: '4886'
+    credits: 9
+  has_exam: true
+1030P:
+  code: 1030P
+  name: CREDITOS NO ACUM GAL1
+  has_exam: true
+  subject_groups: []
+'1031':
+  code: '1031'
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  subject_groups:
+  - group: '4886'
+    credits: 9
+  has_exam: true
+1031A:
+  code: 1031A
+  name: GEOMETRIA Y ALGEBRA LINEAL 2 (AREA)
+  has_exam: true
+  subject_groups: []
+1031P:
+  code: 1031P
+  name: CREDITOS NO ACUM GAL2
+  has_exam: true
+  subject_groups: []
+'1033':
+  code: '1033'
+  name: METODOS NUMERICOS
+  subject_groups:
+  - group: '4985'
+    credits: 8
+  has_exam: true
+1033P:
+  code: 1033P
+  name: CREDITOS NO ACUM METODOS NUMERICOS
+  has_exam: true
+  subject_groups: []
+'1047':
+  code: '1047'
+  name: MET. DE SIMUL.COMPUTAC.APLIC.A SIST.F I
+  subject_groups:
+  - group: '4985'
+    credits: 8
+  has_exam: false
+'1052':
+  code: '1052'
+  name: CALCULO 1 (ANUAL)
+  subject_groups:
+  - group: '4886'
+    credits: 16
+  has_exam: true
+'1053':
+  code: '1053'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+  subject_groups:
+  - group: '4886'
+    credits: 9
+  has_exam: true
+'1058':
+  code: '1058'
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  subject_groups:
+  - group: '4886'
+    credits: 9
+  has_exam: true
+'1061':
+  code: '1061'
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  subject_groups:
+  - group: '4886'
+    credits: 13
+  has_exam: true
+1061P:
+  code: 1061P
+  name: CREDITOS NO ACUM CDIV
+  has_exam: true
+  subject_groups: []
+1061R:
+  code: 1061R
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  has_exam: true
+  subject_groups: []
+'1062':
+  code: '1062'
+  name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+  subject_groups:
+  - group: '4886'
+    credits: 13
+  has_exam: true
+1062A:
+  code: 1062A
+  name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES (AREA)
+  has_exam: true
+  subject_groups: []
+1062P:
+  code: 1062P
+  name: CREDITOS NO ACUM CDIVV
+  has_exam: true
+  subject_groups: []
+'1063':
+  code: '1063'
+  name: CALCULO VECTORIAL
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: true
+1063A:
+  code: 1063A
+  name: CALCULO VECTORIAL (AREA)
+  has_exam: true
+  subject_groups: []
+1063P:
+  code: 1063P
+  name: CREDITOS NO ACUM CAL. VECTORIAL
+  has_exam: true
+  subject_groups: []
+'1064':
+  code: '1064'
+  name: INT. A LAS ECUACIONES DIFERENCIALES
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: true
+'1070':
+  code: '1070'
+  name: CALCULO 1
+  subject_groups:
+  - group: '4886'
+    credits: 16
+  has_exam: true
+'1071':
+  code: '1071'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  subject_groups:
+  - group: '4886'
+    credits: 9
+  has_exam: true
+'1072':
+  code: '1072'
+  name: CALCULO 2
+  subject_groups:
+  - group: '4886'
+    credits: 16
+  has_exam: true
+'1073':
+  code: '1073'
+  name: FISICA TERMICA
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+'1074':
+  code: '1074'
+  name: ECUACIONES DIFERENCIALES
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: true
+'1075':
+  code: '1075'
+  name: PROBABILIDAD Y ESTADISTICA
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: true
+'1076':
+  code: '1076'
+  name: CALCULO 3
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: true
+'1077':
+  code: '1077'
+  name: FISICA 2
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+'1078':
+  code: '1078'
+  name: MECANICA NEWTONIANA
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+'1079':
+  code: '1079'
+  name: METODOS NUMERICOS
+  subject_groups:
+  - group: '4985'
+    credits: 8
+  has_exam: true
+107L:
+  code: 107L
+  name: CALCULO 1
+  has_exam: true
+  subject_groups: []
+108L:
+  code: 108L
+  name: CALCULO 2
+  has_exam: true
+  subject_groups: []
+'1120':
+  code: '1120'
+  name: FISICA GENERAL 1
+  subject_groups:
+  - group: '4819'
+    credits: 13
+  has_exam: true
+'1121':
+  code: '1121'
+  name: FISICA GENERAL 2
+  subject_groups:
+  - group: '4819'
+    credits: 13
+  has_exam: true
+'1122':
+  code: '1122'
+  name: MECANICA NEWTONIANA
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+1122P:
+  code: 1122P
+  name: CREDITOS NO ACUM MEC NEWTONIANA
+  has_exam: true
+  subject_groups: []
+'1123':
+  code: '1123'
+  name: FISICA TERMICA
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+'1124':
+  code: '1124'
+  name: LABORATORIO 1
+  subject_groups:
+  - group: '4819'
+    credits: 2
+  has_exam: false
+1124I:
+  code: 1124I
+  name: LABORATORIO 1
+  subject_groups:
+  - group: '4819'
+    credits: 2
+  has_exam: false
+'1126':
+  code: '1126'
+  name: MEC.DE SIST.Y FENOMENOS ONDULATORIOS
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+'1127':
+  code: '1127'
+  name: LABORATORIO 2
+  subject_groups:
+  - group: '4819'
+    credits: 2
+  has_exam: false
+'1128':
+  code: '1128'
+  name: ELECTROMAGNETISMO
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+1128P:
+  code: 1128P
+  name: CREDITOS NO ACUM ELECTROMAGNETISMO
+  has_exam: true
+  subject_groups: []
+'1130':
+  code: '1130'
+  name: FISICA DE LAS RADIACIONES IONIZANTES
+  subject_groups:
+  - group: '4819'
+    credits: 12
+  has_exam: false
+'1131':
+  code: '1131'
+  name: INT. A LA FISICA MODERNA
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+1131I:
+  code: 1131I
+  name: INT. A LA FISICA MODERNA
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+'1132':
+  code: '1132'
+  name: MODULO DE TRANSFERENCIA DE CALOR
+  subject_groups:
+  - group: '4819'
+    credits: 2
+  has_exam: false
+'1133':
+  code: '1133'
+  name: MODULO DE TERMODINAMICA ESTADISTICA
+  subject_groups:
+  - group: '4819'
+    credits: 2
+  has_exam: false
+'1134':
+  code: '1134'
+  name: MODULO DE AIRE HUMEDO
+  subject_groups:
+  - group: '4819'
+    credits: 2
+  has_exam: false
+'1135':
+  code: '1135'
+  name: MODULO DE CICLOS TERMODINAMICOS
+  subject_groups:
+  - group: '4819'
+    credits: 2
+  has_exam: false
+'1138':
+  code: '1138'
+  name: INT. A LA FISICA MODERNA
+  subject_groups:
+  - group: '4819'
+    credits: 8
+  has_exam: true
+'1139':
+  code: '1139'
+  name: MODULO DE ACUSTICA
+  subject_groups:
+  - group: '4819'
+    credits: 4
+  has_exam: false
+'1140':
+  code: '1140'
+  name: LABORATORIO 3
+  subject_groups:
+  - group: '4819'
+    credits: 4
+  has_exam: false
+'1141':
+  code: '1141'
+  name: LABORATORIO DE FISICA MODERNA
+  subject_groups:
+  - group: '4819'
+    credits: 2
+  has_exam: false
+'1143':
+  code: '1143'
+  name: ACUSTICA
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: false
+'1144':
+  code: '1144'
+  name: VIBRACIONES Y ONDAS
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+'1151':
+  code: '1151'
+  name: FISICA 1
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+1151P:
+  code: 1151P
+  name: CREDITOS NO ACUM FISICA 1
+  has_exam: true
+  subject_groups: []
+'1152':
+  code: '1152'
+  name: FISICA 2
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+1152P:
+  code: 1152P
+  name: CREDITOS NO ACUM FISICA 2
+  has_exam: true
+  subject_groups: []
+'1153':
+  code: '1153'
+  name: FISICA 3
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+1153P:
+  code: 1153P
+  name: CREDITOS NO ACUM FISICA 3
+  has_exam: true
+  subject_groups: []
+'1154':
+  code: '1154'
+  name: FISICA EXPERIMENTAL 1
+  subject_groups:
+  - group: '4819'
+    credits: 5
+  has_exam: false
+1154I:
+  code: 1154I
+  name: FISICA EXPERIMENTAL 1
+  subject_groups:
+  - group: '4819'
+    credits: 5
+  has_exam: true
+1154P:
+  code: 1154P
+  name: CREDITOS NO ACUM FISICA EXPERIMENTAL 1
+  has_exam: true
+  subject_groups: []
+1154R:
+  code: 1154R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+'1155':
+  code: '1155'
+  name: FISICA EXPERIMENTAL 2
+  subject_groups:
+  - group: '4819'
+    credits: 5
+  has_exam: false
+1155I:
+  code: 1155I
+  name: FISICA EXPERIMENTAL 2
+  subject_groups:
+  - group: '4819'
+    credits: 5
+  has_exam: false
+'1156':
+  code: '1156'
+  name: FISICA EXPERIMENTAL 3
+  subject_groups:
+  - group: '4819'
+    credits: 6
+  has_exam: false
+115Q:
+  code: 115Q
+  name: FISICA 1
+  has_exam: true
+  subject_groups: []
+'1170':
+  code: '1170'
+  name: FISICA GENERAL 1
+  subject_groups:
+  - group: '4819'
+    credits: 13
+  has_exam: true
+'1171':
+  code: '1171'
+  name: FISICA 1
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+'1172':
+  code: '1172'
+  name: FISICA GENERAL 2
+  subject_groups:
+  - group: '4819'
+    credits: 13
+  has_exam: true
+'1173':
+  code: '1173'
+  name: FISICA 3
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: true
+117Q:
+  code: 117Q
+  name: FISICA GENERAL 1
+  has_exam: false
+  subject_groups: []
+'1201':
+  code: '1201'
+  name: MODULO DE EXTENSION
+  subject_groups:
+  - group: '3973'
+    credits: 6
+  has_exam: false
+'1216':
+  code: '1216'
+  name: 'TALLER ENCARARE: CREAR'
+  subject_groups:
+  - group: '3973'
+    credits: 8
+  has_exam: false
+'1220':
+  code: '1220'
+  name: TALLER DE DISEÑO, COM. Y REPRES. GRAFICA
+  subject_groups:
+  - group: '5291'
+    credits: 7
+  has_exam: false
+1220P:
+  code: 1220P
+  name: CREDITOS NO ACUM TALLER DE DISEÑO, COM. Y REP. GRAFICA
+  has_exam: false
+  subject_groups: []
+1220R:
+  code: 1220R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+'1221':
+  code: '1221'
+  name: ECONOMIA
+  subject_groups:
+  - group: '3973'
+    credits: 7
+  has_exam: true
+'1223':
+  code: '1223'
+  name: CIENCIA, TECNOLOGIA Y SOCIEDAD
+  subject_groups:
+  - group: '3973'
+    credits: 8
+  has_exam: true
+'1224':
+  code: '1224'
+  name: ECONOMIA
+  subject_groups:
+  - group: '3973'
+    credits: 7
+  has_exam: true
+1224P:
+  code: 1224P
+  name: CREDITOS NO ACUM ECONOMIA
+  has_exam: false
+  subject_groups: []
+'1226':
+  code: '1226'
+  name: MECANICA DE LOS FLUIDOS
+  subject_groups:
+  - group: '4999'
+    credits: 12
+  has_exam: true
+1226P:
+  code: 1226P
+  name: CREDITOS NO ACUM MECANICA DE LOS FLUIDOS
+  has_exam: false
+  subject_groups: []
+'1227':
+  code: '1227'
+  name: INGENIERIA LEGAL
+  subject_groups:
+  - group: '3973'
+    credits: 7
+  has_exam: true
+1227P:
+  code: 1227P
+  name: CREDITOS NO ACUM INGENIERIA LEGAL
+  has_exam: false
+  subject_groups: []
+125L:
+  code: 125L
+  name: PROBABILIDAD Y ESTADISTICA
+  has_exam: false
+  subject_groups: []
+'1266':
+  code: '1266'
+  name: TALLER DE REPRESENTACION Y COMUNICACION GRAFICA_MODULO A
+  subject_groups:
+  - group: '5291'
+    credits: 4
+  has_exam: false
+'1267':
+  code: '1267'
+  name: TALLER REPR. Y COM. GRAFICA - MODULO_CIVIL
+  subject_groups:
+  - group: '5291'
+    credits: 4
+  has_exam: true
+1267P:
+  code: 1267P
+  name: CREDITOS NO ACUM. TALLER REPR. Y COM. GRAF. - MODULO CIVIL
+  has_exam: false
+  subject_groups: []
+'1274':
+  code: '1274'
+  name: INT. A LA INGENIERIA CIVIL
+  subject_groups:
+  - group: '3973'
+    credits: 4
+  - group: '5291'
+    credits: 1
+  has_exam: false
+'1275':
+  code: '1275'
+  name: TALLER BASICO DE ESTRATEGIAS Y ORIENTACION (TBEO)
+  subject_groups:
+  - group: '5291'
+    credits: 3
+  has_exam: false
+'1310':
+  code: '1310'
+  name: RESISTENCIA DE MATERIALES 1
+  subject_groups:
+  - group: '4871'
+    credits: 13
+  has_exam: true
+'1311':
+  code: '1311'
+  name: MECANICA DEL SOLIDO
+  subject_groups:
+  - group: '4871'
+    credits: 13
+  has_exam: true
+'1312':
+  code: '1312'
+  name: RESISTENCIA DE MATERIALES 2
+  subject_groups:
+  - group: '4871'
+    credits: 10
+  has_exam: true
+1312P:
+  code: 1312P
+  name: CREDITOS NO ACUM RESISTENCIA DE MATERIALES 2
+  has_exam: true
+  subject_groups: []
+'1313':
+  code: '1313'
+  name: RESISTENCIA DE MATERIALES 2 N
+  subject_groups:
+  - group: '4871'
+    credits: 13
+  has_exam: true
+'1319':
+  code: '1319'
+  name: RESISTENCIA DE MATERIALES 2-N
+  subject_groups:
+  - group: '4871'
+    credits: 13
+  has_exam: true
+'1320':
+  code: '1320'
+  name: PROGRAMACION 1
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: true
+'1322':
+  code: '1322'
+  name: PROGRAMACION 1
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: true
+1322P:
+  code: 1322P
+  name: CREDITOS NO ACUM PROGRAMACION 1
+  has_exam: true
+  subject_groups: []
+1322T:
+  code: 1322T
+  name: PROGRAMACION 1
+  has_exam: true
+  subject_groups: []
+'1373':
+  code: '1373'
+  name: PROGRAMACION 1
+  has_exam: true
+  subject_groups: []
+'1408':
+  code: '1408'
+  name: COMPUTACION 1
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: true
+'1411':
+  code: '1411'
+  name: COMPUTACION 1
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: true
+1411P:
+  code: 1411P
+  name: CREDITOS NO ACUM COMPUTACION 1
+  has_exam: true
+  subject_groups: []
+'1508':
+  code: '1508'
+  name: MATERIALES Y ENSAYOS
+  subject_groups:
+  - group: '4818'
+    credits: 10
+  has_exam: true
+1508P:
+  code: 1508P
+  name: CREDITOS NO ACUM MATERIALES Y ENSAYOS
+  has_exam: true
+  subject_groups: []
+'1510':
+  code: '1510'
+  name: CONTROL DE CALIDAD
+  subject_groups:
+  - group: '5239'
+    credits: 8
+  has_exam: true
+1510R:
+  code: 1510R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5239'
+    credits: 4
+  has_exam: false
+'1519':
+  code: '1519'
+  name: INT. A LA ADMINISTRACION PARA INGENIEROS
+  has_exam: false
+  subject_groups: []
+158Q:
+  code: 158Q
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  has_exam: true
+  subject_groups: []
+'1610':
+  code: '1610'
+  name: INT. A LA INVESTIGACION DE OPERACIONES
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: true
+1610P:
+  code: 1610P
+  name: CREDITOS NO ACUM INT. A LA INVESTIGACION DE OPERACIONES
+  has_exam: true
+  subject_groups: []
+'1620':
+  code: '1620'
+  name: PRINCIPIOS DE QUIMICA GENERAL
+  subject_groups:
+  - group: '5294'
+    credits: 8
+  has_exam: true
+1620P:
+  code: 1620P
+  name: CREDITOS NO ACUM PRINCIPIOS DE QUIMICA GENERAL
+  has_exam: false
+  subject_groups: []
+'1650':
+  code: '1650'
+  name: INT. A LA INVESTIGACION DE OPERACIONES
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: true
+'1700':
+  code: '1700'
+  name: PROCEDIMIENTOS CONST.PARA ESTRUCTURAS
+  subject_groups:
+  - group: '4397'
+    credits: 8
+  has_exam: true
+1700P:
+  code: 1700P
+  name: CREDITOS NO ACUM PROCEDIMIENTOS CONST.PARA ESTRUCTURAS
+  has_exam: false
+  subject_groups: []
+170Q:
+  code: 170Q
+  name: CALCULO 1
+  has_exam: true
+  subject_groups: []
+'1714':
+  code: '1714'
+  name: MECANICA DE LOS MATERIALES 1
+  subject_groups:
+  - group: '4871'
+    credits: 13
+  has_exam: false
+'1715':
+  code: '1715'
+  name: INT. A LA CONSTRUCCION
+  subject_groups:
+  - group: '4397'
+    credits: 12
+  has_exam: true
+1715B:
+  code: 1715B
+  name: INT. A LA CONSTRUCCION
+  subject_groups:
+  - group: '4397'
+    credits: 12
+  has_exam: true
+1715P:
+  code: 1715P
+  name: CREDITOS NO ACUM INT. A LA CONSTRUCCION
+  has_exam: true
+  subject_groups: []
+171L:
+  code: 171L
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  has_exam: true
+  subject_groups: []
+171Q:
+  code: 171Q
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  has_exam: true
+  subject_groups: []
+172Q:
+  code: 172Q
+  name: CALCULO 2
+  has_exam: true
+  subject_groups: []
+175Q:
+  code: 175Q
+  name: PROBABILIDAD Y ESTADISTICA
+  has_exam: false
+  subject_groups: []
+176Q:
+  code: 176Q
+  name: CALCULO 3
+  has_exam: true
+  subject_groups: []
+'1800':
+  code: '1800'
+  name: HIDROLOGIA APLICADA
+  subject_groups:
+  - group: '4999'
+    credits: 10
+  has_exam: true
+'1805':
+  code: '1805'
+  name: ELEMENTOS DE MECANICA DE LOS FLUIDOS
+  subject_groups:
+  - group: '4999'
+    credits: 14
+  has_exam: true
+1805P:
+  code: 1805P
+  name: CREDITOS NO ACUM ELEMENTOS DE MECANICA DE LOS FLUIDOS
+  has_exam: false
+  subject_groups: []
+'1808':
+  code: '1808'
+  name: HIDRAULICA DE CONDUCCION A SUPERF LIBRE
+  subject_groups:
+  - group: '4999'
+    credits: 10
+  has_exam: true
+'1810':
+  code: '1810'
+  name: MAQUINAS PARA FLUIDOS 1
+  subject_groups:
+  - group: '4999'
+    credits: 10
+  has_exam: true
+1810R:
+  code: 1810R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4999'
+    credits: 4
+  has_exam: true
+'1812':
+  code: '1812'
+  name: HIDRAULICA MARITIMA
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+'1813':
+  code: '1813'
+  name: HIDROLOGIA SUBTERRANEA
+  subject_groups:
+  - group: '4999'
+    credits: 7
+  has_exam: true
+'1814':
+  code: '1814'
+  name: MAQUINAS PARA FLUIDOS 2
+  subject_groups:
+  - group: '4999'
+    credits: 10
+  has_exam: true
+'1819':
+  code: '1819'
+  name: HIDROLOGIA APLICADA
+  subject_groups:
+  - group: '4999'
+    credits: 10
+  has_exam: true
+'1826':
+  code: '1826'
+  name: ELEMENTOS DE CIENCIAS DE LA ATMOSFERA
+  subject_groups:
+  - group: '4999'
+    credits: 7
+  has_exam: false
+'1831':
+  code: '1831'
+  name: HIDROMETRIA
+  subject_groups:
+  - group: '4999'
+    credits: 5
+  has_exam: true
+'1833':
+  code: '1833'
+  name: HIDROLOGIA E HIDRAULICA APLICADAS
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: true
+1833P:
+  code: 1833P
+  name: CREDITOS NO ACUM HIDROLOGIA E HIDRAULICA APLICADAS
+  has_exam: false
+  subject_groups: []
+'1836':
+  code: '1836'
+  name: HIDROLOGIA AVANZADA I
+  subject_groups:
+  - group: '4999'
+    credits: 10
+  has_exam: true
+1836P:
+  code: 1836P
+  name: CREDITOS NO ACUM HIDROLOGIA AVANZADA I
+  has_exam: true
+  subject_groups: []
+'1837':
+  code: '1837'
+  name: COMPLEMENTOS DE HIDRAULICA APLICADA
+  subject_groups:
+  - group: '4999'
+    credits: 4
+  has_exam: true
+'1838':
+  code: '1838'
+  name: COMPLEMENTOS DE HIDROLOGIA
+  subject_groups:
+  - group: '4999'
+    credits: 4
+  has_exam: true
+'1840':
+  code: '1840'
+  name: COMPLEMENTOS DE HIDROLOGIA SUBTERRANEA
+  subject_groups:
+  - group: '4999'
+    credits: 5
+  has_exam: true
+'1841':
+  code: '1841'
+  name: COMPLEMENTOS DE HIDROLOGIA ESTADISTICA
+  subject_groups:
+  - group: '4999'
+    credits: 3
+  has_exam: true
+'1842':
+  code: '1842'
+  name: COMPLEMENTOS DE HIDROLOGIA APLICADA
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: true
+'1843':
+  code: '1843'
+  name: REPRESAS Y CANALES
+  subject_groups:
+  - group: '4999'
+    credits: 10
+  has_exam: true
+1843P:
+  code: 1843P
+  name: CREDITOS NO ACUM REPRESAS Y CANALES
+  has_exam: false
+  subject_groups: []
+'1844':
+  code: '1844'
+  name: REPRESAS Y CANALES (MODULOS I Y III)
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+'1845':
+  code: '1845'
+  name: REPRESAS Y CANALES (MODULO II)
+  subject_groups:
+  - group: '4999'
+    credits: 2
+  has_exam: false
+'1846':
+  code: '1846'
+  name: HIDRAULICA MARITIMA Y COSTERA
+  subject_groups:
+  - group: '4999'
+    credits: 10
+  has_exam: true
+'1847':
+  code: '1847'
+  name: HIDROLOGIA AVANZADA II
+  subject_groups:
+  - group: '4999'
+    credits: 10
+  has_exam: true
+'1851':
+  code: '1851'
+  name: SISTEMAS DE CONDUCCION EN ING.SANITARIA
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: true
+1851P:
+  code: 1851P
+  name: CREDITOS NO ACUM SISTEMAS DE CONDUCCION EN ING. SANITARIA
+  has_exam: true
+  subject_groups: []
+'1852':
+  code: '1852'
+  name: DISEÑO DE REDES DE COND.EN ING.SANITARIA
+  subject_groups:
+  - group: '4148'
+    credits: 8
+  has_exam: true
+'1853':
+  code: '1853'
+  name: POTABILIZACION DE AGUAS
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: true
+'1854':
+  code: '1854'
+  name: CALIDAD DE AGUAS
+  subject_groups:
+  - group: '4922'
+    credits: 8
+  has_exam: true
+'1855':
+  code: '1855'
+  name: GESTION DE CALIDAD AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 8
+  has_exam: true
+1855P:
+  code: 1855P
+  name: CREDITOS NO ACUM GESTION DE CALIDAD AMBIENTAL
+  has_exam: true
+  subject_groups: []
+'1856':
+  code: '1856'
+  name: MAQUINAS PARA FLUIDOS I
+  subject_groups:
+  - group: '4999'
+    credits: 12
+  has_exam: true
+1856P:
+  code: 1856P
+  name: CREDITOS NO ACUM MAQUINAS PARA FLUIDOS I
+  has_exam: true
+  subject_groups: []
+'1859':
+  code: '1859'
+  name: MAQUINAS PARA FLUIDOS II
+  subject_groups:
+  - group: '4999'
+    credits: 12
+  has_exam: true
+'1868':
+  code: '1868'
+  name: MODELOS ESTADISTICOS PARA CLASIF. Y REGRESION
+  subject_groups:
+  - group: '4886'
+    credits: 6
+  has_exam: false
+'1869':
+  code: '1869'
+  name: MODELOS PROBABILISTICOS EN INGENIERIA
+  subject_groups:
+  - group: '4886'
+    credits: 6
+  has_exam: false
+'1870':
+  code: '1870'
+  name: MECANICA DEL TRANSPORTE DE SEDIMENTOS
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+'1871':
+  code: '1871'
+  name: FUNDAMENTOS DE OPTIMIZACION
+  subject_groups:
+  - group: '4886'
+    credits: 6
+  has_exam: false
+'1874':
+  code: '1874'
+  name: MORFODINAMICA DE SISTEMAS FLUVIALES Y COSTEROS
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+'1875':
+  code: '1875'
+  name: TALLER DE TECNICAS DE MEDICION EN HIDROLOGIA E HIDRAULICA
+  subject_groups:
+  - group: '4999'
+    credits: 6
+  has_exam: false
+1875A:
+  code: 1875A
+  name: TALLER DE TECNICAS DE MEDICION EN HIDROLOGIA E HIDRAULICA
+  subject_groups:
+  - group: '4999'
+    credits: 6
+  has_exam: false
+'1878':
+  code: '1878'
+  name: ESTRUCTURAS LAMINARES
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: false
+'1879':
+  code: '1879'
+  name: TRANSPORTE DE SUSTANCIAS EN FLUJOS A SUPERFICIE LIBRE
+  subject_groups:
+  - group: '4999'
+    credits: 6
+  has_exam: false
+'1884':
+  code: '1884'
+  name: ELEMENTOS FINITOS
+  subject_groups:
+  - group: '4886'
+    credits: 8
+  has_exam: false
+'1930':
+  code: '1930'
+  name: ORGANIZACIONES PARA INGENIEROS
+  has_exam: false
+  subject_groups: []
+1940Z:
+  code: 1940Z
+  name: GESTION DE CALIDAD AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 7
+  has_exam: false
+'1944':
+  code: '1944'
+  name: ADMINISTRACION GENERAL PARA INGENIEROS
+  subject_groups:
+  - group: '5239'
+    credits: 5
+  has_exam: true
+1944P:
+  code: 1944P
+  name: CREDITOS NO ACUM ADM. GENERAL PARA INGENIEROS
+  has_exam: false
+  subject_groups: []
+'1945':
+  code: '1945'
+  name: PRACTICA DE ADMINISTRACION PARA INGENIEROS
+  subject_groups:
+  - group: '5239'
+    credits: 5
+  has_exam: true
+1945P:
+  code: 1945P
+  name: CREDITOS NO ACUM. PRACTICA DE ADM. PARA INGENIEROS
+  has_exam: false
+  subject_groups: []
+'1946':
+  code: '1946'
+  name: TALLER DE ADMINISTRACION PARA INGENIERIA CIVIL
+  subject_groups:
+  - group: '5239'
+    credits: 3
+  has_exam: false
+1946P:
+  code: 1946P
+  name: CREDITOS NO ACUM. TALLER DE ADM. PARA INGENIERIA CIVIL
+  has_exam: false
+  subject_groups: []
+'1951':
+  code: '1951'
+  name: 'TALLER: HERRAMIENTAS PARA LA INNOVACION'
+  subject_groups:
+  - group: '5291'
+    credits: 4
+  has_exam: false
+'2034':
+  code: '2034'
+  name: TALLER ENCARARE 1:CREATIVIDAD E INNOVAC.
+  subject_groups:
+  - group: '5239'
+    credits: 5
+  has_exam: false
+'2036':
+  code: '2036'
+  name: TALLER ENCARARE 2:PLANIF.DE LA FUT.EMPR.
+  subject_groups:
+  - group: '5239'
+    credits: 5
+  has_exam: false
+'2041':
+  code: '2041'
+  name: METODOS NUMERICOS
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: true
+'2204':
+  code: '2204'
+  name: GEOTECNICA 1
+  subject_groups:
+  - group: '4693'
+    credits: 9
+  has_exam: true
+'2205':
+  code: '2205'
+  name: GEOTECNICA 2
+  subject_groups:
+  - group: '4693'
+    credits: 11
+  has_exam: true
+'2206':
+  code: '2206'
+  name: GEOLOGIA DE INGENIERIA
+  subject_groups:
+  - group: '4693'
+    credits: 9
+  has_exam: true
+'2207':
+  code: '2207'
+  name: INT. A LA MECANICA DE SUELOS
+  subject_groups:
+  - group: '4693'
+    credits: 11
+  has_exam: true
+2207P:
+  code: 2207P
+  name: CREDITOS NO ACUM INT. A LA MECANICA DE SUELOS
+  has_exam: true
+  subject_groups: []
+'2208':
+  code: '2208'
+  name: LABORATORIO DE MECANICA DE SUELOS
+  subject_groups:
+  - group: '4693'
+    credits: 3
+  has_exam: false
+'2210':
+  code: '2210'
+  name: MODULO TALLER EXTENSION ING.AMBIENTAL 1
+  subject_groups:
+  - group: '5291'
+    credits: 1
+  - group: '4922'
+    credits: 3
+  has_exam: true
+'2211':
+  code: '2211'
+  name: MODULO TALLER EXTENSION ING.AMBIENTAL 2
+  subject_groups:
+  - group: '5291'
+    credits: 1
+  - group: '4922'
+    credits: 3
+  has_exam: false
+'2213':
+  code: '2213'
+  name: LABORATORIO DE CALIDAD DE AGUAS
+  subject_groups:
+  - group: '4922'
+    credits: 3
+  has_exam: false
+'2214':
+  code: '2214'
+  name: ELEMENTOS DE GEOLOGIA PARA LA PLANIF.TERRIT.
+  subject_groups:
+  - group: '4693'
+    credits: 6
+  has_exam: false
+'2216':
+  code: '2216'
+  name: TUTORIAS ENTRE PARES 1
+  subject_groups:
+  - group: '3973'
+    credits: 4
+  has_exam: false
+'2217':
+  code: '2217'
+  name: TUTORIAS ENTRE PARES 2
+  subject_groups:
+  - group: '3973'
+    credits: 4
+  has_exam: false
+'2218':
+  code: '2218'
+  name: LABORATORIO DE MECANICA DE SUELOS
+  subject_groups:
+  - group: '4693'
+    credits: 5
+  has_exam: false
+2218P:
+  code: 2218P
+  name: CREDITOS NO ACUM LABORATORIO DE MECANICA DE SUELO
+  has_exam: false
+  subject_groups: []
+'2230':
+  code: '2230'
+  name: ELEMENTOS DE TOPOGRAFIA
+  subject_groups:
+  - group: '4316'
+    credits: 7
+  has_exam: true
+2230P:
+  code: 2230P
+  name: CREDITOS NO ACUM ELEMENTOS DE TOPOGRAFIA
+  has_exam: false
+  subject_groups: []
+2230R:
+  code: 2230R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4316'
+    credits: 6
+  has_exam: false
+'2231':
+  code: '2231'
+  name: CAMINOS Y CALLES 1
+  subject_groups:
+  - group: '4316'
+    credits: 6
+  has_exam: true
+2231A:
+  code: 2231A
+  name: CAMINOS Y CALLES 1
+  subject_groups:
+  - group: '4316'
+    credits: 6
+  has_exam: true
+2231P:
+  code: 2231P
+  name: CREDITOS NO ACUM CAMINOS Y CALLES 1
+  has_exam: true
+  subject_groups: []
+'2232':
+  code: '2232'
+  name: CAMINOS Y CALLES 2
+  subject_groups:
+  - group: '4316'
+    credits: 6
+  has_exam: true
+2232P:
+  code: 2232P
+  name: CREDITOS NO ACUM CAMINOS Y CALLES 2
+  has_exam: false
+  subject_groups: []
+'2235':
+  code: '2235'
+  name: EVALUACION EN CAMPO DE PAVIMENTOS
+  subject_groups:
+  - group: '4316'
+    credits: 5
+  has_exam: false
+'2240':
+  code: '2240'
+  name: COSTOS
+  subject_groups:
+  - group: '5239'
+    credits: 8
+  has_exam: true
+2240P:
+  code: 2240P
+  name: CREDITOS NO ACUM COSTOS
+  has_exam: true
+  subject_groups: []
+'2241':
+  code: '2241'
+  name: ADMINISTRACION DE EMPRESAS
+  subject_groups:
+  - group: '5239'
+    credits: 8
+  has_exam: false
+'2242':
+  code: '2242'
+  name: PLANIFICACION
+  subject_groups:
+  - group: '5239'
+    credits: 8
+  has_exam: true
+2242P:
+  code: 2242P
+  name: CREDITOS NO ACUM PLANIFICACION
+  has_exam: true
+  subject_groups: []
+2242R:
+  code: 2242R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5239'
+    credits: 7
+  has_exam: true
+'2246':
+  code: '2246'
+  name: SEGURIDAD EN LA CONSTRUCCION
+  subject_groups:
+  - group: '5239'
+    credits: 4
+  has_exam: true
+'2250':
+  code: '2250'
+  name: ELEMENTOS DE INGENIERIA AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 7
+  has_exam: true
+'2251':
+  code: '2251'
+  name: FUNDAMENTOS DE INGENIERIA AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 6
+  has_exam: true
+'2252':
+  code: '2252'
+  name: GESTION DE CALIDAD DE AGUAS
+  subject_groups:
+  - group: '4922'
+    credits: 8
+  has_exam: true
+'2253':
+  code: '2253'
+  name: INT. A LA EVALUACION Y GESTION AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 8
+  has_exam: true
+'2254':
+  code: '2254'
+  name: FUNDAMENTOS DE INGENIERIA AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 6
+  has_exam: true
+'2255':
+  code: '2255'
+  name: SALUD AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 6
+  has_exam: false
+'2256':
+  code: '2256'
+  name: ELEMENTOS DE INGENIERIA AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 7
+  has_exam: true
+'2257':
+  code: '2257'
+  name: MODULO TALLER DE ING.AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 4
+  has_exam: false
+'2258':
+  code: '2258'
+  name: INT. AL SISTEMA CLIMATICO
+  subject_groups:
+  - group: '4999'
+    credits: 7
+  has_exam: true
+'2259':
+  code: '2259'
+  name: FUNDAMENTOS DE INGENIERIA Y SALUD AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 8
+  has_exam: true
+'2260':
+  code: '2260'
+  name: HIDROLOGIA ESTADISTICA
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+'2261':
+  code: '2261'
+  name: ELEMENTOS DE RIEGO Y PRESAS
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+'2262':
+  code: '2262'
+  name: HIDROLOGIA ESTADISTICA
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: true
+'2300':
+  code: '2300'
+  name: AGUA POTABLE
+  subject_groups:
+  - group: '4148'
+    credits: 8
+  has_exam: true
+'2307':
+  code: '2307'
+  name: INSTALACIONES SANITARIAS INTERNAS
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: true
+'2308':
+  code: '2308'
+  name: RESIDUOS LIQUIDOS
+  subject_groups:
+  - group: '4148'
+    credits: 8
+  has_exam: false
+'2309':
+  code: '2309'
+  name: EJERCICIOS DE INGENIERIA SANITARIA
+  subject_groups:
+  - group: '4148'
+    credits: 8
+  has_exam: true
+'2311':
+  code: '2311'
+  name: CONDUCCION DE LIQUIDOS EN ING.SANITARIA
+  subject_groups:
+  - group: '4148'
+    credits: 10
+  has_exam: false
+'2313':
+  code: '2313'
+  name: TRATAMIENTO DE EFLUENTES
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: true
+'2315':
+  code: '2315'
+  name: INT. A LA INGENIERIA SANITARIA
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: true
+'2316':
+  code: '2316'
+  name: TRATAMIENTO DE EFLUENTES
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: true
+'2317':
+  code: '2317'
+  name: TRATAMIENTO DE AGUA POTABLE
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: true
+'2318':
+  code: '2318'
+  name: SIST. DISTRIB.DE AGUA POT.Y SANEAM.POBL.
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: true
+'2319':
+  code: '2319'
+  name: CALCULO DE REDES DE INGENIERIA SANITARIA
+  subject_groups:
+  - group: '4148'
+    credits: 8
+  has_exam: true
+'2321':
+  code: '2321'
+  name: LABORATORIO DE TECNOLOGIA DEL HORMIGON
+  subject_groups:
+  - group: '4397'
+    credits: 6
+  has_exam: true
+2321P:
+  code: 2321P
+  name: CREDITOS NO ACUM LABORATORIO DE TECNOLOGIA DEL HORMIGON
+  has_exam: false
+  subject_groups: []
+'2333':
+  code: '2333'
+  name: MODULO TALLER EN INGENIERIA SANITARIA
+  subject_groups:
+  - group: '4148'
+    credits: 4
+  has_exam: true
+'2350':
+  code: '2350'
+  name: HORMIGON 1
+  subject_groups:
+  - group: '5168'
+    credits: 11
+  has_exam: true
+'2351':
+  code: '2351'
+  name: TECNOLOGIA DE HORMIGON
+  subject_groups:
+  - group: '4397'
+    credits: 7
+  has_exam: true
+'2352':
+  code: '2352'
+  name: PROCEDIMIENTOS CONST. OBRAS VIALES Y SUELO
+  subject_groups:
+  - group: '4397'
+    credits: 8
+  has_exam: true
+2352P:
+  code: 2352P
+  name: CREDITOS NO ACUM PROC. CONST. OBRAS VIALES Y SUELO
+  has_exam: true
+  subject_groups: []
+'2353':
+  code: '2353'
+  name: HORMIGON 2
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: true
+'2354':
+  code: '2354'
+  name: ESTRUCTURAS METALICAS Y DE MADERA
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: true
+'2355':
+  code: '2355'
+  name: HORMIGON PRETENSADO
+  subject_groups:
+  - group: '5168'
+    credits: 12
+  has_exam: true
+'2356':
+  code: '2356'
+  name: MAMPOSTERIA ESTRUCTURAL
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: true
+'2357':
+  code: '2357'
+  name: METODOS COMPUT. APLIC. AL CALCULO DE ESTRUC.
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: true
+'2358':
+  code: '2358'
+  name: ESTRUCTURAS ESPECIALES
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: false
+'2359':
+  code: '2359'
+  name: PUENTES
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: true
+'2360':
+  code: '2360'
+  name: RESISTENCIA DE MATERIALES 3
+  subject_groups:
+  - group: '4871'
+    credits: 10
+  has_exam: true
+'2361':
+  code: '2361'
+  name: RESISTENCIA DE MATERIALES 4
+  subject_groups:
+  - group: '4871'
+    credits: 15
+  has_exam: false
+'2362':
+  code: '2362'
+  name: RESISTENCIA DE MATERIALES 3 N
+  subject_groups:
+  - group: '4871'
+    credits: 10
+  has_exam: true
+'2363':
+  code: '2363'
+  name: CURSO COMPLEM. DE ESTR. METAL. Y DE MAD.
+  subject_groups:
+  - group: '5168'
+    credits: 6
+  has_exam: false
+'2364':
+  code: '2364'
+  name: INT. AL METODO DE LOS ELEM. DE CONTORNO
+  subject_groups:
+  - group: '4871'
+    credits: 8
+  has_exam: false
+'2365':
+  code: '2365'
+  name: RESISTENCIA DE MATERIALES 1N
+  subject_groups:
+  - group: '4871'
+    credits: 13
+  has_exam: true
+'2366':
+  code: '2366'
+  name: ELASTICIDAD
+  subject_groups:
+  - group: '4871'
+    credits: 10
+  has_exam: true
+'2367':
+  code: '2367'
+  name: HORMIGÓN 2
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: true
+'2368':
+  code: '2368'
+  name: RESISTENCIA DE MATERIALES 1
+  subject_groups:
+  - group: '4871'
+    credits: 10
+  has_exam: true
+2368P:
+  code: 2368P
+  name: CREDITOS NO ACUM RESISTENCIA DE MATERIALES 1
+  has_exam: true
+  subject_groups: []
+'2369':
+  code: '2369'
+  name: RESISTENCIA DE MATERIALES II N
+  subject_groups:
+  - group: '4871'
+    credits: 10
+  has_exam: true
+'2370':
+  code: '2370'
+  name: ACONDICIONAMIENTO ELECTRICO
+  subject_groups:
+  - group: '4397'
+    credits: 6
+  has_exam: false
+'2371':
+  code: '2371'
+  name: TECNOLOGIA DEL HORMIGON
+  subject_groups:
+  - group: '4397'
+    credits: 7
+  has_exam: true
+2371P:
+  code: 2371P
+  name: CREDITOS NO ACUM TECNOLOGIA DEL HORMIGON
+  has_exam: false
+  subject_groups: []
+'2372':
+  code: '2372'
+  name: LABORATORIO DE RESISTENCIA DE MATERIALES
+  subject_groups:
+  - group: '4871'
+    credits: 3
+  has_exam: false
+'2373':
+  code: '2373'
+  name: RESISTENCIA DE MATERIALES III N
+  subject_groups:
+  - group: '4871'
+    credits: 10
+  has_exam: true
+'2374':
+  code: '2374'
+  name: COMPLEMENTO DE RESISTENCIA DE MATERIALES
+  subject_groups:
+  - group: '4871'
+    credits: 4
+  has_exam: true
+'2375':
+  code: '2375'
+  name: INT. A LA CORROSION DEL HORMIGON ARMADO
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: true
+'2376':
+  code: '2376'
+  name: METODOS COMPUT. APLIC. AL CALCULO ESTRUCTURAL
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: false
+'2377':
+  code: '2377'
+  name: HORMIGON 1
+  subject_groups:
+  - group: '5168'
+    credits: 11
+  has_exam: true
+2377P:
+  code: 2377P
+  name: CREDITOS NO ACUM HORMIGON 1
+  has_exam: true
+  subject_groups: []
+2377R:
+  code: 2377R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: true
+'2378':
+  code: '2378'
+  name: HORMIGON 2
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: true
+'2379':
+  code: '2379'
+  name: LABORATORIO DE RESISTENCIA DE MATERIALES
+  subject_groups:
+  - group: '4871'
+    credits: 5
+  has_exam: false
+'2380':
+  code: '2380'
+  name: MET. COMPUT.APLIC.AL CALCULO ESTRUCTURAL
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: true
+'2381':
+  code: '2381'
+  name: MECANICA ESTRUCTURAL
+  subject_groups:
+  - group: '4871'
+    credits: 12
+  has_exam: true
+'2382':
+  code: '2382'
+  name: HORMIGON ESTRUCTURAL 1
+  subject_groups:
+  - group: '5168'
+    credits: 11
+  has_exam: true
+2382P:
+  code: 2382P
+  name: CREDITOS NO ACUM HORMIGON ESTRUCTURAL 1
+  has_exam: true
+  subject_groups: []
+'2383':
+  code: '2383'
+  name: ESTRUCTURAS LAMINARES
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: false
+2383P:
+  code: 2383P
+  name: CREDITOS NO ACUM ESTRUCTURAS LAMINARES
+  has_exam: false
+  subject_groups: []
+'2384':
+  code: '2384'
+  name: ESTRUCTURAS DE MADERA
+  subject_groups:
+  - group: '5168'
+    credits: 6
+  has_exam: true
+2384P:
+  code: 2384P
+  name: CREDITOS NO ACUM ESTRUCTURAS DE MADERA
+  has_exam: false
+  subject_groups: []
+'2385':
+  code: '2385'
+  name: ESTRUCTURAS METALICAS
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: false
+'2386':
+  code: '2386'
+  name: ESTRUCTURAS DE MADERA 1
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: true
+'2387':
+  code: '2387'
+  name: ESTADISTICA APLICADA EN INGENIERIA HIDRAULICA Y AMBIENTAL
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+'2389':
+  code: '2389'
+  name: PATOLOGIA DE LAS ESTRUCTURAS
+  subject_groups:
+  - group: '4397'
+    credits: 2
+  - group: '4818'
+    credits: 4
+  has_exam: true
+'2393':
+  code: '2393'
+  name: ESTRUCTURAS DE ACERO
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: true
+'2395':
+  code: '2395'
+  name: HORMIGON ESTRUCTURAL 2
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: true
+'2396':
+  code: '2396'
+  name: OBRAS HIDRAULICAS
+  subject_groups:
+  - group: '4999'
+    credits: 6
+  has_exam: true
+2396P:
+  code: 2396P
+  name: CREDITOS NO ACUM OBRAS HIDRAULICAS
+  has_exam: true
+  subject_groups: []
+'2397':
+  code: '2397'
+  name: HIDRAULICA FLUVIAL Y MARITIMA
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: true
+'2399':
+  code: '2399'
+  name: DISEÑO HIDROLOGICO
+  subject_groups:
+  - group: '4999'
+    credits: 10
+  has_exam: true
+2399P:
+  code: 2399P
+  name: CREDITOS NO ACUM DISEÑO HIDROLOGICO
+  has_exam: true
+  subject_groups: []
+'2400':
+  code: '2400'
+  name: PROYECTO TRANSPORTE 1
+  subject_groups:
+  - group: '4385'
+    credits: 16
+  has_exam: true
+'2402':
+  code: '2402'
+  name: PROYECTO ESTRUCTURAL 1
+  subject_groups:
+  - group: '4385'
+    credits: 14
+  has_exam: true
+'2403':
+  code: '2403'
+  name: PROYECTO TRANSPORTE 2
+  subject_groups:
+  - group: '4385'
+    credits: 16
+  has_exam: true
+'2404':
+  code: '2404'
+  name: PROYECTO, PLANIF. Y CONST. DE OBRAS 1
+  subject_groups:
+  - group: '4385'
+    credits: 13
+  has_exam: true
+'2405':
+  code: '2405'
+  name: PROYECTO HIDRAULICA-AMBIENTAL
+  subject_groups:
+  - group: '4385'
+    credits: 25
+  has_exam: true
+'2406':
+  code: '2406'
+  name: PROYECTO ESTRUCTURAL 2
+  subject_groups:
+  - group: '4385'
+    credits: 15
+  has_exam: true
+'2407':
+  code: '2407'
+  name: PROYECTO, PLANIF. Y CONST. DE OBRAS 2
+  subject_groups:
+  - group: '4385'
+    credits: 13
+  has_exam: true
+'2409':
+  code: '2409'
+  name: PROYECTO ESTRUCTURAL 1
+  subject_groups:
+  - group: '4385'
+    credits: 18
+  has_exam: true
+'2410':
+  code: '2410'
+  name: PROYECTO DE INV.E INNOV.EN ING. ESTRUCT.
+  subject_groups:
+  - group: '4385'
+    credits: 15
+  has_exam: true
+'2411':
+  code: '2411'
+  name: PROYECTO ESTRUCTURAL ANUAL
+  subject_groups:
+  - group: '4385'
+    credits: 33
+  has_exam: true
+'2419':
+  code: '2419'
+  name: HORMIGON ESTRUCTURAL 3
+  subject_groups:
+  - group: '5168'
+    credits: 12
+  has_exam: true
+2419P:
+  code: 2419P
+  name: CREDITOS NO ACUM HORMIGON ESTRUCTURAL 3
+  has_exam: true
+  subject_groups: []
+'2420':
+  code: '2420'
+  name: ESTUDIOS GEOTECNICOS DE CAMPO
+  subject_groups:
+  - group: '4693'
+    credits: 8
+  has_exam: false
+'2450':
+  code: '2450'
+  name: PASANTIA (CIVIL)
+  subject_groups:
+  - group: '5230'
+    credits: 12
+  has_exam: false
+'2500':
+  code: '2500'
+  name: INT. AL TRANSPORTE
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: true
+'2503':
+  code: '2503'
+  name: METODOLOGIA DE LOS EST. GEOTECNICOS
+  subject_groups:
+  - group: '4693'
+    credits: 8
+  has_exam: false
+'2504':
+  code: '2504'
+  name: TRANSPORTE POR CARRETERA
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: true
+2504P:
+  code: 2504P
+  name: CREDITOS NO ACUM TRANSPORTE POR CARRETERA
+  has_exam: false
+  subject_groups: []
+'2505':
+  code: '2505'
+  name: TRANSPORTE FERROVIARIO
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: true
+2505P:
+  code: 2505P
+  name: CREDITOS NO ACUM TRANSPORTE FERROVIARIO
+  has_exam: false
+  subject_groups: []
+'2506':
+  code: '2506'
+  name: MAQUINAS Y EQUIPOS PARA TRANSPORTE
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: true
+2506P:
+  code: 2506P
+  name: CREDITOS NO ACUM MAQUINAS Y EQUIPOS PARA TRANSPORTE
+  has_exam: false
+  subject_groups: []
+'2507':
+  code: '2507'
+  name: TRANSPORTE FLUVIAL Y MARITIMO
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: true
+'2508':
+  code: '2508'
+  name: TRANSPORTE AEREO
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: true
+'2509':
+  code: '2509'
+  name: TRANSPORTE URBANO
+  subject_groups:
+  - group: '4453'
+    credits: 4
+  has_exam: true
+'2510':
+  code: '2510'
+  name: INT. AL TRANSPORTE
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: true
+2510R:
+  code: 2510R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4453'
+    credits: 4
+  has_exam: true
+'2511':
+  code: '2511'
+  name: TRANSPORTE URBANO
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: true
+'2803':
+  code: '2803'
+  name: TALLER DE INGENIERIA CIVIL
+  subject_groups:
+  - group: '5230'
+    credits: 6
+  has_exam: false
+'2804':
+  code: '2804'
+  name: TALLER DE INGENIERIA CIVIL
+  subject_groups:
+  - group: '5230'
+    credits: 4
+  has_exam: false
+'2805':
+  code: '2805'
+  name: TALLER DE INGENIERIA CIVIL
+  subject_groups:
+  - group: '5230'
+    credits: 3
+  has_exam: false
+2FIS:
+  code: 2FIS
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 2
+  has_exam: false
+'5005':
+  code: '5005'
+  name: TUTORIAS ENTRE PARES ACADEMICAS PROGRESA/FING
+  subject_groups:
+  - group: '3973'
+    credits: 8
+  has_exam: false
+AE7:
+  code: AE7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5239'
+    credits: 7
+  has_exam: false
+AG16:
+  code: AG16
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5239'
+    credits: 16
+  has_exam: false
+AG2:
+  code: AG2
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5239'
+    credits: 2
+  has_exam: false
+AG48:
+  code: AG48
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5239'
+    credits: 48
+  has_exam: false
+AL:
+  code: AL
+  name: GEOMETRÍA Y ÁLGEBRA LINEAL
+  subject_groups:
+  - group: '4886'
+    credits: 9
+  has_exam: false
+ANC9:
+  code: ANC9
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 9
+  has_exam: false
+AT012:
+  code: AT012
+  name: TEORÍA DEL URBANISMO
+  subject_groups:
+  - group: '5239'
+    credits: 6
+  has_exam: true
+AT013:
+  code: AT013
+  name: CIUDAD,SOCIEDAD Y POLÍTICAS URBANAS
+  subject_groups:
+  - group: '5239'
+    credits: 3
+  has_exam: true
+AT014:
+  code: AT014
+  name: PROYECTO URBANO Y PLANIFICACIÓN
+  subject_groups:
+  - group: '5239'
+    credits: 3
+  has_exam: true
+AYG8:
+  code: AYG8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5239'
+    credits: 8
+  has_exam: false
+C1:
+  code: C1
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4985'
+    credits: 1
+  has_exam: false
+C10:
+  code: C10
+  name: COMPUTACION 1
+  has_exam: true
+  subject_groups: []
+C3:
+  code: C3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4397'
+    credits: 3
+  has_exam: false
+C400:
+  code: C400
+  name: CALCULO NUMERICO
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: false
+C8:
+  code: C8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4397'
+    credits: 8
+  has_exam: false
+CA8:
+  code: CA8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4922'
+    credits: 8
+  has_exam: false
+CAL10:
+  code: CAL10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+CAL12:
+  code: CAL12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: true
+CAL2:
+  code: CAL2
+  name: CÁLCULO 2
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: false
+CCT10:
+  code: CCT10
+  name: FÍSICA I
+  subject_groups:
+  - group: '4819'
+    credits: 14
+  has_exam: false
+CCT20:
+  code: CCT20
+  name: FÍSICA II
+  subject_groups:
+  - group: '4819'
+    credits: 14
+  has_exam: true
+CH201:
+  code: CH201
+  name: PROBABILIDAD Y ESTADÍSTICA
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: false
+CIM10:
+  code: CIM10
+  name: CÁLCULO VECTORIAL
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: false
+CIM18:
+  code: CIM18
+  name: FÍSICA EXPERIMENTAL 1 (FE1)
+  subject_groups:
+  - group: '4819'
+    credits: 5
+  has_exam: false
+CIM24:
+  code: CIM24
+  name: ECUACIONES DIFERENCIALES
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: false
+CIM26:
+  code: CIM26
+  name: FÍSICA TÉRMICA
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: false
+CIM28:
+  code: CIM28
+  name: MECÁNICA CLÁSICA
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: false
+CIM29:
+  code: CIM29
+  name: FÍSICA EXPERIMENTAL 2 (FE2)
+  subject_groups:
+  - group: '4819'
+    credits: 5
+  has_exam: false
+CIM40:
+  code: CIM40
+  name: ELECTROMAGNETÍSMO CIM
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: false
+CM:
+  code: CM
+  name: COMPLEMENTO DE MATEMÁTICA
+  subject_groups:
+  - group: '4886'
+    credits: 6
+  has_exam: false
+CM14:
+  code: CM14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+CP04:
+  code: CP04
+  name: CRÉDITOS POR FÍSICA I
+  has_exam: false
+  subject_groups: []
+CP1:
+  code: CP1
+  name: ANALISIS MATEMATICO I
+  subject_groups:
+  - group: '4886'
+    credits: 33
+  has_exam: true
+CP10:
+  code: CP10
+  name: TALLER II
+  has_exam: false
+  subject_groups: []
+CP102:
+  code: CP102
+  name: CONTROL DE CALIDAD
+  subject_groups:
+  - group: '5239'
+    credits: 8
+  has_exam: false
+CP11:
+  code: CP11
+  name: TALLER LABORATORIO I (MODULO DE FISICA)
+  subject_groups:
+  - group: '4819'
+    credits: 2
+  has_exam: false
+CP118:
+  code: CP118
+  name: GEOTECNICA II
+  subject_groups:
+  - group: '4693'
+    credits: 11
+  has_exam: true
+CP119:
+  code: CP119
+  name: QUIMICA TECNICA
+  subject_groups:
+  - group: '5294'
+    credits: 8
+  has_exam: true
+CP12:
+  code: CP12
+  name: TERMODINAMICA
+  subject_groups:
+  - group: '4819'
+    credits: 20
+  has_exam: true
+CP120:
+  code: CP120
+  name: QUIMICA
+  subject_groups:
+  - group: '5294'
+    credits: 8
+  has_exam: true
+CP121:
+  code: CP121
+  name: HIDROLOGIA
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+CP122:
+  code: CP122
+  name: HIDROLOGIA I
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+CP125:
+  code: CP125
+  name: MECANICA DE LOS MATERIALES
+  subject_groups:
+  - group: '4871'
+    credits: 13
+  has_exam: true
+CP126:
+  code: CP126
+  name: RESISTENCIA DE MATERIALES II
+  subject_groups:
+  - group: '4871'
+    credits: 22
+  has_exam: true
+CP128:
+  code: CP128
+  name: FLUIDO MAQUINAS I
+  subject_groups:
+  - group: '4999'
+    credits: 12
+  has_exam: true
+CP129:
+  code: CP129
+  name: FLUIDO MAQUINAS II
+  has_exam: true
+  subject_groups: []
+CP13:
+  code: CP13
+  name: ELECTROMAGNETISMO
+  subject_groups:
+  - group: '4819'
+    credits: 12
+  has_exam: true
+CP14:
+  code: CP14
+  name: TALLER LABORATORIO II (MODULO DE FISICA)
+  subject_groups:
+  - group: '4819'
+    credits: 4
+  has_exam: false
+CP144:
+  code: CP144
+  name: COMPUTACION I
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: true
+CP152:
+  code: CP152
+  name: FLUIDO MAQUINAS II
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: true
+CP16:
+  code: CP16
+  name: CALCULO NUMERICO
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: false
+CP17:
+  code: CP17
+  name: MECANICA I (TRANSICION)
+  subject_groups:
+  - group: '4819'
+    credits: 12
+  has_exam: true
+CP174:
+  code: CP174
+  name: ECONOMIA Y FINANZAS (P. 74)
+  subject_groups:
+  - group: '3973'
+    credits: 7
+  has_exam: true
+CP175:
+  code: CP175
+  name: MATERIALES PARA INGENIERIA (P. 74)
+  subject_groups:
+  - group: '4818'
+    credits: 6
+  has_exam: false
+CP176:
+  code: CP176
+  name: RESISTENCIA DE MATERIALES I (P. 74)
+  subject_groups:
+  - group: '4871'
+    credits: 13
+  has_exam: true
+CP18:
+  code: CP18
+  name: TECNOLOGIA Y SOCIEDAD
+  subject_groups:
+  - group: '3973'
+    credits: 10
+  has_exam: false
+CP2:
+  code: CP2
+  name: GEOMETRIA Y ALGEBRA LINEAL
+  subject_groups:
+  - group: '4886'
+    credits: 24
+  has_exam: true
+CP20:
+  code: CP20
+  name: ECONOMIA POLITICA
+  subject_groups:
+  - group: '3973'
+    credits: 7
+  has_exam: true
+CP22:
+  code: CP22
+  name: ANALISIS MATEMATICO I (P. 74)
+  subject_groups:
+  - group: '4886'
+    credits: 33
+  has_exam: true
+CP222:
+  code: CP222
+  name: HIDRAULICA I
+  subject_groups:
+  - group: '4999'
+    credits: 9
+  has_exam: false
+CP223:
+  code: CP223
+  name: OBRAS HIDRAULICAS
+  subject_groups:
+  - group: '4999'
+    credits: 12
+  has_exam: false
+CP224:
+  code: CP224
+  name: HIDROLOGIA II
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+CP225:
+  code: CP225
+  name: HIDRAULICA II
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+CP226:
+  code: CP226
+  name: HIDROLOGIA SUBTERRANEA
+  subject_groups:
+  - group: '4999'
+    credits: 7
+  has_exam: false
+CP227:
+  code: CP227
+  name: ELEMENTOS DE CIENCIAS DE LA ATMOSFERA
+  subject_groups:
+  - group: '4999'
+    credits: 6
+  has_exam: false
+CP228:
+  code: CP228
+  name: ABASTECIMIENTO DE AGUA POTABLE
+  subject_groups:
+  - group: '4148'
+    credits: 12
+  has_exam: false
+CP229:
+  code: CP229
+  name: RESIDUOS LIQUIDOS
+  subject_groups:
+  - group: '4148'
+    credits: 12
+  has_exam: false
+CP23:
+  code: CP23
+  name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+  subject_groups:
+  - group: '4886'
+    credits: 24
+  has_exam: true
+CP230:
+  code: CP230
+  name: TRAT. Y ELIMINACION DE RESIDUOS (P. 74)
+  subject_groups:
+  - group: '4148'
+    credits: 12
+  has_exam: false
+CP231:
+  code: CP231
+  name: SANEAMIENTO BASICO
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: false
+CP232:
+  code: CP232
+  name: RESIDUOS INDUSTRIALES
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: false
+CP233:
+  code: CP233
+  name: FUNDAMENTOS DE INGENIERIA AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 7
+  has_exam: true
+CP234:
+  code: CP234
+  name: INGENIERIA AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 14
+  has_exam: true
+CP235:
+  code: CP235
+  name: SALUD AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 6
+  has_exam: false
+CP236:
+  code: CP236
+  name: HIGIENE INDUSTRIAL
+  subject_groups:
+  - group: '4922'
+    credits: 6
+  has_exam: false
+CP237:
+  code: CP237
+  name: EST.BAS.Y DIS.DE INST.DE ABAST.DE A.POT.
+  subject_groups:
+  - group: '4385'
+    credits: 16
+  has_exam: false
+CP238:
+  code: CP238
+  name: PROYECTO DE RIEGO
+  subject_groups:
+  - group: '4385'
+    credits: 11
+  has_exam: false
+CP239:
+  code: CP239
+  name: EST.BAS.Y DISEÑO DE UNA INST. DE RIEGO
+  subject_groups:
+  - group: '4385'
+    credits: 16
+  has_exam: false
+CP24:
+  code: CP24
+  name: COMPUTACION (P. 74)
+  subject_groups:
+  - group: '4985'
+    credits: 8
+  has_exam: true
+CP240:
+  code: CP240
+  name: PROYECTO HIDR. Y AMBIENTAL II
+  subject_groups:
+  - group: '4385'
+    credits: 16
+  has_exam: false
+CP241:
+  code: CP241
+  name: PASANTIA A
+  subject_groups:
+  - group: '5230'
+    credits: 12
+  has_exam: false
+CP242:
+  code: CP242
+  name: PASANTIA B
+  subject_groups:
+  - group: '5230'
+    credits: 12
+  has_exam: false
+CP243:
+  code: CP243
+  name: PASANTIA C
+  subject_groups:
+  - group: '5230'
+    credits: 12
+  has_exam: false
+CP244:
+  code: CP244
+  name: MAQUINAS Y EQUIPOS
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: true
+CP245:
+  code: CP245
+  name: FUNDAMENTOS DE CONSTRUCCION
+  subject_groups:
+  - group: '4397'
+    credits: 12
+  has_exam: true
+CP246:
+  code: CP246
+  name: CONSTRUCCION PARA ESTRUCTURAS
+  subject_groups:
+  - group: '4397'
+    credits: 12
+  has_exam: true
+CP247:
+  code: CP247
+  name: CONSTRUCCION PARA TRANSPORTE
+  subject_groups:
+  - group: '4397'
+    credits: 10
+  has_exam: true
+CP248:
+  code: CP248
+  name: HORMIGON ARMADO I
+  subject_groups:
+  - group: '5168'
+    credits: 20
+  has_exam: true
+CP249:
+  code: CP249
+  name: HORMIGON ARMADO II
+  subject_groups:
+  - group: '5168'
+    credits: 12
+  has_exam: true
+CP25:
+  code: CP25
+  name: ANALISIS MATEMATICO II (P. 74)
+  subject_groups:
+  - group: '4886'
+    credits: 33
+  has_exam: true
+CP250:
+  code: CP250
+  name: ESTRUCTURAS METALICAS Y DE MADERA
+  subject_groups:
+  - group: '5168'
+    credits: 16
+  has_exam: false
+CP251:
+  code: CP251
+  name: ESTRUCTURAS ESPECIALES
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: false
+CP252:
+  code: CP252
+  name: ESTUDIOS GEOTECNICOS
+  subject_groups:
+  - group: '4693'
+    credits: 8
+  has_exam: false
+CP253:
+  code: CP253
+  name: GEOLOGIA TECNICA
+  subject_groups:
+  - group: '4693'
+    credits: 9
+  has_exam: true
+CP254:
+  code: CP254
+  name: MATERIALES Y ENSAYOS
+  subject_groups:
+  - group: '4818'
+    credits: 15
+  has_exam: true
+CP255:
+  code: CP255
+  name: ADMINISTRACION
+  subject_groups:
+  - group: '5239'
+    credits: 8
+  has_exam: false
+CP257:
+  code: CP257
+  name: COSTOS
+  subject_groups:
+  - group: '5239'
+    credits: 8
+  has_exam: true
+CP258:
+  code: CP258
+  name: TOPOGRAFIA
+  subject_groups:
+  - group: '4316'
+    credits: 8
+  has_exam: false
+CP259:
+  code: CP259
+  name: CAMINOS Y CALLES
+  subject_groups:
+  - group: '4316'
+    credits: 12
+  has_exam: true
+CP26:
+  code: CP26
+  name: MECANICA GENERAL I (P. 74)
+  subject_groups:
+  - group: '4819'
+    credits: 22
+  has_exam: true
+CP260:
+  code: CP260
+  name: TRANSPORTE
+  subject_groups:
+  - group: '4453'
+    credits: 14
+  has_exam: true
+CP261:
+  code: CP261
+  name: PUERTOS
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: false
+CP262:
+  code: CP262
+  name: AEROPUERTOS
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: true
+CP263:
+  code: CP263
+  name: FERROCARRILES
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: false
+CP264:
+  code: CP264
+  name: OBRAS HIDRAULICAS Y DIST. DE AGUAS
+  subject_groups:
+  - group: '4999'
+    credits: 14
+  has_exam: false
+CP265:
+  code: CP265
+  name: POLUCION DE AGUAS Y ATMOSFERAS
+  subject_groups:
+  - group: '4922'
+    credits: 14
+  has_exam: false
+CP266:
+  code: CP266
+  name: PASANTIA (HIDRAULICA-AMBIENTAL)
+  subject_groups:
+  - group: '5230'
+    credits: 12
+  has_exam: false
+CP267:
+  code: CP267
+  name: MAQUINAS (P. 74)
+  subject_groups:
+  - group: '4453'
+    credits: 7
+  has_exam: true
+CP268:
+  code: CP268
+  name: PROCEDIMIENTOS DE CONSTRUCCION I
+  subject_groups:
+  - group: '4397'
+    credits: 12
+  has_exam: true
+CP269:
+  code: CP269
+  name: PROCEDIMIENTOS DE CONSTRUCCION II
+  subject_groups:
+  - group: '4397'
+    credits: 15
+  has_exam: true
+CP270:
+  code: CP270
+  name: HORMIGON ARMADO II (P. 74)
+  subject_groups:
+  - group: '4397'
+    credits: 15
+  has_exam: true
+CP271:
+  code: CP271
+  name: ESTRUCTURAS ESPECIALES (P. 74)
+  subject_groups:
+  - group: '4693'
+    credits: 4
+  has_exam: false
+CP272:
+  code: CP272
+  name: MECANICA DE SUELOS Y ROCAS (P. 74)
+  subject_groups:
+  - group: '4693'
+    credits: 4
+  has_exam: false
+CP273:
+  code: CP273
+  name: ENSAYO DE MATERIALES
+  subject_groups:
+  - group: '4818'
+    credits: 10
+  has_exam: true
+CP274:
+  code: CP274
+  name: ADMINISTRACION EN INGENIERIA
+  subject_groups:
+  - group: '5239'
+    credits: 8
+  has_exam: false
+CP275:
+  code: CP275
+  name: ANALISIS DE COSTOS
+  subject_groups:
+  - group: '5239'
+    credits: 8
+  has_exam: true
+CP276:
+  code: CP276
+  name: TOPOGRAFIA (P. 74)
+  subject_groups:
+  - group: '4316'
+    credits: 8
+  has_exam: false
+CP277:
+  code: CP277
+  name: TALLER LABORATORIO II (MOD.DE TOPOGRAF.)
+  subject_groups:
+  - group: '4316'
+    credits: 4
+  has_exam: false
+CP278:
+  code: CP278
+  name: HIGIENE INDUSTRIAL (P. 74)
+  subject_groups:
+  - group: '4922'
+    credits: 6
+  has_exam: false
+CP293:
+  code: CP293
+  name: PLANIFICACION
+  subject_groups:
+  - group: '3973'
+    credits: 4
+  - group: '5239'
+    credits: 12
+  has_exam: true
+CP3:
+  code: CP3
+  name: MECANICA I
+  subject_groups:
+  - group: '4819'
+    credits: 12
+  has_exam: true
+CP308:
+  code: CP308
+  name: MODULO:EXPRESION GRAFICA
+  has_exam: false
+  subject_groups: []
+CP335:
+  code: CP335
+  name: ESTUDIOS GEOTECNICOS
+  subject_groups:
+  - group: '4693'
+    credits: 8
+  has_exam: false
+CP337:
+  code: CP337
+  name: MATERIALES NATURALES DEL URUGUAY
+  subject_groups:
+  - group: '4693'
+    credits: 8
+  has_exam: false
+CP338:
+  code: CP338
+  name: ARQUITECTURA DE LAS OBRAS DE ING. (P. 74
+  subject_groups:
+  - group: '3973'
+    credits: 4
+  - group: '5291'
+    credits: 6
+  has_exam: false
+CP339:
+  code: CP339
+  name: CAMINOS (P. 74)
+  subject_groups:
+  - group: '4316'
+    credits: 12
+  has_exam: true
+CP34:
+  code: CP34
+  name: MECANICA DE LOS FLUIDOS
+  subject_groups:
+  - group: '4999'
+    credits: 24
+  has_exam: true
+CP340:
+  code: CP340
+  name: ELECTROTECNICA(CIVIL P. 74)
+  subject_groups:
+  - group: '4397'
+    credits: 7
+  has_exam: false
+CP341:
+  code: CP341
+  name: PLANIFICACION URBANA REG. Y ESTATAL
+  subject_groups:
+  - group: '3973'
+    credits: 4
+  - group: '5239'
+    credits: 12
+  has_exam: true
+CP342:
+  code: CP342
+  name: PROYECTO 5TO.ESTRUCTURAL (74)
+  subject_groups:
+  - group: '4385'
+    credits: 13
+  has_exam: true
+CP343:
+  code: CP343
+  name: PROYECTO 6TO. ESTRUCTURAL(74)
+  subject_groups:
+  - group: '4385'
+    credits: 13
+  has_exam: true
+CP344:
+  code: CP344
+  name: PROYECTO 5TO. HIDRAULICA Y SANITARIA (74
+  subject_groups:
+  - group: '4385'
+    credits: 16
+  has_exam: false
+CP345:
+  code: CP345
+  name: PROYECTO 6TO HIDRAULICA Y SANITRIA
+  subject_groups:
+  - group: '4385'
+    credits: 16
+  has_exam: false
+CP346:
+  code: CP346
+  name: PROYECTO 5TO. VIAL
+  subject_groups:
+  - group: '4385'
+    credits: 16
+  has_exam: false
+CP347:
+  code: CP347
+  name: PROYECTO 6TO. VIAL
+  subject_groups:
+  - group: '4385'
+    credits: 16
+  has_exam: false
+CP348:
+  code: CP348
+  name: PUERTOS Y AEROPUERTOS
+  subject_groups:
+  - group: '4453'
+    credits: 14
+  has_exam: false
+CP349:
+  code: CP349
+  name: TRANSPORTES TERRESTRES
+  subject_groups:
+  - group: '4453'
+    credits: 21
+  has_exam: true
+CP35:
+  code: CP35
+  name: MECANICA DE LOS FLUIDOS E HIDRAULICA(74)
+  subject_groups:
+  - group: '4999'
+    credits: 24
+  has_exam: true
+CP350:
+  code: CP350
+  name: ANALISIS DINAMICO DE ESTRUCTURAS
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: false
+CP351:
+  code: CP351
+  name: ANALISIS EXPERIMENTAL DE ESTRUCTURAS
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: false
+CP352:
+  code: CP352
+  name: ANALISIS MATRICIAL Y ELEMENTOS FINITOS
+  subject_groups:
+  - group: '5168'
+    credits: 6
+  has_exam: true
+CP353:
+  code: CP353
+  name: ANALISIS NO LINEAL DE ESTRUCTURAS
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: false
+CP354:
+  code: CP354
+  name: ARQUITECTURA DE LAS OBRAS DE ING.
+  subject_groups:
+  - group: '3973'
+    credits: 4
+  - group: '5291'
+    credits: 6
+  has_exam: false
+CP355:
+  code: CP355
+  name: INT. AL METODO DE ELEMENTOS DE CONTORNO
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: false
+CP356:
+  code: CP356
+  name: MET. COMPUT.APLIC.AL CALCULO DE ESTRUCT.
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: true
+CP357:
+  code: CP357
+  name: OPTIMIZACION
+  subject_groups:
+  - group: '4985'
+    credits: 8
+  has_exam: false
+CP358:
+  code: CP358
+  name: PROYECTO ESTRUCTURAL I
+  subject_groups:
+  - group: '4385'
+    credits: 13
+  has_exam: true
+CP359:
+  code: CP359
+  name: PROYECTO ESTRUCTURAL II
+  subject_groups:
+  - group: '4385'
+    credits: 13
+  has_exam: true
+CP36:
+  code: CP36
+  name: INT. A LA COMPUTACION
+  has_exam: true
+  subject_groups: []
+CP360:
+  code: CP360
+  name: PROYECTO DE TRANSPORTE I
+  subject_groups:
+  - group: '4385'
+    credits: 16
+  has_exam: true
+CP361:
+  code: CP361
+  name: PROYECTO DE TRANSPORTE II
+  subject_groups:
+  - group: '4385'
+    credits: 16
+  has_exam: false
+CP40:
+  code: CP40
+  name: MECANICA GENERAL II (P. 74)
+  subject_groups:
+  - group: '4819'
+    credits: 20
+  has_exam: true
+CP401:
+  code: CP401
+  name: PROGRAMACION I
+  has_exam: false
+  subject_groups: []
+CP402:
+  code: CP402
+  name: PROGRAMACION 1
+  has_exam: false
+  subject_groups: []
+CP41:
+  code: CP41
+  name: FISICA I (P. 74)
+  subject_groups:
+  - group: '4819'
+    credits: 22
+  has_exam: true
+CP42:
+  code: CP42
+  name: FISICA II (P. 74)
+  subject_groups:
+  - group: '4819'
+    credits: 22
+  has_exam: true
+CP43:
+  code: CP43
+  name: FISICA III (P. 74)
+  subject_groups:
+  - group: '4819'
+    credits: 20
+  has_exam: true
+CP44:
+  code: CP44
+  name: ANALISIS MATEMATICO I (1ER.SEM.)
+  has_exam: true
+  subject_groups: []
+CP45:
+  code: CP45
+  name: ANALISIS MATEMATICO I (2DO.SEM.)
+  has_exam: true
+  subject_groups: []
+CP46:
+  code: CP46
+  name: GEOMETRIA Y ALGEBRA LINEAL (1ER.SEM.)
+  has_exam: true
+  subject_groups: []
+CP47:
+  code: CP47
+  name: GEOMETRIA Y ALGEBRA LINEAL (2DO.SEM.)
+  has_exam: true
+  subject_groups: []
+CP48:
+  code: CP48
+  name: ANALISIS MATEMATICO II (1ER.SEM.)
+  has_exam: true
+  subject_groups: []
+CP49:
+  code: CP49
+  name: ANALISIS MATEMATICO II (2DO.SEM.)
+  has_exam: true
+  subject_groups: []
+CP52:
+  code: CP52
+  name: COMPUTACION
+  subject_groups:
+  - group: '4985'
+    credits: 12
+  has_exam: true
+CP54:
+  code: CP54
+  name: RESISTENCIA DE MATERIALES III
+  subject_groups:
+  - group: '4871'
+    credits: 12
+  has_exam: true
+CP55:
+  code: CP55
+  name: TALLER LABORATORIO I (MODULO DE DIBUJO)
+  subject_groups:
+  - group: '5291'
+    credits: 7
+  has_exam: false
+CP56:
+  code: CP56
+  name: GEOTECNICA I
+  subject_groups:
+  - group: '4693'
+    credits: 9
+  has_exam: true
+CP6:
+  code: CP6
+  name: ANALISIS MATEMATICO II
+  subject_groups:
+  - group: '4886'
+    credits: 33
+  has_exam: true
+CP620:
+  code: CP620
+  name: COMPLEMENTOS DE GEOTECNICA
+  subject_groups:
+  - group: '4693'
+    credits: 8
+  has_exam: false
+CP7:
+  code: CP7
+  name: ANALISIS COMPLEJO
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: false
+CP70:
+  code: CP70
+  name: RESISTENCIA DE MATERIALES I
+  subject_groups:
+  - group: '4871'
+    credits: 13
+  has_exam: true
+CP8:
+  code: CP8
+  name: MECANICA II
+  subject_groups:
+  - group: '4819'
+    credits: 24
+  has_exam: true
+CP9:
+  code: CP9
+  name: PROGRAMACION I
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: true
+CP98:
+  code: CP98
+  name: BOMBAS E INSTALACIONES HIDRAULICAS
+  subject_groups:
+  - group: '4999'
+    credits: 8
+  has_exam: false
+CR10:
+  code: CR10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+CSE4:
+  code: CSE4
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '3973'
+    credits: 4
+  has_exam: false
+DMA01:
+  code: DMA01
+  name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: false
+DMA03:
+  code: DMA03
+  name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: false
+DMA04:
+  code: DMA04
+  name: GEOMETRÍA Y ALGEBRA LINEAL II
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: false
+DMA05:
+  code: DMA05
+  name: MATEMÁTICA INICIAL
+  subject_groups:
+  - group: '4886'
+    credits: 4
+  has_exam: false
+DMA06:
+  code: DMA06
+  name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+  subject_groups:
+  - group: '4886'
+    credits: 13
+  has_exam: false
+E62:
+  code: E62
+  name: ACONDICIONAMIENTO DE EDIFICIOS
+  subject_groups:
+  - group: '4397'
+    credits: 6
+  - group: '4148'
+    credits: 6
+  has_exam: false
+ESII:
+  code: ESII
+  name: ESTADÍSTICA II
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: false
+ESTAI:
+  code: ESTAI
+  name: ESTADÍSTICA I
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: false
+EXP4:
+  code: EXP4
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5291'
+    credits: 4
+  has_exam: false
+F10:
+  code: F10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+F10R:
+  code: F10R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: false
+F1F2P:
+  code: F1F2P
+  name: CREDITOS NO ACUM FIS 1 Y FIS 2
+  has_exam: false
+  subject_groups: []
+F1Y3:
+  code: F1Y3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 12
+  has_exam: false
+F3:
+  code: F3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 3
+  has_exam: false
+F30:
+  code: F30
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+F7:
+  code: F7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+F8:
+  code: F8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+FA4:
+  code: FA4
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 4
+  has_exam: false
+FA8:
+  code: FA8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 8
+  has_exam: false
+FF1-7:
+  code: FF1-7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 7
+  has_exam: false
+FF12:
+  code: FF12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+FF2-7:
+  code: FF2-7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 7
+  has_exam: false
+FFT13:
+  code: FFT13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 13
+  has_exam: false
+FG:
+  code: FG
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+FG2:
+  code: FG2
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+FI10:
+  code: FI10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+FI13:
+  code: FI13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 13
+  has_exam: false
+FI15:
+  code: FI15
+  name: INESTABILIDADES EN FLUIDOS
+  subject_groups:
+  - group: '4819'
+    credits: 4
+  - group: '4999'
+    credits: 4
+  has_exam: true
+FIS08:
+  code: FIS08
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 8
+  has_exam: false
+FIS13:
+  code: FIS13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 13
+  has_exam: false
+FIS14:
+  code: FIS14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 14
+  has_exam: true
+FIS26:
+  code: FIS26
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 26
+  has_exam: false
+FIS45:
+  code: FIS45
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+FISI8:
+  code: FISI8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 8
+  has_exam: false
+FL08:
+  code: FL08
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 8
+  has_exam: false
+FL1:
+  code: FL1
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 8
+  has_exam: false
+FL1.6:
+  code: FL1.6
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 6
+  has_exam: false
+FL1Y2:
+  code: FL1Y2
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 8
+  has_exam: false
+FL2.6:
+  code: FL2.6
+  name: CREDITOS ASIGANDOS POR REVALIDA
+  subject_groups:
+  - group: '4819'
+    credits: 6
+  has_exam: false
+G7:
+  code: G7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4693'
+    credits: 7
+  has_exam: false
+GAL1P:
+  code: GAL1P
+  name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+  subject_groups:
+  - group: '4886'
+    credits: 9
+  has_exam: true
+GAL7:
+  code: GAL7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 7
+  has_exam: true
+GOT2:
+  code: GOT2
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4453'
+    credits: 2
+  has_exam: false
+HP10:
+  code: HP10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5168'
+    credits: 10
+  has_exam: false
+I6:
+  code: I6
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: false
+II4:
+  code: II4
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4985'
+    credits: 4
+  has_exam: false
+IN35:
+  code: IN35
+  name: PROGRAMACION 1
+  has_exam: true
+  subject_groups: []
+INF10:
+  code: INF10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4985'
+    credits: 10
+  has_exam: false
+IT5:
+  code: IT5
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4316'
+    credits: 5
+  has_exam: false
+ITL9:
+  code: ITL9
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4985'
+    credits: 9
+  has_exam: false
+M10:
+  code: M10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: false
+M1020:
+  code: M1020
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 14
+  has_exam: true
+M12:
+  code: M12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M13:
+  code: M13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M14:
+  code: M14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M24:
+  code: M24
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M9:
+  code: M9
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA01:
+  code: MA01
+  name: CALCULO DIFERENCIAL E INTEGRAL I
+  has_exam: true
+  subject_groups: []
+MA09:
+  code: MA09
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 9
+  has_exam: true
+MA10:
+  code: MA10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA11:
+  code: MA11
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA12:
+  code: MA12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: false
+MA13:
+  code: MA13
+  name: CÁLCULO DIFERENCIAL E INTEGRAL I (F)
+  has_exam: true
+  subject_groups: []
+MA2:
+  code: MA2
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4922'
+    credits: 2
+  has_exam: false
+MA25:
+  code: MA25
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA47:
+  code: MA47
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 47
+  has_exam: true
+MA5:
+  code: MA5
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA51:
+  code: MA51
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA7:
+  code: MA7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MAT14:
+  code: MAT14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MAT33:
+  code: MAT33
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MAT5:
+  code: MAT5
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 5
+  has_exam: false
+MAT51:
+  code: MAT51
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4886'
+    credits: 51
+  has_exam: false
+MC13:
+  code: MC13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MC3:
+  code: MC3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MC8:
+  code: MC8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: false
+MCA3:
+  code: MCA3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4922'
+    credits: 3
+  has_exam: false
+MEC:
+  code: MEC
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MEX4:
+  code: MEX4
+  name: MODULO DE EXTENSION
+  subject_groups:
+  - group: '3973'
+    credits: 4
+  has_exam: false
+MF4:
+  code: MF4
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4999'
+    credits: 4
+  has_exam: false
+MI2:
+  code: MI2
+  name: MATEMATICA INICIAL
+  subject_groups:
+  - group: '4886'
+    credits: 4
+  has_exam: true
+MM3:
+  code: MM3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4999'
+    credits: 3
+  has_exam: false
+MR10:
+  code: MR10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4316'
+    credits: 10
+  has_exam: false
+MR15:
+  code: MR15
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5168'
+    credits: 15
+  has_exam: false
+MR4:
+  code: MR4
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4999'
+    credits: 4
+  has_exam: false
+MR5:
+  code: MR5
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4693'
+    credits: 5
+  has_exam: false
+MR6:
+  code: MR6
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5291'
+    credits: 6
+  has_exam: false
+MR8:
+  code: MR8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4148'
+    credits: 8
+  has_exam: false
+MR8E:
+  code: MR8E
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: true
+MS6:
+  code: MS6
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4148'
+    credits: 6
+  has_exam: false
+MS8:
+  code: MS8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4148'
+    credits: 8
+  has_exam: false
+P8:
+  code: P8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5168'
+    credits: 8
+  has_exam: false
+QPQ10:
+  code: QPQ10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5294'
+    credits: 10
+  has_exam: false
+QPQ7:
+  code: QPQ7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5294'
+    credits: 7
+  has_exam: false
+R100:
+  code: R100
+  name: ANALISIS MATEMATICO I
+  has_exam: true
+  subject_groups: []
+R101:
+  code: R101
+  name: GEOMETRIA Y ALGEBRA LINEAL
+  has_exam: true
+  subject_groups: []
+R103:
+  code: R103
+  name: MECANICA I
+  has_exam: true
+  subject_groups: []
+R24:
+  code: R24
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4871'
+    credits: 24
+  has_exam: true
+RE2:
+  code: RE2
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4871'
+    credits: 2
+  has_exam: false
+REF04:
+  code: REF04
+  name: FÍSICA 1
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: false
+RETEM:
+  code: RETEM
+  name: INTRODUCCION AL CONOCIMIENTO DEL AMBIENTE Y LA SUSTENTABILIDAD (RETEMA)
+  subject_groups:
+  - group: '3973'
+    credits: 4
+  has_exam: false
+RM5:
+  code: RM5
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4871'
+    credits: 5
+  has_exam: false
+RN115:
+  code: RN115
+  name: ESTADÍSTICA I 2022
+  subject_groups:
+  - group: '4886'
+    credits: 10
+  has_exam: false
+RN252:
+  code: RN252
+  name: FISICA 1 BIOCIENCIAS 2017
+  subject_groups:
+  - group: '4819'
+    credits: 12
+  has_exam: false
+RN253:
+  code: RN253
+  name: FISICA 2 BIOCIENCIAS 2017
+  subject_groups:
+  - group: '4819'
+    credits: 12
+  has_exam: false
+RN404:
+  code: RN404
+  name: MATEMATICA I
+  subject_groups:
+  - group: '4886'
+    credits: 11
+  has_exam: false
+RN407:
+  code: RN407
+  name: MATEMATICA II
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: false
+S2:
+  code: S2
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4148'
+    credits: 2
+  has_exam: false
+SRN02:
+  code: SRN02
+  name: CÁLCULO I
+  subject_groups:
+  - group: '4886'
+    credits: 16
+  has_exam: false
+SRN03:
+  code: SRN03
+  name: ALGEBRA LINEAL I
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: false
+SRN09:
+  code: SRN09
+  name: CÁLCULO II
+  subject_groups:
+  - group: '4886'
+    credits: 16
+  has_exam: false
+SRN10:
+  code: SRN10
+  name: ALGEBRA LINEAL II
+  subject_groups:
+  - group: '4886'
+    credits: 12
+  has_exam: false
+SRN11:
+  code: SRN11
+  name: FÍSICA 2
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: false
+SRN26:
+  code: SRN26
+  name: FÍSICA 3
+  subject_groups:
+  - group: '4819'
+    credits: 10
+  has_exam: false
+T40:
+  code: T40
+  name: RESISTENCIA DE MATERIALES II
+  has_exam: true
+  subject_groups: []
+T43:
+  code: T43
+  name: HORMIGON ARMADO I
+  has_exam: false
+  subject_groups: []
+T46:
+  code: T46
+  name: GEOLOGIA TECNICA
+  has_exam: true
+  subject_groups: []
+T64:
+  code: T64
+  name: INGENIERIA LEGAL
+  subject_groups:
+  - group: '3973'
+    credits: 7
+  has_exam: false
+TE2:
+  code: TE2
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5168'
+    credits: 2
+  has_exam: false
+TE26:
+  code: TE26
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5168'
+    credits: 26
+  has_exam: true
+TE4:
+  code: TE4
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '5168'
+    credits: 4
+  has_exam: false
+TM4:
+  code: TM4
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  subject_groups:
+  - group: '4818'
+    credits: 4
+  has_exam: false
