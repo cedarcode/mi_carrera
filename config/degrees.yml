@@ -19,3 +19,9 @@ shared:
   current_plan: "2023"
   plans:
     - "2023"
+- bedelias_name: "INGENIERÍA CIVIL"
+  id: "civil"
+  name: "Ingeniería Civil"
+  current_plan: "2021"
+  plans:
+    - "2021"
