@@ -1,0 +1,1180 @@
+---
+'01':
+  code: '01'
+  name: MAT. 01 (ANÁLISIS I)
+  has_exam: true
+  subject_groups: []
+'101':
+  code: '101'
+  name: MATEMÁTICA 101 (ANÁLISIS I)
+  has_exam: true
+  subject_groups: []
+'1020':
+  code: '1020'
+  name: CALCULO 1
+  has_exam: true
+  subject_groups: []
+1020P:
+  code: 1020P
+  name: CREDITOS NO ACUM CALCULO 1
+  has_exam: true
+  subject_groups: []
+1020R:
+  code: 1020R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+'1021':
+  code: '1021'
+  name: ALGEBRA LINEAL
+  has_exam: true
+  subject_groups: []
+'1022':
+  code: '1022'
+  name: CALCULO 2
+  has_exam: true
+  subject_groups: []
+'1024':
+  code: '1024'
+  name: CALCULO 3
+  has_exam: true
+  subject_groups: []
+1024P:
+  code: 1024P
+  name: CREDITOS NO ACUM CALCULO 3
+  has_exam: true
+  subject_groups: []
+'1025':
+  code: '1025'
+  name: PROBABILIDAD Y ESTADISTICA
+  subject_groups:
+  - group: '00101'
+    credits: 10
+  has_exam: true
+1025P:
+  code: 1025P
+  name: CREDITOS NO ACUM PROB Y EST.
+  has_exam: true
+  subject_groups: []
+'1028':
+  code: '1028'
+  name: ECUACIONES DIFERENCIALES
+  has_exam: false
+  subject_groups: []
+1028M:
+  code: 1028M
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+1028P:
+  code: 1028P
+  name: CREDITOS NO ACUM EC. DIFERENCIALES
+  has_exam: false
+  subject_groups: []
+'1030':
+  code: '1030'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  subject_groups:
+  - group: '00101'
+    credits: 9
+  has_exam: true
+1030P:
+  code: 1030P
+  name: CREDITOS NO ACUM GAL1
+  has_exam: true
+  subject_groups: []
+'1031':
+  code: '1031'
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  subject_groups:
+  - group: '00101'
+    credits: 9
+  has_exam: true
+1031P:
+  code: 1031P
+  name: CREDITOS NO ACUM GAL2
+  has_exam: true
+  subject_groups: []
+'1038':
+  code: '1038'
+  name: SISTEMAS DE REFERENCIA
+  has_exam: true
+  subject_groups: []
+'1052':
+  code: '1052'
+  name: CALCULO 1 (ANUAL)
+  has_exam: true
+  subject_groups: []
+'1053':
+  code: '1053'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+  has_exam: true
+  subject_groups: []
+'1058':
+  code: '1058'
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  has_exam: true
+  subject_groups: []
+'1061':
+  code: '1061'
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  subject_groups:
+  - group: '00101'
+    credits: 13
+  has_exam: true
+1061I:
+  code: 1061I
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  has_exam: true
+  subject_groups: []
+1061P:
+  code: 1061P
+  name: CREDITOS NO ACUM CDIV
+  has_exam: true
+  subject_groups: []
+1061R:
+  code: 1061R
+  name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  has_exam: true
+  subject_groups: []
+'1062':
+  code: '1062'
+  name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+  subject_groups:
+  - group: '00101'
+    credits: 13
+  has_exam: true
+1062P:
+  code: 1062P
+  name: CREDITOS NO ACUM CDIVV
+  has_exam: true
+  subject_groups: []
+'1063':
+  code: '1063'
+  name: CALCULO VECTORIAL
+  subject_groups:
+  - group: '00101'
+    credits: 10
+  has_exam: true
+1063P:
+  code: 1063P
+  name: CREDITOS NO ACUM CAL. VECTORIAL
+  has_exam: true
+  subject_groups: []
+'1064':
+  code: '1064'
+  name: INT. A LAS ECUACIONES DIFERENCIALES
+  subject_groups:
+  - group: '00101'
+    credits: 10
+  has_exam: true
+'1070':
+  code: '1070'
+  name: CALCULO 1
+  has_exam: true
+  subject_groups: []
+'1071':
+  code: '1071'
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  has_exam: true
+  subject_groups: []
+'1072':
+  code: '1072'
+  name: CALCULO 2
+  has_exam: true
+  subject_groups: []
+'1074':
+  code: '1074'
+  name: ECUACIONES DIFERENCIALES
+  has_exam: false
+  subject_groups: []
+'1075':
+  code: '1075'
+  name: PROBABILIDAD Y ESTADISTICA
+  has_exam: true
+  subject_groups: []
+'1076':
+  code: '1076'
+  name: CALCULO 3
+  has_exam: true
+  subject_groups: []
+107L:
+  code: 107L
+  name: CALCULO 1
+  has_exam: true
+  subject_groups: []
+'1120':
+  code: '1120'
+  name: FISICA GENERAL 1
+  has_exam: true
+  subject_groups: []
+1120P:
+  code: 1120P
+  name: CREDITOS NO ACUM. FISICA GENERAL 1
+  has_exam: true
+  subject_groups: []
+'1121':
+  code: '1121'
+  name: FISICA GENERAL 2
+  has_exam: true
+  subject_groups: []
+'1122':
+  code: '1122'
+  name: MECANICA NEWTONIANA
+  subject_groups:
+  - group: '00102'
+    credits: 10
+  has_exam: true
+1122P:
+  code: 1122P
+  name: CREDITOS NO ACUM MEC NEWTONIANA
+  has_exam: true
+  subject_groups: []
+'1129':
+  code: '1129'
+  name: OPTICA
+  subject_groups:
+  - group: '00102'
+    credits: 10
+  has_exam: true
+'1151':
+  code: '1151'
+  name: FISICA 1
+  subject_groups:
+  - group: '00102'
+    credits: 10
+  has_exam: true
+1151P:
+  code: 1151P
+  name: CREDITOS NO ACUM FISICA 1
+  has_exam: true
+  subject_groups: []
+'1152':
+  code: '1152'
+  name: FISICA 2
+  subject_groups:
+  - group: '00102'
+    credits: 10
+  has_exam: true
+1152P:
+  code: 1152P
+  name: CREDITOS NO ACUM FISICA 2
+  has_exam: true
+  subject_groups: []
+'1153':
+  code: '1153'
+  name: FISICA 3
+  subject_groups:
+  - group: '00102'
+    credits: 10
+  has_exam: true
+1153P:
+  code: 1153P
+  name: CREDITOS NO ACUM FISICA 3
+  has_exam: true
+  subject_groups: []
+'1154':
+  code: '1154'
+  name: FISICA EXPERIMENTAL 1
+  subject_groups:
+  - group: '00102'
+    credits: 5
+  has_exam: false
+'1170':
+  code: '1170'
+  name: FISICA GENERAL 1
+  has_exam: true
+  subject_groups: []
+'1171':
+  code: '1171'
+  name: FISICA 1
+  has_exam: true
+  subject_groups: []
+'1172':
+  code: '1172'
+  name: FISICA GENERAL 2
+  has_exam: true
+  subject_groups: []
+'1173':
+  code: '1173'
+  name: FISICA 3
+  has_exam: true
+  subject_groups: []
+117Q:
+  code: 117Q
+  name: FISICA GENERAL 1
+  has_exam: false
+  subject_groups: []
+119Q:
+  code: 119Q
+  name: FISICA 3
+  has_exam: true
+  subject_groups: []
+'1220':
+  code: '1220'
+  name: TALLER DE DISEÑO, COM. Y REPRES. GRAFICA
+  has_exam: false
+  subject_groups: []
+1220P:
+  code: 1220P
+  name: CREDITOS NO ACUM TALLER DE DISEÑO, COM. Y REP. GRAFICA
+  has_exam: false
+  subject_groups: []
+1220R:
+  code: 1220R
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+'1221':
+  code: '1221'
+  name: ECONOMIA
+  has_exam: true
+  subject_groups: []
+'1222':
+  code: '1222'
+  name: INT. AL DERECHO
+  subject_groups:
+  - group: '00103'
+    credits: 4
+  has_exam: true
+'1224':
+  code: '1224'
+  name: ECONOMIA
+  subject_groups:
+  - group: '00103'
+    credits: 7
+  has_exam: true
+'1228':
+  code: '1228'
+  name: CIENCIA, TECNOLOGIA Y SOCIEDAD
+  subject_groups:
+  - group: '00301'
+    credits: 10
+  has_exam: true
+'1266':
+  code: '1266'
+  name: TALLER DE REPRESENTACION Y COMUNICACION GRAFICA_MODULO A
+  subject_groups:
+  - group: '00302'
+    credits: 4
+  has_exam: false
+'1269':
+  code: '1269'
+  name: TALLER DE REPRESENTACION Y COMUNICACION GRAFICA_MODULO B
+  subject_groups:
+  - group: '00302'
+    credits: 4
+  has_exam: false
+'1275':
+  code: '1275'
+  name: TALLER BASICO DE ESTRATEGIAS Y ORIENTACION (TBEO)
+  subject_groups:
+  - group: '00301'
+    credits: 3
+  has_exam: false
+'1317':
+  code: '1317'
+  name: SISTEMAS DE INFORMACION GEOGRAFICA
+  has_exam: false
+  subject_groups: []
+'1359':
+  code: '1359'
+  name: TALLER DE DATOS ESPAC.Y SIST.DE INF.GEO.
+  subject_groups:
+  - group: '00204'
+    credits: 10
+  has_exam: true
+'1411':
+  code: '1411'
+  name: COMPUTACION 1
+  subject_groups:
+  - group: '00104'
+    credits: 10
+  has_exam: true
+1411P:
+  code: 1411P
+  name: CREDITOS NO ACUM COMPUTACION 1
+  has_exam: true
+  subject_groups: []
+'1418':
+  code: '1418'
+  name: GEODESIA 1
+  has_exam: true
+  subject_groups: []
+'1464':
+  code: '1464'
+  name: GEODESIA GEOMETRICA
+  subject_groups:
+  - group: '00207'
+    credits: 10
+  has_exam: true
+'1465':
+  code: '1465'
+  name: TOPOGRAFIA PLANIMETRICA
+  subject_groups:
+  - group: '00206'
+    credits: 10
+  has_exam: true
+'1480':
+  code: '1480'
+  name: CARTOGRAFIA MATEMATICA
+  subject_groups:
+  - group: '00207'
+    credits: 10
+  has_exam: true
+'1509':
+  code: '1509'
+  name: TOPOGRAFIA 2
+  has_exam: true
+  subject_groups: []
+'1520':
+  code: '1520'
+  name: TEORIA DE INSTRUMENTAL
+  has_exam: true
+  subject_groups: []
+'1521':
+  code: '1521'
+  name: TEORIA DE ERRORES 1
+  has_exam: false
+  subject_groups: []
+'1526':
+  code: '1526'
+  name: TEORIA DE INSTRUMENTAL
+  has_exam: true
+  subject_groups: []
+158Q:
+  code: 158Q
+  name: GEOMETRIA Y ALGEBRA LINEAL 2
+  has_exam: true
+  subject_groups: []
+'1599':
+  code: '1599'
+  name: PRACTICA TOPOGRAFICA 1
+  subject_groups:
+  - group: '00206'
+    credits: 12
+  has_exam: true
+'1611':
+  code: '1611'
+  name: INT. AL ANALISIS RURAL
+  subject_groups:
+  - group: '00202'
+    credits: 8
+  has_exam: true
+'1648':
+  code: '1648'
+  name: GEODESIA ASTRONÓMICA
+  subject_groups:
+  - group: '00207'
+    credits: 6
+  has_exam: true
+170Q:
+  code: 170Q
+  name: CALCULO 1
+  has_exam: true
+  subject_groups: []
+171L:
+  code: 171L
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  has_exam: true
+  subject_groups: []
+171Q:
+  code: 171Q
+  name: GEOMETRIA Y ALGEBRA LINEAL 1
+  has_exam: true
+  subject_groups: []
+172Q:
+  code: 172Q
+  name: CALCULO 2
+  has_exam: true
+  subject_groups: []
+176Q:
+  code: 176Q
+  name: CALCULO 3
+  has_exam: true
+  subject_groups: []
+'1817':
+  code: '1817'
+  name: AGRIMENSURA LEGAL 3
+  subject_groups:
+  - group: '00201'
+    credits: 10
+  has_exam: true
+'1893':
+  code: '1893'
+  name: TEORIA Y ANALISIS DE ERRORES
+  subject_groups:
+  - group: '00105'
+    credits: 8
+  has_exam: true
+'1895':
+  code: '1895'
+  name: CALCULO Y AJUSTE DE LAS OBSERVACIONES
+  subject_groups:
+  - group: '00105'
+    credits: 8
+  has_exam: true
+'1900':
+  code: '1900'
+  name: TOPOGRAFIA ALTIMETRICA
+  subject_groups:
+  - group: '00206'
+    credits: 10
+  has_exam: true
+'1910':
+  code: '1910'
+  name: AGRIMENSURA LEGAL 1
+  subject_groups:
+  - group: '00201'
+    credits: 10
+  has_exam: true
+'1913':
+  code: '1913'
+  name: AGRIMENSURA LEGAL 2
+  subject_groups:
+  - group: '00201'
+    credits: 10
+  has_exam: true
+'1991':
+  code: '1991'
+  name: TALLER DE AGRIMENSURA
+  subject_groups:
+  - group: '00301'
+    credits: 2
+  has_exam: false
+'2414':
+  code: '2414'
+  name: SISTEMAS DE REFERENCIA EN GEODESIA
+  subject_groups:
+  - group: '00101'
+    credits: 6
+  has_exam: true
+423EU:
+  code: 423EU
+  name: PROGRAMACIÓN PYTHON I (INICIAL)
+  subject_groups:
+  - group: '00104'
+    credits: 10
+  has_exam: true
+AL:
+  code: AL
+  name: GEOMETRÍA Y ÁLGEBRA LINEAL
+  subject_groups:
+  - group: '00101'
+    credits: 9
+  has_exam: false
+B100:
+  code: B100
+  name: ANALISIS MATEMATICO I (ANUAL)
+  has_exam: true
+  subject_groups: []
+B101:
+  code: B101
+  name: GEOMETRIA Y ALGEBRA LINEAL (ANUAL)
+  has_exam: true
+  subject_groups: []
+B11:
+  code: B11
+  name: GEOMETRIA Y ALGEBRA LINEAL
+  has_exam: true
+  subject_groups: []
+B315:
+  code: B315
+  name: COMPUTACION I
+  has_exam: true
+  subject_groups: []
+CAL10:
+  code: CAL10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+CAL12:
+  code: CAL12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+CAL2:
+  code: CAL2
+  name: CÁLCULO 2
+  subject_groups:
+  - group: '00101'
+    credits: 10
+  has_exam: false
+CCT10:
+  code: CCT10
+  name: FÍSICA I
+  subject_groups:
+  - group: '00102'
+    credits: 14
+  has_exam: false
+CCT20:
+  code: CCT20
+  name: FÍSICA II
+  subject_groups:
+  - group: '00102'
+    credits: 14
+  has_exam: true
+CH201:
+  code: CH201
+  name: PROBABILIDAD Y ESTADÍSTICA
+  subject_groups:
+  - group: '00101'
+    credits: 10
+  has_exam: false
+CIM10:
+  code: CIM10
+  name: CÁLCULO VECTORIAL
+  subject_groups:
+  - group: '00101'
+    credits: 12
+  has_exam: false
+CIM24:
+  code: CIM24
+  name: ECUACIONES DIFERENCIALES
+  subject_groups:
+  - group: '00101'
+    credits: 10
+  has_exam: false
+CIM28:
+  code: CIM28
+  name: MECÁNICA CLÁSICA
+  subject_groups:
+  - group: '00102'
+    credits: 10
+  has_exam: false
+CIVU:
+  code: CIVU
+  name: CICLO INTRODUC A LA VIDA UNIV.
+  subject_groups:
+  - group: '00301'
+    credits: 1
+  has_exam: false
+CM:
+  code: CM
+  name: COMPLEMENTO DE MATEMÁTICA
+  subject_groups:
+  - group: '00101'
+    credits: 6
+  has_exam: false
+CM14:
+  code: CM14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+COMP1:
+  code: COMP1
+  name: COMPUTACIÓN 1
+  subject_groups:
+  - group: '00104'
+    credits: 10
+  has_exam: false
+CP1:
+  code: CP1
+  name: ANALISIS MATEMATICO I
+  has_exam: true
+  subject_groups: []
+CP13:
+  code: CP13
+  name: ELECTROMAGNETISMO
+  has_exam: true
+  subject_groups: []
+CP17:
+  code: CP17
+  name: MECANICA I (TRANSICION)
+  has_exam: true
+  subject_groups: []
+CP18:
+  code: CP18
+  name: TECNOLOGIA Y SOCIEDAD
+  has_exam: true
+  subject_groups: []
+CP19:
+  code: CP19
+  name: ELEMENTOS DEL DERECHO
+  has_exam: true
+  subject_groups: []
+CP2:
+  code: CP2
+  name: GEOMETRIA Y ALGEBRA LINEAL
+  has_exam: true
+  subject_groups: []
+CP22:
+  code: CP22
+  name: ANALISIS MATEMATICO I (P. 74)
+  has_exam: true
+  subject_groups: []
+CP23:
+  code: CP23
+  name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+  has_exam: true
+  subject_groups: []
+CP25:
+  code: CP25
+  name: ANALISIS MATEMATICO II (P. 74)
+  has_exam: true
+  subject_groups: []
+CP26:
+  code: CP26
+  name: MECANICA GENERAL I (P. 74)
+  has_exam: true
+  subject_groups: []
+CP3:
+  code: CP3
+  name: MECANICA I
+  has_exam: true
+  subject_groups: []
+CP308:
+  code: CP308
+  name: MODULO:EXPRESION GRAFICA
+  has_exam: false
+  subject_groups: []
+CP41:
+  code: CP41
+  name: FISICA I (P. 74)
+  has_exam: true
+  subject_groups: []
+CP43:
+  code: CP43
+  name: FISICA III (P. 74)
+  has_exam: true
+  subject_groups: []
+CP44:
+  code: CP44
+  name: ANALISIS MATEMATICO I (1ER.SEM.)
+  has_exam: true
+  subject_groups: []
+CP45:
+  code: CP45
+  name: ANALISIS MATEMATICO I (2DO.SEM.)
+  has_exam: true
+  subject_groups: []
+CP46:
+  code: CP46
+  name: GEOMETRIA Y ALGEBRA LINEAL (1ER.SEM.)
+  has_exam: true
+  subject_groups: []
+CP47:
+  code: CP47
+  name: GEOMETRIA Y ALGEBRA LINEAL (2DO.SEM.)
+  has_exam: true
+  subject_groups: []
+CP49:
+  code: CP49
+  name: ANALISIS MATEMATICO II (2DO.SEM.)
+  has_exam: true
+  subject_groups: []
+CP55:
+  code: CP55
+  name: TALLER LABORATORIO I (MODULO DE DIBUJO)
+  has_exam: false
+  subject_groups: []
+CP6:
+  code: CP6
+  name: ANALISIS MATEMATICO II
+  has_exam: true
+  subject_groups: []
+CP8:
+  code: CP8
+  name: MECANICA II
+  has_exam: true
+  subject_groups: []
+CPTA:
+  code: CPTA
+  name: TED COMPRENSIÓN Y PRODUCCIÓN DE TEXTOS ACADÉMICOS
+  subject_groups:
+  - group: '00301'
+    credits: 6
+  has_exam: false
+CYPTA:
+  code: CYPTA
+  name: COMPRENSIÓN Y PRODUCCIÓN DE TEXTOS ACADÉMICOS
+  subject_groups:
+  - group: '00301'
+    credits: 6
+  has_exam: false
+DMA01:
+  code: DMA01
+  name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+  subject_groups:
+  - group: '00101'
+    credits: 12
+  has_exam: false
+DMA03:
+  code: DMA03
+  name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
+  subject_groups:
+  - group: '00101'
+    credits: 12
+  has_exam: false
+DMA04:
+  code: DMA04
+  name: GEOMETRÍA Y ALGEBRA LINEAL II
+  subject_groups:
+  - group: '00101'
+    credits: 12
+  has_exam: false
+DMA05:
+  code: DMA05
+  name: MATEMÁTICA INICIAL
+  subject_groups:
+  - group: '00101'
+    credits: 4
+  has_exam: false
+DMA06:
+  code: DMA06
+  name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+  subject_groups:
+  - group: '00101'
+    credits: 13
+  has_exam: false
+EL31:
+  code: EL31
+  name: ÉTICA
+  subject_groups:
+  - group: '00301'
+    credits: 8
+  has_exam: false
+ESII:
+  code: ESII
+  name: ESTADÍSTICA II
+  subject_groups:
+  - group: '00101'
+    credits: 10
+  has_exam: false
+ESTAI:
+  code: ESTAI
+  name: ESTADÍSTICA I
+  subject_groups:
+  - group: '00101'
+    credits: 10
+  has_exam: false
+F10:
+  code: F10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+F1Y3:
+  code: F1Y3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+F30:
+  code: F30
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+F7:
+  code: F7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+F8:
+  code: F8
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+FF12:
+  code: FF12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+FG:
+  code: FG
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+FG2:
+  code: FG2
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+FI10:
+  code: FI10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+FI13:
+  code: FI13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+FIS13:
+  code: FIS13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+FIS14:
+  code: FIS14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+GAL1P:
+  code: GAL1P
+  name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+  has_exam: true
+  subject_groups: []
+GAL7:
+  code: GAL7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+IDUCS:
+  code: IDUCS
+  name: INTROD. A LAS DINAMICAS UNIVERSITARIAS
+  subject_groups:
+  - group: '00301'
+    credits: 3
+  has_exam: false
+M1020:
+  code: M1020
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M12:
+  code: M12
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M13:
+  code: M13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M14:
+  code: M14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M24:
+  code: M24
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+M9:
+  code: M9
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA01:
+  code: MA01
+  name: CALCULO DIFERENCIAL E INTEGRAL I
+  has_exam: true
+  subject_groups: []
+MA09:
+  code: MA09
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA10:
+  code: MA10
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA11:
+  code: MA11
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA13:
+  code: MA13
+  name: CÁLCULO DIFERENCIAL E INTEGRAL I (F)
+  has_exam: true
+  subject_groups: []
+MA16:
+  code: MA16
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: false
+  subject_groups: []
+MA25:
+  code: MA25
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA47:
+  code: MA47
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA5:
+  code: MA5
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA51:
+  code: MA51
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA7:
+  code: MA7
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MA9:
+  code: MA9
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MAT14:
+  code: MAT14
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MAT33:
+  code: MAT33
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MC13:
+  code: MC13
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MC3:
+  code: MC3
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
+MI2:
+  code: MI2
+  name: MATEMATICA INICIAL
+  subject_groups:
+  - group: '00101'
+    credits: 4
+  has_exam: false
+R100:
+  code: R100
+  name: ANALISIS MATEMATICO I
+  has_exam: true
+  subject_groups: []
+R101:
+  code: R101
+  name: GEOMETRIA Y ALGEBRA LINEAL
+  has_exam: true
+  subject_groups: []
+REF04:
+  code: REF04
+  name: FÍSICA 1
+  subject_groups:
+  - group: '00102'
+    credits: 10
+  has_exam: false
+RN101:
+  code: RN101
+  name: EVALUACIÓN DE IMPACTO AMBIENTAL
+  subject_groups:
+  - group: '00205'
+    credits: 7
+  has_exam: false
+RN115:
+  code: RN115
+  name: ESTADÍSTICA I 2022
+  subject_groups:
+  - group: '00101'
+    credits: 10
+  has_exam: false
+RN252:
+  code: RN252
+  name: FISICA 1 BIOCIENCIAS 2017
+  subject_groups:
+  - group: '00102'
+    credits: 12
+  has_exam: false
+RN253:
+  code: RN253
+  name: FISICA 2 BIOCIENCIAS 2017
+  subject_groups:
+  - group: '00102'
+    credits: 12
+  has_exam: false
+RN404:
+  code: RN404
+  name: MATEMATICA I
+  subject_groups:
+  - group: '00101'
+    credits: 11
+  has_exam: false
+RN407:
+  code: RN407
+  name: MATEMATICA II
+  subject_groups:
+  - group: '00101'
+    credits: 12
+  has_exam: false
+SRN02:
+  code: SRN02
+  name: CÁLCULO I
+  subject_groups:
+  - group: '00101'
+    credits: 16
+  has_exam: false
+SRN03:
+  code: SRN03
+  name: ALGEBRA LINEAL I
+  subject_groups:
+  - group: '00101'
+    credits: 12
+  has_exam: false
+SRN06:
+  code: SRN06
+  name: TALLER DE DISEÑO
+  subject_groups:
+  - group: '00302'
+    credits: 6
+  has_exam: false
+SRN09:
+  code: SRN09
+  name: CÁLCULO II
+  subject_groups:
+  - group: '00101'
+    credits: 16
+  has_exam: false
+SRN10:
+  code: SRN10
+  name: ALGEBRA LINEAL II
+  subject_groups:
+  - group: '00101'
+    credits: 12
+  has_exam: false
+SRN11:
+  code: SRN11
+  name: FÍSICA 2
+  subject_groups:
+  - group: '00102'
+    credits: 10
+  has_exam: false
+SRN13:
+  code: SRN13
+  name: ECONOMÍA POLÍTICA
+  subject_groups:
+  - group: '00103'
+    credits: 10
+  has_exam: false
+SRN26:
+  code: SRN26
+  name: FÍSICA 3
+  subject_groups:
+  - group: '00102'
+    credits: 10
+  has_exam: false
+TIIO:
+  code: TIIO
+  name: TALLER INTR A LA INVEST DE OPERACIONES
+  subject_groups:
+  - group: '00104'
+    credits: 8
+  has_exam: false
+TSIG:
+  code: TSIG
+  name: TALLER DE DATOS ESPACIALES Y SISTEMAS DE INFORMACIÓN GEOGRÁFICA
+  subject_groups:
+  - group: '00204'
+    credits: 10
+  has_exam: false
+TTR6:
+  code: TTR6
+  name: PROGRAMACION I
+  subject_groups:
+  - group: '00104'
+    credits: 10
+  has_exam: false

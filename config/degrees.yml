@@ -13,3 +13,9 @@ shared:
   current_plan: "2023"
   plans:
     - "2023"
+- bedelias_name: "INGENIERÍA EN AGRIMENSURA"
+  id: "agrimensura"
+  name: "Ingeniería en Agrimensura"
+  current_plan: "2023"
+  plans:
+    - "2023"
