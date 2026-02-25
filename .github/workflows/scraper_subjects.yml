@@ -106,5 +106,5 @@ jobs:
 
         curl -X POST -H 'Content-type: application/json' \
           --data '{
-            "text": "El Scraper de Subjects de MiCarrera falló para: '"$failed"' - <'"$RUN_URL"'|logs>"
+            "text": "El Scraper de Subjects de MiCarrera falló para '"$failed"'. <'"$RUN_URL"'|Ver logs>"
           }' "${{ secrets.SLACK_WEBHOOK_URL }}"
