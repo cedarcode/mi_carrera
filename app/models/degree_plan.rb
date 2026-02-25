@@ -6,7 +6,14 @@ class DegreePlan < ApplicationRecord
   validates :name, presence: true, uniqueness: { scope: :degree_id }
 
   scope :active, -> { where(active: true) }
-  scope :ordered_by_degree_name, -> { joins(:degree).order("degrees.name", :name) }
+
+  def display_name
+    "#{degree.name} - Plan #{name}"
+  end
+
+  def self.ordered_by_display_name
+    includes(:degree).sort_by(&:display_name)
+  end
 
   def self.default
     Degree.default&.active_degree_plan
