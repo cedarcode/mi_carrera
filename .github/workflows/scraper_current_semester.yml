@@ -89,14 +89,21 @@ jobs:
         name: scraper_screenshot_${{ matrix.combo.degree_id }}_${{ matrix.combo.plan }}
         path: ./tmp/capybara
         retention-days: 5
+
+  notify:
+    needs: scrape
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
     - name: Send Slack notification
-      if: failure()
       env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         RUN_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-        DEGREE_NAME: ${{ matrix.combo.name }}
-        PLAN: ${{ matrix.combo.plan }}
       run: |
+        failed=$(gh api repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/jobs \
+          --jq '[.jobs[] | select(.conclusion == "failure") | .name] | join(", ")')
+
         curl -X POST -H 'Content-type: application/json' \
           --data '{
-            "text": "El Scraper de Current Semester Subjects de MiCarrera falló para '"$DEGREE_NAME"' (plan '"$PLAN"') - <'"$RUN_URL"'|logs>"
+            "text": "El Scraper de Current Semester Subjects de MiCarrera falló para: '"$failed"' - <'"$RUN_URL"'|logs>"
           }' "${{ secrets.SLACK_WEBHOOK_URL }}"
