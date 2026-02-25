@@ -8,6 +8,7 @@ RSpec.describe SubjectsController, type: :request do
       get subject_url(subject)
 
       expect(response).to have_http_status(:success)
+      expect(response.body).not_to include("Esta materia pertenece a")
     end
 
     it 'returns http success for a subject from a different degree plan' do
@@ -17,6 +18,27 @@ RSpec.describe SubjectsController, type: :request do
       get subject_url(subject)
 
       expect(response).to have_http_status(:success)
+    end
+
+    it 'shows a warning with full plan names when the subject is from a different degree plan' do
+      other_degree_plan = create(:degree_plan)
+      subject = create(:subject, :with_exam, degree_plan_id: other_degree_plan.id)
+      current_plan = degree_plans(:computacion_active_plan)
+
+      get subject_url(subject)
+
+      expect(response.body).to include("Esta materia pertenece a")
+      expect(response.body).to include(other_degree_plan.full_name)
+      expect(response.body).to include(current_plan.full_name)
+    end
+
+    it 'disables checkboxes when the subject is from a different degree plan' do
+      other_degree_plan = create(:degree_plan)
+      subject = create(:subject, :with_exam, degree_plan_id: other_degree_plan.id)
+
+      get subject_url(subject)
+
+      expect(response.body).to include('disabled="disabled"')
     end
   end
 end

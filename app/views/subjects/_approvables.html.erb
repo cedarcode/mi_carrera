@@ -1,17 +1,17 @@
 <div data-controller="loading <%= "confetti" if @graduated %>" id="approvables">
   <%= render "approvals/spinner_template" %>
 
-  <label class="flex justify-between items-center px-4 h-12 cursor-pointer hover:bg-gray-100 <%= "hover:bg-white cursor-default! text-gray-400" if !current_student.available?(@subject.course) %>" for="<%= dom_id(@subject.course) %>">
+  <label class="flex justify-between items-center px-4 h-12 cursor-pointer hover:bg-gray-100 <%= "hover:bg-white cursor-default! text-gray-400" if different_plan || !current_student.available?(@subject.course) %>" for="<%= dom_id(@subject.course) %>">
     Curso aprobado?
 
-    <%= render(ApprovableCheckboxComponent.new(approvable: @subject.course, subject_show: true, current_student: current_student)) %>
+    <%= render(ApprovableCheckboxComponent.new(approvable: @subject.course, subject_show: true, current_student: current_student, disabled: different_plan || nil)) %>
   </label>
 
   <% if @subject.exam %>
-    <label class="flex justify-between items-center px-4 h-12 cursor-pointer hover:bg-gray-100 <%= "hover:bg-white cursor-default! text-gray-400" if !current_student.available?(@subject.exam) %>" for="<%= dom_id(@subject.exam) %>">
+    <label class="flex justify-between items-center px-4 h-12 cursor-pointer hover:bg-gray-100 <%= "hover:bg-white cursor-default! text-gray-400" if different_plan || !current_student.available?(@subject.exam) %>" for="<%= dom_id(@subject.exam) %>">
       Examen aprobado?
 
-      <%= render(ApprovableCheckboxComponent.new(approvable: @subject.exam, subject_show: true, current_student: current_student)) %>
+      <%= render(ApprovableCheckboxComponent.new(approvable: @subject.exam, subject_show: true, current_student: current_student, disabled: different_plan || nil)) %>
     </label>
   <% end %>
 </div>

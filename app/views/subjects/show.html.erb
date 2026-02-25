@@ -10,6 +10,15 @@
   <% end %>
 </div>
 
+<% if @different_plan %>
+  <div class="flex items-center p-4 mx-4 my-3 text-yellow-800 rounded-lg bg-yellow-50">
+    <%= material_icon("warning_amber") %>
+    <span class="ms-3 font-medium">
+      Esta materia pertenece a <%= @subject.degree_plan.full_name %> y tu carrera actual es <%= current_degree_plan.full_name %>
+    </span>
+  </div>
+<% end %>
+
 <hr class="border-gray-200"/>
 
 <h3 class="mx-4 my-3 font-medium">Información general</h3>
@@ -46,7 +55,7 @@
 <hr class="border-gray-200"/>
 
 <h3 class="mx-4 my-3 font-medium">Aprobación</h3>
-<%= render 'approvables' %>
+<%= render 'approvables', different_plan: @different_plan %>
 <hr class="border-gray-200"/>
 
 <% if @subject.openfing_id || @subject.eva_id %>

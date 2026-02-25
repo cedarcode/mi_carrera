@@ -7,7 +7,7 @@
       <%= f.select(
         :degree_plan_id,
         options_for_select(
-          @degree_plans.map { |plan| ["#{plan.degree.name} - Plan #{plan.name}", plan.id] },
+          @degree_plans.map { |plan| [plan.full_name, plan.id] },
           selected: current_student.degree_plan_id
         ),
         {
