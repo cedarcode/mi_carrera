@@ -49,34 +49,39 @@ jobs:
         bundler-cache: true
 
     - name: Run scraper
+      uses: nick-fields/retry@v3
       env:
         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
         DEGREE_ID: ${{ matrix.combo.degree_id }}
         PLAN: ${{ matrix.combo.plan }}
         DEGREE_NAME: ${{ matrix.combo.name }}
-      run: |
-        bundle exec rake "scraper:subjects[$DEGREE_ID,$PLAN]"
-        sed -i -e 's/ $//' db/data/*/*/*.yml
-        git add db/data
-        if ! git diff --cached --quiet;
-        then
-            BRANCH="scraper--subjects--${DEGREE_ID}-${PLAN}"
-            git config --global user.email "micarrera@cedarcode.com"
-            git config --global user.name "MiCarrera"
-            git commit -m "chore: update scraped subjects data for ${DEGREE_NAME} - ${PLAN}"
-            git push -f origin "HEAD:${BRANCH}"
-            if [ $(gh pr list --head "$BRANCH" --json title --jq 'length') == '0' ];
-            then
-                gh pr create \
-                    --title "Actualizar datos scrapeados de materias para ${DEGREE_NAME} - ${PLAN}" \
-                    --body "This PR runs \`rails scraper:subjects[${DEGREE_ID},${PLAN}]\` to update scraped subjects data for ${DEGREE_NAME} (plan ${PLAN})." \
-                    --head "$BRANCH"
-            else
-                echo "A PR already exists and was correctly updated."
-            fi
-        else
-            echo "There were no changes. Nothing to do."
-        fi
+      with:
+        timeout_minutes: 30
+        max_attempts: 3
+        command: |
+          set -e
+          bundle exec rake "scraper:subjects[$DEGREE_ID,$PLAN]"
+          sed -i -e 's/ $//' db/data/*/*/*.yml
+          git add db/data
+          if ! git diff --cached --quiet;
+          then
+              BRANCH="scraper--subjects--${DEGREE_ID}-${PLAN}"
+              git config --global user.email "micarrera@cedarcode.com"
+              git config --global user.name "MiCarrera"
+              git commit -m "chore: update scraped subjects data for ${DEGREE_NAME} - ${PLAN}"
+              git push -f origin "HEAD:${BRANCH}"
+              if [ $(gh pr list --head "$BRANCH" --json title --jq 'length') == '0' ];
+              then
+                  gh pr create \
+                      --title "Actualizar datos scrapeados de materias para ${DEGREE_NAME} - ${PLAN}" \
+                      --body "This PR runs \`rails scraper:subjects[${DEGREE_ID},${PLAN}]\` to update scraped subjects data for ${DEGREE_NAME} (plan ${PLAN})." \
+                      --head "$BRANCH"
+              else
+                  echo "A PR already exists and was correctly updated."
+              fi
+          else
+              echo "There were no changes. Nothing to do."
+          fi
     - name: Upload screenshots
       if: failure()
       uses: actions/upload-artifact@v6
