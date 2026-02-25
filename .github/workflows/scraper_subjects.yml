@@ -26,6 +26,7 @@ jobs:
         echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
 
   scrape:
+    name: ${{ matrix.combo.name }} – Plan ${{ matrix.combo.plan }}
     needs: build-degree-plan-matrix
     runs-on: ubuntu-latest
     strategy:
