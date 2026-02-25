@@ -11,10 +11,6 @@ class DegreePlan < ApplicationRecord
     "#{degree.name} - Plan #{name}"
   end
 
-  def self.ordered_by_display_name
-    includes(:degree).sort_by(&:display_name)
-  end
-
   def self.default
     Degree.default&.active_degree_plan
   end

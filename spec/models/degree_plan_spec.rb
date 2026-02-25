@@ -29,19 +29,6 @@ RSpec.describe DegreePlan, type: :model do
     end
   end
 
-  describe '.ordered_by_display_name' do
-    it 'sorts by display_name' do
-      civil = create(:degree, id: 'civil', name: 'Ingeniería Civil')
-      electrica = create(:degree, id: 'electrica', name: 'Ingeniería Eléctrica')
-      plan_civil = create(:degree_plan, degree: civil, name: '2021')
-      plan_electrica = create(:degree_plan, degree: electrica, name: '2023')
-
-      result = DegreePlan.where(degree: [civil, electrica]).ordered_by_display_name
-
-      expect(result).to eq([plan_civil, plan_electrica])
-    end
-  end
-
   describe '.default' do
     context 'when computacion degree exists with active plan' do
       it 'returns the active degree plan for default subject' do
