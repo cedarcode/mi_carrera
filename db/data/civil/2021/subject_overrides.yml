@@ -1,0 +1,921 @@
+---
+'1061':
+  short_name: Cálculo DIV
+  category: 'first_semester'
+'1030':
+  short_name: GAL 1
+  category: 'first_semester'
+'1151':
+  category: 'first_semester'
+'1620':
+  category: 'first_semester'
+'1062':
+  short_name: Cálculo DIVV
+  category: 'second_semester'
+'1031':
+  short_name: GAL 2
+  category: 'second_semester'
+'1152':
+  category: 'second_semester'
+'1221':
+  category: 'second_semester'
+'1266':
+  category: 'second_semester'
+'1063':
+  category: 'third_semester'
+'1025':
+  category: 'third_semester'
+'1078':
+  category: 'third_semester'
+'1154':
+  category: 'third_semester'
+'1153':
+  category: 'third_semester'
+'1408':
+  category: 'fourth_semester'
+'1310':
+  category: 'fourth_semester'
+'2250':
+  category: 'fourth_semester'
+'1227':
+  category: 'fourth_semester'
+'1508':
+  category: 'fifth_semester'
+'2366':
+  category: 'fifth_semester'
+'1805':
+  category: 'fifth_semester'
+'1223':
+  category: 'fifth_semester'
+'1312':
+  category: 'sixth_semester'
+'1833':
+  category: 'sixth_semester'
+'1267':
+  category: 'sixth_semester'
+'2206':
+  category: 'sixth_semester'
+'2382':
+  category: 'seventh_semester'
+'2207':
+  category: 'seventh_semester'
+"1020P":
+  category: 'revalid'
+"1020R":
+  category: 'revalid'
+"1022P":
+  category: 'revalid'
+"1022T":
+  category: 'revalid'
+"1024P":
+  category: 'revalid'
+"1025P":
+  category: 'revalid'
+"1025T":
+  category: 'revalid'
+"1028M":
+  category: 'revalid'
+"1028P":
+  category: 'revalid'
+"1028R":
+  category: 'revalid'
+"1030P":
+  category: 'revalid'
+"1031A":
+  category: 'revalid'
+"1031P":
+  category: 'revalid'
+"1033P":
+  category: 'revalid'
+"1061P":
+  category: 'revalid'
+"1062A":
+  category: 'revalid'
+"1062P":
+  category: 'revalid'
+"1063A":
+  category: 'revalid'
+"1063P":
+  category: 'revalid'
+"1122P":
+  category: 'revalid'
+"1124I":
+  category: 'revalid'
+"1128P":
+  category: 'revalid'
+"1131I":
+  category: 'revalid'
+"1151P":
+  category: 'revalid'
+"1152P":
+  category: 'revalid'
+"1153P":
+  category: 'revalid'
+"1154I":
+  category: 'revalid'
+"1154P":
+  category: 'revalid'
+"1154R":
+  category: 'revalid'
+"1155I":
+  category: 'revalid'
+"1220P":
+  category: 'revalid'
+"1220R":
+  category: 'revalid'
+"1224P":
+  category: 'revalid'
+"1226P":
+  category: 'revalid'
+"1227P":
+  category: 'revalid'
+"1267P":
+  category: 'revalid'
+"1312P":
+  category: 'revalid'
+"1322P":
+  category: 'revalid'
+"1411P":
+  category: 'revalid'
+"1508P":
+  category: 'revalid'
+"1510R":
+  category: 'revalid'
+"1610P":
+  category: 'revalid'
+"1620P":
+  category: 'revalid'
+"1700P":
+  category: 'revalid'
+"1715B":
+  category: 'revalid'
+"1715P":
+  category: 'revalid'
+"1805P":
+  category: 'revalid'
+"1810R":
+  category: 'revalid'
+"1833P":
+  category: 'revalid'
+"1836P":
+  category: 'revalid'
+"1843P":
+  category: 'revalid'
+"1851P":
+  category: 'revalid'
+"1855P":
+  category: 'revalid'
+"1856P":
+  category: 'revalid'
+"1875A":
+  category: 'revalid'
+"1940Z":
+  category: 'revalid'
+"1944P":
+  category: 'revalid'
+"1945P":
+  category: 'revalid'
+"1946P":
+  category: 'revalid'
+"2207P":
+  category: 'revalid'
+"2218P":
+  category: 'revalid'
+"2230P":
+  category: 'revalid'
+"2230R":
+  category: 'revalid'
+"2231A":
+  category: 'revalid'
+"2231P":
+  category: 'revalid'
+"2232P":
+  category: 'revalid'
+"2240P":
+  category: 'revalid'
+"2242P":
+  category: 'revalid'
+"2242R":
+  category: 'revalid'
+"2321P":
+  category: 'revalid'
+"2352P":
+  category: 'revalid'
+"2368P":
+  category: 'revalid'
+"2371P":
+  category: 'revalid'
+"2377P":
+  category: 'revalid'
+"2377R":
+  category: 'revalid'
+"2382P":
+  category: 'revalid'
+"2383P":
+  category: 'revalid'
+"2384P":
+  category: 'revalid'
+"2396P":
+  category: 'revalid'
+"2399P":
+  category: 'revalid'
+"2419P":
+  category: 'revalid'
+"2504P":
+  category: 'revalid'
+"2505P":
+  category: 'revalid'
+"2506P":
+  category: 'revalid'
+"2510R":
+  category: 'revalid'
+"2FIS":
+  category: 'revalid'
+"AE7":
+  category: 'revalid'
+"AG16":
+  category: 'revalid'
+"AG2":
+  category: 'revalid'
+"AG48":
+  category: 'revalid'
+"AL":
+  category: 'revalid'
+"ANC9":
+  category: 'revalid'
+"AYG8":
+  category: 'revalid'
+"C1":
+  category: 'revalid'
+"C3":
+  category: 'revalid'
+"C8":
+  category: 'revalid'
+"CA8":
+  category: 'revalid'
+"CAL10":
+  category: 'revalid'
+"CAL12":
+  category: 'revalid'
+"CAL2":
+  category: 'revalid'
+"CCT10":
+  category: 'revalid'
+"CCT20":
+  category: 'revalid'
+"CH201":
+  category: 'revalid'
+"CIM10":
+  category: 'revalid'
+"CIM18":
+  category: 'revalid'
+"CIM24":
+  category: 'revalid'
+"CIM26":
+  category: 'revalid'
+"CIM28":
+  category: 'revalid'
+"CIM29":
+  category: 'revalid'
+"CIM40":
+  category: 'revalid'
+"CM":
+  category: 'revalid'
+"CM14":
+  category: 'revalid'
+"CR10":
+  category: 'revalid'
+"CSE4":
+  category: 'revalid'
+"DMA01":
+  category: 'revalid'
+"DMA03":
+  category: 'revalid'
+"DMA04":
+  category: 'revalid'
+"DMA05":
+  category: 'revalid'
+"DMA06":
+  category: 'revalid'
+"ESII":
+  category: 'revalid'
+"ESTAI":
+  category: 'revalid'
+"EXP4":
+  category: 'revalid'
+"F10":
+  category: 'revalid'
+"F10R":
+  category: 'revalid'
+"F1F2P":
+  category: 'revalid'
+"F1Y3":
+  category: 'revalid'
+"F3":
+  category: 'revalid'
+"F30":
+  category: 'revalid'
+"F7":
+  category: 'revalid'
+"F8":
+  category: 'revalid'
+"FA4":
+  category: 'revalid'
+"FA8":
+  category: 'revalid'
+"FF1-7":
+  category: 'revalid'
+"FF12":
+  category: 'revalid'
+"FF2-7":
+  category: 'revalid'
+"FFT13":
+  category: 'revalid'
+"FG":
+  category: 'revalid'
+"FG2":
+  category: 'revalid'
+"FI10":
+  category: 'revalid'
+"FI13":
+  category: 'revalid'
+"FIS08":
+  category: 'revalid'
+"FIS13":
+  category: 'revalid'
+"FIS14":
+  category: 'revalid'
+"FIS26":
+  category: 'revalid'
+"FIS45":
+  category: 'revalid'
+"FISI8":
+  category: 'revalid'
+"FL08":
+  category: 'revalid'
+"FL1":
+  category: 'revalid'
+"FL1.6":
+  category: 'revalid'
+"FL1Y2":
+  category: 'revalid'
+"FL2.6":
+  category: 'revalid'
+"G7":
+  category: 'revalid'
+"GAL7":
+  category: 'revalid'
+"GOT2":
+  category: 'revalid'
+"HP10":
+  category: 'revalid'
+"I6":
+  category: 'revalid'
+"II4":
+  category: 'revalid'
+"INF10":
+  category: 'revalid'
+"IT5":
+  category: 'revalid'
+"ITL9":
+  category: 'revalid'
+"M10":
+  category: 'revalid'
+"M1020":
+  category: 'revalid'
+"M12":
+  category: 'revalid'
+"M13":
+  category: 'revalid'
+"M14":
+  category: 'revalid'
+"M24":
+  category: 'revalid'
+"M9":
+  category: 'revalid'
+"MA09":
+  category: 'revalid'
+"MA10":
+  category: 'revalid'
+"MA11":
+  category: 'revalid'
+"MA12":
+  category: 'revalid'
+"MA2":
+  category: 'revalid'
+"MA25":
+  category: 'revalid'
+"MA47":
+  category: 'revalid'
+"MA5":
+  category: 'revalid'
+"MA51":
+  category: 'revalid'
+"MA7":
+  category: 'revalid'
+"MAT14":
+  category: 'revalid'
+"MAT33":
+  category: 'revalid'
+"MAT5":
+  category: 'revalid'
+"MAT51":
+  category: 'revalid'
+"MC13":
+  category: 'revalid'
+"MC3":
+  category: 'revalid'
+"MC8":
+  category: 'revalid'
+"MCA3":
+  category: 'revalid'
+"MEC":
+  category: 'revalid'
+"MEX4":
+  category: 'revalid'
+"MF4":
+  category: 'revalid'
+"MI2":
+  category: 'revalid'
+"MM3":
+  category: 'revalid'
+"MR10":
+  category: 'revalid'
+"MR15":
+  category: 'revalid'
+"MR4":
+  category: 'revalid'
+"MR5":
+  category: 'revalid'
+"MR6":
+  category: 'revalid'
+"MR8":
+  category: 'revalid'
+"MR8E":
+  category: 'revalid'
+"MS6":
+  category: 'revalid'
+"MS8":
+  category: 'revalid'
+"P8":
+  category: 'revalid'
+"QPQ10":
+  category: 'revalid'
+"QPQ7":
+  category: 'revalid'
+"R24":
+  category: 'revalid'
+"RE2":
+  category: 'revalid'
+"REF04":
+  category: 'revalid'
+"RETEM":
+  category: 'revalid'
+"RM5":
+  category: 'revalid'
+"RN115":
+  category: 'revalid'
+"RN252":
+  category: 'revalid'
+"RN253":
+  category: 'revalid'
+"RN404":
+  category: 'revalid'
+"RN407":
+  category: 'revalid'
+"S2":
+  category: 'revalid'
+"SRN02":
+  category: 'revalid'
+"SRN03":
+  category: 'revalid'
+"SRN09":
+  category: 'revalid'
+"SRN10":
+  category: 'revalid'
+"SRN11":
+  category: 'revalid'
+"SRN26":
+  category: 'revalid'
+"TE2":
+  category: 'revalid'
+"TE26":
+  category: 'revalid'
+"TE4":
+  category: 'revalid'
+"TM4":
+  category: 'revalid'
+'01':
+  category: 'inactive'
+'0401':
+  category: 'inactive'
+'0402':
+  category: 'inactive'
+'0403':
+  category: 'inactive'
+'0404':
+  category: 'inactive'
+'0405':
+  category: 'inactive'
+'0502':
+  category: 'inactive'
+'0506':
+  category: 'inactive'
+'0508':
+  category: 'inactive'
+'0510':
+  category: 'inactive'
+'0511':
+  category: 'inactive'
+'0513':
+  category: 'inactive'
+'06':
+  category: 'inactive'
+'0607':
+  category: 'inactive'
+'0608':
+  category: 'inactive'
+'0629':
+  category: 'inactive'
+'101':
+  category: 'inactive'
+'1020':
+  category: 'inactive'
+'1021':
+  category: 'inactive'
+'1022':
+  category: 'inactive'
+'1024':
+  category: 'inactive'
+'1028':
+  category: 'inactive'
+'1052':
+  category: 'inactive'
+'1053':
+  category: 'inactive'
+'1058':
+  category: 'inactive'
+"1061R":
+  category: 'inactive'
+'1070':
+  category: 'inactive'
+'1071':
+  category: 'inactive'
+'1072':
+  category: 'inactive'
+'1074':
+  category: 'inactive'
+'1075':
+  category: 'inactive'
+'1076':
+  category: 'inactive'
+"107L":
+  category: 'inactive'
+"108L":
+  category: 'inactive'
+'1120':
+  category: 'inactive'
+'1121':
+  category: 'inactive'
+"115Q":
+  category: 'inactive'
+'1170':
+  category: 'inactive'
+'1171':
+  category: 'inactive'
+'1172':
+  category: 'inactive'
+'1173':
+  category: 'inactive'
+"117Q":
+  category: 'inactive'
+'1220':
+  category: 'inactive'
+"125L":
+  category: 'inactive'
+"158Q":
+  category: 'inactive'
+"170Q":
+  category: 'inactive'
+"171L":
+  category: 'inactive'
+"171Q":
+  category: 'inactive'
+"172Q":
+  category: 'inactive'
+"175Q":
+  category: 'inactive'
+"176Q":
+  category: 'inactive'
+"C10":
+  category: 'inactive'
+"C400":
+  category: 'inactive'
+"CP04":
+  category: 'inactive'
+"CP1":
+  category: 'inactive'
+"CP10":
+  category: 'inactive'
+"CP102":
+  category: 'inactive'
+"CP11":
+  category: 'inactive'
+"CP118":
+  category: 'inactive'
+"CP119":
+  category: 'inactive'
+"CP12":
+  category: 'inactive'
+"CP120":
+  category: 'inactive'
+"CP121":
+  category: 'inactive'
+"CP122":
+  category: 'inactive'
+"CP125":
+  category: 'inactive'
+"CP126":
+  category: 'inactive'
+"CP128":
+  category: 'inactive'
+"CP129":
+  category: 'inactive'
+"CP13":
+  category: 'inactive'
+"CP14":
+  category: 'inactive'
+"CP144":
+  category: 'inactive'
+"CP152":
+  category: 'inactive'
+"CP16":
+  category: 'inactive'
+"CP17":
+  category: 'inactive'
+"CP174":
+  category: 'inactive'
+"CP175":
+  category: 'inactive'
+"CP176":
+  category: 'inactive'
+"CP18":
+  category: 'inactive'
+"CP2":
+  category: 'inactive'
+"CP20":
+  category: 'inactive'
+"CP22":
+  category: 'inactive'
+"CP222":
+  category: 'inactive'
+"CP223":
+  category: 'inactive'
+"CP224":
+  category: 'inactive'
+"CP225":
+  category: 'inactive'
+"CP226":
+  category: 'inactive'
+"CP227":
+  category: 'inactive'
+"CP228":
+  category: 'inactive'
+"CP229":
+  category: 'inactive'
+"CP23":
+  category: 'inactive'
+"CP230":
+  category: 'inactive'
+"CP231":
+  category: 'inactive'
+"CP232":
+  category: 'inactive'
+"CP233":
+  category: 'inactive'
+"CP234":
+  category: 'inactive'
+"CP235":
+  category: 'inactive'
+"CP236":
+  category: 'inactive'
+"CP237":
+  category: 'inactive'
+"CP238":
+  category: 'inactive'
+"CP239":
+  category: 'inactive'
+"CP24":
+  category: 'inactive'
+"CP240":
+  category: 'inactive'
+"CP241":
+  category: 'inactive'
+"CP242":
+  category: 'inactive'
+"CP243":
+  category: 'inactive'
+"CP244":
+  category: 'inactive'
+"CP245":
+  category: 'inactive'
+"CP246":
+  category: 'inactive'
+"CP247":
+  category: 'inactive'
+"CP248":
+  category: 'inactive'
+"CP249":
+  category: 'inactive'
+"CP25":
+  category: 'inactive'
+"CP250":
+  category: 'inactive'
+"CP251":
+  category: 'inactive'
+"CP252":
+  category: 'inactive'
+"CP253":
+  category: 'inactive'
+"CP254":
+  category: 'inactive'
+"CP255":
+  category: 'inactive'
+"CP257":
+  category: 'inactive'
+"CP258":
+  category: 'inactive'
+"CP259":
+  category: 'inactive'
+"CP26":
+  category: 'inactive'
+"CP260":
+  category: 'inactive'
+"CP261":
+  category: 'inactive'
+"CP262":
+  category: 'inactive'
+"CP263":
+  category: 'inactive'
+"CP264":
+  category: 'inactive'
+"CP265":
+  category: 'inactive'
+"CP266":
+  category: 'inactive'
+"CP267":
+  category: 'inactive'
+"CP268":
+  category: 'inactive'
+"CP269":
+  category: 'inactive'
+"CP270":
+  category: 'inactive'
+"CP271":
+  category: 'inactive'
+"CP272":
+  category: 'inactive'
+"CP273":
+  category: 'inactive'
+"CP274":
+  category: 'inactive'
+"CP275":
+  category: 'inactive'
+"CP276":
+  category: 'inactive'
+"CP277":
+  category: 'inactive'
+"CP278":
+  category: 'inactive'
+"CP293":
+  category: 'inactive'
+"CP3":
+  category: 'inactive'
+"CP308":
+  category: 'inactive'
+"CP335":
+  category: 'inactive'
+"CP337":
+  category: 'inactive'
+"CP338":
+  category: 'inactive'
+"CP339":
+  category: 'inactive'
+"CP34":
+  category: 'inactive'
+"CP340":
+  category: 'inactive'
+"CP341":
+  category: 'inactive'
+"CP342":
+  category: 'inactive'
+"CP343":
+  category: 'inactive'
+"CP344":
+  category: 'inactive'
+"CP345":
+  category: 'inactive'
+"CP346":
+  category: 'inactive'
+"CP347":
+  category: 'inactive'
+"CP348":
+  category: 'inactive'
+"CP349":
+  category: 'inactive'
+"CP35":
+  category: 'inactive'
+"CP350":
+  category: 'inactive'
+"CP351":
+  category: 'inactive'
+"CP352":
+  category: 'inactive'
+"CP353":
+  category: 'inactive'
+"CP354":
+  category: 'inactive'
+"CP355":
+  category: 'inactive'
+"CP356":
+  category: 'inactive'
+"CP357":
+  category: 'inactive'
+"CP358":
+  category: 'inactive'
+"CP359":
+  category: 'inactive'
+"CP36":
+  category: 'inactive'
+"CP360":
+  category: 'inactive'
+"CP361":
+  category: 'inactive'
+"CP40":
+  category: 'inactive'
+"CP401":
+  category: 'inactive'
+"CP402":
+  category: 'inactive'
+"CP41":
+  category: 'inactive'
+"CP42":
+  category: 'inactive'
+"CP43":
+  category: 'inactive'
+"CP44":
+  category: 'inactive'
+"CP45":
+  category: 'inactive'
+"CP46":
+  category: 'inactive'
+"CP47":
+  category: 'inactive'
+"CP48":
+  category: 'inactive'
+"CP49":
+  category: 'inactive'
+"CP52":
+  category: 'inactive'
+"CP54":
+  category: 'inactive'
+"CP55":
+  category: 'inactive'
+"CP56":
+  category: 'inactive'
+"CP6":
+  category: 'inactive'
+"CP620":
+  category: 'inactive'
+"CP7":
+  category: 'inactive'
+"CP70":
+  category: 'inactive'
+"CP8":
+  category: 'inactive'
+"CP9":
+  category: 'inactive'
+"CP98":
+  category: 'inactive'
+"GAL1P":
+  category: 'inactive'
+"IN35":
+  category: 'inactive'
+"MA01":
+  category: 'inactive'
+"MA13":
+  category: 'inactive'
+"R100":
+  category: 'inactive'
+"R101":
+  category: 'inactive'
+"R103":
+  category: 'inactive'
+"T40":
+  category: 'inactive'
+"T43":
+  category: 'inactive'
+"T46":
+  category: 'inactive'
+"T64":
+  category: 'inactive'

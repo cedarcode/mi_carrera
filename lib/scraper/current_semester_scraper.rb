@@ -6,11 +6,13 @@ module Scraper
     VALID_PERIOD = 'Instancias de dictado con período habilitado'
 
     def scrape
-      logger.info "Starting to scrape current semester subjects"
+      logger.info "Starting to scrape current semester subjects for period #{current_period}"
       current_semester_subjects = []
 
       current_semester_subjects += load_current_semester_subjects(VALID_PERIOD)
       current_semester_subjects += load_current_semester_subjects(INVALID_PERIOD)
+
+      logger.info "Finished scraping. Found #{current_semester_subjects.size} current semester subjects"
       write_yml("scraped_current_semester_subjects", current_semester_subjects.sort)
     rescue
       Rails.logger.info save_screenshot
@@ -34,16 +36,21 @@ module Scraper
     end
 
     def load_current_semester_subjects(inscription_period)
+      logger.info "Loading subjects for: #{inscription_period}"
       go_to_current_semester_subjects_page
       ensure_accordion_open(inscription_period)
 
       max_pages = MAX_PAGES || total_pages
+      logger.info "Total pages to scrape: #{max_pages}"
 
       find(".ui-paginator-first").click
 
-      threaded_scrape(max_pages) do |slice|
+      subjects = threaded_scrape(max_pages) do |slice|
         load_current_semester_subjects_slice(inscription_period, slice)
       end.uniq
+
+      logger.info "Found #{subjects.size} subjects for: #{inscription_period}"
+      subjects
     end
 
     def load_current_semester_subjects_slice(inscription_period, slice)
@@ -62,7 +69,10 @@ module Scraper
           subject_row = find("[data-ri='#{row_id}']")
           subject_code = subject_row.all('td')[0].text.split(' ').last
 
-          subjects << subject_code if matches_current_period?(subject_row)
+          if matches_current_period?(subject_row)
+            logger.info "#{subject_code} (matches current period)"
+            subjects << subject_code
+          end
         end
       end
 
