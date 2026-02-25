@@ -17,6 +17,7 @@ module Scraper
       subjects = {}
 
       go_to_groups_and_subjects_page
+      raise "Testing failure!"
       process_groups_and_subjects(groups, subjects)
 
       go_to_prerequisites_page
