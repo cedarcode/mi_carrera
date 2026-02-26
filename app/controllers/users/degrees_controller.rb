@@ -4,6 +4,8 @@ module Users
 
     def edit
       @degree_plans = DegreePlan.includes(:degree)
+      @degree_plans = @degree_plans.where.not(degree_id: 'computacion', name: '2025') unless Features::Computacion2025.enabled?
+      @degree_plans = @degree_plans.sort_by(&:display_name)
     end
 
     def update

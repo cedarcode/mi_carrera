@@ -6,9 +6,22 @@ shared:
   current_plan: "1997"
   plans:
     - "1997"
+    - "2025"
 - bedelias_name: "INGENIERÍA ELÉCTRICA"
   id: "electrica"
   name: "Ingeniería Eléctrica"
   current_plan: "2023"
   plans:
     - "2023"
+- bedelias_name: "INGENIERÍA EN AGRIMENSURA"
+  id: "agrimensura"
+  name: "Ingeniería en Agrimensura"
+  current_plan: "2023"
+  plans:
+    - "2023"
+- bedelias_name: "INGENIERÍA CIVIL"
+  id: "civil"
+  name: "Ingeniería Civil"
+  current_plan: "2021"
+  plans:
+    - "2021"

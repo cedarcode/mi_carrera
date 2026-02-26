@@ -7,7 +7,7 @@ class DegreePlan < ApplicationRecord
 
   scope :active, -> { where(active: true) }
 
-  def full_name
+  def display_name
     "#{degree.name} - Plan #{name}"
   end
 
