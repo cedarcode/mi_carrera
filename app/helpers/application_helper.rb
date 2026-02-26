@@ -50,4 +50,8 @@ module ApplicationHelper
   def academic_semester
     Time.current.month < 8 ? "primer semestre" : "segundo semestre"
   end
+
+  def computacion_2025_plan?
+    current_degree_plan.degree_id == 'computacion' && current_degree_plan.name == '2025'
+  end
 end
