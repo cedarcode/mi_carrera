@@ -27,7 +27,7 @@ RSpec.describe 'Changing degrees', type: :system do
       visit root_path
 
       within('header') do
-        expect(page).to have_text('Ingeniería en Computación')
+        expect(page).to have_text('Ingeniería en Computación - Plan 2025')
       end
 
       expect(user.reload.degree_plan).to eq(computacion_degree_plan)
@@ -46,7 +46,7 @@ RSpec.describe 'Changing degrees', type: :system do
       expect(current_path).to eq(root_path)
 
       within('header') do
-        expect(page).to have_text('Ingeniería en Sistemas')
+        expect(page).to have_text('Ingeniería en Sistemas - Plan 2025')
       end
 
       expect(user.reload.degree_plan).to eq(sistemas_degree_plan)
@@ -62,8 +62,8 @@ RSpec.describe 'Changing degrees', type: :system do
       visit root_path
 
       within('header') do
-        expect(page).not_to have_text('Ingeniería en Computación')
-        expect(page).not_to have_text('Ingeniería en Sistemas')
+        expect(page).not_to have_text('Ingeniería en Computación - Plan 2025')
+        expect(page).not_to have_text('Ingeniería en Sistemas - Plan 2025')
       end
 
       click_user_menu
@@ -98,7 +98,7 @@ RSpec.describe 'Changing degrees', type: :system do
       visit root_path
 
       within('header') do
-        expect(page).to have_text('Ingeniería en Computación')
+        expect(page).to have_text('Ingeniería en Computación - Plan 2025')
       end
 
       click_user_menu
@@ -112,7 +112,7 @@ RSpec.describe 'Changing degrees', type: :system do
       expect(current_path).to eq(root_path)
 
       within('header') do
-        expect(page).to have_text('Ingeniería en Sistemas')
+        expect(page).to have_text('Ingeniería en Sistemas - Plan 2025')
       end
 
       degree_plan_cookie = page.driver.browser.manage.cookie_named('degree_plan_id')
@@ -148,7 +148,7 @@ RSpec.describe 'Changing degrees', type: :system do
       visit root_path
 
       within('header') do
-        expect(page).to have_text('Ingeniería en Computación')
+        expect(page).to have_text('Ingeniería en Computación - Plan 2025')
       end
 
       expect(page).to have_text('Algebra')
@@ -165,7 +165,7 @@ RSpec.describe 'Changing degrees', type: :system do
       expect(current_path).to eq(root_path)
 
       within('header') do
-        expect(page).to have_text('Ingeniería en Sistemas')
+        expect(page).to have_text('Ingeniería en Sistemas - Plan 2025')
       end
 
       expect(page).not_to have_text('Algebra')
@@ -179,7 +179,7 @@ RSpec.describe 'Changing degrees', type: :system do
       visit root_path
 
       within('header') do
-        expect(page).to have_text('Ingeniería en Computación')
+        expect(page).to have_text('Ingeniería en Computación - Plan 2025')
       end
 
       click_user_menu
@@ -193,7 +193,7 @@ RSpec.describe 'Changing degrees', type: :system do
       expect(current_path).to eq(root_path)
 
       within('header') do
-        expect(page).to have_text('Ingeniería en Sistemas')
+        expect(page).to have_text('Ingeniería en Sistemas - Plan 2025')
       end
 
       expect(page).to have_text('Programacion')
@@ -211,7 +211,7 @@ RSpec.describe 'Changing degrees', type: :system do
       visit root_path
 
       within('header') do
-        expect(page).to have_text('Ingeniería en Computación')
+        expect(page).to have_text('Ingeniería en Computación - Plan 2025')
       end
 
       click_user_menu
@@ -225,7 +225,7 @@ RSpec.describe 'Changing degrees', type: :system do
       expect(current_path).to eq(root_path)
 
       within('header') do
-        expect(page).to have_text('Ingeniería en Sistemas')
+        expect(page).to have_text('Ingeniería en Sistemas - Plan 2025')
       end
 
       expect(page).to have_text('Programacion')
@@ -233,7 +233,7 @@ RSpec.describe 'Changing degrees', type: :system do
       visit root_path
 
       within('header') do
-        expect(page).to have_text('Ingeniería en Sistemas')
+        expect(page).to have_text('Ingeniería en Sistemas - Plan 2025')
       end
 
       expect(page).to have_text('Programacion')
