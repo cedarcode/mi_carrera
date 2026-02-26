@@ -4,6 +4,10 @@
       message: 'Bienvenido a tu planificador de materias: arrastra, suelta y organiza tu semestre' %>
 <% end %>
 
+<% content_for :page_warning do %>
+  <%= render 'shared/computacion_2025_warning' %>
+<% end %>
+
 <div id="planner" class="relative pt-3 space-y-4" data-controller="planner-loading">
   <div class="flex items-center justify-between h-10 mb-3">
     <h3 class="text-lg font-bold ml-4">
