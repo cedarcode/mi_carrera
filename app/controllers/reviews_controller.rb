@@ -10,6 +10,6 @@ class ReviewsController < ApplicationController
   private
 
   def permitted_params
-    params.permit(:interesting_rating, :credits_to_difficulty_rating)
+    params.permit(:interesting_rating, :credits_to_difficulty_rating, :recommended_rating)
   end
 end
