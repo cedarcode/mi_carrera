@@ -7,6 +7,10 @@ class DegreePlan < ApplicationRecord
 
   scope :active, -> { where(active: true) }
 
+  def display_name
+    "#{degree.name} - Plan #{name}"
+  end
+
   def self.default
     Degree.default&.active_degree_plan
   end
