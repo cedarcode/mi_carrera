@@ -2046,7 +2046,7 @@ AT001:
   has_exam: false
 BG827:
   code: BG827
-  name: BIOFÍSICA (2020-
+  name: BIOFÍSICA (2020-2025)
   subject_groups:
   - group: '013'
     credits: 14
