@@ -12841,6 +12841,10 @@
       subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
       needs: course
     - type: subject
+      subject_needed_code: '1783'
+      subject_needed_name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+      needs: course
+    - type: subject
       subject_needed_code: C402
       subject_needed_name: TALLER IV (ANUAL)
       needs: course
@@ -16557,6 +16561,22 @@
       needs: exam
   subject_code: '2044'
   is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1716'
+      subject_needed_name: INT. A LA INGENIERIA DE SOFTWARE
+      needs: exam
+    - type: subject
+      subject_needed_code: '1783'
+      subject_needed_name: TALLER INTRODUCTORIO DE INGENIERÍA DE SOFTWARE
+      needs: course
+  subject_code: '2045'
+  is_exam: false
 - type: logical
   logical_operator: and
   operands:
