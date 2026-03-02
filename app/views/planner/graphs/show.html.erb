@@ -1,0 +1,25 @@
+<div class="px-4 py-4 flex flex-col h-[calc(100dvh-3.5rem)] sm:h-[calc(100dvh-4rem)]">
+  <div class="flex items-center justify-between mb-4">
+    <h1 class="text-xl font-semibold text-gray-900">Grafo de materias planificadas</h1>
+  </div>
+
+  <% if @subjects.any? %>
+    <%= render "shared/graph_legend" %>
+
+    <p class="mb-2 text-xs text-gray-500">
+      <span class="hidden sm:inline">Click en un nodo para ver detalles de la materia.</span>
+      <span class="sm:hidden">Pellizca para hacer zoom. Toca un nodo para ver detalles.</span>
+    </p>
+
+    <%= render SubjectGraphComponent.new(
+      subjects: @subjects,
+      current_student: current_student,
+      semester_map: @semester_map
+    ) %>
+  <% else %>
+    <div class="flex flex-col justify-center items-center mt-12 text-gray-500">
+      <p class="text-lg">No tienes materias planificadas.</p>
+      <%= link_to "Agregar materias", subject_plans_path, class: "mt-4 text-primary hover:underline" %>
+    </div>
+  <% end %>
+</div>
