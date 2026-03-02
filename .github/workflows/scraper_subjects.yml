@@ -84,7 +84,7 @@ jobs:
           fi
     - name: Upload screenshots
       if: failure()
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: scraper_screenshot_${{ matrix.combo.degree_id }}_${{ matrix.combo.plan }}
         path: ./tmp/capybara
