@@ -12216,7 +12216,7 @@
   - type: subject
     needs: course
     subject_needed_code: BG827
-    subject_needed_name: BIOFÍSICA (2020-
+    subject_needed_name: BIOFÍSICA (2020-2025)
   subject_code: BG827
   is_exam: true
 - type: logical

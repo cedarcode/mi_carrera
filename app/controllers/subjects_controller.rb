@@ -8,6 +8,7 @@ class SubjectsController < ApplicationController
 
   def show
     @user_review = current_user.reviews.find_by(subject:) if current_user
+    @different_plan = subject.degree_plan_id != current_degree_plan.id
 
     respond_to do |format|
       format.html { subject }
@@ -28,7 +29,7 @@ class SubjectsController < ApplicationController
   private
 
   def subject
-    @subject ||= degree_subjects.find(params[:id])
+    @subject ||= Subject.find(params[:id])
   end
 
   def degree_subjects

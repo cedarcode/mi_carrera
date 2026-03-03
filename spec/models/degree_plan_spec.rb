@@ -21,6 +21,14 @@ RSpec.describe DegreePlan, type: :model do
     end
   end
 
+  describe '#display_name' do
+    it 'returns degree name and plan name' do
+      plan = degree_plans(:computacion_active_plan)
+
+      expect(plan.display_name).to eq('Ingeniería en Computación - Plan 2025')
+    end
+  end
+
   describe '.default' do
     context 'when computacion degree exists with active plan' do
       it 'returns the active degree plan for default subject' do

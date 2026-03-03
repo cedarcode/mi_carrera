@@ -59,7 +59,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Expose GitHub Runtime for cache
-        uses: crazy-max/ghaction-github-runtime@v3
+        uses: crazy-max/ghaction-github-runtime@v4
 
       - name: Run deploy command
         run: bundle exec kamal deploy -d ${{ inputs.destination }}

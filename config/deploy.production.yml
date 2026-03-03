@@ -16,6 +16,7 @@ servers:
 
 env:
   clear:
+    ENABLE_CHANGING_DEGREES: true
     GOOGLE_ANALYTICS_MEASUREMENT_ID: G-76KC009E5F
     WEBAUTHN_ORIGIN: 'https://micarrera.uy,https://fing.micarrera.uy,https://www.micarrera.uy'
     WEBAUTHN_RP_ID: 'micarrera.uy'
