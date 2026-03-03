@@ -308,6 +308,13 @@
   - group: I.II
     credits: 9
   has_exam: true
+AL:
+  code: AL
+  name: GEOMETRÍA Y ÁLGEBRA LINEAL
+  subject_groups:
+  - group: I.I
+    credits: 9
+  has_exam: true
 CAL10:
   code: CAL10
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -318,6 +325,34 @@ CAL12:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
+CAL2:
+  code: CAL2
+  name: CÁLCULO 2
+  subject_groups:
+  - group: I.I
+    credits: 10
+  has_exam: false
+CAS01:
+  code: CAS01
+  name: ÉTICA
+  subject_groups:
+  - group: III.II
+    credits: 8
+  has_exam: false
+CCT10:
+  code: CCT10
+  name: FÍSICA I
+  subject_groups:
+  - group: I.I
+    credits: 14
+  has_exam: false
+CCT20:
+  code: CCT20
+  name: FÍSICA II
+  subject_groups:
+  - group: I.I
+    credits: 14
+  has_exam: false
 CH201:
   code: CH201
   name: PROBABILIDAD Y ESTADÍSTICA
@@ -345,6 +380,13 @@ CIM24:
   subject_groups:
   - group: I.I
     credits: 10
+  has_exam: false
+CM:
+  code: CM
+  name: COMPLEMENTO DE MATEMÁTICA
+  subject_groups:
+  - group: I.I
+    credits: 6
   has_exam: false
 CM14:
   code: CM14
@@ -421,6 +463,55 @@ CP7:
   name: ANALISIS COMPLEJO
   has_exam: true
   subject_groups: []
+DMA01:
+  code: DMA01
+  name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+  subject_groups:
+  - group: I.I
+    credits: 12
+  has_exam: true
+DMA02:
+  code: DMA02
+  name: MATEMÁTICA DISCRETA
+  subject_groups:
+  - group: I.II
+    credits: 12
+  has_exam: true
+DMA03:
+  code: DMA03
+  name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
+  subject_groups:
+  - group: I.I
+    credits: 12
+  has_exam: true
+DMA04:
+  code: DMA04
+  name: GEOMETRÍA Y ALGEBRA LINEAL II
+  subject_groups:
+  - group: I.I
+    credits: 12
+  has_exam: false
+DMA06:
+  code: DMA06
+  name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+  subject_groups:
+  - group: I.I
+    credits: 13
+  has_exam: false
+EPCN:
+  code: EPCN
+  name: ELEMENTOS DE PROGRAM Y CÁLCULO NUMÉRICO
+  subject_groups:
+  - group: II.IV
+    credits: 6
+  has_exam: false
+ESTAI:
+  code: ESTAI
+  name: ESTADÍSTICA I
+  subject_groups:
+  - group: I.I
+    credits: 10
+  has_exam: false
 GAL1P:
   code: GAL1P
   name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
@@ -431,6 +522,20 @@ GAL7:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
+ICP:
+  code: ICP
+  name: INT. A LAS CIENCIAS POLITICAS (CURE)
+  subject_groups:
+  - group: III.II
+    credits: 6
+  has_exam: false
+IE:
+  code: IE
+  name: INTRODUCCIÓN A LA ECONOMÍA
+  subject_groups:
+  - group: III.II
+    credits: 10
+  has_exam: false
 M12:
   code: M12
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -584,4 +689,25 @@ SRN45:
   subject_groups:
   - group: I.I
     credits: 4
+  has_exam: false
+TIC:
+  code: TIC
+  name: TALLER DE INTRODUCCIÓN A LA COMPUTACIÓN
+  subject_groups:
+  - group: II.V
+    credits: 8
+  has_exam: false
+TIIDO:
+  code: TIIDO
+  name: TALLER DE INTRODUCCIÓN A INVESTIGACIÓN DE OPERACIONES
+  subject_groups:
+  - group: II.IV
+    credits: 6
+  has_exam: false
+TTR6:
+  code: TTR6
+  name: PROGRAMACION I
+  subject_groups:
+  - group: I.II
+    credits: 10
   has_exam: false

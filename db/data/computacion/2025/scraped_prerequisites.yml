@@ -403,13 +403,6 @@
   - type: logical
     logical_operator: not
     operands:
-    - type: subject
-      needs: course_enrollment
-      subject_needed_code: GAL1P
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
-  - type: logical
-    logical_operator: not
-    operands:
     - type: logical
       logical_operator: or
       operands:
@@ -481,6 +474,21 @@
         subject_needed_code: GAL1P
         subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
         needs: exam
+      - type: subject
+        subject_needed_code: AL
+        subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL
+        needs: exam
+      - type: subject
+        subject_needed_code: DMA03
+        subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
+        needs: exam
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: course_enrollment
+      subject_needed_code: GAL1P
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
   subject_code: '1030'
   is_exam: false
 - type: logical
@@ -566,6 +574,10 @@
       - type: subject
         subject_needed_code: GAL1P
         subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+        needs: exam
+      - type: subject
+        subject_needed_code: DMA03
+        subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
         needs: exam
   subject_code: '1030'
   is_exam: true
@@ -712,6 +724,10 @@
         subject_needed_code: 158Q
         subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
         needs: all
+      - type: subject
+        subject_needed_code: DMA04
+        subject_needed_name: GEOMETRÍA Y ALGEBRA LINEAL II
+        needs: all
   - type: logical
     logical_operator: or
     operands:
@@ -759,6 +775,10 @@
       subject_needed_code: GAL1P
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
       needs: all
+    - type: subject
+      subject_needed_code: DMA03
+      subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
+      needs: all
   subject_code: '1031'
   is_exam: true
 - type: logical
@@ -785,6 +805,10 @@
       - type: subject
         subject_needed_code: 1061R
         subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+        needs: all
+      - type: subject
+        subject_needed_code: DMA06
+        subject_needed_name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
         needs: all
       - type: subject
         subject_needed_code: '1020'
@@ -924,6 +948,10 @@
         subject_needed_name: CALCULO 1 (ANUAL)
         needs: all
       - type: subject
+        subject_needed_code: DMA01
+        subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+        needs: all
+      - type: subject
         subject_needed_code: CAL10
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: all
@@ -979,14 +1007,14 @@
     logical_operator: not
     operands:
     - type: subject
-      needs: exam_enrollment
+      needs: course_enrollment
       subject_needed_code: MI2
       subject_needed_name: MATEMATICA INICIAL
   - type: logical
     logical_operator: not
     operands:
     - type: subject
-      needs: course_enrollment
+      needs: exam_enrollment
       subject_needed_code: MI2
       subject_needed_name: MATEMATICA INICIAL
   subject_code: '1061'
@@ -1013,12 +1041,20 @@
         subject_needed_name: ANALISIS MATEMATICO I (2DO.SEM.)
         needs: all
       - type: subject
+        subject_needed_code: DMA06
+        subject_needed_name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+        needs: all
+      - type: subject
         subject_needed_code: '1022'
         subject_needed_name: CALCULO 2
         needs: all
       - type: subject
         subject_needed_code: '1072'
         subject_needed_name: CALCULO 2
+        needs: all
+      - type: subject
+        subject_needed_code: CAL2
+        subject_needed_name: CÁLCULO 2
         needs: all
       - type: subject
         subject_needed_code: MAT33
@@ -1067,6 +1103,10 @@
       subject_needed_code: '1052'
       subject_needed_name: CALCULO 1 (ANUAL)
       needs: course
+    - type: subject
+      subject_needed_code: DMA01
+      subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+      needs: exam
     - type: subject
       subject_needed_code: CAL10
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2358,10 +2398,20 @@
   subject_code: '1886'
   is_exam: false
 - type: logical
-  logical_operator: not
+  logical_operator: and
   operands:
-  - type: credits
-    credits: 70
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: credits
+      credits: 70
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: course
+      subject_needed_code: TIC
+      subject_needed_name: TALLER DE INTRODUCCIÓN A LA COMPUTACIÓN
   subject_code: '2043'
   is_exam: false
 - type: logical
@@ -2377,6 +2427,10 @@
     - type: subject
       subject_needed_code: '1023'
       subject_needed_name: MATEMATICA DISCRETA 1
+      needs: exam
+    - type: subject
+      subject_needed_code: DMA02
+      subject_needed_name: MATEMÁTICA DISCRETA
       needs: exam
   subject_code: '2044'
   is_exam: false
