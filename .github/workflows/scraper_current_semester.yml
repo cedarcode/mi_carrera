@@ -98,13 +98,9 @@ jobs:
     steps:
     - name: Send Slack notification
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         RUN_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
       run: |
-        formatted_failed_jobs_list=$(gh run view ${{ github.run_id }} --json jobs \
-          --jq '[.jobs[] | select(.conclusion == "failure") | "• " + .name] | join("\n")')
-
         curl -X POST -H 'Content-type: application/json' \
           --data '{
-            "text": "El Scraper de Current Semester Subjects de MiCarrera falló para:\n'"$formatted_failed_jobs_list"'\n<'"$RUN_URL"'|Ver logs>"
+            "text": "El Scraper de Current Semester Subjects de MiCarrera falló - <'"$RUN_URL"'|Ver logs>"
           }' "${{ secrets.SLACK_WEBHOOK_URL }}"
