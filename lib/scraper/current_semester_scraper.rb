@@ -7,13 +7,11 @@ module Scraper
 
     def scrape
       logger.info "Starting to scrape current semester subjects for period #{current_period}"
-      current_semester_subjects = []
 
-      current_semester_subjects += load_current_semester_subjects(VALID_PERIOD)
-      current_semester_subjects += load_current_semester_subjects(INVALID_PERIOD)
+      subjects = load_current_semester_subjects(VALID_PERIOD) | load_current_semester_subjects(INVALID_PERIOD)
 
-      logger.info "Finished scraping. Found #{current_semester_subjects.size} current semester subjects"
-      write_yml("scraped_current_semester_subjects", current_semester_subjects.sort)
+      logger.info "Finished scraping. Found #{subjects.size} current semester subjects"
+      write_yml("scraped_current_semester_subjects", subjects.sort)
     rescue
       Rails.logger.info save_screenshot
       raise
