@@ -110,7 +110,6 @@ RSpec.describe Users::RegistrationsController, type: :request do
     it 'transfers degree_plan_id from cookie to user on registration' do
       sistemas_degree = create(:degree, id: 'sistemas', current_plan: '2025')
       sistemas_degree_plan = create(:degree_plan, degree: sistemas_degree, name: '2025', active: true)
-      allow(Features::ChangingDegrees).to receive(:enabled?).and_return(true)
 
       # Cookie student selects a degree plan (this sets the cookie)
       put user_degrees_path, params: { degree_plan_id: sistemas_degree_plan.id }
