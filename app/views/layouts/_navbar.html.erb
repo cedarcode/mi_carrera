@@ -3,7 +3,9 @@
 
   <div class="flex w-full h-14 sm:h-16 px-2 sm:px-4 <%= show_search_bar ? 'hidden' : '' %>" data-search-target="appBar">
     <div class="flex items-center gap-2 sm:gap-4">
-      <%= button_tag "menu", type: "button", class: "size-6 cursor-pointer material-icons", data: { action: "click->navigation-drawer#toggle" } %>
+      <%= button_tag type: "button", class: "size-6 cursor-pointer", data: { action: "click->navigation-drawer#toggle" } do %>
+        <%= material_icon "menu" %>
+      <% end %>
 
       <div class="flex flex-col">
         <%= link_to 'MiCarrera', root_path, class: 'text-xl font-bold' %>
@@ -14,10 +16,14 @@
     </div>
 
     <div class="flex w-full justify-end items-center gap-2 sm:gap-4">
-      <%= button_tag "search", type: "button", class: "cursor-pointer material-icons", data: { action: "search#toggle" } %>
+      <%= button_tag type: "button", class: "cursor-pointer", data: { action: "search#toggle" } do %>
+        <%= material_icon "search" %>
+      <% end %>
 
       <span hidden>
-        <%= button_tag "cloud_download", type: "button", class: "cursor-pointer material-icons p-2", id: "butInstall" %>
+        <%= button_tag type: "button", class: "cursor-pointer p-2", id: "butInstall" do %>
+          <%= material_icon "cloud_download" %>
+        <% end %>
       </span>
 
       <div class="relative" data-controller='user-menu' data-action="click@document->user-menu#onClick">
@@ -27,7 +33,7 @@
               <%= current_user.email.first.capitalize %>
             </div>
           <% else %>
-            <%= material_icon("account_circle") %>
+            <%= material_icon "account_circle" %>
           <% end %>
         <% end %>
 
@@ -40,7 +46,9 @@
     <%= form_with(url: all_subjects_path, method: :get, class: "flex w-full justify-between") do |f| %>
       <%= f.text_field :search, value: params[:search], class: "w-full focus:outline-0", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { search_target: "searchInput" } %>
 
-      <%= button_tag "close", type: "button", class: "cursor-pointer material-icons", data: { action: "search#toggle" }, tabindex: "0" %>
+      <%= button_tag type: "button", class: "cursor-pointer", data: { action: "search#toggle" }, tabindex: "0" do %>
+        <%= material_icon "close" %>
+      <% end %>
     <% end %>
   </div>
 </header>

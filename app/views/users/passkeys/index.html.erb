@@ -10,7 +10,7 @@
           <%= passkey.name %>
         </span>
         <%= button_to user_passkey_path(passkey), method: :delete, form: { data: { turbo: true, turbo_confirm: '¿Seguro que quieres borrar esta Passkey?' } }, class: 'flex items-center hover:text-red-600 transition-colors' do %>
-          <%= material_icon("delete") %>
+          <%= material_icon "delete" %>
         <% end %>
       </li>
     <% end %>
