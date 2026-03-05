@@ -3,9 +3,7 @@
 
   <div class="flex w-full h-14 sm:h-16 px-2 sm:px-4 <%= show_search_bar ? 'hidden' : '' %>" data-search-target="appBar">
     <div class="flex items-center gap-2 sm:gap-4">
-      <%= button_tag type: "button", class: "size-6 cursor-pointer", data: { action: "click->navigation-drawer#toggle" } do %>
-        <%= material_icon "menu" %>
-      <% end %>
+      <%= material_icon "menu",  class: "size-6 cursor-pointer", data: { action: "click->navigation-drawer#toggle" } %>
 
       <div class="flex flex-col">
         <%= link_to 'MiCarrera', root_path, class: 'text-xl font-bold' %>
@@ -14,14 +12,10 @@
     </div>
 
     <div class="flex w-full justify-end items-center gap-2 sm:gap-4">
-      <%= button_tag type: "button", class: "cursor-pointer", data: { action: "search#toggle" } do %>
-        <%= material_icon "search" %>
-      <% end %>
+      <%= material_icon "search", class: "cursor-pointer", data: { action: "search#toggle" } %>
 
       <span hidden>
-        <%= button_tag type: "button", class: "cursor-pointer p-2", id: "butInstall" do %>
-          <%= material_icon "cloud_download" %>
-        <% end %>
+        <%= material_icon "cloud_download", class: "cursor-pointer p-2", id: "butInstall" %>
       </span>
 
       <div class="relative" data-controller='user-menu' data-action="click@document->user-menu#onClick">
@@ -44,9 +38,7 @@
     <%= form_with(url: all_subjects_path, method: :get, class: "flex w-full justify-between") do |f| %>
       <%= f.text_field :search, value: params[:search], class: "w-full focus:outline-0", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { search_target: "searchInput" } %>
 
-      <%= button_tag type: "button", class: "cursor-pointer", data: { action: "search#toggle" }, tabindex: "0" do %>
-        <%= material_icon "close" %>
-      <% end %>
+      <%= material_icon "close", class: "cursor-pointer", data: { action: "search#toggle" }, tabindex: "0" %>
     <% end %>
   </div>
 </header>
