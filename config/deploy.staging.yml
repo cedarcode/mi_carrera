@@ -15,7 +15,6 @@ env:
   clear:
     APPSIGNAL_APP_ENV: staging
     ENABLE_PASSKEYS: true
-    ENABLE_CHANGING_DEGREES: true
 
     WEBAUTHN_ORIGIN: 'https://staging.micarrera.uy'
     WEBAUTHN_RP_ID: 'staging.micarrera.uy'
