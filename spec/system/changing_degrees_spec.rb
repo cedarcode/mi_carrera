@@ -18,64 +18,33 @@ RSpec.describe 'Changing degrees', type: :system do
     sign_in user
   end
 
-  context 'when feature is enabled' do
-    before do
-      allow(Features::ChangingDegrees).to receive(:enabled?).and_return(true)
+  it 'allows user to change their degree plan successfully' do
+    visit root_path
+
+    within('header') do
+      expect(page).to have_text('Ingeniería en Computación - Plan 2025')
     end
 
-    it 'allows user to change their degree plan successfully' do
-      visit root_path
+    expect(user.reload.degree_plan).to eq(computacion_degree_plan)
 
-      within('header') do
-        expect(page).to have_text('Ingeniería en Computación - Plan 2025')
-      end
+    click_user_menu
+    click_on 'Cambiar Carrera'
 
-      expect(user.reload.degree_plan).to eq(computacion_degree_plan)
+    expect(page).to have_text('Cambiar Carrera')
+    expect(page).to have_select('degree_plan_id', selected: 'Ingeniería en Computación - Plan 2025')
 
-      click_user_menu
-      click_on 'Cambiar Carrera'
+    select 'Ingeniería en Sistemas - Plan 2025', from: 'degree_plan_id'
 
-      expect(page).to have_text('Cambiar Carrera')
-      expect(page).to have_select('degree_plan_id', selected: 'Ingeniería en Computación - Plan 2025')
+    click_on 'Guardar'
 
-      select 'Ingeniería en Sistemas - Plan 2025', from: 'degree_plan_id'
+    expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
+    expect(current_path).to eq(root_path)
 
-      click_on 'Guardar'
-
-      expect(page).to have_text('Tu plan ha sido actualizado correctamente.')
-      expect(current_path).to eq(root_path)
-
-      within('header') do
-        expect(page).to have_text('Ingeniería en Sistemas - Plan 2025')
-      end
-
-      expect(user.reload.degree_plan).to eq(sistemas_degree_plan)
-    end
-  end
-
-  context 'when feature is disabled' do
-    before do
-      allow(Features::ChangingDegrees).to receive(:enabled?).and_return(false)
+    within('header') do
+      expect(page).to have_text('Ingeniería en Sistemas - Plan 2025')
     end
 
-    it 'does not show the change degree link in user menu' do
-      visit root_path
-
-      within('header') do
-        expect(page).not_to have_text('Ingeniería en Computación - Plan 2025')
-        expect(page).not_to have_text('Ingeniería en Sistemas - Plan 2025')
-      end
-
-      click_user_menu
-
-      expect(page).not_to have_link('Cambiar Carrera')
-    end
-
-    it 'redirects to root path when trying to access edit page directly' do
-      visit edit_user_degrees_path
-
-      expect(current_path).to eq(root_path)
-    end
+    expect(user.reload.degree_plan).to eq(sistemas_degree_plan)
   end
 
   context 'when cookie student' do
@@ -84,7 +53,6 @@ RSpec.describe 'Changing degrees', type: :system do
 
     before do
       sign_out :user
-      allow(Features::ChangingDegrees).to receive(:enabled?).and_return(true)
     end
 
     it 'shows default degree on edit page when no cookie is set' do
