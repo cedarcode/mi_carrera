@@ -16,7 +16,7 @@
           <%= material_icon "lock_outline", class: "text-gray-400" %>
         <% end %>
 
-        <%= button_to subject_plan_path(subject_id: subject.id), method: :delete, class: "cursor-pointer py-2 ps-3 text-gray-400 hover:text-gray-600", form: { data: { turbo: true } }, data: { action: "planner-loading#start" } do %>
+        <%= button_to subject_plan_path(subject_id: subject.id), method: :delete, class: "cursor-pointer py-2 ps-3 text-gray-400 hover:text-gray-600 flex", form: { data: { turbo: true } }, data: { action: "planner-loading#start" } do %>
           <%= material_icon "remove_circle_outline" %>
         <% end %>
       </li>
