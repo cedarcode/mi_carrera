@@ -12,7 +12,9 @@
     </div>
 
     <div class="flex w-full justify-end items-center gap-2 sm:gap-4">
-      <%= material_icon "search", class: "cursor-pointer", data: { action: "search#toggle" } %>
+      <%= button_tag type: "button", class: "cursor-pointer", data: { action: "search#toggle" } do %>
+        <%= material_icon "search" %>
+      <% end %>
 
       <span hidden>
         <%= material_icon "cloud_download", class: "cursor-pointer p-2", id: "butInstall" %>
@@ -38,7 +40,9 @@
     <%= form_with(url: all_subjects_path, method: :get, class: "flex w-full justify-between") do |f| %>
       <%= f.text_field :search, value: params[:search], class: "w-full focus:outline-0", placeholder: "Buscar por nombre o código de la materia", autofocus: true, data: { search_target: "searchInput" } %>
 
-      <%= material_icon "close", class: "cursor-pointer", data: { action: "search#toggle" }, tabindex: "0" %>
+      <%= button_tag type: "button", class: "cursor-pointer", data: { action: "search#toggle" }, tabindex: "0" do %>
+        <%= material_icon "close" %>
+      <% end %>
     <% end %>
   </div>
 </header>
