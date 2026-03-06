@@ -12,7 +12,7 @@
 
 <% if @different_plan %>
   <div class="flex items-center p-4 mx-4 my-3 text-yellow-800 rounded-lg bg-yellow-50">
-    <%= material_icon("warning_amber") %>
+    <%= material_icon "warning_amber" %>
     <span class="ms-3 font-medium">
       Esta materia pertenece a <%= @subject.degree_plan.display_name %>
     </span>
@@ -63,7 +63,7 @@
 
   <% if @subject.openfing_id %>
     <%= link_to "https://open.fing.edu.uy/courses/#{@subject.openfing_id}", target: "_blank", class: "flex items-center py-3 px-4 hover:bg-gray-100" do %>
-      <%= material_icon("videocam", "text-gray-400 me-8") %>
+      <%= material_icon "videocam", class: "text-gray-400 me-8" %>
 
       OpenFING
     <% end %>

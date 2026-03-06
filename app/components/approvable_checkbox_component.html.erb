@@ -15,6 +15,6 @@
       data: { action: "click->autosave-check#update click->loading#start", "loading-target": "checkbox" },
     ) %>
     <div class="<%= class_names(STYLES[:checkbox]) %>"></div>
-    <%= helpers.material_icon("check", class_names(STYLES[:icon])) %>
+    <%= helpers.material_icon "check", class: class_names(STYLES[:icon]) %>
   </div>
 <% end %>

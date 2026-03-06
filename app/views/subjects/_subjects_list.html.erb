@@ -5,9 +5,9 @@
         <%= display_name(subject) %>
 
         <% if current_student.approved?(subject) %>
-          <%= material_icon("check", "text-green-500") %>
+          <%= material_icon "check", class: "text-green-500" %>
         <% elsif !current_student.available?(subject) %>
-          <%= material_icon("lock_outline", "text-gray-400") %>
+          <%= material_icon "lock_outline", class: "text-gray-400" %>
         <% end %>
       <% end %>
     </li>
