@@ -7251,89 +7251,24 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: '1512'
-      subject_needed_name: DISEÑO LOGICO
-      needs: exam
-    - type: subject
-      subject_needed_code: '2512'
-      subject_needed_name: DISEÑO LOGICO
-      needs: exam
-    - type: subject
-      subject_needed_code: '1322'
-      subject_needed_name: PROGRAMACION 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1373'
-      subject_needed_name: PROGRAMACION 1
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1062'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-      needs: all
-    - type: subject
-      subject_needed_code: '1022'
-      subject_needed_name: CALCULO 2
-      needs: all
-    - type: subject
-      subject_needed_code: '1072'
-      subject_needed_name: CALCULO 2
+      subject_needed_code: '1021'
+      subject_needed_name: ALGEBRA LINEAL
       needs: all
     - type: subject
       subject_needed_code: MAT33
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: all
     - type: subject
-      subject_needed_code: 1062P
-      subject_needed_name: CREDITOS NO ACUM CDIVV
-      needs: all
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1061'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      subject_needed_code: 1031P
+      subject_needed_name: CREDITOS NO ACUM GAL2
       needs: all
     - type: subject
-      subject_needed_code: '1020'
-      subject_needed_name: CALCULO 1
+      subject_needed_code: '1031'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
       needs: all
     - type: subject
-      subject_needed_code: '1070'
-      subject_needed_name: CALCULO 1
-      needs: all
-    - type: subject
-      subject_needed_code: '1052'
-      subject_needed_name: CALCULO 1 (ANUAL)
-      needs: all
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: 1020P
-      subject_needed_name: CREDITOS NO ACUM CALCULO 1
-      needs: all
-    - type: subject
-      subject_needed_code: 1061P
-      subject_needed_name: CREDITOS NO ACUM CDIV
-      needs: all
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1025P
-      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
-      needs: all
-    - type: subject
-      subject_needed_code: '1025'
-      subject_needed_name: PROBABILIDAD Y ESTADISTICA
-      needs: all
-    - type: subject
-      subject_needed_code: '1075'
-      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      subject_needed_code: '1058'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
       needs: all
   - type: logical
     logical_operator: or
@@ -7370,25 +7305,90 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: '1021'
-      subject_needed_name: ALGEBRA LINEAL
+      subject_needed_code: 1025P
+      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
+      needs: all
+    - type: subject
+      subject_needed_code: '1025'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: all
+    - type: subject
+      subject_needed_code: '1075'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: all
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: all
+    - type: subject
+      subject_needed_code: '1020'
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: '1070'
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: '1052'
+      subject_needed_name: CALCULO 1 (ANUAL)
       needs: all
     - type: subject
       subject_needed_code: MAT33
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: all
     - type: subject
-      subject_needed_code: 1031P
-      subject_needed_name: CREDITOS NO ACUM GAL2
+      subject_needed_code: 1020P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 1
       needs: all
     - type: subject
-      subject_needed_code: '1031'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: all
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1062'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
       needs: all
     - type: subject
-      subject_needed_code: '1058'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+      subject_needed_code: '1022'
+      subject_needed_name: CALCULO 2
       needs: all
+    - type: subject
+      subject_needed_code: '1072'
+      subject_needed_name: CALCULO 2
+      needs: all
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: 1062P
+      subject_needed_name: CREDITOS NO ACUM CDIVV
+      needs: all
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1512'
+      subject_needed_name: DISEÑO LOGICO
+      needs: exam
+    - type: subject
+      subject_needed_code: '2512'
+      subject_needed_name: DISEÑO LOGICO
+      needs: exam
+    - type: subject
+      subject_needed_code: '1322'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1373'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
   subject_code: '1650'
   is_exam: false
 - type: logical
@@ -8726,6 +8726,38 @@
     subject_needed_code: '2041'
     subject_needed_name: METODOS NUMERICOS
   subject_code: '2041'
+  is_exam: true
+- type: logical
+  logical_operator: not
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1023P
+      subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1023'
+      subject_needed_name: MATEMATICA DISCRETA 1
+      needs: exam
+  subject_code: '2044'
+  is_exam: false
+- type: logical
+  logical_operator: not
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1023P
+      subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1023'
+      subject_needed_name: MATEMATICA DISCRETA 1
+      needs: exam
+  subject_code: '2044'
   is_exam: true
 - type: logical
   logical_operator: and
