@@ -1339,6 +1339,13 @@
   - group: '011'
     credits: 10
   has_exam: true
+'2044':
+  code: '2044'
+  name: FUNDAMENTOS DE LA COMBINATORIA
+  subject_groups:
+  - group: '011'
+    credits: 9
+  has_exam: true
 '2216':
   code: '2216'
   name: TUTORIAS ENTRE PARES 1
