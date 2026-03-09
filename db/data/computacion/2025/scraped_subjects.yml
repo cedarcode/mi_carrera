@@ -257,6 +257,13 @@
   name: CREDITOS NO ACUM ECONOMIA
   has_exam: false
   subject_groups: []
+'1275':
+  code: '1275'
+  name: TALLER BASICO DE ESTRATEGIAS Y ORIENTACION (TBEO)
+  subject_groups:
+  - group: III.II
+    credits: 3
+  has_exam: false
 158Q:
   code: 158Q
   name: GEOMETRIA Y ALGEBRA LINEAL 2
@@ -331,13 +338,6 @@ CAL2:
   subject_groups:
   - group: I.I
     credits: 10
-  has_exam: false
-CAS01:
-  code: CAS01
-  name: ÉTICA
-  subject_groups:
-  - group: III.II
-    credits: 8
   has_exam: false
 CCT10:
   code: CCT10
@@ -497,6 +497,13 @@ DMA06:
   subject_groups:
   - group: I.I
     credits: 13
+  has_exam: false
+EL31:
+  code: EL31
+  name: ÉTICA
+  subject_groups:
+  - group: III.II
+    credits: 8
   has_exam: false
 EPCN:
   code: EPCN
