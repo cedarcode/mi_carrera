@@ -88,7 +88,7 @@ GEM
       rack (>= 2.0.0)
     ast (2.4.3)
     base64 (0.3.0)
-    bcrypt (3.1.21)
+    bcrypt (3.1.22)
     bcrypt_pbkdf (1.1.2)
     bigdecimal (3.3.1)
     bindata (2.5.1)
