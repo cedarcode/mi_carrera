@@ -957,7 +957,7 @@ M9:
   subject_groups: []
 MA01:
   code: MA01
-  name: CALCULO DIFERENCIAL E INTEGRAL I
+  name: CALCULO DIFERENCIAL E INTEGRAL I (1978-2008)
   has_exam: true
   subject_groups: []
 MA09:
@@ -970,14 +970,9 @@ MA10:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
-MA11:
-  code: MA11
-  name: CREDITOS ASIGNADOS POR REVALIDA
-  has_exam: true
-  subject_groups: []
 MA13:
   code: MA13
-  name: CÁLCULO DIFERENCIAL E INTEGRAL I (F)
+  name: CÁLCULO DIFERENCIAL E INTEGRAL I (F) (2008-2019)
   has_exam: true
   subject_groups: []
 MA16:
@@ -1041,7 +1036,12 @@ MI2:
   subject_groups:
   - group: '00101'
     credits: 4
-  has_exam: false
+  has_exam: true
+MI2P:
+  code: MI2P
+  name: CREDITOS NO ACUM MATEMATICA INICIAL
+  has_exam: true
+  subject_groups: []
 R100:
   code: R100
   name: ANALISIS MATEMATICO I
