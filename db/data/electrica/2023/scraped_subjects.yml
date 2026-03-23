@@ -2655,7 +2655,7 @@ M9:
   subject_groups: []
 MA01:
   code: MA01
-  name: CALCULO DIFERENCIAL E INTEGRAL I
+  name: CALCULO DIFERENCIAL E INTEGRAL I (1978-2008)
   has_exam: false
   subject_groups: []
 MA09:
@@ -2675,7 +2675,7 @@ MA11:
   subject_groups: []
 MA13:
   code: MA13
-  name: CÁLCULO DIFERENCIAL E INTEGRAL I (F)
+  name: CÁLCULO DIFERENCIAL E INTEGRAL I (F) (2008-2019)
   has_exam: false
   subject_groups: []
 MA15:
@@ -2745,6 +2745,11 @@ MI2:
   - group: '011'
     credits: 4
   has_exam: true
+MI2P:
+  code: MI2P
+  name: CREDITOS NO ACUM MATEMATICA INICIAL
+  has_exam: true
+  subject_groups: []
 O2525:
   code: O2525
   name: COMUNICACIÓN E INTELIGENCIA ARTIFICIAL(PPP)
