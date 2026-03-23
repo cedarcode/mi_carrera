@@ -3930,7 +3930,7 @@ DMA02:
   subject_groups:
   - group: '4083'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA03:
   code: DMA03
   name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
@@ -4590,6 +4590,11 @@ MI2:
   - group: '4083'
     credits: 4
   has_exam: true
+MI2P:
+  code: MI2P
+  name: CREDITOS NO ACUM MATEMATICA INICIAL
+  has_exam: true
+  subject_groups: []
 MOP1:
   code: MOP1
   name: CREDITOS ASIGNADOS POR REVALIDA
