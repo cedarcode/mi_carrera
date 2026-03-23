@@ -1312,7 +1312,7 @@
         needs: all
       - type: subject
         subject_needed_code: MA01
-        subject_needed_name: CALCULO DIFERENCIAL E INTEGRAL I
+        subject_needed_name: CALCULO DIFERENCIAL E INTEGRAL I (1978-2008)
         needs: all
       - type: subject
         subject_needed_code: '1020'
@@ -1336,7 +1336,7 @@
         needs: all
       - type: subject
         subject_needed_code: MA13
-        subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL I (F)
+        subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL I (F) (2008-2019)
         needs: all
       - type: subject
         subject_needed_code: CAL10
@@ -12563,13 +12563,6 @@
   - type: logical
     logical_operator: not
     operands:
-    - type: subject
-      needs: course_enrollment
-      subject_needed_code: '01'
-      subject_needed_name: MAT. 01 (ANÁLISIS I)
-  - type: logical
-    logical_operator: not
-    operands:
     - type: logical
       logical_operator: or
       operands:
@@ -12672,6 +12665,13 @@
   - type: logical
     logical_operator: not
     operands:
+    - type: subject
+      needs: course_enrollment
+      subject_needed_code: '01'
+      subject_needed_name: MAT. 01 (ANÁLISIS I)
+  - type: logical
+    logical_operator: not
+    operands:
     - type: logical
       logical_operator: or
       operands:
@@ -12683,6 +12683,10 @@
         subject_needed_code: '1020'
         subject_needed_name: CALCULO 1
         needs: course
+      - type: subject
+        subject_needed_code: MI2P
+        subject_needed_name: CREDITOS NO ACUM MATEMATICA INICIAL
+        needs: exam
       - type: subject
         subject_needed_code: '01'
         subject_needed_name: MAT. 01 (ANÁLISIS I)
@@ -12699,10 +12703,29 @@
   - type: logical
     logical_operator: not
     operands:
-    - type: subject
-      needs: course_enrollment
-      subject_needed_code: '01'
-      subject_needed_name: MAT. 01 (ANÁLISIS I)
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1061'
+        subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+        needs: course
+      - type: subject
+        subject_needed_code: '1020'
+        subject_needed_name: CALCULO 1
+        needs: course
+      - type: subject
+        subject_needed_code: MI2P
+        subject_needed_name: CREDITOS NO ACUM MATEMATICA INICIAL
+        needs: exam
+      - type: subject
+        subject_needed_code: '01'
+        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        needs: course
+      - type: subject
+        subject_needed_code: '101'
+        subject_needed_name: MATEMÁTICA 101 (ANÁLISIS I)
+        needs: course
   - type: logical
     logical_operator: not
     operands:
@@ -12808,25 +12831,10 @@
   - type: logical
     logical_operator: not
     operands:
-    - type: logical
-      logical_operator: or
-      operands:
-      - type: subject
-        subject_needed_code: '1061'
-        subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-        needs: course
-      - type: subject
-        subject_needed_code: '1020'
-        subject_needed_name: CALCULO 1
-        needs: course
-      - type: subject
-        subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
-        needs: course
-      - type: subject
-        subject_needed_code: '101'
-        subject_needed_name: MATEMÁTICA 101 (ANÁLISIS I)
-        needs: course
+    - type: subject
+      needs: course_enrollment
+      subject_needed_code: '01'
+      subject_needed_name: MAT. 01 (ANÁLISIS I)
   subject_code: MI2
   is_exam: true
 - type: logical
