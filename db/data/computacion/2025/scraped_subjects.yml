@@ -655,6 +655,11 @@ MI2:
   - group: I.I
     credits: 4
   has_exam: true
+MI2P:
+  code: MI2P
+  name: CREDITOS NO ACUM MATEMATICA INICIAL
+  has_exam: true
+  subject_groups: []
 SRN02:
   code: SRN02
   name: CÁLCULO I
