@@ -181,10 +181,14 @@ RSpec.describe "Subject", type: :system do
 
     visit subject_path(gal1)
 
+    expect(page).to have_text("Recomendado")
     expect(page).to have_text("Interesante")
     expect(page).to have_text("Créditos/Dificultad")
+    expect(page).to have_text('?')
     expect(page).to have_text('-.-')
-    click_button('star_outline', match: :first)
+
+    # Try to submit a review without being logged in
+    click_button('thumb_up_off_alt', match: :first)
     expect(page).to have_text('Iniciar sesión')
 
     fill_in "Correo electrónico", with: user.email
@@ -194,18 +198,30 @@ RSpec.describe "Subject", type: :system do
 
     visit subject_path(gal1)
 
+    # Test recommended rating (thumbs up/down)
+    expect(page).to have_text('?')
+    click_button('thumb_up_off_alt', match: :first)
+    expect(page).to have_text('100%')
+
+    # Change to thumbs down
+    click_button('thumb_down_off_alt')
+    expect(page).to have_text('0%')
+
+    # Remove recommendation by clicking same button
+    click_button('thumb_down')
+    expect(page).to have_text('?')
+
+    # Test star ratings (interesting)
     expect(page).to have_text('-.-')
     click_button('star_outline', match: :first)
     expect(page).to have_text('5.0')
 
     # Update review to 4 stars
     all('button', text: 'star')[1].click
-
     expect(page).to have_text('4.0')
 
     # Reset review by clicking on the same star
     all('button', text: 'star')[1].click
-
     expect(page).to have_text('-.-')
   end
 
