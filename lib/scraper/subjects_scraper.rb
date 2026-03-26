@@ -1,16 +1,9 @@
 require 'scraper/base'
+require 'scraper/text_parser'
 require 'scraper/prerequisites_tree_page'
 
 module Scraper
   class SubjectsScraper < Base
-    # 5265 - CIENCIAS HUMANAS Y SOCIALES - min: 10 créditos
-    # I.I - MATEMÁTICA Y CIENCIAS EXPERIMENTALES - min: 50 créditos
-    GROUP_CODE_NAME_CREDITS_REGEX = /\A([\w.]+) - (.+) - (?:min): (\d+)(?: créditos)\z/
-    # SRN14 - MATEMÁTICA DISCRETA I - créditos: 10
-    # FF1-7 - CREDITOS ASIGNADOS POR REVALIDA - créditos: 7
-    # FL2.6 - CREDITOS ASIGANDOS POR REVALIDA - créditos: 6
-    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A((?:\w|\.|\-)+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
-
     def scrape
       logger.info "Starting to scrape subjects"
       groups = {}
@@ -57,16 +50,17 @@ module Scraper
       group_nodes = all(selector, visible: false)
 
       group_nodes.each do |group_node|
-        group_code, name, credits = GROUP_CODE_NAME_CREDITS_REGEX.match(group_node.text(:all)).captures
-        groups[group_code] = { code: group_code, name:, min_credits: credits.to_i }
+        group = TextParser.parse_group(group_node.text(:all))
+        group_code = group[:code]
+        groups[group_code] = group
         subject_nodes_in_group = group_node.all(:xpath, '..//..//li[@data-nodetype="Materia"]', visible: false)
 
         subject_nodes_in_group.each do |subject_node|
-          match = SUBJECT_CODE_NAME_CREDITS_REGEX.match(subject_node.text(:all))
-          if match
-            code, name, credits = match.captures
-            subjects[code] ||= { code:, name:, subject_groups: [], has_exam: false }
-            subjects[code][:subject_groups] << { group: group_code, credits: credits.to_i }
+          parsed = TextParser.parse_subject(subject_node.text(:all))
+          if parsed
+            code = parsed[:code]
+            subjects[code] ||= { code:, name: parsed[:name], subject_groups: [], has_exam: false }
+            subjects[code][:subject_groups] << { group: group_code, credits: parsed[:credits] }
           else
             raise "Regex didn't match for subject: #{subject_node.text(:all)}"
           end
@@ -101,7 +95,7 @@ module Scraper
           name, type = approvable_row.all('td')[0..1]
           logger.info "#{name.text} (#{type.text})"
 
-          subject_code = /\A(\w+) - .*\z/.match(name.text).captures[0]
+          subject_code = TextParser.parse_subject_code_from_name(name.text)
           is_exam = type.text == "Examen"
 
           subjects[subject_code][:has_exam] ||= is_exam if subjects[subject_code]
