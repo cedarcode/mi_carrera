@@ -8762,6 +8762,73 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: exam
+      subject_needed_code: '5850'
+      subject_needed_name: ELECTROTECNICA
+  - type: credits
+    credits: 35
+    group: 12
+  - type: subject
+    needs: course
+    subject_needed_code: '1456'
+    subject_needed_name: TEORIA DE CIRCUITOS
+  - type: subject
+    needs: exam
+    subject_needed_code: '1151'
+    subject_needed_name: FISICA 1
+  - type: subject
+    needs: exam
+    subject_needed_code: '1153'
+    subject_needed_name: FISICA 3
+  - type: subject
+    needs: exam
+    subject_needed_code: '1030'
+    subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+  - type: subject
+    needs: exam
+    subject_needed_code: '1031'
+    subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+  - type: subject
+    needs: exam
+    subject_needed_code: '1061'
+    subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+  - type: subject
+    needs: exam
+    subject_needed_code: '1062'
+    subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+  - type: subject
+    needs: course
+    subject_needed_code: '1128'
+    subject_needed_name: ELECTROMAGNETISMO
+  - type: subject
+    needs: course
+    subject_needed_code: '1122'
+    subject_needed_name: MECANICA NEWTONIANA
+  subject_code: '2109'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: exam
+      subject_needed_code: '5850'
+      subject_needed_name: ELECTROTECNICA
+  - type: subject
+    needs: course
+    subject_needed_code: '2109'
+    subject_needed_name: ELECTROTECNICA II
+  subject_code: '2109'
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
   - type: subject
     needs: all
     subject_needed_code: '2216'
@@ -9238,13 +9305,9 @@
       subject_needed_name: ELECTROTECNICA
       needs: course
     - type: subject
-      subject_needed_code: '5601'
-      subject_needed_name: INT. A LA ELECTROTECNICA
-      needs: exam
-    - type: subject
-      subject_needed_code: '5608'
-      subject_needed_name: INT. A LA ELECTROTECNICA
-      needs: exam
+      subject_needed_code: '2109'
+      subject_needed_name: ELECTROTECNICA II
+      needs: course
     - type: subject
       subject_needed_code: '5830'
       subject_needed_name: INT. A LA ELECTROTECNICA
@@ -9287,13 +9350,9 @@
         subject_needed_name: ELECTROTECNICA
         needs: course
       - type: subject
-        subject_needed_code: '5601'
-        subject_needed_name: INT. A LA ELECTROTECNICA
-        needs: exam
-      - type: subject
-        subject_needed_code: '5608'
-        subject_needed_name: INT. A LA ELECTROTECNICA
-        needs: exam
+        subject_needed_code: '2109'
+        subject_needed_name: ELECTROTECNICA II
+        needs: course
       - type: subject
         subject_needed_code: '5830'
         subject_needed_name: INT. A LA ELECTROTECNICA
@@ -11132,16 +11191,8 @@
         subject_needed_name: CREDITOS NO ACUM ELECTROTECNICA
         needs: all
       - type: subject
-        subject_needed_code: '5601'
-        subject_needed_name: INT. A LA ELECTROTECNICA
-        needs: all
-      - type: subject
-        subject_needed_code: '5608'
-        subject_needed_name: INT. A LA ELECTROTECNICA
-        needs: all
-      - type: subject
-        subject_needed_code: '5830'
-        subject_needed_name: INT. A LA ELECTROTECNICA
+        subject_needed_code: '2109'
+        subject_needed_name: ELECTROTECNICA II
         needs: all
   - type: logical
     logical_operator: or
@@ -11168,14 +11219,6 @@
         logical_operator: or
         operands:
         - type: subject
-          subject_needed_code: 1423P
-          subject_needed_name: CREDITOS NO ACUM SISTEMAS LINEALES 1
-          needs: course
-        - type: subject
-          subject_needed_code: '1401'
-          subject_needed_name: SISTEMAS LINEALES 1
-          needs: exam
-        - type: subject
           subject_needed_code: '1423'
           subject_needed_name: SISTEMAS LINEALES 1
           needs: exam
@@ -11189,10 +11232,6 @@
         - type: subject
           subject_needed_code: 1151P
           subject_needed_name: CREDITOS NO ACUM FISICA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1120'
-          subject_needed_name: FISICA GENERAL 1
           needs: exam
         - type: subject
           subject_needed_code: '1170'
@@ -11220,117 +11259,6 @@
         logical_operator: or
         operands:
         - type: subject
-          subject_needed_code: 1153P
-          subject_needed_name: CREDITOS NO ACUM FISICA 3
-          needs: exam
-        - type: subject
-          subject_needed_code: '1121'
-          subject_needed_name: FISICA GENERAL 2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1172'
-          subject_needed_name: FISICA GENERAL 2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1153'
-          subject_needed_name: FISICA 3
-          needs: exam
-        - type: subject
-          subject_needed_code: '1173'
-          subject_needed_name: FISICA 3
-          needs: exam
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          subject_needed_code: '1021'
-          subject_needed_name: ALGEBRA LINEAL
-          needs: exam
-        - type: subject
-          subject_needed_code: MAT33
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1071'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: GAL1P
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
-          needs: exam
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          subject_needed_code: '1128'
-          subject_needed_name: ELECTROMAGNETISMO
-          needs: course
-        - type: subject
-          subject_needed_code: '1178'
-          subject_needed_name: ELECTROMAGNETISMO
-          needs: exam
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          subject_needed_code: 1151P
-          subject_needed_name: CREDITOS NO ACUM FISICA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1120'
-          subject_needed_name: FISICA GENERAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1170'
-          subject_needed_name: FISICA GENERAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1151'
-          subject_needed_name: FISICA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1171'
-          subject_needed_name: FISICA 1
-          needs: exam
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          subject_needed_code: '1021'
-          subject_needed_name: ALGEBRA LINEAL
-          needs: exam
-        - type: subject
-          subject_needed_code: MAT33
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1058'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-          needs: exam
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
           subject_needed_code: 1122P
           subject_needed_name: CREDITOS NO ACUM MEC NEWTONIANA
           needs: exam
@@ -11350,20 +11278,8 @@
           subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
           needs: exam
         - type: subject
-          subject_needed_code: '1022'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1072'
-          subject_needed_name: CALCULO 2
-          needs: exam
-        - type: subject
           subject_needed_code: MAT33
           subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1022P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 2
           needs: exam
         - type: subject
           subject_needed_code: 1062P
@@ -11377,28 +11293,103 @@
           subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
           needs: exam
         - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
           subject_needed_code: '1070'
           subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
           needs: exam
         - type: subject
           subject_needed_code: MAT33
           subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
           needs: exam
         - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-        - type: subject
           subject_needed_code: 1061P
           subject_needed_name: CREDITOS NO ACUM CDIV
+          needs: exam
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: 1153P
+          subject_needed_name: CREDITOS NO ACUM FISICA 3
+          needs: exam
+        - type: subject
+          subject_needed_code: '1153'
+          subject_needed_name: FISICA 3
+          needs: exam
+        - type: subject
+          subject_needed_code: '1173'
+          subject_needed_name: FISICA 3
+          needs: exam
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: MAT33
+          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+          needs: exam
+        - type: subject
+          subject_needed_code: 1030P
+          subject_needed_name: CREDITOS NO ACUM GAL1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1030'
+          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1071'
+          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+          needs: exam
+        - type: subject
+          subject_needed_code: GAL1P
+          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+          needs: exam
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: 1128P
+          subject_needed_name: CREDITOS NO ACUM ELECTROMAGNETISMO
+          needs: exam
+        - type: subject
+          subject_needed_code: '1128'
+          subject_needed_name: ELECTROMAGNETISMO
+          needs: course
+        - type: subject
+          subject_needed_code: '1178'
+          subject_needed_name: ELECTROMAGNETISMO
+          needs: exam
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: 1151P
+          subject_needed_name: CREDITOS NO ACUM FISICA 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1151'
+          subject_needed_name: FISICA 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1171'
+          subject_needed_name: FISICA 1
+          needs: exam
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: MAT33
+          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+          needs: exam
+        - type: subject
+          subject_needed_code: 1031P
+          subject_needed_name: CREDITOS NO ACUM GAL2
+          needs: exam
+        - type: subject
+          subject_needed_code: '1031'
+          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+          needs: exam
+        - type: subject
+          subject_needed_code: '1058'
+          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
           needs: exam
   subject_code: '5850'
   is_exam: false
@@ -11416,12 +11407,8 @@
         subject_needed_name: CREDITOS NO ACUM ELECTROTECNICA
         needs: all
       - type: subject
-        subject_needed_code: '5601'
-        subject_needed_name: INT. A LA ELECTROTECNICA
-        needs: all
-      - type: subject
-        subject_needed_code: '5608'
-        subject_needed_name: INT. A LA ELECTROTECNICA
+        subject_needed_code: '2109'
+        subject_needed_name: ELECTROTECNICA II
         needs: all
       - type: subject
         subject_needed_code: '5830'
@@ -11437,24 +11424,16 @@
         logical_operator: or
         operands:
         - type: subject
-          subject_needed_code: 1151P
-          subject_needed_name: CREDITOS NO ACUM FISICA 1
+          subject_needed_code: 1128P
+          subject_needed_name: CREDITOS NO ACUM ELECTROMAGNETISMO
           needs: exam
         - type: subject
-          subject_needed_code: '1120'
-          subject_needed_name: FISICA GENERAL 1
-          needs: exam
+          subject_needed_code: '1128'
+          subject_needed_name: ELECTROMAGNETISMO
+          needs: course
         - type: subject
-          subject_needed_code: '1170'
-          subject_needed_name: FISICA GENERAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1151'
-          subject_needed_name: FISICA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1171'
-          subject_needed_name: FISICA 1
+          subject_needed_code: '1178'
+          subject_needed_name: ELECTROMAGNETISMO
           needs: exam
       - type: logical
         logical_operator: or
@@ -11479,16 +11458,24 @@
         logical_operator: or
         operands:
         - type: subject
-          subject_needed_code: 1128P
-          subject_needed_name: CREDITOS NO ACUM ELECTROMAGNETISMO
+          subject_needed_code: 1151P
+          subject_needed_name: CREDITOS NO ACUM FISICA 1
           needs: exam
         - type: subject
-          subject_needed_code: '1128'
-          subject_needed_name: ELECTROMAGNETISMO
-          needs: course
+          subject_needed_code: '1120'
+          subject_needed_name: FISICA GENERAL 1
+          needs: exam
         - type: subject
-          subject_needed_code: '1178'
-          subject_needed_name: ELECTROMAGNETISMO
+          subject_needed_code: '1170'
+          subject_needed_name: FISICA GENERAL 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1151'
+          subject_needed_name: FISICA 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1171'
+          subject_needed_name: FISICA 1
           needs: exam
     - type: logical
       logical_operator: and
@@ -11500,6 +11487,29 @@
         needs: course
         subject_needed_code: '1456'
         subject_needed_name: TEORIA DE CIRCUITOS
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: 1151P
+          subject_needed_name: CREDITOS NO ACUM FISICA 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1120'
+          subject_needed_name: FISICA GENERAL 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1170'
+          subject_needed_name: FISICA GENERAL 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1151'
+          subject_needed_name: FISICA 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1171'
+          subject_needed_name: FISICA 1
+          needs: exam
       - type: logical
         logical_operator: or
         operands:
@@ -11527,85 +11537,47 @@
         logical_operator: or
         operands:
         - type: subject
-          subject_needed_code: 1151P
-          subject_needed_name: CREDITOS NO ACUM FISICA 1
+          subject_needed_code: '1061'
+          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
           needs: exam
         - type: subject
-          subject_needed_code: '1120'
-          subject_needed_name: FISICA GENERAL 1
+          subject_needed_code: '1020'
+          subject_needed_name: CALCULO 1
           needs: exam
         - type: subject
-          subject_needed_code: '1170'
-          subject_needed_name: FISICA GENERAL 1
+          subject_needed_code: '1070'
+          subject_needed_name: CALCULO 1
           needs: exam
         - type: subject
-          subject_needed_code: '1151'
-          subject_needed_name: FISICA 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1171'
-          subject_needed_name: FISICA 1
-          needs: exam
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          subject_needed_code: 1122P
-          subject_needed_name: CREDITOS NO ACUM MEC NEWTONIANA
-          needs: exam
-        - type: subject
-          subject_needed_code: '1078'
-          subject_needed_name: MECANICA NEWTONIANA
-          needs: exam
-        - type: subject
-          subject_needed_code: '1122'
-          subject_needed_name: MECANICA NEWTONIANA
-          needs: course
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          subject_needed_code: 1153P
-          subject_needed_name: CREDITOS NO ACUM FISICA 3
-          needs: exam
-        - type: subject
-          subject_needed_code: '1121'
-          subject_needed_name: FISICA GENERAL 2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1172'
-          subject_needed_name: FISICA GENERAL 2
-          needs: exam
-        - type: subject
-          subject_needed_code: '1153'
-          subject_needed_name: FISICA 3
-          needs: exam
-        - type: subject
-          subject_needed_code: '1173'
-          subject_needed_name: FISICA 3
-          needs: exam
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          subject_needed_code: '1021'
-          subject_needed_name: ALGEBRA LINEAL
+          subject_needed_code: '1052'
+          subject_needed_name: CALCULO 1 (ANUAL)
           needs: exam
         - type: subject
           subject_needed_code: MAT33
           subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
           needs: exam
         - type: subject
-          subject_needed_code: 1031P
-          subject_needed_name: CREDITOS NO ACUM GAL2
+          subject_needed_code: 1020P
+          subject_needed_name: CREDITOS NO ACUM CALCULO 1
           needs: exam
         - type: subject
-          subject_needed_code: '1031'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+          subject_needed_code: 1061P
+          subject_needed_name: CREDITOS NO ACUM CDIV
+          needs: exam
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: 1128P
+          subject_needed_name: CREDITOS NO ACUM ELECTROMAGNETISMO
           needs: exam
         - type: subject
-          subject_needed_code: '1058'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+          subject_needed_code: '1128'
+          subject_needed_name: ELECTROMAGNETISMO
+          needs: course
+        - type: subject
+          subject_needed_code: '1178'
+          subject_needed_name: ELECTROMAGNETISMO
           needs: exam
       - type: logical
         logical_operator: or
@@ -11642,48 +11614,63 @@
         logical_operator: or
         operands:
         - type: subject
-          subject_needed_code: 1128P
-          subject_needed_name: CREDITOS NO ACUM ELECTROMAGNETISMO
-          needs: exam
-        - type: subject
-          subject_needed_code: '1128'
-          subject_needed_name: ELECTROMAGNETISMO
-          needs: course
-        - type: subject
-          subject_needed_code: '1178'
-          subject_needed_name: ELECTROMAGNETISMO
-          needs: exam
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
+          subject_needed_code: '1021'
+          subject_needed_name: ALGEBRA LINEAL
           needs: exam
         - type: subject
           subject_needed_code: MAT33
           subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
           needs: exam
         - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
+          subject_needed_code: 1031P
+          subject_needed_name: CREDITOS NO ACUM GAL2
           needs: exam
         - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
+          subject_needed_code: '1031'
+          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
           needs: exam
+        - type: subject
+          subject_needed_code: '1058'
+          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+          needs: exam
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: 1153P
+          subject_needed_name: CREDITOS NO ACUM FISICA 3
+          needs: exam
+        - type: subject
+          subject_needed_code: '1121'
+          subject_needed_name: FISICA GENERAL 2
+          needs: exam
+        - type: subject
+          subject_needed_code: '1172'
+          subject_needed_name: FISICA GENERAL 2
+          needs: exam
+        - type: subject
+          subject_needed_code: '1153'
+          subject_needed_name: FISICA 3
+          needs: exam
+        - type: subject
+          subject_needed_code: '1173'
+          subject_needed_name: FISICA 3
+          needs: exam
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: 1122P
+          subject_needed_name: CREDITOS NO ACUM MEC NEWTONIANA
+          needs: exam
+        - type: subject
+          subject_needed_code: '1078'
+          subject_needed_name: MECANICA NEWTONIANA
+          needs: exam
+        - type: subject
+          subject_needed_code: '1122'
+          subject_needed_name: MECANICA NEWTONIANA
+          needs: course
     - type: subject
       needs: course
       subject_needed_code: '5850'

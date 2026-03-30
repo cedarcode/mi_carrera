@@ -1346,6 +1346,13 @@
   - group: '011'
     credits: 9
   has_exam: true
+'2109':
+  code: '2109'
+  name: ELECTROTECNICA II
+  subject_groups:
+  - group: '025'
+    credits: 9
+  has_exam: true
 '2216':
   code: '2216'
   name: TUTORIAS ENTRE PARES 1
