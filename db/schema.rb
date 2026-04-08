@@ -56,6 +56,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_12_235207) do
     t.datetime "created_at", null: false
     t.integer "credits_to_difficulty_rating"
     t.integer "interesting_rating"
+    t.boolean "recommended_rating"
     t.bigint "subject_id", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false

@@ -72,6 +72,21 @@ class Subject < ApplicationRecord
     reviews.average(:credits_to_difficulty_rating)&.round(1)
   end
 
+  def recommended_percentage
+    total_count = reviews.where.not(recommended_rating: nil).count
+    return nil if total_count.zero?
+
+    (recommended_count * 100.0 / total_count).round
+  end
+
+  def recommended_count
+    reviews.where(recommended_rating: true).count
+  end
+
+  def not_recommended_count
+    reviews.where(recommended_rating: false).count
+  end
+
   delegate :available?, to: :course
 end
 
