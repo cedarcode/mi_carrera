@@ -1110,7 +1110,7 @@
 1833P:
   code: 1833P
   name: CREDITOS NO ACUM HIDROLOGIA E HIDRAULICA APLICADAS
-  has_exam: false
+  has_exam: true
   subject_groups: []
 '1836':
   code: '1836'
@@ -1232,6 +1232,18 @@
   - group: '4922'
     credits: 8
   has_exam: true
+1854B:
+  code: 1854B
+  name: FUNDAMENTOS DE INGENIERIA Y SALUD AMBIENTAL
+  subject_groups:
+  - group: '4922'
+    credits: 8
+  has_exam: true
+1854P:
+  code: 1854P
+  name: CREDITOS NO ACUM CALIDAD DE AGUA
+  has_exam: false
+  subject_groups: []
 '1855':
   code: '1855'
   name: GESTION DE CALIDAD AMBIENTAL
@@ -1430,6 +1442,11 @@
   - group: '4693'
     credits: 9
   has_exam: true
+2206P:
+  code: 2206P
+  name: CREDITOS NO ACUM GEOLOGIA DE INGENIERIA
+  has_exam: false
+  subject_groups: []
 '2207':
   code: '2207'
   name: INT. A LA MECANICA DE SUELOS
@@ -1700,6 +1717,13 @@
   - group: '4999'
     credits: 8
   has_exam: true
+'2275':
+  code: '2275'
+  name: LABORATORIO DE MEZCLAS ASFALTICAS
+  subject_groups:
+  - group: '4818'
+    credits: 5
+  has_exam: false
 '2300':
   code: '2300'
   name: AGUA POTABLE
