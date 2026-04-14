@@ -16,7 +16,7 @@ gem "omniauth-rails_csrf_protection", '~> 2.0'
 gem 'pdf-reader'
 gem 'pg', '~> 1.6'
 gem 'propshaft', '~> 1.3'
-gem 'puma', '~> 7.2'
+gem 'puma', '~> 8.0'
 gem 'stimulus-rails', '~> 1.3'
 gem 'tailwindcss-rails', '~> 4.4'
 gem 'turbo-rails', '~> 2.0'
@@ -45,7 +45,7 @@ end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.41'
+  gem 'selenium-webdriver', '~> 4.43'
   gem 'shoulda-matchers', '~> 7.0'
   gem 'simplecov', require: false
 end
