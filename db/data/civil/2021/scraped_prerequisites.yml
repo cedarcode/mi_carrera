@@ -7305,6 +7305,56 @@
   - type: logical
     logical_operator: not
     operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1854'
+        subject_needed_name: CALIDAD DE AGUAS
+        needs: all
+      - type: subject
+        subject_needed_code: 1854P
+        subject_needed_name: CREDITOS NO ACUM CALIDAD DE AGUA
+        needs: all
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '2250'
+      subject_needed_name: ELEMENTOS DE INGENIERIA AMBIENTAL
+      needs: all
+    - type: subject
+      subject_needed_code: '2256'
+      subject_needed_name: ELEMENTOS DE INGENIERIA AMBIENTAL
+      needs: all
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1833P
+      subject_needed_name: CREDITOS NO ACUM HIDROLOGIA E HIDRAULICA APLICADAS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1833'
+      subject_needed_name: HIDROLOGIA E HIDRAULICA APLICADAS
+      needs: course
+  subject_code: 1854B
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: 1854B
+    subject_needed_name: FUNDAMENTOS DE INGENIERIA Y SALUD AMBIENTAL
+  subject_code: 1854B
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
     - type: subject
       needs: all
       subject_needed_code: '2259'
@@ -9398,6 +9448,53 @@
   - type: logical
     logical_operator: not
     operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1854'
+        subject_needed_name: CALIDAD DE AGUAS
+        needs: all
+      - type: subject
+        subject_needed_code: 1854P
+        subject_needed_name: CREDITOS NO ACUM CALIDAD DE AGUA
+        needs: all
+  - type: subject
+    needs: course
+    subject_needed_code: 1854B
+    subject_needed_name: FUNDAMENTOS DE INGENIERIA Y SALUD AMBIENTAL
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1833P
+      subject_needed_name: CREDITOS NO ACUM HIDROLOGIA E HIDRAULICA APLICADAS
+      needs: all
+    - type: subject
+      subject_needed_code: '1833'
+      subject_needed_name: HIDROLOGIA E HIDRAULICA APLICADAS
+      needs: all
+  subject_code: '2252'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: 1854B
+    subject_needed_name: FUNDAMENTOS DE INGENIERIA Y SALUD AMBIENTAL
+  - type: subject
+    needs: course
+    subject_needed_code: '2252'
+    subject_needed_name: GESTION DE CALIDAD DE AGUAS
+  subject_code: '2252'
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
     - type: subject
       needs: all
       subject_needed_code: CP234
@@ -9635,6 +9732,87 @@
     subject_needed_name: INT. AL SISTEMA CLIMATICO
   subject_code: '2258'
   is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1508P
+      subject_needed_name: CREDITOS NO ACUM MATERIALES Y ENSAYOS
+      needs: all
+    - type: subject
+      subject_needed_code: CP273
+      subject_needed_name: ENSAYO DE MATERIALES
+      needs: all
+    - type: subject
+      subject_needed_code: CP254
+      subject_needed_name: MATERIALES Y ENSAYOS
+      needs: all
+    - type: subject
+      subject_needed_code: '1508'
+      subject_needed_name: MATERIALES Y ENSAYOS
+      needs: all
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP339
+      subject_needed_name: CAMINOS (P. 74)
+      needs: all
+    - type: subject
+      subject_needed_code: CP259
+      subject_needed_name: CAMINOS Y CALLES
+      needs: all
+    - type: subject
+      subject_needed_code: '2232'
+      subject_needed_name: CAMINOS Y CALLES 2
+      needs: all
+    - type: subject
+      subject_needed_code: 2232P
+      subject_needed_name: CREDITOS NO ACUM CAMINOS Y CALLES 2
+      needs: all
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 2206P
+      subject_needed_name: CREDITOS NO ACUM GEOLOGIA DE INGENIERIA
+      needs: all
+    - type: subject
+      subject_needed_code: '2206'
+      subject_needed_name: GEOLOGIA DE INGENIERIA
+      needs: all
+    - type: subject
+      subject_needed_code: CP253
+      subject_needed_name: GEOLOGIA TECNICA
+      needs: all
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1715P
+      subject_needed_name: CREDITOS NO ACUM INT. A LA CONSTRUCCION
+      needs: all
+    - type: subject
+      subject_needed_code: CP245
+      subject_needed_name: FUNDAMENTOS DE CONSTRUCCION
+      needs: all
+    - type: subject
+      subject_needed_code: '1715'
+      subject_needed_name: INT. A LA CONSTRUCCION
+      needs: all
+    - type: subject
+      subject_needed_code: 1715B
+      subject_needed_name: INT. A LA CONSTRUCCION
+      needs: all
+    - type: subject
+      subject_needed_code: CP268
+      subject_needed_name: PROCEDIMIENTOS DE CONSTRUCCION I
+      needs: all
+  subject_code: '2275'
+  is_exam: false
 - type: logical
   logical_operator: and
   operands:
