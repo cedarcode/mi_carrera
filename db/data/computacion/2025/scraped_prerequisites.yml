@@ -2549,7 +2549,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: exam
       - type: subject
         subject_needed_code: '101'
@@ -2575,7 +2575,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: course
       - type: subject
         subject_needed_code: '101'
@@ -2587,7 +2587,7 @@
     - type: subject
       needs: course_enrollment
       subject_needed_code: '01'
-      subject_needed_name: MAT. 01 (ANÁLISIS I)
+      subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
   subject_code: MI2
   is_exam: false
 - type: logical
@@ -2689,7 +2689,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: exam
       - type: subject
         subject_needed_code: '101'
@@ -2715,7 +2715,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: course
       - type: subject
         subject_needed_code: '101'
@@ -2727,6 +2727,6 @@
     - type: subject
       needs: course_enrollment
       subject_needed_code: '01'
-      subject_needed_name: MAT. 01 (ANÁLISIS I)
+      subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
   subject_code: MI2
   is_exam: true
