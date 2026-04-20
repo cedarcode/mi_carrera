@@ -944,7 +944,7 @@
     - type: subject
       needs: all
       subject_needed_code: '06'
-      subject_needed_name: MAT. 06 (CÁLCULO NUMÉRICO)
+      subject_needed_name: MATEMÁTICA 06 (CÁLCULO NUMÉRICO)
   - type: subject
     needs: course
     subject_needed_code: '1033'
@@ -1065,7 +1065,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: exam
       - type: subject
         subject_needed_code: '101'
@@ -1205,7 +1205,7 @@
         needs: all
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: all
       - type: subject
         subject_needed_code: '101'
@@ -14685,7 +14685,7 @@
     - type: subject
       needs: course_enrollment
       subject_needed_code: '01'
-      subject_needed_name: MAT. 01 (ANÁLISIS I)
+      subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
   - type: logical
     logical_operator: not
     operands:
@@ -14706,7 +14706,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: course
       - type: subject
         subject_needed_code: '101'
@@ -14808,7 +14808,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: exam
       - type: subject
         subject_needed_code: '101'
@@ -14825,7 +14825,7 @@
     - type: subject
       needs: course_enrollment
       subject_needed_code: '01'
-      subject_needed_name: MAT. 01 (ANÁLISIS I)
+      subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
   - type: logical
     logical_operator: not
     operands:
@@ -14846,7 +14846,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: course
       - type: subject
         subject_needed_code: '101'
@@ -14948,7 +14948,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: exam
       - type: subject
         subject_needed_code: '101'

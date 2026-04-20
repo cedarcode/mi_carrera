@@ -1,7 +1,7 @@
 ---
 '01':
   code: '01'
-  name: MAT. 01 (ANÁLISIS I)
+  name: MATEMÁTICA 01 (ANÁLISIS I)
   has_exam: true
   subject_groups: []
 '0401':
@@ -61,7 +61,7 @@
   subject_groups: []
 '06':
   code: '06'
-  name: MAT. 06 (CÁLCULO NUMÉRICO)
+  name: MATEMÁTICA 06 (CÁLCULO NUMÉRICO)
   has_exam: false
   subject_groups: []
 '0607':
