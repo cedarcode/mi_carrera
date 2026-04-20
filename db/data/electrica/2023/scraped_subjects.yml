@@ -1,7 +1,7 @@
 ---
 '01':
   code: '01'
-  name: MAT. 01 (ANÁLISIS I)
+  name: MATEMÁTICA 01 (ANÁLISIS I)
   has_exam: true
   subject_groups: []
 '1001':
@@ -134,7 +134,7 @@
   subject_groups: []
 102R:
   code: 102R
-  name: QCA. GENERAL I (PLAN 2000)
+  name: QUÍMICA GENERAL I (PLAN 2000)
   has_exam: true
   subject_groups: []
 '1030':
@@ -2031,7 +2031,7 @@
   has_exam: true
 '600':
   code: '600'
-  name: QCA. GENERAL E INORGÁNICA (PLAN 1992)
+  name: QUÍMICA GENERAL E INORGÁNICA (PLAN 1992)
   has_exam: false
   subject_groups: []
 '601':
@@ -2620,6 +2620,13 @@ LIB10:
   subject_groups:
   - group: '038'
     credits: 8
+  has_exam: true
+LIB32:
+  code: LIB32
+  name: BIOMECÁNICA
+  subject_groups:
+  - group: '038'
+    credits: 10
   has_exam: true
 LIB36:
   code: LIB36

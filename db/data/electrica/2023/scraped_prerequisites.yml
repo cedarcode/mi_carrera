@@ -53,14 +53,6 @@
         subject_needed_name: QCA. GENERAL (ANUAL 1986)
         needs: exam
       - type: subject
-        subject_needed_code: '600'
-        subject_needed_name: QCA. GENERAL E INORGÁNICA (PLAN 1992)
-        needs: course
-      - type: subject
-        subject_needed_code: 102R
-        subject_needed_name: QCA. GENERAL I (PLAN 2000)
-        needs: exam
-      - type: subject
         subject_needed_code: '181'
         subject_needed_name: QCA. GENERAL I (SEMESTRAL 1980)
         needs: course
@@ -68,6 +60,14 @@
         subject_needed_code: '186'
         subject_needed_name: QCA. GENERAL II (SEMESTRAL 1980)
         needs: course
+      - type: subject
+        subject_needed_code: '600'
+        subject_needed_name: QUÍMICA GENERAL E INORGÁNICA (PLAN 1992)
+        needs: course
+      - type: subject
+        subject_needed_code: 102R
+        subject_needed_name: QUÍMICA GENERAL I (PLAN 2000)
+        needs: exam
   subject_code: '102'
   is_exam: false
 - type: logical
@@ -1396,7 +1396,7 @@
         needs: all
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: all
       - type: subject
         subject_needed_code: '101'
@@ -12457,6 +12457,28 @@
   subject_code: LIB10
   is_exam: true
 - type: logical
+  logical_operator: or
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: LIB10
+    subject_needed_name: TALLER DE INGENIERÍA BIOLÓGICA II
+  - type: subject
+    needs: course
+    subject_needed_code: LIB38
+    subject_needed_name: FISIOLOGÍA CUANTITATIVA
+  subject_code: LIB32
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: LIB32
+    subject_needed_name: BIOMECÁNICA
+  subject_code: LIB32
+  is_exam: true
+- type: logical
   logical_operator: and
   operands:
   - type: subject
@@ -12643,7 +12665,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: exam
       - type: subject
         subject_needed_code: '101'
@@ -12655,7 +12677,7 @@
     - type: subject
       needs: course_enrollment
       subject_needed_code: '01'
-      subject_needed_name: MAT. 01 (ANÁLISIS I)
+      subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
   - type: logical
     logical_operator: not
     operands:
@@ -12676,7 +12698,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: course
       - type: subject
         subject_needed_code: '101'
@@ -12707,7 +12729,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: course
       - type: subject
         subject_needed_code: '101'
@@ -12809,7 +12831,7 @@
         needs: exam
       - type: subject
         subject_needed_code: '01'
-        subject_needed_name: MAT. 01 (ANÁLISIS I)
+        subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
         needs: exam
       - type: subject
         subject_needed_code: '101'
@@ -12821,7 +12843,7 @@
     - type: subject
       needs: course_enrollment
       subject_needed_code: '01'
-      subject_needed_name: MAT. 01 (ANÁLISIS I)
+      subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
   subject_code: MI2
   is_exam: true
 - type: logical
