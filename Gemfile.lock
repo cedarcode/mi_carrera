@@ -118,7 +118,7 @@ GEM
       cbor (~> 0.5.9)
       openssl-signature_algorithm (~> 1.0)
     crass (1.0.6)
-    css_parser (1.21.1)
+    css_parser (1.22.0)
       addressable
     date (3.5.1)
     devise (5.0.3)
