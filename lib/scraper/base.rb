@@ -109,8 +109,12 @@ module Scraper
     end
 
     def total_pages
-      find('.ui-paginator-last').click
-      has_selector?(".ui-paginator-last.ui-state-disabled")
+      last_button = find('.ui-paginator-last')
+
+      unless last_button[:class].include?("ui-state-disabled")
+        last_button.click
+        has_selector?(".ui-paginator-last.ui-state-disabled")
+      end
 
       find(".ui-paginator-page.ui-state-active").text.to_i
     end
