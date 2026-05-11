@@ -20,7 +20,7 @@ gem 'puma', '~> 8.0'
 gem 'stimulus-rails', '~> 1.3'
 gem 'tailwindcss-rails', '~> 4.4'
 gem 'turbo-rails', '~> 2.0'
-gem "view_component", "~> 4.8"
+gem "view_component", "~> 4.9"
 gem 'webauthn'
 
 group :development, :deploy do
@@ -39,7 +39,7 @@ group :development do
   gem "lookbook", "~> 2.3"
   gem 'rubocop', '~> 1.86'
   gem 'rubocop-performance', '~> 1.26', require: false
-  gem 'rubocop-rails', '~> 2.34', require: false
+  gem 'rubocop-rails', '~> 2.35', require: false
   gem 'web-console', '~> 4.3'
 end
 
