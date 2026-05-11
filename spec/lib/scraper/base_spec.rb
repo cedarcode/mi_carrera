@@ -14,6 +14,7 @@ RSpec.describe Scraper::Base do
       allow(scraper).to receive(:find).with('.ui-paginator-last').and_return(last_button)
       allow(scraper).to receive(:find).with('.ui-paginator-page.ui-state-active').and_return(active_page)
       allow(scraper).to receive(:has_selector?).and_return(true)
+      allow(scraper).to receive(:has_css?).with('.ui-paginator-page').and_return(true)
     end
 
     context 'when there are multiple pages (last-page button enabled)' do
@@ -36,6 +37,29 @@ RSpec.describe Scraper::Base do
 
         expect(scraper.send(:total_pages)).to eq(1)
       end
+    end
+
+    context 'when there are zero results (no .ui-paginator-page in the DOM)' do
+      let(:last_button_classes) { '' }
+      let(:active_page_number) { '' }
+
+      before do
+        allow(scraper).to receive(:has_css?).with('.ui-paginator-page').and_return(false)
+      end
+
+      it 'returns 0 without touching the paginator' do
+        expect(scraper).not_to receive(:find)
+
+        expect(scraper.send(:total_pages)).to eq(0)
+      end
+    end
+  end
+
+  describe '#threaded_scrape' do
+    it 'returns an empty array without spawning threads when max_pages is 0' do
+      expect(Thread).not_to receive(:new)
+
+      expect(scraper.send(:threaded_scrape, 0) { raise 'should not run' }).to eq([])
     end
   end
 end
