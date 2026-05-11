@@ -17386,6 +17386,40 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1323P
+      subject_needed_name: CRÉDITOS NO ACUM. CON PROGRAMACIÓN 3
+      needs: exam
+    - type: subject
+      subject_needed_code: CP29
+      subject_needed_name: PROGRAMACION III
+      needs: exam
+    - type: subject
+      subject_needed_code: '1323'
+      subject_needed_name: PROGRAMACION 3
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP362
+      subject_needed_name: BASES DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: 1911P
+      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1911'
+      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1537P
+      subject_needed_name: CREDITOS NO ACUM CON SISTEMAS OPERATIVOS
+      needs: exam
+    - type: subject
       subject_needed_code: CP31
       subject_needed_name: SISTEMAS OPERATIVOS
       needs: exam
@@ -17413,23 +17447,28 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: CP362
-      subject_needed_name: BASES DE DATOS
+      subject_needed_code: '1454'
+      subject_needed_name: ASPECTOS BASICOS DE REDES DE COMPUT
       needs: exam
     - type: subject
-      subject_needed_code: '1911'
-      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP29
-      subject_needed_name: PROGRAMACION III
+      subject_needed_code: CP364
+      subject_needed_name: COMUNICACION DE DATOS
       needs: exam
     - type: subject
-      subject_needed_code: '1323'
-      subject_needed_name: PROGRAMACION 3
+      subject_needed_code: 1446P
+      subject_needed_name: CREDITOS NO ACUM. CON REDES DE COMPUTADORAS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1433'
+      subject_needed_name: INT. A LAS REDES DE COMPUTADORAS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1406'
+      subject_needed_name: INT. A LAS REDES DE COMPUTADORES
+      needs: exam
+    - type: subject
+      subject_needed_code: '1446'
+      subject_needed_name: REDES DE COMPUTADORAS
       needs: exam
   - type: logical
     logical_operator: or
@@ -17437,6 +17476,10 @@
     - type: subject
       subject_needed_code: MA29
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1027P
+      subject_needed_name: CREDITOS NO ACUM. CON LOGICA
       needs: exam
     - type: subject
       subject_needed_code: CP4
@@ -17453,29 +17496,6 @@
     - type: subject
       subject_needed_code: '1010'
       subject_needed_name: LOGICA Y COMPUTACION
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1454'
-      subject_needed_name: ASPECTOS BASICOS DE REDES DE COMPUT
-      needs: exam
-    - type: subject
-      subject_needed_code: CP364
-      subject_needed_name: COMUNICACION DE DATOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1433'
-      subject_needed_name: INT. A LAS REDES DE COMPUTADORAS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1406'
-      subject_needed_name: INT. A LAS REDES DE COMPUTADORES
-      needs: exam
-    - type: subject
-      subject_needed_code: '1446'
-      subject_needed_name: REDES DE COMPUTADORAS
       needs: exam
   subject_code: '5916'
   is_exam: false
@@ -18327,12 +18347,12 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: MHC39
-      subject_needed_name: BIOQUÍMICA I (2025-
-      needs: course
-    - type: subject
       subject_needed_code: MHC16
       subject_needed_name: BIOQUÍMICA 1 (2020-2024)
+      needs: course
+    - type: subject
+      subject_needed_code: MHC39
+      subject_needed_name: BIOQUÍMICA 1 (2025-
       needs: course
   subject_code: MHC39
   is_exam: true
