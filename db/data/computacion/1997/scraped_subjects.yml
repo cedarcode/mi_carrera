@@ -759,6 +759,11 @@
   - group: '4580'
     credits: 15
   has_exam: true
+1323P:
+  code: 1323P
+  name: CRÉDITOS NO ACUM. CON PROGRAMACIÓN 3
+  has_exam: true
+  subject_groups: []
 '1324':
   code: '1324'
   name: PROGRAMACION 4
@@ -4578,7 +4583,7 @@ MHC24:
   has_exam: false
 MHC39:
   code: MHC39
-  name: BIOQUÍMICA I (2025-
+  name: BIOQUÍMICA 1 (2025-
   subject_groups:
   - group: '4442'
     credits: 11
