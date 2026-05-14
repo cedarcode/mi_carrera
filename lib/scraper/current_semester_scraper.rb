@@ -41,7 +41,10 @@ module Scraper
       max_pages = MAX_PAGES || total_pages
       logger.info "Total pages to scrape: #{max_pages}"
 
-      find(".ui-paginator-first").click
+      # total_pages navigates to the last page; only go back to the first one
+      # when there is more than one page. Clicking ".ui-paginator-first" when
+      # it is already disabled (single-page case) raises ElementClickInterceptedError.
+      find(".ui-paginator-first").click if max_pages > 1
 
       subjects = threaded_scrape(max_pages) do |slice|
         load_current_semester_subjects_slice(inscription_period, slice)

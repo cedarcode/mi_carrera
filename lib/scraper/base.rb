@@ -109,13 +109,23 @@ module Scraper
     end
 
     def total_pages
-      find('.ui-paginator-last').click
-      has_selector?(".ui-paginator-last.ui-state-disabled")
+      # When the result set is empty, Bedelias renders the paginator with the
+      # navigation arrows but without any '.ui-paginator-page' number.
+      return 0 unless has_css?('.ui-paginator-page')
+
+      last_button = find('.ui-paginator-last')
+
+      unless last_button[:class].include?("ui-state-disabled")
+        last_button.click
+        has_selector?(".ui-paginator-last.ui-state-disabled")
+      end
 
       find(".ui-paginator-page.ui-state-active").text.to_i
     end
 
     def threaded_scrape(max_pages)
+      return [] if max_pages.zero?
+
       Thread.abort_on_exception = true
 
       1.upto(max_pages).each_slice((max_pages / THREADS).ceil).map do |slice|
