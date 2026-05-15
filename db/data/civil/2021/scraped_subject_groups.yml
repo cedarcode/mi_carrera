@@ -1,0 +1,77 @@
+---
+'3973':
+  code: '3973'
+  name: CIENCIAS SOCIALES Y ECONOMICAS
+  min_credits: 18
+'4148':
+  code: '4148'
+  name: SANITARIA
+  min_credits: 6
+'4316':
+  code: '4316'
+  name: INFRAESTRUCTURA DE TRANSPORTE
+  min_credits: 0
+'4385':
+  code: '4385'
+  name: PROYECTO
+  min_credits: 25
+'4397':
+  code: '4397'
+  name: CONSTRUCCION
+  min_credits: 15
+'4453':
+  code: '4453'
+  name: GESTION Y OPERATIVA DE TRANSP.
+  min_credits: 6
+'4693':
+  code: '4693'
+  name: GEOTECNICA
+  min_credits: 20
+'4818':
+  code: '4818'
+  name: TECNOLOGIA DE MATERIALES
+  min_credits: 8
+'4819':
+  code: '4819'
+  name: FISICA
+  min_credits: 45
+'4871':
+  code: '4871'
+  name: RESISTENCIA DE MATERIALES
+  min_credits: 30
+'4886':
+  code: '4886'
+  name: MATEMATICA
+  min_credits: 70
+'4922':
+  code: '4922'
+  name: CIENCIAS AMBIENTALES
+  min_credits: 7
+'4985':
+  code: '4985'
+  name: INFORMATICA
+  min_credits: 16
+'4999':
+  code: '4999'
+  name: MEC. FLUIDOS E HIDROLOGIA
+  min_credits: 20
+'5168':
+  code: '5168'
+  name: TEORIA DE ESTRUCTURAS
+  min_credits: 10
+'5230':
+  code: '5230'
+  name: PASANTIA
+  min_credits: 12
+'5239':
+  code: '5239'
+  name: ADMINISTRACION Y GESTION
+  min_credits: 15
+'5291':
+  code: '5291'
+  name: EXPRESION
+  min_credits: 6
+'5294':
+  code: '5294'
+  name: QUIMICA
+  min_credits: 8

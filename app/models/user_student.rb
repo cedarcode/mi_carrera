@@ -12,7 +12,7 @@ class UserStudent < BaseStudent
     user.public_send("#{banner_type}_banner_viewed?")
   end
 
-  delegate :degree, :degree_id, :degree=, to: :user
+  delegate :degree_plan, :degree_plan_id, :degree_plan=, to: :user
 
   def save
     user.update(approvals: approved_approvable_ids)

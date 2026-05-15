@@ -162,19 +162,20 @@ RSpec.describe CookieStudent, type: :model do
                                              subject3.course.id]).total_credits).to eq(33)
     end
 
-    it 'calculates credits only from subjects in the student degree' do
-      default_degree = Degree.default
+    it 'calculates credits only from subjects in the student degree plan' do
+      default_degree_plan = DegreePlan.default
       other_degree = create :degree
+      other_degree_plan = create :degree_plan, degree: other_degree
 
-      group1 = create :subject_group, degree: default_degree
-      group2 = create :subject_group, degree: other_degree
+      group1 = create :subject_group, degree_plan: default_degree_plan
+      group2 = create :subject_group, degree_plan: other_degree_plan
 
-      subject1 = create :subject, credits: 10, group: group1, degree: default_degree
-      subject2 = create :subject, credits: 15, group: group2, degree: other_degree
-      subject3 = create :subject, credits: 20, group: group1, degree: default_degree
+      subject1 = create :subject, credits: 10, group: group1, degree_plan: default_degree_plan
+      subject2 = create :subject, credits: 15, group: group2, degree_plan: other_degree_plan
+      subject3 = create :subject, credits: 20, group: group1, degree_plan: default_degree_plan
 
       student = build(:cookie_student,
-                      degree_id: default_degree.id,
+                      degree_plan_id: default_degree_plan.id,
                       approved_approvable_ids: [subject1.course.id, subject2.course.id, subject3.course.id])
       expect(student.total_credits).to eq(30)
     end
@@ -206,26 +207,27 @@ RSpec.describe CookieStudent, type: :model do
   end
 
   describe '#groups_credits_met?' do
-    it 'checks only groups from the student degree' do
-      default_degree = Degree.default
+    it 'checks only groups from the student degree plan' do
+      default_degree_plan = DegreePlan.default
       other_degree = create :degree
+      other_degree_plan = create :degree_plan, degree: other_degree
 
-      group1 = create :subject_group, degree: default_degree, credits_needed: 10
-      group2 = create :subject_group, degree: default_degree, credits_needed: 10
-      group3 = create :subject_group, degree: other_degree, credits_needed: 10
+      group1 = create :subject_group, degree_plan: default_degree_plan, credits_needed: 10
+      group2 = create :subject_group, degree_plan: default_degree_plan, credits_needed: 10
+      group3 = create :subject_group, degree_plan: other_degree_plan, credits_needed: 10
 
-      subject1 = create :subject, credits: 10, group: group1, degree: default_degree
-      subject2 = create :subject, credits: 10, group: group2, degree: default_degree
-      create :subject, credits: 10, group: group3, degree: other_degree
+      subject1 = create :subject, credits: 10, group: group1, degree_plan: default_degree_plan
+      subject2 = create :subject, credits: 10, group: group2, degree_plan: default_degree_plan
+      create :subject, credits: 10, group: group3, degree_plan: other_degree_plan
 
       cookies = build(:cookie)
-      student = build(:cookie_student, cookies:, degree_id: default_degree.id)
+      student = build(:cookie_student, cookies:, degree_plan_id: default_degree_plan.id)
       student.add(subject1.course)
       student.add(subject2.course)
 
       expect(student.groups_credits_met?).to be true
 
-      cookies2 = build(:cookie, degree_id: default_degree.id)
+      cookies2 = build(:cookie, degree_plan_id: default_degree_plan.id)
       student2 = build(:cookie_student, cookies: cookies2)
       student2.add(subject1.course)
       expect(student2.groups_credits_met?).to be false
@@ -248,21 +250,21 @@ RSpec.describe CookieStudent, type: :model do
     end
   end
 
-  describe '#degree' do
-    it 'returns default degree when no degree_id cookie is set' do
+  describe '#degree_plan' do
+    it 'returns default degree_plan when no degree_plan_id cookie is set' do
       student = build(:cookie_student)
-      expect(student.degree).to eq(Degree.default)
+      expect(student.degree_plan).to eq(DegreePlan.default)
     end
 
-    it 'returns degree from cookie when degree_id is set' do
-      degree = create(:degree)
-      student = build(:cookie_student, degree_id: degree.id)
-      expect(student.degree).to eq(degree)
+    it 'returns degree_plan from cookie when degree_plan_id is set' do
+      degree_plan = create(:degree_plan)
+      student = build(:cookie_student, degree_plan_id: degree_plan.id)
+      expect(student.degree_plan).to eq(degree_plan)
     end
 
-    it 'returns default degree when cookie has invalid degree_id' do
-      student = build(:cookie_student, degree_id: 'nonexistent')
-      expect(student.degree).to eq(Degree.default)
+    it 'returns default degree_plan when cookie has invalid degree_plan_id' do
+      student = build(:cookie_student, degree_plan_id: 999999)
+      expect(student.degree_plan).to eq(DegreePlan.default)
     end
   end
 
@@ -276,64 +278,65 @@ RSpec.describe CookieStudent, type: :model do
       expect(student.approved_subjects).to contain_exactly(subject2)
     end
 
-    it 'returns only approved subjects from the student degree' do
-      default_degree = Degree.default
+    it 'returns only approved subjects from the student degree plan' do
+      default_degree_plan = DegreePlan.default
       other_degree = create :degree
+      other_degree_plan = create :degree_plan, degree: other_degree
 
-      group1 = create :subject_group, degree: default_degree
-      group2 = create :subject_group, degree: other_degree
+      group1 = create :subject_group, degree_plan: default_degree_plan
+      group2 = create :subject_group, degree_plan: other_degree_plan
 
-      subject1 = create(:subject, :with_exam, group: group1, degree: default_degree)
-      subject2 = create(:subject, :with_exam, group: group2, degree: other_degree)
+      subject1 = create(:subject, :with_exam, group: group1, degree_plan: default_degree_plan)
+      subject2 = create(:subject, :with_exam, group: group2, degree_plan: other_degree_plan)
 
       cookies = build(:cookie, approved_approvable_ids: [subject1.exam.id, subject2.exam.id],
-                               degree_id: default_degree.id)
+                               degree_plan_id: default_degree_plan.id)
       student = build(:cookie_student, cookies:)
 
       expect(student.approved_subjects).to contain_exactly(subject1)
     end
   end
 
-  describe '#degree= and #degree_id' do
-    let(:degree) { create(:degree) }
+  describe '#degree_plan= and #degree_plan_id' do
+    let(:degree_plan) { create(:degree_plan) }
 
-    it 'persists degree_id to cookie after save' do
+    it 'persists degree_plan_id to cookie after save' do
       cookies = build(:cookie)
       student = build(:cookie_student, cookies:)
 
-      student.degree = degree
+      student.degree_plan = degree_plan
       student.save
 
-      expect(cookies[:degree_id]).to eq(degree.id)
+      expect(cookies[:degree_plan_id]).to eq(degree_plan.id)
     end
 
-    it 'degree_id returns the correct value when @degree is set' do
+    it 'degree_plan_id returns the correct value when degree_plan is set' do
       student = build(:cookie_student)
 
-      student.degree = degree
+      student.degree_plan = degree_plan
 
-      expect(student.degree_id).to eq(degree.id)
+      expect(student.degree_plan_id).to eq(degree_plan.id)
     end
 
-    it 'degree_id and degree falls back to cookie value when @degree is not set' do
-      student = build(:cookie_student, degree_id: degree.id)
+    it 'degree_plan_id and degree_plan falls back to cookie value when degree_plan is not set' do
+      student = build(:cookie_student, degree_plan_id: degree_plan.id)
 
-      expect(student.degree_id).to eq(degree.id)
-      expect(student.degree).to eq(degree)
+      expect(student.degree_plan_id).to eq(degree_plan.id)
+      expect(student.degree_plan).to eq(degree_plan)
     end
 
-    it 'degree_id and degree falls back to default value when degree_id param is invalid' do
-      student = build(:cookie_student, degree_id: "new_degree")
+    it 'degree_plan_id and degree_plan falls back to default value when degree_plan_id param is invalid' do
+      student = build(:cookie_student, degree_plan_id: 999999)
 
-      expect(student.degree_id).to eq(Degree.default.id)
-      expect(student.degree).to eq(Degree.default)
+      expect(student.degree_plan_id).to eq(DegreePlan.default.id)
+      expect(student.degree_plan).to eq(DegreePlan.default)
     end
 
-    it 'degree_id and degree falls back to default degree when neither @degree nor cookie is set' do
+    it 'degree_plan_id and degree_plan falls back to default degree_plan when neither degree_plan nor cookie is set' do
       student = build(:cookie_student)
 
-      expect(student.degree_id).to eq(Degree.default.id)
-      expect(student.degree).to eq(Degree.default)
+      expect(student.degree_plan_id).to eq(DegreePlan.default.id)
+      expect(student.degree_plan).to eq(DegreePlan.default)
     end
   end
 end

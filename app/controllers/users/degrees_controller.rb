@@ -1,23 +1,17 @@
 module Users
   class DegreesController < ApplicationController
-    before_action :ensure_feature_enabled!
-
-    def edit; end
-
-    def update
-      current_student.degree = Degree.find(params[:degree_id])
-
-      if current_student.save
-        redirect_to root_path, notice: "Tu carrera ha sido actualizada correctamente."
-      else
-        redirect_to edit_user_degrees_path, alert: "Hubo un error actualizando tu carrera."
-      end
+    def edit
+      @degree_plans = DegreePlan.includes(:degree).sort_by(&:display_name)
     end
 
-    private
+    def update
+      current_student.degree_plan = DegreePlan.find(params[:degree_plan_id])
 
-    def ensure_feature_enabled!
-      redirect_to root_path unless Features::ChangingDegrees.enabled?
+      if current_student.save
+        redirect_to root_path, notice: "Tu plan ha sido actualizado correctamente."
+      else
+        redirect_to edit_user_degrees_path, alert: "Hubo un error actualizando tu plan."
+      end
     end
   end
 end

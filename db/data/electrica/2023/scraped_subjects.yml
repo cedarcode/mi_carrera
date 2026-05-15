@@ -1,7 +1,7 @@
 ---
 '01':
   code: '01'
-  name: MAT. 01 (ANÁLISIS I)
+  name: MATEMÁTICA 01 (ANÁLISIS I)
   has_exam: true
   subject_groups: []
 '1001':
@@ -134,7 +134,7 @@
   subject_groups: []
 102R:
   code: 102R
-  name: QCA. GENERAL I (PLAN 2000)
+  name: QUÍMICA GENERAL I (PLAN 2000)
   has_exam: true
   subject_groups: []
 '1030':
@@ -1339,6 +1339,20 @@
   - group: '011'
     credits: 10
   has_exam: true
+'2044':
+  code: '2044'
+  name: FUNDAMENTOS DE LA COMBINATORIA
+  subject_groups:
+  - group: '011'
+    credits: 9
+  has_exam: true
+'2109':
+  code: '2109'
+  name: ELECTROTECNICA II
+  subject_groups:
+  - group: '025'
+    credits: 9
+  has_exam: true
 '2216':
   code: '2216'
   name: TUTORIAS ENTRE PARES 1
@@ -2017,7 +2031,7 @@
   has_exam: true
 '600':
   code: '600'
-  name: QCA. GENERAL E INORGÁNICA (PLAN 1992)
+  name: QUÍMICA GENERAL E INORGÁNICA (PLAN 1992)
   has_exam: false
   subject_groups: []
 '601':
@@ -2046,7 +2060,7 @@ AT001:
   has_exam: false
 BG827:
   code: BG827
-  name: BIOFÍSICA (2020-
+  name: BIOFÍSICA (2020-2025)
   subject_groups:
   - group: '013'
     credits: 14
@@ -2607,6 +2621,13 @@ LIB10:
   - group: '038'
     credits: 8
   has_exam: true
+LIB32:
+  code: LIB32
+  name: BIOMECÁNICA
+  subject_groups:
+  - group: '038'
+    credits: 10
+  has_exam: true
 LIB36:
   code: LIB36
   name: INFORMÁTICA EN BIOLOGÍA Y MEDICINA
@@ -2648,7 +2669,7 @@ M9:
   subject_groups: []
 MA01:
   code: MA01
-  name: CALCULO DIFERENCIAL E INTEGRAL I
+  name: CALCULO DIFERENCIAL E INTEGRAL I (1978-2008)
   has_exam: false
   subject_groups: []
 MA09:
@@ -2668,7 +2689,7 @@ MA11:
   subject_groups: []
 MA13:
   code: MA13
-  name: CÁLCULO DIFERENCIAL E INTEGRAL I (F)
+  name: CÁLCULO DIFERENCIAL E INTEGRAL I (F) (2008-2019)
   has_exam: false
   subject_groups: []
 MA15:
@@ -2738,6 +2759,11 @@ MI2:
   - group: '011'
     credits: 4
   has_exam: true
+MI2P:
+  code: MI2P
+  name: CREDITOS NO ACUM MATEMATICA INICIAL
+  has_exam: true
+  subject_groups: []
 O2525:
   code: O2525
   name: COMUNICACIÓN E INTELIGENCIA ARTIFICIAL(PPP)

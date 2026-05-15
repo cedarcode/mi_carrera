@@ -1,0 +1,65 @@
+---
+'00101':
+  code: '00101'
+  name: MATEMÁTICA
+  min_credits: 70
+'00102':
+  code: '00102'
+  name: FÍSICA
+  min_credits: 30
+'00103':
+  code: '00103'
+  name: ECONÓMICAS Y JURÍDICAS
+  min_credits: 10
+'00104':
+  code: '00104'
+  name: INFORMÁTICA
+  min_credits: 10
+'00105':
+  code: '00105'
+  name: TEORÍA DE LAS OBSERVACIONES
+  min_credits: 25
+'00201':
+  code: '00201'
+  name: AGRIMENSURA LEGAL
+  min_credits: 30
+'00202':
+  code: '00202'
+  name: AVALUACIONES
+  min_credits: 22
+'00203':
+  code: '00203'
+  name: CATASTRO
+  min_credits: 6
+'00204':
+  code: '00204'
+  name: GEOMÁTICA
+  min_credits: 30
+'00205':
+  code: '00205'
+  name: ORDENAMIENTO TERRITORIAL Y DESARROLLO SOSTENIBLE
+  min_credits: 15
+'00206':
+  code: '00206'
+  name: TOPOGRAFÍA
+  min_credits: 45
+'00207':
+  code: '00207'
+  name: GEODESIA
+  min_credits: 45
+'00301':
+  code: '00301'
+  name: CIENCIAS HUMANAS
+  min_credits: 10
+'00302':
+  code: '00302'
+  name: GESTIÓN
+  min_credits: 5
+'00401':
+  code: '00401'
+  name: PASANTÍA
+  min_credits: 10
+'00402':
+  code: '00402'
+  name: PROYECTO
+  min_credits: 30

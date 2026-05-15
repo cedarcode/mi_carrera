@@ -26,7 +26,7 @@ module Planner
     def not_planned_subjects
       TreePreloader
         .preload(
-          current_degree
+          current_degree_plan
             .subjects
             .where.not(id: current_user.planned_subjects)
             .active_or_approved(current_student.approved_approvable_ids)

@@ -1,0 +1,236 @@
+---
+'2044':
+  category: 'first_semester'
+'1030':
+  eva_id: '256'
+  openfing_id: gal1-2022
+  short_name: GAL 1
+  category: 'first_semester'
+'2043':
+  category: 'first_semester'
+'1061':
+  eva_id: '1024'
+  second_semester_eva_id: '1504'
+  openfing_id: cdiv-2022
+  short_name: Cálculo DIV
+  category: 'first_semester'
+'1031':
+  eva_id: '270'
+  openfing_id: gal219
+  short_name: GAL 2
+  category: 'second_semester'
+'1062':
+  eva_id: '1594'
+  second_semester_eva_id: '1131'
+  openfing_id: cdivv-2022
+  short_name: Cálculo DIVV
+  category: 'second_semester'
+'1025':
+  eva_id: '54'
+  openfing_id: pye-2022
+  category: 'third_semester'
+'1023':
+  eva_id: '323'
+  openfing_id: md1-2022
+'1064':
+  eva_id: '342'
+'1063':
+  eva_id: '1183'
+  openfing_id: calcvec
+'1066':
+  eva_id: '55'
+'1886':
+  eva_id: '1279'
+'1224':
+  eva_id: '1093'
+  openfing_id: eco
+1020R:
+  category: 'revalid'
+1020P:
+  category: 'revalid'
+1022P:
+  category: 'revalid'
+1023P:
+  category: 'revalid'
+1024P:
+  category: 'revalid'
+1025P:
+  category: 'revalid'
+1028M:
+  category: 'revalid'
+1028P:
+  category: 'revalid'
+1030P:
+  category: 'revalid'
+1031P:
+  category: 'revalid'
+1036R:
+  category: 'revalid'
+1061P:
+  category: 'revalid'
+1062P:
+  category: 'revalid'
+1063P:
+  category: 'revalid'
+1224P:
+  category: 'revalid'
+CAL10:
+  category: 'revalid'
+CAL12:
+  category: 'revalid'
+CM14:
+  category: 'revalid'
+GAL7:
+  category: 'revalid'
+M12:
+  category: 'revalid'
+M13:
+  category: 'revalid'
+M14:
+  category: 'revalid'
+M24:
+  category: 'revalid'
+M9:
+  category: 'revalid'
+MA09:
+  category: 'revalid'
+MA10:
+  category: 'revalid'
+MA11:
+  category: 'revalid'
+MA16:
+  category: 'revalid'
+MA20:
+  category: 'revalid'
+MA25:
+  category: 'revalid'
+MA29:
+  category: 'revalid'
+MA47:
+  category: 'revalid'
+MA5:
+  category: 'revalid'
+MA51:
+  category: 'revalid'
+MA7:
+  category: 'revalid'
+MA9:
+  category: 'revalid'
+MAT14:
+  category: 'revalid'
+MAT33:
+  category: 'revalid'
+MC13:
+  category: 'revalid'
+MC3:
+  category: 'revalid'
+SRN02:
+  category: 'outside_montevideo'
+SRN03:
+  category: 'outside_montevideo'
+SRN09:
+  category: 'outside_montevideo'
+SRN10:
+  category: 'outside_montevideo'
+SRN13:
+  category: 'outside_montevideo'
+'01':
+  category: 'inactive'
+'101':
+  category: 'inactive'
+'1020':
+  eva_id: '74'
+  openfing_id: c1
+  category: 'inactive'
+'1021':
+  category: 'inactive'
+'1022':
+  eva_id: '319'
+  openfing_id: c2
+  category: 'inactive'
+1022T:
+  category: 'inactive'
+'1024':
+  eva_id: '129'
+  openfing_id: c3
+  category: 'inactive'
+1025T:
+  category: 'inactive'
+'1028':
+  eva_id: '342'
+  openfing_id: ed
+  category: 'inactive'
+'1036':
+  category: 'inactive'
+'1052':
+  category: 'inactive'
+'1053':
+  category: 'inactive'
+'1058':
+  category: 'inactive'
+1061I:
+  category: 'inactive'
+1061R:
+  category: 'inactive'
+'1070':
+  category: 'inactive'
+'1071':
+  category: 'inactive'
+'1072':
+  category: 'inactive'
+'1074':
+  category: 'inactive'
+'1076':
+  category: 'inactive'
+107L:
+  category: 'inactive'
+108L:
+  category: 'inactive'
+'1221':
+  category: 'inactive'
+158Q:
+  category: 'inactive'
+170Q:
+  category: 'inactive'
+171L:
+  category: 'inactive'
+171Q:
+  category: 'inactive'
+172Q:
+  category: 'inactive'
+176Q:
+  category: 'inactive'
+CH201:
+  category: 'inactive'
+CIM10:
+  category: 'inactive'
+CIM22:
+  category: 'inactive'
+CP1:
+  category: 'inactive'
+CP2:
+  category: 'inactive'
+CP20:
+  category: 'inactive'
+CP22:
+  category: 'inactive'
+CP23:
+  category: 'inactive'
+CP25:
+  category: 'inactive'
+CP44:
+  category: 'inactive'
+CP45:
+  category: 'inactive'
+CP46:
+  category: 'inactive'
+CP47:
+  category: 'inactive'
+CP48:
+  category: 'inactive'
+CP49:
+  category: 'inactive'
+CP6:
+  category: 'inactive'
+CP7:
+  category: 'inactive'

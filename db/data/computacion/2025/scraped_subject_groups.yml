@@ -1,0 +1,33 @@
+---
+I.I:
+  code: I.I
+  name: MATEMÁTICA Y CIENCIAS EXPERIMENTALES
+  min_credits: 50
+I.II:
+  code: I.II
+  name: FUNDAMENTOS DE COMPUTACIÓN
+  min_credits: 70
+II.I:
+  code: II.I
+  name: FUNDAMENTOS DE SISTEMAS
+  min_credits: 30
+II.II:
+  code: II.II
+  name: INGENIERÍA DE SOFTWARE
+  min_credits: 20
+II.III:
+  code: II.III
+  name: GESTIÓN DE DATOS E INFORMACIÓN
+  min_credits: 10
+II.IV:
+  code: II.IV
+  name: COMPUTACIÓN APLICADA
+  min_credits: 20
+II.V:
+  code: II.V
+  name: ACTIVIDADES INTEGRADORAS
+  min_credits: 40
+III.II:
+  code: III.II
+  name: INGENIERÍA Y SOCIEDAD
+  min_credits: 0

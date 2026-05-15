@@ -1,7 +1,7 @@
 ---
 '01':
   code: '01'
-  name: MAT. 01 (ANÁLISIS I)
+  name: MATEMÁTICA 01 (ANÁLISIS I)
   has_exam: true
   subject_groups: []
 '101':
@@ -226,7 +226,7 @@
   has_exam: false
 103EU:
   code: 103EU
-  name: INT. A LAS C. BIOLÓGICAS I
+  name: INTRODUCCIÓN A LAS CIENCIAS BIOLÓGICAS I
   subject_groups:
   - group: '4442'
     credits: 5
@@ -759,6 +759,11 @@
   - group: '4580'
     credits: 15
   has_exam: true
+1323P:
+  code: 1323P
+  name: CRÉDITOS NO ACUM. CON PROGRAMACIÓN 3
+  has_exam: true
+  subject_groups: []
 '1324':
   code: '1324'
   name: PROGRAMACION 4
@@ -2534,6 +2539,13 @@
   - group: '4083'
     credits: 9
   has_exam: true
+'2045':
+  code: '2045'
+  name: GESTION DE SOFTWARE PARA EQUIPOS ALTAMENTE PERFORMANTES
+  subject_groups:
+  - group: '5082'
+    credits: 9
+  has_exam: false
 2107A:
   code: 2107A
   name: TALLER DE COMUNICACIÓN ORAL Y ESCRITA
@@ -3868,6 +3880,20 @@ CR10:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
+CS101:
+  code: CS101
+  name: ADMIN. Y GESTIÓN DE LAS ORGANIZACIONES I
+  subject_groups:
+  - group: '4066'
+    credits: 10
+  has_exam: false
+CS160:
+  code: CS160
+  name: ADMIN.Y GESTION DE LAS ORGANIZACIONES II
+  subject_groups:
+  - group: '4066'
+    credits: 10
+  has_exam: false
 D78A:
   code: D78A
   name: CIENCIA,TECNOLOGÍA, INNOVACIÓN, SOCIEDAD Y DESARROLLO
@@ -3909,7 +3935,7 @@ DMA02:
   subject_groups:
   - group: '4083'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA03:
   code: DMA03
   name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
@@ -4557,7 +4583,7 @@ MHC24:
   has_exam: false
 MHC39:
   code: MHC39
-  name: BIOQUÍMICA I (2025-
+  name: BIOQUÍMICA 1 (2025-
   subject_groups:
   - group: '4442'
     credits: 11
@@ -4569,6 +4595,11 @@ MI2:
   - group: '4083'
     credits: 4
   has_exam: true
+MI2P:
+  code: MI2P
+  name: CREDITOS NO ACUM MATEMATICA INICIAL
+  has_exam: true
+  subject_groups: []
 MOP1:
   code: MOP1
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -4912,6 +4943,13 @@ SRN50:
   - group: '4442'
     credits: 4
   has_exam: true
+SRN52:
+  code: SRN52
+  name: INTRODUCCIÓN A LA EXTENSION UNIVERSITARIA
+  subject_groups:
+  - group: '3582'
+    credits: 4
+  has_exam: false
 TIIO:
   code: TIIO
   name: TALLER INTR A LA INVEST DE OPERACIONES

@@ -35,12 +35,14 @@ module ApplicationHelper
     end
   end
 
-  def material_icon(icon, classes = nil)
-    tag.span(icon, class: "material-icons #{classes}")
+  def material_icon(icon, **options)
+    options[:class] = class_names("material-icons", options[:class])
+    tag.span(icon, **options)
   end
 
-  def material_icon_outlined(icon, classes = nil)
-    tag.span(icon, class: "material-icons-outlined #{classes}")
+  def material_icon_outlined(icon, **options)
+    options[:class] = class_names("material-icons-outlined", options[:class])
+    tag.span(icon, **options)
   end
 
   def academic_year
@@ -49,5 +51,9 @@ module ApplicationHelper
 
   def academic_semester
     Time.current.month < 8 ? "primer semestre" : "segundo semestre"
+  end
+
+  def computacion_2025_plan?
+    current_degree_plan.degree_id == 'computacion' && current_degree_plan.name == '2025'
   end
 end

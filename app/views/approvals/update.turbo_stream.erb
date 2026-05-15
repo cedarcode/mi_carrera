@@ -1,6 +1,6 @@
 <% if params[:subject_show] == "true" %>
   <%= turbo_stream.replace "approvables" do %>
-    <%= render 'subjects/approvables' %>
+    <%= render 'subjects/approvables', different_plan: false %>
   <% end %>
   <% if @subject.exam&.prerequisite_tree %>
     <%= turbo_stream.replace "exam-prerequisites" do %>

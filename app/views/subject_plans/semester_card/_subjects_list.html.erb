@@ -6,18 +6,18 @@
   <ul class="min-h-[65px]" data-semester="<%= semester %>" data-controller="planner-draggable" data-planner-draggable-planner-loading-outlet="#planner">
     <% planned_subjects.each do |subject| %>
       <li class="relative flex items-center gap-3 px-4 py-3 hover:bg-gray-100 bg-white" data-planner-draggable-url="<%= subject_plan_path(subject_id: subject.id) %>" data-planner-draggable-method="put">
-        <span class="material-icons text-gray-400 cursor-pointer" data-planner-draggable-handle> drag_handle </span>
+        <%= material_icon "drag_handle", class: "text-gray-400 cursor-pointer", data: { planner_draggable_handle: "" } %>
 
         <%= link_to display_name(subject), subject, class: "grow text-gray-900" %>
 
         <% if current_student.approved?(subject) %>
-          <%= material_icon("check", "text-green-500") %>
+          <%= material_icon "check", class: "text-green-500" %>
         <% elsif !current_student.available?(subject) %>
-          <%= material_icon("lock_outline", "text-gray-400") %>
+          <%= material_icon "lock_outline", class: "text-gray-400" %>
         <% end %>
 
-        <%= button_to subject_plan_path(subject_id: subject.id), method: :delete, class: "cursor-pointer py-2 ps-3 material-icons text-gray-400 hover:text-gray-600", form: { data: { turbo: true } }, data: { action: "planner-loading#start" } do %>
-          remove_circle_outline
+        <%= button_to subject_plan_path(subject_id: subject.id), method: :delete, class: "cursor-pointer py-2 ps-3 text-gray-400 hover:text-gray-600 flex", form: { data: { turbo: true } }, data: { action: "planner-loading#start" } do %>
+          <%= material_icon "remove_circle_outline" %>
         <% end %>
       </li>
     <% end %>
