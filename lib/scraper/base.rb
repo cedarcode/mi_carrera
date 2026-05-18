@@ -71,7 +71,15 @@ module Scraper
       find('.ui-accordion-header', text: 'TECNOLOGÍA Y CIENCIAS DE LA NATURALEZA').click
       find('td', text: 'FING - FACULTAD DE INGENIERÍA', visible: false).click
 
-      find('span', text: ' - FING')
+      # Use XPath to match by text in a single atomic browser query. The
+      # equivalent `find('span', text: ' - FING')` routes through Capybara's
+      # filter_by_text JS, which iterates over candidate node IDs and reads
+      # textContent on each. If any candidate is detached mid-iteration (e.g.
+      # PrimeFaces AJAX swapping nodes), Chrome raises
+      # "Node with given id does not belong to the document" and the whole
+      # find aborts — see filter_by_text in
+      # capybara/selenium/extensions/find.rb.
+      find(:xpath, ".//span[contains(., ' - FING')]")
 
       wait_for_loading_widget_to_disappear
 
