@@ -2433,13 +2433,6 @@ AG48:
   - group: '5239'
     credits: 48
   has_exam: false
-AL:
-  code: AL
-  name: GEOMETRÍA Y ÁLGEBRA LINEAL
-  subject_groups:
-  - group: '4886'
-    credits: 9
-  has_exam: false
 ANC9:
   code: ANC9
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2450,24 +2443,18 @@ ANC9:
 AT012:
   code: AT012
   name: TEORÍA DEL URBANISMO
-  subject_groups:
-  - group: '5239'
-    credits: 6
-  has_exam: true
+  has_exam: false
+  subject_groups: []
 AT013:
   code: AT013
   name: CIUDAD,SOCIEDAD Y POLÍTICAS URBANAS
-  subject_groups:
-  - group: '5239'
-    credits: 3
-  has_exam: true
+  has_exam: false
+  subject_groups: []
 AT014:
   code: AT014
   name: PROYECTO URBANO Y PLANIFICACIÓN
-  subject_groups:
-  - group: '5239'
-    credits: 3
-  has_exam: true
+  has_exam: false
+  subject_groups: []
 AYG8:
   code: AYG8
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2527,89 +2514,45 @@ CAL12:
   - group: '4886'
     credits: 12
   has_exam: true
-CAL2:
-  code: CAL2
-  name: CÁLCULO 2
-  subject_groups:
-  - group: '4886'
-    credits: 10
-  has_exam: false
-CCT10:
-  code: CCT10
-  name: FÍSICA I
-  subject_groups:
-  - group: '4819'
-    credits: 14
-  has_exam: false
 CCT20:
   code: CCT20
   name: FÍSICA II
+  has_exam: true
+  subject_groups: []
+CENURLN:
+  code: CENURLN
+  name: CIM40 - ELECTROMAGNETÍSMO CIM
   subject_groups:
   - group: '4819'
-    credits: 14
-  has_exam: true
-CH201:
-  code: CH201
-  name: PROBABILIDAD Y ESTADÍSTICA
-  subject_groups:
+    credits: 10
+  - group: '4819'
+    credits: 5
+  - group: '4819'
+    credits: 5
+  - group: '4819'
+    credits: 10
+  - group: '4819'
+    credits: 10
+  - group: '4819'
+    credits: 10
+  - group: '4819'
+    credits: 10
+  - group: '4819'
+    credits: 10
   - group: '4886'
     credits: 10
-  has_exam: false
-CIM10:
-  code: CIM10
-  name: CÁLCULO VECTORIAL
-  subject_groups:
   - group: '4886'
     credits: 12
-  has_exam: false
-CIM18:
-  code: CIM18
-  name: FÍSICA EXPERIMENTAL 1 (FE1)
-  subject_groups:
-  - group: '4819'
-    credits: 5
-  has_exam: false
-CIM24:
-  code: CIM24
-  name: ECUACIONES DIFERENCIALES
-  subject_groups:
+  - group: '4886'
+    credits: 12
+  - group: '4886'
+    credits: 16
+  - group: '4886'
+    credits: 16
+  - group: '4886'
+    credits: 12
   - group: '4886'
     credits: 10
-  has_exam: false
-CIM26:
-  code: CIM26
-  name: FÍSICA TÉRMICA
-  subject_groups:
-  - group: '4819'
-    credits: 10
-  has_exam: false
-CIM28:
-  code: CIM28
-  name: MECÁNICA CLÁSICA
-  subject_groups:
-  - group: '4819'
-    credits: 10
-  has_exam: false
-CIM29:
-  code: CIM29
-  name: FÍSICA EXPERIMENTAL 2 (FE2)
-  subject_groups:
-  - group: '4819'
-    credits: 5
-  has_exam: false
-CIM40:
-  code: CIM40
-  name: ELECTROMAGNETÍSMO CIM
-  subject_groups:
-  - group: '4819'
-    credits: 10
-  has_exam: false
-CM:
-  code: CM
-  name: COMPLEMENTO DE MATEMÁTICA
-  subject_groups:
-  - group: '4886'
-    credits: 6
   has_exam: false
 CM14:
   code: CM14
@@ -3611,40 +3554,54 @@ CSE4:
   - group: '3973'
     credits: 4
   has_exam: false
-DMA01:
-  code: DMA01
-  name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+CUR:
+  code: CUR
+  name: RN252 - FISICA 1 BIOCIENCIAS 2017
   subject_groups:
+  - group: '4819'
+    credits: 12
+  - group: '4819'
+    credits: 12
   - group: '4886'
     credits: 12
-  has_exam: false
-DMA03:
-  code: DMA03
-  name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
-  subject_groups:
   - group: '4886'
-    credits: 12
-  has_exam: false
-DMA04:
-  code: DMA04
-  name: GEOMETRÍA Y ALGEBRA LINEAL II
-  subject_groups:
+    credits: 11
   - group: '4886'
-    credits: 12
+    credits: 10
   has_exam: false
-DMA05:
-  code: DMA05
-  name: MATEMÁTICA INICIAL
+CURE:
+  code: CURE
+  name: CCT10 - FÍSICA I
   subject_groups:
-  - group: '4886'
-    credits: 4
-  has_exam: false
-DMA06:
-  code: DMA06
-  name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
-  subject_groups:
+  - group: '4819'
+    credits: 14
+  - group: '4819'
+    credits: 14
   - group: '4886'
     credits: 13
+  - group: '4886'
+    credits: 12
+  - group: '4886'
+    credits: 4
+  - group: '4886'
+    credits: 12
+  - group: '4886'
+    credits: 12
+  has_exam: false
+CUT:
+  code: CUT
+  name: AL - GEOMETRÍA Y ÁLGEBRA LINEAL
+  subject_groups:
+  - group: '4886'
+    credits: 9
+  - group: '4886'
+    credits: 10
+  - group: '4886'
+    credits: 10
+  - group: '4886'
+    credits: 10
+  - group: '4886'
+    credits: 6
   has_exam: false
 E62:
   code: E62
@@ -3654,20 +3611,6 @@ E62:
     credits: 6
   - group: '4148'
     credits: 6
-  has_exam: false
-ESII:
-  code: ESII
-  name: ESTADÍSTICA II
-  subject_groups:
-  - group: '4886'
-    credits: 10
-  has_exam: false
-ESTAI:
-  code: ESTAI
-  name: ESTADÍSTICA I
-  subject_groups:
-  - group: '4886'
-    credits: 10
   has_exam: false
 EXP4:
   code: EXP4
@@ -3736,6 +3679,26 @@ FA8:
   - group: '4819'
     credits: 8
   has_exam: false
+FADU:
+  code: FADU
+  name: AT012 - TEORÍA DEL URBANISMO
+  subject_groups:
+  - group: '5239'
+    credits: 6
+  - group: '5239'
+    credits: 3
+  - group: '5239'
+    credits: 3
+  has_exam: false
+FCIEN:
+  code: FCIEN
+  name: FI15 - INESTABILIDADES EN FLUIDOS
+  subject_groups:
+  - group: '4819'
+    credits: 4
+  - group: '4999'
+    credits: 4
+  has_exam: false
 FF1-7:
   code: FF1-7
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -3786,13 +3749,9 @@ FI13:
   has_exam: false
 FI15:
   code: FI15
-  name: INESTABILIDADES EN FLUIDOS
-  subject_groups:
-  - group: '4819'
-    credits: 4
-  - group: '4999'
-    credits: 4
+  name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
+  subject_groups: []
 FIS08:
   code: FIS08
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -4249,13 +4208,6 @@ RE2:
   - group: '4871'
     credits: 2
   has_exam: false
-REF04:
-  code: REF04
-  name: FÍSICA 1
-  subject_groups:
-  - group: '4819'
-    credits: 10
-  has_exam: false
 RETEM:
   code: RETEM
   name: INTRODUCCION AL CONOCIMIENTO DEL AMBIENTE Y LA SUSTENTABILIDAD (RETEMA)
@@ -4270,89 +4222,12 @@ RM5:
   - group: '4871'
     credits: 5
   has_exam: false
-RN115:
-  code: RN115
-  name: ESTADÍSTICA I 2022
-  subject_groups:
-  - group: '4886'
-    credits: 10
-  has_exam: false
-RN252:
-  code: RN252
-  name: FISICA 1 BIOCIENCIAS 2017
-  subject_groups:
-  - group: '4819'
-    credits: 12
-  has_exam: false
-RN253:
-  code: RN253
-  name: FISICA 2 BIOCIENCIAS 2017
-  subject_groups:
-  - group: '4819'
-    credits: 12
-  has_exam: false
-RN404:
-  code: RN404
-  name: MATEMATICA I
-  subject_groups:
-  - group: '4886'
-    credits: 11
-  has_exam: false
-RN407:
-  code: RN407
-  name: MATEMATICA II
-  subject_groups:
-  - group: '4886'
-    credits: 12
-  has_exam: false
 S2:
   code: S2
   name: CREDITOS ASIGNADOS POR REVALIDA
   subject_groups:
   - group: '4148'
     credits: 2
-  has_exam: false
-SRN02:
-  code: SRN02
-  name: CÁLCULO I
-  subject_groups:
-  - group: '4886'
-    credits: 16
-  has_exam: false
-SRN03:
-  code: SRN03
-  name: ALGEBRA LINEAL I
-  subject_groups:
-  - group: '4886'
-    credits: 12
-  has_exam: false
-SRN09:
-  code: SRN09
-  name: CÁLCULO II
-  subject_groups:
-  - group: '4886'
-    credits: 16
-  has_exam: false
-SRN10:
-  code: SRN10
-  name: ALGEBRA LINEAL II
-  subject_groups:
-  - group: '4886'
-    credits: 12
-  has_exam: false
-SRN11:
-  code: SRN11
-  name: FÍSICA 2
-  subject_groups:
-  - group: '4819'
-    credits: 10
-  has_exam: false
-SRN26:
-  code: SRN26
-  name: FÍSICA 3
-  subject_groups:
-  - group: '4819'
-    credits: 10
   has_exam: false
 T40:
   code: T40
