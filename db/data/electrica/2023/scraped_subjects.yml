@@ -22,10 +22,8 @@
 '102':
   code: '102'
   name: QUÍMICA GENERAL I
-  subject_groups:
-  - group: '013'
-    credits: 7
-  has_exam: true
+  has_exam: false
+  subject_groups: []
 '1020':
   code: '1020'
   name: CALCULO 1
@@ -1414,13 +1412,6 @@
   - group: '033'
     credits: 8
   has_exam: false
-24CIA:
-  code: 24CIA
-  name: COMUNICACIÓN E INTELIGENCIA ARTIFICIAL (PPP)
-  subject_groups:
-  - group: '042'
-    credits: 9
-  has_exam: false
 '2512':
   code: '2512'
   name: DISEÑO LOGICO
@@ -2044,34 +2035,11 @@ ACT5:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: false
   subject_groups: []
-AL:
-  code: AL
-  name: GEOMETRÍA Y ÁLGEBRA LINEAL
-  subject_groups:
-  - group: '011'
-    credits: 9
-  has_exam: false
-AT001:
-  code: AT001
-  name: SENSIBILIZACIÓN E INTERCAMBIO PARA LA EQUIDAD
-  subject_groups:
-  - group: '042'
-    credits: 2
-  has_exam: false
 BG827:
   code: BG827
   name: BIOFÍSICA (2020-2025)
-  subject_groups:
-  - group: '013'
-    credits: 14
-  has_exam: true
-C50:
-  code: C50
-  name: HISTORIA DEL URUGUAY CONTEMPORÁNEO
-  subject_groups:
-  - group: '042'
-    credits: 8
   has_exam: false
+  subject_groups: []
 CAL10:
   code: CAL10
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2082,89 +2050,61 @@ CAL12:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
-CAL2:
-  code: CAL2
-  name: CÁLCULO 2
-  subject_groups:
-  - group: '011'
-    credits: 10
-  has_exam: false
-CCT10:
-  code: CCT10
-  name: FÍSICA I
-  subject_groups:
-  - group: '012'
-    credits: 14
-  has_exam: false
 CCT20:
   code: CCT20
   name: FÍSICA II
-  subject_groups:
-  - group: '012'
-    credits: 14
   has_exam: true
-CH201:
-  code: CH201
-  name: PROBABILIDAD Y ESTADÍSTICA
+  subject_groups: []
+CENURLN:
+  code: CENURLN
+  name: SRN02 - CÁLCULO I
   subject_groups:
   - group: '011'
-    credits: 10
-  has_exam: false
-CIM10:
-  code: CIM10
-  name: CÁLCULO VECTORIAL
-  subject_groups:
+    credits: 16
+  - group: '011'
+    credits: 16
   - group: '011'
     credits: 12
-  has_exam: false
-CIM18:
-  code: CIM18
-  name: FÍSICA EXPERIMENTAL 1 (FE1)
-  subject_groups:
-  - group: '012'
-    credits: 5
-  has_exam: false
-CIM24:
-  code: CIM24
-  name: ECUACIONES DIFERENCIALES
-  subject_groups:
+  - group: '011'
+    credits: 12
+  - group: '011'
+    credits: 12
   - group: '011'
     credits: 10
-  has_exam: false
-CIM26:
-  code: CIM26
-  name: FÍSICA TÉRMICA
-  subject_groups:
+  - group: '011'
+    credits: 10
+  - group: '011'
+    credits: 10
   - group: '012'
     credits: 10
-  has_exam: false
-CIM28:
-  code: CIM28
-  name: MECÁNICA CLÁSICA
-  subject_groups:
   - group: '012'
     credits: 10
-  has_exam: false
-CIM29:
-  code: CIM29
-  name: FÍSICA EXPERIMENTAL 2 (FE2)
-  subject_groups:
+  - group: '012'
+    credits: 10
   - group: '012'
     credits: 5
-  has_exam: false
-CIM40:
-  code: CIM40
-  name: ELECTROMAGNETÍSMO CIM
-  subject_groups:
+  - group: '012'
+    credits: 5
   - group: '012'
     credits: 10
-  has_exam: false
-CM:
-  code: CM
-  name: COMPLEMENTO DE MATEMÁTICA
-  subject_groups:
-  - group: '011'
+  - group: '012'
+    credits: 10
+  - group: '012'
+    credits: 10
+  - group: '013'
+    credits: 10
+  - group: '013'
+    credits: 10
+  - group: '033'
+    credits: 10
+  - group: '038'
+    credits: 10
+  - group: '038'
+    credits: 8
+  - group: '043'
     credits: 6
+  - group: '043'
+    credits: 2
   has_exam: false
 CM14:
   code: CM14
@@ -2406,76 +2346,84 @@ CP9:
   name: PROGRAMACION I
   has_exam: true
   subject_groups: []
-DMA01:
-  code: DMA01
-  name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+CUR:
+  code: CUR
+  name: RN404 - MATEMATICA I
   subject_groups:
   - group: '011'
-    credits: 12
-  has_exam: false
-DMA02:
-  code: DMA02
-  name: MATEMÁTICA DISCRETA
-  subject_groups:
+    credits: 11
   - group: '011'
     credits: 12
-  has_exam: false
-DMA03:
-  code: DMA03
-  name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
-  subject_groups:
   - group: '011'
+    credits: 10
+  - group: '012'
     credits: 12
-  has_exam: false
-DMA04:
-  code: DMA04
-  name: GEOMETRÍA Y ALGEBRA LINEAL II
-  subject_groups:
-  - group: '011'
+  - group: '012'
     credits: 12
+  - group: '042'
+    credits: 7
+  - group: '042'
+    credits: 10
+  - group: '043'
+    credits: 3
   has_exam: false
-DMA05:
-  code: DMA05
-  name: MATEMÁTICA INICIAL
+CURE:
+  code: CURE
+  name: DMA05 - MATEMÁTICA INICIAL
   subject_groups:
   - group: '011'
     credits: 4
-  has_exam: false
-DMA06:
-  code: DMA06
-  name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
-  subject_groups:
+  - group: '011'
+    credits: 12
   - group: '011'
     credits: 13
-  has_exam: false
-EL31:
-  code: EL31
-  name: ÉTICA
-  subject_groups:
+  - group: '011'
+    credits: 12
+  - group: '011'
+    credits: 12
+  - group: '011'
+    credits: 12
+  - group: '012'
+    credits: 14
+  - group: '012'
+    credits: 14
+  - group: '026'
+    credits: 10
+  - group: '037'
+    credits: 11
   - group: '042'
     credits: 8
+  - group: '042'
+    credits: 10
+  - group: '043'
+    credits: 1
+  - group: '043'
+    credits: 5
   has_exam: false
-ESII:
-  code: ESII
-  name: ESTADÍSTICA II
+CUT:
+  code: CUT
+  name: CM - COMPLEMENTO DE MATEMÁTICA
   subject_groups:
   - group: '011'
-    credits: 10
-  has_exam: false
-ESTAI:
-  code: ESTAI
-  name: ESTADÍSTICA I
-  subject_groups:
+    credits: 6
   - group: '011'
     credits: 10
+  - group: '011'
+    credits: 9
+  - group: '011'
+    credits: 10
+  - group: '011'
+    credits: 10
+  - group: '013'
+    credits: 10
   has_exam: false
-ETSON:
-  code: ETSON
-  name: 'TÉCNICAS DE SONOMONTAJE: EDICIÓN Y PROC. AUDIO'
+EUMUS:
+  code: EUMUS
+  name: 'ETSON - TÉCNICAS DE SONOMONTAJE: EDICIÓN Y PROC. AUDIO'
   subject_groups:
   - group: '037'
     credits: 4
-  has_exam: true
+  has_exam: false
 F10:
   code: F10
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2501,6 +2449,22 @@ F8:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
+FCIEN:
+  code: FCIEN
+  name: BG827 - BIOFÍSICA (2020-2025)
+  subject_groups:
+  - group: '013'
+    credits: 14
+  - group: '042'
+    credits: 2
+  has_exam: false
+FCS:
+  code: FCS
+  name: C50 - HISTORIA DEL URUGUAY CONTEMPORÁNEO
+  subject_groups:
+  - group: '042'
+    credits: 8
+  has_exam: false
 FF12:
   code: FF12
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2531,6 +2495,27 @@ FI15:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
+FIC:
+  code: FIC
+  name: O7245 - INTRODUCCIÓN A LA PROGRAMACIÓN Y ANÁLISIS DE TEXTO CON R (LIM)
+  subject_groups:
+  - group: '033'
+    credits: 4
+  - group: '042'
+    credits: 9
+  - group: '042'
+    credits: 9
+  - group: '043'
+    credits: 8
+  - group: '043'
+    credits: 8
+  - group: '043'
+    credits: 10
+  - group: '043'
+    credits: 8
+  - group: '043'
+    credits: 7
+  has_exam: false
 FIS13:
   code: FIS13
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2546,6 +2531,13 @@ FIS45:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
+FQ:
+  code: FQ
+  name: 102 - QUÍMICA GENERAL I
+  subject_groups:
+  - group: '013'
+    credits: 7
+  has_exam: false
 FUN12:
   code: FUN12
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2563,13 +2555,6 @@ GAL7:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
-IDUCS:
-  code: IDUCS
-  name: INTROD. A LAS DINAMICAS UNIVERSITARIAS
-  subject_groups:
-  - group: '043'
-    credits: 3
-  has_exam: false
 IN35:
   code: IN35
   name: PROGRAMACION 1
@@ -2600,48 +2585,26 @@ IYS14:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: false
   subject_groups: []
-LG103:
-  code: LG103
-  name: HERRAMIENTAS PARA EL TRABAJO COLECTIVO
-  subject_groups:
-  - group: '043'
-    credits: 5
-  has_exam: false
-LG12:
-  code: LG12
-  name: ANÁLISIS DE LAS INTERACCIONES ECONÓMICAS
-  subject_groups:
-  - group: '042'
-    credits: 10
-  has_exam: false
 LIB10:
   code: LIB10
   name: TALLER DE INGENIERÍA BIOLÓGICA II
-  subject_groups:
-  - group: '038'
-    credits: 8
-  has_exam: true
+  has_exam: false
+  subject_groups: []
 LIB32:
   code: LIB32
   name: BIOMECÁNICA
-  subject_groups:
-  - group: '038'
-    credits: 10
-  has_exam: true
+  has_exam: false
+  subject_groups: []
 LIB36:
   code: LIB36
   name: INFORMÁTICA EN BIOLOGÍA Y MEDICINA
-  subject_groups:
-  - group: '033'
-    credits: 10
-  has_exam: true
+  has_exam: false
+  subject_groups: []
 LIB38:
   code: LIB38
   name: FISIOLOGÍA CUANTITATIVA
-  subject_groups:
-  - group: '013'
-    credits: 10
-  has_exam: true
+  has_exam: false
+  subject_groups: []
 M12:
   code: M12
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2764,63 +2727,6 @@ MI2P:
   name: CREDITOS NO ACUM MATEMATICA INICIAL
   has_exam: true
   subject_groups: []
-O2525:
-  code: O2525
-  name: COMUNICACIÓN E INTELIGENCIA ARTIFICIAL(PPP)
-  subject_groups:
-  - group: '042'
-    credits: 9
-  has_exam: false
-O6211:
-  code: O6211
-  name: TECNOLOGÍA DE MEDIOS AL SERVICIO DE LA PRESERVACIÓN DEL PATRIMONIO HISTÓRICO
-    DOC
-  subject_groups:
-  - group: '043'
-    credits: 8
-  has_exam: false
-O6221:
-  code: O6221
-  name: LABORATORIO DE ACCESIBILIDAD A LOS MEDIOS (INV. - EXT.)
-  subject_groups:
-  - group: '043'
-    credits: 10
-  has_exam: false
-O6311:
-  code: O6311
-  name: TALLER DE INTERACCIÓN
-  subject_groups:
-  - group: '043'
-    credits: 7
-  has_exam: false
-O6521:
-  code: O6521
-  name: TEORÍAS Y PRÁCTICAS DE LA ACCESIBILIDAD EN LA COMUNICACIÓN - LIM
-  subject_groups:
-  - group: '043'
-    credits: 8
-  has_exam: false
-O7245:
-  code: O7245
-  name: INTRODUCCIÓN A LA PROGRAMACIÓN Y ANÁLISIS DE TEXTO CON R (LIM)
-  subject_groups:
-  - group: '033'
-    credits: 4
-  has_exam: false
-O7246:
-  code: O7246
-  name: TECNOLOGÍAS DE DIGITALIZACIÓN Y TRANSCODIFICACIÓN. IDENTIFICACIÓN Y PRESERVACIÓN
-  subject_groups:
-  - group: '043'
-    credits: 8
-  has_exam: false
-PQIF:
-  code: PQIF
-  name: PRINCIPIOS DE QUÍMICA PARA ING. FORESTAL
-  subject_groups:
-  - group: '013'
-    credits: 10
-  has_exam: false
 Q16:
   code: Q16
   name: INT. A LA PREVENCION DE RIESGOS LABORALES
@@ -2850,149 +2756,16 @@ R101:
   name: GEOMETRIA Y ALGEBRA LINEAL
   has_exam: false
   subject_groups: []
-REF04:
-  code: REF04
-  name: FÍSICA 1
-  subject_groups:
-  - group: '012'
-    credits: 10
-  has_exam: false
-RN04:
-  code: RN04
-  name: CONCEPTOS DE ECONOMIA Y DESARROLLO LOCAL
-  subject_groups:
-  - group: '042'
-    credits: 10
-  has_exam: false
-RN102:
-  code: RN102
-  name: EVALUACIÓN DE RECURSOS NATURALES
-  subject_groups:
-  - group: '042'
-    credits: 7
-  has_exam: false
-RN115:
-  code: RN115
-  name: ESTADÍSTICA I 2022
-  subject_groups:
-  - group: '011'
-    credits: 10
-  has_exam: false
-RN252:
-  code: RN252
-  name: FISICA 1 BIOCIENCIAS 2017
-  subject_groups:
-  - group: '012'
-    credits: 12
-  has_exam: false
-RN253:
-  code: RN253
-  name: FISICA 2 BIOCIENCIAS 2017
-  subject_groups:
-  - group: '012'
-    credits: 12
-  has_exam: false
-RN404:
-  code: RN404
-  name: MATEMATICA I
-  subject_groups:
-  - group: '011'
-    credits: 11
-  has_exam: false
-RN407:
-  code: RN407
-  name: MATEMATICA II
-  subject_groups:
-  - group: '011'
-    credits: 12
-  has_exam: false
 SD10:
   code: SD10
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: false
   subject_groups: []
-SO001:
-  code: SO001
-  name: INTRODUCCIÓN A LA VIDA UNIVERSITARIA (IVU)
-  subject_groups:
-  - group: '043'
-    credits: 1
-  has_exam: false
-SRN02:
-  code: SRN02
-  name: CÁLCULO I
-  subject_groups:
-  - group: '011'
-    credits: 16
-  has_exam: false
-SRN03:
-  code: SRN03
-  name: ALGEBRA LINEAL I
-  subject_groups:
-  - group: '011'
-    credits: 12
-  has_exam: false
-SRN06:
-  code: SRN06
-  name: TALLER DE DISEÑO
-  subject_groups:
-  - group: '043'
-    credits: 6
-  has_exam: false
-SRN09:
-  code: SRN09
-  name: CÁLCULO II
-  subject_groups:
-  - group: '011'
-    credits: 16
-  has_exam: false
-SRN10:
-  code: SRN10
-  name: ALGEBRA LINEAL II
-  subject_groups:
-  - group: '011'
-    credits: 12
-  has_exam: false
-SRN11:
-  code: SRN11
-  name: FÍSICA 2
-  subject_groups:
-  - group: '012'
-    credits: 10
-  has_exam: false
-SRN14:
-  code: SRN14
-  name: MATEMÁTICA DISCRETA I
-  subject_groups:
-  - group: '011'
-    credits: 10
-  has_exam: false
 SRN17:
   code: SRN17
   name: PROGRAMACIÓN I- CIO CT-LHRH
   has_exam: true
   subject_groups: []
-SRN26:
-  code: SRN26
-  name: FÍSICA 3
-  subject_groups:
-  - group: '012'
-    credits: 10
-  has_exam: false
-SRN30:
-  code: SRN30
-  name: TALLER DE ROBÓTICA-CIO CT- INGBIOL
-  subject_groups:
-  - group: '043'
-    credits: 2
-  has_exam: false
-SRN47:
-  code: SRN47
-  name: PRINCIPIOS DE QUÍMICA GENERAL - CIOCT-RH-AGR
-  subject_groups:
-  - group: '013'
-    credits: 10
-  has_exam: false
 TD6:
   code: TD6
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -3003,17 +2776,3 @@ TELE8:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: false
   subject_groups: []
-TTR13:
-  code: TTR13
-  name: TALLER DE GESTION DE REDES
-  subject_groups:
-  - group: '037'
-    credits: 11
-  has_exam: false
-TTR6:
-  code: TTR6
-  name: PROGRAMACION I
-  subject_groups:
-  - group: '026'
-    credits: 10
-  has_exam: false
