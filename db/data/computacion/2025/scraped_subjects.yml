@@ -325,10 +325,8 @@
 AL:
   code: AL
   name: GEOMETRÍA Y ÁLGEBRA LINEAL
-  subject_groups:
-  - group: I.I
-    credits: 9
   has_exam: true
+  subject_groups: []
 CAL10:
   code: CAL10
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -342,58 +340,32 @@ CAL12:
 CAL2:
   code: CAL2
   name: CÁLCULO 2
-  subject_groups:
-  - group: I.I
-    credits: 10
   has_exam: false
-CCT10:
-  code: CCT10
-  name: FÍSICA I
-  subject_groups:
-  - group: I.I
-    credits: 14
-  has_exam: false
-CCT20:
-  code: CCT20
-  name: FÍSICA II
-  subject_groups:
-  - group: I.I
-    credits: 14
-  has_exam: false
-CH201:
-  code: CH201
-  name: PROBABILIDAD Y ESTADÍSTICA
-  subject_groups:
-  - group: I.I
-    credits: 10
-  has_exam: false
-CIM10:
-  code: CIM10
-  name: CÁLCULO VECTORIAL
+  subject_groups: []
+CENURLN:
+  code: CENURLN
+  name: CIM22 - TOPOLOGÍA
   subject_groups:
   - group: I.I
     credits: 12
-  has_exam: false
-CIM22:
-  code: CIM22
-  name: TOPOLOGÍA
-  subject_groups:
-  - group: I.I
-    credits: 12
-  has_exam: false
-CIM24:
-  code: CIM24
-  name: ECUACIONES DIFERENCIALES
-  subject_groups:
   - group: I.I
     credits: 10
-  has_exam: false
-CM:
-  code: CM
-  name: COMPLEMENTO DE MATEMÁTICA
-  subject_groups:
   - group: I.I
-    credits: 6
+    credits: 4
+  - group: I.I
+    credits: 10
+  - group: I.I
+    credits: 12
+  - group: I.I
+    credits: 16
+  - group: I.I
+    credits: 16
+  - group: I.I
+    credits: 12
+  - group: I.I
+    credits: 12
+  - group: III.II
+    credits: 10
   has_exam: false
 CM14:
   code: CM14
@@ -470,62 +442,77 @@ CP7:
   name: ANALISIS COMPLEJO
   has_exam: true
   subject_groups: []
+CURE:
+  code: CURE
+  name: DMA03 - GEOMETRÍA Y ÁLGEBRA LINEAL 1
+  subject_groups:
+  - group: I.I
+    credits: 12
+  - group: I.I
+    credits: 12
+  - group: I.I
+    credits: 14
+  - group: I.I
+    credits: 14
+  - group: I.I
+    credits: 12
+  - group: I.I
+    credits: 13
+  - group: I.II
+    credits: 10
+  - group: I.II
+    credits: 12
+  - group: III.II
+    credits: 8
+  - group: III.II
+    credits: 6
+  has_exam: false
+CUT:
+  code: CUT
+  name: AL - GEOMETRÍA Y ÁLGEBRA LINEAL
+  subject_groups:
+  - group: I.I
+    credits: 9
+  - group: I.I
+    credits: 10
+  - group: I.I
+    credits: 6
+  - group: I.I
+    credits: 10
+  - group: II.IV
+    credits: 6
+  - group: II.IV
+    credits: 6
+  - group: II.V
+    credits: 8
+  - group: III.II
+    credits: 10
+  has_exam: false
 DMA01:
   code: DMA01
   name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
-  subject_groups:
-  - group: I.I
-    credits: 12
   has_exam: true
+  subject_groups: []
 DMA02:
   code: DMA02
   name: MATEMÁTICA DISCRETA
-  subject_groups:
-  - group: I.II
-    credits: 12
   has_exam: true
+  subject_groups: []
 DMA03:
   code: DMA03
   name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
-  subject_groups:
-  - group: I.I
-    credits: 12
   has_exam: true
+  subject_groups: []
 DMA04:
   code: DMA04
   name: GEOMETRÍA Y ALGEBRA LINEAL II
-  subject_groups:
-  - group: I.I
-    credits: 12
   has_exam: false
+  subject_groups: []
 DMA06:
   code: DMA06
   name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
-  subject_groups:
-  - group: I.I
-    credits: 13
   has_exam: false
-EL31:
-  code: EL31
-  name: ÉTICA
-  subject_groups:
-  - group: III.II
-    credits: 8
-  has_exam: false
-EPCN:
-  code: EPCN
-  name: ELEMENTOS DE PROGRAM Y CÁLCULO NUMÉRICO
-  subject_groups:
-  - group: II.IV
-    credits: 6
-  has_exam: false
-ESTAI:
-  code: ESTAI
-  name: ESTADÍSTICA I
-  subject_groups:
-  - group: I.I
-    credits: 10
-  has_exam: false
+  subject_groups: []
 GAL1P:
   code: GAL1P
   name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
@@ -536,20 +523,6 @@ GAL7:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
-ICP:
-  code: ICP
-  name: INT. A LAS CIENCIAS POLITICAS (CURE)
-  subject_groups:
-  - group: III.II
-    credits: 6
-  has_exam: false
-IE:
-  code: IE
-  name: INTRODUCCIÓN A LA ECONOMÍA
-  subject_groups:
-  - group: III.II
-    credits: 10
-  has_exam: false
 M12:
   code: M12
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -667,66 +640,8 @@ MI2P:
   name: CREDITOS NO ACUM MATEMATICA INICIAL
   has_exam: true
   subject_groups: []
-SRN02:
-  code: SRN02
-  name: CÁLCULO I
-  subject_groups:
-  - group: I.I
-    credits: 16
-  has_exam: false
-SRN03:
-  code: SRN03
-  name: ALGEBRA LINEAL I
-  subject_groups:
-  - group: I.I
-    credits: 12
-  has_exam: false
-SRN09:
-  code: SRN09
-  name: CÁLCULO II
-  subject_groups:
-  - group: I.I
-    credits: 16
-  has_exam: false
-SRN10:
-  code: SRN10
-  name: ALGEBRA LINEAL II
-  subject_groups:
-  - group: I.I
-    credits: 12
-  has_exam: false
-SRN13:
-  code: SRN13
-  name: ECONOMÍA POLÍTICA
-  subject_groups:
-  - group: III.II
-    credits: 10
-  has_exam: false
-SRN45:
-  code: SRN45
-  name: MATEMATICA INICIAL-OPTATIVA
-  subject_groups:
-  - group: I.I
-    credits: 4
-  has_exam: false
 TIC:
   code: TIC
   name: TALLER DE INTRODUCCIÓN A LA COMPUTACIÓN
-  subject_groups:
-  - group: II.V
-    credits: 8
   has_exam: false
-TIIDO:
-  code: TIIDO
-  name: TALLER DE INTRODUCCIÓN A INVESTIGACIÓN DE OPERACIONES
-  subject_groups:
-  - group: II.IV
-    credits: 6
-  has_exam: false
-TTR6:
-  code: TTR6
-  name: PROGRAMACION I
-  subject_groups:
-  - group: I.II
-    credits: 10
-  has_exam: false
+  subject_groups: []
