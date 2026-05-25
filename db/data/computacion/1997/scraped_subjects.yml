@@ -536,6 +536,13 @@
   name: CREDITOS NO ACUM FISICA 3
   has_exam: true
   subject_groups: []
+'1157':
+  code: '1157'
+  name: FISICA CON APOYO COMPUTACIONAL
+  subject_groups:
+  - group: '4442'
+    credits: 10
+  has_exam: true
 '1158':
   code: '1158'
   name: PROCESAMIENTO CUANTICO DE LA INFORMACION
