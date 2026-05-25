@@ -6149,6 +6149,57 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1030P
+      subject_needed_name: CREDITOS NO ACUM GAL1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1030'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1322P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1322'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1373'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+  subject_code: '1157'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: '1157'
+    subject_needed_name: FISICA CON APOYO COMPUTACIONAL
+  subject_code: '1157'
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: 1031P
       subject_needed_name: CREDITOS NO ACUM GAL2
       needs: exam
