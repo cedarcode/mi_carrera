@@ -9,7 +9,9 @@ module Scraper
     # SRN14 - MATEMÁTICA DISCRETA I - créditos: 10
     # FF1-7 - CREDITOS ASIGNADOS POR REVALIDA - créditos: 7
     # FL2.6 - CREDITOS ASIGANDOS POR REVALIDA - créditos: 6
-    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A((?:\w|\.|\-)+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
+    # CURE - DMA03 - GEOMETRÍA Y ÁLGEBRA LINEAL 1 - créditos: 12
+    # CENURLN - CIM22 - TOPOLOGÍA - créditos: 12
+    SUBJECT_CODE_NAME_CREDITS_REGEX = /\A(?:[A-Z]+ - )?((?:\w|\.|\-)+) - (.+) - (?:créditos): (\d+)(?: programa)?\z/
 
     def scrape
       logger.info "Starting to scrape subjects"
