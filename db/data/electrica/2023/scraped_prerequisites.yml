@@ -10704,6 +10704,19 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: '1373'
+    subject_needed_name: PROGRAMACION 1
+  - type: subject
+    needs: exam
+    subject_needed_code: '1025'
+    subject_needed_name: PROBABILIDAD Y ESTADISTICA
+  subject_code: '5721'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
   - type: logical
     logical_operator: not
     operands:
