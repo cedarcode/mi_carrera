@@ -1734,6 +1734,13 @@
   - group: '030'
     credits: 10
   has_exam: false
+'5721':
+  code: '5721'
+  name: METODOS CUANTITATIVOS PARA ANALISIS DE BIOIMAGENES
+  subject_groups:
+  - group: '038'
+    credits: 8
+  has_exam: false
 '5724':
   code: '5724'
   name: DISEÑO DE SISTEMAS MEDICOS IMPLANTABLES ACTIVOS
