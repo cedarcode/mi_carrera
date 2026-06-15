@@ -46,6 +46,6 @@ end
 group :test do
   gem 'capybara', '~> 3.40'
   gem 'selenium-webdriver', '~> 4.44'
-  gem 'shoulda-matchers', '~> 7.0'
+  gem 'shoulda-matchers', '~> 8.0'
   gem 'simplecov', require: false
 end
