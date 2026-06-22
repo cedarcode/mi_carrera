@@ -11,7 +11,7 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
 
     - name: Build degree+plan matrix
       id: set-matrix
@@ -41,7 +41,7 @@ jobs:
         app-id: ${{ secrets.SCRAPER_APP_ID }}
         private-key: ${{ secrets.SCRAPER_APP_PRIVATE_KEY }}
 
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         token: ${{ steps.generate-token.outputs.token }}
 
