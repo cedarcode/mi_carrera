@@ -5653,67 +5653,16 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: all
+      subject_needed_code: LIB55
+      subject_needed_name: TEORIA DE LOS CIRCUITOS
   - type: credits
     credits: 15
     group: 12
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1061'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-      needs: all
-    - type: subject
-      subject_needed_code: '1020'
-      subject_needed_name: CALCULO 1
-      needs: all
-    - type: subject
-      subject_needed_code: '1070'
-      subject_needed_name: CALCULO 1
-      needs: all
-    - type: subject
-      subject_needed_code: '1052'
-      subject_needed_name: CALCULO 1 (ANUAL)
-      needs: all
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: 1020P
-      subject_needed_name: CREDITOS NO ACUM CALCULO 1
-      needs: all
-    - type: subject
-      subject_needed_code: 1061P
-      subject_needed_name: CREDITOS NO ACUM CDIV
-      needs: all
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1062'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-      needs: all
-    - type: subject
-      subject_needed_code: '1022'
-      subject_needed_name: CALCULO 2
-      needs: all
-    - type: subject
-      subject_needed_code: '1072'
-      subject_needed_name: CALCULO 2
-      needs: all
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: 1022P
-      subject_needed_name: CREDITOS NO ACUM CALCULO 2
-      needs: all
-    - type: subject
-      subject_needed_code: 1062P
-      subject_needed_name: CREDITOS NO ACUM CDIVV
-      needs: all
   - type: logical
     logical_operator: or
     operands:
@@ -5786,6 +5735,64 @@
     - type: subject
       subject_needed_code: '1171'
       subject_needed_name: FISICA 1
+      needs: all
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: all
+    - type: subject
+      subject_needed_code: '1020'
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: '1070'
+      subject_needed_name: CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: '1052'
+      subject_needed_name: CALCULO 1 (ANUAL)
+      needs: all
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: 1020P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 1
+      needs: all
+    - type: subject
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: all
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1062'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+      needs: all
+    - type: subject
+      subject_needed_code: '1022'
+      subject_needed_name: CALCULO 2
+      needs: all
+    - type: subject
+      subject_needed_code: '1072'
+      subject_needed_name: CALCULO 2
+      needs: all
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: 1022P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 2
+      needs: all
+    - type: subject
+      subject_needed_code: 1062P
+      subject_needed_name: CREDITOS NO ACUM CDIVV
       needs: all
   subject_code: '1456'
   is_exam: false
@@ -7037,6 +7044,17 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: 1030P
       subject_needed_name: CREDITOS NO ACUM GAL1
       needs: exam
@@ -7055,40 +7073,72 @@
       subject_needed_code: '1321'
       subject_needed_name: PROGRAMACION 2
       needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1061'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-      needs: exam
-    - type: subject
-      subject_needed_code: 1061P
-      subject_needed_name: CREDITOS NO ACUM CDIV
-      needs: exam
   subject_code: '1537'
   is_exam: false
 - type: logical
-  logical_operator: and
+  logical_operator: or
   operands:
   - type: logical
-    logical_operator: not
+    logical_operator: and
     operands:
+    - type: logical
+      logical_operator: not
+      operands:
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: '1511'
+          subject_needed_name: SISTEMAS OPERATIVOS
+          needs: all
+        - type: subject
+          subject_needed_code: '1518'
+          subject_needed_name: SISTEMAS OPERATIVOS
+          needs: all
+        - type: subject
+          subject_needed_code: '1532'
+          subject_needed_name: SISTEMAS OPERATIVOS
+          needs: all
+    - type: credits
+      credits: 20
+      group: 12
+    - type: subject
+      needs: course
+      subject_needed_code: '1513'
+      subject_needed_name: INT. A LOS MICROPROCESADORES
     - type: logical
       logical_operator: or
       operands:
       - type: subject
-        subject_needed_code: '1511'
-        subject_needed_name: SISTEMAS OPERATIVOS
+        subject_needed_code: '1061'
+        subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
         needs: exam
       - type: subject
-        subject_needed_code: '1518'
-        subject_needed_name: SISTEMAS OPERATIVOS
+        subject_needed_code: 1061P
+        subject_needed_name: CREDITOS NO ACUM CDIV
+        needs: exam
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1030P
+        subject_needed_name: CREDITOS NO ACUM GAL1
         needs: exam
       - type: subject
-        subject_needed_code: '1532'
-        subject_needed_name: SISTEMAS OPERATIVOS
+        subject_needed_code: '1030'
+        subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
         needs: exam
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1307'
+        subject_needed_name: PROGRAMACION PARA INGENIERIA ELECTRICA
+        needs: course
+      - type: subject
+        subject_needed_code: '1321'
+        subject_needed_name: PROGRAMACION 2
+        needs: course
   - type: subject
     needs: course
     subject_needed_code: '1537'
