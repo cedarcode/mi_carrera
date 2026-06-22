@@ -18,7 +18,7 @@ gem 'pg', '~> 1.6'
 gem 'propshaft', '~> 1.3'
 gem 'puma', '~> 8.0'
 gem 'stimulus-rails', '~> 1.3'
-gem 'tailwindcss-rails', '~> 4.4'
+gem 'tailwindcss-rails', '~> 4.6'
 gem 'turbo-rails', '~> 2.0'
 gem "view_component", "~> 4.12"
 gem 'webauthn'
@@ -37,7 +37,7 @@ group :development do
   gem "annotaterb", "~> 4.22"
   gem "letter_opener", "~> 1.10"
   gem "lookbook", "~> 2.3"
-  gem 'rubocop', '~> 1.87'
+  gem 'rubocop', '~> 1.88'
   gem 'rubocop-performance', '~> 1.26', require: false
   gem 'rubocop-rails', '~> 2.35', require: false
   gem 'web-console', '~> 4.3'
@@ -45,7 +45,7 @@ end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.44'
+  gem 'selenium-webdriver', '~> 4.45'
   gem 'shoulda-matchers', '~> 8.0'
   gem 'simplecov', require: false
 end
