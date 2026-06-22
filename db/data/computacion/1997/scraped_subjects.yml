@@ -768,7 +768,7 @@
   has_exam: true
 1323P:
   code: 1323P
-  name: CRÉDITOS NO ACUM. CON PROGRAMACIÓN 3
+  name: CREDITOS NO ACUM. CON PROGRAMACION 3
   has_exam: true
   subject_groups: []
 '1324':
@@ -2008,7 +2008,7 @@
   has_exam: false
 1781P:
   code: 1781P
-  name: CREDITOS NO ACUM. SIST. DE INFOR. PARA GRANDES VOLÚMENES DE DATOS
+  name: CREDITOS NO ACUM. SIST. DE INFOR. PARA GRANDES VOLUMENES DE DATOS
   has_exam: false
   subject_groups: []
 '1782':
@@ -2132,7 +2132,7 @@
   has_exam: false
 1866P:
   code: 1866P
-  name: CRÉDITOS NO ACUM. CON APRENDIZAJE AUTOMÁTICO
+  name: CREDITOS NO ACUM. CON APRENDIZAJE AUTOMATICO
   has_exam: true
   subject_groups: []
 '1867':
