@@ -926,7 +926,7 @@
 '1511':
   code: '1511'
   name: SISTEMAS OPERATIVOS
-  has_exam: true
+  has_exam: false
   subject_groups: []
 '1512':
   code: '1512'
@@ -955,7 +955,7 @@
 '1518':
   code: '1518'
   name: SISTEMAS OPERATIVOS
-  has_exam: true
+  has_exam: false
   subject_groups: []
 '1519':
   code: '1519'
@@ -965,7 +965,7 @@
 '1532':
   code: '1532'
   name: SISTEMAS OPERATIVOS
-  has_exam: true
+  has_exam: false
   subject_groups: []
 '1534':
   code: '1534'
@@ -2649,6 +2649,13 @@ LIB38:
   - group: '013'
     credits: 10
   has_exam: true
+LIB55:
+  code: LIB55
+  name: TEORIA DE LOS CIRCUITOS
+  subject_groups:
+  - group: '021'
+    credits: 8
+  has_exam: false
 M12:
   code: M12
   name: CREDITOS ASIGNADOS POR REVALIDA
