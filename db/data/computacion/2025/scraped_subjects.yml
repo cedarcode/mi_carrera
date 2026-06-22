@@ -303,7 +303,7 @@
   has_exam: false
 '2043':
   code: '2043'
-  name: INTRODUCCIÓN A LA COMPUTACIÓN
+  name: INT. A LA COMPUTACION
   subject_groups:
   - group: II.V
     credits: 5
@@ -503,7 +503,7 @@ DMA06:
   name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
   subject_groups:
   - group: I.I
-    credits: 13
+    credits: 12
   has_exam: false
 EL31:
   code: EL31
