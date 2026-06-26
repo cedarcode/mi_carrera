@@ -526,7 +526,7 @@ DEPENDENCIES
   webauthn
 
 RUBY VERSION
-  ruby 4.0.1p0
+  ruby 4.0.5
 
 BUNDLED WITH
   4.0.6

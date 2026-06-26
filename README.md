@@ -4,7 +4,7 @@ Sistema de trackeo de materias realizadas para los estudiantes de la FING con el
 
 ### Requisitos
 
-* Ruby 4.0.1
+* Ruby 4.0.5
 * PostgreSQL (preferentemente v14)
 
 ### Setup
