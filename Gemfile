@@ -34,7 +34,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "annotaterb", "~> 4.22"
+  gem "annotaterb", "~> 4.23"
   gem "letter_opener", "~> 1.10"
   gem "lookbook", "~> 2.3"
   gem 'rubocop', '~> 1.88'
