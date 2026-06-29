@@ -4800,14 +4800,14 @@ RN115:
   has_exam: false
 RN252:
   code: RN252
-  name: FISICA 1 BIOCIENCIAS 2017
+  name: FÍSICA 1 BIOCIENCIAS 2017
   subject_groups:
   - group: '4442'
     credits: 12
   has_exam: false
 RN253:
   code: RN253
-  name: FISICA 2 BIOCIENCIAS 2017
+  name: FÍSICA 2 BIOCIENCIAS 2017
   subject_groups:
   - group: '4442'
     credits: 12
