@@ -2873,7 +2873,7 @@ REF04:
   has_exam: false
 RN04:
   code: RN04
-  name: CONCEPTOS DE ECONOMIA Y DESARROLLO LOCAL
+  name: CONCEPTOS DE ECONOMÍA Y DESARROLLO LOCAL
   subject_groups:
   - group: '042'
     credits: 10
@@ -2894,14 +2894,14 @@ RN115:
   has_exam: false
 RN252:
   code: RN252
-  name: FISICA 1 BIOCIENCIAS 2017
+  name: FÍSICA 1 BIOCIENCIAS 2017
   subject_groups:
   - group: '012'
     credits: 12
   has_exam: false
 RN253:
   code: RN253
-  name: FISICA 2 BIOCIENCIAS 2017
+  name: FÍSICA 2 BIOCIENCIAS 2017
   subject_groups:
   - group: '012'
     credits: 12
