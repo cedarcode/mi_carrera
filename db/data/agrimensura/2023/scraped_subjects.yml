@@ -429,7 +429,7 @@
   subject_groups: []
 '1520':
   code: '1520'
-  name: TEORIA DE INSTRUMENTAL
+  name: TEORIA DEL INSTRUMENTAL
   has_exam: true
   subject_groups: []
 '1521':
@@ -439,7 +439,7 @@
   subject_groups: []
 '1526':
   code: '1526'
-  name: TEORIA DE INSTRUMENTAL
+  name: TEORIA DEL INSTRUMENTAL
   has_exam: true
   subject_groups: []
 158Q:
@@ -1075,14 +1075,14 @@ RN115:
   has_exam: false
 RN252:
   code: RN252
-  name: FISICA 1 BIOCIENCIAS 2017
+  name: FÍSICA 1 BIOCIENCIAS 2017
   subject_groups:
   - group: '00102'
     credits: 12
   has_exam: false
 RN253:
   code: RN253
-  name: FISICA 2 BIOCIENCIAS 2017
+  name: FÍSICA 2 BIOCIENCIAS 2017
   subject_groups:
   - group: '00102'
     credits: 12

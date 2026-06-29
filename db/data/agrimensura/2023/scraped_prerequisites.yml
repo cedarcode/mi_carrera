@@ -3355,11 +3355,11 @@
       operands:
       - type: subject
         subject_needed_code: '1520'
-        subject_needed_name: TEORIA DE INSTRUMENTAL
+        subject_needed_name: TEORIA DEL INSTRUMENTAL
         needs: exam
       - type: subject
         subject_needed_code: '1526'
-        subject_needed_name: TEORIA DE INSTRUMENTAL
+        subject_needed_name: TEORIA DEL INSTRUMENTAL
         needs: exam
   - type: logical
     logical_operator: or
@@ -3429,11 +3429,11 @@
       operands:
       - type: subject
         subject_needed_code: '1520'
-        subject_needed_name: TEORIA DE INSTRUMENTAL
+        subject_needed_name: TEORIA DEL INSTRUMENTAL
         needs: exam
       - type: subject
         subject_needed_code: '1526'
-        subject_needed_name: TEORIA DE INSTRUMENTAL
+        subject_needed_name: TEORIA DEL INSTRUMENTAL
         needs: exam
   - type: subject
     needs: course
@@ -3666,7 +3666,7 @@
     operands:
     - type: subject
       subject_needed_code: '1526'
-      subject_needed_name: TEORIA DE INSTRUMENTAL
+      subject_needed_name: TEORIA DEL INSTRUMENTAL
       needs: course
     - type: subject
       subject_needed_code: '1465'
@@ -3706,11 +3706,11 @@
     operands:
     - type: subject
       subject_needed_code: '1520'
-      subject_needed_name: TEORIA DE INSTRUMENTAL
+      subject_needed_name: TEORIA DEL INSTRUMENTAL
       needs: course
     - type: subject
       subject_needed_code: '1526'
-      subject_needed_name: TEORIA DE INSTRUMENTAL
+      subject_needed_name: TEORIA DEL INSTRUMENTAL
       needs: course
     - type: subject
       subject_needed_code: '1465'
