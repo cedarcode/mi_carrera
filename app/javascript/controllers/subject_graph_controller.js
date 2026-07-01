@@ -77,9 +77,6 @@ export default class extends Controller {
 
     this.boundResize = this.handleResize.bind(this)
     window.addEventListener("resize", this.boundResize)
-
-    // Store reference for testing
-    this.element.__cytoscape = this.cy
   }
 
   handleNodeTap(node) {

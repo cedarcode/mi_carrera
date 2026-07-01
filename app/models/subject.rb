@@ -36,6 +36,10 @@ class Subject < ApplicationRecord
     revalid
   ]
 
+  # Categorías de los diez semestres regulares de la malla, excluyendo
+  # las categorías especiales (opcionales, reválidas, etc.).
+  SEMESTER_CATEGORIES = CATEGORIES.first(10)
+
   enum :category, CATEGORIES.index_with(&:to_s)
 
   scope :ordered_by_category, -> { in_order_of(:category, CATEGORIES) }
