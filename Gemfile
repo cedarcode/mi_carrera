@@ -39,13 +39,13 @@ group :development do
   gem "lookbook", "~> 2.3"
   gem 'rubocop', '~> 1.88'
   gem 'rubocop-performance', '~> 1.26', require: false
-  gem 'rubocop-rails', '~> 2.35', require: false
+  gem 'rubocop-rails', '~> 2.36', require: false
   gem 'web-console', '~> 4.3'
 end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.45'
+  gem 'selenium-webdriver', '~> 4.46'
   gem 'shoulda-matchers', '~> 8.0'
   gem 'simplecov', require: false
 end
