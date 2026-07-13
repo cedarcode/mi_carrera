@@ -47,5 +47,6 @@ group :test do
   gem 'capybara', '~> 3.40'
   gem 'selenium-webdriver', '~> 4.46'
   gem 'shoulda-matchers', '~> 8.0'
-  gem 'simplecov', require: false
+  # TODO: unpin this once https://github.com/joshmfrankel/simplecov-check-action/issues/37 is fixed
+  gem 'simplecov', '< 1', require: false
 end
