@@ -16148,10 +16148,17 @@
         subject_needed_code: '1930'
         subject_needed_name: ORGANIZACIONES PARA INGENIEROS
         needs: all
-  - type: subject
-    needs: course
-    subject_needed_code: '1944'
-    subject_needed_name: ADMINISTRACION GENERAL PARA INGENIEROS
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1944'
+      subject_needed_name: ADMINISTRACION GENERAL PARA INGENIEROS
+      needs: course
+    - type: subject
+      subject_needed_code: 1944P
+      subject_needed_name: CREDITOS NO ACUM ADM. GENERAL PARA INGENIEROS
+      needs: exam
   subject_code: '1945'
   is_exam: false
 - type: logical
