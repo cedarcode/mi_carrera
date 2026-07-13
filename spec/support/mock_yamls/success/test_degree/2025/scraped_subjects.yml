@@ -20,3 +20,8 @@
   name: SUBJECT WITH NO GROUP
   has_exam: false
   subject_groups: []
+'103':
+  code: '103'
+  name: SUBJECT WITH EXAM OVERRIDE
+  has_exam: false
+  subject_groups: []

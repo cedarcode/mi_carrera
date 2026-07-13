@@ -93,7 +93,9 @@ class YmlLoader
 
       new_subject.create_course! unless new_subject.course
 
-      if subject["has_exam"]
+      has_exam = subject_overrides.fetch('has_exam', subject["has_exam"])
+
+      if has_exam
         new_subject.create_exam! unless new_subject.exam
       else
         raise "Subject #{code} no longer has an exam" if new_subject.exam

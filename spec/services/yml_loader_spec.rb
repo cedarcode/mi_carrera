@@ -44,7 +44,7 @@ RSpec.describe YmlLoader do
         expect(subject_group.credits_needed).to eq(70)
 
         # Subjects
-        expect(degree_plan.subjects.count).to eq(3)
+        expect(degree_plan.subjects.count).to eq(4)
         subject1 = degree_plan.subjects.find_by!(code: '101')
         expect(subject1.name).to eq('Cálculo I')
         expect(subject1.credits).to eq(14)
@@ -197,6 +197,18 @@ RSpec.describe YmlLoader do
           expect(existing_subject.group).to eq(existing_group)
           expect(existing_subject.current_semester).to be false
         end
+      end
+    end
+
+    context 'when subject_overrides overrides has_exam' do
+      let(:base_dir) { Rails.root.join("spec/support/mock_yamls/success") }
+
+      it 'uses the override to create an exam even when the scraped subject reports none' do
+        described_class.load
+
+        degree_plan = Degree.find(degree_id).degree_plans.find_by!(name: '2025')
+        subject = degree_plan.subjects.find_by!(code: '103')
+        expect(subject.exam).to be_present
       end
     end
 

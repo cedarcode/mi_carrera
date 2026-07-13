@@ -5,3 +5,5 @@
   openfing_id: testsubj
   short_name: TS1
   category: third_semester
+'103':
+  has_exam: true
