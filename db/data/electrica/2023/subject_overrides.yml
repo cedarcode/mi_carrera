@@ -546,6 +546,7 @@ MI2:
   category: 'inactive'
 "1511":
   category: 'inactive'
+  has_exam: true
 "5701":
   category: 'inactive'
 "5703":
