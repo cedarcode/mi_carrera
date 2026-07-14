@@ -484,10 +484,12 @@ MI2:
   category: 'inactive'
 "1518":
   category: 'inactive'
+  has_exam: true
 "1519":
   category: 'inactive'
 "1532":
   category: 'inactive'
+  has_exam: true
 "1536":
   category: 'inactive'
 "158Q":
