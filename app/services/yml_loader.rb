@@ -98,7 +98,7 @@ class YmlLoader
       if has_exam
         new_subject.create_exam! unless new_subject.exam
       else
-        raise "Subject #{code} no longer has an exam" if new_subject.exam
+        raise "Subject #{code} from #{degree.name} plan #{degree_plan.name} no longer has an exam" if new_subject.exam
       end
     end
   end
