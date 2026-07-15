@@ -226,7 +226,7 @@ RSpec.describe YmlLoader do
       end
 
       it 'raises an error' do
-        expect { described_class.load }.to raise_error('Subject 25 no longer has an exam')
+        expect { described_class.load }.to raise_error('Subject 25 from Test Degree plan 2025 no longer has an exam')
       end
     end
 
