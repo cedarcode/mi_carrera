@@ -264,6 +264,33 @@
   - group: III.II
     credits: 3
   has_exam: false
+'1320':
+  code: '1320'
+  name: PROGRAMACION 1
+  has_exam: true
+  subject_groups: []
+'1322':
+  code: '1322'
+  name: PROGRAMACION 1
+  has_exam: true
+  subject_groups: []
+1322P:
+  code: 1322P
+  name: CREDITOS NO ACUM PROGRAMACION 1
+  has_exam: true
+  subject_groups: []
+'1373':
+  code: '1373'
+  name: PROGRAMACION 1
+  has_exam: true
+  subject_groups: []
+'1375':
+  code: '1375'
+  name: PROGRAMACION IMPERATIVA
+  subject_groups:
+  - group: I.II
+    credits: 10
+  has_exam: true
 158Q:
   code: 158Q
   name: GEOMETRIA Y ALGEBRA LINEAL 2
