@@ -2296,6 +2296,61 @@
   subject_code: '1224'
   is_exam: true
 - type: logical
+  logical_operator: not
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1322P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1320'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1322'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1373'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+  subject_code: '1375'
+  is_exam: false
+- type: logical
+  logical_operator: or
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1322P
+        subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1320'
+        subject_needed_name: PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1322'
+        subject_needed_name: PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1373'
+        subject_needed_name: PROGRAMACION 1
+        needs: exam
+  - type: subject
+    needs: course
+    subject_needed_code: '1375'
+    subject_needed_name: PROGRAMACION IMPERATIVA
+  subject_code: '1375'
+  is_exam: true
+- type: logical
   logical_operator: and
   operands:
   - type: logical
