@@ -8347,6 +8347,61 @@
   subject_code: '1374'
   is_exam: false
 - type: logical
+  logical_operator: not
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1322P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1320'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1322'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1373'
+      subject_needed_name: PROGRAMACION 1
+      needs: exam
+  subject_code: '1375'
+  is_exam: false
+- type: logical
+  logical_operator: or
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1322P
+        subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1320'
+        subject_needed_name: PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1322'
+        subject_needed_name: PROGRAMACION 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '1373'
+        subject_needed_name: PROGRAMACION 1
+        needs: exam
+  - type: subject
+    needs: course
+    subject_needed_code: '1375'
+    subject_needed_name: PROGRAMACION IMPERATIVA
+  subject_code: '1375'
+  is_exam: true
+- type: logical
   logical_operator: and
   operands:
   - type: logical
@@ -16847,6 +16902,45 @@
   subject_code: '2045'
   is_exam: false
 - type: logical
+  logical_operator: not
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1027P
+      subject_needed_name: CREDITOS NO ACUM. CON LOGICA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1027'
+      subject_needed_name: LOGICA
+      needs: exam
+  subject_code: '2046'
+  is_exam: false
+- type: logical
+  logical_operator: or
+  operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1027P
+        subject_needed_name: CREDITOS NO ACUM. CON LOGICA
+        needs: exam
+      - type: subject
+        subject_needed_code: '1027'
+        subject_needed_name: LOGICA
+        needs: exam
+  - type: subject
+    needs: course
+    subject_needed_code: '2046'
+    subject_needed_name: HERRAMIENTAS DE MODELIZACIÓN Y ANÁLISIS
+  subject_code: '2046'
+  is_exam: true
+- type: logical
   logical_operator: and
   operands:
   - type: logical
@@ -17588,6 +17682,63 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: logical
+    logical_operator: and
+    operands:
+    - type: subject
+      subject_needed_code: 1031P
+      subject_needed_name: CREDITOS NO ACUM GAL2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1031'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1025P
+      subject_needed_name: CREDITOS NO ACUM PROB Y EST.
+      needs: exam
+    - type: subject
+      subject_needed_code: '1025'
+      subject_needed_name: PROBABILIDAD Y ESTADISTICA
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: '1020'
+      subject_needed_name: CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 1020P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: exam
+  subject_code: '5865'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
   - type: subject
     needs: exam
     subject_needed_code: '1446'
@@ -18038,14 +18189,32 @@
 - type: logical
   logical_operator: and
   operands:
-  - type: subject
-    needs: exam
-    subject_needed_code: SRN03
-    subject_needed_name: ALGEBRA LINEAL I
-  - type: subject
-    needs: exam
-    subject_needed_code: SRN14
-    subject_needed_name: MATEMÁTICA DISCRETA I
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: SRN03
+      subject_needed_name: ALGEBRA LINEAL I
+      needs: exam
+    - type: subject
+      subject_needed_code: '1030'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '2044'
+      subject_needed_name: FUNDAMENTOS DE LA COMBINATORIA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1023'
+      subject_needed_name: MATEMATICA DISCRETA 1
+      needs: exam
+    - type: subject
+      subject_needed_code: SRN14
+      subject_needed_name: MATEMÁTICA DISCRETA I
+      needs: exam
   subject_code: CIM11
   is_exam: true
 - type: logical
