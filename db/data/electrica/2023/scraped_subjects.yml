@@ -768,6 +768,13 @@
   - group: '026'
     credits: 10
   has_exam: true
+'1375':
+  code: '1375'
+  name: PROGRAMACION IMPERATIVA
+  subject_groups:
+  - group: '026'
+    credits: 10
+  has_exam: true
 '1401':
   code: '1401'
   name: SISTEMAS LINEALES 1
