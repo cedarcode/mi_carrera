@@ -4318,7 +4318,7 @@ SRN02:
   subject_groups:
   - group: '4886'
     credits: 16
-  has_exam: false
+  has_exam: true
 SRN03:
   code: SRN03
   name: ALGEBRA LINEAL I
@@ -4332,7 +4332,7 @@ SRN09:
   subject_groups:
   - group: '4886'
     credits: 16
-  has_exam: false
+  has_exam: true
 SRN10:
   code: SRN10
   name: ALGEBRA LINEAL II
