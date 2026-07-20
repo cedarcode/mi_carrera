@@ -1024,6 +1024,13 @@
   - group: '4580'
     credits: 6
   has_exam: false
+'1375':
+  code: '1375'
+  name: PROGRAMACION IMPERATIVA
+  subject_groups:
+  - group: '4580'
+    credits: 10
+  has_exam: true
 '1403':
   code: '1403'
   name: INT. A LA ARQUITECTURA DE COMPUTADORES
@@ -2209,7 +2216,7 @@
   has_exam: false
 '1890':
   code: '1890'
-  name: CALIDAD DE DATOS E INFORMACIÓN
+  name: CALIDAD DE DATOS E INFORMACION
   subject_groups:
   - group: '4647'
     credits: 8
@@ -2558,6 +2565,13 @@
   - group: '5082'
     credits: 9
   has_exam: false
+'2046':
+  code: '2046'
+  name: HERRAMIENTAS DE MODELIZACIÓN Y ANÁLISIS
+  subject_groups:
+  - group: '4083'
+    credits: 6
+  has_exam: true
 2107A:
   code: 2107A
   name: TALLER DE COMUNICACIÓN ORAL Y ESCRITA
@@ -4833,7 +4847,7 @@ RN407:
   has_exam: false
 S42:
   code: S42
-  name: SOCIOLOGÍA DE LA EMPRESA Y MANAGEMENT
+  name: SOCIOLOGÍA DE DIRIGENTES DE EMPRESAS
   subject_groups:
   - group: '4066'
     credits: 10
