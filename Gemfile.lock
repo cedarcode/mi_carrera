@@ -83,7 +83,7 @@ GEM
     annotaterb (4.23.0)
       activerecord (>= 6.0.0)
       activesupport (>= 6.0.0)
-    appsignal (4.8.6)
+    appsignal (4.9.0)
       logger
       rack (>= 2.0.0)
     ast (2.4.3)
@@ -493,7 +493,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotaterb (~> 4.23)
-  appsignal (~> 4.8)
+  appsignal (~> 4.9)
   bootsnap (~> 1.24)
   brakeman (~> 8.0)
   capybara (~> 3.40)
