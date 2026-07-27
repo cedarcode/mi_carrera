@@ -400,21 +400,21 @@ CIM10:
   subject_groups:
   - group: I.I
     credits: 12
-  has_exam: false
+  has_exam: true
 CIM22:
   code: CIM22
   name: TOPOLOGÍA
   subject_groups:
   - group: I.I
     credits: 12
-  has_exam: false
+  has_exam: true
 CIM24:
   code: CIM24
   name: ECUACIONES DIFERENCIALES
   subject_groups:
   - group: I.I
     credits: 10
-  has_exam: false
+  has_exam: true
 CM:
   code: CM
   name: COMPLEMENTO DE MATEMÁTICA
@@ -700,28 +700,28 @@ SRN02:
   subject_groups:
   - group: I.I
     credits: 16
-  has_exam: false
+  has_exam: true
 SRN03:
   code: SRN03
   name: ALGEBRA LINEAL I
   subject_groups:
   - group: I.I
     credits: 12
-  has_exam: false
+  has_exam: true
 SRN09:
   code: SRN09
   name: CÁLCULO II
   subject_groups:
   - group: I.I
     credits: 16
-  has_exam: false
+  has_exam: true
 SRN10:
   code: SRN10
   name: ALGEBRA LINEAL II
   subject_groups:
   - group: I.I
     credits: 12
-  has_exam: false
+  has_exam: true
 SRN13:
   code: SRN13
   name: ECONOMÍA POLÍTICA
