@@ -1374,6 +1374,13 @@
   - group: '043'
     credits: 4
   has_exam: false
+'2223':
+  code: '2223'
+  name: TALLER PARA FORTALECER HABILIDADES BLANDAS
+  subject_groups:
+  - group: '043'
+    credits: 2
+  has_exam: false
 '2241':
   code: '2241'
   name: ADMINISTRACION DE EMPRESAS

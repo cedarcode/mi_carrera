@@ -8943,6 +8943,13 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: credits
+    credits: 90
+  subject_code: '2223'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
   - type: subject
     needs: course
     subject_needed_code: '5508'
