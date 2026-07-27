@@ -2508,6 +2508,117 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN03
+    subject_needed_name: ALGEBRA LINEAL I
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN02
+    subject_needed_name: CÁLCULO I
+  - type: subject
+    needs: course
+    subject_needed_code: SRN09
+    subject_needed_name: CÁLCULO II
+  subject_code: CIM10
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN02
+    subject_needed_name: CÁLCULO I
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN03
+    subject_needed_name: ALGEBRA LINEAL I
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN09
+    subject_needed_name: CÁLCULO II
+  subject_code: CIM10
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN02
+    subject_needed_name: CÁLCULO I
+  - type: subject
+    needs: course
+    subject_needed_code: SRN09
+    subject_needed_name: CÁLCULO II
+  subject_code: CIM22
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN09
+    subject_needed_name: CÁLCULO II
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN02
+    subject_needed_name: CÁLCULO I
+  subject_code: CIM22
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN02
+    subject_needed_name: CÁLCULO I
+  - type: subject
+    needs: course
+    subject_needed_code: SRN10
+    subject_needed_name: ALGEBRA LINEAL II
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN03
+    subject_needed_name: ALGEBRA LINEAL I
+  - type: subject
+    needs: course
+    subject_needed_code: SRN09
+    subject_needed_name: CÁLCULO II
+  subject_code: CIM24
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN09
+    subject_needed_name: CÁLCULO II
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN02
+    subject_needed_name: CÁLCULO I
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN03
+    subject_needed_name: ALGEBRA LINEAL I
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN10
+    subject_needed_name: ALGEBRA LINEAL II
+  subject_code: CIM24
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: DMA01
+    subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+  subject_code: DMA01
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
   - type: logical
     logical_operator: not
     operands:
@@ -2784,4 +2895,77 @@
       subject_needed_code: '01'
       subject_needed_name: MATEMÁTICA 01 (ANÁLISIS I)
   subject_code: MI2
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: SRN02
+    subject_needed_name: CÁLCULO I
+  subject_code: SRN02
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: SRN03
+    subject_needed_name: ALGEBRA LINEAL I
+  subject_code: SRN03
+  is_exam: true
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: SRN02
+    subject_needed_name: CÁLCULO I
+  subject_code: SRN09
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: SRN09
+    subject_needed_name: CÁLCULO II
+  - type: subject
+    needs: exam
+    subject_needed_code: SRN02
+    subject_needed_name: CÁLCULO I
+  subject_code: SRN09
+  is_exam: true
+- type: logical
+  logical_operator: or
+  operands:
+  - type: subject
+    needs: course
+    subject_needed_code: SRN03
+    subject_needed_name: ALGEBRA LINEAL I
+  - type: subject
+    needs: course
+    subject_needed_code: '1030'
+    subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+  subject_code: SRN10
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      needs: exam
+      subject_needed_code: '1030'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+    - type: subject
+      needs: exam
+      subject_needed_code: SRN03
+      subject_needed_name: ALGEBRA LINEAL I
+  - type: subject
+    needs: course
+    subject_needed_code: SRN10
+    subject_needed_name: ALGEBRA LINEAL II
+  subject_code: SRN10
   is_exam: true
