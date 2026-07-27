@@ -7536,51 +7536,14 @@
         subject_needed_code: '1814'
         subject_needed_name: MAQUINAS PARA FLUIDOS 2
         needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP128
-      subject_needed_name: FLUIDO MAQUINAS I
-      needs: exam
-    - type: subject
-      subject_needed_code: '1856'
-      subject_needed_name: MAQUINAS PARA FLUIDOS I
-      needs: course
-    - type: subject
-      subject_needed_code: '1810'
-      subject_needed_name: MAQUINAS PARA FLUIDOS 1
-      needs: course
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: CP34
-      subject_needed_name: MECANICA DE LOS FLUIDOS
-      needs: exam
-    - type: subject
-      subject_needed_code: '1226'
-      subject_needed_name: MECANICA DE LOS FLUIDOS
-      needs: exam
-    - type: subject
-      subject_needed_code: CP35
-      subject_needed_name: MECANICA DE LOS FLUIDOS E HIDRAULICA(74)
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1073'
-      subject_needed_name: FISICA TERMICA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1123'
-      subject_needed_name: FISICA TERMICA
-      needs: exam
-    - type: subject
-      subject_needed_code: CP12
-      subject_needed_name: TERMODINAMICA
-      needs: exam
+  - type: subject
+    needs: course
+    subject_needed_code: '1226'
+    subject_needed_name: MECANICA DE LOS FLUIDOS
+  - type: subject
+    needs: course
+    subject_needed_code: '1856'
+    subject_needed_name: MAQUINAS PARA FLUIDOS I
   subject_code: '1859'
   is_exam: false
 - type: logical
@@ -11161,36 +11124,10 @@
 - type: logical
   logical_operator: and
   operands:
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1310'
-      subject_needed_name: RESISTENCIA DE MATERIALES 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '2368'
-      subject_needed_name: RESISTENCIA DE MATERIALES 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '2365'
-      subject_needed_name: RESISTENCIA DE MATERIALES 1N
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: 1715P
-      subject_needed_name: CREDITOS NO ACUM INT. A LA CONSTRUCCION
-      needs: exam
-    - type: subject
-      subject_needed_code: '1715'
-      subject_needed_name: INT. A LA CONSTRUCCION
-      needs: course
-    - type: subject
-      subject_needed_code: 1715B
-      subject_needed_name: INT. A LA CONSTRUCCION
-      needs: course
+  - type: subject
+    needs: course
+    subject_needed_code: '2371'
+    subject_needed_name: TECNOLOGIA DEL HORMIGON
   subject_code: '2371'
   is_exam: true
 - type: logical
