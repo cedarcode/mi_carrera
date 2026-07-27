@@ -1524,6 +1524,10 @@
       subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
       needs: exam
     - type: subject
+      subject_needed_code: '2044'
+      subject_needed_name: FUNDAMENTOS DE LA COMBINATORIA
+      needs: course
+    - type: subject
       subject_needed_code: '1023'
       subject_needed_name: MATEMATICA DISCRETA 1
       needs: course
@@ -6980,6 +6984,10 @@
         subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
         needs: all
       - type: subject
+        subject_needed_code: '2044'
+        subject_needed_name: FUNDAMENTOS DE LA COMBINATORIA
+        needs: all
+      - type: subject
         subject_needed_code: '1023'
         subject_needed_name: MATEMATICA DISCRETA 1
         needs: all
@@ -10189,6 +10197,10 @@
       subject_needed_code: 1023P
       subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
       needs: exam
+    - type: subject
+      subject_needed_code: '2044'
+      subject_needed_name: FUNDAMENTOS DE LA COMBINATORIA
+      needs: course
     - type: subject
       subject_needed_code: '1023'
       subject_needed_name: MATEMATICA DISCRETA 1
@@ -16981,6 +16993,13 @@
     subject_needed_code: '2216'
     subject_needed_name: TUTORIAS ENTRE PARES 1
   subject_code: '2217'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: credits
+    credits: 90
+  subject_code: '2223'
   is_exam: false
 - type: logical
   logical_operator: and
