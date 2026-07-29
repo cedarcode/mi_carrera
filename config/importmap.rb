@@ -13,3 +13,6 @@ pin "choices.js", to: "https://ga.jspm.io/npm:choices.js@11.1.0/public/assets/sc
 
 pin "sortablejs" # @1.15.6
 pin "@rails/request.js", to: "@rails--request.js.js" # @0.0.12
+
+# Graph visualization for subject dependencies
+pin "cytoscape" # @3.33.1
