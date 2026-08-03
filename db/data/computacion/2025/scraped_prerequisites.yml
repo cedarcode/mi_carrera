@@ -807,10 +807,6 @@
         subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
         needs: all
       - type: subject
-        subject_needed_code: DMA06
-        subject_needed_name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
-        needs: all
-      - type: subject
         subject_needed_code: '1020'
         subject_needed_name: CALCULO 1
         needs: all
@@ -829,6 +825,10 @@
       - type: subject
         subject_needed_code: '1052'
         subject_needed_name: CALCULO 1 (ANUAL)
+        needs: all
+      - type: subject
+        subject_needed_code: DMA06
+        subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
         needs: all
       - type: subject
         subject_needed_code: CAL10
@@ -1041,16 +1041,16 @@
         subject_needed_name: ANALISIS MATEMATICO I (2DO.SEM.)
         needs: all
       - type: subject
-        subject_needed_code: DMA06
-        subject_needed_name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
-        needs: all
-      - type: subject
         subject_needed_code: '1022'
         subject_needed_name: CALCULO 2
         needs: all
       - type: subject
         subject_needed_code: '1072'
         subject_needed_name: CALCULO 2
+        needs: all
+      - type: subject
+        subject_needed_code: DMA06
+        subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
         needs: all
       - type: subject
         subject_needed_code: CAL2
