@@ -822,7 +822,7 @@ DMA05:
   has_exam: false
 DMA06:
   code: DMA06
-  name: CALCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+  name: CÁLCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
   subject_groups:
   - group: '00101'
     credits: 13
