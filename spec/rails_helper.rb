@@ -65,14 +65,6 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  # cloudflare-rails fetches its range list over the network and does not memoize the
-  # fallback, so it would retry on every request. Pin the ranges instead.
-  config.before do
-    allow(CloudflareRails::Importer)
-      .to receive(:cloudflare_ips)
-      .and_return(CloudflareRails::FallbackIps::IPS_V4 + CloudflareRails::FallbackIps::IPS_V6)
-  end
-
   config.before(:each, type: :system) do
     driven_by :selenium, using: :headless_chrome do |options|
       # For some reason, even though it's running in headless mode, chrome will treat a

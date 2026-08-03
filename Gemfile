@@ -27,12 +27,6 @@ group :development, :deploy do
   gem 'kamal'
 end
 
-# Reports the real client IP in request.ip / request.remote_ip instead of Cloudflare's
-# edge. In test too so the behaviour can be specced.
-group :production, :test do
-  gem 'cloudflare-rails', '~> 7.0'
-end
-
 group :development, :test do
   gem "brakeman", "~> 8.0"
   gem 'pry-byebug'
