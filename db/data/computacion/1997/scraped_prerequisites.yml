@@ -1720,6 +1720,20 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: exam_enrollment
+      subject_needed_code: '2046'
+      subject_needed_name: HERRAMIENTAS DE MODELIZACIÓN Y ANÁLISIS
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: exam
+      subject_needed_code: '2046'
+      subject_needed_name: HERRAMIENTAS DE MODELIZACIÓN Y ANÁLISIS
   - type: subject
     needs: course
     subject_needed_code: '1027'
@@ -16955,6 +16969,37 @@
 - type: logical
   logical_operator: and
   operands:
+  - type: subject
+    needs: course
+    subject_needed_code: '1327'
+    subject_needed_name: TALLER DE PROGRAMACION
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1911P
+      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1911'
+      subject_needed_name: FUNDAMENTOS DE BASES DE DATOS
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1446P
+      subject_needed_name: CREDITOS NO ACUM. CON REDES DE COMPUTADORAS
+      needs: exam
+    - type: subject
+      subject_needed_code: '1446'
+      subject_needed_name: REDES DE COMPUTADORAS
+      needs: course
+  subject_code: '2047'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
   - type: logical
     logical_operator: not
     operands:
@@ -17702,7 +17747,7 @@
   logical_operator: and
   operands:
   - type: logical
-    logical_operator: and
+    logical_operator: or
     operands:
     - type: subject
       subject_needed_code: 1031P
