@@ -1,0 +1,23 @@
+<div id="groups-credits">
+  <% if groups_and_credits.any? %>
+    <div data-controller="collapsible" class="bg-white rounded-lg border border-gray-100 shadow-sm">
+      <a data-action="click->collapsible#toggle" class="flex items-center h-10 px-4 bg-gray-50 rounded-lg cursor-pointer">
+        <span class="material-icons pr-2" data-collapsible-target="button" data-turbo-permanent>chevron_right</span>
+        <span class="flex-1 text-sm font-bold">Créditos planificados por grupo</span>
+      </a>
+
+      <ul class="hidden divide-y divide-gray-200" data-collapsible-target="collapsible" data-action="turbo:before-morph-attribute->collapsible#preventToggle">
+        <% groups_and_credits.each do |group| %>
+          <li>
+            <%= link_to subject_group_path(group[:subject_group]), class: "flex items-center justify-between px-4 py-3 hover:bg-gray-50 gap-4" do %>
+              <span class="text-sm text-gray-900"><%= group[:subject_group].name %></span>
+              <span class="text-sm <%= group[:credits_needed_reached] ? "font-bold" : "" %>">
+                <%= group[:credits] %> / <%= group[:subject_group].credits_needed %>
+              </span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
