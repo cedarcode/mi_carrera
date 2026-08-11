@@ -15,12 +15,15 @@ RSpec.describe SubjectGroupsController, type: :request do
       get "/grupos/999999999"
 
       expect(response).to have_http_status(:not_found)
+      expect(response.body).to include("ActiveRecord::RecordNotFound")
     end
 
     it 'returns a routing 404 for a non-numeric id and does not reach the controller' do
       get "/grupos/choices.js"
 
       expect(response).to have_http_status(:not_found)
+      expect(response.body).to include("Routing Error")
+      expect(response.body).not_to include("SubjectGroupsController")
     end
   end
 end
