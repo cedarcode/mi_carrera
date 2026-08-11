@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
     resource :profile, path: "perfil", only: :show
 
-    resources :subject_groups, path: "grupos", only: :show
+    resources :subject_groups, path: "grupos", only: :show, constraints: { id: /\d+/ }
 
     resources :approvables, only: [] do
       resource :approval, only: [:create, :destroy]
