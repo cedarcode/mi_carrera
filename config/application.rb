@@ -50,5 +50,19 @@ module MiCarrera
 
     config.view_component.previews.paths << "#{Rails.root.join("spec/components/previews")}"
     config.view_component.previews.default_layout = "component_preview"
+
+    # Render the 404 page through the app (with the navbar) so it matches the rest of
+    # the UI. Other error codes (422, 500, ...) keep falling back to the static pages
+    # in public/, since rendering those through the app risks cascading failures when
+    # the app itself is the thing that's broken.
+    config.exceptions_app = ->(env) do
+      request = ActionDispatch::Request.new(env)
+
+      if request.path == "/404"
+        ErrorsController.action(:not_found).call(env)
+      else
+        ActionDispatch::PublicExceptions.new(Rails.public_path).call(env)
+      end
+    end
   end
 end

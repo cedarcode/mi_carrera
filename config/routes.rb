@@ -59,5 +59,7 @@ Rails.application.routes.draw do
     if Rails.env.development?
       mount Lookbook::Engine, at: "/lookbook"
     end
+
+    match "/404", to: "errors#not_found", via: :all
   end
 end
