@@ -130,7 +130,7 @@ GEM
       railties (>= 7.0)
       responders
       warden (~> 1.2.3)
-    devise-webauthn (0.3.1)
+    devise-webauthn (0.5.0)
       devise (>= 4.9)
       webauthn (~> 3.0)
     diff-lcs (1.6.2)
@@ -501,7 +501,7 @@ DEPENDENCIES
   brakeman (~> 8.0)
   capybara (~> 3.40)
   devise (~> 5.0)
-  devise-webauthn (~> 0.3.1)
+  devise-webauthn (~> 0.5.0)
   factory_bot_rails (~> 6.5)
   importmap-rails (~> 2.2)
   kamal
