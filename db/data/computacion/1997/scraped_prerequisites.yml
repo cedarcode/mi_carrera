@@ -7513,10 +7513,17 @@
           subject_needed_code: '1323'
           subject_needed_name: PROGRAMACION 3
           needs: exam
-    - type: subject
-      needs: exam
-      subject_needed_code: '1324'
-      subject_needed_name: PROGRAMACION 4
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1324P
+        subject_needed_name: CREDITOS NO ACUM PROGRAMACION 4
+        needs: exam
+      - type: subject
+        subject_needed_code: '1324'
+        subject_needed_name: PROGRAMACION 4
+        needs: exam
   subject_code: '1327'
   is_exam: false
 - type: logical
@@ -17274,31 +17281,37 @@
   subject_code: '2418'
   is_exam: false
 - type: logical
-  logical_operator: not
+  logical_operator: and
   operands:
   - type: logical
-    logical_operator: or
+    logical_operator: not
     operands:
-    - type: subject
-      subject_needed_code: SD10
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: 1512P
-      subject_needed_name: CREDITOS NO ACUM DISEÑO LOGICO
-      needs: all
-    - type: subject
-      subject_needed_code: CP51
-      subject_needed_name: DISEÑO LOGICO
-      needs: all
-    - type: subject
-      subject_needed_code: '1512'
-      subject_needed_name: DISEÑO LOGICO
-      needs: all
-    - type: subject
-      subject_needed_code: 1512C
-      subject_needed_name: DISEÑO LOGICO
-      needs: all
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: SD10
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: all
+      - type: subject
+        subject_needed_code: 1512P
+        subject_needed_name: CREDITOS NO ACUM DISEÑO LOGICO
+        needs: all
+      - type: subject
+        subject_needed_code: CP51
+        subject_needed_name: DISEÑO LOGICO
+        needs: all
+      - type: subject
+        subject_needed_code: '1512'
+        subject_needed_name: DISEÑO LOGICO
+        needs: all
+      - type: subject
+        subject_needed_code: 1512C
+        subject_needed_name: DISEÑO LOGICO
+        needs: all
+  - type: credits
+    credits: 15
+    group: 4442
   subject_code: '2512'
   is_exam: false
 - type: logical
