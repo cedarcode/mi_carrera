@@ -5285,14 +5285,6 @@
       needs: exam
       subject_needed_code: CP29
       subject_needed_name: PROGRAMACION III
-  - type: subject
-    needs: course
-    subject_needed_code: '1321'
-    subject_needed_name: PROGRAMACION 2
-  - type: subject
-    needs: exam
-    subject_needed_code: '1023'
-    subject_needed_name: MATEMATICA DISCRETA 1
   - type: logical
     logical_operator: or
     operands:
@@ -5311,6 +5303,32 @@
     - type: subject
       subject_needed_code: '1373'
       subject_needed_name: PROGRAMACION 1
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1321P
+      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 2
+      needs: exam
+    - type: subject
+      subject_needed_code: '1321'
+      subject_needed_name: PROGRAMACION 2
+      needs: course
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 1023P
+      subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '2044'
+      subject_needed_name: FUNDAMENTOS DE LA COMBINATORIA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1023'
+      subject_needed_name: MATEMATICA DISCRETA 1
       needs: exam
   subject_code: '1323'
   is_exam: false
@@ -5722,33 +5740,6 @@
     logical_operator: or
     operands:
     - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: 1030P
-      subject_needed_name: CREDITOS NO ACUM GAL1
-      needs: all
-    - type: subject
-      subject_needed_code: '1030'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: all
-    - type: subject
-      subject_needed_code: '1071'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: all
-    - type: subject
-      subject_needed_code: '1053'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-      needs: all
-    - type: subject
-      subject_needed_code: GAL1P
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
-      needs: all
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
       subject_needed_code: 1153P
       subject_needed_name: CREDITOS NO ACUM FISICA 3
       needs: exam
@@ -5767,6 +5758,10 @@
     - type: subject
       subject_needed_code: '1173'
       subject_needed_name: FISICA 3
+      needs: exam
+    - type: subject
+      subject_needed_code: CCT20
+      subject_needed_name: FÍSICA II
       needs: exam
   - type: logical
     logical_operator: or
@@ -5791,6 +5786,10 @@
       subject_needed_code: '1171'
       subject_needed_name: FISICA 1
       needs: all
+    - type: subject
+      subject_needed_code: CCT10
+      subject_needed_name: FÍSICA I
+      needs: all
   - type: logical
     logical_operator: or
     operands:
@@ -5809,6 +5808,10 @@
     - type: subject
       subject_needed_code: '1052'
       subject_needed_name: CALCULO 1 (ANUAL)
+      needs: all
+    - type: subject
+      subject_needed_code: DMA01
+      subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
       needs: all
     - type: subject
       subject_needed_code: MAT33
@@ -5838,6 +5841,10 @@
       subject_needed_name: CALCULO 2
       needs: all
     - type: subject
+      subject_needed_code: DMA06
+      subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+      needs: all
+    - type: subject
       subject_needed_code: MAT33
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: all
@@ -5848,6 +5855,37 @@
     - type: subject
       subject_needed_code: 1062P
       subject_needed_name: CREDITOS NO ACUM CDIVV
+      needs: all
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: all
+    - type: subject
+      subject_needed_code: 1030P
+      subject_needed_name: CREDITOS NO ACUM GAL1
+      needs: all
+    - type: subject
+      subject_needed_code: '1030'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: all
+    - type: subject
+      subject_needed_code: '1071'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: all
+    - type: subject
+      subject_needed_code: '1053'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+      needs: all
+    - type: subject
+      subject_needed_code: GAL1P
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+      needs: all
+    - type: subject
+      subject_needed_code: DMA03
+      subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
       needs: all
   subject_code: '1456'
   is_exam: false
@@ -9137,27 +9175,40 @@
   subject_code: '2422'
   is_exam: false
 - type: logical
-  logical_operator: not
+  logical_operator: and
   operands:
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: SD10
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: all
+      - type: subject
+        subject_needed_code: 1512P
+        subject_needed_name: CREDITOS NO ACUM DISEÑO LOGICO
+        needs: all
+      - type: subject
+        subject_needed_code: CP51
+        subject_needed_name: DISEÑO LOGICO
+        needs: all
+      - type: subject
+        subject_needed_code: '1512'
+        subject_needed_name: DISEÑO LOGICO
+        needs: all
   - type: logical
     logical_operator: or
     operands:
+    - type: credits
+      credits: 15
+      group: 12
     - type: subject
-      subject_needed_code: SD10
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: all
-    - type: subject
-      subject_needed_code: 1512P
-      subject_needed_name: CREDITOS NO ACUM DISEÑO LOGICO
-      needs: all
-    - type: subject
-      subject_needed_code: CP51
-      subject_needed_name: DISEÑO LOGICO
-      needs: all
-    - type: subject
-      subject_needed_code: '1512'
-      subject_needed_name: DISEÑO LOGICO
-      needs: all
+      needs: course
+      subject_needed_code: '5904'
+      subject_needed_name: TALLER DE INTRODUCCION A LA ING. ELECTRICA
   subject_code: '2512'
   is_exam: false
 - type: logical
@@ -12056,18 +12107,18 @@
   - type: logical
     logical_operator: not
     operands:
-    - type: subject
-      needs: all
-      subject_needed_code: '1220'
-      subject_needed_name: TALLER DE DISEÑO, COM. Y REPRES. GRAFICA
-  - type: logical
-    logical_operator: not
-    operands:
-    - type: subject
-      needs: all
-      subject_needed_code: '1266'
-      subject_needed_name: TALLER DE REPRESENTACION Y COMUNICACION GRAFICA_MODULO
-        A
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: '1220'
+        subject_needed_name: TALLER DE DISEÑO, COM. Y REPRES. GRAFICA
+        needs: all
+      - type: subject
+        subject_needed_code: '1266'
+        subject_needed_name: TALLER DE REPRESENTACION Y COMUNICACION GRAFICA_MODULO
+          A
+        needs: all
   subject_code: '5904'
   is_exam: false
 - type: logical
