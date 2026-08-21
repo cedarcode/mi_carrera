@@ -4,8 +4,8 @@ ruby file: ".ruby-version"
 
 gem 'rails', '~> 8.1.1'
 
-gem 'appsignal', '~> 4.9'
-gem 'bootsnap', '~> 1.24', require: false
+gem 'appsignal', '~> 4.10'
+gem 'bootsnap', '~> 1.25', require: false
 gem 'devise', '~> 5.0'
 gem "devise-webauthn", "~> 0.5.0"
 gem 'factory_bot_rails', '~> 6.5'
@@ -45,7 +45,7 @@ end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.46'
+  gem 'selenium-webdriver', '~> 4.47'
   gem 'shoulda-matchers', '~> 8.0'
   # TODO: unpin this once https://github.com/joshmfrankel/simplecov-check-action/issues/37 is fixed
   gem 'simplecov', '< 1', require: false
