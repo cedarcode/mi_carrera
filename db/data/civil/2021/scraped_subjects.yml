@@ -862,7 +862,7 @@
 '1373':
   code: '1373'
   name: PROGRAMACION 1
-  has_exam: true
+  has_exam: false
   subject_groups: []
 '1408':
   code: '1408'
