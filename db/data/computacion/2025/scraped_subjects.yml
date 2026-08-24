@@ -225,6 +225,11 @@
   name: ECUACIONES DIFERENCIALES
   has_exam: false
   subject_groups: []
+'1075':
+  code: '1075'
+  name: PROBABILIDAD Y ESTADISTICA
+  has_exam: true
+  subject_groups: []
 '1076':
   code: '1076'
   name: CALCULO 3
