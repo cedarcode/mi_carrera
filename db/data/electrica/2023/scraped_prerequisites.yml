@@ -222,6 +222,10 @@
         subject_needed_code: 1025P
         subject_needed_name: CREDITOS NO ACUM PROB Y EST.
         needs: exam
+      - type: subject
+        subject_needed_code: '1075'
+        subject_needed_name: PROBABILIDAD Y ESTADISTICA
+        needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -6545,41 +6549,6 @@
   - type: logical
     logical_operator: and
     operands:
-    - type: credits
-      credits: 5
-      group: 21
-    - type: credits
-      credits: 40
-      group: 12
-    - type: credits
-      credits: 59
-      group: 11
-    - type: subject
-      needs: course
-      subject_needed_code: '1457'
-      subject_needed_name: SEÑALES Y SISTEMAS
-    - type: subject
-      needs: course
-      subject_needed_code: '1456'
-      subject_needed_name: TEORIA DE CIRCUITOS
-    - type: logical
-      logical_operator: or
-      operands:
-      - type: subject
-        subject_needed_code: 1025P
-        subject_needed_name: CREDITOS NO ACUM PROB Y EST.
-        needs: exam
-      - type: subject
-        subject_needed_code: '1025'
-        subject_needed_name: PROBABILIDAD Y ESTADISTICA
-        needs: exam
-      - type: subject
-        subject_needed_code: '1075'
-        subject_needed_name: PROBABILIDAD Y ESTADISTICA
-        needs: exam
-  - type: logical
-    logical_operator: and
-    operands:
     - type: logical
       logical_operator: or
       operands:
@@ -6609,6 +6578,60 @@
       - type: subject
         subject_needed_code: '1075'
         subject_needed_name: PROBABILIDAD Y ESTADISTICA
+        needs: exam
+      - type: subject
+        subject_needed_code: CH201
+        subject_needed_name: PROBABILIDAD Y ESTADÍSTICA
+        needs: exam
+  - type: logical
+    logical_operator: and
+    operands:
+    - type: credits
+      credits: 5
+      group: 21
+    - type: credits
+      credits: 40
+      group: 12
+    - type: credits
+      credits: 59
+      group: 11
+    - type: subject
+      needs: course
+      subject_needed_code: '1457'
+      subject_needed_name: SEÑALES Y SISTEMAS
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1025P
+        subject_needed_name: CREDITOS NO ACUM PROB Y EST.
+        needs: exam
+      - type: subject
+        subject_needed_code: '1025'
+        subject_needed_name: PROBABILIDAD Y ESTADISTICA
+        needs: exam
+      - type: subject
+        subject_needed_code: '1075'
+        subject_needed_name: PROBABILIDAD Y ESTADISTICA
+        needs: exam
+      - type: subject
+        subject_needed_code: CH201
+        subject_needed_name: PROBABILIDAD Y ESTADÍSTICA
+        needs: exam
+    - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: 1456P
+        subject_needed_name: CREDITOS NO ACUM TEORIA DE CIRCUITOS
+        needs: course
+      - type: subject
+        subject_needed_code: '1456'
+        subject_needed_name: TEORIA DE CIRCUITOS
+        needs: course
+      - type: subject
+        subject_needed_code: LIB55
+        subject_needed_name: TEORIA DE LOS CIRCUITOS
         needs: exam
   subject_code: '1460'
   is_exam: false
@@ -12135,18 +12158,29 @@
     group: 21
   - type: subject
     needs: course
-    subject_needed_code: '1456'
-    subject_needed_name: TEORIA DE CIRCUITOS
-  - type: subject
-    needs: course
     subject_needed_code: '1457'
     subject_needed_name: SEÑALES Y SISTEMAS
   - type: logical
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: '1456'
+      subject_needed_name: TEORIA DE CIRCUITOS
+      needs: course
+    - type: subject
+      subject_needed_code: LIB55
+      subject_needed_name: TEORIA DE LOS CIRCUITOS
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: 1028P
       subject_needed_name: CREDITOS NO ACUM EC. DIFERENCIALES
+      needs: exam
+    - type: subject
+      subject_needed_code: CIM24
+      subject_needed_name: ECUACIONES DIFERENCIALES
       needs: exam
     - type: subject
       subject_needed_code: '1028'
@@ -12181,6 +12215,10 @@
     - type: subject
       subject_needed_code: '1154'
       subject_needed_name: FISICA EXPERIMENTAL 1
+      needs: course
+    - type: subject
+      subject_needed_code: CIM18
+      subject_needed_name: FÍSICA EXPERIMENTAL 1 (FE1)
       needs: course
     - type: subject
       subject_needed_code: '1124'
