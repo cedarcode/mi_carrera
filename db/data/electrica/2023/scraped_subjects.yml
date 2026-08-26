@@ -2130,7 +2130,7 @@ CH201:
   subject_groups:
   - group: '011'
     credits: 10
-  has_exam: false
+  has_exam: true
 CIM10:
   code: CIM10
   name: CÁLCULO VECTORIAL
@@ -2151,7 +2151,7 @@ CIM24:
   subject_groups:
   - group: '011'
     credits: 10
-  has_exam: false
+  has_exam: true
 CIM26:
   code: CIM26
   name: FÍSICA TÉRMICA
@@ -2669,7 +2669,7 @@ LIB55:
   subject_groups:
   - group: '021'
     credits: 8
-  has_exam: false
+  has_exam: true
 M12:
   code: M12
   name: CREDITOS ASIGNADOS POR REVALIDA
