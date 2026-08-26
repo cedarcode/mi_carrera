@@ -1051,6 +1051,65 @@
         subject_needed_code: 1025T
         subject_needed_name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
         needs: exam
+      - type: subject
+        subject_needed_code: '1075'
+        subject_needed_name: PROBABILIDAD Y ESTADISTICA
+        needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1021'
+      subject_needed_name: ALGEBRA LINEAL
+      needs: course
+    - type: subject
+      subject_needed_code: CM14
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: M9
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1030P
+      subject_needed_name: CREDITOS NO ACUM GAL1
+      needs: exam
+    - type: subject
+      subject_needed_code: CP2
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: CP23
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: '1030'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1071'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 171L
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 171Q
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1053'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+      needs: exam
+    - type: subject
+      subject_needed_code: GAL1P
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+      needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -1152,61 +1211,6 @@
     - type: subject
       subject_needed_code: 1061P
       subject_needed_name: CREDITOS NO ACUM CDIV
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1021'
-      subject_needed_name: ALGEBRA LINEAL
-      needs: course
-    - type: subject
-      subject_needed_code: CM14
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: M9
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: 1030P
-      subject_needed_name: CREDITOS NO ACUM GAL1
-      needs: exam
-    - type: subject
-      subject_needed_code: CP2
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-      needs: exam
-    - type: subject
-      subject_needed_code: CP23
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: '1030'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1071'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: 171L
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: 171Q
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1053'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-      needs: exam
-    - type: subject
-      subject_needed_code: GAL1P
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
       needs: exam
   subject_code: '1025'
   is_exam: false
@@ -15547,6 +15551,10 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: 1027P
+      subject_needed_name: CREDITOS NO ACUM. CON LOGICA
+      needs: exam
+    - type: subject
       subject_needed_code: CP4
       subject_needed_name: LOGICA
       needs: exam
@@ -15565,6 +15573,10 @@
   - type: logical
     logical_operator: or
     operands:
+    - type: subject
+      subject_needed_code: 1323P
+      subject_needed_name: CREDITOS NO ACUM. CON PROGRAMACION 3
+      needs: exam
     - type: subject
       subject_needed_code: CP29
       subject_needed_name: PROGRAMACION III
