@@ -28,6 +28,10 @@
         subject_needed_code: 1025P
         subject_needed_name: CREDITOS NO ACUM PROB Y EST.
         needs: exam
+      - type: subject
+        subject_needed_code: '1075'
+        subject_needed_name: PROBABILIDAD Y ESTADISTICA
+        needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -7170,6 +7174,10 @@
       subject_needed_name: FUNDAMENTOS DE INGENIERIA AMBIENTAL
       needs: course
     - type: subject
+      subject_needed_code: 1854B
+      subject_needed_name: FUNDAMENTOS DE INGENIERIA Y SALUD AMBIENTAL
+      needs: course
+    - type: subject
       subject_needed_code: '2259'
       subject_needed_name: FUNDAMENTOS DE INGENIERIA Y SALUD AMBIENTAL
       needs: course
@@ -7367,6 +7375,25 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: '1838'
+      subject_needed_name: COMPLEMENTOS DE HIDROLOGIA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1800'
+      subject_needed_name: HIDROLOGIA APLICADA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1819'
+      subject_needed_name: HIDROLOGIA APLICADA
+      needs: exam
+    - type: subject
+      subject_needed_code: '1833'
+      subject_needed_name: HIDROLOGIA E HIDRAULICA APLICADAS
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: '1837'
       subject_needed_name: COMPLEMENTOS DE HIDRAULICA APLICADA
       needs: exam
@@ -7402,27 +7429,12 @@
       subject_needed_name: FUNDAMENTOS DE INGENIERIA AMBIENTAL
       needs: exam
     - type: subject
-      subject_needed_code: '2259'
+      subject_needed_code: 1854B
       subject_needed_name: FUNDAMENTOS DE INGENIERIA Y SALUD AMBIENTAL
       needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
     - type: subject
-      subject_needed_code: '1838'
-      subject_needed_name: COMPLEMENTOS DE HIDROLOGIA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1800'
-      subject_needed_name: HIDROLOGIA APLICADA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1819'
-      subject_needed_name: HIDROLOGIA APLICADA
-      needs: exam
-    - type: subject
-      subject_needed_code: '1833'
-      subject_needed_name: HIDROLOGIA E HIDRAULICA APLICADAS
+      subject_needed_code: '2259'
+      subject_needed_name: FUNDAMENTOS DE INGENIERIA Y SALUD AMBIENTAL
       needs: exam
   subject_code: '1855'
   is_exam: false
@@ -8337,6 +8349,57 @@
     logical_operator: or
     operands:
     - type: subject
+      subject_needed_code: '1021'
+      subject_needed_name: ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: CM14
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: M9
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1030P
+      subject_needed_name: CREDITOS NO ACUM GAL1
+      needs: exam
+    - type: subject
+      subject_needed_code: CP2
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: CP23
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: '1030'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1071'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 171Q
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1053'
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+      needs: exam
+    - type: subject
+      subject_needed_code: GAL1P
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
       subject_needed_code: CP1
       subject_needed_name: ANALISIS MATEMATICO I
       needs: exam
@@ -8419,8 +8482,12 @@
       subject_needed_name: COMPUTACION (P. 74)
       needs: exam
     - type: subject
-      subject_needed_code: 1322P
-      subject_needed_name: CREDITOS NO ACUM PROGRAMACION 1
+      subject_needed_code: '1411'
+      subject_needed_name: COMPUTACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 1411P
+      subject_needed_name: CREDITOS NO ACUM COMPUTACION 1
       needs: exam
     - type: subject
       subject_needed_code: CP36
@@ -8432,18 +8499,6 @@
       needs: exam
     - type: subject
       subject_needed_code: IN35
-      subject_needed_name: PROGRAMACION 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1320'
-      subject_needed_name: PROGRAMACION 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1322'
-      subject_needed_name: PROGRAMACION 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1373'
       subject_needed_name: PROGRAMACION 1
       needs: exam
     - type: subject
@@ -8488,57 +8543,6 @@
     - type: subject
       subject_needed_code: 158Q
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
-      needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
-    - type: subject
-      subject_needed_code: '1021'
-      subject_needed_name: ALGEBRA LINEAL
-      needs: exam
-    - type: subject
-      subject_needed_code: CM14
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: M9
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: 1030P
-      subject_needed_name: CREDITOS NO ACUM GAL1
-      needs: exam
-    - type: subject
-      subject_needed_code: CP2
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-      needs: exam
-    - type: subject
-      subject_needed_code: CP23
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL (P. 74)
-      needs: exam
-    - type: subject
-      subject_needed_code: '1030'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1071'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: 171Q
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1053'
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-      needs: exam
-    - type: subject
-      subject_needed_code: GAL1P
-      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
       needs: exam
   subject_code: '2041'
   is_exam: false
@@ -10074,6 +10078,10 @@
     - type: subject
       subject_needed_code: '2254'
       subject_needed_name: FUNDAMENTOS DE INGENIERIA AMBIENTAL
+      needs: course
+    - type: subject
+      subject_needed_code: 1854B
+      subject_needed_name: FUNDAMENTOS DE INGENIERIA Y SALUD AMBIENTAL
       needs: course
     - type: subject
       subject_needed_code: '2259'
