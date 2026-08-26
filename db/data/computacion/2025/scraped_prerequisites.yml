@@ -36,6 +36,10 @@
         subject_needed_code: 1025T
         subject_needed_name: CREDITOS NO ACUM PROBABILIDAD Y ESTADISTICA
         needs: exam
+      - type: subject
+        subject_needed_code: '1075'
+        subject_needed_name: PROBABILIDAD Y ESTADISTICA
+        needs: exam
   - type: logical
     logical_operator: or
     operands:
