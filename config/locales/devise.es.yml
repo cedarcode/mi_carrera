@@ -12,6 +12,7 @@ es:
       last_attempt: "Tienes un intento más antes de que tu cuenta sea bloqueada."
       passkey_verification_failed: "Hubo un error agregando esta passkey."
       passkey_deletion_failed: "Hubo un error eliminando esta passkey."
+      reauthentication_failed: "No pudimos verificar tu identidad. Inténtalo de nuevo."
     mailer:
       reset_password_instructions:
         subject: "Instrucciones de cambio de contraseña"

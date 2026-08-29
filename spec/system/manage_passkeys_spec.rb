@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Manage passkeys' do
+  include ActiveSupport::Testing::TimeHelpers
+
   let!(:user) { create(:user) }
   ENV['ENABLE_PASSKEYS'] = 'true'
 
@@ -44,7 +46,21 @@ RSpec.describe 'Manage passkeys' do
 
       visit edit_user_registration_path
 
+      # The grant the sign-in wrote expires, so the next visit is interrupted.
+      travel Devise.reauthentication_period + 1.minute
       click_on "Administrar Passkeys"
+
+      expect(page).to have_text "Verifica tu identidad"
+
+      fill_in "Contraseña", with: "wrong password"
+      click_on "Confirmar"
+
+      expect(page).to have_text "No pudimos verificar tu identidad"
+
+      fill_in "Contraseña", with: user.password
+      click_on "Confirmar"
+
+      expect(page).to have_text "Administra tus Passkeys"
 
       within("li", text: "My new passkey") do
         accept_confirm "¿Seguro que quieres borrar esta Passkey?" do
