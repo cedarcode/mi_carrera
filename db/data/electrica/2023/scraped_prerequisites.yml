@@ -5634,6 +5634,10 @@
       subject_needed_code: '1373'
       subject_needed_name: PROGRAMACION 1
       needs: exam
+    - type: subject
+      subject_needed_code: SRN17
+      subject_needed_name: PROGRAMACIÓN I- CIO CT-LHRH
+      needs: exam
   subject_code: '1375'
   is_exam: false
 - type: logical
