@@ -2558,6 +2558,11 @@
   - group: '4083'
     credits: 9
   has_exam: true
+2044P:
+  code: 2044P
+  name: CREDITOS NO ACUM. CON FUNDAMENTOS DE LA COMBINATORIA
+  has_exam: true
+  subject_groups: []
 '2045':
   code: '2045'
   name: GESTION DE SOFTWARE PARA EQUIPOS ALTAMENTE PERFORMANTES
