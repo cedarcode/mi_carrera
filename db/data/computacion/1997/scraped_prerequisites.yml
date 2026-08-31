@@ -6967,6 +6967,13 @@
       subject_needed_code: CP29
       subject_needed_name: PROGRAMACION III
   - type: logical
+    logical_operator: not
+    operands:
+    - type: subject
+      needs: exam
+      subject_needed_code: 1323P
+      subject_needed_name: CREDITOS NO ACUM. CON PROGRAMACION 3
+  - type: logical
     logical_operator: or
     operands:
     - type: logical
@@ -6998,21 +7005,25 @@
       logical_operator: or
       operands:
       - type: subject
+        subject_needed_code: 2044P
+        subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE LA COMBINATORIA
+        needs: exam
+      - type: subject
         subject_needed_code: 1023P
         subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
-        needs: all
+        needs: exam
       - type: subject
         subject_needed_code: '2044'
         subject_needed_name: FUNDAMENTOS DE LA COMBINATORIA
-        needs: all
+        needs: exam
       - type: subject
         subject_needed_code: '1023'
         subject_needed_name: MATEMATICA DISCRETA 1
-        needs: all
+        needs: exam
       - type: subject
         subject_needed_code: SRN14
         subject_needed_name: MATEMÁTICA DISCRETA I
-        needs: all
+        needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -8400,6 +8411,10 @@
     - type: subject
       subject_needed_code: '1373'
       subject_needed_name: PROGRAMACION 1
+      needs: exam
+    - type: subject
+      subject_needed_code: SRN17
+      subject_needed_name: PROGRAMACIÓN I- CIO CT-LHRH
       needs: exam
   subject_code: '1375'
   is_exam: false
