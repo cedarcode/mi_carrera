@@ -734,6 +734,11 @@ SRN13:
   - group: III.II
     credits: 10
   has_exam: false
+SRN17:
+  code: SRN17
+  name: PROGRAMACIÓN I- CIO CT-LHRH
+  has_exam: true
+  subject_groups: []
 SRN45:
   code: SRN45
   name: MATEMATICA INICIAL-OPTATIVA
