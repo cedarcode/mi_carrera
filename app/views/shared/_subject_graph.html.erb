@@ -1,0 +1,12 @@
+<%= render "shared/graph_legend" %>
+
+<p class="mb-2 text-xs text-gray-500">
+  <span class="hidden sm:inline">Click en una materia para ver sus previas y dependencias. Doble click para ver detalles.</span>
+  <span class="sm:hidden">Toca una materia para ver sus previas. Toca de nuevo para ver detalles.</span>
+</p>
+
+<%= render SubjectGraphComponent.new(
+  subjects: subjects,
+  current_student: current_student,
+  semester_map: local_assigns[:semester_map]
+) %>
