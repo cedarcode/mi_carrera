@@ -5,7 +5,7 @@ ruby file: ".ruby-version"
 gem 'rails', '~> 8.1.1'
 
 gem 'appsignal', '~> 4.10'
-gem 'bootsnap', '~> 1.25', require: false
+gem 'bootsnap', '~> 1.26', require: false
 gem 'devise', '~> 5.0'
 gem "devise-webauthn", "~> 0.5.0"
 gem 'factory_bot_rails', '~> 6.5'
@@ -37,7 +37,7 @@ group :development do
   gem "annotaterb", "~> 4.24"
   gem "letter_opener", "~> 1.10"
   gem "lookbook", "~> 2.3"
-  gem 'rubocop', '~> 1.90'
+  gem 'rubocop', '~> 1.91'
   gem 'rubocop-performance', '~> 1.27', require: false
   gem 'rubocop-rails', '~> 2.37', require: false
   gem 'web-console', '~> 4.3'
@@ -45,7 +45,7 @@ end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.48'
+  gem 'selenium-webdriver', '~> 4.49'
   gem 'shoulda-matchers', '~> 8.0'
   # TODO: unpin this once https://github.com/joshmfrankel/simplecov-check-action/issues/37 is fixed
   gem 'simplecov', '< 1', require: false
