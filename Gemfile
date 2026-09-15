@@ -10,6 +10,7 @@ gem 'devise', '~> 5.0'
 gem "devise-webauthn", "~> 0.5.0"
 gem 'factory_bot_rails', '~> 6.5'
 gem 'importmap-rails', '~> 2.2'
+gem 'json', '< 3' # https://github.com/rails/rails/issues/58685
 gem "omniauth", "~> 2.1"
 gem "omniauth-google-oauth2", '~> 1.2'
 gem "omniauth-rails_csrf_protection", '~> 2.0'
