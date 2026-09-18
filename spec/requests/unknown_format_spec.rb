@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Unknown request formats', type: :request do
-  # AppSignal's Rack middleware sits inside ActionDispatch's exception handling, so it only
-  # reports errors that escape the action. Turning show_exceptions off makes that escape
-  # visible here: without the rescue_from, these raise instead of answering.
+  # show_exceptions off makes the escape visible: without the rescue_from these raise
+  # instead of answering, which is exactly what AppSignal reports.
   around do |example|
     original = Rails.application.env_config['action_dispatch.show_exceptions']
     Rails.application.env_config['action_dispatch.show_exceptions'] = :none
