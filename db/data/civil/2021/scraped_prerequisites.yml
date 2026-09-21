@@ -14301,6 +14301,38 @@
   logical_operator: and
   operands:
   - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: 2206P
+      subject_needed_name: CREDITOS NO ACUM GEOLOGIA DE INGENIERIA
+      needs: all
+    - type: subject
+      subject_needed_code: '2206'
+      subject_needed_name: GEOLOGIA DE INGENIERIA
+      needs: all
+    - type: subject
+      subject_needed_code: CP253
+      subject_needed_name: GEOLOGIA TECNICA
+      needs: all
+    - type: subject
+      subject_needed_code: '0502'
+      subject_needed_name: GEOTECNICA II
+      needs: all
+    - type: subject
+      subject_needed_code: '2204'
+      subject_needed_name: GEOTECNICA 1
+      needs: all
+    - type: subject
+      subject_needed_code: '2205'
+      subject_needed_name: GEOTECNICA 2
+      needs: all
+  subject_code: '2535'
+  is_exam: false
+- type: logical
+  logical_operator: and
+  operands:
+  - type: logical
     logical_operator: not
     operands:
     - type: subject
