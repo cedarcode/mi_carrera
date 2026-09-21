@@ -80,7 +80,7 @@ GEM
       public_suffix (>= 2.0.2, < 8.0)
     afm (1.0.0)
     android_key_attestation (0.3.0)
-    annotaterb (4.24.0)
+    annotaterb (4.25.0)
       activerecord (>= 6.0.0)
       activesupport (>= 6.0.0)
     anonymous_loader (0.1.3)
@@ -499,7 +499,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotaterb (~> 4.24)
+  annotaterb (~> 4.25)
   appsignal (~> 4.10)
   bootsnap (~> 1.26)
   brakeman (~> 8.0)
