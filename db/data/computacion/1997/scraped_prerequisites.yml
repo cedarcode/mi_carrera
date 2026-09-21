@@ -7136,8 +7136,16 @@
       logical_operator: or
       operands:
       - type: subject
+        subject_needed_code: 2044P
+        subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE LA COMBINATORIA
+        needs: exam
+      - type: subject
         subject_needed_code: 1023P
         subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
+        needs: exam
+      - type: subject
+        subject_needed_code: '2044'
+        subject_needed_name: FUNDAMENTOS DE LA COMBINATORIA
         needs: exam
       - type: subject
         subject_needed_code: '1023'
