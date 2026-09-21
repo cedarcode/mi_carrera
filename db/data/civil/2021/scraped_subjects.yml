@@ -2370,6 +2370,13 @@
   - group: '4453'
     credits: 7
   has_exam: true
+'2535':
+  code: '2535'
+  name: GEOFISICA E HIDRAULICA EN SUELOS
+  subject_groups:
+  - group: '4693'
+    credits: 8
+  has_exam: false
 '2803':
   code: '2803'
   name: TALLER DE INGENIERIA CIVIL
