@@ -1524,6 +1524,13 @@
   name: CREDITOS NO ACUM LABORATORIO DE MECANICA DE SUELO
   has_exam: false
   subject_groups: []
+'2223':
+  code: '2223'
+  name: TALLER PARA FORTALECER HABILIDADES BLANDAS
+  subject_groups:
+  - group: '5291'
+    credits: 2
+  has_exam: false
 '2230':
   code: '2230'
   name: ELEMENTOS DE TOPOGRAFIA
