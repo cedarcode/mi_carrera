@@ -40,7 +40,7 @@ group :development do
   gem "lookbook", "~> 2.3"
   gem 'rubocop', '~> 1.91'
   gem 'rubocop-performance', '~> 1.27', require: false
-  gem 'rubocop-rails', '~> 2.37', require: false
+  gem 'rubocop-rails', '~> 2.38', require: false
   gem 'web-console', '~> 4.3'
 end
 
