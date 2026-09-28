@@ -6,6 +6,10 @@
   <%= turbo_stream.replace "not-planned-subjects", method: :morph do %>
     <%= render "subjects/not_planned_subjects_list", subjects: @not_planned_approved_subjects %>
   <% end %>
+
+  <%= turbo_stream.replace "groups-credits", method: :morph do %>
+    <%= render "subjects/groups_credits_list", groups_and_credits: @groups_and_credits, all_group_credits_met: @all_group_credits_met, total_credits: @total_credits %>
+  <% end %>
 <% end %>
 
 <% @semesters_to_refresh.each do |semester| %>
