@@ -10884,7 +10884,7 @@
       subject_needed_code: '5852'
       subject_needed_name: FUNDAMENTOS DE APRENDIZAJE AUTOMATICO Y RECONOCIMIENTO
         DE PATRONES
-      needs: exam
+      needs: course
     - type: subject
       subject_needed_code: '5842'
       subject_needed_name: RECONOCIMIENTO DE PATRONES
