@@ -1423,6 +1423,24 @@
     logical_operator: not
     operands:
     - type: logical
+      logical_operator: or
+      operands:
+      - type: subject
+        subject_needed_code: MA15
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: M24
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+      - type: subject
+        subject_needed_code: M5
+        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+        needs: exam
+  - type: logical
+    logical_operator: not
+    operands:
+    - type: logical
       logical_operator: and
       operands:
       - type: subject
@@ -1454,24 +1472,6 @@
       - type: subject
         subject_needed_code: CP2
         subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL
-        needs: exam
-  - type: logical
-    logical_operator: not
-    operands:
-    - type: logical
-      logical_operator: or
-      operands:
-      - type: subject
-        subject_needed_code: MA15
-        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-        needs: exam
-      - type: subject
-        subject_needed_code: M24
-        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-        needs: exam
-      - type: subject
-        subject_needed_code: M5
-        subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
   - type: logical
     logical_operator: or
@@ -1522,6 +1522,10 @@
     - type: subject
       subject_needed_code: MA29
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 2044P
+      subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE LA COMBINATORIA
       needs: exam
     - type: subject
       subject_needed_code: 1023P
@@ -1604,9 +1608,17 @@
         logical_operator: or
         operands:
         - type: subject
+          subject_needed_code: 2044P
+          subject_needed_name: CREDITOS NO ACUM. CON FUNDAMENTOS DE LA COMBINATORIA
+          needs: exam
+        - type: subject
           subject_needed_code: 1023P
           subject_needed_name: CREDITOS NO ACUM MATEMATICA DISCRETA 1
           needs: exam
+        - type: subject
+          subject_needed_code: '2044'
+          subject_needed_name: FUNDAMENTOS DE LA COMBINATORIA
+          needs: course
         - type: subject
           subject_needed_code: '1023'
           subject_needed_name: MATEMATICA DISCRETA 1
@@ -17553,7 +17565,7 @@
       subject_needed_code: '5852'
       subject_needed_name: FUNDAMENTOS DE APRENDIZAJE AUTOMATICO Y RECONOCIMIENTO
         DE PATRONES
-      needs: exam
+      needs: course
     - type: subject
       subject_needed_code: '5842'
       subject_needed_name: RECONOCIMIENTO DE PATRONES
