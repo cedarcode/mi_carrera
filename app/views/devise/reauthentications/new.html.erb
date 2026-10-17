@@ -1,0 +1,17 @@
+<div class="flex flex-col justify-center items-center p-6 space-y-6">
+  <h2 class="text-3xl/9 text-neutral-700">Verifica tu identidad</h2>
+
+  <div class="w-full max-w-md space-y-6">
+    <%= render 'shared/alert' if flash[:alert] %>
+
+    <p class="text-gray-700">
+      Para administrar tus passkeys necesitamos confirmar que eres tú.
+    </p>
+
+    <%= form_with(model: resource, url: user_reauthentication_path, method: :post, class: "flex flex-col space-y-6") do |f| %>
+      <%= render PasswordFieldComponent.new(form: f, attribute: :password, label: "Contraseña", input_options: { required: true, autofocus: true, autocomplete: "current-password" }) %>
+
+      <%= render ButtonComponent.new(form: f, label: "Confirmar") %>
+    <% end %>
+  </div>
+</div>
