@@ -38,7 +38,7 @@ group :development do
   gem "annotaterb", "~> 4.25"
   gem "letter_opener", "~> 1.10"
   gem "lookbook", "~> 2.3"
-  gem 'rubocop', '~> 1.91'
+  gem 'rubocop', '~> 1.92'
   gem 'rubocop-performance', '~> 1.27', require: false
   gem 'rubocop-rails', '~> 2.38', require: false
   gem 'web-console', '~> 4.3'
@@ -46,7 +46,7 @@ end
 
 group :test do
   gem 'capybara', '~> 3.40'
-  gem 'selenium-webdriver', '~> 4.50'
+  gem 'selenium-webdriver', '~> 4.51'
   gem 'shoulda-matchers', '~> 8.0'
   # TODO: unpin this once https://github.com/joshmfrankel/simplecov-check-action/issues/37 is fixed
   gem 'simplecov', '< 1', require: false
