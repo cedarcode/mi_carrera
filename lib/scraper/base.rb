@@ -51,7 +51,7 @@ module Scraper
     def initialize(degree, plan)
       @degree = degree
       @plan = plan
-      @logger = Rails.logger.tagged("Scraper - #{degree[:bedelias_name]} - #{plan}")
+      @logger = ActiveSupport::TaggedLogging.logger($stdout).tagged("Scraper - #{degree[:bedelias_name]} - #{plan}")
     end
 
     private
