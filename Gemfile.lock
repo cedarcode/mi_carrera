@@ -94,6 +94,7 @@ GEM
     base64 (0.3.0)
     bcrypt (3.1.22)
     bcrypt_pbkdf (1.1.2)
+    benchmark (0.5.0)
     bigdecimal (3.3.1)
     bindata (2.5.1)
     bindex (0.8.1)
@@ -498,6 +499,7 @@ PLATFORMS
 DEPENDENCIES
   annotaterb (~> 4.25)
   appsignal (~> 5.0)
+  benchmark (~> 0.5.0)
   bootsnap (~> 1.26)
   brakeman (~> 8.1)
   capybara (~> 3.40)

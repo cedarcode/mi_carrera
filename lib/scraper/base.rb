@@ -1,3 +1,4 @@
+require 'benchmark'
 require 'capybara'
 require 'capybara/dsl'
 require 'selenium-webdriver'
@@ -104,7 +105,8 @@ module Scraper
 
     def wait_for_loading_widget_to_disappear
       if has_css?('.ui-widget-overlay')
-        assert_no_selector('.ui-widget-overlay', wait: 10)
+        elapsed = Benchmark.realtime { assert_no_selector('.ui-widget-overlay', wait: 10) }
+        logger.info "Loading widget disappeared after #{elapsed.round(2)}s"
       end
     end
 
