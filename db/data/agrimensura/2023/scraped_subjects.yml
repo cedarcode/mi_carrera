@@ -562,7 +562,7 @@ AL:
   subject_groups:
   - group: '00101'
     credits: 9
-  has_exam: false
+  has_exam: true
 B100:
   code: B100
   name: ANALISIS MATEMATICO I (ANUAL)
@@ -599,14 +599,14 @@ CAL2:
   subject_groups:
   - group: '00101'
     credits: 10
-  has_exam: false
+  has_exam: true
 CCT10:
   code: CCT10
   name: FÍSICA I
   subject_groups:
   - group: '00102'
     credits: 14
-  has_exam: false
+  has_exam: true
 CCT20:
   code: CCT20
   name: FÍSICA II
@@ -731,7 +731,7 @@ CP308:
 CP41:
   code: CP41
   name: FISICA I (P. 74)
-  has_exam: true
+  has_exam: false
   subject_groups: []
 CP43:
   code: CP43
@@ -798,21 +798,21 @@ DMA01:
   subject_groups:
   - group: '00101'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA03:
   code: DMA03
   name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
   subject_groups:
   - group: '00101'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA04:
   code: DMA04
   name: GEOMETRÍA Y ALGEBRA LINEAL II
   subject_groups:
   - group: '00101'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA05:
   code: DMA05
   name: MATEMÁTICA INICIAL
@@ -826,7 +826,7 @@ DMA06:
   subject_groups:
   - group: '00101'
     credits: 13
-  has_exam: false
+  has_exam: true
 EL31:
   code: EL31
   name: ÉTICA
@@ -1058,7 +1058,7 @@ REF04:
   subject_groups:
   - group: '00102'
     credits: 10
-  has_exam: false
+  has_exam: true
 RN101:
   code: RN101
   name: EVALUACIÓN DE IMPACTO AMBIENTAL
@@ -1079,7 +1079,7 @@ RN252:
   subject_groups:
   - group: '00102'
     credits: 12
-  has_exam: false
+  has_exam: true
 RN253:
   code: RN253
   name: FÍSICA 2 BIOCIENCIAS 2017
@@ -1093,28 +1093,28 @@ RN404:
   subject_groups:
   - group: '00101'
     credits: 11
-  has_exam: false
+  has_exam: true
 RN407:
   code: RN407
   name: MATEMATICA II
   subject_groups:
   - group: '00101'
     credits: 12
-  has_exam: false
+  has_exam: true
 SRN02:
   code: SRN02
   name: CÁLCULO I
   subject_groups:
   - group: '00101'
     credits: 16
-  has_exam: false
+  has_exam: true
 SRN03:
   code: SRN03
   name: ALGEBRA LINEAL I
   subject_groups:
   - group: '00101'
     credits: 12
-  has_exam: false
+  has_exam: true
 SRN06:
   code: SRN06
   name: TALLER DE DISEÑO
@@ -1128,21 +1128,21 @@ SRN09:
   subject_groups:
   - group: '00101'
     credits: 16
-  has_exam: false
+  has_exam: true
 SRN10:
   code: SRN10
   name: ALGEBRA LINEAL II
   subject_groups:
   - group: '00101'
     credits: 12
-  has_exam: false
+  has_exam: true
 SRN11:
   code: SRN11
   name: FÍSICA 2
   subject_groups:
   - group: '00102'
     credits: 10
-  has_exam: false
+  has_exam: true
 SRN13:
   code: SRN13
   name: ECONOMÍA POLÍTICA
