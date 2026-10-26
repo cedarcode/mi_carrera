@@ -11,7 +11,7 @@ gem "devise-webauthn", "~> 0.5.0"
 gem 'factory_bot_rails', '~> 6.5'
 gem 'importmap-rails', '~> 2.2'
 gem 'json', '< 3' # https://github.com/rails/rails/issues/58685
-gem "omniauth", "~> 2.1"
+gem "omniauth", "~> 2.3"
 gem "omniauth-google-oauth2", '~> 1.2'
 gem "omniauth-rails_csrf_protection", '~> 2.0'
 gem 'pdf-reader'
@@ -21,7 +21,7 @@ gem 'puma', '~> 8.0'
 gem 'stimulus-rails', '~> 1.3'
 gem 'tailwindcss-rails', '~> 4.6'
 gem 'turbo-rails', '~> 2.0'
-gem "view_component", "~> 4.15"
+gem "view_component", "~> 4.19"
 gem 'webauthn'
 
 group :development, :deploy do
