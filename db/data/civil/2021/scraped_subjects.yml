@@ -398,6 +398,11 @@
   - group: '4819'
     credits: 13
   has_exam: true
+1120P:
+  code: 1120P
+  name: CREDITOS NO ACUM. FISICA GENERAL 1
+  has_exam: true
+  subject_groups: []
 '1121':
   code: '1121'
   name: FISICA GENERAL 2
@@ -2453,7 +2458,7 @@ AL:
   subject_groups:
   - group: '4886'
     credits: 9
-  has_exam: false
+  has_exam: true
 ANC9:
   code: ANC9
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2547,14 +2552,14 @@ CAL2:
   subject_groups:
   - group: '4886'
     credits: 10
-  has_exam: false
+  has_exam: true
 CCT10:
   code: CCT10
   name: FÍSICA I
   subject_groups:
   - group: '4819'
     credits: 14
-  has_exam: false
+  has_exam: true
 CCT20:
   code: CCT20
   name: FÍSICA II
@@ -3491,7 +3496,7 @@ CP41:
   subject_groups:
   - group: '4819'
     credits: 22
-  has_exam: true
+  has_exam: false
 CP42:
   code: CP42
   name: FISICA II (P. 74)
@@ -3631,21 +3636,21 @@ DMA01:
   subject_groups:
   - group: '4886'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA03:
   code: DMA03
   name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
   subject_groups:
   - group: '4886'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA04:
   code: DMA04
   name: GEOMETRÍA Y ALGEBRA LINEAL II
   subject_groups:
   - group: '4886'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA05:
   code: DMA05
   name: MATEMÁTICA INICIAL
@@ -3659,7 +3664,7 @@ DMA06:
   subject_groups:
   - group: '4886'
     credits: 13
-  has_exam: false
+  has_exam: true
 E62:
   code: E62
   name: ACONDICIONAMIENTO DE EDIFICIOS
@@ -4269,7 +4274,7 @@ REF04:
   subject_groups:
   - group: '4819'
     credits: 10
-  has_exam: false
+  has_exam: true
 RETEM:
   code: RETEM
   name: INTRODUCCION AL CONOCIMIENTO DEL AMBIENTE Y LA SUSTENTABILIDAD (RETEMA)
@@ -4297,7 +4302,7 @@ RN252:
   subject_groups:
   - group: '4819'
     credits: 12
-  has_exam: false
+  has_exam: true
 RN253:
   code: RN253
   name: FÍSICA 2 BIOCIENCIAS 2017
@@ -4311,14 +4316,14 @@ RN404:
   subject_groups:
   - group: '4886'
     credits: 11
-  has_exam: false
+  has_exam: true
 RN407:
   code: RN407
   name: MATEMATICA II
   subject_groups:
   - group: '4886'
     credits: 12
-  has_exam: false
+  has_exam: true
 S2:
   code: S2
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -4339,7 +4344,7 @@ SRN03:
   subject_groups:
   - group: '4886'
     credits: 12
-  has_exam: false
+  has_exam: true
 SRN09:
   code: SRN09
   name: CÁLCULO II
@@ -4353,14 +4358,14 @@ SRN10:
   subject_groups:
   - group: '4886'
     credits: 12
-  has_exam: false
+  has_exam: true
 SRN11:
   code: SRN11
   name: FÍSICA 2
   subject_groups:
   - group: '4819'
     credits: 10
-  has_exam: false
+  has_exam: true
 SRN26:
   code: SRN26
   name: FÍSICA 3
