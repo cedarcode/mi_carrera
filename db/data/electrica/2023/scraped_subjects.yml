@@ -2078,7 +2078,7 @@ AL:
   subject_groups:
   - group: '011'
     credits: 9
-  has_exam: false
+  has_exam: true
 AT001:
   code: AT001
   name: SENSIBILIZACIÓN E INTERCAMBIO PARA LA EQUIDAD
@@ -2123,7 +2123,7 @@ CCT10:
   subject_groups:
   - group: '012'
     credits: 14
-  has_exam: false
+  has_exam: true
 CCT20:
   code: CCT20
   name: FÍSICA II
@@ -2440,7 +2440,7 @@ DMA01:
   subject_groups:
   - group: '011'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA02:
   code: DMA02
   name: MATEMÁTICA DISCRETA
@@ -2454,14 +2454,14 @@ DMA03:
   subject_groups:
   - group: '011'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA04:
   code: DMA04
   name: GEOMETRÍA Y ALGEBRA LINEAL II
   subject_groups:
   - group: '011'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA05:
   code: DMA05
   name: MATEMÁTICA INICIAL
@@ -2618,6 +2618,20 @@ INS18:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
+INUN1:
+  code: INUN1
+  name: INTRODUCCIÓN A LA UNIVERSIDAD
+  subject_groups:
+  - group: '043'
+    credits: 2
+  has_exam: false
+INUNI:
+  code: INUNI
+  name: INTRODUCCIÓN A LA UNIVERSIDAD
+  subject_groups:
+  - group: '043'
+    credits: 2
+  has_exam: false
 IYS12:
   code: IYS12
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2891,7 +2905,7 @@ REF04:
   subject_groups:
   - group: '012'
     credits: 10
-  has_exam: false
+  has_exam: true
 RN04:
   code: RN04
   name: CONCEPTOS DE ECONOMÍA Y DESARROLLO LOCAL
@@ -2919,7 +2933,7 @@ RN252:
   subject_groups:
   - group: '012'
     credits: 12
-  has_exam: false
+  has_exam: true
 RN253:
   code: RN253
   name: FÍSICA 2 BIOCIENCIAS 2017
@@ -2933,14 +2947,14 @@ RN404:
   subject_groups:
   - group: '011'
     credits: 11
-  has_exam: false
+  has_exam: true
 RN407:
   code: RN407
   name: MATEMATICA II
   subject_groups:
   - group: '011'
     credits: 12
-  has_exam: false
+  has_exam: true
 SD10:
   code: SD10
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -2959,14 +2973,14 @@ SRN02:
   subject_groups:
   - group: '011'
     credits: 16
-  has_exam: false
+  has_exam: true
 SRN03:
   code: SRN03
   name: ALGEBRA LINEAL I
   subject_groups:
   - group: '011'
     credits: 12
-  has_exam: false
+  has_exam: true
 SRN06:
   code: SRN06
   name: TALLER DE DISEÑO
@@ -2987,14 +3001,14 @@ SRN10:
   subject_groups:
   - group: '011'
     credits: 12
-  has_exam: false
+  has_exam: true
 SRN11:
   code: SRN11
   name: FÍSICA 2
   subject_groups:
   - group: '012'
     credits: 10
-  has_exam: false
+  has_exam: true
 SRN14:
   code: SRN14
   name: MATEMÁTICA DISCRETA I
