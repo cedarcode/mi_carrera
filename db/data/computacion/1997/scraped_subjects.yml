@@ -2943,7 +2943,7 @@ AL:
   subject_groups:
   - group: '4083'
     credits: 9
-  has_exam: false
+  has_exam: true
 AR015:
   code: AR015
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -3987,7 +3987,7 @@ DMA01:
   subject_groups:
   - group: '4083'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA02:
   code: DMA02
   name: MATEMÁTICA DISCRETA
@@ -4001,7 +4001,7 @@ DMA03:
   subject_groups:
   - group: '4083'
     credits: 12
-  has_exam: false
+  has_exam: true
 DMA04:
   code: DMA04
   name: GEOMETRÍA Y ALGEBRA LINEAL II
@@ -4570,6 +4570,11 @@ MAT14:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
+MAT18:
+  code: MAT18
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
 MAT33:
   code: MAT33
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -4856,7 +4861,7 @@ RN252:
   subject_groups:
   - group: '4442'
     credits: 12
-  has_exam: false
+  has_exam: true
 RN253:
   code: RN253
   name: FÍSICA 2 BIOCIENCIAS 2017
@@ -4870,14 +4875,14 @@ RN404:
   subject_groups:
   - group: '4083'
     credits: 11
-  has_exam: false
+  has_exam: true
 RN407:
   code: RN407
   name: MATEMATICA II
   subject_groups:
   - group: '4083'
     credits: 12
-  has_exam: false
+  has_exam: true
 S42:
   code: S42
   name: SOCIOLOGÍA DE DIRIGENTES DE EMPRESAS
