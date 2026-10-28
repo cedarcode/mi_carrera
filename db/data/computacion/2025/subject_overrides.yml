@@ -102,6 +102,7 @@ MA11:
   category: 'revalid'
 MA16:
   category: 'revalid'
+  has_exam: true
 MA20:
   category: 'revalid'
 MA25:
