@@ -582,6 +582,20 @@ IE:
   - group: III.II
     credits: 10
   has_exam: false
+INUN1:
+  code: INUN1
+  name: INTRODUCCIÓN A LA UNIVERSIDAD
+  subject_groups:
+  - group: III.II
+    credits: 2
+  has_exam: false
+INUNI:
+  code: INUNI
+  name: INTRODUCCIÓN A LA UNIVERSIDAD
+  subject_groups:
+  - group: III.II
+    credits: 2
+  has_exam: false
 M12:
   code: M12
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -625,7 +639,7 @@ MA11:
 MA16:
   code: MA16
   name: CREDITOS ASIGNADOS POR REVALIDA
-  has_exam: true
+  has_exam: false
   subject_groups: []
 MA20:
   code: MA20
@@ -672,6 +686,11 @@ MAT14:
   name: CREDITOS ASIGNADOS POR REVALIDA
   has_exam: true
   subject_groups: []
+MAT18:
+  code: MAT18
+  name: CREDITOS ASIGNADOS POR REVALIDA
+  has_exam: true
+  subject_groups: []
 MAT33:
   code: MAT33
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -697,6 +716,16 @@ MI2:
 MI2P:
   code: MI2P
   name: CREDITOS NO ACUM MATEMATICA INICIAL
+  has_exam: true
+  subject_groups: []
+RN404:
+  code: RN404
+  name: MATEMATICA I
+  has_exam: true
+  subject_groups: []
+RN407:
+  code: RN407
+  name: MATEMATICA II
   has_exam: true
   subject_groups: []
 SRN02:

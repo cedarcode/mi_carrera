@@ -595,6 +595,10 @@
       logical_operator: or
       operands:
       - type: subject
+        subject_needed_code: SRN10
+        subject_needed_name: ALGEBRA LINEAL II
+        needs: all
+      - type: subject
         subject_needed_code: MA09
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: all
@@ -634,9 +638,17 @@
         subject_needed_code: 158Q
         subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 2
         needs: all
+      - type: subject
+        subject_needed_code: DMA04
+        subject_needed_name: GEOMETRÍA Y ALGEBRA LINEAL II
+        needs: all
   - type: logical
     logical_operator: or
     operands:
+    - type: subject
+      subject_needed_code: SRN03
+      subject_needed_name: ALGEBRA LINEAL I
+      needs: course
     - type: subject
       subject_needed_code: CM14
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
@@ -677,6 +689,18 @@
       subject_needed_code: GAL1P
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
       needs: course
+    - type: subject
+      subject_needed_code: AL
+      subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL
+      needs: course
+    - type: subject
+      subject_needed_code: DMA03
+      subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
+      needs: course
+    - type: subject
+      subject_needed_code: RN407
+      subject_needed_name: MATEMATICA II
+      needs: course
   subject_code: '1031'
   is_exam: false
 - type: logical
@@ -688,6 +712,10 @@
     - type: logical
       logical_operator: or
       operands:
+      - type: subject
+        subject_needed_code: SRN10
+        subject_needed_name: ALGEBRA LINEAL II
+        needs: all
       - type: subject
         subject_needed_code: MA09
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
@@ -740,6 +768,10 @@
       subject_needed_name: ALGEBRA LINEAL
       needs: all
     - type: subject
+      subject_needed_code: SRN03
+      subject_needed_name: ALGEBRA LINEAL I
+      needs: all
+    - type: subject
       subject_needed_code: CM14
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: all
@@ -780,8 +812,16 @@
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
       needs: all
     - type: subject
+      subject_needed_code: AL
+      subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL
+      needs: all
+    - type: subject
       subject_needed_code: DMA03
       subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
+      needs: all
+    - type: subject
+      subject_needed_code: RN407
+      subject_needed_name: MATEMATICA II
       needs: all
   subject_code: '1031'
   is_exam: true
@@ -1057,6 +1097,10 @@
         subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
         needs: all
       - type: subject
+        subject_needed_code: SRN09
+        subject_needed_name: CÁLCULO II
+        needs: all
+      - type: subject
         subject_needed_code: CAL2
         subject_needed_name: CÁLCULO 2
         needs: all
@@ -1110,7 +1154,11 @@
     - type: subject
       subject_needed_code: DMA01
       subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
-      needs: exam
+      needs: course
+    - type: subject
+      subject_needed_code: SRN02
+      subject_needed_name: CÁLCULO I
+      needs: course
     - type: subject
       subject_needed_code: CAL10
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
@@ -1135,6 +1183,10 @@
       subject_needed_code: 1061P
       subject_needed_name: CREDITOS NO ACUM CDIV
       needs: exam
+    - type: subject
+      subject_needed_code: RN404
+      subject_needed_name: MATEMATICA I
+      needs: course
   subject_code: '1062'
   is_exam: false
 - type: logical
@@ -1161,6 +1213,18 @@
       - type: subject
         subject_needed_code: '1022'
         subject_needed_name: CALCULO 2
+        needs: all
+      - type: subject
+        subject_needed_code: DMA06
+        subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+        needs: all
+      - type: subject
+        subject_needed_code: SRN09
+        subject_needed_name: CÁLCULO II
+        needs: all
+      - type: subject
+        subject_needed_code: CAL2
+        subject_needed_name: CÁLCULO 2
         needs: all
       - type: subject
         subject_needed_code: MAT33
@@ -1210,6 +1274,14 @@
       subject_needed_name: CALCULO 1 (ANUAL)
       needs: all
     - type: subject
+      subject_needed_code: DMA01
+      subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+      needs: all
+    - type: subject
+      subject_needed_code: SRN02
+      subject_needed_name: CÁLCULO I
+      needs: all
+    - type: subject
       subject_needed_code: CAL10
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: all
@@ -1220,6 +1292,10 @@
     - type: subject
       subject_needed_code: 1061P
       subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: all
+    - type: subject
+      subject_needed_code: RN404
+      subject_needed_name: MATEMATICA I
       needs: all
   subject_code: '1062'
   is_exam: true
@@ -1235,33 +1311,41 @@
       - type: subject
         subject_needed_code: CP6
         subject_needed_name: ANALISIS MATEMATICO II
-        needs: exam
+        needs: all
       - type: subject
         subject_needed_code: CP25
         subject_needed_name: ANALISIS MATEMATICO II (P. 74)
-        needs: exam
+        needs: all
       - type: subject
         subject_needed_code: '1024'
         subject_needed_name: CALCULO 3
-        needs: exam
+        needs: all
       - type: subject
-        subject_needed_code: MA16
+        subject_needed_code: CIM10
+        subject_needed_name: CÁLCULO VECTORIAL
+        needs: all
+      - type: subject
+        subject_needed_code: MAT18
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-        needs: exam
+        needs: all
       - type: subject
         subject_needed_code: 1063P
         subject_needed_name: CREDITOS NO ACUM CAL. VECTORIAL
-        needs: exam
+        needs: all
       - type: subject
         subject_needed_code: 1024P
         subject_needed_name: CREDITOS NO ACUM CALCULO 3
-        needs: exam
+        needs: all
   - type: logical
     logical_operator: or
     operands:
     - type: subject
       subject_needed_code: '1021'
       subject_needed_name: ALGEBRA LINEAL
+      needs: exam
+    - type: subject
+      subject_needed_code: SRN03
+      subject_needed_name: ALGEBRA LINEAL I
       needs: exam
     - type: subject
       subject_needed_code: CM14
@@ -1307,44 +1391,21 @@
       subject_needed_code: '1053'
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
       needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
     - type: subject
-      subject_needed_code: CP1
-      subject_needed_name: ANALISIS MATEMATICO I
+      subject_needed_code: GAL1P
+      subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
       needs: exam
     - type: subject
-      subject_needed_code: CP22
-      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
+      subject_needed_code: AL
+      subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL
       needs: exam
     - type: subject
-      subject_needed_code: '1062'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
-      needs: course
-    - type: subject
-      subject_needed_code: '1022'
-      subject_needed_name: CALCULO 2
-      needs: course
-    - type: subject
-      subject_needed_code: '1072'
-      subject_needed_name: CALCULO 2
+      subject_needed_code: DMA03
+      subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
       needs: exam
     - type: subject
-      subject_needed_code: 172Q
-      subject_needed_name: CALCULO 2
-      needs: exam
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: MA47
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: 1062P
-      subject_needed_name: CREDITOS NO ACUM CDIVV
+      subject_needed_code: RN407
+      subject_needed_name: MATEMATICA II
       needs: exam
   - type: logical
     logical_operator: or
@@ -1382,6 +1443,14 @@
       subject_needed_name: CALCULO 1 (ANUAL)
       needs: exam
     - type: subject
+      subject_needed_code: DMA01
+      subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: SRN02
+      subject_needed_name: CÁLCULO I
+      needs: exam
+    - type: subject
       subject_needed_code: CAL10
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
       needs: exam
@@ -1404,6 +1473,61 @@
     - type: subject
       subject_needed_code: 1061P
       subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: exam
+    - type: subject
+      subject_needed_code: RN404
+      subject_needed_name: MATEMATICA I
+      needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: CP1
+      subject_needed_name: ANALISIS MATEMATICO I
+      needs: exam
+    - type: subject
+      subject_needed_code: CP22
+      subject_needed_name: ANALISIS MATEMATICO I (P. 74)
+      needs: exam
+    - type: subject
+      subject_needed_code: '1062'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN VARIAS VARIABLES
+      needs: course
+    - type: subject
+      subject_needed_code: '1022'
+      subject_needed_name: CALCULO 2
+      needs: course
+    - type: subject
+      subject_needed_code: '1072'
+      subject_needed_name: CALCULO 2
+      needs: exam
+    - type: subject
+      subject_needed_code: 172Q
+      subject_needed_name: CALCULO 2
+      needs: exam
+    - type: subject
+      subject_needed_code: DMA06
+      subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+      needs: course
+    - type: subject
+      subject_needed_code: SRN09
+      subject_needed_name: CÁLCULO II
+      needs: course
+    - type: subject
+      subject_needed_code: CAL2
+      subject_needed_name: CÁLCULO 2
+      needs: course
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: MA47
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1062P
+      subject_needed_name: CREDITOS NO ACUM CDIVV
       needs: exam
   subject_code: '1063'
   is_exam: false
@@ -1429,11 +1553,19 @@
         subject_needed_name: CALCULO 3
         needs: exam
       - type: subject
+        subject_needed_code: '1076'
+        subject_needed_name: CALCULO 3
+        needs: exam
+      - type: subject
         subject_needed_code: 176Q
         subject_needed_name: CALCULO 3
         needs: exam
       - type: subject
-        subject_needed_code: MA16
+        subject_needed_code: CIM10
+        subject_needed_name: CÁLCULO VECTORIAL
+        needs: exam
+      - type: subject
+        subject_needed_code: MAT18
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
       - type: subject
@@ -1478,6 +1610,18 @@
           subject_needed_name: CALCULO 2
           needs: exam
         - type: subject
+          subject_needed_code: DMA06
+          subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+          needs: course
+        - type: subject
+          subject_needed_code: SRN09
+          subject_needed_name: CÁLCULO II
+          needs: course
+        - type: subject
+          subject_needed_code: CAL2
+          subject_needed_name: CÁLCULO 2
+          needs: course
+        - type: subject
           subject_needed_code: MAT33
           subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
           needs: exam
@@ -1493,8 +1637,87 @@
         logical_operator: or
         operands:
         - type: subject
+          subject_needed_code: CP1
+          subject_needed_name: ANALISIS MATEMATICO I
+          needs: exam
+        - type: subject
+          subject_needed_code: CP22
+          subject_needed_name: ANALISIS MATEMATICO I (P. 74)
+          needs: exam
+        - type: subject
+          subject_needed_code: '1061'
+          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+          needs: exam
+        - type: subject
+          subject_needed_code: '1020'
+          subject_needed_name: CALCULO 1
+          needs: exam
+        - type: subject
+          subject_needed_code: 107L
+          subject_needed_name: CALCULO 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1070'
+          subject_needed_name: CALCULO 1
+          needs: exam
+        - type: subject
+          subject_needed_code: 170Q
+          subject_needed_name: CALCULO 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1052'
+          subject_needed_name: CALCULO 1 (ANUAL)
+          needs: exam
+        - type: subject
+          subject_needed_code: DMA01
+          subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+          needs: exam
+        - type: subject
+          subject_needed_code: SRN02
+          subject_needed_name: CÁLCULO I
+          needs: exam
+        - type: subject
+          subject_needed_code: CAL10
+          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+          needs: exam
+        - type: subject
+          subject_needed_code: MAT33
+          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+          needs: exam
+        - type: subject
+          subject_needed_code: MA47
+          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+          needs: exam
+        - type: subject
+          subject_needed_code: M13
+          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+          needs: exam
+        - type: subject
+          subject_needed_code: M14
+          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+          needs: exam
+        - type: subject
+          subject_needed_code: 1020P
+          subject_needed_name: CREDITOS NO ACUM CALCULO 1
+          needs: exam
+        - type: subject
+          subject_needed_code: 1061P
+          subject_needed_name: CREDITOS NO ACUM CDIV
+          needs: exam
+        - type: subject
+          subject_needed_code: RN404
+          subject_needed_name: MATEMATICA I
+          needs: exam
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
           subject_needed_code: '1021'
           subject_needed_name: ALGEBRA LINEAL
+          needs: exam
+        - type: subject
+          subject_needed_code: SRN03
+          subject_needed_name: ALGEBRA LINEAL I
           needs: exam
         - type: subject
           subject_needed_code: CM14
@@ -1544,68 +1767,17 @@
           subject_needed_code: GAL1P
           subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
           needs: exam
-      - type: logical
-        logical_operator: or
-        operands:
         - type: subject
-          subject_needed_code: CP1
-          subject_needed_name: ANALISIS MATEMATICO I
+          subject_needed_code: AL
+          subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL
           needs: exam
         - type: subject
-          subject_needed_code: CP22
-          subject_needed_name: ANALISIS MATEMATICO I (P. 74)
+          subject_needed_code: DMA03
+          subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
           needs: exam
         - type: subject
-          subject_needed_code: '1061'
-          subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
-          needs: exam
-        - type: subject
-          subject_needed_code: '1020'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 107L
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1070'
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 170Q
-          subject_needed_name: CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1052'
-          subject_needed_name: CALCULO 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: CAL10
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: MAT33
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: MA47
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: M13
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: M14
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1020P
-          subject_needed_name: CREDITOS NO ACUM CALCULO 1
-          needs: exam
-        - type: subject
-          subject_needed_code: 1061P
-          subject_needed_name: CREDITOS NO ACUM CDIV
+          subject_needed_code: RN407
+          subject_needed_name: MATEMATICA II
           needs: exam
     - type: subject
       needs: course
