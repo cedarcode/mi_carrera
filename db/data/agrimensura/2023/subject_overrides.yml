@@ -310,6 +310,7 @@ MI2:
   category: 'inactive'
 "CP41":
   category: 'inactive'
+  has_exam: true
 "CP43":
   category: 'inactive'
 "CP44":
