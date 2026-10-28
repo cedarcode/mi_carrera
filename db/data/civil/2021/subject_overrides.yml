@@ -863,6 +863,7 @@
   category: 'inactive'
 "CP41":
   category: 'inactive'
+  has_exam: true
 "CP42":
   category: 'inactive'
 "CP43":
