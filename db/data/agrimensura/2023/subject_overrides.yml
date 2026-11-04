@@ -192,8 +192,10 @@ MI2:
   category: 'revalid'
 "01":
   category: 'inactive'
+  has_exam: true
 "101":
   category: 'inactive'
+  has_exam: true
 "1020":
   category: 'inactive'
 "1021":
