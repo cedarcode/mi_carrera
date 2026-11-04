@@ -411,6 +411,10 @@
       logical_operator: or
       operands:
       - type: subject
+        subject_needed_code: SRN03
+        subject_needed_name: ALGEBRA LINEAL I
+        needs: exam
+      - type: subject
         subject_needed_code: CM14
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
@@ -512,6 +516,10 @@
       logical_operator: or
       operands:
       - type: subject
+        subject_needed_code: SRN03
+        subject_needed_name: ALGEBRA LINEAL I
+        needs: exam
+      - type: subject
         subject_needed_code: CM14
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: exam
@@ -578,6 +586,10 @@
       - type: subject
         subject_needed_code: GAL1P
         subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+        needs: exam
+      - type: subject
+        subject_needed_code: AL
+        subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL
         needs: exam
       - type: subject
         subject_needed_code: DMA03
@@ -871,8 +883,12 @@
         subject_needed_name: CALCULO 1 (ANUAL)
         needs: all
       - type: subject
-        subject_needed_code: DMA06
-        subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+        subject_needed_code: DMA01
+        subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+        needs: all
+      - type: subject
+        subject_needed_code: SRN02
+        subject_needed_name: CÁLCULO I
         needs: all
       - type: subject
         subject_needed_code: CAL10
@@ -929,6 +945,10 @@
       - type: subject
         subject_needed_code: 1061P
         subject_needed_name: CREDITOS NO ACUM CDIV
+        needs: all
+      - type: subject
+        subject_needed_code: RN404
+        subject_needed_name: MATEMATICA I
         needs: all
   - type: logical
     logical_operator: or
@@ -996,6 +1016,10 @@
         subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
         needs: all
       - type: subject
+        subject_needed_code: SRN02
+        subject_needed_name: CÁLCULO I
+        needs: all
+      - type: subject
         subject_needed_code: CAL10
         subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
         needs: all
@@ -1046,6 +1070,10 @@
       - type: subject
         subject_needed_code: 1061P
         subject_needed_name: CREDITOS NO ACUM CDIV
+        needs: all
+      - type: subject
+        subject_needed_code: RN404
+        subject_needed_name: MATEMATICA I
         needs: all
   - type: logical
     logical_operator: not
