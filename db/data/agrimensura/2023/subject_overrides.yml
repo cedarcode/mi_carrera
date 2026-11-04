@@ -195,6 +195,7 @@ MI2:
   has_exam: true
 "101":
   category: 'inactive'
+  has_exam: true
 "1020":
   category: 'inactive'
 "1021":
