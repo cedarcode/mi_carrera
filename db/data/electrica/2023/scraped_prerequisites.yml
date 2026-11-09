@@ -4293,6 +4293,18 @@
       subject_needed_name: FISICA 1
       needs: all
     - type: subject
+      subject_needed_code: CCT10
+      subject_needed_name: FÍSICA I
+      needs: all
+    - type: subject
+      subject_needed_code: REF04
+      subject_needed_name: FÍSICA 1
+      needs: all
+    - type: subject
+      subject_needed_code: RN252
+      subject_needed_name: FÍSICA 1 BIOCIENCIAS 2017
+      needs: all
+    - type: subject
       subject_needed_code: CP26
       subject_needed_name: MECANICA GENERAL I (P. 74)
       needs: all
@@ -4375,6 +4387,18 @@
     - type: subject
       subject_needed_code: '1171'
       subject_needed_name: FISICA 1
+      needs: all
+    - type: subject
+      subject_needed_code: CCT10
+      subject_needed_name: FÍSICA I
+      needs: all
+    - type: subject
+      subject_needed_code: REF04
+      subject_needed_name: FÍSICA 1
+      needs: all
+    - type: subject
+      subject_needed_code: RN252
+      subject_needed_name: FÍSICA 1 BIOCIENCIAS 2017
       needs: all
     - type: subject
       subject_needed_code: CP26
