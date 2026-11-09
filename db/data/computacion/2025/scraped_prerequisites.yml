@@ -490,6 +490,10 @@
         subject_needed_code: DMA03
         subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
         needs: exam
+      - type: subject
+        subject_needed_code: RN407
+        subject_needed_name: MATEMATICA II
+        needs: exam
   - type: logical
     logical_operator: not
     operands:
@@ -594,6 +598,10 @@
       - type: subject
         subject_needed_code: DMA03
         subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
+        needs: exam
+      - type: subject
+        subject_needed_code: RN407
+        subject_needed_name: MATEMATICA II
         needs: exam
   subject_code: '1030'
   is_exam: true
