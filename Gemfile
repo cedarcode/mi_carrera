@@ -21,7 +21,7 @@ gem 'puma', '~> 8.0'
 gem 'stimulus-rails', '~> 1.3'
 gem 'tailwindcss-rails', '~> 4.7'
 gem 'turbo-rails', '~> 2.0'
-gem "view_component", "~> 4.20"
+gem "view_component", "~> 4.23"
 gem 'webauthn'
 
 group :development, :deploy do
