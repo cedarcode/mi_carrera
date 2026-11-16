@@ -2573,7 +2573,7 @@ CH201:
   subject_groups:
   - group: '4886'
     credits: 10
-  has_exam: false
+  has_exam: true
 CIM10:
   code: CIM10
   name: CÁLCULO VECTORIAL
@@ -3687,7 +3687,7 @@ ESTAI:
   subject_groups:
   - group: '4886'
     credits: 10
-  has_exam: false
+  has_exam: true
 EXP4:
   code: EXP4
   name: CREDITOS ASIGNADOS POR REVALIDA
@@ -4290,7 +4290,7 @@ RN115:
   subject_groups:
   - group: '4886'
     credits: 10
-  has_exam: false
+  has_exam: true
 RN252:
   code: RN252
   name: FÍSICA 1 BIOCIENCIAS 2017
