@@ -21,7 +21,7 @@ gem 'puma', '~> 8.0'
 gem 'stimulus-rails', '~> 1.3'
 gem 'tailwindcss-rails', '~> 4.7'
 gem 'turbo-rails', '~> 2.0'
-gem "view_component", "~> 4.23"
+gem "view_component", "~> 4.24"
 gem 'webauthn'
 
 group :development, :deploy do
@@ -31,7 +31,7 @@ end
 group :development, :test do
   gem "brakeman", "~> 8.1"
   gem 'pry-byebug'
-  gem 'rspec-rails', '~> 8.0'
+  gem 'rspec-rails', '~> 8.1'
 end
 
 group :development do
