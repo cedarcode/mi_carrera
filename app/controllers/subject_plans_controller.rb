@@ -53,6 +53,24 @@ class SubjectPlansController < ApplicationController
                                      .ordered_by_category
                                      .ordered_by_short_or_full_name
                                      .load
+
+    # Calculate credits only from planned subjects (those positioned in semesters)
+    planned_credits_by_group = @planned_subjects
+                               .group_by(&:group_id)
+                               .transform_values { |subjects| subjects.sum(&:credits) }
+
+    @groups_and_credits = current_degree.subject_groups.find_each.map do |subject_group|
+      credits = planned_credits_by_group[subject_group.id] || 0
+      {
+        subject_group:,
+        credits:,
+        credits_needed_reached: credits >= subject_group.credits_needed,
+      }
+    end
+    @groups_and_credits.sort_by! { |group_and_credits| group_and_credits[:subject_group].name }
+
+    @all_group_credits_met = @groups_and_credits.all? { |group_and_credits| group_and_credits[:credits_needed_reached] }
+    @total_credits = @groups_and_credits.pluck(:credits).sum
   end
 
   def subject_plan_params
