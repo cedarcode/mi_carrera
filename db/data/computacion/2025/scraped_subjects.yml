@@ -398,7 +398,7 @@ CH201:
   subject_groups:
   - group: I.I
     credits: 10
-  has_exam: false
+  has_exam: true
 CIM10:
   code: CIM10
   name: CÁLCULO VECTORIAL
@@ -557,7 +557,7 @@ ESTAI:
   subject_groups:
   - group: I.I
     credits: 10
-  has_exam: false
+  has_exam: true
 GAL1P:
   code: GAL1P
   name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
@@ -716,6 +716,11 @@ MI2:
 MI2P:
   code: MI2P
   name: CREDITOS NO ACUM MATEMATICA INICIAL
+  has_exam: true
+  subject_groups: []
+RN115:
+  code: RN115
+  name: ESTADÍSTICA I 2022
   has_exam: true
   subject_groups: []
 RN404:
