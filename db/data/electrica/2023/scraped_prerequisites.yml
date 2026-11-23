@@ -2951,6 +2951,53 @@
         subject_needed_code: CP26
         subject_needed_name: MECANICA GENERAL I (P. 74)
         needs: exam
+      - type: subject
+        subject_needed_code: CIM28
+        subject_needed_name: MECÁNICA CLÁSICA
+        needs: exam
+  - type: logical
+    logical_operator: or
+    operands:
+    - type: subject
+      subject_needed_code: '1061'
+      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: '1020'
+      subject_needed_name: CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1070'
+      subject_needed_name: CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: '1052'
+      subject_needed_name: CALCULO 1 (ANUAL)
+      needs: exam
+    - type: subject
+      subject_needed_code: DMA01
+      subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+      needs: exam
+    - type: subject
+      subject_needed_code: SRN02
+      subject_needed_name: CÁLCULO I
+      needs: exam
+    - type: subject
+      subject_needed_code: MAT33
+      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+      needs: exam
+    - type: subject
+      subject_needed_code: 1020P
+      subject_needed_name: CREDITOS NO ACUM CALCULO 1
+      needs: exam
+    - type: subject
+      subject_needed_code: 1061P
+      subject_needed_name: CREDITOS NO ACUM CDIV
+      needs: exam
+    - type: subject
+      subject_needed_code: RN404
+      subject_needed_name: MATEMATICA I
+      needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -2974,6 +3021,18 @@
       subject_needed_code: '1171'
       subject_needed_name: FISICA 1
       needs: exam
+    - type: subject
+      subject_needed_code: CCT10
+      subject_needed_name: FÍSICA I
+      needs: exam
+    - type: subject
+      subject_needed_code: REF04
+      subject_needed_name: FÍSICA 1
+      needs: exam
+    - type: subject
+      subject_needed_code: RN252
+      subject_needed_name: FÍSICA 1 BIOCIENCIAS 2017
+      needs: exam
   - type: logical
     logical_operator: or
     operands:
@@ -2993,6 +3052,18 @@
       subject_needed_code: 108L
       subject_needed_name: CALCULO 2
       needs: exam
+    - type: subject
+      subject_needed_code: DMA06
+      subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+      needs: course
+    - type: subject
+      subject_needed_code: SRN09
+      subject_needed_name: CÁLCULO II
+      needs: course
+    - type: subject
+      subject_needed_code: CAL2
+      subject_needed_name: CÁLCULO 2
+      needs: course
     - type: subject
       subject_needed_code: 1022P
       subject_needed_name: CREDITOS NO ACUM CALCULO 2
@@ -3032,6 +3103,26 @@
       subject_needed_code: '1153'
       subject_needed_name: FISICA 3
       needs: course
+    - type: subject
+      subject_needed_code: CCT10
+      subject_needed_name: FÍSICA I
+      needs: course
+    - type: subject
+      subject_needed_code: CCT20
+      subject_needed_name: FÍSICA II
+      needs: course
+    - type: subject
+      subject_needed_code: SRN11
+      subject_needed_name: FÍSICA 2
+      needs: course
+    - type: subject
+      subject_needed_code: RN253
+      subject_needed_name: FÍSICA 2 BIOCIENCIAS 2017
+      needs: course
+    - type: subject
+      subject_needed_code: SRN26
+      subject_needed_name: FÍSICA 3
+      needs: course
   - type: logical
     logical_operator: or
     operands:
@@ -3039,6 +3130,10 @@
       subject_needed_code: '1021'
       subject_needed_name: ALGEBRA LINEAL
       needs: course
+    - type: subject
+      subject_needed_code: SRN03
+      subject_needed_name: ALGEBRA LINEAL I
+      needs: exam
     - type: subject
       subject_needed_code: MAT33
       subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
@@ -3063,36 +3158,17 @@
       subject_needed_code: GAL1P
       subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
       needs: exam
-  - type: logical
-    logical_operator: or
-    operands:
     - type: subject
-      subject_needed_code: '1061'
-      subject_needed_name: CALCULO DIF. E INTEGRAL EN UNA VARIABLE
+      subject_needed_code: AL
+      subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL
       needs: exam
     - type: subject
-      subject_needed_code: '1020'
-      subject_needed_name: CALCULO 1
+      subject_needed_code: DMA03
+      subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
       needs: exam
     - type: subject
-      subject_needed_code: '1070'
-      subject_needed_name: CALCULO 1
-      needs: exam
-    - type: subject
-      subject_needed_code: '1052'
-      subject_needed_name: CALCULO 1 (ANUAL)
-      needs: exam
-    - type: subject
-      subject_needed_code: MAT33
-      subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-      needs: exam
-    - type: subject
-      subject_needed_code: 1020P
-      subject_needed_name: CREDITOS NO ACUM CALCULO 1
-      needs: exam
-    - type: subject
-      subject_needed_code: 1061P
-      subject_needed_name: CREDITOS NO ACUM CDIV
+      subject_needed_code: RN407
+      subject_needed_name: MATEMATICA II
       needs: exam
   subject_code: '1122'
   is_exam: false
@@ -3121,43 +3197,16 @@
         subject_needed_code: CP8
         subject_needed_name: MECANICA II
         needs: exam
+      - type: subject
+        subject_needed_code: CIM28
+        subject_needed_name: MECÁNICA CLÁSICA
+        needs: exam
   - type: logical
     logical_operator: or
     operands:
     - type: logical
       logical_operator: and
       operands:
-      - type: logical
-        logical_operator: or
-        operands:
-        - type: subject
-          subject_needed_code: '1021'
-          subject_needed_name: ALGEBRA LINEAL
-          needs: course
-        - type: subject
-          subject_needed_code: MAT33
-          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
-          needs: exam
-        - type: subject
-          subject_needed_code: 1030P
-          subject_needed_name: CREDITOS NO ACUM GAL1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1030'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1071'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
-          needs: exam
-        - type: subject
-          subject_needed_code: '1053'
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
-          needs: exam
-        - type: subject
-          subject_needed_code: GAL1P
-          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
-          needs: exam
       - type: logical
         logical_operator: or
         operands:
@@ -3181,6 +3230,18 @@
           subject_needed_code: 172Q
           subject_needed_name: CALCULO 2
           needs: exam
+        - type: subject
+          subject_needed_code: DMA06
+          subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN VARIAS VARIABLES
+          needs: course
+        - type: subject
+          subject_needed_code: SRN09
+          subject_needed_name: CÁLCULO II
+          needs: course
+        - type: subject
+          subject_needed_code: CAL2
+          subject_needed_name: CÁLCULO 2
+          needs: course
         - type: subject
           subject_needed_code: 1022P
           subject_needed_name: CREDITOS NO ACUM CALCULO 2
@@ -3216,6 +3277,18 @@
           subject_needed_code: '1171'
           subject_needed_name: FISICA 1
           needs: exam
+        - type: subject
+          subject_needed_code: CCT10
+          subject_needed_name: FÍSICA I
+          needs: exam
+        - type: subject
+          subject_needed_code: REF04
+          subject_needed_name: FÍSICA 1
+          needs: exam
+        - type: subject
+          subject_needed_code: RN252
+          subject_needed_name: FÍSICA 1 BIOCIENCIAS 2017
+          needs: exam
       - type: logical
         logical_operator: or
         operands:
@@ -3236,6 +3309,14 @@
           subject_needed_name: CALCULO 1 (ANUAL)
           needs: exam
         - type: subject
+          subject_needed_code: DMA01
+          subject_needed_name: CÁLCULO DIFERENCIAL E INTEGRAL EN UNA VARIABLE
+          needs: exam
+        - type: subject
+          subject_needed_code: SRN02
+          subject_needed_name: CÁLCULO I
+          needs: exam
+        - type: subject
           subject_needed_code: MAT33
           subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
           needs: exam
@@ -3246,6 +3327,10 @@
         - type: subject
           subject_needed_code: 1061P
           subject_needed_name: CREDITOS NO ACUM CDIV
+          needs: exam
+        - type: subject
+          subject_needed_code: RN404
+          subject_needed_name: MATEMATICA I
           needs: exam
       - type: logical
         logical_operator: or
@@ -3274,6 +3359,73 @@
           subject_needed_code: '1153'
           subject_needed_name: FISICA 3
           needs: course
+        - type: subject
+          subject_needed_code: CCT10
+          subject_needed_name: FÍSICA I
+          needs: course
+        - type: subject
+          subject_needed_code: CCT20
+          subject_needed_name: FÍSICA II
+          needs: course
+        - type: subject
+          subject_needed_code: SRN11
+          subject_needed_name: FÍSICA 2
+          needs: course
+        - type: subject
+          subject_needed_code: RN253
+          subject_needed_name: FÍSICA 2 BIOCIENCIAS 2017
+          needs: course
+        - type: subject
+          subject_needed_code: SRN26
+          subject_needed_name: FÍSICA 3
+          needs: course
+      - type: logical
+        logical_operator: or
+        operands:
+        - type: subject
+          subject_needed_code: '1021'
+          subject_needed_name: ALGEBRA LINEAL
+          needs: course
+        - type: subject
+          subject_needed_code: SRN03
+          subject_needed_name: ALGEBRA LINEAL I
+          needs: exam
+        - type: subject
+          subject_needed_code: MAT33
+          subject_needed_name: CREDITOS ASIGNADOS POR REVALIDA
+          needs: exam
+        - type: subject
+          subject_needed_code: 1030P
+          subject_needed_name: CREDITOS NO ACUM GAL1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1030'
+          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1071'
+          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1
+          needs: exam
+        - type: subject
+          subject_needed_code: '1053'
+          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 (ANUAL)
+          needs: exam
+        - type: subject
+          subject_needed_code: GAL1P
+          subject_needed_name: GEOMETRIA Y ALGEBRA LINEAL 1 INTERACTIVA
+          needs: exam
+        - type: subject
+          subject_needed_code: AL
+          subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL
+          needs: exam
+        - type: subject
+          subject_needed_code: DMA03
+          subject_needed_name: GEOMETRÍA Y ÁLGEBRA LINEAL 1
+          needs: exam
+        - type: subject
+          subject_needed_code: RN407
+          subject_needed_name: MATEMATICA II
+          needs: exam
     - type: subject
       needs: course
       subject_needed_code: '1122'
